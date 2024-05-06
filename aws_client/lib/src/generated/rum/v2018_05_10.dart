@@ -166,7 +166,8 @@ class CloudWatchRum {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/rummetrics/${Uri.encodeComponent(appMonitorName)}/metrics',
+      requestUri:
+          '/rummetrics/${Uri.encodeQueryComponent(appMonitorName).replaceAll('+', '%20')}/metrics',
       exceptionFnMap: _exceptionFns,
     );
     return BatchCreateRumMetricDefinitionsResponse.fromJson(response);
@@ -227,7 +228,8 @@ class CloudWatchRum {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/rummetrics/${Uri.encodeComponent(appMonitorName)}/metrics',
+      requestUri:
+          '/rummetrics/${Uri.encodeQueryComponent(appMonitorName).replaceAll('+', '%20')}/metrics',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -289,7 +291,8 @@ class CloudWatchRum {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/rummetrics/${Uri.encodeComponent(appMonitorName)}/metrics',
+      requestUri:
+          '/rummetrics/${Uri.encodeQueryComponent(appMonitorName).replaceAll('+', '%20')}/metrics',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -417,7 +420,8 @@ class CloudWatchRum {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/appmonitor/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/appmonitor/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -459,7 +463,7 @@ class CloudWatchRum {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/rummetrics/${Uri.encodeComponent(appMonitorName)}/metricsdestination',
+          '/rummetrics/${Uri.encodeQueryComponent(appMonitorName).replaceAll('+', '%20')}/metricsdestination',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -481,7 +485,8 @@ class CloudWatchRum {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/appmonitor/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/appmonitor/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetAppMonitorResponse.fromJson(response);
@@ -537,7 +542,8 @@ class CloudWatchRum {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/appmonitor/${Uri.encodeComponent(name)}/data',
+      requestUri:
+          '/appmonitor/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/data',
       exceptionFnMap: _exceptionFns,
     );
     return GetAppMonitorDataResponse.fromJson(response);
@@ -625,7 +631,7 @@ class CloudWatchRum {
       payload: null,
       method: 'GET',
       requestUri:
-          '/rummetrics/${Uri.encodeComponent(appMonitorName)}/metricsdestination',
+          '/rummetrics/${Uri.encodeQueryComponent(appMonitorName).replaceAll('+', '%20')}/metricsdestination',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -646,7 +652,8 @@ class CloudWatchRum {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -698,7 +705,8 @@ class CloudWatchRum {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/appmonitors/${Uri.encodeComponent(id)}/',
+      requestUri:
+          '/appmonitors/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -755,7 +763,7 @@ class CloudWatchRum {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/rummetrics/${Uri.encodeComponent(appMonitorName)}/metricsdestination',
+          '/rummetrics/${Uri.encodeQueryComponent(appMonitorName).replaceAll('+', '%20')}/metricsdestination',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -801,7 +809,8 @@ class CloudWatchRum {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -827,7 +836,8 @@ class CloudWatchRum {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -907,7 +917,8 @@ class CloudWatchRum {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/appmonitor/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/appmonitor/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -966,7 +977,8 @@ class CloudWatchRum {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/rummetrics/${Uri.encodeComponent(appMonitorName)}/metrics',
+      requestUri:
+          '/rummetrics/${Uri.encodeQueryComponent(appMonitorName).replaceAll('+', '%20')}/metrics',
       exceptionFnMap: _exceptionFns,
     );
   }

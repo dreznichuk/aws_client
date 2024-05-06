@@ -250,7 +250,8 @@ class Route53RecoveryReadiness {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/cells/${Uri.encodeComponent(cellName)}',
+      requestUri:
+          '/cells/${Uri.encodeQueryComponent(cellName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -271,7 +272,7 @@ class Route53RecoveryReadiness {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/crossaccountauthorizations/${Uri.encodeComponent(crossAccountAuthorization)}',
+          '/crossaccountauthorizations/${Uri.encodeQueryComponent(crossAccountAuthorization).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -292,7 +293,8 @@ class Route53RecoveryReadiness {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/readinesschecks/${Uri.encodeComponent(readinessCheckName)}',
+      requestUri:
+          '/readinesschecks/${Uri.encodeQueryComponent(readinessCheckName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -313,7 +315,8 @@ class Route53RecoveryReadiness {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/recoverygroups/${Uri.encodeComponent(recoveryGroupName)}',
+      requestUri:
+          '/recoverygroups/${Uri.encodeQueryComponent(recoveryGroupName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -334,7 +337,8 @@ class Route53RecoveryReadiness {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/resourcesets/${Uri.encodeComponent(resourceSetName)}',
+      requestUri:
+          '/resourcesets/${Uri.encodeQueryComponent(resourceSetName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -376,7 +380,7 @@ class Route53RecoveryReadiness {
       payload: null,
       method: 'GET',
       requestUri:
-          '/recoverygroups/${Uri.encodeComponent(recoveryGroupName)}/architectureRecommendations',
+          '/recoverygroups/${Uri.encodeQueryComponent(recoveryGroupName).replaceAll('+', '%20')}/architectureRecommendations',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -401,7 +405,8 @@ class Route53RecoveryReadiness {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/cells/${Uri.encodeComponent(cellName)}',
+      requestUri:
+          '/cells/${Uri.encodeQueryComponent(cellName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetCellResponse.fromJson(response);
@@ -442,7 +447,8 @@ class Route53RecoveryReadiness {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/cellreadiness/${Uri.encodeComponent(cellName)}',
+      requestUri:
+          '/cellreadiness/${Uri.encodeQueryComponent(cellName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -465,7 +471,8 @@ class Route53RecoveryReadiness {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/readinesschecks/${Uri.encodeComponent(readinessCheckName)}',
+      requestUri:
+          '/readinesschecks/${Uri.encodeQueryComponent(readinessCheckName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetReadinessCheckResponse.fromJson(response);
@@ -516,7 +523,7 @@ class Route53RecoveryReadiness {
       payload: null,
       method: 'GET',
       requestUri:
-          '/readinesschecks/${Uri.encodeComponent(readinessCheckName)}/resource/${Uri.encodeComponent(resourceIdentifier)}/status',
+          '/readinesschecks/%24%7BUri.encodeQueryComponent%28readinessCheckName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/resource/${Uri.encodeQueryComponent(resourceIdentifier).replaceAll('+', '%20')}/status',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -561,7 +568,7 @@ class Route53RecoveryReadiness {
       payload: null,
       method: 'GET',
       requestUri:
-          '/readinesschecks/${Uri.encodeComponent(readinessCheckName)}/status',
+          '/readinesschecks/${Uri.encodeQueryComponent(readinessCheckName).replaceAll('+', '%20')}/status',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -585,7 +592,8 @@ class Route53RecoveryReadiness {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/recoverygroups/${Uri.encodeComponent(recoveryGroupName)}',
+      requestUri:
+          '/recoverygroups/${Uri.encodeQueryComponent(recoveryGroupName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetRecoveryGroupResponse.fromJson(response);
@@ -629,7 +637,7 @@ class Route53RecoveryReadiness {
       payload: null,
       method: 'GET',
       requestUri:
-          '/recoverygroupreadiness/${Uri.encodeComponent(recoveryGroupName)}',
+          '/recoverygroupreadiness/${Uri.encodeQueryComponent(recoveryGroupName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -653,7 +661,8 @@ class Route53RecoveryReadiness {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/resourcesets/${Uri.encodeComponent(resourceSetName)}',
+      requestUri:
+          '/resourcesets/${Uri.encodeQueryComponent(resourceSetName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetResourceSetResponse.fromJson(response);
@@ -897,7 +906,8 @@ class Route53RecoveryReadiness {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourcesResponse.fromJson(response);
@@ -924,7 +934,8 @@ class Route53RecoveryReadiness {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -950,7 +961,8 @@ class Route53RecoveryReadiness {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -981,7 +993,8 @@ class Route53RecoveryReadiness {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/cells/${Uri.encodeComponent(cellName)}',
+      requestUri:
+          '/cells/${Uri.encodeQueryComponent(cellName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateCellResponse.fromJson(response);
@@ -1010,7 +1023,8 @@ class Route53RecoveryReadiness {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/readinesschecks/${Uri.encodeComponent(readinessCheckName)}',
+      requestUri:
+          '/readinesschecks/${Uri.encodeQueryComponent(readinessCheckName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateReadinessCheckResponse.fromJson(response);
@@ -1040,7 +1054,8 @@ class Route53RecoveryReadiness {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/recoverygroups/${Uri.encodeComponent(recoveryGroupName)}',
+      requestUri:
+          '/recoverygroups/${Uri.encodeQueryComponent(recoveryGroupName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateRecoveryGroupResponse.fromJson(response);
@@ -1085,7 +1100,8 @@ class Route53RecoveryReadiness {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/resourcesets/${Uri.encodeComponent(resourceSetName)}',
+      requestUri:
+          '/resourcesets/${Uri.encodeQueryComponent(resourceSetName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateResourceSetResponse.fromJson(response);

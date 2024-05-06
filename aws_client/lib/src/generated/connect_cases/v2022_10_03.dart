@@ -78,7 +78,8 @@ class ConnectCases {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/domains/${Uri.encodeComponent(domainId)}/fields-batch',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/fields-batch',
       exceptionFnMap: _exceptionFns,
     );
     return BatchGetFieldResponse.fromJson(response);
@@ -114,7 +115,7 @@ class ConnectCases {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainId)}/fields/${Uri.encodeComponent(fieldId)}/options',
+          '/domains/%24%7BUri.encodeQueryComponent%28domainId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/fields/${Uri.encodeQueryComponent(fieldId).replaceAll('+', '%20')}/options',
       exceptionFnMap: _exceptionFns,
     );
     return BatchPutFieldOptionsResponse.fromJson(response);
@@ -169,7 +170,8 @@ class ConnectCases {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/domains/${Uri.encodeComponent(domainId)}/cases',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/cases',
       exceptionFnMap: _exceptionFns,
     );
     return CreateCaseResponse.fromJson(response);
@@ -251,7 +253,8 @@ class ConnectCases {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/domains/${Uri.encodeComponent(domainId)}/fields',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/fields',
       exceptionFnMap: _exceptionFns,
     );
     return CreateFieldResponse.fromJson(response);
@@ -302,7 +305,8 @@ class ConnectCases {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/domains/${Uri.encodeComponent(domainId)}/layouts',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/layouts',
       exceptionFnMap: _exceptionFns,
     );
     return CreateLayoutResponse.fromJson(response);
@@ -350,7 +354,7 @@ class ConnectCases {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainId)}/cases/${Uri.encodeComponent(caseId)}/related-items/',
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/cases/%24%7BUri.encodeQueryComponent%28caseId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/related-items/',
       exceptionFnMap: _exceptionFns,
     );
     return CreateRelatedItemResponse.fromJson(response);
@@ -409,7 +413,8 @@ class ConnectCases {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/domains/${Uri.encodeComponent(domainId)}/templates',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/templates',
       exceptionFnMap: _exceptionFns,
     );
     return CreateTemplateResponse.fromJson(response);
@@ -432,7 +437,8 @@ class ConnectCases {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/domains/${Uri.encodeComponent(domainId)}',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -471,7 +477,7 @@ class ConnectCases {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainId)}/cases/${Uri.encodeComponent(caseId)}',
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/cases/%24%7BUri.encodeQueryComponent%28caseId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetCaseResponse.fromJson(response);
@@ -494,7 +500,7 @@ class ConnectCases {
       payload: null,
       method: 'POST',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainId)}/case-event-configuration',
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/case-event-configuration',
       exceptionFnMap: _exceptionFns,
     );
     return GetCaseEventConfigurationResponse.fromJson(response);
@@ -516,7 +522,8 @@ class ConnectCases {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/domains/${Uri.encodeComponent(domainId)}',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDomainResponse.fromJson(response);
@@ -543,7 +550,7 @@ class ConnectCases {
       payload: null,
       method: 'POST',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainId)}/layouts/${Uri.encodeComponent(layoutId)}',
+          '/domains/%24%7BUri.encodeQueryComponent%28domainId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/layouts/${Uri.encodeQueryComponent(layoutId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetLayoutResponse.fromJson(response);
@@ -570,7 +577,7 @@ class ConnectCases {
       payload: null,
       method: 'POST',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainId)}/templates/${Uri.encodeComponent(templateId)}',
+          '/domains/%24%7BUri.encodeQueryComponent%28domainId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetTemplateResponse.fromJson(response);
@@ -617,7 +624,7 @@ class ConnectCases {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainId)}/list-cases-for-contact',
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/list-cases-for-contact',
       exceptionFnMap: _exceptionFns,
     );
     return ListCasesForContactResponse.fromJson(response);
@@ -707,7 +714,7 @@ class ConnectCases {
       payload: null,
       method: 'POST',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainId)}/fields/${Uri.encodeComponent(fieldId)}/options-list',
+          '/domains/%24%7BUri.encodeQueryComponent%28domainId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/fields/${Uri.encodeQueryComponent(fieldId).replaceAll('+', '%20')}/options-list',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -749,7 +756,8 @@ class ConnectCases {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/domains/${Uri.encodeComponent(domainId)}/fields-list',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/fields-list',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -792,7 +800,8 @@ class ConnectCases {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/domains/${Uri.encodeComponent(domainId)}/layouts-list',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/layouts-list',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -815,7 +824,8 @@ class ConnectCases {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(arn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -862,7 +872,8 @@ class ConnectCases {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/domains/${Uri.encodeComponent(domainId)}/templates-list',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/templates-list',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -894,7 +905,7 @@ class ConnectCases {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainId)}/case-event-configuration',
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/case-event-configuration',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -962,7 +973,8 @@ class ConnectCases {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/domains/${Uri.encodeComponent(domainId)}/cases-search',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/cases-search',
       exceptionFnMap: _exceptionFns,
     );
     return SearchCasesResponse.fromJson(response);
@@ -1018,7 +1030,7 @@ class ConnectCases {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainId)}/cases/${Uri.encodeComponent(caseId)}/related-items-search',
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/cases/%24%7BUri.encodeQueryComponent%28caseId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/related-items-search',
       exceptionFnMap: _exceptionFns,
     );
     return SearchRelatedItemsResponse.fromJson(response);
@@ -1048,7 +1060,8 @@ class ConnectCases {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(arn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1076,7 +1089,8 @@ class ConnectCases {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(arn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1117,7 +1131,7 @@ class ConnectCases {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainId)}/cases/${Uri.encodeComponent(caseId)}',
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/cases/%24%7BUri.encodeQueryComponent%28caseId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1156,7 +1170,7 @@ class ConnectCases {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainId)}/fields/${Uri.encodeComponent(fieldId)}',
+          '/domains/%24%7BUri.encodeQueryComponent%28domainId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/fields/${Uri.encodeQueryComponent(fieldId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1207,7 +1221,7 @@ class ConnectCases {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainId)}/layouts/${Uri.encodeComponent(layoutId)}',
+          '/domains/%24%7BUri.encodeQueryComponent%28domainId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/layouts/${Uri.encodeQueryComponent(layoutId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1268,7 +1282,7 @@ class ConnectCases {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainId)}/templates/${Uri.encodeComponent(templateId)}',
+          '/domains/%24%7BUri.encodeQueryComponent%28domainId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

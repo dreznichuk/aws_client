@@ -72,7 +72,7 @@ class TelcoNetworkBuilder {
       payload: null,
       method: 'POST',
       requestUri:
-          '/sol/nslcm/v1/ns_lcm_op_occs/${Uri.encodeComponent(nsLcmOpOccId)}/cancel',
+          '/sol/nslcm/v1/ns_lcm_op_occs/${Uri.encodeQueryComponent(nsLcmOpOccId).replaceAll('+', '%20')}/cancel',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -247,7 +247,7 @@ class TelcoNetworkBuilder {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/sol/vnfpkgm/v1/vnf_packages/${Uri.encodeComponent(vnfPkgId)}',
+          '/sol/vnfpkgm/v1/vnf_packages/${Uri.encodeQueryComponent(vnfPkgId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -277,7 +277,7 @@ class TelcoNetworkBuilder {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/sol/nslcm/v1/ns_instances/${Uri.encodeComponent(nsInstanceId)}',
+          '/sol/nslcm/v1/ns_instances/${Uri.encodeQueryComponent(nsInstanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -307,7 +307,7 @@ class TelcoNetworkBuilder {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/sol/nsd/v1/ns_descriptors/${Uri.encodeComponent(nsdInfoId)}',
+          '/sol/nsd/v1/ns_descriptors/${Uri.encodeQueryComponent(nsdInfoId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -333,7 +333,7 @@ class TelcoNetworkBuilder {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sol/vnflcm/v1/vnf_instances/${Uri.encodeComponent(vnfInstanceId)}',
+          '/sol/vnflcm/v1/vnf_instances/${Uri.encodeQueryComponent(vnfInstanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSolFunctionInstanceOutput.fromJson(response);
@@ -362,7 +362,7 @@ class TelcoNetworkBuilder {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sol/vnfpkgm/v1/vnf_packages/${Uri.encodeComponent(vnfPkgId)}',
+          '/sol/vnfpkgm/v1/vnf_packages/${Uri.encodeQueryComponent(vnfPkgId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSolFunctionPackageOutput.fromJson(response);
@@ -398,7 +398,7 @@ class TelcoNetworkBuilder {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sol/vnfpkgm/v1/vnf_packages/${Uri.encodeComponent(vnfPkgId)}/package_content',
+          '/sol/vnfpkgm/v1/vnf_packages/${Uri.encodeQueryComponent(vnfPkgId).replaceAll('+', '%20')}/package_content',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -445,7 +445,7 @@ class TelcoNetworkBuilder {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sol/vnfpkgm/v1/vnf_packages/${Uri.encodeComponent(vnfPkgId)}/vnfd',
+          '/sol/vnfpkgm/v1/vnf_packages/${Uri.encodeQueryComponent(vnfPkgId).replaceAll('+', '%20')}/vnfd',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -478,7 +478,7 @@ class TelcoNetworkBuilder {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sol/nslcm/v1/ns_instances/${Uri.encodeComponent(nsInstanceId)}',
+          '/sol/nslcm/v1/ns_instances/${Uri.encodeQueryComponent(nsInstanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSolNetworkInstanceOutput.fromJson(response);
@@ -505,7 +505,7 @@ class TelcoNetworkBuilder {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sol/nslcm/v1/ns_lcm_op_occs/${Uri.encodeComponent(nsLcmOpOccId)}',
+          '/sol/nslcm/v1/ns_lcm_op_occs/${Uri.encodeQueryComponent(nsLcmOpOccId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSolNetworkOperationOutput.fromJson(response);
@@ -532,7 +532,7 @@ class TelcoNetworkBuilder {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sol/nsd/v1/ns_descriptors/${Uri.encodeComponent(nsdInfoId)}',
+          '/sol/nsd/v1/ns_descriptors/${Uri.encodeQueryComponent(nsdInfoId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSolNetworkPackageOutput.fromJson(response);
@@ -566,7 +566,7 @@ class TelcoNetworkBuilder {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sol/nsd/v1/ns_descriptors/${Uri.encodeComponent(nsdInfoId)}/nsd_content',
+          '/sol/nsd/v1/ns_descriptors/${Uri.encodeQueryComponent(nsdInfoId).replaceAll('+', '%20')}/nsd_content',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -600,7 +600,7 @@ class TelcoNetworkBuilder {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sol/nsd/v1/ns_descriptors/${Uri.encodeComponent(nsdInfoId)}/nsd',
+          '/sol/nsd/v1/ns_descriptors/${Uri.encodeQueryComponent(nsdInfoId).replaceAll('+', '%20')}/nsd',
       exceptionFnMap: _exceptionFns,
     );
     return GetSolNetworkPackageDescriptorOutput(
@@ -664,7 +664,7 @@ class TelcoNetworkBuilder {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/sol/nslcm/v1/ns_instances/${Uri.encodeComponent(nsInstanceId)}/instantiate',
+          '/sol/nslcm/v1/ns_instances/${Uri.encodeQueryComponent(nsInstanceId).replaceAll('+', '%20')}/instantiate',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -886,7 +886,8 @@ class TelcoNetworkBuilder {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceOutput.fromJson(response);
@@ -925,7 +926,7 @@ class TelcoNetworkBuilder {
       payload: file,
       method: 'PUT',
       requestUri:
-          '/sol/vnfpkgm/v1/vnf_packages/${Uri.encodeComponent(vnfPkgId)}/package_content',
+          '/sol/vnfpkgm/v1/vnf_packages/${Uri.encodeQueryComponent(vnfPkgId).replaceAll('+', '%20')}/package_content',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -964,7 +965,7 @@ class TelcoNetworkBuilder {
       payload: file,
       method: 'PUT',
       requestUri:
-          '/sol/nsd/v1/ns_descriptors/${Uri.encodeComponent(nsdInfoId)}/nsd_content',
+          '/sol/nsd/v1/ns_descriptors/${Uri.encodeQueryComponent(nsdInfoId).replaceAll('+', '%20')}/nsd_content',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1000,7 +1001,8 @@ class TelcoNetworkBuilder {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1039,7 +1041,7 @@ class TelcoNetworkBuilder {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/sol/nslcm/v1/ns_instances/${Uri.encodeComponent(nsInstanceId)}/terminate',
+          '/sol/nslcm/v1/ns_instances/${Uri.encodeQueryComponent(nsInstanceId).replaceAll('+', '%20')}/terminate',
       exceptionFnMap: _exceptionFns,
     );
     return TerminateSolNetworkInstanceOutput.fromJson(response);
@@ -1072,7 +1074,8 @@ class TelcoNetworkBuilder {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1107,7 +1110,7 @@ class TelcoNetworkBuilder {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/sol/vnfpkgm/v1/vnf_packages/${Uri.encodeComponent(vnfPkgId)}',
+          '/sol/vnfpkgm/v1/vnf_packages/${Uri.encodeQueryComponent(vnfPkgId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSolFunctionPackageOutput.fromJson(response);
@@ -1156,7 +1159,7 @@ class TelcoNetworkBuilder {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/sol/nslcm/v1/ns_instances/${Uri.encodeComponent(nsInstanceId)}/update',
+          '/sol/nslcm/v1/ns_instances/${Uri.encodeQueryComponent(nsInstanceId).replaceAll('+', '%20')}/update',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSolNetworkInstanceOutput.fromJson(response);
@@ -1196,7 +1199,7 @@ class TelcoNetworkBuilder {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/sol/nsd/v1/ns_descriptors/${Uri.encodeComponent(nsdInfoId)}',
+          '/sol/nsd/v1/ns_descriptors/${Uri.encodeQueryComponent(nsdInfoId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSolNetworkPackageOutput.fromJson(response);
@@ -1238,7 +1241,7 @@ class TelcoNetworkBuilder {
       payload: file,
       method: 'PUT',
       requestUri:
-          '/sol/vnfpkgm/v1/vnf_packages/${Uri.encodeComponent(vnfPkgId)}/package_content/validate',
+          '/sol/vnfpkgm/v1/vnf_packages/${Uri.encodeQueryComponent(vnfPkgId).replaceAll('+', '%20')}/package_content/validate',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1280,7 +1283,7 @@ class TelcoNetworkBuilder {
       payload: file,
       method: 'PUT',
       requestUri:
-          '/sol/nsd/v1/ns_descriptors/${Uri.encodeComponent(nsdInfoId)}/nsd_content/validate',
+          '/sol/nsd/v1/ns_descriptors/${Uri.encodeQueryComponent(nsdInfoId).replaceAll('+', '%20')}/nsd_content/validate',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );

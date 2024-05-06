@@ -76,7 +76,7 @@ class MainframeModernization {
       payload: null,
       method: 'POST',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/batch-job-executions/${Uri.encodeComponent(executionId)}/cancel',
+          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/batch-job-executions/${Uri.encodeQueryComponent(executionId).replaceAll('+', '%20')}/cancel',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -181,7 +181,7 @@ class MainframeModernization {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/dataset-import-task',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/dataset-import-task',
       exceptionFnMap: _exceptionFns,
     );
     return CreateDataSetImportTaskResponse.fromJson(response);
@@ -237,7 +237,7 @@ class MainframeModernization {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/deployments',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/deployments',
       exceptionFnMap: _exceptionFns,
     );
     return CreateDeploymentResponse.fromJson(response);
@@ -362,7 +362,8 @@ class MainframeModernization {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -394,7 +395,7 @@ class MainframeModernization {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/environment/${Uri.encodeComponent(environmentId)}',
+          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/environment/${Uri.encodeQueryComponent(environmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -417,7 +418,8 @@ class MainframeModernization {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/environments/${Uri.encodeComponent(environmentId)}',
+      requestUri:
+          '/environments/${Uri.encodeQueryComponent(environmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -438,7 +440,8 @@ class MainframeModernization {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetApplicationResponse.fromJson(response);
@@ -472,7 +475,7 @@ class MainframeModernization {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/versions/${Uri.encodeComponent(applicationVersion.toString())}',
+          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(applicationVersion.toString()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetApplicationVersionResponse.fromJson(response);
@@ -500,7 +503,7 @@ class MainframeModernization {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/batch-job-executions/${Uri.encodeComponent(executionId)}',
+          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/batch-job-executions/${Uri.encodeQueryComponent(executionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetBatchJobExecutionResponse.fromJson(response);
@@ -528,7 +531,7 @@ class MainframeModernization {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/datasets/${Uri.encodeComponent(dataSetName)}',
+          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/datasets/${Uri.encodeQueryComponent(dataSetName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDataSetDetailsResponse.fromJson(response);
@@ -557,7 +560,7 @@ class MainframeModernization {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/dataset-import-tasks/${Uri.encodeComponent(taskId)}',
+          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/dataset-import-tasks/${Uri.encodeQueryComponent(taskId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDataSetImportTaskResponse.fromJson(response);
@@ -584,7 +587,7 @@ class MainframeModernization {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/deployments/${Uri.encodeComponent(deploymentId)}',
+          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/deployments/${Uri.encodeQueryComponent(deploymentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDeploymentResponse.fromJson(response);
@@ -606,7 +609,8 @@ class MainframeModernization {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/environments/${Uri.encodeComponent(environmentId)}',
+      requestUri:
+          '/environments/${Uri.encodeQueryComponent(environmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetEnvironmentResponse.fromJson(response);
@@ -649,7 +653,7 @@ class MainframeModernization {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/versions',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/versions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -752,7 +756,7 @@ class MainframeModernization {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/batch-job-definitions',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/batch-job-definitions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -823,7 +827,7 @@ class MainframeModernization {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/batch-job-executions',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/batch-job-executions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -867,7 +871,7 @@ class MainframeModernization {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/dataset-import-tasks',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/dataset-import-tasks',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -923,7 +927,7 @@ class MainframeModernization {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/datasets',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/datasets',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -970,7 +974,7 @@ class MainframeModernization {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/deployments',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/deployments',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1083,7 +1087,8 @@ class MainframeModernization {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1106,7 +1111,8 @@ class MainframeModernization {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}/start',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/start',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1146,7 +1152,7 @@ class MainframeModernization {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/batch-job',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/batch-job',
       exceptionFnMap: _exceptionFns,
     );
     return StartBatchJobResponse.fromJson(response);
@@ -1179,7 +1185,8 @@ class MainframeModernization {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}/stop',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/stop',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1208,7 +1215,8 @@ class MainframeModernization {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1236,7 +1244,8 @@ class MainframeModernization {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1284,7 +1293,8 @@ class MainframeModernization {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateApplicationResponse.fromJson(response);
@@ -1351,7 +1361,8 @@ class MainframeModernization {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/environments/${Uri.encodeComponent(environmentId)}',
+      requestUri:
+          '/environments/${Uri.encodeQueryComponent(environmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateEnvironmentResponse.fromJson(response);

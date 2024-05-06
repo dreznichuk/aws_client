@@ -253,7 +253,8 @@ class Amplify {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/apps/${Uri.encodeComponent(appId)}/backendenvironments',
+      requestUri:
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/backendenvironments',
       exceptionFnMap: _exceptionFns,
     );
     return CreateBackendEnvironmentResult.fromJson(response);
@@ -377,7 +378,8 @@ class Amplify {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/apps/${Uri.encodeComponent(appId)}/branches',
+      requestUri:
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/branches',
       exceptionFnMap: _exceptionFns,
     );
     return CreateBranchResult.fromJson(response);
@@ -414,7 +416,7 @@ class Amplify {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/apps/${Uri.encodeComponent(appId)}/branches/${Uri.encodeComponent(branchName)}/deployments',
+          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}/deployments',
       exceptionFnMap: _exceptionFns,
     );
     return CreateDeploymentResult.fromJson(response);
@@ -469,7 +471,8 @@ class Amplify {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/apps/${Uri.encodeComponent(appId)}/domains',
+      requestUri:
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/domains',
       exceptionFnMap: _exceptionFns,
     );
     return CreateDomainAssociationResult.fromJson(response);
@@ -504,7 +507,8 @@ class Amplify {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/apps/${Uri.encodeComponent(appId)}/webhooks',
+      requestUri:
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/webhooks',
       exceptionFnMap: _exceptionFns,
     );
     return CreateWebhookResult.fromJson(response);
@@ -526,7 +530,8 @@ class Amplify {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/apps/${Uri.encodeComponent(appId)}',
+      requestUri:
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteAppResult.fromJson(response);
@@ -553,7 +558,7 @@ class Amplify {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/apps/${Uri.encodeComponent(appId)}/backendenvironments/${Uri.encodeComponent(environmentName)}',
+          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/backendenvironments/${Uri.encodeQueryComponent(environmentName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteBackendEnvironmentResult.fromJson(response);
@@ -580,7 +585,7 @@ class Amplify {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/apps/${Uri.encodeComponent(appId)}/branches/${Uri.encodeComponent(branchName)}',
+          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteBranchResult.fromJson(response);
@@ -607,7 +612,7 @@ class Amplify {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/apps/${Uri.encodeComponent(appId)}/domains/${Uri.encodeComponent(domainName)}',
+          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteDomainAssociationResult.fromJson(response);
@@ -638,7 +643,7 @@ class Amplify {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/apps/${Uri.encodeComponent(appId)}/branches/${Uri.encodeComponent(branchName)}/jobs/${Uri.encodeComponent(jobId)}',
+          '/apps/%2524%257BUri.encodeQueryComponent%2528appId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/branches/%24%7BUri.encodeQueryComponent%28branchName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteJobResult.fromJson(response);
@@ -660,7 +665,8 @@ class Amplify {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/webhooks/${Uri.encodeComponent(webhookId)}',
+      requestUri:
+          '/webhooks/${Uri.encodeQueryComponent(webhookId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteWebhookResult.fromJson(response);
@@ -701,7 +707,8 @@ class Amplify {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/apps/${Uri.encodeComponent(appId)}/accesslogs',
+      requestUri:
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/accesslogs',
       exceptionFnMap: _exceptionFns,
     );
     return GenerateAccessLogsResult.fromJson(response);
@@ -722,7 +729,8 @@ class Amplify {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/apps/${Uri.encodeComponent(appId)}',
+      requestUri:
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetAppResult.fromJson(response);
@@ -744,7 +752,8 @@ class Amplify {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/artifacts/${Uri.encodeComponent(artifactId)}',
+      requestUri:
+          '/artifacts/${Uri.encodeQueryComponent(artifactId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetArtifactUrlResult.fromJson(response);
@@ -770,7 +779,7 @@ class Amplify {
       payload: null,
       method: 'GET',
       requestUri:
-          '/apps/${Uri.encodeComponent(appId)}/backendenvironments/${Uri.encodeComponent(environmentName)}',
+          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/backendenvironments/${Uri.encodeQueryComponent(environmentName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetBackendEnvironmentResult.fromJson(response);
@@ -796,7 +805,7 @@ class Amplify {
       payload: null,
       method: 'GET',
       requestUri:
-          '/apps/${Uri.encodeComponent(appId)}/branches/${Uri.encodeComponent(branchName)}',
+          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetBranchResult.fromJson(response);
@@ -822,7 +831,7 @@ class Amplify {
       payload: null,
       method: 'GET',
       requestUri:
-          '/apps/${Uri.encodeComponent(appId)}/domains/${Uri.encodeComponent(domainName)}',
+          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDomainAssociationResult.fromJson(response);
@@ -853,7 +862,7 @@ class Amplify {
       payload: null,
       method: 'GET',
       requestUri:
-          '/apps/${Uri.encodeComponent(appId)}/branches/${Uri.encodeComponent(branchName)}/jobs/${Uri.encodeComponent(jobId)}',
+          '/apps/%2524%257BUri.encodeQueryComponent%2528appId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/branches/%24%7BUri.encodeQueryComponent%28branchName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetJobResult.fromJson(response);
@@ -876,7 +885,8 @@ class Amplify {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/webhooks/${Uri.encodeComponent(webhookId)}',
+      requestUri:
+          '/webhooks/${Uri.encodeQueryComponent(webhookId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetWebhookResult.fromJson(response);
@@ -962,7 +972,7 @@ class Amplify {
       payload: null,
       method: 'GET',
       requestUri:
-          '/apps/${Uri.encodeComponent(appId)}/branches/${Uri.encodeComponent(branchName)}/jobs/${Uri.encodeComponent(jobId)}/artifacts',
+          '/apps/%2524%257BUri.encodeQueryComponent%2528appId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/branches/%24%7BUri.encodeQueryComponent%28branchName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}/artifacts',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1008,7 +1018,8 @@ class Amplify {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/apps/${Uri.encodeComponent(appId)}/backendenvironments',
+      requestUri:
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/backendenvironments',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1049,7 +1060,8 @@ class Amplify {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/apps/${Uri.encodeComponent(appId)}/branches',
+      requestUri:
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/branches',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1090,7 +1102,8 @@ class Amplify {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/apps/${Uri.encodeComponent(appId)}/domains',
+      requestUri:
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/domains',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1137,7 +1150,7 @@ class Amplify {
       payload: null,
       method: 'GET',
       requestUri:
-          '/apps/${Uri.encodeComponent(appId)}/branches/${Uri.encodeComponent(branchName)}/jobs',
+          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}/jobs',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1158,7 +1171,8 @@ class Amplify {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1199,7 +1213,8 @@ class Amplify {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/apps/${Uri.encodeComponent(appId)}/webhooks',
+      requestUri:
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/webhooks',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1243,7 +1258,7 @@ class Amplify {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/apps/${Uri.encodeComponent(appId)}/branches/${Uri.encodeComponent(branchName)}/deployments/start',
+          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}/deployments/start',
       exceptionFnMap: _exceptionFns,
     );
     return StartDeploymentResult.fromJson(response);
@@ -1307,7 +1322,7 @@ class Amplify {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/apps/${Uri.encodeComponent(appId)}/branches/${Uri.encodeComponent(branchName)}/jobs',
+          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}/jobs',
       exceptionFnMap: _exceptionFns,
     );
     return StartJobResult.fromJson(response);
@@ -1338,7 +1353,7 @@ class Amplify {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/apps/${Uri.encodeComponent(appId)}/branches/${Uri.encodeComponent(branchName)}/jobs/${Uri.encodeComponent(jobId)}/stop',
+          '/apps/%2524%257BUri.encodeQueryComponent%2528appId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/branches/%24%7BUri.encodeQueryComponent%28branchName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}/stop',
       exceptionFnMap: _exceptionFns,
     );
     return StopJobResult.fromJson(response);
@@ -1365,7 +1380,8 @@ class Amplify {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1391,7 +1407,8 @@ class Amplify {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1553,7 +1570,8 @@ class Amplify {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/apps/${Uri.encodeComponent(appId)}',
+      requestUri:
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAppResult.fromJson(response);
@@ -1671,7 +1689,7 @@ class Amplify {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/apps/${Uri.encodeComponent(appId)}/branches/${Uri.encodeComponent(branchName)}',
+          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBranchResult.fromJson(response);
@@ -1724,7 +1742,7 @@ class Amplify {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/apps/${Uri.encodeComponent(appId)}/domains/${Uri.encodeComponent(domainName)}',
+          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDomainAssociationResult.fromJson(response);
@@ -1758,7 +1776,8 @@ class Amplify {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/webhooks/${Uri.encodeComponent(webhookId)}',
+      requestUri:
+          '/webhooks/${Uri.encodeQueryComponent(webhookId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateWebhookResult.fromJson(response);

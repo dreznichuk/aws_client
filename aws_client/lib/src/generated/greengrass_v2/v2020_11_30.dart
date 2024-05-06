@@ -137,7 +137,7 @@ class GreengrassV2 {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/greengrass/v2/coreDevices/${Uri.encodeComponent(coreDeviceThingName)}/associateClientDevices',
+          '/greengrass/v2/coreDevices/${Uri.encodeQueryComponent(coreDeviceThingName).replaceAll('+', '%20')}/associateClientDevices',
       exceptionFnMap: _exceptionFns,
     );
     return BatchAssociateClientDeviceWithCoreDeviceResponse.fromJson(response);
@@ -171,7 +171,7 @@ class GreengrassV2 {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/greengrass/v2/coreDevices/${Uri.encodeComponent(coreDeviceThingName)}/disassociateClientDevices',
+          '/greengrass/v2/coreDevices/${Uri.encodeQueryComponent(coreDeviceThingName).replaceAll('+', '%20')}/disassociateClientDevices',
       exceptionFnMap: _exceptionFns,
     );
     return BatchDisassociateClientDeviceFromCoreDeviceResponse.fromJson(
@@ -198,7 +198,7 @@ class GreengrassV2 {
       payload: null,
       method: 'POST',
       requestUri:
-          '/greengrass/v2/deployments/${Uri.encodeComponent(deploymentId)}/cancel',
+          '/greengrass/v2/deployments/${Uri.encodeQueryComponent(deploymentId).replaceAll('+', '%20')}/cancel',
       exceptionFnMap: _exceptionFns,
     );
     return CancelDeploymentResponse.fromJson(response);
@@ -455,7 +455,8 @@ class GreengrassV2 {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/greengrass/v2/components/${Uri.encodeComponent(arn)}',
+      requestUri:
+          '/greengrass/v2/components/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -483,7 +484,7 @@ class GreengrassV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/greengrass/v2/coreDevices/${Uri.encodeComponent(coreDeviceThingName)}',
+          '/greengrass/v2/coreDevices/${Uri.encodeQueryComponent(coreDeviceThingName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -513,7 +514,7 @@ class GreengrassV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/greengrass/v2/deployments/${Uri.encodeComponent(deploymentId)}',
+          '/greengrass/v2/deployments/${Uri.encodeQueryComponent(deploymentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -537,7 +538,7 @@ class GreengrassV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/greengrass/v2/components/${Uri.encodeComponent(arn)}/metadata',
+          '/greengrass/v2/components/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}/metadata',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeComponentResponse.fromJson(response);
@@ -589,7 +590,8 @@ class GreengrassV2 {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/greengrass/v2/components/${Uri.encodeComponent(arn)}',
+      requestUri:
+          '/greengrass/v2/components/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -629,7 +631,7 @@ class GreengrassV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/greengrass/v2/components/${Uri.encodeComponent(arn)}/artifacts/${artifactName.split('/').map(Uri.encodeComponent).join('/')}',
+          '/greengrass/v2/components/%24%7BUri.encodeQueryComponent%28arn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/artifacts/${artifactName.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetComponentVersionArtifactResponse.fromJson(response);
@@ -660,7 +662,7 @@ class GreengrassV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/greengrass/things/${Uri.encodeComponent(thingName)}/connectivityInfo',
+          '/greengrass/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/connectivityInfo',
       exceptionFnMap: _exceptionFns,
     );
     return GetConnectivityInfoResponse.fromJson(response);
@@ -715,7 +717,7 @@ class GreengrassV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/greengrass/v2/coreDevices/${Uri.encodeComponent(coreDeviceThingName)}',
+          '/greengrass/v2/coreDevices/${Uri.encodeQueryComponent(coreDeviceThingName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetCoreDeviceResponse.fromJson(response);
@@ -739,7 +741,7 @@ class GreengrassV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/greengrass/v2/deployments/${Uri.encodeComponent(deploymentId)}',
+          '/greengrass/v2/deployments/${Uri.encodeQueryComponent(deploymentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDeploymentResponse.fromJson(response);
@@ -800,7 +802,7 @@ class GreengrassV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/greengrass/v2/coreDevices/${Uri.encodeComponent(coreDeviceThingName)}/associatedClientDevices',
+          '/greengrass/v2/coreDevices/${Uri.encodeQueryComponent(coreDeviceThingName).replaceAll('+', '%20')}/associatedClientDevices',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -845,7 +847,7 @@ class GreengrassV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/greengrass/v2/components/${Uri.encodeComponent(arn)}/versions',
+          '/greengrass/v2/components/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}/versions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1096,7 +1098,7 @@ class GreengrassV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/greengrass/v2/coreDevices/${Uri.encodeComponent(coreDeviceThingName)}/effectiveDeployments',
+          '/greengrass/v2/coreDevices/${Uri.encodeQueryComponent(coreDeviceThingName).replaceAll('+', '%20')}/effectiveDeployments',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1193,7 +1195,7 @@ class GreengrassV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/greengrass/v2/coreDevices/${Uri.encodeComponent(coreDeviceThingName)}/installedComponents',
+          '/greengrass/v2/coreDevices/${Uri.encodeQueryComponent(coreDeviceThingName).replaceAll('+', '%20')}/installedComponents',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1216,7 +1218,8 @@ class GreengrassV2 {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1303,7 +1306,8 @@ class GreengrassV2 {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1331,7 +1335,8 @@ class GreengrassV2 {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1369,7 +1374,7 @@ class GreengrassV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/greengrass/things/${Uri.encodeComponent(thingName)}/connectivityInfo',
+          '/greengrass/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/connectivityInfo',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateConnectivityInfoResponse.fromJson(response);

@@ -117,7 +117,8 @@ class AccessAnalyzer {
     final response = await _protocol.send(
       payload: null,
       method: 'PUT',
-      requestUri: '/policy/generation/${Uri.encodeComponent(jobId)}',
+      requestUri:
+          '/policy/generation/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -259,7 +260,8 @@ class AccessAnalyzer {
     await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/analyzer/${Uri.encodeComponent(analyzerName)}/archive-rule',
+      requestUri:
+          '/analyzer/${Uri.encodeQueryComponent(analyzerName).replaceAll('+', '%20')}/archive-rule',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -290,7 +292,8 @@ class AccessAnalyzer {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/analyzer/${Uri.encodeComponent(analyzerName)}',
+      requestUri:
+          '/analyzer/${Uri.encodeQueryComponent(analyzerName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -324,7 +327,7 @@ class AccessAnalyzer {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/analyzer/${Uri.encodeComponent(analyzerName)}/archive-rule/${Uri.encodeComponent(ruleName)}',
+          '/analyzer/%24%7BUri.encodeQueryComponent%28analyzerName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/archive-rule/${Uri.encodeQueryComponent(ruleName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -355,7 +358,8 @@ class AccessAnalyzer {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/access-preview/${Uri.encodeComponent(accessPreviewId)}',
+      requestUri:
+          '/access-preview/${Uri.encodeQueryComponent(accessPreviewId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -411,7 +415,8 @@ class AccessAnalyzer {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/analyzer/${Uri.encodeComponent(analyzerName)}',
+      requestUri:
+          '/analyzer/${Uri.encodeQueryComponent(analyzerName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetAnalyzerResponse.fromJson(response);
@@ -443,7 +448,7 @@ class AccessAnalyzer {
       payload: null,
       method: 'GET',
       requestUri:
-          '/analyzer/${Uri.encodeComponent(analyzerName)}/archive-rule/${Uri.encodeComponent(ruleName)}',
+          '/analyzer/%24%7BUri.encodeQueryComponent%28analyzerName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/archive-rule/${Uri.encodeQueryComponent(ruleName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetArchiveRuleResponse.fromJson(response);
@@ -474,7 +479,8 @@ class AccessAnalyzer {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/finding/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/finding/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -526,7 +532,8 @@ class AccessAnalyzer {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/policy/generation/${Uri.encodeComponent(jobId)}',
+      requestUri:
+          '/policy/generation/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -575,7 +582,8 @@ class AccessAnalyzer {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/access-preview/${Uri.encodeComponent(accessPreviewId)}',
+      requestUri:
+          '/access-preview/${Uri.encodeQueryComponent(accessPreviewId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListAccessPreviewFindingsResponse.fromJson(response);
@@ -724,7 +732,8 @@ class AccessAnalyzer {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/analyzer/${Uri.encodeComponent(analyzerName)}/archive-rule',
+      requestUri:
+          '/analyzer/${Uri.encodeQueryComponent(analyzerName).replaceAll('+', '%20')}/archive-rule',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -842,7 +851,8 @@ class AccessAnalyzer {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -958,7 +968,8 @@ class AccessAnalyzer {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -986,7 +997,8 @@ class AccessAnalyzer {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1026,7 +1038,7 @@ class AccessAnalyzer {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/analyzer/${Uri.encodeComponent(analyzerName)}/archive-rule/${Uri.encodeComponent(ruleName)}',
+          '/analyzer/%24%7BUri.encodeQueryComponent%28analyzerName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/archive-rule/${Uri.encodeQueryComponent(ruleName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

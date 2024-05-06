@@ -95,7 +95,8 @@ class LexModelBuilding {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/bots/${Uri.encodeComponent(name)}/versions',
+      requestUri:
+          '/bots/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/versions',
       exceptionFnMap: _exceptionFns,
     );
     return CreateBotVersionResponse.fromJson(response);
@@ -145,7 +146,8 @@ class LexModelBuilding {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/intents/${Uri.encodeComponent(name)}/versions',
+      requestUri:
+          '/intents/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/versions',
       exceptionFnMap: _exceptionFns,
     );
     return CreateIntentVersionResponse.fromJson(response);
@@ -196,7 +198,8 @@ class LexModelBuilding {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/slottypes/${Uri.encodeComponent(name)}/versions',
+      requestUri:
+          '/slottypes/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/versions',
       exceptionFnMap: _exceptionFns,
     );
     return CreateSlotTypeVersionResponse.fromJson(response);
@@ -238,7 +241,8 @@ class LexModelBuilding {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/bots/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/bots/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -274,7 +278,7 @@ class LexModelBuilding {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/bots/${Uri.encodeComponent(botName)}/aliases/${Uri.encodeComponent(name)}',
+          '/bots/%24%7BUri.encodeQueryComponent%28botName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/aliases/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -309,7 +313,7 @@ class LexModelBuilding {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/bots/${Uri.encodeComponent(botName)}/aliases/${Uri.encodeComponent(botAlias)}/channels/${Uri.encodeComponent(name)}',
+          '/bots/%24%7BUri.encodeQueryComponent%28botName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/aliases/%2524%257BUri.encodeQueryComponent%2528botAlias%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/channels/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -342,7 +346,7 @@ class LexModelBuilding {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/bots/${Uri.encodeComponent(name)}/versions/${Uri.encodeComponent(version)}',
+          '/bots/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(version).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -380,7 +384,8 @@ class LexModelBuilding {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/intents/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/intents/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -413,7 +418,7 @@ class LexModelBuilding {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/intents/${Uri.encodeComponent(name)}/versions/${Uri.encodeComponent(version)}',
+          '/intents/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(version).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -451,7 +456,8 @@ class LexModelBuilding {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/slottypes/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/slottypes/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -484,7 +490,7 @@ class LexModelBuilding {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/slottypes/${Uri.encodeComponent(name)}/version/${Uri.encodeComponent(version)}',
+          '/slottypes/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/version/${Uri.encodeQueryComponent(version).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -529,7 +535,7 @@ class LexModelBuilding {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/bots/${Uri.encodeComponent(botName)}/utterances/${Uri.encodeComponent(userId)}',
+          '/bots/%24%7BUri.encodeQueryComponent%28botName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/utterances/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -558,7 +564,7 @@ class LexModelBuilding {
       payload: null,
       method: 'GET',
       requestUri:
-          '/bots/${Uri.encodeComponent(name)}/versions/${Uri.encodeComponent(versionOrAlias)}',
+          '/bots/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionOrAlias).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetBotResponse.fromJson(response);
@@ -588,7 +594,7 @@ class LexModelBuilding {
       payload: null,
       method: 'GET',
       requestUri:
-          '/bots/${Uri.encodeComponent(botName)}/aliases/${Uri.encodeComponent(name)}',
+          '/bots/%24%7BUri.encodeQueryComponent%28botName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/aliases/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetBotAliasResponse.fromJson(response);
@@ -640,7 +646,8 @@ class LexModelBuilding {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/bots/${Uri.encodeComponent(botName)}/aliases/',
+      requestUri:
+          '/bots/${Uri.encodeQueryComponent(botName).replaceAll('+', '%20')}/aliases/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -677,7 +684,7 @@ class LexModelBuilding {
       payload: null,
       method: 'GET',
       requestUri:
-          '/bots/${Uri.encodeComponent(botName)}/aliases/${Uri.encodeComponent(botAlias)}/channels/${Uri.encodeComponent(name)}',
+          '/bots/%24%7BUri.encodeQueryComponent%28botName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/aliases/%2524%257BUri.encodeQueryComponent%2528botAlias%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/channels/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetBotChannelAssociationResponse.fromJson(response);
@@ -737,7 +744,7 @@ class LexModelBuilding {
       payload: null,
       method: 'GET',
       requestUri:
-          '/bots/${Uri.encodeComponent(botName)}/aliases/${Uri.encodeComponent(botAlias)}/channels/',
+          '/bots/${Uri.encodeQueryComponent(botName).replaceAll('+', '%20')}/aliases/%24%7BUri.encodeQueryComponent%28botAlias%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/channels/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -794,7 +801,8 @@ class LexModelBuilding {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/bots/${Uri.encodeComponent(name)}/versions/',
+      requestUri:
+          '/bots/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/versions/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -884,7 +892,8 @@ class LexModelBuilding {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/builtins/intents/${Uri.encodeComponent(signature)}',
+      requestUri:
+          '/builtins/intents/${Uri.encodeQueryComponent(signature).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetBuiltinIntentResponse.fromJson(response);
@@ -1061,7 +1070,8 @@ class LexModelBuilding {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/imports/${Uri.encodeComponent(importId)}',
+      requestUri:
+          '/imports/${Uri.encodeQueryComponent(importId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetImportResponse.fromJson(response);
@@ -1091,7 +1101,7 @@ class LexModelBuilding {
       payload: null,
       method: 'GET',
       requestUri:
-          '/intents/${Uri.encodeComponent(name)}/versions/${Uri.encodeComponent(version)}',
+          '/intents/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(version).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetIntentResponse.fromJson(response);
@@ -1147,7 +1157,8 @@ class LexModelBuilding {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/intents/${Uri.encodeComponent(name)}/versions/',
+      requestUri:
+          '/intents/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/versions/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1233,7 +1244,8 @@ class LexModelBuilding {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/migrations/${Uri.encodeComponent(migrationId)}',
+      requestUri:
+          '/migrations/${Uri.encodeQueryComponent(migrationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetMigrationResponse.fromJson(response);
@@ -1326,7 +1338,7 @@ class LexModelBuilding {
       payload: null,
       method: 'GET',
       requestUri:
-          '/slottypes/${Uri.encodeComponent(name)}/versions/${Uri.encodeComponent(version)}',
+          '/slottypes/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(version).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSlotTypeResponse.fromJson(response);
@@ -1382,7 +1394,8 @@ class LexModelBuilding {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/slottypes/${Uri.encodeComponent(name)}/versions/',
+      requestUri:
+          '/slottypes/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/versions/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1508,7 +1521,7 @@ class LexModelBuilding {
       payload: null,
       method: 'GET',
       requestUri:
-          '/bots/${Uri.encodeComponent(botName)}/utterances?view=aggregation',
+          '/bots/${Uri.encodeQueryComponent(botName).replaceAll('+', '%20')}/utterances?view=aggregation',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1531,7 +1544,8 @@ class LexModelBuilding {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1881,7 +1895,8 @@ class LexModelBuilding {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/bots/${Uri.encodeComponent(name)}/versions/%24LATEST',
+      requestUri:
+          '/bots/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/versions/%24LATEST',
       exceptionFnMap: _exceptionFns,
     );
     return PutBotResponse.fromJson(response);
@@ -1954,7 +1969,7 @@ class LexModelBuilding {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/bots/${Uri.encodeComponent(botName)}/aliases/${Uri.encodeComponent(name)}',
+          '/bots/%24%7BUri.encodeQueryComponent%28botName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/aliases/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return PutBotAliasResponse.fromJson(response);
@@ -2224,7 +2239,8 @@ class LexModelBuilding {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/intents/${Uri.encodeComponent(name)}/versions/%24LATEST',
+      requestUri:
+          '/intents/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/versions/%24LATEST',
       exceptionFnMap: _exceptionFns,
     );
     return PutIntentResponse.fromJson(response);
@@ -2358,7 +2374,8 @@ class LexModelBuilding {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/slottypes/${Uri.encodeComponent(name)}/versions/%24LATEST',
+      requestUri:
+          '/slottypes/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/versions/%24LATEST',
       exceptionFnMap: _exceptionFns,
     );
     return PutSlotTypeResponse.fromJson(response);
@@ -2532,7 +2549,8 @@ class LexModelBuilding {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2561,7 +2579,8 @@ class LexModelBuilding {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

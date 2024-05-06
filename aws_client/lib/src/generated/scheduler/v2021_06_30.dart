@@ -174,7 +174,8 @@ class EventBridgeScheduler {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/schedules/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/schedules/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateScheduleOutput.fromJson(response);
@@ -210,7 +211,8 @@ class EventBridgeScheduler {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/schedule-groups/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/schedule-groups/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateScheduleGroupOutput.fromJson(response);
@@ -247,7 +249,8 @@ class EventBridgeScheduler {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/schedules/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/schedules/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -287,7 +290,8 @@ class EventBridgeScheduler {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/schedule-groups/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/schedule-groups/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -317,7 +321,8 @@ class EventBridgeScheduler {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/schedules/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/schedules/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -339,7 +344,8 @@ class EventBridgeScheduler {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/schedule-groups/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/schedule-groups/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetScheduleGroupOutput.fromJson(response);
@@ -459,7 +465,8 @@ class EventBridgeScheduler {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceOutput.fromJson(response);
@@ -490,7 +497,8 @@ class EventBridgeScheduler {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -520,7 +528,8 @@ class EventBridgeScheduler {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -656,7 +665,8 @@ class EventBridgeScheduler {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/schedules/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/schedules/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateScheduleOutput.fromJson(response);

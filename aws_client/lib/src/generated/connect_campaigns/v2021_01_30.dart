@@ -94,7 +94,8 @@ class ConnectCampaign {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/campaigns/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/campaigns/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -114,7 +115,7 @@ class ConnectCampaign {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/connect-instance/${Uri.encodeComponent(connectInstanceId)}/config',
+          '/connect-instance/${Uri.encodeQueryComponent(connectInstanceId).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -134,7 +135,7 @@ class ConnectCampaign {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/connect-instance/${Uri.encodeComponent(connectInstanceId)}/onboarding',
+          '/connect-instance/${Uri.encodeQueryComponent(connectInstanceId).replaceAll('+', '%20')}/onboarding',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -151,7 +152,8 @@ class ConnectCampaign {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/campaigns/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/campaigns/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeCampaignResponse.fromJson(response);
@@ -170,7 +172,8 @@ class ConnectCampaign {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/campaigns/${Uri.encodeComponent(id)}/state',
+      requestUri:
+          '/campaigns/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/state',
       exceptionFnMap: _exceptionFns,
     );
     return GetCampaignStateResponse.fromJson(response);
@@ -210,7 +213,7 @@ class ConnectCampaign {
       payload: null,
       method: 'GET',
       requestUri:
-          '/connect-instance/${Uri.encodeComponent(connectInstanceId)}/config',
+          '/connect-instance/${Uri.encodeQueryComponent(connectInstanceId).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     return GetConnectInstanceConfigResponse.fromJson(response);
@@ -230,7 +233,7 @@ class ConnectCampaign {
       payload: null,
       method: 'GET',
       requestUri:
-          '/connect-instance/${Uri.encodeComponent(connectInstanceId)}/onboarding',
+          '/connect-instance/${Uri.encodeQueryComponent(connectInstanceId).replaceAll('+', '%20')}/onboarding',
       exceptionFnMap: _exceptionFns,
     );
     return GetInstanceOnboardingJobStatusResponse.fromJson(response);
@@ -280,7 +283,8 @@ class ConnectCampaign {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(arn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -301,7 +305,8 @@ class ConnectCampaign {
     await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/campaigns/${Uri.encodeComponent(id)}/pause',
+      requestUri:
+          '/campaigns/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/pause',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -326,7 +331,8 @@ class ConnectCampaign {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/campaigns/${Uri.encodeComponent(id)}/dial-requests',
+      requestUri:
+          '/campaigns/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/dial-requests',
       exceptionFnMap: _exceptionFns,
     );
     return PutDialRequestBatchResponse.fromJson(response);
@@ -347,7 +353,8 @@ class ConnectCampaign {
     await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/campaigns/${Uri.encodeComponent(id)}/resume',
+      requestUri:
+          '/campaigns/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/resume',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -367,7 +374,8 @@ class ConnectCampaign {
     await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/campaigns/${Uri.encodeComponent(id)}/start',
+      requestUri:
+          '/campaigns/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/start',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -391,7 +399,7 @@ class ConnectCampaign {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/connect-instance/${Uri.encodeComponent(connectInstanceId)}/onboarding',
+          '/connect-instance/${Uri.encodeQueryComponent(connectInstanceId).replaceAll('+', '%20')}/onboarding',
       exceptionFnMap: _exceptionFns,
     );
     return StartInstanceOnboardingJobResponse.fromJson(response);
@@ -412,7 +420,8 @@ class ConnectCampaign {
     await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/campaigns/${Uri.encodeComponent(id)}/stop',
+      requestUri:
+          '/campaigns/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/stop',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -434,7 +443,8 @@ class ConnectCampaign {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(arn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -456,7 +466,8 @@ class ConnectCampaign {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(arn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -479,7 +490,8 @@ class ConnectCampaign {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/campaigns/${Uri.encodeComponent(id)}/dialer-config',
+      requestUri:
+          '/campaigns/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/dialer-config',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -501,7 +513,8 @@ class ConnectCampaign {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/campaigns/${Uri.encodeComponent(id)}/name',
+      requestUri:
+          '/campaigns/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/name',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -531,7 +544,8 @@ class ConnectCampaign {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/campaigns/${Uri.encodeComponent(id)}/outbound-call-config',
+      requestUri:
+          '/campaigns/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/outbound-call-config',
       exceptionFnMap: _exceptionFns,
     );
   }

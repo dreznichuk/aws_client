@@ -88,7 +88,8 @@ class Synthetics {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/group/${Uri.encodeComponent(groupIdentifier)}/associate',
+      requestUri:
+          '/group/${Uri.encodeQueryComponent(groupIdentifier).replaceAll('+', '%20')}/associate',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -386,7 +387,8 @@ class Synthetics {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/canary/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/canary/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -414,7 +416,8 @@ class Synthetics {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/group/${Uri.encodeComponent(groupIdentifier)}',
+      requestUri:
+          '/group/${Uri.encodeQueryComponent(groupIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -618,7 +621,8 @@ class Synthetics {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/group/${Uri.encodeComponent(groupIdentifier)}/disassociate',
+      requestUri:
+          '/group/${Uri.encodeQueryComponent(groupIdentifier).replaceAll('+', '%20')}/disassociate',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -639,7 +643,8 @@ class Synthetics {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/canary/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/canary/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetCanaryResponse.fromJson(response);
@@ -681,7 +686,8 @@ class Synthetics {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/canary/${Uri.encodeComponent(name)}/runs',
+      requestUri:
+          '/canary/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/runs',
       exceptionFnMap: _exceptionFns,
     );
     return GetCanaryRunsResponse.fromJson(response);
@@ -704,7 +710,8 @@ class Synthetics {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/group/${Uri.encodeComponent(groupIdentifier)}',
+      requestUri:
+          '/group/${Uri.encodeQueryComponent(groupIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetGroupResponse.fromJson(response);
@@ -746,7 +753,8 @@ class Synthetics {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/resource/${Uri.encodeComponent(resourceArn)}/groups',
+      requestUri:
+          '/resource/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}/groups',
       exceptionFnMap: _exceptionFns,
     );
     return ListAssociatedGroupsResponse.fromJson(response);
@@ -790,7 +798,8 @@ class Synthetics {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/group/${Uri.encodeComponent(groupIdentifier)}/resources',
+      requestUri:
+          '/group/${Uri.encodeQueryComponent(groupIdentifier).replaceAll('+', '%20')}/resources',
       exceptionFnMap: _exceptionFns,
     );
     return ListGroupResourcesResponse.fromJson(response);
@@ -857,7 +866,8 @@ class Synthetics {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -882,7 +892,8 @@ class Synthetics {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/canary/${Uri.encodeComponent(name)}/start',
+      requestUri:
+          '/canary/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/start',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -910,7 +921,8 @@ class Synthetics {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/canary/${Uri.encodeComponent(name)}/stop',
+      requestUri:
+          '/canary/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/stop',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -962,7 +974,8 @@ class Synthetics {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -998,7 +1011,8 @@ class Synthetics {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1156,7 +1170,8 @@ class Synthetics {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/canary/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/canary/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

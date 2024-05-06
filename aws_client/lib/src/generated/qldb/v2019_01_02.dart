@@ -74,7 +74,7 @@ class Qldb {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/ledgers/${Uri.encodeComponent(ledgerName)}/journal-kinesis-streams/${Uri.encodeComponent(streamId)}',
+          '/ledgers/%24%7BUri.encodeQueryComponent%28ledgerName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/journal-kinesis-streams/${Uri.encodeQueryComponent(streamId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CancelJournalKinesisStreamResponse.fromJson(response);
@@ -243,7 +243,8 @@ class Qldb {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/ledgers/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/ledgers/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -276,7 +277,7 @@ class Qldb {
       payload: null,
       method: 'GET',
       requestUri:
-          '/ledgers/${Uri.encodeComponent(ledgerName)}/journal-kinesis-streams/${Uri.encodeComponent(streamId)}',
+          '/ledgers/%24%7BUri.encodeQueryComponent%28ledgerName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/journal-kinesis-streams/${Uri.encodeQueryComponent(streamId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeJournalKinesisStreamResponse.fromJson(response);
@@ -313,7 +314,7 @@ class Qldb {
       payload: null,
       method: 'GET',
       requestUri:
-          '/ledgers/${Uri.encodeComponent(name)}/journal-s3-exports/${Uri.encodeComponent(exportId)}',
+          '/ledgers/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/journal-s3-exports/%24%7BUri.encodeQueryComponent%28exportId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeJournalS3ExportResponse.fromJson(response);
@@ -333,7 +334,8 @@ class Qldb {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/ledgers/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/ledgers/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeLedgerResponse.fromJson(response);
@@ -439,7 +441,8 @@ class Qldb {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/ledgers/${Uri.encodeComponent(name)}/journal-s3-exports',
+      requestUri:
+          '/ledgers/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/journal-s3-exports',
       exceptionFnMap: _exceptionFns,
     );
     return ExportJournalToS3Response.fromJson(response);
@@ -496,7 +499,8 @@ class Qldb {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/ledgers/${Uri.encodeComponent(name)}/block',
+      requestUri:
+          '/ledgers/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/block',
       exceptionFnMap: _exceptionFns,
     );
     return GetBlockResponse.fromJson(response);
@@ -517,7 +521,8 @@ class Qldb {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/ledgers/${Uri.encodeComponent(name)}/digest',
+      requestUri:
+          '/ledgers/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/digest',
       exceptionFnMap: _exceptionFns,
     );
     return GetDigestResponse.fromJson(response);
@@ -567,7 +572,8 @@ class Qldb {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/ledgers/${Uri.encodeComponent(name)}/revision',
+      requestUri:
+          '/ledgers/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/revision',
       exceptionFnMap: _exceptionFns,
     );
     return GetRevisionResponse.fromJson(response);
@@ -621,7 +627,7 @@ class Qldb {
       payload: null,
       method: 'GET',
       requestUri:
-          '/ledgers/${Uri.encodeComponent(ledgerName)}/journal-kinesis-streams',
+          '/ledgers/${Uri.encodeQueryComponent(ledgerName).replaceAll('+', '%20')}/journal-kinesis-streams',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -716,7 +722,8 @@ class Qldb {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/ledgers/${Uri.encodeComponent(name)}/journal-s3-exports',
+      requestUri:
+          '/ledgers/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/journal-s3-exports',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -779,7 +786,8 @@ class Qldb {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -867,7 +875,7 @@ class Qldb {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/ledgers/${Uri.encodeComponent(ledgerName)}/journal-kinesis-streams',
+          '/ledgers/${Uri.encodeQueryComponent(ledgerName).replaceAll('+', '%20')}/journal-kinesis-streams',
       exceptionFnMap: _exceptionFns,
     );
     return StreamJournalToKinesisResponse.fromJson(response);
@@ -902,7 +910,8 @@ class Qldb {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -930,7 +939,8 @@ class Qldb {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1020,7 +1030,8 @@ class Qldb {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/ledgers/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/ledgers/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateLedgerResponse.fromJson(response);
@@ -1085,7 +1096,8 @@ class Qldb {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/ledgers/${Uri.encodeComponent(name)}/permissions-mode',
+      requestUri:
+          '/ledgers/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/permissions-mode',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateLedgerPermissionsModeResponse.fromJson(response);

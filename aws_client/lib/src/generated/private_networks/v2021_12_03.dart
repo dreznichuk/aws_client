@@ -366,7 +366,8 @@ class Private5G {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/networks/${Uri.encodeComponent(networkArn)}',
+      requestUri:
+          '/v1/networks/${Uri.encodeQueryComponent(networkArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -402,7 +403,8 @@ class Private5G {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/network-sites/${Uri.encodeComponent(networkSiteArn)}',
+      requestUri:
+          '/v1/network-sites/${Uri.encodeQueryComponent(networkSiteArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -424,7 +426,7 @@ class Private5G {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/device-identifiers/${Uri.encodeComponent(deviceIdentifierArn)}',
+          '/v1/device-identifiers/${Uri.encodeQueryComponent(deviceIdentifierArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDeviceIdentifierResponse.fromJson(response);
@@ -444,7 +446,8 @@ class Private5G {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/networks/${Uri.encodeComponent(networkArn)}',
+      requestUri:
+          '/v1/networks/${Uri.encodeQueryComponent(networkArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetNetworkResponse.fromJson(response);
@@ -465,7 +468,7 @@ class Private5G {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/network-resources/${Uri.encodeComponent(networkResourceArn)}',
+          '/v1/network-resources/${Uri.encodeQueryComponent(networkResourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetNetworkResourceResponse.fromJson(response);
@@ -485,7 +488,8 @@ class Private5G {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/network-sites/${Uri.encodeComponent(networkSiteArn)}',
+      requestUri:
+          '/v1/network-sites/${Uri.encodeQueryComponent(networkSiteArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetNetworkSiteResponse.fromJson(response);
@@ -505,7 +509,8 @@ class Private5G {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/orders/${Uri.encodeComponent(orderArn)}',
+      requestUri:
+          '/v1/orders/${Uri.encodeQueryComponent(orderArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetOrderResponse.fromJson(response);
@@ -834,7 +839,8 @@ class Private5G {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -937,7 +943,8 @@ class Private5G {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -965,7 +972,8 @@ class Private5G {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

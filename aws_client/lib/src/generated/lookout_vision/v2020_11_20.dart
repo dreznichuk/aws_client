@@ -136,7 +136,7 @@ class LookoutForVision {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2020-11-20/projects/${Uri.encodeComponent(projectName)}/datasets',
+          '/2020-11-20/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/datasets',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -228,7 +228,7 @@ class LookoutForVision {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2020-11-20/projects/${Uri.encodeComponent(projectName)}/models',
+          '/2020-11-20/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/models',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -356,7 +356,7 @@ class LookoutForVision {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2020-11-20/projects/${Uri.encodeComponent(projectName)}/datasets/${Uri.encodeComponent(datasetType)}',
+          '/2020-11-20/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/datasets/%24%7BUri.encodeQueryComponent%28datasetType%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -414,7 +414,7 @@ class LookoutForVision {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2020-11-20/projects/${Uri.encodeComponent(projectName)}/models/${Uri.encodeComponent(modelVersion)}',
+          '/2020-11-20/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/models/%24%7BUri.encodeQueryComponent%28modelVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -471,7 +471,8 @@ class LookoutForVision {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/2020-11-20/projects/${Uri.encodeComponent(projectName)}',
+      requestUri:
+          '/2020-11-20/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -507,7 +508,7 @@ class LookoutForVision {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-11-20/projects/${Uri.encodeComponent(projectName)}/datasets/${Uri.encodeComponent(datasetType)}',
+          '/2020-11-20/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/datasets/%24%7BUri.encodeQueryComponent%28datasetType%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDatasetResponse.fromJson(response);
@@ -539,7 +540,7 @@ class LookoutForVision {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-11-20/projects/${Uri.encodeComponent(projectName)}/models/${Uri.encodeComponent(modelVersion)}',
+          '/2020-11-20/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/models/%24%7BUri.encodeQueryComponent%28modelVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeModelResponse.fromJson(response);
@@ -573,7 +574,7 @@ class LookoutForVision {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-11-20/projects/${Uri.encodeComponent(projectName)}/modelpackagingjobs/${Uri.encodeComponent(jobName)}',
+          '/2020-11-20/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/modelpackagingjobs/%24%7BUri.encodeQueryComponent%28jobName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeModelPackagingJobResponse.fromJson(response);
@@ -599,7 +600,8 @@ class LookoutForVision {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/2020-11-20/projects/${Uri.encodeComponent(projectName)}',
+      requestUri:
+          '/2020-11-20/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeProjectResponse.fromJson(response);
@@ -659,7 +661,7 @@ class LookoutForVision {
       payload: body,
       method: 'POST',
       requestUri:
-          '/2020-11-20/projects/${Uri.encodeComponent(projectName)}/models/${Uri.encodeComponent(modelVersion)}/detect',
+          '/2020-11-20/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/models/%24%7BUri.encodeQueryComponent%28modelVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/detect',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -754,7 +756,7 @@ class LookoutForVision {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-11-20/projects/${Uri.encodeComponent(projectName)}/datasets/${Uri.encodeComponent(datasetType)}/entries',
+          '/2020-11-20/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/datasets/%24%7BUri.encodeQueryComponent%28datasetType%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/entries',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -809,7 +811,7 @@ class LookoutForVision {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-11-20/projects/${Uri.encodeComponent(projectName)}/modelpackagingjobs',
+          '/2020-11-20/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/modelpackagingjobs',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -865,7 +867,7 @@ class LookoutForVision {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-11-20/projects/${Uri.encodeComponent(projectName)}/models',
+          '/2020-11-20/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/models',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -945,7 +947,8 @@ class LookoutForVision {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/2020-11-20/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/2020-11-20/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1039,7 +1042,7 @@ class LookoutForVision {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2020-11-20/projects/${Uri.encodeComponent(projectName)}/models/${Uri.encodeComponent(modelVersion)}/start',
+          '/2020-11-20/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/models/%24%7BUri.encodeQueryComponent%28modelVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/start',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1152,7 +1155,7 @@ class LookoutForVision {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2020-11-20/projects/${Uri.encodeComponent(projectName)}/modelpackagingjobs',
+          '/2020-11-20/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/modelpackagingjobs',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1210,7 +1213,7 @@ class LookoutForVision {
       payload: null,
       method: 'POST',
       requestUri:
-          '/2020-11-20/projects/${Uri.encodeComponent(projectName)}/models/${Uri.encodeComponent(modelVersion)}/stop',
+          '/2020-11-20/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/models/%24%7BUri.encodeQueryComponent%28modelVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stop',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1247,7 +1250,8 @@ class LookoutForVision {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/2020-11-20/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/2020-11-20/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1282,7 +1286,8 @@ class LookoutForVision {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/2020-11-20/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/2020-11-20/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1362,7 +1367,7 @@ class LookoutForVision {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/2020-11-20/projects/${Uri.encodeComponent(projectName)}/datasets/${Uri.encodeComponent(datasetType)}/entries',
+          '/2020-11-20/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/datasets/%24%7BUri.encodeQueryComponent%28datasetType%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/entries',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );

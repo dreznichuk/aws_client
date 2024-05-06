@@ -80,7 +80,7 @@ class FinSpaceData {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/permission-group/${Uri.encodeComponent(permissionGroupId)}/users/${Uri.encodeComponent(userId)}',
+          '/permission-group/%24%7BUri.encodeQueryComponent%28permissionGroupId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return AssociateUserToPermissionGroupResponse.fromJson(response);
@@ -195,7 +195,8 @@ class FinSpaceData {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/datasets/${Uri.encodeComponent(datasetId)}/changesetsv2',
+      requestUri:
+          '/datasets/${Uri.encodeQueryComponent(datasetId).replaceAll('+', '%20')}/changesetsv2',
       exceptionFnMap: _exceptionFns,
     );
     return CreateChangesetResponse.fromJson(response);
@@ -252,7 +253,8 @@ class FinSpaceData {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/datasets/${Uri.encodeComponent(datasetId)}/dataviewsv2',
+      requestUri:
+          '/datasets/${Uri.encodeQueryComponent(datasetId).replaceAll('+', '%20')}/dataviewsv2',
       exceptionFnMap: _exceptionFns,
     );
     return CreateDataViewResponse.fromJson(response);
@@ -520,7 +522,8 @@ class FinSpaceData {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/datasetsv2/${Uri.encodeComponent(datasetId)}',
+      requestUri:
+          '/datasetsv2/${Uri.encodeQueryComponent(datasetId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -552,7 +555,8 @@ class FinSpaceData {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/permission-group/${Uri.encodeComponent(permissionGroupId)}',
+      requestUri:
+          '/permission-group/${Uri.encodeQueryComponent(permissionGroupId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -584,7 +588,8 @@ class FinSpaceData {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/user/${Uri.encodeComponent(userId)}/disable',
+      requestUri:
+          '/user/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}/disable',
       exceptionFnMap: _exceptionFns,
     );
     return DisableUserResponse.fromJson(response);
@@ -620,7 +625,7 @@ class FinSpaceData {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/permission-group/${Uri.encodeComponent(permissionGroupId)}/users/${Uri.encodeComponent(userId)}',
+          '/permission-group/%24%7BUri.encodeQueryComponent%28permissionGroupId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -652,7 +657,8 @@ class FinSpaceData {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/user/${Uri.encodeComponent(userId)}/enable',
+      requestUri:
+          '/user/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}/enable',
       exceptionFnMap: _exceptionFns,
     );
     return EnableUserResponse.fromJson(response);
@@ -681,7 +687,7 @@ class FinSpaceData {
       payload: null,
       method: 'GET',
       requestUri:
-          '/datasets/${Uri.encodeComponent(datasetId)}/changesetsv2/${Uri.encodeComponent(changesetId)}',
+          '/datasets/${Uri.encodeQueryComponent(datasetId).replaceAll('+', '%20')}/changesetsv2/%24%7BUri.encodeQueryComponent%28changesetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetChangesetResponse.fromJson(response);
@@ -708,7 +714,7 @@ class FinSpaceData {
       payload: null,
       method: 'GET',
       requestUri:
-          '/datasets/${Uri.encodeComponent(datasetId)}/dataviewsv2/${Uri.encodeComponent(dataViewId)}',
+          '/datasets/${Uri.encodeQueryComponent(datasetId).replaceAll('+', '%20')}/dataviewsv2/%24%7BUri.encodeQueryComponent%28dataViewId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetDataViewResponse.fromJson(response);
@@ -731,7 +737,8 @@ class FinSpaceData {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/datasetsv2/${Uri.encodeComponent(datasetId)}',
+      requestUri:
+          '/datasetsv2/${Uri.encodeQueryComponent(datasetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDatasetResponse.fromJson(response);
@@ -770,7 +777,7 @@ class FinSpaceData {
       payload: null,
       method: 'POST',
       requestUri:
-          '/datasets/${Uri.encodeComponent(datasetId)}/dataviewsv2/${Uri.encodeComponent(dataViewId)}/external-access-details',
+          '/datasets/${Uri.encodeQueryComponent(datasetId).replaceAll('+', '%20')}/dataviewsv2/%24%7BUri.encodeQueryComponent%28dataViewId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/external-access-details',
       exceptionFnMap: _exceptionFns,
     );
     return GetExternalDataViewAccessDetailsResponse.fromJson(response);
@@ -792,7 +799,8 @@ class FinSpaceData {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/permission-group/${Uri.encodeComponent(permissionGroupId)}',
+      requestUri:
+          '/permission-group/${Uri.encodeQueryComponent(permissionGroupId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetPermissionGroupResponse.fromJson(response);
@@ -852,7 +860,8 @@ class FinSpaceData {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/user/${Uri.encodeComponent(userId)}',
+      requestUri:
+          '/user/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetUserResponse.fromJson(response);
@@ -932,7 +941,8 @@ class FinSpaceData {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/datasets/${Uri.encodeComponent(datasetId)}/changesetsv2',
+      requestUri:
+          '/datasets/${Uri.encodeQueryComponent(datasetId).replaceAll('+', '%20')}/changesetsv2',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -973,7 +983,8 @@ class FinSpaceData {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/datasets/${Uri.encodeComponent(datasetId)}/dataviewsv2',
+      requestUri:
+          '/datasets/${Uri.encodeQueryComponent(datasetId).replaceAll('+', '%20')}/dataviewsv2',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1090,7 +1101,8 @@ class FinSpaceData {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/user/${Uri.encodeComponent(userId)}/permission-groups',
+      requestUri:
+          '/user/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}/permission-groups',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1170,7 +1182,7 @@ class FinSpaceData {
       payload: null,
       method: 'GET',
       requestUri:
-          '/permission-group/${Uri.encodeComponent(permissionGroupId)}/users',
+          '/permission-group/${Uri.encodeQueryComponent(permissionGroupId).replaceAll('+', '%20')}/users',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1205,7 +1217,8 @@ class FinSpaceData {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/user/${Uri.encodeComponent(userId)}/password',
+      requestUri:
+          '/user/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}/password',
       exceptionFnMap: _exceptionFns,
     );
     return ResetUserPasswordResponse.fromJson(response);
@@ -1304,7 +1317,7 @@ class FinSpaceData {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/datasets/${Uri.encodeComponent(datasetId)}/changesetsv2/${Uri.encodeComponent(changesetId)}',
+          '/datasets/${Uri.encodeQueryComponent(datasetId).replaceAll('+', '%20')}/changesetsv2/%24%7BUri.encodeQueryComponent%28changesetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateChangesetResponse.fromJson(response);
@@ -1368,7 +1381,8 @@ class FinSpaceData {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/datasetsv2/${Uri.encodeComponent(datasetId)}',
+      requestUri:
+          '/datasetsv2/${Uri.encodeQueryComponent(datasetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDatasetResponse.fromJson(response);
@@ -1453,7 +1467,8 @@ class FinSpaceData {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/permission-group/${Uri.encodeComponent(permissionGroupId)}',
+      requestUri:
+          '/permission-group/${Uri.encodeQueryComponent(permissionGroupId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdatePermissionGroupResponse.fromJson(response);
@@ -1536,7 +1551,8 @@ class FinSpaceData {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/user/${Uri.encodeComponent(userId)}',
+      requestUri:
+          '/user/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateUserResponse.fromJson(response);

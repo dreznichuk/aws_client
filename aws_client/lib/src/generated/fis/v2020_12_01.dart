@@ -150,7 +150,8 @@ class Fis {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/experimentTemplates/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/experimentTemplates/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteExperimentTemplateResponse.fromJson(response);
@@ -169,7 +170,8 @@ class Fis {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/actions/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/actions/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetActionResponse.fromJson(response);
@@ -188,7 +190,8 @@ class Fis {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/experiments/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/experiments/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetExperimentResponse.fromJson(response);
@@ -207,7 +210,8 @@ class Fis {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/experimentTemplates/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/experimentTemplates/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetExperimentTemplateResponse.fromJson(response);
@@ -226,7 +230,8 @@ class Fis {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/targetResourceTypes/${Uri.encodeComponent(resourceType)}',
+      requestUri:
+          '/targetResourceTypes/${Uri.encodeQueryComponent(resourceType).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetTargetResourceTypeResponse.fromJson(response);
@@ -347,7 +352,8 @@ class Fis {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -436,7 +442,8 @@ class Fis {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/experiments/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/experiments/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return StopExperimentResponse.fromJson(response);
@@ -459,7 +466,8 @@ class Fis {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -481,7 +489,8 @@ class Fis {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -534,7 +543,8 @@ class Fis {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/experimentTemplates/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/experimentTemplates/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateExperimentTemplateResponse.fromJson(response);

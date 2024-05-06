@@ -356,7 +356,7 @@ class ChimeSdkMediaPipelines {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/sdk-media-capture-pipelines/${Uri.encodeComponent(mediaPipelineId)}',
+          '/sdk-media-capture-pipelines/${Uri.encodeQueryComponent(mediaPipelineId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -382,7 +382,7 @@ class ChimeSdkMediaPipelines {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/media-insights-pipeline-configurations/${Uri.encodeComponent(identifier)}',
+          '/media-insights-pipeline-configurations/${Uri.encodeQueryComponent(identifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -406,7 +406,7 @@ class ChimeSdkMediaPipelines {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/sdk-media-pipelines/${Uri.encodeComponent(mediaPipelineId)}',
+          '/sdk-media-pipelines/${Uri.encodeQueryComponent(mediaPipelineId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -430,7 +430,7 @@ class ChimeSdkMediaPipelines {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sdk-media-capture-pipelines/${Uri.encodeComponent(mediaPipelineId)}',
+          '/sdk-media-capture-pipelines/${Uri.encodeQueryComponent(mediaPipelineId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetMediaCapturePipelineResponse.fromJson(response);
@@ -457,7 +457,7 @@ class ChimeSdkMediaPipelines {
       payload: null,
       method: 'GET',
       requestUri:
-          '/media-insights-pipeline-configurations/${Uri.encodeComponent(identifier)}',
+          '/media-insights-pipeline-configurations/${Uri.encodeQueryComponent(identifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetMediaInsightsPipelineConfigurationResponse.fromJson(response);
@@ -482,7 +482,7 @@ class ChimeSdkMediaPipelines {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sdk-media-pipelines/${Uri.encodeComponent(mediaPipelineId)}',
+          '/sdk-media-pipelines/${Uri.encodeQueryComponent(mediaPipelineId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetMediaPipelineResponse.fromJson(response);
@@ -744,7 +744,7 @@ class ChimeSdkMediaPipelines {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/media-insights-pipeline-configurations/${Uri.encodeComponent(identifier)}',
+          '/media-insights-pipeline-configurations/${Uri.encodeQueryComponent(identifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateMediaInsightsPipelineConfigurationResponse.fromJson(response);
@@ -778,7 +778,7 @@ class ChimeSdkMediaPipelines {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/media-insights-pipeline-status/${Uri.encodeComponent(identifier)}',
+          '/media-insights-pipeline-status/${Uri.encodeQueryComponent(identifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

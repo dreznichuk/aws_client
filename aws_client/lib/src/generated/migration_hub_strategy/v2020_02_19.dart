@@ -72,7 +72,7 @@ class MigrationHubStrategyRecommendations {
       payload: null,
       method: 'GET',
       requestUri:
-          '/get-applicationcomponent-details/${Uri.encodeComponent(applicationComponentId)}',
+          '/get-applicationcomponent-details/${Uri.encodeQueryComponent(applicationComponentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetApplicationComponentDetailsResponse.fromJson(response);
@@ -96,7 +96,7 @@ class MigrationHubStrategyRecommendations {
       payload: null,
       method: 'GET',
       requestUri:
-          '/get-applicationcomponent-strategies/${Uri.encodeComponent(applicationComponentId)}',
+          '/get-applicationcomponent-strategies/${Uri.encodeQueryComponent(applicationComponentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetApplicationComponentStrategiesResponse.fromJson(response);
@@ -117,7 +117,8 @@ class MigrationHubStrategyRecommendations {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/get-assessment/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/get-assessment/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetAssessmentResponse.fromJson(response);
@@ -140,7 +141,8 @@ class MigrationHubStrategyRecommendations {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/get-import-file-task/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/get-import-file-task/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetImportFileTaskResponse.fromJson(response);
@@ -213,7 +215,7 @@ class MigrationHubStrategyRecommendations {
       payload: null,
       method: 'GET',
       requestUri:
-          '/get-recommendation-report-details/${Uri.encodeComponent(id)}',
+          '/get-recommendation-report-details/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetRecommendationReportDetailsResponse.fromJson(response);
@@ -252,7 +254,8 @@ class MigrationHubStrategyRecommendations {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/get-server-details/${Uri.encodeComponent(serverId)}',
+      requestUri:
+          '/get-server-details/${Uri.encodeQueryComponent(serverId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -275,7 +278,8 @@ class MigrationHubStrategyRecommendations {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/get-server-strategies/${Uri.encodeComponent(serverId)}',
+      requestUri:
+          '/get-server-strategies/${Uri.encodeQueryComponent(serverId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetServerStrategiesResponse.fromJson(response);

@@ -253,7 +253,8 @@ class DocDBElastic {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/cluster/${Uri.encodeComponent(clusterArn)}',
+      requestUri:
+          '/cluster/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteClusterOutput.fromJson(response);
@@ -276,7 +277,8 @@ class DocDBElastic {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/cluster-snapshot/${Uri.encodeComponent(snapshotArn)}',
+      requestUri:
+          '/cluster-snapshot/${Uri.encodeQueryComponent(snapshotArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteClusterSnapshotOutput.fromJson(response);
@@ -298,7 +300,8 @@ class DocDBElastic {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/cluster/${Uri.encodeComponent(clusterArn)}',
+      requestUri:
+          '/cluster/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetClusterOutput.fromJson(response);
@@ -320,7 +323,8 @@ class DocDBElastic {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/cluster-snapshot/${Uri.encodeComponent(snapshotArn)}',
+      requestUri:
+          '/cluster-snapshot/${Uri.encodeQueryComponent(snapshotArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetClusterSnapshotOutput.fromJson(response);
@@ -419,7 +423,8 @@ class DocDBElastic {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -485,7 +490,7 @@ class DocDBElastic {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/cluster-snapshot/${Uri.encodeComponent(snapshotArn)}/restore',
+          '/cluster-snapshot/${Uri.encodeQueryComponent(snapshotArn).replaceAll('+', '%20')}/restore',
       exceptionFnMap: _exceptionFns,
     );
     return RestoreClusterFromSnapshotOutput.fromJson(response);
@@ -513,7 +518,8 @@ class DocDBElastic {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -540,7 +546,8 @@ class DocDBElastic {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -625,7 +632,8 @@ class DocDBElastic {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/cluster/${Uri.encodeComponent(clusterArn)}',
+      requestUri:
+          '/cluster/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateClusterOutput.fromJson(response);

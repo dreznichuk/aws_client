@@ -108,7 +108,8 @@ class IoTDeviceAdvisor {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/suiteDefinitions/${Uri.encodeComponent(suiteDefinitionId)}',
+      requestUri:
+          '/suiteDefinitions/${Uri.encodeQueryComponent(suiteDefinitionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -179,7 +180,8 @@ class IoTDeviceAdvisor {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/suiteDefinitions/${Uri.encodeComponent(suiteDefinitionId)}',
+      requestUri:
+          '/suiteDefinitions/${Uri.encodeQueryComponent(suiteDefinitionId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -209,7 +211,7 @@ class IoTDeviceAdvisor {
       payload: null,
       method: 'GET',
       requestUri:
-          '/suiteDefinitions/${Uri.encodeComponent(suiteDefinitionId)}/suiteRuns/${Uri.encodeComponent(suiteRunId)}',
+          '/suiteDefinitions/%24%7BUri.encodeQueryComponent%28suiteDefinitionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/suiteRuns/${Uri.encodeQueryComponent(suiteRunId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSuiteRunResponse.fromJson(response);
@@ -239,7 +241,7 @@ class IoTDeviceAdvisor {
       payload: null,
       method: 'GET',
       requestUri:
-          '/suiteDefinitions/${Uri.encodeComponent(suiteDefinitionId)}/suiteRuns/${Uri.encodeComponent(suiteRunId)}/report',
+          '/suiteDefinitions/%24%7BUri.encodeQueryComponent%28suiteDefinitionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/suiteRuns/${Uri.encodeQueryComponent(suiteRunId).replaceAll('+', '%20')}/report',
       exceptionFnMap: _exceptionFns,
     );
     return GetSuiteRunReportResponse.fromJson(response);
@@ -355,7 +357,8 @@ class IoTDeviceAdvisor {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -398,7 +401,7 @@ class IoTDeviceAdvisor {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/suiteDefinitions/${Uri.encodeComponent(suiteDefinitionId)}/suiteRuns',
+          '/suiteDefinitions/${Uri.encodeQueryComponent(suiteDefinitionId).replaceAll('+', '%20')}/suiteRuns',
       exceptionFnMap: _exceptionFns,
     );
     return StartSuiteRunResponse.fromJson(response);
@@ -427,7 +430,7 @@ class IoTDeviceAdvisor {
       payload: null,
       method: 'POST',
       requestUri:
-          '/suiteDefinitions/${Uri.encodeComponent(suiteDefinitionId)}/suiteRuns/${Uri.encodeComponent(suiteRunId)}/stop',
+          '/suiteDefinitions/%24%7BUri.encodeQueryComponent%28suiteDefinitionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/suiteRuns/${Uri.encodeQueryComponent(suiteRunId).replaceAll('+', '%20')}/stop',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -458,7 +461,8 @@ class IoTDeviceAdvisor {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -489,7 +493,8 @@ class IoTDeviceAdvisor {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -519,7 +524,8 @@ class IoTDeviceAdvisor {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/suiteDefinitions/${Uri.encodeComponent(suiteDefinitionId)}',
+      requestUri:
+          '/suiteDefinitions/${Uri.encodeQueryComponent(suiteDefinitionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSuiteDefinitionResponse.fromJson(response);

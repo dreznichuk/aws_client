@@ -118,7 +118,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/users/${Uri.encodeComponent(userId)}?operation=associate-phone-number',
+          '/accounts/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}?operation=associate-phone-number',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -159,7 +159,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}?operation=associate-phone-numbers',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}?operation=associate-phone-numbers',
       exceptionFnMap: _exceptionFns,
     );
     return AssociatePhoneNumbersWithVoiceConnectorResponse.fromJson(response);
@@ -202,7 +202,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/voice-connector-groups/${Uri.encodeComponent(voiceConnectorGroupId)}?operation=associate-phone-numbers',
+          '/voice-connector-groups/${Uri.encodeQueryComponent(voiceConnectorGroupId).replaceAll('+', '%20')}?operation=associate-phone-numbers',
       exceptionFnMap: _exceptionFns,
     );
     return AssociatePhoneNumbersWithVoiceConnectorGroupResponse.fromJson(
@@ -236,7 +236,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}?operation=associate-signin-delegate-groups',
+          '/accounts/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}?operation=associate-signin-delegate-groups',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -271,7 +271,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/meetings/${Uri.encodeComponent(meetingId)}/attendees?operation=batch-create',
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}/attendees?operation=batch-create',
       exceptionFnMap: _exceptionFns,
     );
     return BatchCreateAttendeeResponse.fromJson(response);
@@ -319,7 +319,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/channels/${Uri.encodeComponent(channelArn)}/memberships?operation=batch-create',
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/memberships?operation=batch-create',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -358,7 +358,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/rooms/${Uri.encodeComponent(roomId)}/memberships?operation=batch-create',
+          '/accounts/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/rooms/${Uri.encodeQueryComponent(roomId).replaceAll('+', '%20')}/memberships?operation=batch-create',
       exceptionFnMap: _exceptionFns,
     );
     return BatchCreateRoomMembershipResponse.fromJson(response);
@@ -441,7 +441,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/users?operation=suspend',
+          '/accounts/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/users?operation=suspend',
       exceptionFnMap: _exceptionFns,
     );
     return BatchSuspendUserResponse.fromJson(response);
@@ -483,7 +483,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/users?operation=unsuspend',
+          '/accounts/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/users?operation=unsuspend',
       exceptionFnMap: _exceptionFns,
     );
     return BatchUnsuspendUserResponse.fromJson(response);
@@ -554,7 +554,8 @@ class Chime {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/accounts/${Uri.encodeComponent(accountId)}/users',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/users',
       exceptionFnMap: _exceptionFns,
     );
     return BatchUpdateUserResponse.fromJson(response);
@@ -680,7 +681,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/app-instances/${Uri.encodeComponent(appInstanceArn)}/admins',
+          '/app-instances/${Uri.encodeQueryComponent(appInstanceArn).replaceAll('+', '%20')}/admins',
       exceptionFnMap: _exceptionFns,
     );
     return CreateAppInstanceAdminResponse.fromJson(response);
@@ -776,7 +777,8 @@ class Chime {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/meetings/${Uri.encodeComponent(meetingId)}/attendees',
+      requestUri:
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}/attendees',
       exceptionFnMap: _exceptionFns,
     );
     return CreateAttendeeResponse.fromJson(response);
@@ -813,7 +815,8 @@ class Chime {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/accounts/${Uri.encodeComponent(accountId)}/bots',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/bots',
       exceptionFnMap: _exceptionFns,
     );
     return CreateBotResponse.fromJson(response);
@@ -942,7 +945,8 @@ class Chime {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/channels/${Uri.encodeComponent(channelArn)}/bans',
+      requestUri:
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/bans',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1026,7 +1030,8 @@ class Chime {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/channels/${Uri.encodeComponent(channelArn)}/memberships',
+      requestUri:
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/memberships',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1088,7 +1093,8 @@ class Chime {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/channels/${Uri.encodeComponent(channelArn)}/moderators',
+      requestUri:
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/moderators',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1270,7 +1276,8 @@ class Chime {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/meetings/${Uri.encodeComponent(meetingId)}/dial-outs',
+      requestUri:
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}/dial-outs',
       exceptionFnMap: _exceptionFns,
     );
     return CreateMeetingDialOutResponse.fromJson(response);
@@ -1455,7 +1462,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/proxy-sessions',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/proxy-sessions',
       exceptionFnMap: _exceptionFns,
     );
     return CreateProxySessionResponse.fromJson(response);
@@ -1492,7 +1499,8 @@ class Chime {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/accounts/${Uri.encodeComponent(accountId)}/rooms',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/rooms',
       exceptionFnMap: _exceptionFns,
     );
     return CreateRoomResponse.fromJson(response);
@@ -1537,7 +1545,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/rooms/${Uri.encodeComponent(roomId)}/memberships',
+          '/accounts/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/rooms/${Uri.encodeQueryComponent(roomId).replaceAll('+', '%20')}/memberships',
       exceptionFnMap: _exceptionFns,
     );
     return CreateRoomMembershipResponse.fromJson(response);
@@ -1623,7 +1631,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/sip-media-applications/${Uri.encodeComponent(sipMediaApplicationId)}/calls',
+          '/sip-media-applications/${Uri.encodeQueryComponent(sipMediaApplicationId).replaceAll('+', '%20')}/calls',
       exceptionFnMap: _exceptionFns,
     );
     return CreateSipMediaApplicationCallResponse.fromJson(response);
@@ -1726,7 +1734,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/users?operation=create',
+          '/accounts/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/users?operation=create',
       exceptionFnMap: _exceptionFns,
     );
     return CreateUserResponse.fromJson(response);
@@ -1852,7 +1860,8 @@ class Chime {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/accounts/${Uri.encodeComponent(accountId)}',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1875,7 +1884,8 @@ class Chime {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/app-instances/${Uri.encodeComponent(appInstanceArn)}',
+      requestUri:
+          '/app-instances/${Uri.encodeQueryComponent(appInstanceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1904,7 +1914,7 @@ class Chime {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/app-instances/${Uri.encodeComponent(appInstanceArn)}/admins/${Uri.encodeComponent(appInstanceAdminArn)}',
+          '/app-instances/${Uri.encodeQueryComponent(appInstanceArn).replaceAll('+', '%20')}/admins/%24%7BUri.encodeQueryComponent%28appInstanceAdminArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1928,7 +1938,7 @@ class Chime {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/app-instances/${Uri.encodeComponent(appInstanceArn)}/streaming-configurations',
+          '/app-instances/${Uri.encodeQueryComponent(appInstanceArn).replaceAll('+', '%20')}/streaming-configurations',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1951,7 +1961,7 @@ class Chime {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/app-instance-users/${Uri.encodeComponent(appInstanceUserArn)}',
+          '/app-instance-users/${Uri.encodeQueryComponent(appInstanceUserArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1984,7 +1994,7 @@ class Chime {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/meetings/${Uri.encodeComponent(meetingId)}/attendees/${Uri.encodeComponent(attendeeId)}',
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}/attendees/%24%7BUri.encodeQueryComponent%28attendeeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2019,7 +2029,8 @@ class Chime {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/channels/${Uri.encodeComponent(channelArn)}',
+      requestUri:
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2060,7 +2071,7 @@ class Chime {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/channels/${Uri.encodeComponent(channelArn)}/bans/${Uri.encodeComponent(memberArn)}',
+          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/bans/${Uri.encodeQueryComponent(memberArn).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2101,7 +2112,7 @@ class Chime {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/channels/${Uri.encodeComponent(channelArn)}/memberships/${Uri.encodeComponent(memberArn)}',
+          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/memberships/${Uri.encodeQueryComponent(memberArn).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2143,7 +2154,7 @@ class Chime {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/channels/${Uri.encodeComponent(channelArn)}/messages/${Uri.encodeComponent(messageId)}',
+          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/messages/${Uri.encodeQueryComponent(messageId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2183,7 +2194,7 @@ class Chime {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/channels/${Uri.encodeComponent(channelArn)}/moderators/${Uri.encodeComponent(channelModeratorArn)}',
+          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/moderators/${Uri.encodeQueryComponent(channelModeratorArn).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2212,7 +2223,7 @@ class Chime {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/bots/${Uri.encodeComponent(botId)}/events-configuration',
+          '/accounts/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/bots/${Uri.encodeQueryComponent(botId).replaceAll('+', '%20')}/events-configuration',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2236,7 +2247,7 @@ class Chime {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/media-capture-pipelines/${Uri.encodeComponent(mediaPipelineId)}',
+          '/media-capture-pipelines/${Uri.encodeQueryComponent(mediaPipelineId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2263,7 +2274,8 @@ class Chime {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/meetings/${Uri.encodeComponent(meetingId)}',
+      requestUri:
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2291,7 +2303,8 @@ class Chime {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/phone-numbers/${Uri.encodeComponent(phoneNumberId)}',
+      requestUri:
+          '/phone-numbers/${Uri.encodeQueryComponent(phoneNumberId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2320,7 +2333,7 @@ class Chime {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/proxy-sessions/${Uri.encodeComponent(proxySessionId)}',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/proxy-sessions/%24%7BUri.encodeQueryComponent%28proxySessionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2348,7 +2361,7 @@ class Chime {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/rooms/${Uri.encodeComponent(roomId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/rooms/${Uri.encodeQueryComponent(roomId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2380,7 +2393,7 @@ class Chime {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/rooms/${Uri.encodeComponent(roomId)}/memberships/${Uri.encodeComponent(memberId)}',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528accountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/rooms/${Uri.encodeQueryComponent(roomId).replaceAll('+', '%20')}/memberships/%24%7BUri.encodeQueryComponent%28memberId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2405,7 +2418,7 @@ class Chime {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/sip-media-applications/${Uri.encodeComponent(sipMediaApplicationId)}',
+          '/sip-media-applications/${Uri.encodeQueryComponent(sipMediaApplicationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2429,7 +2442,8 @@ class Chime {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/sip-rules/${Uri.encodeComponent(sipRuleId)}',
+      requestUri:
+          '/sip-rules/${Uri.encodeQueryComponent(sipRuleId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2455,7 +2469,8 @@ class Chime {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}',
+      requestUri:
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2480,7 +2495,7 @@ class Chime {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/emergency-calling-configuration',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/emergency-calling-configuration',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2507,7 +2522,7 @@ class Chime {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/voice-connector-groups/${Uri.encodeComponent(voiceConnectorGroupId)}',
+          '/voice-connector-groups/${Uri.encodeQueryComponent(voiceConnectorGroupId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2536,7 +2551,7 @@ class Chime {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/origination',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/origination',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2561,7 +2576,7 @@ class Chime {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/programmable-numbers/proxy',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/programmable-numbers/proxy',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2586,7 +2601,7 @@ class Chime {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/streaming-configuration',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/streaming-configuration',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2615,7 +2630,7 @@ class Chime {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/termination',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/termination',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2648,7 +2663,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/termination/credentials?operation=delete',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/termination/credentials?operation=delete',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2670,7 +2685,8 @@ class Chime {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/app-instances/${Uri.encodeComponent(appInstanceArn)}',
+      requestUri:
+          '/app-instances/${Uri.encodeQueryComponent(appInstanceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeAppInstanceResponse.fromJson(response);
@@ -2698,7 +2714,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/app-instances/${Uri.encodeComponent(appInstanceArn)}/admins/${Uri.encodeComponent(appInstanceAdminArn)}',
+          '/app-instances/${Uri.encodeQueryComponent(appInstanceArn).replaceAll('+', '%20')}/admins/%24%7BUri.encodeQueryComponent%28appInstanceAdminArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeAppInstanceAdminResponse.fromJson(response);
@@ -2722,7 +2738,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/app-instance-users/${Uri.encodeComponent(appInstanceUserArn)}',
+          '/app-instance-users/${Uri.encodeQueryComponent(appInstanceUserArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeAppInstanceUserResponse.fromJson(response);
@@ -2758,7 +2774,8 @@ class Chime {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/channels/${Uri.encodeComponent(channelArn)}',
+      requestUri:
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2800,7 +2817,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/channels/${Uri.encodeComponent(channelArn)}/bans/${Uri.encodeComponent(memberArn)}',
+          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/bans/${Uri.encodeQueryComponent(memberArn).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2842,7 +2859,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/channels/${Uri.encodeComponent(channelArn)}/memberships/${Uri.encodeComponent(memberArn)}',
+          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/memberships/${Uri.encodeQueryComponent(memberArn).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2888,7 +2905,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/channels/${Uri.encodeComponent(channelArn)}?scope=app-instance-user-membership',
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}?scope=app-instance-user-membership',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -2936,7 +2953,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/channels/${Uri.encodeComponent(channelArn)}?scope=app-instance-user-moderated-channel',
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}?scope=app-instance-user-moderated-channel',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -2979,7 +2996,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/channels/${Uri.encodeComponent(channelArn)}/moderators/${Uri.encodeComponent(channelModeratorArn)}',
+          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/moderators/${Uri.encodeQueryComponent(channelModeratorArn).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -3010,7 +3027,7 @@ class Chime {
       payload: null,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/users/${Uri.encodeComponent(userId)}?operation=disassociate-phone-number',
+          '/accounts/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}?operation=disassociate-phone-number',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3043,7 +3060,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}?operation=disassociate-phone-numbers',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}?operation=disassociate-phone-numbers',
       exceptionFnMap: _exceptionFns,
     );
     return DisassociatePhoneNumbersFromVoiceConnectorResponse.fromJson(
@@ -3078,7 +3095,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/voice-connector-groups/${Uri.encodeComponent(voiceConnectorGroupId)}?operation=disassociate-phone-numbers',
+          '/voice-connector-groups/${Uri.encodeQueryComponent(voiceConnectorGroupId).replaceAll('+', '%20')}?operation=disassociate-phone-numbers',
       exceptionFnMap: _exceptionFns,
     );
     return DisassociatePhoneNumbersFromVoiceConnectorGroupResponse.fromJson(
@@ -3112,7 +3129,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}?operation=disassociate-signin-delegate-groups',
+          '/accounts/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}?operation=disassociate-signin-delegate-groups',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3136,7 +3153,8 @@ class Chime {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/accounts/${Uri.encodeComponent(accountId)}',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetAccountResponse.fromJson(response);
@@ -3164,7 +3182,8 @@ class Chime {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/accounts/${Uri.encodeComponent(accountId)}/settings',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/settings',
       exceptionFnMap: _exceptionFns,
     );
     return GetAccountSettingsResponse.fromJson(response);
@@ -3190,7 +3209,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/app-instances/${Uri.encodeComponent(appInstanceArn)}/retention-settings',
+          '/app-instances/${Uri.encodeQueryComponent(appInstanceArn).replaceAll('+', '%20')}/retention-settings',
       exceptionFnMap: _exceptionFns,
     );
     return GetAppInstanceRetentionSettingsResponse.fromJson(response);
@@ -3216,7 +3235,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/app-instances/${Uri.encodeComponent(appInstanceArn)}/streaming-configurations',
+          '/app-instances/${Uri.encodeQueryComponent(appInstanceArn).replaceAll('+', '%20')}/streaming-configurations',
       exceptionFnMap: _exceptionFns,
     );
     return GetAppInstanceStreamingConfigurationsResponse.fromJson(response);
@@ -3248,7 +3267,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/meetings/${Uri.encodeComponent(meetingId)}/attendees/${Uri.encodeComponent(attendeeId)}',
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}/attendees/%24%7BUri.encodeQueryComponent%28attendeeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetAttendeeResponse.fromJson(response);
@@ -3278,7 +3297,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/bots/${Uri.encodeComponent(botId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/bots/${Uri.encodeQueryComponent(botId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetBotResponse.fromJson(response);
@@ -3319,7 +3338,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/channels/${Uri.encodeComponent(channelArn)}/messages/${Uri.encodeComponent(messageId)}',
+          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/messages/${Uri.encodeQueryComponent(messageId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -3350,7 +3369,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/bots/${Uri.encodeComponent(botId)}/events-configuration',
+          '/accounts/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/bots/${Uri.encodeQueryComponent(botId).replaceAll('+', '%20')}/events-configuration',
       exceptionFnMap: _exceptionFns,
     );
     return GetEventsConfigurationResponse.fromJson(response);
@@ -3394,7 +3413,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/media-capture-pipelines/${Uri.encodeComponent(mediaPipelineId)}',
+          '/media-capture-pipelines/${Uri.encodeQueryComponent(mediaPipelineId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetMediaCapturePipelineResponse.fromJson(response);
@@ -3421,7 +3440,8 @@ class Chime {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/meetings/${Uri.encodeComponent(meetingId)}',
+      requestUri:
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetMeetingResponse.fromJson(response);
@@ -3464,7 +3484,8 @@ class Chime {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/phone-numbers/${Uri.encodeComponent(phoneNumberId)}',
+      requestUri:
+          '/phone-numbers/${Uri.encodeQueryComponent(phoneNumberId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetPhoneNumberResponse.fromJson(response);
@@ -3491,7 +3512,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/phone-number-orders/${Uri.encodeComponent(phoneNumberOrderId)}',
+          '/phone-number-orders/${Uri.encodeQueryComponent(phoneNumberOrderId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetPhoneNumberOrderResponse.fromJson(response);
@@ -3540,7 +3561,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/proxy-sessions/${Uri.encodeComponent(proxySessionId)}',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/proxy-sessions/%24%7BUri.encodeQueryComponent%28proxySessionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetProxySessionResponse.fromJson(response);
@@ -3569,7 +3590,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/retention-settings',
+          '/accounts/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/retention-settings',
       exceptionFnMap: _exceptionFns,
     );
     return GetRetentionSettingsResponse.fromJson(response);
@@ -3599,7 +3620,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/rooms/${Uri.encodeComponent(roomId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/rooms/${Uri.encodeQueryComponent(roomId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetRoomResponse.fromJson(response);
@@ -3625,7 +3646,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sip-media-applications/${Uri.encodeComponent(sipMediaApplicationId)}',
+          '/sip-media-applications/${Uri.encodeQueryComponent(sipMediaApplicationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSipMediaApplicationResponse.fromJson(response);
@@ -3651,7 +3672,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sip-media-applications/${Uri.encodeComponent(sipMediaApplicationId)}/logging-configuration',
+          '/sip-media-applications/${Uri.encodeQueryComponent(sipMediaApplicationId).replaceAll('+', '%20')}/logging-configuration',
       exceptionFnMap: _exceptionFns,
     );
     return GetSipMediaApplicationLoggingConfigurationResponse.fromJson(
@@ -3677,7 +3698,8 @@ class Chime {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/sip-rules/${Uri.encodeComponent(sipRuleId)}',
+      requestUri:
+          '/sip-rules/${Uri.encodeQueryComponent(sipRuleId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSipRuleResponse.fromJson(response);
@@ -3710,7 +3732,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/users/${Uri.encodeComponent(userId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetUserResponse.fromJson(response);
@@ -3740,7 +3762,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/users/${Uri.encodeComponent(userId)}/settings',
+          '/accounts/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}/settings',
       exceptionFnMap: _exceptionFns,
     );
     return GetUserSettingsResponse.fromJson(response);
@@ -3765,7 +3787,8 @@ class Chime {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}',
+      requestUri:
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetVoiceConnectorResponse.fromJson(response);
@@ -3792,7 +3815,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/emergency-calling-configuration',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/emergency-calling-configuration',
       exceptionFnMap: _exceptionFns,
     );
     return GetVoiceConnectorEmergencyCallingConfigurationResponse.fromJson(
@@ -3819,7 +3842,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/voice-connector-groups/${Uri.encodeComponent(voiceConnectorGroupId)}',
+          '/voice-connector-groups/${Uri.encodeQueryComponent(voiceConnectorGroupId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetVoiceConnectorGroupResponse.fromJson(response);
@@ -3847,7 +3870,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/logging-configuration',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/logging-configuration',
       exceptionFnMap: _exceptionFns,
     );
     return GetVoiceConnectorLoggingConfigurationResponse.fromJson(response);
@@ -3873,7 +3896,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/origination',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/origination',
       exceptionFnMap: _exceptionFns,
     );
     return GetVoiceConnectorOriginationResponse.fromJson(response);
@@ -3899,7 +3922,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/programmable-numbers/proxy',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/programmable-numbers/proxy',
       exceptionFnMap: _exceptionFns,
     );
     return GetVoiceConnectorProxyResponse.fromJson(response);
@@ -3928,7 +3951,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/streaming-configuration',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/streaming-configuration',
       exceptionFnMap: _exceptionFns,
     );
     return GetVoiceConnectorStreamingConfigurationResponse.fromJson(response);
@@ -3954,7 +3977,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/termination',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/termination',
       exceptionFnMap: _exceptionFns,
     );
     return GetVoiceConnectorTerminationResponse.fromJson(response);
@@ -3982,7 +4005,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/termination/health',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/termination/health',
       exceptionFnMap: _exceptionFns,
     );
     return GetVoiceConnectorTerminationHealthResponse.fromJson(response);
@@ -4021,7 +4044,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/users?operation=add',
+          '/accounts/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/users?operation=add',
       exceptionFnMap: _exceptionFns,
     );
     return InviteUsersResponse.fromJson(response);
@@ -4116,7 +4139,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/app-instances/${Uri.encodeComponent(appInstanceArn)}/admins',
+          '/app-instances/${Uri.encodeQueryComponent(appInstanceArn).replaceAll('+', '%20')}/admins',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4231,7 +4254,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/meetings/${Uri.encodeComponent(meetingId)}/attendees/${Uri.encodeComponent(attendeeId)}/tags',
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}/attendees/%24%7BUri.encodeQueryComponent%28attendeeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/tags',
       exceptionFnMap: _exceptionFns,
     );
     return ListAttendeeTagsResponse.fromJson(response);
@@ -4276,7 +4299,8 @@ class Chime {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/meetings/${Uri.encodeComponent(meetingId)}/attendees',
+      requestUri:
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}/attendees',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4321,7 +4345,8 @@ class Chime {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/accounts/${Uri.encodeComponent(accountId)}/bots',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/bots',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4376,7 +4401,8 @@ class Chime {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/channels/${Uri.encodeComponent(channelArn)}/bans',
+      requestUri:
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/bans',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -4441,7 +4467,8 @@ class Chime {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/channels/${Uri.encodeComponent(channelArn)}/memberships',
+      requestUri:
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/memberships',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -4582,7 +4609,8 @@ class Chime {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/channels/${Uri.encodeComponent(channelArn)}/messages',
+      requestUri:
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/messages',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -4638,7 +4666,8 @@ class Chime {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/channels/${Uri.encodeComponent(channelArn)}/moderators',
+      requestUri:
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/moderators',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -4838,7 +4867,8 @@ class Chime {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/meetings/${Uri.encodeComponent(meetingId)}/tags',
+      requestUri:
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}/tags',
       exceptionFnMap: _exceptionFns,
     );
     return ListMeetingTagsResponse.fromJson(response);
@@ -5027,7 +5057,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/proxy-sessions',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/proxy-sessions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5076,7 +5106,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/rooms/${Uri.encodeComponent(roomId)}/memberships',
+          '/accounts/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/rooms/${Uri.encodeQueryComponent(roomId).replaceAll('+', '%20')}/memberships',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5126,7 +5156,8 @@ class Chime {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/accounts/${Uri.encodeComponent(accountId)}/rooms',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/rooms',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5319,7 +5350,8 @@ class Chime {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/accounts/${Uri.encodeComponent(accountId)}/users',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/users',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5385,7 +5417,7 @@ class Chime {
       payload: null,
       method: 'GET',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/termination/credentials',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/termination/credentials',
       exceptionFnMap: _exceptionFns,
     );
     return ListVoiceConnectorTerminationCredentialsResponse.fromJson(response);
@@ -5454,7 +5486,7 @@ class Chime {
       payload: null,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/users/${Uri.encodeComponent(userId)}?operation=logout',
+          '/accounts/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}?operation=logout',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -5488,7 +5520,7 @@ class Chime {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/app-instances/${Uri.encodeComponent(appInstanceArn)}/retention-settings',
+          '/app-instances/${Uri.encodeQueryComponent(appInstanceArn).replaceAll('+', '%20')}/retention-settings',
       exceptionFnMap: _exceptionFns,
     );
     return PutAppInstanceRetentionSettingsResponse.fromJson(response);
@@ -5522,7 +5554,7 @@ class Chime {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/app-instances/${Uri.encodeComponent(appInstanceArn)}/streaming-configurations',
+          '/app-instances/${Uri.encodeQueryComponent(appInstanceArn).replaceAll('+', '%20')}/streaming-configurations',
       exceptionFnMap: _exceptionFns,
     );
     return PutAppInstanceStreamingConfigurationsResponse.fromJson(response);
@@ -5566,7 +5598,7 @@ class Chime {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/bots/${Uri.encodeComponent(botId)}/events-configuration',
+          '/accounts/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/bots/${Uri.encodeQueryComponent(botId).replaceAll('+', '%20')}/events-configuration',
       exceptionFnMap: _exceptionFns,
     );
     return PutEventsConfigurationResponse.fromJson(response);
@@ -5612,7 +5644,7 @@ class Chime {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/retention-settings',
+          '/accounts/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/retention-settings',
       exceptionFnMap: _exceptionFns,
     );
     return PutRetentionSettingsResponse.fromJson(response);
@@ -5648,7 +5680,7 @@ class Chime {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/sip-media-applications/${Uri.encodeComponent(sipMediaApplicationId)}/logging-configuration',
+          '/sip-media-applications/${Uri.encodeQueryComponent(sipMediaApplicationId).replaceAll('+', '%20')}/logging-configuration',
       exceptionFnMap: _exceptionFns,
     );
     return PutSipMediaApplicationLoggingConfigurationResponse.fromJson(
@@ -5685,7 +5717,7 @@ class Chime {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/emergency-calling-configuration',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/emergency-calling-configuration',
       exceptionFnMap: _exceptionFns,
     );
     return PutVoiceConnectorEmergencyCallingConfigurationResponse.fromJson(
@@ -5721,7 +5753,7 @@ class Chime {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/logging-configuration',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/logging-configuration',
       exceptionFnMap: _exceptionFns,
     );
     return PutVoiceConnectorLoggingConfigurationResponse.fromJson(response);
@@ -5757,7 +5789,7 @@ class Chime {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/origination',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/origination',
       exceptionFnMap: _exceptionFns,
     );
     return PutVoiceConnectorOriginationResponse.fromJson(response);
@@ -5808,7 +5840,7 @@ class Chime {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/programmable-numbers/proxy',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/programmable-numbers/proxy',
       exceptionFnMap: _exceptionFns,
     );
     return PutVoiceConnectorProxyResponse.fromJson(response);
@@ -5844,7 +5876,7 @@ class Chime {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/streaming-configuration',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/streaming-configuration',
       exceptionFnMap: _exceptionFns,
     );
     return PutVoiceConnectorStreamingConfigurationResponse.fromJson(response);
@@ -5881,7 +5913,7 @@ class Chime {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/termination',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/termination',
       exceptionFnMap: _exceptionFns,
     );
     return PutVoiceConnectorTerminationResponse.fromJson(response);
@@ -5914,7 +5946,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/termination/credentials?operation=put',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/termination/credentials?operation=put',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -5954,7 +5986,7 @@ class Chime {
       payload: null,
       method: 'POST',
       requestUri:
-          '/channels/${Uri.encodeComponent(channelArn)}/messages/${Uri.encodeComponent(messageId)}?operation=redact',
+          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/messages/${Uri.encodeQueryComponent(messageId).replaceAll('+', '%20')}?operation=redact',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -5989,7 +6021,7 @@ class Chime {
       payload: null,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/conversations/${Uri.encodeComponent(conversationId)}/messages/${Uri.encodeComponent(messageId)}?operation=redact',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528accountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/conversations/%24%7BUri.encodeQueryComponent%28conversationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/messages/${Uri.encodeQueryComponent(messageId).replaceAll('+', '%20')}?operation=redact',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -6021,7 +6053,7 @@ class Chime {
       payload: null,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/rooms/${Uri.encodeComponent(roomId)}/messages/${Uri.encodeComponent(messageId)}?operation=redact',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528accountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/rooms/${Uri.encodeQueryComponent(roomId).replaceAll('+', '%20')}/messages/${Uri.encodeQueryComponent(messageId).replaceAll('+', '%20')}?operation=redact',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -6049,7 +6081,7 @@ class Chime {
       payload: null,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/bots/${Uri.encodeComponent(botId)}?operation=regenerate-security-token',
+          '/accounts/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/bots/${Uri.encodeQueryComponent(botId).replaceAll('+', '%20')}?operation=regenerate-security-token',
       exceptionFnMap: _exceptionFns,
     );
     return RegenerateSecurityTokenResponse.fromJson(response);
@@ -6080,7 +6112,7 @@ class Chime {
       payload: null,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/users/${Uri.encodeComponent(userId)}?operation=reset-personal-pin',
+          '/accounts/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}?operation=reset-personal-pin',
       exceptionFnMap: _exceptionFns,
     );
     return ResetPersonalPINResponse.fromJson(response);
@@ -6107,7 +6139,7 @@ class Chime {
       payload: null,
       method: 'POST',
       requestUri:
-          '/phone-numbers/${Uri.encodeComponent(phoneNumberId)}?operation=restore',
+          '/phone-numbers/${Uri.encodeQueryComponent(phoneNumberId).replaceAll('+', '%20')}?operation=restore',
       exceptionFnMap: _exceptionFns,
     );
     return RestorePhoneNumberResponse.fromJson(response);
@@ -6253,7 +6285,8 @@ class Chime {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/channels/${Uri.encodeComponent(channelArn)}/messages',
+      requestUri:
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/messages',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -6309,7 +6342,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/meetings/${Uri.encodeComponent(meetingId)}/transcription?operation=start',
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}/transcription?operation=start',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -6334,7 +6367,7 @@ class Chime {
       payload: null,
       method: 'POST',
       requestUri:
-          '/meetings/${Uri.encodeComponent(meetingId)}/transcription?operation=stop',
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}/transcription?operation=stop',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -6370,7 +6403,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/meetings/${Uri.encodeComponent(meetingId)}/attendees/${Uri.encodeComponent(attendeeId)}/tags?operation=add',
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}/attendees/%24%7BUri.encodeQueryComponent%28attendeeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/tags?operation=add',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -6402,7 +6435,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/meetings/${Uri.encodeComponent(meetingId)}/tags?operation=add',
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}/tags?operation=add',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -6468,7 +6501,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/meetings/${Uri.encodeComponent(meetingId)}/attendees/${Uri.encodeComponent(attendeeId)}/tags?operation=delete',
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}/attendees/%24%7BUri.encodeQueryComponent%28attendeeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/tags?operation=delete',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -6499,7 +6532,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/meetings/${Uri.encodeComponent(meetingId)}/tags?operation=delete',
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}/tags?operation=delete',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -6567,7 +6600,8 @@ class Chime {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/accounts/${Uri.encodeComponent(accountId)}',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAccountResponse.fromJson(response);
@@ -6603,7 +6637,8 @@ class Chime {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/accounts/${Uri.encodeComponent(accountId)}/settings',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/settings',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -6638,7 +6673,8 @@ class Chime {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/app-instances/${Uri.encodeComponent(appInstanceArn)}',
+      requestUri:
+          '/app-instances/${Uri.encodeQueryComponent(appInstanceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAppInstanceResponse.fromJson(response);
@@ -6676,7 +6712,7 @@ class Chime {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/app-instance-users/${Uri.encodeComponent(appInstanceUserArn)}',
+          '/app-instance-users/${Uri.encodeQueryComponent(appInstanceUserArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAppInstanceUserResponse.fromJson(response);
@@ -6713,7 +6749,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/bots/${Uri.encodeComponent(botId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/bots/${Uri.encodeQueryComponent(botId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBotResponse.fromJson(response);
@@ -6768,7 +6804,8 @@ class Chime {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/channels/${Uri.encodeComponent(channelArn)}',
+      requestUri:
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -6822,7 +6859,7 @@ class Chime {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/channels/${Uri.encodeComponent(channelArn)}/messages/${Uri.encodeComponent(messageId)}',
+          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/messages/${Uri.encodeQueryComponent(messageId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -6859,7 +6896,8 @@ class Chime {
     final response = await _protocol.send(
       payload: null,
       method: 'PUT',
-      requestUri: '/channels/${Uri.encodeComponent(channelArn)}/readMarker',
+      requestUri:
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/readMarker',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -6939,7 +6977,8 @@ class Chime {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/phone-numbers/${Uri.encodeComponent(phoneNumberId)}',
+      requestUri:
+          '/phone-numbers/${Uri.encodeQueryComponent(phoneNumberId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdatePhoneNumberResponse.fromJson(response);
@@ -7015,7 +7054,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}/proxy-sessions/${Uri.encodeComponent(proxySessionId)}',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/proxy-sessions/%24%7BUri.encodeQueryComponent%28proxySessionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateProxySessionResponse.fromJson(response);
@@ -7052,7 +7091,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/rooms/${Uri.encodeComponent(roomId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/rooms/${Uri.encodeQueryComponent(roomId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateRoomResponse.fromJson(response);
@@ -7095,7 +7134,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/rooms/${Uri.encodeComponent(roomId)}/memberships/${Uri.encodeComponent(memberId)}',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528accountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/rooms/${Uri.encodeQueryComponent(roomId).replaceAll('+', '%20')}/memberships/%24%7BUri.encodeQueryComponent%28memberId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateRoomMembershipResponse.fromJson(response);
@@ -7133,7 +7172,7 @@ class Chime {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/sip-media-applications/${Uri.encodeComponent(sipMediaApplicationId)}',
+          '/sip-media-applications/${Uri.encodeQueryComponent(sipMediaApplicationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSipMediaApplicationResponse.fromJson(response);
@@ -7174,7 +7213,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/sip-media-applications/${Uri.encodeComponent(sipMediaApplicationId)}/calls/${Uri.encodeComponent(transactionId)}',
+          '/sip-media-applications/%24%7BUri.encodeQueryComponent%28sipMediaApplicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/calls/${Uri.encodeQueryComponent(transactionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSipMediaApplicationCallResponse.fromJson(response);
@@ -7217,7 +7256,8 @@ class Chime {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/sip-rules/${Uri.encodeComponent(sipRuleId)}',
+      requestUri:
+          '/sip-rules/${Uri.encodeQueryComponent(sipRuleId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSipRuleResponse.fromJson(response);
@@ -7266,7 +7306,7 @@ class Chime {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/users/${Uri.encodeComponent(userId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateUserResponse.fromJson(response);
@@ -7303,7 +7343,7 @@ class Chime {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(accountId)}/users/${Uri.encodeComponent(userId)}/settings',
+          '/accounts/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}/settings',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -7338,7 +7378,8 @@ class Chime {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/voice-connectors/${Uri.encodeComponent(voiceConnectorId)}',
+      requestUri:
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateVoiceConnectorResponse.fromJson(response);
@@ -7377,7 +7418,7 @@ class Chime {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/voice-connector-groups/${Uri.encodeComponent(voiceConnectorGroupId)}',
+          '/voice-connector-groups/${Uri.encodeQueryComponent(voiceConnectorGroupId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateVoiceConnectorGroupResponse.fromJson(response);

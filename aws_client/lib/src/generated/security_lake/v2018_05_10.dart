@@ -502,7 +502,7 @@ class SecurityLake {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/subscription-notifications/${Uri.encodeComponent(subscriptionId)}',
+          '/subscription-notifications/${Uri.encodeQueryComponent(subscriptionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateSubscriptionNotificationConfigurationResponse.fromJson(
@@ -683,7 +683,8 @@ class SecurityLake {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/datalake/delegate/${Uri.encodeComponent(account)}',
+      requestUri:
+          '/v1/datalake/delegate/${Uri.encodeQueryComponent(account).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -757,7 +758,7 @@ class SecurityLake {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/subscription-notifications/${Uri.encodeComponent(subscriptionId)}',
+          '/subscription-notifications/${Uri.encodeQueryComponent(subscriptionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -900,7 +901,8 @@ class SecurityLake {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/subscribers/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/v1/subscribers/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSubscriberResponse.fromJson(response);
@@ -1177,7 +1179,8 @@ class SecurityLake {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v1/subscribers/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/v1/subscribers/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSubscriberResponse.fromJson(response);
@@ -1245,7 +1248,7 @@ class SecurityLake {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/subscription-notifications/${Uri.encodeComponent(subscriptionId)}',
+          '/subscription-notifications/${Uri.encodeQueryComponent(subscriptionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSubscriptionNotificationConfigurationResponse.fromJson(

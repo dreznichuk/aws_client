@@ -72,7 +72,8 @@ class SnowDeviceManagement {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/task/${Uri.encodeComponent(taskId)}/cancel',
+      requestUri:
+          '/task/${Uri.encodeQueryComponent(taskId).replaceAll('+', '%20')}/cancel',
       exceptionFnMap: _exceptionFns,
     );
     return CancelTaskOutput.fromJson(response);
@@ -146,7 +147,7 @@ class SnowDeviceManagement {
       payload: null,
       method: 'POST',
       requestUri:
-          '/managed-device/${Uri.encodeComponent(managedDeviceId)}/describe',
+          '/managed-device/${Uri.encodeQueryComponent(managedDeviceId).replaceAll('+', '%20')}/describe',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDeviceOutput.fromJson(response);
@@ -179,7 +180,7 @@ class SnowDeviceManagement {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/managed-device/${Uri.encodeComponent(managedDeviceId)}/resources/ec2/describe',
+          '/managed-device/${Uri.encodeQueryComponent(managedDeviceId).replaceAll('+', '%20')}/resources/ec2/describe',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDeviceEc2Output.fromJson(response);
@@ -206,7 +207,7 @@ class SnowDeviceManagement {
       payload: null,
       method: 'POST',
       requestUri:
-          '/task/${Uri.encodeComponent(taskId)}/execution/${Uri.encodeComponent(managedDeviceId)}',
+          '/task/${Uri.encodeQueryComponent(taskId).replaceAll('+', '%20')}/execution/%24%7BUri.encodeQueryComponent%28managedDeviceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeExecutionOutput.fromJson(response);
@@ -228,7 +229,8 @@ class SnowDeviceManagement {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/task/${Uri.encodeComponent(taskId)}',
+      requestUri:
+          '/task/${Uri.encodeQueryComponent(taskId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeTaskOutput.fromJson(response);
@@ -276,7 +278,7 @@ class SnowDeviceManagement {
       payload: null,
       method: 'GET',
       requestUri:
-          '/managed-device/${Uri.encodeComponent(managedDeviceId)}/resources',
+          '/managed-device/${Uri.encodeQueryComponent(managedDeviceId).replaceAll('+', '%20')}/resources',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -387,7 +389,8 @@ class SnowDeviceManagement {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceOutput.fromJson(response);
@@ -457,7 +460,8 @@ class SnowDeviceManagement {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -485,7 +489,8 @@ class SnowDeviceManagement {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

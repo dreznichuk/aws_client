@@ -89,7 +89,7 @@ class LexModelsV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/customvocabulary/DEFAULT/batchcreate',
+          '/bots/%2524%257BUri.encodeQueryComponent%2528botId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botversions/%24%7BUri.encodeQueryComponent%28botVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/customvocabulary/DEFAULT/batchcreate',
       exceptionFnMap: _exceptionFns,
     );
     return BatchCreateCustomVocabularyItemResponse.fromJson(response);
@@ -135,7 +135,7 @@ class LexModelsV2 {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/customvocabulary/DEFAULT/batchdelete',
+          '/bots/%2524%257BUri.encodeQueryComponent%2528botId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botversions/%24%7BUri.encodeQueryComponent%28botVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/customvocabulary/DEFAULT/batchdelete',
       exceptionFnMap: _exceptionFns,
     );
     return BatchDeleteCustomVocabularyItemResponse.fromJson(response);
@@ -181,7 +181,7 @@ class LexModelsV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/customvocabulary/DEFAULT/batchupdate',
+          '/bots/%2524%257BUri.encodeQueryComponent%2528botId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botversions/%24%7BUri.encodeQueryComponent%28botVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/customvocabulary/DEFAULT/batchupdate',
       exceptionFnMap: _exceptionFns,
     );
     return BatchUpdateCustomVocabularyItemResponse.fromJson(response);
@@ -224,7 +224,7 @@ class LexModelsV2 {
       payload: null,
       method: 'POST',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/',
+          '/bots/%2524%257BUri.encodeQueryComponent%2528botId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botversions/%24%7BUri.encodeQueryComponent%28botVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
     return BuildBotLocaleResponse.fromJson(response);
@@ -389,7 +389,8 @@ class LexModelsV2 {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/bots/${Uri.encodeComponent(botId)}/botaliases/',
+      requestUri:
+          '/bots/${Uri.encodeQueryComponent(botId).replaceAll('+', '%20')}/botaliases/',
       exceptionFnMap: _exceptionFns,
     );
     return CreateBotAliasResponse.fromJson(response);
@@ -483,7 +484,7 @@ class LexModelsV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/',
+          '/bots/%24%7BUri.encodeQueryComponent%28botId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botversions/${Uri.encodeQueryComponent(botVersion).replaceAll('+', '%20')}/botlocales/',
       exceptionFnMap: _exceptionFns,
     );
     return CreateBotLocaleResponse.fromJson(response);
@@ -528,7 +529,8 @@ class LexModelsV2 {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/bots/${Uri.encodeComponent(botId)}/botversions/',
+      requestUri:
+          '/bots/${Uri.encodeQueryComponent(botId).replaceAll('+', '%20')}/botversions/',
       exceptionFnMap: _exceptionFns,
     );
     return CreateBotVersionResponse.fromJson(response);
@@ -773,7 +775,7 @@ class LexModelsV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/intents/',
+          '/bots/%2524%257BUri.encodeQueryComponent%2528botId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botversions/%24%7BUri.encodeQueryComponent%28botVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/intents/',
       exceptionFnMap: _exceptionFns,
     );
     return CreateIntentResponse.fromJson(response);
@@ -811,7 +813,8 @@ class LexModelsV2 {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/policy/${Uri.encodeComponent(resourceArn)}/',
+      requestUri:
+          '/policy/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
     return CreateResourcePolicyResponse.fromJson(response);
@@ -898,7 +901,8 @@ class LexModelsV2 {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/policy/${Uri.encodeComponent(resourceArn)}/statements/',
+      requestUri:
+          '/policy/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}/statements/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -997,7 +1001,7 @@ class LexModelsV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/intents/${Uri.encodeComponent(intentId)}/slots/',
+          '/bots/%252524%25257BUri.encodeQueryComponent%252528botId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/botversions/%2524%257BUri.encodeQueryComponent%2528botVersion%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/intents/%24%7BUri.encodeQueryComponent%28intentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/slots/',
       exceptionFnMap: _exceptionFns,
     );
     return CreateSlotResponse.fromJson(response);
@@ -1102,7 +1106,7 @@ class LexModelsV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/slottypes/',
+          '/bots/%2524%257BUri.encodeQueryComponent%2528botId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botversions/%24%7BUri.encodeQueryComponent%28botVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/slottypes/',
       exceptionFnMap: _exceptionFns,
     );
     return CreateSlotTypeResponse.fromJson(response);
@@ -1166,7 +1170,8 @@ class LexModelsV2 {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/bots/${Uri.encodeComponent(botId)}/',
+      requestUri:
+          '/bots/${Uri.encodeQueryComponent(botId).replaceAll('+', '%20')}/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1207,7 +1212,7 @@ class LexModelsV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botaliases/${Uri.encodeComponent(botAliasId)}/',
+          '/bots/${Uri.encodeQueryComponent(botId).replaceAll('+', '%20')}/botaliases/%24%7BUri.encodeQueryComponent%28botAliasId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1246,7 +1251,7 @@ class LexModelsV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/',
+          '/bots/%2524%257BUri.encodeQueryComponent%2528botId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botversions/%24%7BUri.encodeQueryComponent%28botVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteBotLocaleResponse.fromJson(response);
@@ -1289,7 +1294,7 @@ class LexModelsV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/',
+          '/bots/%24%7BUri.encodeQueryComponent%28botId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botversions/${Uri.encodeQueryComponent(botVersion).replaceAll('+', '%20')}/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1324,7 +1329,7 @@ class LexModelsV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/customvocabulary',
+          '/bots/%2524%257BUri.encodeQueryComponent%2528botId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botversions/%24%7BUri.encodeQueryComponent%28botVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/customvocabulary',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteCustomVocabularyResponse.fromJson(response);
@@ -1346,7 +1351,8 @@ class LexModelsV2 {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/exports/${Uri.encodeComponent(exportId)}/',
+      requestUri:
+          '/exports/${Uri.encodeQueryComponent(exportId).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteExportResponse.fromJson(response);
@@ -1368,7 +1374,8 @@ class LexModelsV2 {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/imports/${Uri.encodeComponent(importId)}/',
+      requestUri:
+          '/imports/${Uri.encodeQueryComponent(importId).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteImportResponse.fromJson(response);
@@ -1410,7 +1417,7 @@ class LexModelsV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/intents/${Uri.encodeComponent(intentId)}/',
+          '/bots/%252524%25257BUri.encodeQueryComponent%252528botId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/botversions/%2524%257BUri.encodeQueryComponent%2528botVersion%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/intents/%24%7BUri.encodeQueryComponent%28intentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1444,7 +1451,8 @@ class LexModelsV2 {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/policy/${Uri.encodeComponent(resourceArn)}/',
+      requestUri:
+          '/policy/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1488,7 +1496,7 @@ class LexModelsV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/policy/${Uri.encodeComponent(resourceArn)}/statements/${Uri.encodeComponent(statementId)}/',
+          '/policy/%24%7BUri.encodeQueryComponent%28resourceArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/statements/${Uri.encodeQueryComponent(statementId).replaceAll('+', '%20')}/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1533,7 +1541,7 @@ class LexModelsV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/intents/${Uri.encodeComponent(intentId)}/slots/${Uri.encodeComponent(slotId)}/',
+          '/bots/%25252524%2525257BUri.encodeQueryComponent%25252528botId%25252529.replaceAll%25252528%25252527%2525252B%25252527%2525252C%25252520%25252527%2525252520%25252527%25252529%2525257D/botversions/%252524%25257BUri.encodeQueryComponent%252528botVersion%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/botlocales/%24%7BUri.encodeQueryComponent%28localeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/intents/%2524%257BUri.encodeQueryComponent%2528intentId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/slots/${Uri.encodeQueryComponent(slotId).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1588,7 +1596,7 @@ class LexModelsV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/slottypes/${Uri.encodeComponent(slotTypeId)}/',
+          '/bots/%252524%25257BUri.encodeQueryComponent%252528botId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/botversions/%2524%257BUri.encodeQueryComponent%2528botVersion%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botlocales/%24%7BUri.encodeQueryComponent%28localeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/slottypes/${Uri.encodeQueryComponent(slotTypeId).replaceAll('+', '%20')}/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1642,7 +1650,8 @@ class LexModelsV2 {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/bots/${Uri.encodeComponent(botId)}/utterances/',
+      requestUri:
+          '/bots/${Uri.encodeQueryComponent(botId).replaceAll('+', '%20')}/utterances/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1664,7 +1673,8 @@ class LexModelsV2 {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/bots/${Uri.encodeComponent(botId)}/',
+      requestUri:
+          '/bots/${Uri.encodeQueryComponent(botId).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeBotResponse.fromJson(response);
@@ -1691,7 +1701,7 @@ class LexModelsV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botaliases/${Uri.encodeComponent(botAliasId)}/',
+          '/bots/${Uri.encodeQueryComponent(botId).replaceAll('+', '%20')}/botaliases/%24%7BUri.encodeQueryComponent%28botAliasId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeBotAliasResponse.fromJson(response);
@@ -1725,7 +1735,7 @@ class LexModelsV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/',
+          '/bots/%2524%257BUri.encodeQueryComponent%2528botId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botversions/%24%7BUri.encodeQueryComponent%28botVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeBotLocaleResponse.fromJson(response);
@@ -1766,7 +1776,7 @@ class LexModelsV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/botrecommendations/${Uri.encodeComponent(botRecommendationId)}/',
+          '/bots/%252524%25257BUri.encodeQueryComponent%252528botId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/botversions/%24%7BUri.encodeQueryComponent%28botVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/botrecommendations/%2524%257BUri.encodeQueryComponent%2528botRecommendationId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeBotRecommendationResponse.fromJson(response);
@@ -1793,7 +1803,7 @@ class LexModelsV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/',
+          '/bots/%24%7BUri.encodeQueryComponent%28botId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botversions/${Uri.encodeQueryComponent(botVersion).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeBotVersionResponse.fromJson(response);
@@ -1826,7 +1836,7 @@ class LexModelsV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/customvocabulary/DEFAULT/metadata',
+          '/bots/%2524%257BUri.encodeQueryComponent%2528botId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botversions/%24%7BUri.encodeQueryComponent%28botVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/customvocabulary/DEFAULT/metadata',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeCustomVocabularyMetadataResponse.fromJson(response);
@@ -1847,7 +1857,8 @@ class LexModelsV2 {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/exports/${Uri.encodeComponent(exportId)}/',
+      requestUri:
+          '/exports/${Uri.encodeQueryComponent(exportId).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeExportResponse.fromJson(response);
@@ -1868,7 +1879,8 @@ class LexModelsV2 {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/imports/${Uri.encodeComponent(importId)}/',
+      requestUri:
+          '/imports/${Uri.encodeQueryComponent(importId).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeImportResponse.fromJson(response);
@@ -1907,7 +1919,7 @@ class LexModelsV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/intents/${Uri.encodeComponent(intentId)}/',
+          '/bots/%252524%25257BUri.encodeQueryComponent%252528botId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/botversions/%2524%257BUri.encodeQueryComponent%2528botVersion%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/intents/%24%7BUri.encodeQueryComponent%28intentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeIntentResponse.fromJson(response);
@@ -1928,7 +1940,8 @@ class LexModelsV2 {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/policy/${Uri.encodeComponent(resourceArn)}/',
+      requestUri:
+          '/policy/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeResourcePolicyResponse.fromJson(response);
@@ -1971,7 +1984,7 @@ class LexModelsV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/intents/${Uri.encodeComponent(intentId)}/slots/${Uri.encodeComponent(slotId)}/',
+          '/bots/%25252524%2525257BUri.encodeQueryComponent%25252528botId%25252529.replaceAll%25252528%25252527%2525252B%25252527%2525252C%25252520%25252527%2525252520%25252527%25252529%2525257D/botversions/%252524%25257BUri.encodeQueryComponent%252528botVersion%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/botlocales/%24%7BUri.encodeQueryComponent%28localeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/intents/%2524%257BUri.encodeQueryComponent%2528intentId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/slots/${Uri.encodeQueryComponent(slotId).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeSlotResponse.fromJson(response);
@@ -2010,7 +2023,7 @@ class LexModelsV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/slottypes/${Uri.encodeComponent(slotTypeId)}/',
+          '/bots/%252524%25257BUri.encodeQueryComponent%252528botId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/botversions/%2524%257BUri.encodeQueryComponent%2528botVersion%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botlocales/%24%7BUri.encodeQueryComponent%28localeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/slottypes/${Uri.encodeQueryComponent(slotTypeId).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeSlotTypeResponse.fromJson(response);
@@ -2122,7 +2135,8 @@ class LexModelsV2 {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/bots/${Uri.encodeComponent(botId)}/aggregatedutterances/',
+      requestUri:
+          '/bots/${Uri.encodeQueryComponent(botId).replaceAll('+', '%20')}/aggregatedutterances/',
       exceptionFnMap: _exceptionFns,
     );
     return ListAggregatedUtterancesResponse.fromJson(response);
@@ -2166,7 +2180,8 @@ class LexModelsV2 {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/bots/${Uri.encodeComponent(botId)}/botaliases/',
+      requestUri:
+          '/bots/${Uri.encodeQueryComponent(botId).replaceAll('+', '%20')}/botaliases/',
       exceptionFnMap: _exceptionFns,
     );
     return ListBotAliasesResponse.fromJson(response);
@@ -2228,7 +2243,7 @@ class LexModelsV2 {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/',
+          '/bots/%24%7BUri.encodeQueryComponent%28botId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botversions/${Uri.encodeQueryComponent(botVersion).replaceAll('+', '%20')}/botlocales/',
       exceptionFnMap: _exceptionFns,
     );
     return ListBotLocalesResponse.fromJson(response);
@@ -2282,7 +2297,7 @@ class LexModelsV2 {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/botrecommendations/',
+          '/bots/%2524%257BUri.encodeQueryComponent%2528botId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botversions/%24%7BUri.encodeQueryComponent%28botVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/botrecommendations/',
       exceptionFnMap: _exceptionFns,
     );
     return ListBotRecommendationsResponse.fromJson(response);
@@ -2341,7 +2356,8 @@ class LexModelsV2 {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/bots/${Uri.encodeComponent(botId)}/botversions/',
+      requestUri:
+          '/bots/${Uri.encodeQueryComponent(botId).replaceAll('+', '%20')}/botversions/',
       exceptionFnMap: _exceptionFns,
     );
     return ListBotVersionsResponse.fromJson(response);
@@ -2460,7 +2476,8 @@ class LexModelsV2 {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/builtins/locales/${Uri.encodeComponent(localeId)}/intents/',
+      requestUri:
+          '/builtins/locales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/intents/',
       exceptionFnMap: _exceptionFns,
     );
     return ListBuiltInIntentsResponse.fromJson(response);
@@ -2516,7 +2533,7 @@ class LexModelsV2 {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/builtins/locales/${Uri.encodeComponent(localeId)}/slottypes/',
+          '/builtins/locales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/slottypes/',
       exceptionFnMap: _exceptionFns,
     );
     return ListBuiltInSlotTypesResponse.fromJson(response);
@@ -2570,7 +2587,7 @@ class LexModelsV2 {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/customvocabulary/DEFAULT/list',
+          '/bots/%2524%257BUri.encodeQueryComponent%2528botId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botversions/%24%7BUri.encodeQueryComponent%28botVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/customvocabulary/DEFAULT/list',
       exceptionFnMap: _exceptionFns,
     );
     return ListCustomVocabularyItemsResponse.fromJson(response);
@@ -2795,7 +2812,7 @@ class LexModelsV2 {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/intents/',
+          '/bots/%2524%257BUri.encodeQueryComponent%2528botId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botversions/%24%7BUri.encodeQueryComponent%28botVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/intents/',
       exceptionFnMap: _exceptionFns,
     );
     return ListIntentsResponse.fromJson(response);
@@ -2855,7 +2872,7 @@ class LexModelsV2 {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/botrecommendations/${Uri.encodeComponent(botRecommendationId)}/intents',
+          '/bots/%252524%25257BUri.encodeQueryComponent%252528botId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/botversions/%24%7BUri.encodeQueryComponent%28botVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/botrecommendations/%2524%257BUri.encodeQueryComponent%2528botRecommendationId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/intents',
       exceptionFnMap: _exceptionFns,
     );
     return ListRecommendedIntentsResponse.fromJson(response);
@@ -2926,7 +2943,7 @@ class LexModelsV2 {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/slottypes/',
+          '/bots/%2524%257BUri.encodeQueryComponent%2528botId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botversions/%24%7BUri.encodeQueryComponent%28botVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/slottypes/',
       exceptionFnMap: _exceptionFns,
     );
     return ListSlotTypesResponse.fromJson(response);
@@ -3000,7 +3017,7 @@ class LexModelsV2 {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/intents/${Uri.encodeComponent(intentId)}/slots/',
+          '/bots/%252524%25257BUri.encodeQueryComponent%252528botId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/botversions/%2524%257BUri.encodeQueryComponent%2528botVersion%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/intents/%24%7BUri.encodeQueryComponent%28intentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/slots/',
       exceptionFnMap: _exceptionFns,
     );
     return ListSlotsResponse.fromJson(response);
@@ -3022,7 +3039,8 @@ class LexModelsV2 {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceARN)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceARN).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -3103,7 +3121,7 @@ class LexModelsV2 {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/botrecommendations/${Uri.encodeComponent(botRecommendationId)}/associatedtranscripts',
+          '/bots/%252524%25257BUri.encodeQueryComponent%252528botId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/botversions/%24%7BUri.encodeQueryComponent%28botVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/botrecommendations/%2524%257BUri.encodeQueryComponent%2528botRecommendationId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/associatedtranscripts',
       exceptionFnMap: _exceptionFns,
     );
     return SearchAssociatedTranscriptsResponse.fromJson(response);
@@ -3157,7 +3175,7 @@ class LexModelsV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/botrecommendations/',
+          '/bots/%2524%257BUri.encodeQueryComponent%2528botId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botversions/%24%7BUri.encodeQueryComponent%28botVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/botrecommendations/',
       exceptionFnMap: _exceptionFns,
     );
     return StartBotRecommendationResponse.fromJson(response);
@@ -3250,7 +3268,7 @@ class LexModelsV2 {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/botrecommendations/${Uri.encodeComponent(botRecommendationId)}/stopbotrecommendation',
+          '/bots/%252524%25257BUri.encodeQueryComponent%252528botId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/botversions/%24%7BUri.encodeQueryComponent%28botVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/botrecommendations/%2524%257BUri.encodeQueryComponent%2528botRecommendationId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/stopbotrecommendation',
       exceptionFnMap: _exceptionFns,
     );
     return StopBotRecommendationResponse.fromJson(response);
@@ -3281,7 +3299,8 @@ class LexModelsV2 {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceARN)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceARN).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3309,7 +3328,8 @@ class LexModelsV2 {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceARN)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceARN).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3389,7 +3409,8 @@ class LexModelsV2 {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/bots/${Uri.encodeComponent(botId)}/',
+      requestUri:
+          '/bots/${Uri.encodeQueryComponent(botId).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBotResponse.fromJson(response);
@@ -3450,7 +3471,7 @@ class LexModelsV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botaliases/${Uri.encodeComponent(botAliasId)}/',
+          '/bots/${Uri.encodeQueryComponent(botId).replaceAll('+', '%20')}/botaliases/%24%7BUri.encodeQueryComponent%28botAliasId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBotAliasResponse.fromJson(response);
@@ -3514,7 +3535,7 @@ class LexModelsV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/',
+          '/bots/%2524%257BUri.encodeQueryComponent%2528botId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botversions/%24%7BUri.encodeQueryComponent%28botVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBotLocaleResponse.fromJson(response);
@@ -3566,7 +3587,7 @@ class LexModelsV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/botrecommendations/${Uri.encodeComponent(botRecommendationId)}/',
+          '/bots/%252524%25257BUri.encodeQueryComponent%252528botId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/botversions/%24%7BUri.encodeQueryComponent%28botVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/botrecommendations/%2524%257BUri.encodeQueryComponent%2528botRecommendationId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBotRecommendationResponse.fromJson(response);
@@ -3602,7 +3623,8 @@ class LexModelsV2 {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/exports/${Uri.encodeComponent(exportId)}/',
+      requestUri:
+          '/exports/${Uri.encodeQueryComponent(exportId).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateExportResponse.fromJson(response);
@@ -3722,7 +3744,7 @@ class LexModelsV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/intents/${Uri.encodeComponent(intentId)}/',
+          '/bots/%252524%25257BUri.encodeQueryComponent%252528botId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/botversions/%2524%257BUri.encodeQueryComponent%2528botVersion%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botlocales/${Uri.encodeQueryComponent(localeId).replaceAll('+', '%20')}/intents/%24%7BUri.encodeQueryComponent%28intentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateIntentResponse.fromJson(response);
@@ -3773,7 +3795,8 @@ class LexModelsV2 {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/policy/${Uri.encodeComponent(resourceArn)}/',
+      requestUri:
+          '/policy/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3866,7 +3889,7 @@ class LexModelsV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/intents/${Uri.encodeComponent(intentId)}/slots/${Uri.encodeComponent(slotId)}/',
+          '/bots/%25252524%2525257BUri.encodeQueryComponent%25252528botId%25252529.replaceAll%25252528%25252527%2525252B%25252527%2525252C%25252520%25252527%2525252520%25252527%25252529%2525257D/botversions/%252524%25257BUri.encodeQueryComponent%252528botVersion%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/botlocales/%24%7BUri.encodeQueryComponent%28localeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/intents/%2524%257BUri.encodeQueryComponent%2528intentId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/slots/${Uri.encodeQueryComponent(slotId).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSlotResponse.fromJson(response);
@@ -3948,7 +3971,7 @@ class LexModelsV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botversions/${Uri.encodeComponent(botVersion)}/botlocales/${Uri.encodeComponent(localeId)}/slottypes/${Uri.encodeComponent(slotTypeId)}/',
+          '/bots/%252524%25257BUri.encodeQueryComponent%252528botId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/botversions/%2524%257BUri.encodeQueryComponent%2528botVersion%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botlocales/%24%7BUri.encodeQueryComponent%28localeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/slottypes/${Uri.encodeQueryComponent(slotTypeId).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSlotTypeResponse.fromJson(response);

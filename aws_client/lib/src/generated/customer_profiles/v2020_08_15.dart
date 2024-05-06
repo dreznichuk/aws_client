@@ -99,7 +99,8 @@ class CustomerProfiles {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/domains/${Uri.encodeComponent(domainName)}/profiles/keys',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/profiles/keys',
       exceptionFnMap: _exceptionFns,
     );
     return AddProfileKeyResponse.fromJson(response);
@@ -187,7 +188,8 @@ class CustomerProfiles {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/domains/${Uri.encodeComponent(domainName)}',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateDomainResponse.fromJson(response);
@@ -242,7 +244,7 @@ class CustomerProfiles {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainName)}/workflows/integrations',
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/workflows/integrations',
       exceptionFnMap: _exceptionFns,
     );
     return CreateIntegrationWorkflowResponse.fromJson(response);
@@ -392,7 +394,8 @@ class CustomerProfiles {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/domains/${Uri.encodeComponent(domainName)}/profiles',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/profiles',
       exceptionFnMap: _exceptionFns,
     );
     return CreateProfileResponse.fromJson(response);
@@ -415,7 +418,8 @@ class CustomerProfiles {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/domains/${Uri.encodeComponent(domainName)}',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteDomainResponse.fromJson(response);
@@ -445,7 +449,7 @@ class CustomerProfiles {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainName)}/integrations/delete',
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/integrations/delete',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteIntegrationResponse.fromJson(response);
@@ -475,7 +479,8 @@ class CustomerProfiles {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/domains/${Uri.encodeComponent(domainName)}/profiles/delete',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/profiles/delete',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteProfileResponse.fromJson(response);
@@ -515,7 +520,7 @@ class CustomerProfiles {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainName)}/profiles/keys/delete',
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/profiles/keys/delete',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteProfileKeyResponse.fromJson(response);
@@ -555,7 +560,7 @@ class CustomerProfiles {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainName)}/profiles/objects/delete',
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/profiles/objects/delete',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteProfileObjectResponse.fromJson(response);
@@ -585,7 +590,7 @@ class CustomerProfiles {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainName)}/object-types/${Uri.encodeComponent(objectTypeName)}',
+          '/domains/%24%7BUri.encodeQueryComponent%28domainName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/object-types/${Uri.encodeQueryComponent(objectTypeName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteProfileObjectTypeResponse.fromJson(response);
@@ -613,7 +618,7 @@ class CustomerProfiles {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainName)}/workflows/${Uri.encodeComponent(workflowId)}',
+          '/domains/%24%7BUri.encodeQueryComponent%28domainName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/workflows/${Uri.encodeQueryComponent(workflowId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -678,7 +683,7 @@ class CustomerProfiles {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainName)}/identity-resolution-jobs/auto-merging-preview',
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/identity-resolution-jobs/auto-merging-preview',
       exceptionFnMap: _exceptionFns,
     );
     return GetAutoMergingPreviewResponse.fromJson(response);
@@ -700,7 +705,8 @@ class CustomerProfiles {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/domains/${Uri.encodeComponent(domainName)}',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDomainResponse.fromJson(response);
@@ -732,7 +738,7 @@ class CustomerProfiles {
       payload: null,
       method: 'GET',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainName)}/identity-resolution-jobs/${Uri.encodeComponent(jobId)}',
+          '/domains/%24%7BUri.encodeQueryComponent%28domainName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/identity-resolution-jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetIdentityResolutionJobResponse.fromJson(response);
@@ -761,7 +767,8 @@ class CustomerProfiles {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/domains/${Uri.encodeComponent(domainName)}/integrations',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/integrations',
       exceptionFnMap: _exceptionFns,
     );
     return GetIntegrationResponse.fromJson(response);
@@ -856,7 +863,8 @@ class CustomerProfiles {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/domains/${Uri.encodeComponent(domainName)}/matches',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/matches',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -884,7 +892,7 @@ class CustomerProfiles {
       payload: null,
       method: 'GET',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainName)}/object-types/${Uri.encodeComponent(objectTypeName)}',
+          '/domains/%24%7BUri.encodeQueryComponent%28domainName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/object-types/${Uri.encodeQueryComponent(objectTypeName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetProfileObjectTypeResponse.fromJson(response);
@@ -911,7 +919,8 @@ class CustomerProfiles {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/templates/${Uri.encodeComponent(templateId)}',
+      requestUri:
+          '/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetProfileObjectTypeTemplateResponse.fromJson(response);
@@ -938,7 +947,7 @@ class CustomerProfiles {
       payload: null,
       method: 'GET',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainName)}/workflows/${Uri.encodeComponent(workflowId)}',
+          '/domains/%24%7BUri.encodeQueryComponent%28domainName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/workflows/${Uri.encodeQueryComponent(workflowId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetWorkflowResponse.fromJson(response);
@@ -984,7 +993,7 @@ class CustomerProfiles {
       payload: null,
       method: 'GET',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainName)}/workflows/${Uri.encodeComponent(workflowId)}/steps',
+          '/domains/%24%7BUri.encodeQueryComponent%28domainName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/workflows/${Uri.encodeQueryComponent(workflowId).replaceAll('+', '%20')}/steps',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1117,7 +1126,7 @@ class CustomerProfiles {
       payload: null,
       method: 'GET',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainName)}/identity-resolution-jobs',
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/identity-resolution-jobs',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1164,7 +1173,8 @@ class CustomerProfiles {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/domains/${Uri.encodeComponent(domainName)}/integrations',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/integrations',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1243,7 +1253,8 @@ class CustomerProfiles {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/domains/${Uri.encodeComponent(domainName)}/object-types',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/object-types',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1305,7 +1316,7 @@ class CustomerProfiles {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainName)}/profiles/objects',
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/profiles/objects',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1328,7 +1339,8 @@ class CustomerProfiles {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1393,7 +1405,8 @@ class CustomerProfiles {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/domains/${Uri.encodeComponent(domainName)}/workflows',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/workflows',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1476,7 +1489,7 @@ class CustomerProfiles {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainName)}/profiles/objects/merge',
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/profiles/objects/merge',
       exceptionFnMap: _exceptionFns,
     );
     return MergeProfilesResponse.fromJson(response);
@@ -1542,7 +1555,8 @@ class CustomerProfiles {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/domains/${Uri.encodeComponent(domainName)}/integrations',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/integrations',
       exceptionFnMap: _exceptionFns,
     );
     return PutIntegrationResponse.fromJson(response);
@@ -1590,7 +1604,7 @@ class CustomerProfiles {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainName)}/profiles/objects',
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/profiles/objects',
       exceptionFnMap: _exceptionFns,
     );
     return PutProfileObjectResponse.fromJson(response);
@@ -1691,7 +1705,7 @@ class CustomerProfiles {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/domains/${Uri.encodeComponent(domainName)}/object-types/${Uri.encodeComponent(objectTypeName)}',
+          '/domains/%24%7BUri.encodeQueryComponent%28domainName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/object-types/${Uri.encodeQueryComponent(objectTypeName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return PutProfileObjectTypeResponse.fromJson(response);
@@ -1795,7 +1809,8 @@ class CustomerProfiles {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/domains/${Uri.encodeComponent(domainName)}/profiles/search',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/profiles/search',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1839,7 +1854,8 @@ class CustomerProfiles {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1867,7 +1883,8 @@ class CustomerProfiles {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1958,7 +1975,8 @@ class CustomerProfiles {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/domains/${Uri.encodeComponent(domainName)}',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDomainResponse.fromJson(response);
@@ -2115,7 +2133,8 @@ class CustomerProfiles {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/domains/${Uri.encodeComponent(domainName)}/profiles',
+      requestUri:
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/profiles',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateProfileResponse.fromJson(response);

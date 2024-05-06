@@ -154,7 +154,8 @@ class Finspace {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/environment/${Uri.encodeComponent(environmentId)}',
+      requestUri:
+          '/environment/${Uri.encodeQueryComponent(environmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -174,7 +175,8 @@ class Finspace {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/environment/${Uri.encodeComponent(environmentId)}',
+      requestUri:
+          '/environment/${Uri.encodeQueryComponent(environmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetEnvironmentResponse.fromJson(response);
@@ -230,7 +232,8 @@ class Finspace {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -257,7 +260,8 @@ class Finspace {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -284,7 +288,8 @@ class Finspace {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -337,7 +342,8 @@ class Finspace {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/environment/${Uri.encodeComponent(environmentId)}',
+      requestUri:
+          '/environment/${Uri.encodeQueryComponent(environmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateEnvironmentResponse.fromJson(response);

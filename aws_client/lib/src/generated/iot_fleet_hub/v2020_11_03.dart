@@ -139,7 +139,8 @@ class IoTFleetHub {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -165,7 +166,8 @@ class IoTFleetHub {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeApplicationResponse.fromJson(response);
@@ -218,7 +220,8 @@ class IoTFleetHub {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -250,7 +253,8 @@ class IoTFleetHub {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -280,7 +284,8 @@ class IoTFleetHub {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -327,7 +332,8 @@ class IoTFleetHub {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

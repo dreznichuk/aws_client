@@ -208,7 +208,8 @@ class CloudWatchInternetMonitor {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v20210603/Monitors/${Uri.encodeComponent(monitorName)}',
+      requestUri:
+          '/v20210603/Monitors/${Uri.encodeQueryComponent(monitorName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -245,7 +246,7 @@ class CloudWatchInternetMonitor {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v20210603/Monitors/${Uri.encodeComponent(monitorName)}/HealthEvents/${Uri.encodeComponent(eventId)}',
+          '/v20210603/Monitors/${Uri.encodeQueryComponent(monitorName).replaceAll('+', '%20')}/HealthEvents/%24%7BUri.encodeQueryComponent%28eventId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetHealthEventOutput.fromJson(response);
@@ -269,7 +270,8 @@ class CloudWatchInternetMonitor {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v20210603/Monitors/${Uri.encodeComponent(monitorName)}',
+      requestUri:
+          '/v20210603/Monitors/${Uri.encodeQueryComponent(monitorName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetMonitorOutput.fromJson(response);
@@ -334,7 +336,7 @@ class CloudWatchInternetMonitor {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v20210603/Monitors/${Uri.encodeComponent(monitorName)}/HealthEvents',
+          '/v20210603/Monitors/${Uri.encodeQueryComponent(monitorName).replaceAll('+', '%20')}/HealthEvents',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -407,7 +409,8 @@ class CloudWatchInternetMonitor {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceOutput.fromJson(response);
@@ -443,7 +446,8 @@ class CloudWatchInternetMonitor {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -471,7 +475,8 @@ class CloudWatchInternetMonitor {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -577,7 +582,8 @@ class CloudWatchInternetMonitor {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/v20210603/Monitors/${Uri.encodeComponent(monitorName)}',
+      requestUri:
+          '/v20210603/Monitors/${Uri.encodeQueryComponent(monitorName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateMonitorOutput.fromJson(response);

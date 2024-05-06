@@ -301,7 +301,7 @@ class CodeCatalyst {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/spaces/${Uri.encodeComponent(spaceName)}/projects/${Uri.encodeComponent(projectName)}/devEnvironments',
+          '/v1/spaces/${Uri.encodeQueryComponent(spaceName).replaceAll('+', '%20')}/projects/%24%7BUri.encodeQueryComponent%28projectName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/devEnvironments',
       exceptionFnMap: _exceptionFns,
     );
     return CreateDevEnvironmentResponse.fromJson(response);
@@ -338,7 +338,8 @@ class CodeCatalyst {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v1/spaces/${Uri.encodeComponent(spaceName)}/projects',
+      requestUri:
+          '/v1/spaces/${Uri.encodeQueryComponent(spaceName).replaceAll('+', '%20')}/projects',
       exceptionFnMap: _exceptionFns,
     );
     return CreateProjectResponse.fromJson(response);
@@ -387,7 +388,7 @@ class CodeCatalyst {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/spaces/${Uri.encodeComponent(spaceName)}/projects/${Uri.encodeComponent(projectName)}/sourceRepositories/${Uri.encodeComponent(sourceRepositoryName)}/branches/${Uri.encodeComponent(name)}',
+          '/v1/spaces/${Uri.encodeQueryComponent(spaceName).replaceAll('+', '%20')}/projects/%2524%257BUri.encodeQueryComponent%2528projectName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/sourceRepositories/%24%7BUri.encodeQueryComponent%28sourceRepositoryName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/branches/%252524%25257BUri.encodeQueryComponent%252528name%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D',
       exceptionFnMap: _exceptionFns,
     );
     return CreateSourceRepositoryBranchResponse.fromJson(response);
@@ -413,7 +414,8 @@ class CodeCatalyst {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/accessTokens/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/v1/accessTokens/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -445,7 +447,7 @@ class CodeCatalyst {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/spaces/${Uri.encodeComponent(spaceName)}/projects/${Uri.encodeComponent(projectName)}/devEnvironments/${Uri.encodeComponent(id)}',
+          '/v1/spaces/${Uri.encodeQueryComponent(spaceName).replaceAll('+', '%20')}/projects/%24%7BUri.encodeQueryComponent%28projectName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/devEnvironments/%2524%257BUri.encodeQueryComponent%2528id%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteDevEnvironmentResponse.fromJson(response);
@@ -480,7 +482,7 @@ class CodeCatalyst {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/spaces/${Uri.encodeComponent(spaceName)}/projects/${Uri.encodeComponent(projectName)}/devEnvironments/${Uri.encodeComponent(id)}',
+          '/v1/spaces/${Uri.encodeQueryComponent(spaceName).replaceAll('+', '%20')}/projects/%24%7BUri.encodeQueryComponent%28projectName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/devEnvironments/%2524%257BUri.encodeQueryComponent%2528id%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       exceptionFnMap: _exceptionFns,
     );
     return GetDevEnvironmentResponse.fromJson(response);
@@ -508,7 +510,7 @@ class CodeCatalyst {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/spaces/${Uri.encodeComponent(spaceName)}/projects/${Uri.encodeComponent(name)}',
+          '/v1/spaces/${Uri.encodeQueryComponent(spaceName).replaceAll('+', '%20')}/projects/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetProjectResponse.fromJson(response);
@@ -541,7 +543,7 @@ class CodeCatalyst {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/spaces/${Uri.encodeComponent(spaceName)}/projects/${Uri.encodeComponent(projectName)}/sourceRepositories/${Uri.encodeComponent(sourceRepositoryName)}/cloneUrls',
+          '/v1/spaces/${Uri.encodeQueryComponent(spaceName).replaceAll('+', '%20')}/projects/%2524%257BUri.encodeQueryComponent%2528projectName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/sourceRepositories/%24%7BUri.encodeQueryComponent%28sourceRepositoryName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/cloneUrls',
       exceptionFnMap: _exceptionFns,
     );
     return GetSourceRepositoryCloneUrlsResponse.fromJson(response);
@@ -564,7 +566,8 @@ class CodeCatalyst {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/spaces/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/v1/spaces/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSpaceResponse.fromJson(response);
@@ -588,7 +591,8 @@ class CodeCatalyst {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/spaces/${Uri.encodeComponent(spaceName)}/subscription',
+      requestUri:
+          '/v1/spaces/${Uri.encodeQueryComponent(spaceName).replaceAll('+', '%20')}/subscription',
       exceptionFnMap: _exceptionFns,
     );
     return GetSubscriptionResponse.fromJson(response);
@@ -717,7 +721,7 @@ class CodeCatalyst {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/spaces/${Uri.encodeComponent(spaceName)}/projects/${Uri.encodeComponent(projectName)}/devEnvironments/${Uri.encodeComponent(devEnvironmentId)}/sessions',
+          '/v1/spaces/${Uri.encodeQueryComponent(spaceName).replaceAll('+', '%20')}/projects/%24%7BUri.encodeQueryComponent%28projectName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/devEnvironments/%2524%257BUri.encodeQueryComponent%2528devEnvironmentId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/sessions',
       exceptionFnMap: _exceptionFns,
     );
     return ListDevEnvironmentSessionsResponse.fromJson(response);
@@ -773,7 +777,7 @@ class CodeCatalyst {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/spaces/${Uri.encodeComponent(spaceName)}/projects/${Uri.encodeComponent(projectName)}/devEnvironments',
+          '/v1/spaces/${Uri.encodeQueryComponent(spaceName).replaceAll('+', '%20')}/projects/%24%7BUri.encodeQueryComponent%28projectName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/devEnvironments',
       exceptionFnMap: _exceptionFns,
     );
     return ListDevEnvironmentsResponse.fromJson(response);
@@ -839,7 +843,8 @@ class CodeCatalyst {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/spaces/${Uri.encodeComponent(spaceName)}/eventLogs',
+      requestUri:
+          '/v1/spaces/${Uri.encodeQueryComponent(spaceName).replaceAll('+', '%20')}/eventLogs',
       exceptionFnMap: _exceptionFns,
     );
     return ListEventLogsResponse.fromJson(response);
@@ -890,7 +895,8 @@ class CodeCatalyst {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/spaces/${Uri.encodeComponent(spaceName)}/projects',
+      requestUri:
+          '/v1/spaces/${Uri.encodeQueryComponent(spaceName).replaceAll('+', '%20')}/projects',
       exceptionFnMap: _exceptionFns,
     );
     return ListProjectsResponse.fromJson(response);
@@ -940,7 +946,7 @@ class CodeCatalyst {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/spaces/${Uri.encodeComponent(spaceName)}/projects/${Uri.encodeComponent(projectName)}/sourceRepositories',
+          '/v1/spaces/${Uri.encodeQueryComponent(spaceName).replaceAll('+', '%20')}/projects/%24%7BUri.encodeQueryComponent%28projectName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/sourceRepositories',
       exceptionFnMap: _exceptionFns,
     );
     return ListSourceRepositoriesResponse.fromJson(response);
@@ -994,7 +1000,7 @@ class CodeCatalyst {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/spaces/${Uri.encodeComponent(spaceName)}/projects/${Uri.encodeComponent(projectName)}/sourceRepositories/${Uri.encodeComponent(sourceRepositoryName)}/branches',
+          '/v1/spaces/${Uri.encodeQueryComponent(spaceName).replaceAll('+', '%20')}/projects/%2524%257BUri.encodeQueryComponent%2528projectName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/sourceRepositories/%24%7BUri.encodeQueryComponent%28sourceRepositoryName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/branches',
       exceptionFnMap: _exceptionFns,
     );
     return ListSourceRepositoryBranchesResponse.fromJson(response);
@@ -1080,7 +1086,7 @@ class CodeCatalyst {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/spaces/${Uri.encodeComponent(spaceName)}/projects/${Uri.encodeComponent(projectName)}/devEnvironments/${Uri.encodeComponent(id)}/start',
+          '/v1/spaces/${Uri.encodeQueryComponent(spaceName).replaceAll('+', '%20')}/projects/%24%7BUri.encodeQueryComponent%28projectName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/devEnvironments/%2524%257BUri.encodeQueryComponent%2528id%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/start',
       exceptionFnMap: _exceptionFns,
     );
     return StartDevEnvironmentResponse.fromJson(response);
@@ -1116,7 +1122,7 @@ class CodeCatalyst {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/spaces/${Uri.encodeComponent(spaceName)}/projects/${Uri.encodeComponent(projectName)}/devEnvironments/${Uri.encodeComponent(id)}/session',
+          '/v1/spaces/${Uri.encodeQueryComponent(spaceName).replaceAll('+', '%20')}/projects/%24%7BUri.encodeQueryComponent%28projectName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/devEnvironments/%2524%257BUri.encodeQueryComponent%2528id%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/session',
       exceptionFnMap: _exceptionFns,
     );
     return StartDevEnvironmentSessionResponse.fromJson(response);
@@ -1149,7 +1155,7 @@ class CodeCatalyst {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/v1/spaces/${Uri.encodeComponent(spaceName)}/projects/${Uri.encodeComponent(projectName)}/devEnvironments/${Uri.encodeComponent(id)}/stop',
+          '/v1/spaces/${Uri.encodeQueryComponent(spaceName).replaceAll('+', '%20')}/projects/%24%7BUri.encodeQueryComponent%28projectName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/devEnvironments/%2524%257BUri.encodeQueryComponent%2528id%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/stop',
       exceptionFnMap: _exceptionFns,
     );
     return StopDevEnvironmentResponse.fromJson(response);
@@ -1187,7 +1193,7 @@ class CodeCatalyst {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/spaces/${Uri.encodeComponent(spaceName)}/projects/${Uri.encodeComponent(projectName)}/devEnvironments/${Uri.encodeComponent(id)}/session/${Uri.encodeComponent(sessionId)}',
+          '/v1/spaces/${Uri.encodeQueryComponent(spaceName).replaceAll('+', '%20')}/projects/%2524%257BUri.encodeQueryComponent%2528projectName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/devEnvironments/%252524%25257BUri.encodeQueryComponent%252528id%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/session/%24%7BUri.encodeQueryComponent%28sessionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return StopDevEnvironmentSessionResponse.fromJson(response);
@@ -1269,7 +1275,7 @@ class CodeCatalyst {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/v1/spaces/${Uri.encodeComponent(spaceName)}/projects/${Uri.encodeComponent(projectName)}/devEnvironments/${Uri.encodeComponent(id)}',
+          '/v1/spaces/${Uri.encodeQueryComponent(spaceName).replaceAll('+', '%20')}/projects/%24%7BUri.encodeQueryComponent%28projectName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/devEnvironments/%2524%257BUri.encodeQueryComponent%2528id%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDevEnvironmentResponse.fromJson(response);

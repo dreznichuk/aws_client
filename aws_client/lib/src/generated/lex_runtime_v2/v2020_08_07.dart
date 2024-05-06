@@ -94,7 +94,7 @@ class LexRuntimeV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botAliases/${Uri.encodeComponent(botAliasId)}/botLocales/${Uri.encodeComponent(localeId)}/sessions/${Uri.encodeComponent(sessionId)}',
+          '/bots/%2524%257BUri.encodeQueryComponent%2528botId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botAliases/%252524%25257BUri.encodeQueryComponent%252528botAliasId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/botLocales/%24%7BUri.encodeQueryComponent%28localeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/sessions/${Uri.encodeQueryComponent(sessionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteSessionResponse.fromJson(response);
@@ -137,7 +137,7 @@ class LexRuntimeV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botAliases/${Uri.encodeComponent(botAliasId)}/botLocales/${Uri.encodeComponent(localeId)}/sessions/${Uri.encodeComponent(sessionId)}',
+          '/bots/%2524%257BUri.encodeQueryComponent%2528botId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botAliases/%252524%25257BUri.encodeQueryComponent%252528botAliasId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/botLocales/%24%7BUri.encodeQueryComponent%28localeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/sessions/${Uri.encodeQueryComponent(sessionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSessionResponse.fromJson(response);
@@ -219,7 +219,7 @@ class LexRuntimeV2 {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botAliases/${Uri.encodeComponent(botAliasId)}/botLocales/${Uri.encodeComponent(localeId)}/sessions/${Uri.encodeComponent(sessionId)}',
+          '/bots/%2524%257BUri.encodeQueryComponent%2528botId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botAliases/%252524%25257BUri.encodeQueryComponent%252528botAliasId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/botLocales/%24%7BUri.encodeQueryComponent%28localeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/sessions/${Uri.encodeQueryComponent(sessionId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -323,7 +323,7 @@ class LexRuntimeV2 {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botAliases/${Uri.encodeComponent(botAliasId)}/botLocales/${Uri.encodeComponent(localeId)}/sessions/${Uri.encodeComponent(sessionId)}/text',
+          '/bots/%2524%257BUri.encodeQueryComponent%2528botId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botAliases/%252524%25257BUri.encodeQueryComponent%252528botAliasId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/botLocales/%24%7BUri.encodeQueryComponent%28localeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/sessions/${Uri.encodeQueryComponent(sessionId).replaceAll('+', '%20')}/text',
       exceptionFnMap: _exceptionFns,
     );
     return RecognizeTextResponse.fromJson(response);
@@ -544,7 +544,7 @@ class LexRuntimeV2 {
       payload: inputStream,
       method: 'POST',
       requestUri:
-          '/bots/${Uri.encodeComponent(botId)}/botAliases/${Uri.encodeComponent(botAliasId)}/botLocales/${Uri.encodeComponent(localeId)}/sessions/${Uri.encodeComponent(sessionId)}/utterance',
+          '/bots/%2524%257BUri.encodeQueryComponent%2528botId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/botAliases/%252524%25257BUri.encodeQueryComponent%252528botAliasId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/botLocales/%24%7BUri.encodeQueryComponent%28localeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/sessions/${Uri.encodeQueryComponent(sessionId).replaceAll('+', '%20')}/utterance',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );

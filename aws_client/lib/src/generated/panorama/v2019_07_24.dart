@@ -292,7 +292,8 @@ class Panorama {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/devices/${Uri.encodeComponent(deviceId)}',
+      requestUri:
+          '/devices/${Uri.encodeQueryComponent(deviceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteDeviceResponse.fromJson(response);
@@ -327,7 +328,8 @@ class Panorama {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/packages/${Uri.encodeComponent(packageId)}',
+      requestUri:
+          '/packages/${Uri.encodeQueryComponent(packageId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -371,7 +373,7 @@ class Panorama {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/packages/${Uri.encodeComponent(packageId)}/versions/${Uri.encodeComponent(packageVersion)}/patch/${Uri.encodeComponent(patchVersion)}',
+          '/packages/%2524%257BUri.encodeQueryComponent%2528packageId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/versions/%24%7BUri.encodeQueryComponent%28packageVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/patch/${Uri.encodeQueryComponent(patchVersion).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -394,7 +396,7 @@ class Panorama {
       payload: null,
       method: 'GET',
       requestUri:
-          '/application-instances/${Uri.encodeComponent(applicationInstanceId)}',
+          '/application-instances/${Uri.encodeQueryComponent(applicationInstanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeApplicationInstanceResponse.fromJson(response);
@@ -419,7 +421,7 @@ class Panorama {
       payload: null,
       method: 'GET',
       requestUri:
-          '/application-instances/${Uri.encodeComponent(applicationInstanceId)}/details',
+          '/application-instances/${Uri.encodeQueryComponent(applicationInstanceId).replaceAll('+', '%20')}/details',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeApplicationInstanceDetailsResponse.fromJson(response);
@@ -440,7 +442,8 @@ class Panorama {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/devices/${Uri.encodeComponent(deviceId)}',
+      requestUri:
+          '/devices/${Uri.encodeQueryComponent(deviceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDeviceResponse.fromJson(response);
@@ -462,7 +465,8 @@ class Panorama {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/jobs/${Uri.encodeComponent(jobId)}',
+      requestUri:
+          '/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDeviceJobResponse.fromJson(response);
@@ -491,7 +495,8 @@ class Panorama {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/nodes/${Uri.encodeComponent(nodeId)}',
+      requestUri:
+          '/nodes/${Uri.encodeQueryComponent(nodeId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -513,7 +518,8 @@ class Panorama {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/packages/template-job/${Uri.encodeComponent(jobId)}',
+      requestUri:
+          '/packages/template-job/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeNodeFromTemplateJobResponse.fromJson(response);
@@ -535,7 +541,8 @@ class Panorama {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/packages/metadata/${Uri.encodeComponent(packageId)}',
+      requestUri:
+          '/packages/metadata/${Uri.encodeQueryComponent(packageId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribePackageResponse.fromJson(response);
@@ -556,7 +563,8 @@ class Panorama {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/packages/import-jobs/${Uri.encodeComponent(jobId)}',
+      requestUri:
+          '/packages/import-jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribePackageImportJobResponse.fromJson(response);
@@ -595,7 +603,7 @@ class Panorama {
       payload: null,
       method: 'GET',
       requestUri:
-          '/packages/metadata/${Uri.encodeComponent(packageId)}/versions/${Uri.encodeComponent(packageVersion)}',
+          '/packages/metadata/%24%7BUri.encodeQueryComponent%28packageId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(packageVersion).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -637,7 +645,7 @@ class Panorama {
       payload: null,
       method: 'GET',
       requestUri:
-          '/application-instances/${Uri.encodeComponent(applicationInstanceId)}/package-dependencies',
+          '/application-instances/${Uri.encodeQueryComponent(applicationInstanceId).replaceAll('+', '%20')}/package-dependencies',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -678,7 +686,7 @@ class Panorama {
       payload: null,
       method: 'GET',
       requestUri:
-          '/application-instances/${Uri.encodeComponent(applicationInstanceId)}/node-instances',
+          '/application-instances/${Uri.encodeQueryComponent(applicationInstanceId).replaceAll('+', '%20')}/node-instances',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1024,7 +1032,8 @@ class Panorama {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1112,7 +1121,7 @@ class Panorama {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/packages/${Uri.encodeComponent(packageId)}/versions/${Uri.encodeComponent(packageVersion)}/patch/${Uri.encodeComponent(patchVersion)}',
+          '/packages/%2524%257BUri.encodeQueryComponent%2528packageId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/versions/%24%7BUri.encodeQueryComponent%28packageVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/patch/${Uri.encodeQueryComponent(patchVersion).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1134,7 +1143,7 @@ class Panorama {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/application-instances/${Uri.encodeComponent(applicationInstanceId)}',
+          '/application-instances/${Uri.encodeQueryComponent(applicationInstanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1163,7 +1172,7 @@ class Panorama {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/application-instances/${Uri.encodeComponent(applicationInstanceId)}/node-signals',
+          '/application-instances/${Uri.encodeQueryComponent(applicationInstanceId).replaceAll('+', '%20')}/node-signals',
       exceptionFnMap: _exceptionFns,
     );
     return SignalApplicationInstanceNodeInstancesResponse.fromJson(response);
@@ -1190,7 +1199,8 @@ class Panorama {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1216,7 +1226,8 @@ class Panorama {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1245,7 +1256,8 @@ class Panorama {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/devices/${Uri.encodeComponent(deviceId)}',
+      requestUri:
+          '/devices/${Uri.encodeQueryComponent(deviceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDeviceMetadataResponse.fromJson(response);

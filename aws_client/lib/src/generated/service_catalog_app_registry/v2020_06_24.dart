@@ -77,7 +77,7 @@ class AppRegistry {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/applications/${Uri.encodeComponent(application)}/attribute-groups/${Uri.encodeComponent(attributeGroup)}',
+          '/applications/%24%7BUri.encodeQueryComponent%28application%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/attribute-groups/${Uri.encodeQueryComponent(attributeGroup).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return AssociateAttributeGroupResponse.fromJson(response);
@@ -111,7 +111,7 @@ class AppRegistry {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/applications/${Uri.encodeComponent(application)}/resources/${Uri.encodeComponent(resourceType.toValue())}/${Uri.encodeComponent(resource)}',
+          '/applications/%2524%257BUri.encodeQueryComponent%2528application%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/resources/${Uri.encodeQueryComponent(resourceType.toValue()).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28resource%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return AssociateResourceResponse.fromJson(response);
@@ -231,7 +231,8 @@ class AppRegistry {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/applications/${Uri.encodeComponent(application)}',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(application).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteApplicationResponse.fromJson(response);
@@ -253,7 +254,8 @@ class AppRegistry {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/attribute-groups/${Uri.encodeComponent(attributeGroup)}',
+      requestUri:
+          '/attribute-groups/${Uri.encodeQueryComponent(attributeGroup).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteAttributeGroupResponse.fromJson(response);
@@ -281,7 +283,7 @@ class AppRegistry {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/applications/${Uri.encodeComponent(application)}/attribute-groups/${Uri.encodeComponent(attributeGroup)}',
+          '/applications/%24%7BUri.encodeQueryComponent%28application%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/attribute-groups/${Uri.encodeQueryComponent(attributeGroup).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DisassociateAttributeGroupResponse.fromJson(response);
@@ -312,7 +314,7 @@ class AppRegistry {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/applications/${Uri.encodeComponent(application)}/resources/${Uri.encodeComponent(resourceType.toValue())}/${Uri.encodeComponent(resource)}',
+          '/applications/%2524%257BUri.encodeQueryComponent%2528application%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/resources/${Uri.encodeQueryComponent(resourceType.toValue()).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28resource%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DisassociateResourceResponse.fromJson(response);
@@ -338,7 +340,8 @@ class AppRegistry {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/applications/${Uri.encodeComponent(application)}',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(application).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetApplicationResponse.fromJson(response);
@@ -367,7 +370,7 @@ class AppRegistry {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(application)}/resources/${Uri.encodeComponent(resourceType.toValue())}/${Uri.encodeComponent(resource)}',
+          '/applications/%2524%257BUri.encodeQueryComponent%2528application%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/resources/${Uri.encodeQueryComponent(resourceType.toValue()).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28resource%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetAssociatedResourceResponse.fromJson(response);
@@ -390,7 +393,8 @@ class AppRegistry {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/attribute-groups/${Uri.encodeComponent(attributeGroup)}',
+      requestUri:
+          '/attribute-groups/${Uri.encodeQueryComponent(attributeGroup).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetAttributeGroupResponse.fromJson(response);
@@ -481,7 +485,7 @@ class AppRegistry {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(application)}/attribute-groups',
+          '/applications/${Uri.encodeQueryComponent(application).replaceAll('+', '%20')}/attribute-groups',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -529,7 +533,8 @@ class AppRegistry {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/applications/${Uri.encodeComponent(application)}/resources',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(application).replaceAll('+', '%20')}/resources',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -610,7 +615,7 @@ class AppRegistry {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(application)}/attribute-group-details',
+          '/applications/${Uri.encodeQueryComponent(application).replaceAll('+', '%20')}/attribute-group-details',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -631,7 +636,8 @@ class AppRegistry {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -687,7 +693,7 @@ class AppRegistry {
       payload: null,
       method: 'POST',
       requestUri:
-          '/sync/${Uri.encodeComponent(resourceType.toValue())}/${Uri.encodeComponent(resource)}',
+          '/sync/${Uri.encodeQueryComponent(resourceType.toValue()).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28resource%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return SyncResourceResponse.fromJson(response);
@@ -720,7 +726,8 @@ class AppRegistry {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -748,7 +755,8 @@ class AppRegistry {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -784,7 +792,8 @@ class AppRegistry {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/applications/${Uri.encodeComponent(application)}',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(application).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateApplicationResponse.fromJson(response);
@@ -826,7 +835,8 @@ class AppRegistry {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/attribute-groups/${Uri.encodeComponent(attributeGroup)}',
+      requestUri:
+          '/attribute-groups/${Uri.encodeQueryComponent(attributeGroup).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAttributeGroupResponse.fromJson(response);

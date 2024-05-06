@@ -70,7 +70,8 @@ class IoT1ClickDevices {
     final response = await _protocol.send(
       payload: null,
       method: 'PUT',
-      requestUri: '/claims/${Uri.encodeComponent(claimCode)}',
+      requestUri:
+          '/claims/${Uri.encodeQueryComponent(claimCode).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ClaimDevicesByClaimCodeResponse.fromJson(response);
@@ -91,7 +92,8 @@ class IoT1ClickDevices {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/devices/${Uri.encodeComponent(deviceId)}',
+      requestUri:
+          '/devices/${Uri.encodeQueryComponent(deviceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDeviceResponse.fromJson(response);
@@ -136,7 +138,8 @@ class IoT1ClickDevices {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/devices/${Uri.encodeComponent(deviceId)}/finalize-claim',
+      requestUri:
+          '/devices/${Uri.encodeQueryComponent(deviceId).replaceAll('+', '%20')}/finalize-claim',
       exceptionFnMap: _exceptionFns,
     );
     return FinalizeDeviceClaimResponse.fromJson(response);
@@ -157,7 +160,8 @@ class IoT1ClickDevices {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/devices/${Uri.encodeComponent(deviceId)}/methods',
+      requestUri:
+          '/devices/${Uri.encodeQueryComponent(deviceId).replaceAll('+', '%20')}/methods',
       exceptionFnMap: _exceptionFns,
     );
     return GetDeviceMethodsResponse.fromJson(response);
@@ -186,7 +190,8 @@ class IoT1ClickDevices {
     final response = await _protocol.send(
       payload: null,
       method: 'PUT',
-      requestUri: '/devices/${Uri.encodeComponent(deviceId)}/initiate-claim',
+      requestUri:
+          '/devices/${Uri.encodeQueryComponent(deviceId).replaceAll('+', '%20')}/initiate-claim',
       exceptionFnMap: _exceptionFns,
     );
     return InitiateDeviceClaimResponse.fromJson(response);
@@ -224,7 +229,8 @@ class IoT1ClickDevices {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/devices/${Uri.encodeComponent(deviceId)}/methods',
+      requestUri:
+          '/devices/${Uri.encodeQueryComponent(deviceId).replaceAll('+', '%20')}/methods',
       exceptionFnMap: _exceptionFns,
     );
     return InvokeDeviceMethodResponse.fromJson(response);
@@ -280,7 +286,8 @@ class IoT1ClickDevices {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/devices/${Uri.encodeComponent(deviceId)}/events',
+      requestUri:
+          '/devices/${Uri.encodeQueryComponent(deviceId).replaceAll('+', '%20')}/events',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -342,7 +349,8 @@ class IoT1ClickDevices {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -380,7 +388,8 @@ class IoT1ClickDevices {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -399,7 +408,8 @@ class IoT1ClickDevices {
     final response = await _protocol.send(
       payload: null,
       method: 'PUT',
-      requestUri: '/devices/${Uri.encodeComponent(deviceId)}/unclaim',
+      requestUri:
+          '/devices/${Uri.encodeQueryComponent(deviceId).replaceAll('+', '%20')}/unclaim',
       exceptionFnMap: _exceptionFns,
     );
     return UnclaimDeviceResponse.fromJson(response);
@@ -428,7 +438,8 @@ class IoT1ClickDevices {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -457,7 +468,8 @@ class IoT1ClickDevices {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/devices/${Uri.encodeComponent(deviceId)}/state',
+      requestUri:
+          '/devices/${Uri.encodeQueryComponent(deviceId).replaceAll('+', '%20')}/state',
       exceptionFnMap: _exceptionFns,
     );
   }

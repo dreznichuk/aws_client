@@ -95,7 +95,8 @@ class ArcZonalShift {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/zonalshifts/${Uri.encodeComponent(zonalShiftId)}',
+      requestUri:
+          '/zonalshifts/${Uri.encodeQueryComponent(zonalShiftId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ZonalShift.fromJson(response);
@@ -128,7 +129,7 @@ class ArcZonalShift {
       payload: null,
       method: 'GET',
       requestUri:
-          '/managedresources/${Uri.encodeComponent(resourceIdentifier)}',
+          '/managedresources/${Uri.encodeQueryComponent(resourceIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetManagedResourceResponse.fromJson(response);
@@ -383,7 +384,8 @@ class ArcZonalShift {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/zonalshifts/${Uri.encodeComponent(zonalShiftId)}',
+      requestUri:
+          '/zonalshifts/${Uri.encodeQueryComponent(zonalShiftId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ZonalShift.fromJson(response);

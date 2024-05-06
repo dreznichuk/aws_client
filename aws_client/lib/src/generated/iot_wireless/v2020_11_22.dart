@@ -123,7 +123,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/fuota-tasks/${Uri.encodeComponent(id)}/multicast-group',
+      requestUri:
+          '/fuota-tasks/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/multicast-group',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -146,7 +147,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/fuota-tasks/${Uri.encodeComponent(id)}/wireless-device',
+      requestUri:
+          '/fuota-tasks/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/wireless-device',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -170,7 +172,7 @@ class IoTWireless {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/multicast-groups/${Uri.encodeComponent(id)}/wireless-device',
+          '/multicast-groups/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/wireless-device',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -199,7 +201,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/wireless-devices/${Uri.encodeComponent(id)}/thing',
+      requestUri:
+          '/wireless-devices/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/thing',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -229,7 +232,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/wireless-gateways/${Uri.encodeComponent(id)}/certificate',
+      requestUri:
+          '/wireless-gateways/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/certificate',
       exceptionFnMap: _exceptionFns,
     );
     return AssociateWirelessGatewayWithCertificateResponse.fromJson(response);
@@ -259,7 +263,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/wireless-gateways/${Uri.encodeComponent(id)}/thing',
+      requestUri:
+          '/wireless-gateways/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/thing',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -278,7 +283,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/multicast-groups/${Uri.encodeComponent(id)}/session',
+      requestUri:
+          '/multicast-groups/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/session',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -726,7 +732,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/wireless-gateways/${Uri.encodeComponent(id)}/tasks',
+      requestUri:
+          '/wireless-gateways/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/tasks',
       exceptionFnMap: _exceptionFns,
     );
     return CreateWirelessGatewayTaskResponse.fromJson(response);
@@ -802,7 +809,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/destinations/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/destinations/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -824,7 +832,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/device-profiles/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/device-profiles/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -842,7 +851,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/fuota-tasks/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/fuota-tasks/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -861,7 +871,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/multicast-groups/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/multicast-groups/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -881,7 +892,7 @@ class IoTWireless {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/network-analyzer-configurations/${Uri.encodeComponent(configurationName)}',
+          '/network-analyzer-configurations/${Uri.encodeQueryComponent(configurationName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -918,7 +929,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/wireless-devices/${Uri.encodeComponent(id)}/data',
+      requestUri:
+          '/wireless-devices/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/data',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -941,7 +953,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/service-profiles/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/service-profiles/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -962,7 +975,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/wireless-devices/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/wireless-devices/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -984,7 +998,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/wireless_device_import_task/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/wireless_device_import_task/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1005,7 +1020,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/wireless-gateways/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/wireless-gateways/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1026,7 +1042,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/wireless-gateways/${Uri.encodeComponent(id)}/tasks',
+      requestUri:
+          '/wireless-gateways/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/tasks',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1049,7 +1066,7 @@ class IoTWireless {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/wireless-gateway-task-definitions/${Uri.encodeComponent(id)}',
+          '/wireless-gateway-task-definitions/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1079,7 +1096,7 @@ class IoTWireless {
       payload: null,
       method: 'PATCH',
       requestUri:
-          '/wireless-devices/${Uri.encodeComponent(identifier)}/deregister',
+          '/wireless-devices/${Uri.encodeQueryComponent(identifier).replaceAll('+', '%20')}/deregister',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1110,7 +1127,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/partner-accounts/${Uri.encodeComponent(partnerAccountId)}',
+      requestUri:
+          '/partner-accounts/${Uri.encodeQueryComponent(partnerAccountId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1131,7 +1149,7 @@ class IoTWireless {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/fuota-tasks/${Uri.encodeComponent(id)}/multicast-groups/${Uri.encodeComponent(multicastGroupId)}',
+          '/fuota-tasks/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/multicast-groups/${Uri.encodeQueryComponent(multicastGroupId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1152,7 +1170,7 @@ class IoTWireless {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/fuota-tasks/${Uri.encodeComponent(id)}/wireless-devices/${Uri.encodeComponent(wirelessDeviceId)}',
+          '/fuota-tasks/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/wireless-devices/${Uri.encodeQueryComponent(wirelessDeviceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1172,7 +1190,7 @@ class IoTWireless {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/multicast-groups/${Uri.encodeComponent(id)}/wireless-devices/${Uri.encodeComponent(wirelessDeviceId)}',
+          '/multicast-groups/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/wireless-devices/${Uri.encodeQueryComponent(wirelessDeviceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1194,7 +1212,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/wireless-devices/${Uri.encodeComponent(id)}/thing',
+      requestUri:
+          '/wireless-devices/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/thing',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1216,7 +1235,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/wireless-gateways/${Uri.encodeComponent(id)}/certificate',
+      requestUri:
+          '/wireless-gateways/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/certificate',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1238,7 +1258,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/wireless-gateways/${Uri.encodeComponent(id)}/thing',
+      requestUri:
+          '/wireless-gateways/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/thing',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1259,7 +1280,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/destinations/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/destinations/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDestinationResponse.fromJson(response);
@@ -1281,7 +1303,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/device-profiles/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/device-profiles/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDeviceProfileResponse.fromJson(response);
@@ -1316,7 +1339,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/fuota-tasks/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/fuota-tasks/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetFuotaTaskResponse.fromJson(response);
@@ -1355,7 +1379,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/multicast-groups/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/multicast-groups/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetMulticastGroupResponse.fromJson(response);
@@ -1374,7 +1399,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/multicast-groups/${Uri.encodeComponent(id)}/session',
+      requestUri:
+          '/multicast-groups/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/session',
       exceptionFnMap: _exceptionFns,
     );
     return GetMulticastGroupSessionResponse.fromJson(response);
@@ -1395,7 +1421,7 @@ class IoTWireless {
       payload: null,
       method: 'GET',
       requestUri:
-          '/network-analyzer-configurations/${Uri.encodeComponent(configurationName)}',
+          '/network-analyzer-configurations/${Uri.encodeQueryComponent(configurationName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetNetworkAnalyzerConfigurationResponse.fromJson(response);
@@ -1425,7 +1451,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/partner-accounts/${Uri.encodeComponent(partnerAccountId)}',
+      requestUri:
+          '/partner-accounts/${Uri.encodeQueryComponent(partnerAccountId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1462,7 +1489,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/positions/${Uri.encodeComponent(resourceIdentifier)}',
+      requestUri:
+          '/positions/${Uri.encodeQueryComponent(resourceIdentifier).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1501,7 +1529,7 @@ class IoTWireless {
       payload: null,
       method: 'GET',
       requestUri:
-          '/position-configurations/${Uri.encodeComponent(resourceIdentifier)}',
+          '/position-configurations/${Uri.encodeQueryComponent(resourceIdentifier).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1596,7 +1624,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/event-configurations/${Uri.encodeComponent(identifier)}',
+      requestUri:
+          '/event-configurations/${Uri.encodeQueryComponent(identifier).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1625,7 +1654,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/log-levels/${Uri.encodeComponent(resourceIdentifier)}',
+      requestUri:
+          '/log-levels/${Uri.encodeQueryComponent(resourceIdentifier).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1662,7 +1692,7 @@ class IoTWireless {
       payload: null,
       method: 'GET',
       requestUri:
-          '/resource-positions/${Uri.encodeComponent(resourceIdentifier)}',
+          '/resource-positions/${Uri.encodeQueryComponent(resourceIdentifier).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1716,7 +1746,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/service-profiles/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/service-profiles/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetServiceProfileResponse.fromJson(response);
@@ -1745,7 +1776,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/wireless-devices/${Uri.encodeComponent(identifier)}',
+      requestUri:
+          '/wireless-devices/${Uri.encodeQueryComponent(identifier).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1770,7 +1802,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/wireless_device_import_task/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/wireless_device_import_task/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetWirelessDeviceImportTaskResponse.fromJson(response);
@@ -1793,7 +1826,7 @@ class IoTWireless {
       payload: null,
       method: 'GET',
       requestUri:
-          '/wireless-devices/${Uri.encodeComponent(wirelessDeviceId)}/statistics',
+          '/wireless-devices/${Uri.encodeQueryComponent(wirelessDeviceId).replaceAll('+', '%20')}/statistics',
       exceptionFnMap: _exceptionFns,
     );
     return GetWirelessDeviceStatisticsResponse.fromJson(response);
@@ -1822,7 +1855,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/wireless-gateways/${Uri.encodeComponent(identifier)}',
+      requestUri:
+          '/wireless-gateways/${Uri.encodeQueryComponent(identifier).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1846,7 +1880,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/wireless-gateways/${Uri.encodeComponent(id)}/certificate',
+      requestUri:
+          '/wireless-gateways/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/certificate',
       exceptionFnMap: _exceptionFns,
     );
     return GetWirelessGatewayCertificateResponse.fromJson(response);
@@ -1870,7 +1905,7 @@ class IoTWireless {
       payload: null,
       method: 'GET',
       requestUri:
-          '/wireless-gateways/${Uri.encodeComponent(id)}/firmware-information',
+          '/wireless-gateways/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/firmware-information',
       exceptionFnMap: _exceptionFns,
     );
     return GetWirelessGatewayFirmwareInformationResponse.fromJson(response);
@@ -1893,7 +1928,7 @@ class IoTWireless {
       payload: null,
       method: 'GET',
       requestUri:
-          '/wireless-gateways/${Uri.encodeComponent(wirelessGatewayId)}/statistics',
+          '/wireless-gateways/${Uri.encodeQueryComponent(wirelessGatewayId).replaceAll('+', '%20')}/statistics',
       exceptionFnMap: _exceptionFns,
     );
     return GetWirelessGatewayStatisticsResponse.fromJson(response);
@@ -1915,7 +1950,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/wireless-gateways/${Uri.encodeComponent(id)}/tasks',
+      requestUri:
+          '/wireless-gateways/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/tasks',
       exceptionFnMap: _exceptionFns,
     );
     return GetWirelessGatewayTaskResponse.fromJson(response);
@@ -1939,7 +1975,7 @@ class IoTWireless {
       payload: null,
       method: 'GET',
       requestUri:
-          '/wireless-gateway-task-definitions/${Uri.encodeComponent(id)}',
+          '/wireless-gateway-task-definitions/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetWirelessGatewayTaskDefinitionResponse.fromJson(response);
@@ -2217,7 +2253,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/fuota-tasks/${Uri.encodeComponent(id)}/multicast-groups',
+      requestUri:
+          '/fuota-tasks/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/multicast-groups',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2389,7 +2426,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/wireless-devices/${Uri.encodeComponent(id)}/data',
+      requestUri:
+          '/wireless-devices/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/data',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2692,7 +2730,7 @@ class IoTWireless {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/position-configurations/${Uri.encodeComponent(resourceIdentifier)}',
+          '/position-configurations/${Uri.encodeQueryComponent(resourceIdentifier).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2725,7 +2763,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/log-levels/${Uri.encodeComponent(resourceIdentifier)}',
+      requestUri:
+          '/log-levels/${Uri.encodeQueryComponent(resourceIdentifier).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2770,7 +2809,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/log-levels/${Uri.encodeComponent(resourceIdentifier)}',
+      requestUri:
+          '/log-levels/${Uri.encodeQueryComponent(resourceIdentifier).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2796,7 +2836,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/multicast-groups/${Uri.encodeComponent(id)}/data',
+      requestUri:
+          '/multicast-groups/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/data',
       exceptionFnMap: _exceptionFns,
     );
     return SendDataToMulticastGroupResponse.fromJson(response);
@@ -2840,7 +2881,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/wireless-devices/${Uri.encodeComponent(id)}/data',
+      requestUri:
+          '/wireless-devices/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/data',
       exceptionFnMap: _exceptionFns,
     );
     return SendDataToWirelessDeviceResponse.fromJson(response);
@@ -2866,7 +2908,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/multicast-groups/${Uri.encodeComponent(id)}/bulk',
+      requestUri:
+          '/multicast-groups/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/bulk',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2891,7 +2934,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/multicast-groups/${Uri.encodeComponent(id)}/bulk',
+      requestUri:
+          '/multicast-groups/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/bulk',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2914,7 +2958,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/fuota-tasks/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/fuota-tasks/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2937,7 +2982,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/multicast-groups/${Uri.encodeComponent(id)}/session',
+      requestUri:
+          '/multicast-groups/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/session',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3074,7 +3120,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/wireless-devices/${Uri.encodeComponent(id)}/test',
+      requestUri:
+          '/wireless-devices/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/test',
       exceptionFnMap: _exceptionFns,
     );
     return TestWirelessDeviceResponse.fromJson(response);
@@ -3148,7 +3195,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/destinations/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/destinations/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3255,7 +3303,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/fuota-tasks/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/fuota-tasks/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3312,7 +3361,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/multicast-groups/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/multicast-groups/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3369,7 +3419,7 @@ class IoTWireless {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/network-analyzer-configurations/${Uri.encodeComponent(configurationName)}',
+          '/network-analyzer-configurations/${Uri.encodeQueryComponent(configurationName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3403,7 +3453,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/partner-accounts/${Uri.encodeComponent(partnerAccountId)}',
+      requestUri:
+          '/partner-accounts/${Uri.encodeQueryComponent(partnerAccountId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3446,7 +3497,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/positions/${Uri.encodeComponent(resourceIdentifier)}',
+      requestUri:
+          '/positions/${Uri.encodeQueryComponent(resourceIdentifier).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3512,7 +3564,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/event-configurations/${Uri.encodeComponent(identifier)}',
+      requestUri:
+          '/event-configurations/${Uri.encodeQueryComponent(identifier).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3555,7 +3608,7 @@ class IoTWireless {
       payload: geoJsonPayload,
       method: 'PATCH',
       requestUri:
-          '/resource-positions/${Uri.encodeComponent(resourceIdentifier)}',
+          '/resource-positions/${Uri.encodeQueryComponent(resourceIdentifier).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3605,7 +3658,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/wireless-devices/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/wireless-devices/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3634,7 +3688,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/wireless_device_import_task/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/wireless_device_import_task/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3682,7 +3737,8 @@ class IoTWireless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/wireless-gateways/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/wireless-gateways/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

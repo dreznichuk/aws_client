@@ -119,7 +119,7 @@ class GlueDataBrew {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/recipes/${Uri.encodeComponent(name)}/batchDeleteRecipeVersion',
+          '/recipes/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/batchDeleteRecipeVersion',
       exceptionFnMap: _exceptionFns,
     );
     return BatchDeleteRecipeVersionResponse.fromJson(response);
@@ -610,7 +610,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/datasets/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/datasets/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteDatasetResponse.fromJson(response);
@@ -630,7 +631,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/jobs/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/jobs/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteJobResponse.fromJson(response);
@@ -650,7 +652,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/projects/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteProjectResponse.fromJson(response);
@@ -677,7 +680,7 @@ class GlueDataBrew {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/recipes/${Uri.encodeComponent(name)}/recipeVersion/${Uri.encodeComponent(recipeVersion)}',
+          '/recipes/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/recipeVersion/${Uri.encodeQueryComponent(recipeVersion).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteRecipeVersionResponse.fromJson(response);
@@ -697,7 +700,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/rulesets/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/rulesets/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteRulesetResponse.fromJson(response);
@@ -716,7 +720,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/schedules/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/schedules/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteScheduleResponse.fromJson(response);
@@ -735,7 +740,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/datasets/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/datasets/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDatasetResponse.fromJson(response);
@@ -754,7 +760,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/jobs/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/jobs/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeJobResponse.fromJson(response);
@@ -778,7 +785,7 @@ class GlueDataBrew {
       payload: null,
       method: 'GET',
       requestUri:
-          '/jobs/${Uri.encodeComponent(name)}/jobRun/${Uri.encodeComponent(runId)}',
+          '/jobs/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/jobRun/${Uri.encodeQueryComponent(runId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeJobRunResponse.fromJson(response);
@@ -797,7 +804,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/projects/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeProjectResponse.fromJson(response);
@@ -825,7 +833,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/recipes/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/recipes/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -845,7 +854,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/rulesets/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/rulesets/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeRulesetResponse.fromJson(response);
@@ -864,7 +874,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/schedules/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/schedules/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeScheduleResponse.fromJson(response);
@@ -934,7 +945,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/jobs/${Uri.encodeComponent(name)}/jobRuns',
+      requestUri:
+          '/jobs/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/jobRuns',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1200,7 +1212,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1228,7 +1241,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/recipes/${Uri.encodeComponent(name)}/publishRecipe',
+      requestUri:
+          '/recipes/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/publishRecipe',
       exceptionFnMap: _exceptionFns,
     );
     return PublishRecipeResponse.fromJson(response);
@@ -1280,7 +1294,7 @@ class GlueDataBrew {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/projects/${Uri.encodeComponent(name)}/sendProjectSessionAction',
+          '/projects/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/sendProjectSessionAction',
       exceptionFnMap: _exceptionFns,
     );
     return SendProjectSessionActionResponse.fromJson(response);
@@ -1301,7 +1315,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/jobs/${Uri.encodeComponent(name)}/startJobRun',
+      requestUri:
+          '/jobs/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/startJobRun',
       exceptionFnMap: _exceptionFns,
     );
     return StartJobRunResponse.fromJson(response);
@@ -1331,7 +1346,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/projects/${Uri.encodeComponent(name)}/startProjectSession',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/startProjectSession',
       exceptionFnMap: _exceptionFns,
     );
     return StartProjectSessionResponse.fromJson(response);
@@ -1355,7 +1371,7 @@ class GlueDataBrew {
       payload: null,
       method: 'POST',
       requestUri:
-          '/jobs/${Uri.encodeComponent(name)}/jobRun/${Uri.encodeComponent(runId)}/stopJobRun',
+          '/jobs/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/jobRun/${Uri.encodeQueryComponent(runId).replaceAll('+', '%20')}/stopJobRun',
       exceptionFnMap: _exceptionFns,
     );
     return StopJobRunResponse.fromJson(response);
@@ -1385,7 +1401,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1412,7 +1429,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1450,7 +1468,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/datasets/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/datasets/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDatasetResponse.fromJson(response);
@@ -1558,7 +1577,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/profileJobs/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/profileJobs/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateProfileJobResponse.fromJson(response);
@@ -1587,7 +1607,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/projects/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateProjectResponse.fromJson(response);
@@ -1620,7 +1641,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/recipes/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/recipes/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateRecipeResponse.fromJson(response);
@@ -1721,7 +1743,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/recipeJobs/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/recipeJobs/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateRecipeJobResponse.fromJson(response);
@@ -1753,7 +1776,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/rulesets/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/rulesets/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateRulesetResponse.fromJson(response);
@@ -1788,7 +1812,8 @@ class GlueDataBrew {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/schedules/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/schedules/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateScheduleResponse.fromJson(response);

@@ -126,7 +126,8 @@ class EventBridgePipes {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/pipes/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/v1/pipes/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreatePipeResponse.fromJson(response);
@@ -150,7 +151,8 @@ class EventBridgePipes {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/pipes/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/v1/pipes/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeletePipeResponse.fromJson(response);
@@ -174,7 +176,8 @@ class EventBridgePipes {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/pipes/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/v1/pipes/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribePipeResponse.fromJson(response);
@@ -264,7 +267,8 @@ class EventBridgePipes {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -286,7 +290,8 @@ class EventBridgePipes {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/v1/pipes/${Uri.encodeComponent(name)}/start',
+      requestUri:
+          '/v1/pipes/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/start',
       exceptionFnMap: _exceptionFns,
     );
     return StartPipeResponse.fromJson(response);
@@ -308,7 +313,8 @@ class EventBridgePipes {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/v1/pipes/${Uri.encodeComponent(name)}/stop',
+      requestUri:
+          '/v1/pipes/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/stop',
       exceptionFnMap: _exceptionFns,
     );
     return StopPipeResponse.fromJson(response);
@@ -349,7 +355,8 @@ class EventBridgePipes {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -375,7 +382,8 @@ class EventBridgePipes {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -452,7 +460,8 @@ class EventBridgePipes {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v1/pipes/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/v1/pipes/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdatePipeResponse.fromJson(response);

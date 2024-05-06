@@ -107,7 +107,8 @@ class AugmentedAIRuntime {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/human-loops/${Uri.encodeComponent(humanLoopName)}',
+      requestUri:
+          '/human-loops/${Uri.encodeQueryComponent(humanLoopName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -129,7 +130,8 @@ class AugmentedAIRuntime {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/human-loops/${Uri.encodeComponent(humanLoopName)}',
+      requestUri:
+          '/human-loops/${Uri.encodeQueryComponent(humanLoopName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeHumanLoopResponse.fromJson(response);

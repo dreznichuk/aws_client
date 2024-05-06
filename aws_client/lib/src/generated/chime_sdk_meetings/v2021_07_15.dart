@@ -85,7 +85,7 @@ class ChimeSdkMeetings {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/meetings/${Uri.encodeComponent(meetingId)}/attendees?operation=batch-create',
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}/attendees?operation=batch-create',
       exceptionFnMap: _exceptionFns,
     );
     return BatchCreateAttendeeResponse.fromJson(response);
@@ -156,7 +156,7 @@ class ChimeSdkMeetings {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/meetings/${Uri.encodeComponent(meetingId)}/attendees/capabilities?operation=batch-update-except',
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}/attendees/capabilities?operation=batch-update-except',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -237,7 +237,8 @@ class ChimeSdkMeetings {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/meetings/${Uri.encodeComponent(meetingId)}/attendees',
+      requestUri:
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}/attendees',
       exceptionFnMap: _exceptionFns,
     );
     return CreateAttendeeResponse.fromJson(response);
@@ -519,7 +520,7 @@ class ChimeSdkMeetings {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/meetings/${Uri.encodeComponent(meetingId)}/attendees/${Uri.encodeComponent(attendeeId)}',
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}/attendees/%24%7BUri.encodeQueryComponent%28attendeeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -546,7 +547,8 @@ class ChimeSdkMeetings {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/meetings/${Uri.encodeComponent(meetingId)}',
+      requestUri:
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -577,7 +579,7 @@ class ChimeSdkMeetings {
       payload: null,
       method: 'GET',
       requestUri:
-          '/meetings/${Uri.encodeComponent(meetingId)}/attendees/${Uri.encodeComponent(attendeeId)}',
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}/attendees/%24%7BUri.encodeQueryComponent%28attendeeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetAttendeeResponse.fromJson(response);
@@ -604,7 +606,8 @@ class ChimeSdkMeetings {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/meetings/${Uri.encodeComponent(meetingId)}',
+      requestUri:
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetMeetingResponse.fromJson(response);
@@ -649,7 +652,8 @@ class ChimeSdkMeetings {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/meetings/${Uri.encodeComponent(meetingId)}/attendees',
+      requestUri:
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}/attendees',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -727,7 +731,7 @@ class ChimeSdkMeetings {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/meetings/${Uri.encodeComponent(meetingId)}/transcription?operation=start',
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}/transcription?operation=start',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -763,7 +767,7 @@ class ChimeSdkMeetings {
       payload: null,
       method: 'POST',
       requestUri:
-          '/meetings/${Uri.encodeComponent(meetingId)}/transcription?operation=stop',
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}/transcription?operation=stop',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -909,7 +913,7 @@ class ChimeSdkMeetings {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/meetings/${Uri.encodeComponent(meetingId)}/attendees/${Uri.encodeComponent(attendeeId)}/capabilities',
+          '/meetings/${Uri.encodeQueryComponent(meetingId).replaceAll('+', '%20')}/attendees/%24%7BUri.encodeQueryComponent%28attendeeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/capabilities',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAttendeeCapabilitiesResponse.fromJson(response);

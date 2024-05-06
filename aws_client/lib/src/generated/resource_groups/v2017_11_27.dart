@@ -391,7 +391,8 @@ class ResourceGroups {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/resources/${Uri.encodeComponent(arn)}/tags',
+      requestUri:
+          '/resources/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}/tags',
       exceptionFnMap: _exceptionFns,
     );
     return GetTagsOutput.fromJson(response);
@@ -839,7 +840,8 @@ class ResourceGroups {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/resources/${Uri.encodeComponent(arn)}/tags',
+      requestUri:
+          '/resources/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}/tags',
       exceptionFnMap: _exceptionFns,
     );
     return TagOutput.fromJson(response);
@@ -926,7 +928,8 @@ class ResourceGroups {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/resources/${Uri.encodeComponent(arn)}/tags',
+      requestUri:
+          '/resources/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}/tags',
       exceptionFnMap: _exceptionFns,
     );
     return UntagOutput.fromJson(response);

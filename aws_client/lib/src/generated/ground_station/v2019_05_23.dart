@@ -67,7 +67,8 @@ class GroundStation {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/contact/${Uri.encodeComponent(contactId)}',
+      requestUri:
+          '/contact/${Uri.encodeQueryComponent(contactId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ContactIdResponse.fromJson(response);
@@ -368,7 +369,7 @@ class GroundStation {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/config/${Uri.encodeComponent(configType.toValue())}/${Uri.encodeComponent(configId)}',
+          '/config/${Uri.encodeQueryComponent(configType.toValue()).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28configId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return ConfigIdResponse.fromJson(response);
@@ -389,7 +390,7 @@ class GroundStation {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/dataflowEndpointGroup/${Uri.encodeComponent(dataflowEndpointGroupId)}',
+          '/dataflowEndpointGroup/${Uri.encodeQueryComponent(dataflowEndpointGroupId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DataflowEndpointGroupIdResponse.fromJson(response);
@@ -409,7 +410,8 @@ class GroundStation {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/ephemeris/${Uri.encodeComponent(ephemerisId)}',
+      requestUri:
+          '/ephemeris/${Uri.encodeQueryComponent(ephemerisId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return EphemerisIdResponse.fromJson(response);
@@ -429,7 +431,8 @@ class GroundStation {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/missionprofile/${Uri.encodeComponent(missionProfileId)}',
+      requestUri:
+          '/missionprofile/${Uri.encodeQueryComponent(missionProfileId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return MissionProfileIdResponse.fromJson(response);
@@ -449,7 +452,8 @@ class GroundStation {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/contact/${Uri.encodeComponent(contactId)}',
+      requestUri:
+          '/contact/${Uri.encodeQueryComponent(contactId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeContactResponse.fromJson(response);
@@ -469,7 +473,8 @@ class GroundStation {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/ephemeris/${Uri.encodeComponent(ephemerisId)}',
+      requestUri:
+          '/ephemeris/${Uri.encodeQueryComponent(ephemerisId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeEphemerisResponse.fromJson(response);
@@ -492,7 +497,8 @@ class GroundStation {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/agent/${Uri.encodeComponent(agentId)}/configuration',
+      requestUri:
+          '/agent/${Uri.encodeQueryComponent(agentId).replaceAll('+', '%20')}/configuration',
       exceptionFnMap: _exceptionFns,
     );
     return GetAgentConfigurationResponse.fromJson(response);
@@ -519,7 +525,7 @@ class GroundStation {
       payload: null,
       method: 'GET',
       requestUri:
-          '/config/${Uri.encodeComponent(configType.toValue())}/${Uri.encodeComponent(configId)}',
+          '/config/${Uri.encodeQueryComponent(configType.toValue()).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28configId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetConfigResponse.fromJson(response);
@@ -540,7 +546,7 @@ class GroundStation {
       payload: null,
       method: 'GET',
       requestUri:
-          '/dataflowEndpointGroup/${Uri.encodeComponent(dataflowEndpointGroupId)}',
+          '/dataflowEndpointGroup/${Uri.encodeQueryComponent(dataflowEndpointGroupId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDataflowEndpointGroupResponse.fromJson(response);
@@ -602,7 +608,8 @@ class GroundStation {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/missionprofile/${Uri.encodeComponent(missionProfileId)}',
+      requestUri:
+          '/missionprofile/${Uri.encodeQueryComponent(missionProfileId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetMissionProfileResponse.fromJson(response);
@@ -622,7 +629,8 @@ class GroundStation {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/satellite/${Uri.encodeComponent(satelliteId)}',
+      requestUri:
+          '/satellite/${Uri.encodeQueryComponent(satelliteId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSatelliteResponse.fromJson(response);
@@ -960,7 +968,8 @@ class GroundStation {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1066,7 +1075,8 @@ class GroundStation {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1092,7 +1102,8 @@ class GroundStation {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1132,7 +1143,8 @@ class GroundStation {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/agent/${Uri.encodeComponent(agentId)}',
+      requestUri:
+          '/agent/${Uri.encodeQueryComponent(agentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAgentStatusResponse.fromJson(response);
@@ -1172,7 +1184,7 @@ class GroundStation {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/config/${Uri.encodeComponent(configType.toValue())}/${Uri.encodeComponent(configId)}',
+          '/config/${Uri.encodeQueryComponent(configType.toValue()).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28configId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return ConfigIdResponse.fromJson(response);
@@ -1223,7 +1235,8 @@ class GroundStation {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/ephemeris/${Uri.encodeComponent(ephemerisId)}',
+      requestUri:
+          '/ephemeris/${Uri.encodeQueryComponent(ephemerisId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return EphemerisIdResponse.fromJson(response);
@@ -1315,7 +1328,8 @@ class GroundStation {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/missionprofile/${Uri.encodeComponent(missionProfileId)}',
+      requestUri:
+          '/missionprofile/${Uri.encodeQueryComponent(missionProfileId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return MissionProfileIdResponse.fromJson(response);

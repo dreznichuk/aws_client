@@ -153,7 +153,8 @@ class RecycleBin {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/rules/${Uri.encodeComponent(identifier)}',
+      requestUri:
+          '/rules/${Uri.encodeQueryComponent(identifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -172,7 +173,8 @@ class RecycleBin {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/rules/${Uri.encodeComponent(identifier)}',
+      requestUri:
+          '/rules/${Uri.encodeQueryComponent(identifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetRuleResponse.fromJson(response);
@@ -249,7 +251,8 @@ class RecycleBin {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -278,7 +281,8 @@ class RecycleBin {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/rules/${Uri.encodeComponent(identifier)}/lock',
+      requestUri:
+          '/rules/${Uri.encodeQueryComponent(identifier).replaceAll('+', '%20')}/lock',
       exceptionFnMap: _exceptionFns,
     );
     return LockRuleResponse.fromJson(response);
@@ -306,7 +310,8 @@ class RecycleBin {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -327,7 +332,8 @@ class RecycleBin {
     final response = await _protocol.send(
       payload: null,
       method: 'PATCH',
-      requestUri: '/rules/${Uri.encodeComponent(identifier)}/unlock',
+      requestUri:
+          '/rules/${Uri.encodeQueryComponent(identifier).replaceAll('+', '%20')}/unlock',
       exceptionFnMap: _exceptionFns,
     );
     return UnlockRuleResponse.fromJson(response);
@@ -355,7 +361,8 @@ class RecycleBin {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -422,7 +429,8 @@ class RecycleBin {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/rules/${Uri.encodeComponent(identifier)}',
+      requestUri:
+          '/rules/${Uri.encodeQueryComponent(identifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateRuleResponse.fromJson(response);

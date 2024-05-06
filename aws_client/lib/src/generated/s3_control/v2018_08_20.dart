@@ -140,7 +140,8 @@ class S3Control {
     };
     final $result = await _protocol.send(
       method: 'PUT',
-      requestUri: '/v20180820/accesspoint/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/v20180820/accesspoint/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       headers: headers,
       payload: CreateAccessPointRequest(
               accountId: accountId,
@@ -205,7 +206,7 @@ class S3Control {
     final $result = await _protocol.send(
       method: 'PUT',
       requestUri:
-          '/v20180820/accesspointforobjectlambda/${Uri.encodeComponent(name)}',
+          '/v20180820/accesspointforobjectlambda/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       headers: headers,
       payload: CreateAccessPointForObjectLambdaRequest(
               accountId: accountId, configuration: configuration, name: name)
@@ -374,7 +375,8 @@ class S3Control {
     };
     final $result = await _protocol.sendRaw(
       method: 'PUT',
-      requestUri: '/v20180820/bucket/${Uri.encodeComponent(bucket)}',
+      requestUri:
+          '/v20180820/bucket/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}',
       headers: headers,
       payload: createBucketConfiguration?.toXml('CreateBucketConfiguration'),
       exceptionFnMap: _exceptionFns,
@@ -656,7 +658,8 @@ class S3Control {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/v20180820/accesspoint/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/v20180820/accesspoint/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -698,7 +701,7 @@ class S3Control {
     await _protocol.send(
       method: 'DELETE',
       requestUri:
-          '/v20180820/accesspointforobjectlambda/${Uri.encodeComponent(name)}',
+          '/v20180820/accesspointforobjectlambda/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -756,7 +759,8 @@ class S3Control {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/v20180820/accesspoint/${Uri.encodeComponent(name)}/policy',
+      requestUri:
+          '/v20180820/accesspoint/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/policy',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -795,7 +799,7 @@ class S3Control {
     await _protocol.send(
       method: 'DELETE',
       requestUri:
-          '/v20180820/accesspointforobjectlambda/${Uri.encodeComponent(name)}/policy',
+          '/v20180820/accesspointforobjectlambda/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/policy',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -865,7 +869,8 @@ class S3Control {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/v20180820/bucket/${Uri.encodeComponent(bucket)}',
+      requestUri:
+          '/v20180820/bucket/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -945,7 +950,7 @@ class S3Control {
     await _protocol.send(
       method: 'DELETE',
       requestUri:
-          '/v20180820/bucket/${Uri.encodeComponent(bucket)}/lifecycleconfiguration',
+          '/v20180820/bucket/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}/lifecycleconfiguration',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1030,7 +1035,8 @@ class S3Control {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/v20180820/bucket/${Uri.encodeComponent(bucket)}/policy',
+      requestUri:
+          '/v20180820/bucket/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}/policy',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1119,7 +1125,7 @@ class S3Control {
     await _protocol.send(
       method: 'DELETE',
       requestUri:
-          '/v20180820/bucket/${Uri.encodeComponent(bucket)}/replication',
+          '/v20180820/bucket/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}/replication',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1189,7 +1195,8 @@ class S3Control {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/v20180820/bucket/${Uri.encodeComponent(bucket)}/tagging',
+      requestUri:
+          '/v20180820/bucket/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}/tagging',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1239,7 +1246,8 @@ class S3Control {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/v20180820/jobs/${Uri.encodeComponent(jobId)}/tagging',
+      requestUri:
+          '/v20180820/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}/tagging',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1383,7 +1391,8 @@ class S3Control {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/v20180820/storagelens/${Uri.encodeComponent(configId)}',
+      requestUri:
+          '/v20180820/storagelens/${Uri.encodeQueryComponent(configId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1418,7 +1427,7 @@ class S3Control {
     await _protocol.send(
       method: 'DELETE',
       requestUri:
-          '/v20180820/storagelens/${Uri.encodeComponent(configId)}/tagging',
+          '/v20180820/storagelens/${Uri.encodeQueryComponent(configId).replaceAll('+', '%20')}/tagging',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1470,7 +1479,8 @@ class S3Control {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/v20180820/jobs/${Uri.encodeComponent(jobId)}',
+      requestUri:
+          '/v20180820/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1525,7 +1535,7 @@ class S3Control {
     final $result = await _protocol.send(
       method: 'GET',
       requestUri:
-          '/v20180820/async-requests/mrap/${requestTokenARN.split('/').map(Uri.encodeComponent).join('/')}',
+          '/v20180820/async-requests/mrap/${requestTokenARN.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1590,7 +1600,8 @@ class S3Control {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/v20180820/accesspoint/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/v20180820/accesspoint/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1627,7 +1638,7 @@ class S3Control {
     final $result = await _protocol.send(
       method: 'GET',
       requestUri:
-          '/v20180820/accesspointforobjectlambda/${Uri.encodeComponent(name)}/configuration',
+          '/v20180820/accesspointforobjectlambda/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/configuration',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1672,7 +1683,7 @@ class S3Control {
     final $result = await _protocol.send(
       method: 'GET',
       requestUri:
-          '/v20180820/accesspointforobjectlambda/${Uri.encodeComponent(name)}',
+          '/v20180820/accesspointforobjectlambda/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1722,7 +1733,8 @@ class S3Control {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/v20180820/accesspoint/${Uri.encodeComponent(name)}/policy',
+      requestUri:
+          '/v20180820/accesspoint/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/policy',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1762,7 +1774,7 @@ class S3Control {
     final $result = await _protocol.send(
       method: 'GET',
       requestUri:
-          '/v20180820/accesspointforobjectlambda/${Uri.encodeComponent(name)}/policy',
+          '/v20180820/accesspointforobjectlambda/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/policy',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1791,7 +1803,7 @@ class S3Control {
     final $result = await _protocol.send(
       method: 'GET',
       requestUri:
-          '/v20180820/accesspoint/${Uri.encodeComponent(name)}/policyStatus',
+          '/v20180820/accesspoint/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/policyStatus',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1818,7 +1830,7 @@ class S3Control {
     final $result = await _protocol.send(
       method: 'GET',
       requestUri:
-          '/v20180820/accesspointforobjectlambda/${Uri.encodeComponent(name)}/policyStatus',
+          '/v20180820/accesspointforobjectlambda/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/policyStatus',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1895,7 +1907,8 @@ class S3Control {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/v20180820/bucket/${Uri.encodeComponent(bucket)}',
+      requestUri:
+          '/v20180820/bucket/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1996,7 +2009,7 @@ class S3Control {
     final $result = await _protocol.send(
       method: 'GET',
       requestUri:
-          '/v20180820/bucket/${Uri.encodeComponent(bucket)}/lifecycleconfiguration',
+          '/v20180820/bucket/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}/lifecycleconfiguration',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2086,7 +2099,8 @@ class S3Control {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/v20180820/bucket/${Uri.encodeComponent(bucket)}/policy',
+      requestUri:
+          '/v20180820/bucket/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}/policy',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2183,7 +2197,7 @@ class S3Control {
     final $result = await _protocol.send(
       method: 'GET',
       requestUri:
-          '/v20180820/bucket/${Uri.encodeComponent(bucket)}/replication',
+          '/v20180820/bucket/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}/replication',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2266,7 +2280,8 @@ class S3Control {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/v20180820/bucket/${Uri.encodeComponent(bucket)}/tagging',
+      requestUri:
+          '/v20180820/bucket/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}/tagging',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2333,7 +2348,8 @@ class S3Control {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/v20180820/bucket/${Uri.encodeComponent(bucket)}/versioning',
+      requestUri:
+          '/v20180820/bucket/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}/versioning',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2383,7 +2399,8 @@ class S3Control {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/v20180820/jobs/${Uri.encodeComponent(jobId)}/tagging',
+      requestUri:
+          '/v20180820/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}/tagging',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2442,7 +2459,7 @@ class S3Control {
     final $result = await _protocol.send(
       method: 'GET',
       requestUri:
-          '/v20180820/mrap/instances/${name.split('/').map(Uri.encodeComponent).join('/')}',
+          '/v20180820/mrap/instances/${name.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2494,7 +2511,7 @@ class S3Control {
     final $result = await _protocol.send(
       method: 'GET',
       requestUri:
-          '/v20180820/mrap/instances/${name.split('/').map(Uri.encodeComponent).join('/')}/policy',
+          '/v20180820/mrap/instances/${name.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}/policy',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2546,7 +2563,7 @@ class S3Control {
     final $result = await _protocol.send(
       method: 'GET',
       requestUri:
-          '/v20180820/mrap/instances/${name.split('/').map(Uri.encodeComponent).join('/')}/policystatus',
+          '/v20180820/mrap/instances/${name.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}/policystatus',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2597,7 +2614,7 @@ class S3Control {
     final $result = await _protocol.send(
       method: 'GET',
       requestUri:
-          '/v20180820/mrap/instances/${mrap.split('/').map(Uri.encodeComponent).join('/')}/routes',
+          '/v20180820/mrap/instances/${mrap.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}/routes',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2677,7 +2694,8 @@ class S3Control {
     };
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/v20180820/storagelens/${Uri.encodeComponent(configId)}',
+      requestUri:
+          '/v20180820/storagelens/${Uri.encodeQueryComponent(configId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2717,7 +2735,7 @@ class S3Control {
     final $result = await _protocol.send(
       method: 'GET',
       requestUri:
-          '/v20180820/storagelens/${Uri.encodeComponent(configId)}/tagging',
+          '/v20180820/storagelens/${Uri.encodeQueryComponent(configId).replaceAll('+', '%20')}/tagging',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -3163,7 +3181,7 @@ class S3Control {
     await _protocol.send(
       method: 'PUT',
       requestUri:
-          '/v20180820/accesspointforobjectlambda/${Uri.encodeComponent(name)}/configuration',
+          '/v20180820/accesspointforobjectlambda/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/configuration',
       headers: headers,
       payload: PutAccessPointConfigurationForObjectLambdaRequest(
               accountId: accountId, configuration: configuration, name: name)
@@ -3242,7 +3260,8 @@ class S3Control {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/v20180820/accesspoint/${Uri.encodeComponent(name)}/policy',
+      requestUri:
+          '/v20180820/accesspoint/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/policy',
       headers: headers,
       payload: PutAccessPointPolicyRequest(
               accountId: accountId, name: name, policy: policy)
@@ -3296,7 +3315,7 @@ class S3Control {
     await _protocol.send(
       method: 'PUT',
       requestUri:
-          '/v20180820/accesspointforobjectlambda/${Uri.encodeComponent(name)}/policy',
+          '/v20180820/accesspointforobjectlambda/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/policy',
       headers: headers,
       payload: PutAccessPointPolicyForObjectLambdaRequest(
               accountId: accountId, name: name, policy: policy)
@@ -3365,7 +3384,7 @@ class S3Control {
     await _protocol.send(
       method: 'PUT',
       requestUri:
-          '/v20180820/bucket/${Uri.encodeComponent(bucket)}/lifecycleconfiguration',
+          '/v20180820/bucket/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}/lifecycleconfiguration',
       headers: headers,
       payload: lifecycleConfiguration?.toXml('LifecycleConfiguration'),
       exceptionFnMap: _exceptionFns,
@@ -3467,7 +3486,8 @@ class S3Control {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/v20180820/bucket/${Uri.encodeComponent(bucket)}/policy',
+      requestUri:
+          '/v20180820/bucket/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}/policy',
       headers: headers,
       payload: PutBucketPolicyRequest(
               accountId: accountId,
@@ -3621,7 +3641,7 @@ class S3Control {
     await _protocol.send(
       method: 'PUT',
       requestUri:
-          '/v20180820/bucket/${Uri.encodeComponent(bucket)}/replication',
+          '/v20180820/bucket/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}/replication',
       headers: headers,
       payload: replicationConfiguration.toXml('ReplicationConfiguration'),
       exceptionFnMap: _exceptionFns,
@@ -3760,7 +3780,8 @@ class S3Control {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/v20180820/bucket/${Uri.encodeComponent(bucket)}/tagging',
+      requestUri:
+          '/v20180820/bucket/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}/tagging',
       headers: headers,
       payload: tagging.toXml('Tagging'),
       exceptionFnMap: _exceptionFns,
@@ -3864,7 +3885,8 @@ class S3Control {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/v20180820/bucket/${Uri.encodeComponent(bucket)}/versioning',
+      requestUri:
+          '/v20180820/bucket/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}/versioning',
       headers: headers,
       payload: versioningConfiguration.toXml('VersioningConfiguration'),
       exceptionFnMap: _exceptionFns,
@@ -3968,7 +3990,8 @@ class S3Control {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/v20180820/jobs/${Uri.encodeComponent(jobId)}/tagging',
+      requestUri:
+          '/v20180820/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}/tagging',
       headers: headers,
       payload:
           PutJobTaggingRequest(accountId: accountId, jobId: jobId, tags: tags)
@@ -4132,7 +4155,8 @@ class S3Control {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/v20180820/storagelens/${Uri.encodeComponent(configId)}',
+      requestUri:
+          '/v20180820/storagelens/${Uri.encodeQueryComponent(configId).replaceAll('+', '%20')}',
       headers: headers,
       payload: PutStorageLensConfigurationRequest(
               accountId: accountId,
@@ -4186,7 +4210,7 @@ class S3Control {
     await _protocol.send(
       method: 'PUT',
       requestUri:
-          '/v20180820/storagelens/${Uri.encodeComponent(configId)}/tagging',
+          '/v20180820/storagelens/${Uri.encodeQueryComponent(configId).replaceAll('+', '%20')}/tagging',
       headers: headers,
       payload: PutStorageLensConfigurationTaggingRequest(
               accountId: accountId, configId: configId, tags: tags)
@@ -4264,7 +4288,7 @@ class S3Control {
     await _protocol.send(
       method: 'PATCH',
       requestUri:
-          '/v20180820/mrap/instances/${mrap.split('/').map(Uri.encodeComponent).join('/')}/routes',
+          '/v20180820/mrap/instances/${mrap.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}/routes',
       headers: headers,
       payload: SubmitMultiRegionAccessPointRoutesRequest(
               accountId: accountId, mrap: mrap, routeUpdates: routeUpdates)
@@ -4339,7 +4363,8 @@ class S3Control {
     };
     final $result = await _protocol.send(
       method: 'POST',
-      requestUri: '/v20180820/jobs/${Uri.encodeComponent(jobId)}/priority',
+      requestUri:
+          '/v20180820/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}/priority',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -4409,7 +4434,8 @@ class S3Control {
     };
     final $result = await _protocol.send(
       method: 'POST',
-      requestUri: '/v20180820/jobs/${Uri.encodeComponent(jobId)}/status',
+      requestUri:
+          '/v20180820/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}/status',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,

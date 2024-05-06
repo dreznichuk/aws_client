@@ -91,7 +91,7 @@ class NimbleStudio {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/eula-acceptances',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/eula-acceptances',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -168,7 +168,7 @@ class NimbleStudio {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/launch-profiles',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/launch-profiles',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -227,7 +227,7 @@ class NimbleStudio {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/streaming-images',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/streaming-images',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -297,7 +297,7 @@ class NimbleStudio {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/streaming-sessions',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/streaming-sessions',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -355,7 +355,7 @@ class NimbleStudio {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/streaming-sessions/${Uri.encodeComponent(sessionId)}/streams',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/streaming-sessions/%24%7BUri.encodeQueryComponent%28sessionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/streams',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -554,7 +554,7 @@ class NimbleStudio {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/studio-components',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/studio-components',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -595,7 +595,7 @@ class NimbleStudio {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/launch-profiles/${Uri.encodeComponent(launchProfileId)}',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/launch-profiles/%24%7BUri.encodeQueryComponent%28launchProfileId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -640,7 +640,7 @@ class NimbleStudio {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/launch-profiles/${Uri.encodeComponent(launchProfileId)}/membership/${Uri.encodeComponent(principalId)}',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/launch-profiles/%2524%257BUri.encodeQueryComponent%2528launchProfileId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/membership/%24%7BUri.encodeQueryComponent%28principalId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -679,7 +679,7 @@ class NimbleStudio {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/streaming-images/${Uri.encodeComponent(streamingImageId)}',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/streaming-images/%24%7BUri.encodeQueryComponent%28streamingImageId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -725,7 +725,7 @@ class NimbleStudio {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/streaming-sessions/${Uri.encodeComponent(sessionId)}',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/streaming-sessions/%24%7BUri.encodeQueryComponent%28sessionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -760,7 +760,8 @@ class NimbleStudio {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/2020-08-01/studios/${Uri.encodeComponent(studioId)}',
+      requestUri:
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -800,7 +801,7 @@ class NimbleStudio {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/studio-components/${Uri.encodeComponent(studioComponentId)}',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/studio-components/%24%7BUri.encodeQueryComponent%28studioComponentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -840,7 +841,7 @@ class NimbleStudio {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/membership/${Uri.encodeComponent(principalId)}',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/membership/%24%7BUri.encodeQueryComponent%28principalId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -864,7 +865,8 @@ class NimbleStudio {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/2020-08-01/eulas/${Uri.encodeComponent(eulaId)}',
+      requestUri:
+          '/2020-08-01/eulas/${Uri.encodeQueryComponent(eulaId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetEulaResponse.fromJson(response);
@@ -894,7 +896,7 @@ class NimbleStudio {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/launch-profiles/${Uri.encodeComponent(launchProfileId)}',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/launch-profiles/%24%7BUri.encodeQueryComponent%28launchProfileId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetLaunchProfileResponse.fromJson(response);
@@ -928,7 +930,7 @@ class NimbleStudio {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/launch-profiles/${Uri.encodeComponent(launchProfileId)}/details',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/launch-profiles/%24%7BUri.encodeQueryComponent%28launchProfileId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/details',
       exceptionFnMap: _exceptionFns,
     );
     return GetLaunchProfileDetailsResponse.fromJson(response);
@@ -977,7 +979,7 @@ class NimbleStudio {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/launch-profiles/${Uri.encodeComponent(launchProfileId)}/init',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/launch-profiles/%24%7BUri.encodeQueryComponent%28launchProfileId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/init',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1012,7 +1014,7 @@ class NimbleStudio {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/launch-profiles/${Uri.encodeComponent(launchProfileId)}/membership/${Uri.encodeComponent(principalId)}',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/launch-profiles/%2524%257BUri.encodeQueryComponent%2528launchProfileId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/membership/%24%7BUri.encodeQueryComponent%28principalId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetLaunchProfileMemberResponse.fromJson(response);
@@ -1041,7 +1043,7 @@ class NimbleStudio {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/streaming-images/${Uri.encodeComponent(streamingImageId)}',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/streaming-images/%24%7BUri.encodeQueryComponent%28streamingImageId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetStreamingImageResponse.fromJson(response);
@@ -1073,7 +1075,7 @@ class NimbleStudio {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/streaming-sessions/${Uri.encodeComponent(sessionId)}',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/streaming-sessions/%24%7BUri.encodeQueryComponent%28sessionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetStreamingSessionResponse.fromJson(response);
@@ -1104,7 +1106,7 @@ class NimbleStudio {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/streaming-session-backups/${Uri.encodeComponent(backupId)}',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/streaming-session-backups/%24%7BUri.encodeQueryComponent%28backupId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetStreamingSessionBackupResponse.fromJson(response);
@@ -1144,7 +1146,7 @@ class NimbleStudio {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/streaming-sessions/${Uri.encodeComponent(sessionId)}/streams/${Uri.encodeComponent(streamId)}',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/streaming-sessions/%2524%257BUri.encodeQueryComponent%2528sessionId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/streams/%24%7BUri.encodeQueryComponent%28streamId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetStreamingSessionStreamResponse.fromJson(response);
@@ -1168,7 +1170,8 @@ class NimbleStudio {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/2020-08-01/studios/${Uri.encodeComponent(studioId)}',
+      requestUri:
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetStudioResponse.fromJson(response);
@@ -1197,7 +1200,7 @@ class NimbleStudio {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/studio-components/${Uri.encodeComponent(studioComponentId)}',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/studio-components/%24%7BUri.encodeQueryComponent%28studioComponentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetStudioComponentResponse.fromJson(response);
@@ -1226,7 +1229,7 @@ class NimbleStudio {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/membership/${Uri.encodeComponent(principalId)}',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/membership/%24%7BUri.encodeQueryComponent%28principalId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetStudioMemberResponse.fromJson(response);
@@ -1264,7 +1267,7 @@ class NimbleStudio {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/eula-acceptances',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/eula-acceptances',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1348,7 +1351,7 @@ class NimbleStudio {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/launch-profiles/${Uri.encodeComponent(launchProfileId)}/membership',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/launch-profiles/%24%7BUri.encodeQueryComponent%28launchProfileId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/membership',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1403,7 +1406,7 @@ class NimbleStudio {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/launch-profiles',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/launch-profiles',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1445,7 +1448,7 @@ class NimbleStudio {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/streaming-images',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/streaming-images',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1483,7 +1486,7 @@ class NimbleStudio {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/streaming-session-backups',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/streaming-session-backups',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1532,7 +1535,7 @@ class NimbleStudio {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/streaming-sessions',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/streaming-sessions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1589,7 +1592,7 @@ class NimbleStudio {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/studio-components',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/studio-components',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1637,7 +1640,7 @@ class NimbleStudio {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/membership',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/membership',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1699,7 +1702,8 @@ class NimbleStudio {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/2020-08-01/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/2020-08-01/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1751,7 +1755,7 @@ class NimbleStudio {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/launch-profiles/${Uri.encodeComponent(launchProfileId)}/membership',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/launch-profiles/%24%7BUri.encodeQueryComponent%28launchProfileId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/membership',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1798,7 +1802,7 @@ class NimbleStudio {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/membership',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/membership',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1848,7 +1852,7 @@ class NimbleStudio {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/streaming-sessions/${Uri.encodeComponent(sessionId)}/start',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/streaming-sessions/%24%7BUri.encodeQueryComponent%28sessionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/start',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1897,7 +1901,7 @@ class NimbleStudio {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/sso-configuration',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/sso-configuration',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1949,7 +1953,7 @@ class NimbleStudio {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/streaming-sessions/${Uri.encodeComponent(sessionId)}/stop',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/streaming-sessions/%24%7BUri.encodeQueryComponent%28sessionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stop',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1982,7 +1986,8 @@ class NimbleStudio {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/2020-08-01/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/2020-08-01/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2013,7 +2018,8 @@ class NimbleStudio {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/2020-08-01/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/2020-08-01/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2084,7 +2090,7 @@ class NimbleStudio {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/launch-profiles/${Uri.encodeComponent(launchProfileId)}',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/launch-profiles/%24%7BUri.encodeQueryComponent%28launchProfileId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2136,7 +2142,7 @@ class NimbleStudio {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/launch-profiles/${Uri.encodeComponent(launchProfileId)}/membership/${Uri.encodeComponent(principalId)}',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/launch-profiles/%2524%257BUri.encodeQueryComponent%2528launchProfileId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/membership/%24%7BUri.encodeQueryComponent%28principalId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2188,7 +2194,7 @@ class NimbleStudio {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/streaming-images/${Uri.encodeComponent(streamingImageId)}',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/streaming-images/%24%7BUri.encodeQueryComponent%28streamingImageId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2245,7 +2251,8 @@ class NimbleStudio {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/2020-08-01/studios/${Uri.encodeComponent(studioId)}',
+      requestUri:
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2344,7 +2351,7 @@ class NimbleStudio {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/2020-08-01/studios/${Uri.encodeComponent(studioId)}/studio-components/${Uri.encodeComponent(studioComponentId)}',
+          '/2020-08-01/studios/${Uri.encodeQueryComponent(studioId).replaceAll('+', '%20')}/studio-components/%24%7BUri.encodeQueryComponent%28studioComponentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );

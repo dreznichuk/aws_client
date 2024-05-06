@@ -101,7 +101,8 @@ class IoTSiteWise {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/assets/${Uri.encodeComponent(assetId)}/associate',
+      requestUri:
+          '/assets/${Uri.encodeQueryComponent(assetId).replaceAll('+', '%20')}/associate',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -181,7 +182,7 @@ class IoTSiteWise {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/projects/${Uri.encodeComponent(projectId)}/assets/associate',
+          '/projects/${Uri.encodeQueryComponent(projectId).replaceAll('+', '%20')}/assets/associate',
       exceptionFnMap: _exceptionFns,
     );
     return BatchAssociateProjectAssetsResponse.fromJson(response);
@@ -219,7 +220,7 @@ class IoTSiteWise {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/projects/${Uri.encodeComponent(projectId)}/assets/disassociate',
+          '/projects/${Uri.encodeQueryComponent(projectId).replaceAll('+', '%20')}/assets/disassociate',
       exceptionFnMap: _exceptionFns,
     );
     return BatchDisassociateProjectAssetsResponse.fromJson(response);
@@ -1003,7 +1004,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/access-policies/${Uri.encodeComponent(accessPolicyId)}',
+      requestUri:
+          '/access-policies/${Uri.encodeQueryComponent(accessPolicyId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1042,7 +1044,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/assets/${Uri.encodeComponent(assetId)}',
+      requestUri:
+          '/assets/${Uri.encodeQueryComponent(assetId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1080,7 +1083,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/asset-models/${Uri.encodeComponent(assetModelId)}',
+      requestUri:
+          '/asset-models/${Uri.encodeQueryComponent(assetModelId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1111,7 +1115,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/dashboards/${Uri.encodeComponent(dashboardId)}',
+      requestUri:
+          '/dashboards/${Uri.encodeQueryComponent(dashboardId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1133,7 +1138,8 @@ class IoTSiteWise {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/20200301/gateways/${Uri.encodeComponent(gatewayId)}',
+      requestUri:
+          '/20200301/gateways/${Uri.encodeQueryComponent(gatewayId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1163,7 +1169,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/portals/${Uri.encodeComponent(portalId)}',
+      requestUri:
+          '/portals/${Uri.encodeQueryComponent(portalId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1194,7 +1201,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/projects/${Uri.encodeComponent(projectId)}',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(projectId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1284,7 +1292,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/access-policies/${Uri.encodeComponent(accessPolicyId)}',
+      requestUri:
+          '/access-policies/${Uri.encodeQueryComponent(accessPolicyId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeAccessPolicyResponse.fromJson(response);
@@ -1313,7 +1322,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/assets/${Uri.encodeComponent(assetId)}',
+      requestUri:
+          '/assets/${Uri.encodeQueryComponent(assetId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1343,7 +1353,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/asset-models/${Uri.encodeComponent(assetModelId)}',
+      requestUri:
+          '/asset-models/${Uri.encodeQueryComponent(assetModelId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1379,7 +1390,7 @@ class IoTSiteWise {
       payload: null,
       method: 'GET',
       requestUri:
-          '/assets/${Uri.encodeComponent(assetId)}/properties/${Uri.encodeComponent(propertyId)}',
+          '/assets/%24%7BUri.encodeQueryComponent%28assetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/properties/${Uri.encodeQueryComponent(propertyId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeAssetPropertyResponse.fromJson(response);
@@ -1404,7 +1415,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/jobs/${Uri.encodeComponent(jobId)}',
+      requestUri:
+          '/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeBulkImportJobResponse.fromJson(response);
@@ -1425,7 +1437,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/dashboards/${Uri.encodeComponent(dashboardId)}',
+      requestUri:
+          '/dashboards/${Uri.encodeQueryComponent(dashboardId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDashboardResponse.fromJson(response);
@@ -1466,7 +1479,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/20200301/gateways/${Uri.encodeComponent(gatewayId)}',
+      requestUri:
+          '/20200301/gateways/${Uri.encodeQueryComponent(gatewayId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeGatewayResponse.fromJson(response);
@@ -1503,7 +1517,7 @@ class IoTSiteWise {
       payload: null,
       method: 'GET',
       requestUri:
-          '/20200301/gateways/${Uri.encodeComponent(gatewayId)}/capability/${Uri.encodeComponent(capabilityNamespace)}',
+          '/20200301/gateways/${Uri.encodeQueryComponent(gatewayId).replaceAll('+', '%20')}/capability/%24%7BUri.encodeQueryComponent%28capabilityNamespace%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeGatewayCapabilityConfigurationResponse.fromJson(response);
@@ -1540,7 +1554,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/portals/${Uri.encodeComponent(portalId)}',
+      requestUri:
+          '/portals/${Uri.encodeQueryComponent(portalId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribePortalResponse.fromJson(response);
@@ -1561,7 +1576,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/projects/${Uri.encodeComponent(projectId)}',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(projectId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeProjectResponse.fromJson(response);
@@ -1684,7 +1700,8 @@ class IoTSiteWise {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/assets/${Uri.encodeComponent(assetId)}/disassociate',
+      requestUri:
+          '/assets/${Uri.encodeQueryComponent(assetId).replaceAll('+', '%20')}/disassociate',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2376,7 +2393,7 @@ class IoTSiteWise {
       payload: null,
       method: 'GET',
       requestUri:
-          '/asset-models/${Uri.encodeComponent(assetModelId)}/properties',
+          '/asset-models/${Uri.encodeQueryComponent(assetModelId).replaceAll('+', '%20')}/properties',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2474,7 +2491,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/assets/${Uri.encodeComponent(assetId)}/properties',
+      requestUri:
+          '/assets/${Uri.encodeQueryComponent(assetId).replaceAll('+', '%20')}/properties',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2531,7 +2549,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/assets/${Uri.encodeComponent(assetId)}/assetRelationships',
+      requestUri:
+          '/assets/${Uri.encodeQueryComponent(assetId).replaceAll('+', '%20')}/assetRelationships',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2699,7 +2718,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/assets/${Uri.encodeComponent(assetId)}/hierarchies',
+      requestUri:
+          '/assets/${Uri.encodeQueryComponent(assetId).replaceAll('+', '%20')}/hierarchies',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2903,7 +2923,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/projects/${Uri.encodeComponent(projectId)}/assets',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(projectId).replaceAll('+', '%20')}/assets',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3296,7 +3317,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/access-policies/${Uri.encodeComponent(accessPolicyId)}',
+      requestUri:
+          '/access-policies/${Uri.encodeQueryComponent(accessPolicyId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3339,7 +3361,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/assets/${Uri.encodeComponent(assetId)}',
+      requestUri:
+          '/assets/${Uri.encodeQueryComponent(assetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAssetResponse.fromJson(response);
@@ -3439,7 +3462,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/asset-models/${Uri.encodeComponent(assetModelId)}',
+      requestUri:
+          '/asset-models/${Uri.encodeQueryComponent(assetModelId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAssetModelResponse.fromJson(response);
@@ -3515,7 +3539,7 @@ class IoTSiteWise {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/assets/${Uri.encodeComponent(assetId)}/properties/${Uri.encodeComponent(propertyId)}',
+          '/assets/%24%7BUri.encodeQueryComponent%28assetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/properties/${Uri.encodeQueryComponent(propertyId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3563,7 +3587,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/dashboards/${Uri.encodeComponent(dashboardId)}',
+      requestUri:
+          '/dashboards/${Uri.encodeQueryComponent(dashboardId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3591,7 +3616,8 @@ class IoTSiteWise {
     await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/20200301/gateways/${Uri.encodeComponent(gatewayId)}',
+      requestUri:
+          '/20200301/gateways/${Uri.encodeQueryComponent(gatewayId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3640,7 +3666,7 @@ class IoTSiteWise {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/20200301/gateways/${Uri.encodeComponent(gatewayId)}/capability',
+          '/20200301/gateways/${Uri.encodeQueryComponent(gatewayId).replaceAll('+', '%20')}/capability',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateGatewayCapabilityConfigurationResponse.fromJson(response);
@@ -3715,7 +3741,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/portals/${Uri.encodeComponent(portalId)}',
+      requestUri:
+          '/portals/${Uri.encodeQueryComponent(portalId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdatePortalResponse.fromJson(response);
@@ -3755,7 +3782,8 @@ class IoTSiteWise {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/projects/${Uri.encodeComponent(projectId)}',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(projectId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

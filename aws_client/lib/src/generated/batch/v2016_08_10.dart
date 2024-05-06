@@ -990,7 +990,8 @@ class Batch {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/v1/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1359,7 +1360,8 @@ class Batch {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/v1/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1418,7 +1420,8 @@ class Batch {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/v1/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

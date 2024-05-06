@@ -90,7 +90,7 @@ class IoT {
       payload: null,
       method: 'PATCH',
       requestUri:
-          '/accept-certificate-transfer/${Uri.encodeComponent(certificateId)}',
+          '/accept-certificate-transfer/${Uri.encodeQueryComponent(certificateId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -255,7 +255,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/jobs/${Uri.encodeComponent(jobId)}/targets',
+      requestUri:
+          '/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}/targets',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -295,7 +296,8 @@ class IoT {
     await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/target-policies/${Uri.encodeComponent(policyName)}',
+      requestUri:
+          '/target-policies/${Uri.encodeQueryComponent(policyName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -336,7 +338,8 @@ class IoT {
     await _protocol.send(
       payload: null,
       method: 'PUT',
-      requestUri: '/principal-policies/${Uri.encodeComponent(policyName)}',
+      requestUri:
+          '/principal-policies/${Uri.encodeQueryComponent(policyName).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -374,7 +377,7 @@ class IoT {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/security-profiles/${Uri.encodeComponent(securityProfileName)}/targets',
+          '/security-profiles/${Uri.encodeQueryComponent(securityProfileName).replaceAll('+', '%20')}/targets',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -410,7 +413,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'PUT',
-      requestUri: '/things/${Uri.encodeComponent(thingName)}/principals',
+      requestUri:
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/principals',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -437,7 +441,7 @@ class IoT {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/audit/mitigationactions/tasks/${Uri.encodeComponent(taskId)}/cancel',
+          '/audit/mitigationactions/tasks/${Uri.encodeQueryComponent(taskId).replaceAll('+', '%20')}/cancel',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -464,7 +468,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'PUT',
-      requestUri: '/audit/tasks/${Uri.encodeComponent(taskId)}/cancel',
+      requestUri:
+          '/audit/tasks/${Uri.encodeQueryComponent(taskId).replaceAll('+', '%20')}/cancel',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -503,7 +508,7 @@ class IoT {
       payload: null,
       method: 'PATCH',
       requestUri:
-          '/cancel-certificate-transfer/${Uri.encodeComponent(certificateId)}',
+          '/cancel-certificate-transfer/${Uri.encodeQueryComponent(certificateId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -528,7 +533,7 @@ class IoT {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/detect/mitigationactions/tasks/${Uri.encodeComponent(taskId)}/cancel',
+          '/detect/mitigationactions/tasks/${Uri.encodeQueryComponent(taskId).replaceAll('+', '%20')}/cancel',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -579,7 +584,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/jobs/${Uri.encodeComponent(jobId)}/cancel',
+      requestUri:
+          '/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}/cancel',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -648,7 +654,7 @@ class IoT {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/things/${Uri.encodeComponent(thingName)}/jobs/${Uri.encodeComponent(jobId)}/cancel',
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/jobs/%24%7BUri.encodeQueryComponent%28jobId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/cancel',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -701,7 +707,7 @@ class IoT {
       payload: null,
       method: 'GET',
       requestUri:
-          '/confirmdestination/${confirmationToken.split('/').map(Uri.encodeComponent).join('/')}',
+          '/confirmdestination/${confirmationToken.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -836,7 +842,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/authorizer/${Uri.encodeComponent(authorizerName)}',
+      requestUri:
+          '/authorizer/${Uri.encodeQueryComponent(authorizerName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateAuthorizerResponse.fromJson(response);
@@ -874,7 +881,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/billing-groups/${Uri.encodeComponent(billingGroupName)}',
+      requestUri:
+          '/billing-groups/${Uri.encodeQueryComponent(billingGroupName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateBillingGroupResponse.fromJson(response);
@@ -1022,7 +1030,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/custom-metric/${Uri.encodeComponent(metricName)}',
+      requestUri:
+          '/custom-metric/${Uri.encodeQueryComponent(metricName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateCustomMetricResponse.fromJson(response);
@@ -1081,7 +1090,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/dimensions/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/dimensions/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateDimensionResponse.fromJson(response);
@@ -1169,7 +1179,7 @@ class IoT {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/domainConfigurations/${Uri.encodeComponent(domainConfigurationName)}',
+          '/domainConfigurations/${Uri.encodeQueryComponent(domainConfigurationName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateDomainConfigurationResponse.fromJson(response);
@@ -1237,7 +1247,7 @@ class IoT {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/dynamic-thing-groups/${Uri.encodeComponent(thingGroupName)}',
+          '/dynamic-thing-groups/${Uri.encodeQueryComponent(thingGroupName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateDynamicThingGroupResponse.fromJson(response);
@@ -1327,7 +1337,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/fleet-metric/${Uri.encodeComponent(metricName)}',
+      requestUri:
+          '/fleet-metric/${Uri.encodeQueryComponent(metricName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateFleetMetricResponse.fromJson(response);
@@ -1475,7 +1486,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/jobs/${Uri.encodeComponent(jobId)}',
+      requestUri:
+          '/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateJobResponse.fromJson(response);
@@ -1564,7 +1576,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/job-templates/${Uri.encodeComponent(jobTemplateId)}',
+      requestUri:
+          '/job-templates/${Uri.encodeQueryComponent(jobTemplateId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateJobTemplateResponse.fromJson(response);
@@ -1650,7 +1663,7 @@ class IoT {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/mitigationactions/actions/${Uri.encodeComponent(actionName)}',
+          '/mitigationactions/actions/${Uri.encodeQueryComponent(actionName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateMitigationActionResponse.fromJson(response);
@@ -1760,7 +1773,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/otaUpdates/${Uri.encodeComponent(otaUpdateId)}',
+      requestUri:
+          '/otaUpdates/${Uri.encodeQueryComponent(otaUpdateId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateOTAUpdateResponse.fromJson(response);
@@ -1815,7 +1829,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/policies/${Uri.encodeComponent(policyName)}',
+      requestUri:
+          '/policies/${Uri.encodeQueryComponent(policyName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreatePolicyResponse.fromJson(response);
@@ -1870,7 +1885,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/policies/${Uri.encodeComponent(policyName)}/version',
+      requestUri:
+          '/policies/${Uri.encodeQueryComponent(policyName).replaceAll('+', '%20')}/version',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1899,7 +1915,7 @@ class IoT {
       payload: null,
       method: 'POST',
       requestUri:
-          '/provisioning-templates/${Uri.encodeComponent(templateName)}/provisioning-claim',
+          '/provisioning-templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/provisioning-claim',
       exceptionFnMap: _exceptionFns,
     );
     return CreateProvisioningClaimResponse.fromJson(response);
@@ -2027,7 +2043,7 @@ class IoT {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/provisioning-templates/${Uri.encodeComponent(templateName)}/versions',
+          '/provisioning-templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/versions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2094,7 +2110,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/role-aliases/${Uri.encodeComponent(roleAlias)}',
+      requestUri:
+          '/role-aliases/${Uri.encodeQueryComponent(roleAlias).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateRoleAliasResponse.fromJson(response);
@@ -2163,7 +2180,7 @@ class IoT {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/audit/scheduledaudits/${Uri.encodeComponent(scheduledAuditName)}',
+          '/audit/scheduledaudits/${Uri.encodeQueryComponent(scheduledAuditName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateScheduledAuditResponse.fromJson(response);
@@ -2238,7 +2255,7 @@ class IoT {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/security-profiles/${Uri.encodeComponent(securityProfileName)}',
+          '/security-profiles/${Uri.encodeQueryComponent(securityProfileName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateSecurityProfileResponse.fromJson(response);
@@ -2292,7 +2309,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/streams/${Uri.encodeComponent(streamId)}',
+      requestUri:
+          '/streams/${Uri.encodeQueryComponent(streamId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateStreamResponse.fromJson(response);
@@ -2351,7 +2369,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/things/${Uri.encodeComponent(thingName)}',
+      requestUri:
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateThingResponse.fromJson(response);
@@ -2398,7 +2417,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/thing-groups/${Uri.encodeComponent(thingGroupName)}',
+      requestUri:
+          '/thing-groups/${Uri.encodeQueryComponent(thingGroupName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateThingGroupResponse.fromJson(response);
@@ -2440,7 +2460,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/thing-types/${Uri.encodeComponent(thingTypeName)}',
+      requestUri:
+          '/thing-types/${Uri.encodeQueryComponent(thingTypeName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateThingTypeResponse.fromJson(response);
@@ -2489,7 +2510,8 @@ class IoT {
     await _protocol.send(
       payload: topicRulePayload,
       method: 'POST',
-      requestUri: '/rules/${Uri.encodeComponent(ruleName)}',
+      requestUri:
+          '/rules/${Uri.encodeQueryComponent(ruleName).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2603,7 +2625,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/authorizer/${Uri.encodeComponent(authorizerName)}',
+      requestUri:
+          '/authorizer/${Uri.encodeQueryComponent(authorizerName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2638,7 +2661,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/billing-groups/${Uri.encodeComponent(billingGroupName)}',
+      requestUri:
+          '/billing-groups/${Uri.encodeQueryComponent(billingGroupName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2667,7 +2691,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/cacertificate/${Uri.encodeComponent(certificateId)}',
+      requestUri:
+          '/cacertificate/${Uri.encodeQueryComponent(certificateId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2710,7 +2735,8 @@ class IoT {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/certificates/${Uri.encodeComponent(certificateId)}',
+      requestUri:
+          '/certificates/${Uri.encodeQueryComponent(certificateId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2741,7 +2767,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/custom-metric/${Uri.encodeComponent(metricName)}',
+      requestUri:
+          '/custom-metric/${Uri.encodeQueryComponent(metricName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2764,7 +2791,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/dimensions/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/dimensions/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2791,7 +2819,7 @@ class IoT {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/domainConfigurations/${Uri.encodeComponent(domainConfigurationName)}',
+          '/domainConfigurations/${Uri.encodeQueryComponent(domainConfigurationName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2824,7 +2852,7 @@ class IoT {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/dynamic-thing-groups/${Uri.encodeComponent(thingGroupName)}',
+          '/dynamic-thing-groups/${Uri.encodeQueryComponent(thingGroupName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2861,7 +2889,8 @@ class IoT {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/fleet-metric/${Uri.encodeComponent(metricName)}',
+      requestUri:
+          '/fleet-metric/${Uri.encodeQueryComponent(metricName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2931,7 +2960,8 @@ class IoT {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/jobs/${Uri.encodeComponent(jobId)}',
+      requestUri:
+          '/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3002,7 +3032,7 @@ class IoT {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/things/${Uri.encodeComponent(thingName)}/jobs/${Uri.encodeComponent(jobId)}/executionNumber/${Uri.encodeComponent(executionNumber.toString())}',
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/jobs/%24%7BUri.encodeQueryComponent%28jobId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/executionNumber/%2524%257BUri.encodeQueryComponent%2528executionNumber.toString%2528%2529%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3023,7 +3053,8 @@ class IoT {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/job-templates/${Uri.encodeComponent(jobTemplateId)}',
+      requestUri:
+          '/job-templates/${Uri.encodeQueryComponent(jobTemplateId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3048,7 +3079,7 @@ class IoT {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/mitigationactions/actions/${Uri.encodeComponent(actionName)}',
+          '/mitigationactions/actions/${Uri.encodeQueryComponent(actionName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3092,7 +3123,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/otaUpdates/${Uri.encodeComponent(otaUpdateId)}',
+      requestUri:
+          '/otaUpdates/${Uri.encodeQueryComponent(otaUpdateId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3135,7 +3167,8 @@ class IoT {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/policies/${Uri.encodeComponent(policyName)}',
+      requestUri:
+          '/policies/${Uri.encodeQueryComponent(policyName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3170,7 +3203,7 @@ class IoT {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/policies/${Uri.encodeComponent(policyName)}/version/${Uri.encodeComponent(policyVersionId)}',
+          '/policies/%24%7BUri.encodeQueryComponent%28policyName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/version/${Uri.encodeQueryComponent(policyVersionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3198,7 +3231,7 @@ class IoT {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/provisioning-templates/${Uri.encodeComponent(templateName)}',
+          '/provisioning-templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3230,7 +3263,7 @@ class IoT {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/provisioning-templates/${Uri.encodeComponent(templateName)}/versions/${Uri.encodeComponent(versionId.toString())}',
+          '/provisioning-templates/%24%7BUri.encodeQueryComponent%28templateName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionId.toString()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3277,7 +3310,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/role-aliases/${Uri.encodeComponent(roleAlias)}',
+      requestUri:
+          '/role-aliases/${Uri.encodeQueryComponent(roleAlias).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3302,7 +3336,7 @@ class IoT {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/audit/scheduledaudits/${Uri.encodeComponent(scheduledAuditName)}',
+          '/audit/scheduledaudits/${Uri.encodeQueryComponent(scheduledAuditName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3338,7 +3372,7 @@ class IoT {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/security-profiles/${Uri.encodeComponent(securityProfileName)}',
+          '/security-profiles/${Uri.encodeQueryComponent(securityProfileName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3366,7 +3400,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/streams/${Uri.encodeComponent(streamId)}',
+      requestUri:
+          '/streams/${Uri.encodeQueryComponent(streamId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3405,7 +3440,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/things/${Uri.encodeComponent(thingName)}',
+      requestUri:
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3438,7 +3474,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/thing-groups/${Uri.encodeComponent(thingGroupName)}',
+      requestUri:
+          '/thing-groups/${Uri.encodeQueryComponent(thingGroupName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3470,7 +3507,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/thing-types/${Uri.encodeComponent(thingTypeName)}',
+      requestUri:
+          '/thing-types/${Uri.encodeQueryComponent(thingTypeName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3495,7 +3533,8 @@ class IoT {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/rules/${Uri.encodeComponent(ruleName)}',
+      requestUri:
+          '/rules/${Uri.encodeQueryComponent(ruleName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3521,7 +3560,7 @@ class IoT {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/destinations/${arn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/destinations/${arn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3590,7 +3629,7 @@ class IoT {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/thing-types/${Uri.encodeComponent(thingTypeName)}/deprecate',
+          '/thing-types/${Uri.encodeQueryComponent(thingTypeName).replaceAll('+', '%20')}/deprecate',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3638,7 +3677,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/audit/findings/${Uri.encodeComponent(findingId)}',
+      requestUri:
+          '/audit/findings/${Uri.encodeQueryComponent(findingId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeAuditFindingResponse.fromJson(response);
@@ -3664,7 +3704,7 @@ class IoT {
       payload: null,
       method: 'GET',
       requestUri:
-          '/audit/mitigationactions/tasks/${Uri.encodeComponent(taskId)}',
+          '/audit/mitigationactions/tasks/${Uri.encodeQueryComponent(taskId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeAuditMitigationActionsTaskResponse.fromJson(response);
@@ -3712,7 +3752,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/audit/tasks/${Uri.encodeComponent(taskId)}',
+      requestUri:
+          '/audit/tasks/${Uri.encodeQueryComponent(taskId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeAuditTaskResponse.fromJson(response);
@@ -3739,7 +3780,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/authorizer/${Uri.encodeComponent(authorizerName)}',
+      requestUri:
+          '/authorizer/${Uri.encodeQueryComponent(authorizerName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeAuthorizerResponse.fromJson(response);
@@ -3764,7 +3806,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/billing-groups/${Uri.encodeComponent(billingGroupName)}',
+      requestUri:
+          '/billing-groups/${Uri.encodeQueryComponent(billingGroupName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeBillingGroupResponse.fromJson(response);
@@ -3791,7 +3834,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/cacertificate/${Uri.encodeComponent(certificateId)}',
+      requestUri:
+          '/cacertificate/${Uri.encodeQueryComponent(certificateId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeCACertificateResponse.fromJson(response);
@@ -3819,7 +3863,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/certificates/${Uri.encodeComponent(certificateId)}',
+      requestUri:
+          '/certificates/${Uri.encodeQueryComponent(certificateId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeCertificateResponse.fromJson(response);
@@ -3844,7 +3889,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/custom-metric/${Uri.encodeComponent(metricName)}',
+      requestUri:
+          '/custom-metric/${Uri.encodeQueryComponent(metricName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeCustomMetricResponse.fromJson(response);
@@ -3893,7 +3939,7 @@ class IoT {
       payload: null,
       method: 'GET',
       requestUri:
-          '/detect/mitigationactions/tasks/${Uri.encodeComponent(taskId)}',
+          '/detect/mitigationactions/tasks/${Uri.encodeQueryComponent(taskId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDetectMitigationActionsTaskResponse.fromJson(response);
@@ -3919,7 +3965,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/dimensions/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/dimensions/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDimensionResponse.fromJson(response);
@@ -3947,7 +3994,7 @@ class IoT {
       payload: null,
       method: 'GET',
       requestUri:
-          '/domainConfigurations/${Uri.encodeComponent(domainConfigurationName)}',
+          '/domainConfigurations/${Uri.encodeQueryComponent(domainConfigurationName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDomainConfigurationResponse.fromJson(response);
@@ -4049,7 +4096,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/fleet-metric/${Uri.encodeComponent(metricName)}',
+      requestUri:
+          '/fleet-metric/${Uri.encodeQueryComponent(metricName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeFleetMetricResponse.fromJson(response);
@@ -4076,7 +4124,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/indices/${Uri.encodeComponent(indexName)}',
+      requestUri:
+          '/indices/${Uri.encodeQueryComponent(indexName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeIndexResponse.fromJson(response);
@@ -4101,7 +4150,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/jobs/${Uri.encodeComponent(jobId)}',
+      requestUri:
+          '/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeJobResponse.fromJson(response);
@@ -4140,7 +4190,7 @@ class IoT {
       payload: null,
       method: 'GET',
       requestUri:
-          '/things/${Uri.encodeComponent(thingName)}/jobs/${Uri.encodeComponent(jobId)}',
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/jobs/%24%7BUri.encodeQueryComponent%28jobId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4162,7 +4212,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/job-templates/${Uri.encodeComponent(jobTemplateId)}',
+      requestUri:
+          '/job-templates/${Uri.encodeQueryComponent(jobTemplateId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeJobTemplateResponse.fromJson(response);
@@ -4191,7 +4242,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/managed-job-templates/${Uri.encodeComponent(templateName)}',
+      requestUri:
+          '/managed-job-templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4218,7 +4270,7 @@ class IoT {
       payload: null,
       method: 'GET',
       requestUri:
-          '/mitigationactions/actions/${Uri.encodeComponent(actionName)}',
+          '/mitigationactions/actions/${Uri.encodeQueryComponent(actionName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeMitigationActionResponse.fromJson(response);
@@ -4245,7 +4297,7 @@ class IoT {
       payload: null,
       method: 'GET',
       requestUri:
-          '/provisioning-templates/${Uri.encodeComponent(templateName)}',
+          '/provisioning-templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeProvisioningTemplateResponse.fromJson(response);
@@ -4277,7 +4329,7 @@ class IoT {
       payload: null,
       method: 'GET',
       requestUri:
-          '/provisioning-templates/${Uri.encodeComponent(templateName)}/versions/${Uri.encodeComponent(versionId.toString())}',
+          '/provisioning-templates/%24%7BUri.encodeQueryComponent%28templateName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionId.toString()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeProvisioningTemplateVersionResponse.fromJson(response);
@@ -4304,7 +4356,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/role-aliases/${Uri.encodeComponent(roleAlias)}',
+      requestUri:
+          '/role-aliases/${Uri.encodeQueryComponent(roleAlias).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeRoleAliasResponse.fromJson(response);
@@ -4330,7 +4383,7 @@ class IoT {
       payload: null,
       method: 'GET',
       requestUri:
-          '/audit/scheduledaudits/${Uri.encodeComponent(scheduledAuditName)}',
+          '/audit/scheduledaudits/${Uri.encodeQueryComponent(scheduledAuditName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeScheduledAuditResponse.fromJson(response);
@@ -4356,7 +4409,7 @@ class IoT {
       payload: null,
       method: 'GET',
       requestUri:
-          '/security-profiles/${Uri.encodeComponent(securityProfileName)}',
+          '/security-profiles/${Uri.encodeQueryComponent(securityProfileName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeSecurityProfileResponse.fromJson(response);
@@ -4383,7 +4436,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/streams/${Uri.encodeComponent(streamId)}',
+      requestUri:
+          '/streams/${Uri.encodeQueryComponent(streamId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeStreamResponse.fromJson(response);
@@ -4410,7 +4464,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/things/${Uri.encodeComponent(thingName)}',
+      requestUri:
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeThingResponse.fromJson(response);
@@ -4435,7 +4490,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/thing-groups/${Uri.encodeComponent(thingGroupName)}',
+      requestUri:
+          '/thing-groups/${Uri.encodeQueryComponent(thingGroupName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeThingGroupResponse.fromJson(response);
@@ -4461,7 +4517,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/thing-registration-tasks/${Uri.encodeComponent(taskId)}',
+      requestUri:
+          '/thing-registration-tasks/${Uri.encodeQueryComponent(taskId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeThingRegistrationTaskResponse.fromJson(response);
@@ -4488,7 +4545,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/thing-types/${Uri.encodeComponent(thingTypeName)}',
+      requestUri:
+          '/thing-types/${Uri.encodeQueryComponent(thingTypeName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeThingTypeResponse.fromJson(response);
@@ -4526,7 +4584,8 @@ class IoT {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/target-policies/${Uri.encodeComponent(policyName)}',
+      requestUri:
+          '/target-policies/${Uri.encodeQueryComponent(policyName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -4570,7 +4629,8 @@ class IoT {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/principal-policies/${Uri.encodeComponent(policyName)}',
+      requestUri:
+          '/principal-policies/${Uri.encodeQueryComponent(policyName).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -4604,7 +4664,7 @@ class IoT {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/security-profiles/${Uri.encodeComponent(securityProfileName)}/targets',
+          '/security-profiles/${Uri.encodeQueryComponent(securityProfileName).replaceAll('+', '%20')}/targets',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4645,7 +4705,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/things/${Uri.encodeComponent(thingName)}/principals',
+      requestUri:
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/principals',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -4671,7 +4732,8 @@ class IoT {
     await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/rules/${Uri.encodeComponent(ruleName)}/disable',
+      requestUri:
+          '/rules/${Uri.encodeQueryComponent(ruleName).replaceAll('+', '%20')}/disable',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -4696,7 +4758,8 @@ class IoT {
     await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/rules/${Uri.encodeComponent(ruleName)}/enable',
+      requestUri:
+          '/rules/${Uri.encodeQueryComponent(ruleName).replaceAll('+', '%20')}/enable',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -4943,7 +5006,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/jobs/${Uri.encodeComponent(jobId)}/job-document',
+      requestUri:
+          '/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}/job-document',
       exceptionFnMap: _exceptionFns,
     );
     return GetJobDocumentResponse.fromJson(response);
@@ -4992,7 +5056,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/otaUpdates/${Uri.encodeComponent(otaUpdateId)}',
+      requestUri:
+          '/otaUpdates/${Uri.encodeQueryComponent(otaUpdateId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetOTAUpdateResponse.fromJson(response);
@@ -5083,7 +5148,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/policies/${Uri.encodeComponent(policyName)}',
+      requestUri:
+          '/policies/${Uri.encodeQueryComponent(policyName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetPolicyResponse.fromJson(response);
@@ -5115,7 +5181,7 @@ class IoT {
       payload: null,
       method: 'GET',
       requestUri:
-          '/policies/${Uri.encodeComponent(policyName)}/version/${Uri.encodeComponent(policyVersionId)}',
+          '/policies/%24%7BUri.encodeQueryComponent%28policyName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/version/${Uri.encodeQueryComponent(policyVersionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetPolicyVersionResponse.fromJson(response);
@@ -5214,7 +5280,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/rules/${Uri.encodeComponent(ruleName)}',
+      requestUri:
+          '/rules/${Uri.encodeQueryComponent(ruleName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetTopicRuleResponse.fromJson(response);
@@ -5240,7 +5307,7 @@ class IoT {
       payload: null,
       method: 'GET',
       requestUri:
-          '/destinations/${arn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/destinations/${arn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetTopicRuleDestinationResponse.fromJson(response);
@@ -5385,7 +5452,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/attached-policies/${Uri.encodeComponent(target)}',
+      requestUri:
+          '/attached-policies/${Uri.encodeQueryComponent(target).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5960,7 +6028,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/certificates-by-ca/${Uri.encodeComponent(caCertificateId)}',
+      requestUri:
+          '/certificates-by-ca/${Uri.encodeQueryComponent(caCertificateId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -6341,7 +6410,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/jobs/${Uri.encodeComponent(jobId)}/things',
+      requestUri:
+          '/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}/things',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -6410,7 +6480,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/things/${Uri.encodeComponent(thingName)}/jobs',
+      requestUri:
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/jobs',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -6928,7 +6999,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/policies/${Uri.encodeComponent(policyName)}/version',
+      requestUri:
+          '/policies/${Uri.encodeQueryComponent(policyName).replaceAll('+', '%20')}/version',
       exceptionFnMap: _exceptionFns,
     );
     return ListPolicyVersionsResponse.fromJson(response);
@@ -7097,7 +7169,7 @@ class IoT {
       payload: null,
       method: 'GET',
       requestUri:
-          '/provisioning-templates/${Uri.encodeComponent(templateName)}/versions',
+          '/provisioning-templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/versions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -7545,7 +7617,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/policy-targets/${Uri.encodeComponent(policyName)}',
+      requestUri:
+          '/policy-targets/${Uri.encodeQueryComponent(policyName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -7591,7 +7664,7 @@ class IoT {
       payload: null,
       method: 'GET',
       requestUri:
-          '/security-profiles/${Uri.encodeComponent(securityProfileName)}/targets',
+          '/security-profiles/${Uri.encodeQueryComponent(securityProfileName).replaceAll('+', '%20')}/targets',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -7694,7 +7767,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/things/${Uri.encodeComponent(thingName)}/thing-groups',
+      requestUri:
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/thing-groups',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -7744,7 +7818,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/things/${Uri.encodeComponent(thingName)}/principals',
+      requestUri:
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/principals',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -7793,7 +7868,7 @@ class IoT {
       payload: null,
       method: 'GET',
       requestUri:
-          '/thing-registration-tasks/${Uri.encodeComponent(taskId)}/reports',
+          '/thing-registration-tasks/${Uri.encodeQueryComponent(taskId).replaceAll('+', '%20')}/reports',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -8016,7 +8091,7 @@ class IoT {
       payload: null,
       method: 'GET',
       requestUri:
-          '/billing-groups/${Uri.encodeComponent(billingGroupName)}/things',
+          '/billing-groups/${Uri.encodeQueryComponent(billingGroupName).replaceAll('+', '%20')}/things',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -8068,7 +8143,8 @@ class IoT {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/thing-groups/${Uri.encodeComponent(thingGroupName)}/things',
+      requestUri:
+          '/thing-groups/${Uri.encodeQueryComponent(thingGroupName).replaceAll('+', '%20')}/things',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -8327,7 +8403,7 @@ class IoT {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/violations/verification-state/${Uri.encodeComponent(violationId)}',
+          '/violations/verification-state/${Uri.encodeQueryComponent(violationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -8611,7 +8687,7 @@ class IoT {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/reject-certificate-transfer/${Uri.encodeComponent(certificateId)}',
+          '/reject-certificate-transfer/${Uri.encodeQueryComponent(certificateId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -8737,7 +8813,8 @@ class IoT {
     await _protocol.send(
       payload: topicRulePayload,
       method: 'PATCH',
-      requestUri: '/rules/${Uri.encodeComponent(ruleName)}',
+      requestUri:
+          '/rules/${Uri.encodeQueryComponent(ruleName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -8865,7 +8942,7 @@ class IoT {
       payload: null,
       method: 'PATCH',
       requestUri:
-          '/policies/${Uri.encodeComponent(policyName)}/version/${Uri.encodeComponent(policyVersionId)}',
+          '/policies/%24%7BUri.encodeQueryComponent%28policyName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/version/${Uri.encodeQueryComponent(policyVersionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -9012,7 +9089,7 @@ class IoT {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/audit/mitigationactions/tasks/${Uri.encodeComponent(taskId)}',
+          '/audit/mitigationactions/tasks/${Uri.encodeQueryComponent(taskId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return StartAuditMitigationActionsTaskResponse.fromJson(response);
@@ -9079,7 +9156,7 @@ class IoT {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/detect/mitigationactions/tasks/${Uri.encodeComponent(taskId)}',
+          '/detect/mitigationactions/tasks/${Uri.encodeQueryComponent(taskId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return StartDetectMitigationActionsTaskResponse.fromJson(response);
@@ -9184,7 +9261,7 @@ class IoT {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/thing-registration-tasks/${Uri.encodeComponent(taskId)}/cancel',
+          '/thing-registration-tasks/${Uri.encodeQueryComponent(taskId).replaceAll('+', '%20')}/cancel',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -9344,7 +9421,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/authorizer/${Uri.encodeComponent(authorizerName)}/test',
+      requestUri:
+          '/authorizer/${Uri.encodeQueryComponent(authorizerName).replaceAll('+', '%20')}/test',
       exceptionFnMap: _exceptionFns,
     );
     return TestInvokeAuthorizerResponse.fromJson(response);
@@ -9400,7 +9478,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/transfer-certificate/${Uri.encodeComponent(certificateId)}',
+      requestUri:
+          '/transfer-certificate/${Uri.encodeQueryComponent(certificateId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -9592,7 +9671,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/authorizer/${Uri.encodeComponent(authorizerName)}',
+      requestUri:
+          '/authorizer/${Uri.encodeQueryComponent(authorizerName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAuthorizerResponse.fromJson(response);
@@ -9633,7 +9713,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/billing-groups/${Uri.encodeComponent(billingGroupName)}',
+      requestUri:
+          '/billing-groups/${Uri.encodeQueryComponent(billingGroupName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBillingGroupResponse.fromJson(response);
@@ -9690,7 +9771,8 @@ class IoT {
     await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/cacertificate/${Uri.encodeComponent(certificateId)}',
+      requestUri:
+          '/cacertificate/${Uri.encodeQueryComponent(certificateId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -9743,7 +9825,8 @@ class IoT {
     await _protocol.send(
       payload: null,
       method: 'PUT',
-      requestUri: '/certificates/${Uri.encodeComponent(certificateId)}',
+      requestUri:
+          '/certificates/${Uri.encodeQueryComponent(certificateId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -9777,7 +9860,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/custom-metric/${Uri.encodeComponent(metricName)}',
+      requestUri:
+          '/custom-metric/${Uri.encodeQueryComponent(metricName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateCustomMetricResponse.fromJson(response);
@@ -9813,7 +9897,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/dimensions/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/dimensions/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDimensionResponse.fromJson(response);
@@ -9867,7 +9952,7 @@ class IoT {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/domainConfigurations/${Uri.encodeComponent(domainConfigurationName)}',
+          '/domainConfigurations/${Uri.encodeQueryComponent(domainConfigurationName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDomainConfigurationResponse.fromJson(response);
@@ -9929,7 +10014,7 @@ class IoT {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/dynamic-thing-groups/${Uri.encodeComponent(thingGroupName)}',
+          '/dynamic-thing-groups/${Uri.encodeQueryComponent(thingGroupName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDynamicThingGroupResponse.fromJson(response);
@@ -10045,7 +10130,8 @@ class IoT {
     await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/fleet-metric/${Uri.encodeComponent(metricName)}',
+      requestUri:
+          '/fleet-metric/${Uri.encodeQueryComponent(metricName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -10158,7 +10244,8 @@ class IoT {
     await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/jobs/${Uri.encodeComponent(jobId)}',
+      requestUri:
+          '/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -10198,7 +10285,7 @@ class IoT {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/mitigationactions/actions/${Uri.encodeComponent(actionName)}',
+          '/mitigationactions/actions/${Uri.encodeQueryComponent(actionName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateMitigationActionResponse.fromJson(response);
@@ -10264,7 +10351,7 @@ class IoT {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/provisioning-templates/${Uri.encodeComponent(templateName)}',
+          '/provisioning-templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -10312,7 +10399,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/role-aliases/${Uri.encodeComponent(roleAlias)}',
+      requestUri:
+          '/role-aliases/${Uri.encodeQueryComponent(roleAlias).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateRoleAliasResponse.fromJson(response);
@@ -10376,7 +10464,7 @@ class IoT {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/audit/scheduledaudits/${Uri.encodeComponent(scheduledAuditName)}',
+          '/audit/scheduledaudits/${Uri.encodeQueryComponent(scheduledAuditName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateScheduledAuditResponse.fromJson(response);
@@ -10478,7 +10566,7 @@ class IoT {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/security-profiles/${Uri.encodeComponent(securityProfileName)}',
+          '/security-profiles/${Uri.encodeQueryComponent(securityProfileName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -10524,7 +10612,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/streams/${Uri.encodeComponent(streamId)}',
+      requestUri:
+          '/streams/${Uri.encodeQueryComponent(streamId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateStreamResponse.fromJson(response);
@@ -10586,7 +10675,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/things/${Uri.encodeComponent(thingName)}',
+      requestUri:
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -10624,7 +10714,8 @@ class IoT {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/thing-groups/${Uri.encodeComponent(thingGroupName)}',
+      requestUri:
+          '/thing-groups/${Uri.encodeQueryComponent(thingGroupName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateThingGroupResponse.fromJson(response);

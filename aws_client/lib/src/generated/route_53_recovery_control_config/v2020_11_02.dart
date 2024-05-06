@@ -272,7 +272,8 @@ class Route53RecoveryControlConfig {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/cluster/${Uri.encodeComponent(clusterArn)}',
+      requestUri:
+          '/cluster/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -294,7 +295,8 @@ class Route53RecoveryControlConfig {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/controlpanel/${Uri.encodeComponent(controlPanelArn)}',
+      requestUri:
+          '/controlpanel/${Uri.encodeQueryComponent(controlPanelArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -317,7 +319,8 @@ class Route53RecoveryControlConfig {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/routingcontrol/${Uri.encodeComponent(routingControlArn)}',
+      requestUri:
+          '/routingcontrol/${Uri.encodeQueryComponent(routingControlArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -337,7 +340,8 @@ class Route53RecoveryControlConfig {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/safetyrule/${Uri.encodeComponent(safetyRuleArn)}',
+      requestUri:
+          '/safetyrule/${Uri.encodeQueryComponent(safetyRuleArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -360,7 +364,8 @@ class Route53RecoveryControlConfig {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/cluster/${Uri.encodeComponent(clusterArn)}',
+      requestUri:
+          '/cluster/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeClusterResponse.fromJson(response);
@@ -383,7 +388,8 @@ class Route53RecoveryControlConfig {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/controlpanel/${Uri.encodeComponent(controlPanelArn)}',
+      requestUri:
+          '/controlpanel/${Uri.encodeQueryComponent(controlPanelArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeControlPanelResponse.fromJson(response);
@@ -411,7 +417,8 @@ class Route53RecoveryControlConfig {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/routingcontrol/${Uri.encodeComponent(routingControlArn)}',
+      requestUri:
+          '/routingcontrol/${Uri.encodeQueryComponent(routingControlArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeRoutingControlResponse.fromJson(response);
@@ -430,7 +437,8 @@ class Route53RecoveryControlConfig {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/safetyrule/${Uri.encodeComponent(safetyRuleArn)}',
+      requestUri:
+          '/safetyrule/${Uri.encodeQueryComponent(safetyRuleArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeSafetyRuleResponse.fromJson(response);
@@ -471,7 +479,7 @@ class Route53RecoveryControlConfig {
       payload: null,
       method: 'GET',
       requestUri:
-          '/routingcontrol/${Uri.encodeComponent(routingControlArn)}/associatedRoute53HealthChecks',
+          '/routingcontrol/${Uri.encodeQueryComponent(routingControlArn).replaceAll('+', '%20')}/associatedRoute53HealthChecks',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -596,7 +604,7 @@ class Route53RecoveryControlConfig {
       payload: null,
       method: 'GET',
       requestUri:
-          '/controlpanel/${Uri.encodeComponent(controlPanelArn)}/routingcontrols',
+          '/controlpanel/${Uri.encodeQueryComponent(controlPanelArn).replaceAll('+', '%20')}/routingcontrols',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -639,7 +647,7 @@ class Route53RecoveryControlConfig {
       payload: null,
       method: 'GET',
       requestUri:
-          '/controlpanel/${Uri.encodeComponent(controlPanelArn)}/safetyrules',
+          '/controlpanel/${Uri.encodeQueryComponent(controlPanelArn).replaceAll('+', '%20')}/safetyrules',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -660,7 +668,8 @@ class Route53RecoveryControlConfig {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -687,7 +696,8 @@ class Route53RecoveryControlConfig {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -713,7 +723,8 @@ class Route53RecoveryControlConfig {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

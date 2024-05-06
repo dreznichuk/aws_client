@@ -275,7 +275,7 @@ class AppConfig {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/configurationprofiles',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/configurationprofiles',
       exceptionFnMap: _exceptionFns,
     );
     return ConfigurationProfile.fromJson(response);
@@ -447,7 +447,7 @@ class AppConfig {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/environments',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/environments',
       exceptionFnMap: _exceptionFns,
     );
     return Environment.fromJson(response);
@@ -644,7 +644,7 @@ class AppConfig {
       payload: content,
       method: 'POST',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/configurationprofiles/${Uri.encodeComponent(configurationProfileId)}/hostedconfigurationversions',
+          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/configurationprofiles/${Uri.encodeQueryComponent(configurationProfileId).replaceAll('+', '%20')}/hostedconfigurationversions',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -679,7 +679,8 @@ class AppConfig {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -706,7 +707,7 @@ class AppConfig {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/configurationprofiles/${Uri.encodeComponent(configurationProfileId)}',
+          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/configurationprofiles/${Uri.encodeQueryComponent(configurationProfileId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -727,7 +728,7 @@ class AppConfig {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/deployementstrategies/${Uri.encodeComponent(deploymentStrategyId)}',
+          '/deployementstrategies/${Uri.encodeQueryComponent(deploymentStrategyId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -753,7 +754,7 @@ class AppConfig {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/environments/${Uri.encodeComponent(environmentId)}',
+          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/environments/${Uri.encodeQueryComponent(environmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -782,7 +783,8 @@ class AppConfig {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/extensions/${Uri.encodeComponent(extensionIdentifier)}',
+      requestUri:
+          '/extensions/${Uri.encodeQueryComponent(extensionIdentifier).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -804,7 +806,7 @@ class AppConfig {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/extensionassociations/${Uri.encodeComponent(extensionAssociationId)}',
+          '/extensionassociations/${Uri.encodeQueryComponent(extensionAssociationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -833,7 +835,7 @@ class AppConfig {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/configurationprofiles/${Uri.encodeComponent(configurationProfileId)}/hostedconfigurationversions/${Uri.encodeComponent(versionNumber.toString())}',
+          '/applications/%2524%257BUri.encodeQueryComponent%2528applicationId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/configurationprofiles/%24%7BUri.encodeQueryComponent%28configurationProfileId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/hostedconfigurationversions/${Uri.encodeQueryComponent(versionNumber.toString()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -852,7 +854,8 @@ class AppConfig {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return Application.fromJson(response);
@@ -944,7 +947,7 @@ class AppConfig {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(application)}/environments/${Uri.encodeComponent(environment)}/configurations/${Uri.encodeComponent(configuration)}',
+          '/applications/%2524%257BUri.encodeQueryComponent%2528application%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/environments/${Uri.encodeQueryComponent(environment).replaceAll('+', '%20')}/configurations/%24%7BUri.encodeQueryComponent%28configuration%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -977,7 +980,7 @@ class AppConfig {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/configurationprofiles/${Uri.encodeComponent(configurationProfileId)}',
+          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/configurationprofiles/${Uri.encodeQueryComponent(configurationProfileId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ConfigurationProfile.fromJson(response);
@@ -1006,7 +1009,7 @@ class AppConfig {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/environments/${Uri.encodeComponent(environmentId)}/deployments/${Uri.encodeComponent(deploymentNumber.toString())}',
+          '/applications/%2524%257BUri.encodeQueryComponent%2528applicationId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/environments/${Uri.encodeQueryComponent(environmentId).replaceAll('+', '%20')}/deployments/%24%7BUri.encodeQueryComponent%28deploymentNumber.toString%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return Deployment.fromJson(response);
@@ -1031,7 +1034,7 @@ class AppConfig {
       payload: null,
       method: 'GET',
       requestUri:
-          '/deploymentstrategies/${Uri.encodeComponent(deploymentStrategyId)}',
+          '/deploymentstrategies/${Uri.encodeQueryComponent(deploymentStrategyId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeploymentStrategy.fromJson(response);
@@ -1062,7 +1065,7 @@ class AppConfig {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/environments/${Uri.encodeComponent(environmentId)}',
+          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/environments/${Uri.encodeQueryComponent(environmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return Environment.fromJson(response);
@@ -1090,7 +1093,8 @@ class AppConfig {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/extensions/${Uri.encodeComponent(extensionIdentifier)}',
+      requestUri:
+          '/extensions/${Uri.encodeQueryComponent(extensionIdentifier).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1115,7 +1119,7 @@ class AppConfig {
       payload: null,
       method: 'GET',
       requestUri:
-          '/extensionassociations/${Uri.encodeComponent(extensionAssociationId)}',
+          '/extensionassociations/${Uri.encodeQueryComponent(extensionAssociationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ExtensionAssociation.fromJson(response);
@@ -1144,7 +1148,7 @@ class AppConfig {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/configurationprofiles/${Uri.encodeComponent(configurationProfileId)}/hostedconfigurationversions/${Uri.encodeComponent(versionNumber.toString())}',
+          '/applications/%2524%257BUri.encodeQueryComponent%2528applicationId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/configurationprofiles/%24%7BUri.encodeQueryComponent%28configurationProfileId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/hostedconfigurationversions/${Uri.encodeQueryComponent(versionNumber.toString()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return HostedConfigurationVersion(
@@ -1245,7 +1249,7 @@ class AppConfig {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/configurationprofiles',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/configurationprofiles',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1331,7 +1335,7 @@ class AppConfig {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/environments/${Uri.encodeComponent(environmentId)}/deployments',
+          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/environments/${Uri.encodeQueryComponent(environmentId).replaceAll('+', '%20')}/deployments',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1373,7 +1377,7 @@ class AppConfig {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/environments',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/environments',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1530,7 +1534,7 @@ class AppConfig {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/configurationprofiles/${Uri.encodeComponent(configurationProfileId)}/hostedconfigurationversions',
+          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/configurationprofiles/${Uri.encodeQueryComponent(configurationProfileId).replaceAll('+', '%20')}/hostedconfigurationversions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1551,7 +1555,8 @@ class AppConfig {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ResourceTags.fromJson(response);
@@ -1614,7 +1619,7 @@ class AppConfig {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/environments/${Uri.encodeComponent(environmentId)}/deployments',
+          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/environments/${Uri.encodeQueryComponent(environmentId).replaceAll('+', '%20')}/deployments',
       exceptionFnMap: _exceptionFns,
     );
     return Deployment.fromJson(response);
@@ -1645,7 +1650,7 @@ class AppConfig {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/environments/${Uri.encodeComponent(environmentId)}/deployments/${Uri.encodeComponent(deploymentNumber.toString())}',
+          '/applications/%2524%257BUri.encodeQueryComponent%2528applicationId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/environments/${Uri.encodeQueryComponent(environmentId).replaceAll('+', '%20')}/deployments/%24%7BUri.encodeQueryComponent%28deploymentNumber.toString%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return Deployment.fromJson(response);
@@ -1677,7 +1682,8 @@ class AppConfig {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1703,7 +1709,8 @@ class AppConfig {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1735,7 +1742,8 @@ class AppConfig {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return Application.fromJson(response);
@@ -1783,7 +1791,7 @@ class AppConfig {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/configurationprofiles/${Uri.encodeComponent(configurationProfileId)}',
+          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/configurationprofiles/${Uri.encodeQueryComponent(configurationProfileId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ConfigurationProfile.fromJson(response);
@@ -1880,7 +1888,7 @@ class AppConfig {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/deploymentstrategies/${Uri.encodeComponent(deploymentStrategyId)}',
+          '/deploymentstrategies/${Uri.encodeQueryComponent(deploymentStrategyId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeploymentStrategy.fromJson(response);
@@ -1922,7 +1930,7 @@ class AppConfig {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/environments/${Uri.encodeComponent(environmentId)}',
+          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/environments/${Uri.encodeQueryComponent(environmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return Environment.fromJson(response);
@@ -1969,7 +1977,8 @@ class AppConfig {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/extensions/${Uri.encodeComponent(extensionIdentifier)}',
+      requestUri:
+          '/extensions/${Uri.encodeQueryComponent(extensionIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return Extension.fromJson(response);
@@ -2000,7 +2009,7 @@ class AppConfig {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/extensionassociations/${Uri.encodeComponent(extensionAssociationId)}',
+          '/extensionassociations/${Uri.encodeQueryComponent(extensionAssociationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ExtensionAssociation.fromJson(response);
@@ -2033,7 +2042,7 @@ class AppConfig {
       payload: null,
       method: 'POST',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/configurationprofiles/${Uri.encodeComponent(configurationProfileId)}/validators',
+          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/configurationprofiles/${Uri.encodeQueryComponent(configurationProfileId).replaceAll('+', '%20')}/validators',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

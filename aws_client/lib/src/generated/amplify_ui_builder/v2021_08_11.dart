@@ -95,7 +95,7 @@ class AmplifyUIBuilder {
       payload: componentToCreate,
       method: 'POST',
       requestUri:
-          '/app/${Uri.encodeComponent(appId)}/environment/${Uri.encodeComponent(environmentName)}/components',
+          '/app/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/environment/${Uri.encodeQueryComponent(environmentName).replaceAll('+', '%20')}/components',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -136,7 +136,7 @@ class AmplifyUIBuilder {
       payload: formToCreate,
       method: 'POST',
       requestUri:
-          '/app/${Uri.encodeComponent(appId)}/environment/${Uri.encodeComponent(environmentName)}/forms',
+          '/app/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/environment/${Uri.encodeQueryComponent(environmentName).replaceAll('+', '%20')}/forms',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -177,7 +177,7 @@ class AmplifyUIBuilder {
       payload: themeToCreate,
       method: 'POST',
       requestUri:
-          '/app/${Uri.encodeComponent(appId)}/environment/${Uri.encodeComponent(environmentName)}/themes',
+          '/app/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/environment/${Uri.encodeQueryComponent(environmentName).replaceAll('+', '%20')}/themes',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -210,7 +210,7 @@ class AmplifyUIBuilder {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/app/${Uri.encodeComponent(appId)}/environment/${Uri.encodeComponent(environmentName)}/components/${Uri.encodeComponent(id)}',
+          '/app/%2524%257BUri.encodeQueryComponent%2528appId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/environment/%24%7BUri.encodeQueryComponent%28environmentName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/components/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -238,7 +238,7 @@ class AmplifyUIBuilder {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/app/${Uri.encodeComponent(appId)}/environment/${Uri.encodeComponent(environmentName)}/forms/${Uri.encodeComponent(id)}',
+          '/app/%2524%257BUri.encodeQueryComponent%2528appId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/environment/%24%7BUri.encodeQueryComponent%28environmentName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/forms/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -266,7 +266,7 @@ class AmplifyUIBuilder {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/app/${Uri.encodeComponent(appId)}/environment/${Uri.encodeComponent(environmentName)}/themes/${Uri.encodeComponent(id)}',
+          '/app/%2524%257BUri.encodeQueryComponent%2528appId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/environment/%24%7BUri.encodeQueryComponent%28environmentName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/themes/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -288,7 +288,8 @@ class AmplifyUIBuilder {
     final response = await _protocol.send(
       payload: request,
       method: 'POST',
-      requestUri: '/tokens/${Uri.encodeComponent(provider.toValue())}',
+      requestUri:
+          '/tokens/${Uri.encodeQueryComponent(provider.toValue()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ExchangeCodeForTokenResponse.fromJson(response);
@@ -320,7 +321,7 @@ class AmplifyUIBuilder {
       payload: null,
       method: 'GET',
       requestUri:
-          '/export/app/${Uri.encodeComponent(appId)}/environment/${Uri.encodeComponent(environmentName)}/components',
+          '/export/app/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/environment/${Uri.encodeQueryComponent(environmentName).replaceAll('+', '%20')}/components',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -353,7 +354,7 @@ class AmplifyUIBuilder {
       payload: null,
       method: 'GET',
       requestUri:
-          '/export/app/${Uri.encodeComponent(appId)}/environment/${Uri.encodeComponent(environmentName)}/forms',
+          '/export/app/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/environment/${Uri.encodeQueryComponent(environmentName).replaceAll('+', '%20')}/forms',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -386,7 +387,7 @@ class AmplifyUIBuilder {
       payload: null,
       method: 'GET',
       requestUri:
-          '/export/app/${Uri.encodeComponent(appId)}/environment/${Uri.encodeComponent(environmentName)}/themes',
+          '/export/app/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/environment/${Uri.encodeQueryComponent(environmentName).replaceAll('+', '%20')}/themes',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -416,7 +417,7 @@ class AmplifyUIBuilder {
       payload: null,
       method: 'GET',
       requestUri:
-          '/app/${Uri.encodeComponent(appId)}/environment/${Uri.encodeComponent(environmentName)}/components/${Uri.encodeComponent(id)}',
+          '/app/%2524%257BUri.encodeQueryComponent%2528appId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/environment/%24%7BUri.encodeQueryComponent%28environmentName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/components/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -448,7 +449,7 @@ class AmplifyUIBuilder {
       payload: null,
       method: 'GET',
       requestUri:
-          '/app/${Uri.encodeComponent(appId)}/environment/${Uri.encodeComponent(environmentName)}/forms/${Uri.encodeComponent(id)}',
+          '/app/%2524%257BUri.encodeQueryComponent%2528appId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/environment/%24%7BUri.encodeQueryComponent%28environmentName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/forms/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -475,7 +476,7 @@ class AmplifyUIBuilder {
       payload: null,
       method: 'GET',
       requestUri:
-          '/app/${Uri.encodeComponent(appId)}/environment/${Uri.encodeComponent(environmentName)}/metadata',
+          '/app/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/environment/${Uri.encodeQueryComponent(environmentName).replaceAll('+', '%20')}/metadata',
       exceptionFnMap: _exceptionFns,
     );
     return GetMetadataResponse.fromJson(response);
@@ -504,7 +505,7 @@ class AmplifyUIBuilder {
       payload: null,
       method: 'GET',
       requestUri:
-          '/app/${Uri.encodeComponent(appId)}/environment/${Uri.encodeComponent(environmentName)}/themes/${Uri.encodeComponent(id)}',
+          '/app/%2524%257BUri.encodeQueryComponent%2528appId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/environment/%24%7BUri.encodeQueryComponent%28environmentName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/themes/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -550,7 +551,7 @@ class AmplifyUIBuilder {
       payload: null,
       method: 'GET',
       requestUri:
-          '/app/${Uri.encodeComponent(appId)}/environment/${Uri.encodeComponent(environmentName)}/components',
+          '/app/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/environment/${Uri.encodeQueryComponent(environmentName).replaceAll('+', '%20')}/components',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -594,7 +595,7 @@ class AmplifyUIBuilder {
       payload: null,
       method: 'GET',
       requestUri:
-          '/app/${Uri.encodeComponent(appId)}/environment/${Uri.encodeComponent(environmentName)}/forms',
+          '/app/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/environment/${Uri.encodeQueryComponent(environmentName).replaceAll('+', '%20')}/forms',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -638,7 +639,7 @@ class AmplifyUIBuilder {
       payload: null,
       method: 'GET',
       requestUri:
-          '/app/${Uri.encodeComponent(appId)}/environment/${Uri.encodeComponent(environmentName)}/themes',
+          '/app/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/environment/${Uri.encodeQueryComponent(environmentName).replaceAll('+', '%20')}/themes',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -671,7 +672,7 @@ class AmplifyUIBuilder {
       payload: body,
       method: 'PUT',
       requestUri:
-          '/app/${Uri.encodeComponent(appId)}/environment/${Uri.encodeComponent(environmentName)}/metadata/features/${Uri.encodeComponent(featureName)}',
+          '/app/%2524%257BUri.encodeQueryComponent%2528appId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/environment/%24%7BUri.encodeQueryComponent%28environmentName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/metadata/features/${Uri.encodeQueryComponent(featureName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -693,7 +694,8 @@ class AmplifyUIBuilder {
     final response = await _protocol.send(
       payload: refreshTokenBody,
       method: 'POST',
-      requestUri: '/tokens/${Uri.encodeComponent(provider.toValue())}/refresh',
+      requestUri:
+          '/tokens/${Uri.encodeQueryComponent(provider.toValue()).replaceAll('+', '%20')}/refresh',
       exceptionFnMap: _exceptionFns,
     );
     return RefreshTokenResponse.fromJson(response);
@@ -733,7 +735,7 @@ class AmplifyUIBuilder {
       payload: updatedComponent,
       method: 'PATCH',
       requestUri:
-          '/app/${Uri.encodeComponent(appId)}/environment/${Uri.encodeComponent(environmentName)}/components/${Uri.encodeComponent(id)}',
+          '/app/%2524%257BUri.encodeQueryComponent%2528appId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/environment/%24%7BUri.encodeQueryComponent%28environmentName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/components/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -777,7 +779,7 @@ class AmplifyUIBuilder {
       payload: updatedForm,
       method: 'PATCH',
       requestUri:
-          '/app/${Uri.encodeComponent(appId)}/environment/${Uri.encodeComponent(environmentName)}/forms/${Uri.encodeComponent(id)}',
+          '/app/%2524%257BUri.encodeQueryComponent%2528appId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/environment/%24%7BUri.encodeQueryComponent%28environmentName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/forms/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -821,7 +823,7 @@ class AmplifyUIBuilder {
       payload: updatedTheme,
       method: 'PATCH',
       requestUri:
-          '/app/${Uri.encodeComponent(appId)}/environment/${Uri.encodeComponent(environmentName)}/themes/${Uri.encodeComponent(id)}',
+          '/app/%2524%257BUri.encodeQueryComponent%2528appId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/environment/%24%7BUri.encodeQueryComponent%28environmentName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/themes/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

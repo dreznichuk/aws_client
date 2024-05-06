@@ -118,7 +118,8 @@ class GameSparks {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/game/${Uri.encodeComponent(gameName)}/snapshot',
+      requestUri:
+          '/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}/snapshot',
       exceptionFnMap: _exceptionFns,
     );
     return CreateSnapshotResult.fromJson(response);
@@ -170,7 +171,8 @@ class GameSparks {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/game/${Uri.encodeComponent(gameName)}/stage',
+      requestUri:
+          '/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}/stage',
       exceptionFnMap: _exceptionFns,
     );
     return CreateStageResult.fromJson(response);
@@ -192,7 +194,8 @@ class GameSparks {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/game/${Uri.encodeComponent(gameName)}',
+      requestUri:
+          '/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -219,7 +222,7 @@ class GameSparks {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/game/${Uri.encodeComponent(gameName)}/stage/${Uri.encodeComponent(stageName)}',
+          '/game/%24%7BUri.encodeQueryComponent%28gameName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -252,7 +255,7 @@ class GameSparks {
       payload: null,
       method: 'POST',
       requestUri:
-          '/runtime/game/${Uri.encodeComponent(gameName)}/stage/${Uri.encodeComponent(stageName)}/player/${Uri.encodeComponent(playerId)}/disconnect',
+          '/runtime/game/%2524%257BUri.encodeQueryComponent%2528gameName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/player/%24%7BUri.encodeQueryComponent%28playerId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/disconnect',
       exceptionFnMap: _exceptionFns,
     );
     return DisconnectPlayerResult.fromJson(response);
@@ -279,7 +282,7 @@ class GameSparks {
       payload: null,
       method: 'GET',
       requestUri:
-          '/game/${Uri.encodeComponent(gameName)}/snapshot/${Uri.encodeComponent(snapshotId)}/export',
+          '/game/%24%7BUri.encodeQueryComponent%28gameName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/snapshot/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}/export',
       exceptionFnMap: _exceptionFns,
     );
     return ExportSnapshotResult.fromJson(response);
@@ -306,7 +309,7 @@ class GameSparks {
       payload: null,
       method: 'GET',
       requestUri:
-          '/extension/${Uri.encodeComponent(namespace)}/${Uri.encodeComponent(name)}',
+          '/extension/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetExtensionResult.fromJson(response);
@@ -337,7 +340,7 @@ class GameSparks {
       payload: null,
       method: 'GET',
       requestUri:
-          '/extension/${Uri.encodeComponent(namespace)}/${Uri.encodeComponent(name)}/version/${Uri.encodeComponent(extensionVersion)}',
+          '/extension/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/version/%2524%257BUri.encodeQueryComponent%2528extensionVersion%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       exceptionFnMap: _exceptionFns,
     );
     return GetExtensionVersionResult.fromJson(response);
@@ -359,7 +362,8 @@ class GameSparks {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/game/${Uri.encodeComponent(gameName)}',
+      requestUri:
+          '/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetGameResult.fromJson(response);
@@ -388,7 +392,8 @@ class GameSparks {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/game/${Uri.encodeComponent(gameName)}/configuration',
+      requestUri:
+          '/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}/configuration',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -420,7 +425,7 @@ class GameSparks {
       payload: null,
       method: 'GET',
       requestUri:
-          '/game/${Uri.encodeComponent(gameName)}/snapshot/${Uri.encodeComponent(snapshotId)}/generated-sdk-code-job/${Uri.encodeComponent(jobId)}',
+          '/game/%2524%257BUri.encodeQueryComponent%2528gameName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/snapshot/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}/generated-sdk-code-job/%24%7BUri.encodeQueryComponent%28jobId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetGeneratedCodeJobResult.fromJson(response);
@@ -455,7 +460,7 @@ class GameSparks {
       payload: null,
       method: 'GET',
       requestUri:
-          '/runtime/game/${Uri.encodeComponent(gameName)}/stage/${Uri.encodeComponent(stageName)}/player/${Uri.encodeComponent(playerId)}/connection',
+          '/runtime/game/%2524%257BUri.encodeQueryComponent%2528gameName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/player/%24%7BUri.encodeQueryComponent%28playerId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/connection',
       exceptionFnMap: _exceptionFns,
     );
     return GetPlayerConnectionStatusResult.fromJson(response);
@@ -489,7 +494,7 @@ class GameSparks {
       payload: null,
       method: 'GET',
       requestUri:
-          '/game/${Uri.encodeComponent(gameName)}/snapshot/${Uri.encodeComponent(snapshotId)}',
+          '/game/%24%7BUri.encodeQueryComponent%28gameName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/snapshot/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -517,7 +522,7 @@ class GameSparks {
       payload: null,
       method: 'GET',
       requestUri:
-          '/game/${Uri.encodeComponent(gameName)}/stage/${Uri.encodeComponent(stageName)}',
+          '/game/%24%7BUri.encodeQueryComponent%28gameName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetStageResult.fromJson(response);
@@ -552,7 +557,7 @@ class GameSparks {
       payload: null,
       method: 'GET',
       requestUri:
-          '/game/${Uri.encodeComponent(gameName)}/stage/${Uri.encodeComponent(stageName)}/deployment',
+          '/game/%24%7BUri.encodeQueryComponent%28gameName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/deployment',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -588,7 +593,8 @@ class GameSparks {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/game/${Uri.encodeComponent(gameName)}/configuration',
+      requestUri:
+          '/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}/configuration',
       exceptionFnMap: _exceptionFns,
     );
     return ImportGameConfigurationResult.fromJson(response);
@@ -643,7 +649,7 @@ class GameSparks {
       payload: null,
       method: 'GET',
       requestUri:
-          '/extension/${Uri.encodeComponent(namespace)}/${Uri.encodeComponent(name)}/version',
+          '/extension/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/version',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -781,7 +787,7 @@ class GameSparks {
       payload: null,
       method: 'GET',
       requestUri:
-          '/game/${Uri.encodeComponent(gameName)}/snapshot/${Uri.encodeComponent(snapshotId)}/generated-sdk-code-jobs',
+          '/game/%24%7BUri.encodeQueryComponent%28gameName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/snapshot/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}/generated-sdk-code-jobs',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -828,7 +834,8 @@ class GameSparks {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/game/${Uri.encodeComponent(gameName)}/snapshot',
+      requestUri:
+          '/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}/snapshot',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -880,7 +887,7 @@ class GameSparks {
       payload: null,
       method: 'GET',
       requestUri:
-          '/game/${Uri.encodeComponent(gameName)}/stage/${Uri.encodeComponent(stageName)}/deployments',
+          '/game/%24%7BUri.encodeQueryComponent%28gameName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/deployments',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -927,7 +934,8 @@ class GameSparks {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/game/${Uri.encodeComponent(gameName)}/stage',
+      requestUri:
+          '/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}/stage',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -948,7 +956,8 @@ class GameSparks {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResult.fromJson(response);
@@ -984,7 +993,7 @@ class GameSparks {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/game/${Uri.encodeComponent(gameName)}/snapshot/${Uri.encodeComponent(snapshotId)}/generated-sdk-code-job',
+          '/game/%24%7BUri.encodeQueryComponent%28gameName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/snapshot/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}/generated-sdk-code-job',
       exceptionFnMap: _exceptionFns,
     );
     return StartGeneratedCodeJobResult.fromJson(response);
@@ -1034,7 +1043,7 @@ class GameSparks {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/game/${Uri.encodeComponent(gameName)}/stage/${Uri.encodeComponent(stageName)}/deployment',
+          '/game/%24%7BUri.encodeQueryComponent%28gameName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/deployment',
       exceptionFnMap: _exceptionFns,
     );
     return StartStageDeploymentResult.fromJson(response);
@@ -1061,7 +1070,8 @@ class GameSparks {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1087,7 +1097,8 @@ class GameSparks {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1116,7 +1127,8 @@ class GameSparks {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/game/${Uri.encodeComponent(gameName)}',
+      requestUri:
+          '/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateGameResult.fromJson(response);
@@ -1146,7 +1158,8 @@ class GameSparks {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/game/${Uri.encodeComponent(gameName)}/configuration',
+      requestUri:
+          '/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}/configuration',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateGameConfigurationResult.fromJson(response);
@@ -1180,7 +1193,7 @@ class GameSparks {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/game/${Uri.encodeComponent(gameName)}/snapshot/${Uri.encodeComponent(snapshotId)}',
+          '/game/%24%7BUri.encodeQueryComponent%28gameName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/snapshot/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSnapshotResult.fromJson(response);
@@ -1220,7 +1233,7 @@ class GameSparks {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/game/${Uri.encodeComponent(gameName)}/stage/${Uri.encodeComponent(stageName)}',
+          '/game/%24%7BUri.encodeQueryComponent%28gameName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateStageResult.fromJson(response);

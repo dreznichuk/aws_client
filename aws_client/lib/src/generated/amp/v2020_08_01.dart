@@ -81,7 +81,7 @@ class Prometheus {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/workspaces/${Uri.encodeComponent(workspaceId)}/alertmanager/definition',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/alertmanager/definition',
       exceptionFnMap: _exceptionFns,
     );
     return CreateAlertManagerDefinitionResponse.fromJson(response);
@@ -116,7 +116,8 @@ class Prometheus {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/workspaces/${Uri.encodeComponent(workspaceId)}/logging',
+      requestUri:
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/logging',
       exceptionFnMap: _exceptionFns,
     );
     return CreateLoggingConfigurationResponse.fromJson(response);
@@ -164,7 +165,7 @@ class Prometheus {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/workspaces/${Uri.encodeComponent(workspaceId)}/rulegroupsnamespaces',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/rulegroupsnamespaces',
       exceptionFnMap: _exceptionFns,
     );
     return CreateRuleGroupsNamespaceResponse.fromJson(response);
@@ -234,7 +235,7 @@ class Prometheus {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/workspaces/${Uri.encodeComponent(workspaceId)}/alertmanager/definition',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/alertmanager/definition',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -264,7 +265,8 @@ class Prometheus {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/workspaces/${Uri.encodeComponent(workspaceId)}/logging',
+      requestUri:
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/logging',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -300,7 +302,7 @@ class Prometheus {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/workspaces/${Uri.encodeComponent(workspaceId)}/rulegroupsnamespaces/${Uri.encodeComponent(name)}',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/rulegroupsnamespaces/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -331,7 +333,8 @@ class Prometheus {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/workspaces/${Uri.encodeComponent(workspaceId)}',
+      requestUri:
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -355,7 +358,7 @@ class Prometheus {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workspaces/${Uri.encodeComponent(workspaceId)}/alertmanager/definition',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/alertmanager/definition',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeAlertManagerDefinitionResponse.fromJson(response);
@@ -376,7 +379,8 @@ class Prometheus {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/workspaces/${Uri.encodeComponent(workspaceId)}/logging',
+      requestUri:
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/logging',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeLoggingConfigurationResponse.fromJson(response);
@@ -403,7 +407,7 @@ class Prometheus {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workspaces/${Uri.encodeComponent(workspaceId)}/rulegroupsnamespaces/${Uri.encodeComponent(name)}',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/rulegroupsnamespaces/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeRuleGroupsNamespaceResponse.fromJson(response);
@@ -425,7 +429,8 @@ class Prometheus {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/workspaces/${Uri.encodeComponent(workspaceId)}',
+      requestUri:
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeWorkspaceResponse.fromJson(response);
@@ -474,7 +479,7 @@ class Prometheus {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workspaces/${Uri.encodeComponent(workspaceId)}/rulegroupsnamespaces',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/rulegroupsnamespaces',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -497,7 +502,8 @@ class Prometheus {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -578,7 +584,7 @@ class Prometheus {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/workspaces/${Uri.encodeComponent(workspaceId)}/alertmanager/definition',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/alertmanager/definition',
       exceptionFnMap: _exceptionFns,
     );
     return PutAlertManagerDefinitionResponse.fromJson(response);
@@ -620,7 +626,7 @@ class Prometheus {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/workspaces/${Uri.encodeComponent(workspaceId)}/rulegroupsnamespaces/${Uri.encodeComponent(name)}',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/rulegroupsnamespaces/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return PutRuleGroupsNamespaceResponse.fromJson(response);
@@ -646,7 +652,8 @@ class Prometheus {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -674,7 +681,8 @@ class Prometheus {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -710,7 +718,8 @@ class Prometheus {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/workspaces/${Uri.encodeComponent(workspaceId)}/logging',
+      requestUri:
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/logging',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateLoggingConfigurationResponse.fromJson(response);
@@ -747,7 +756,8 @@ class Prometheus {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/workspaces/${Uri.encodeComponent(workspaceId)}/alias',
+      requestUri:
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/alias',
       exceptionFnMap: _exceptionFns,
     );
   }

@@ -67,7 +67,8 @@ class Mwaa {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/clitoken/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/clitoken/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateCliTokenResponse.fromJson(response);
@@ -326,7 +327,8 @@ class Mwaa {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/environments/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/environments/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateEnvironmentOutput.fromJson(response);
@@ -350,7 +352,8 @@ class Mwaa {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/webtoken/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/webtoken/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateWebLoginTokenResponse.fromJson(response);
@@ -371,7 +374,8 @@ class Mwaa {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/environments/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/environments/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -392,7 +396,8 @@ class Mwaa {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/environments/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/environments/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetEnvironmentOutput.fromJson(response);
@@ -451,7 +456,8 @@ class Mwaa {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceOutput.fromJson(response);
@@ -482,7 +488,7 @@ class Mwaa {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/metrics/environments/${Uri.encodeComponent(environmentName)}',
+          '/metrics/environments/${Uri.encodeQueryComponent(environmentName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -515,7 +521,8 @@ class Mwaa {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -546,7 +553,8 @@ class Mwaa {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -774,7 +782,8 @@ class Mwaa {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/environments/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/environments/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateEnvironmentOutput.fromJson(response);

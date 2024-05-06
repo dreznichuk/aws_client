@@ -83,7 +83,7 @@ class Kafka {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/clusters/${Uri.encodeComponent(clusterArn)}/scram-secrets',
+          '/v1/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}/scram-secrets',
       exceptionFnMap: _exceptionFns,
     );
     return BatchAssociateScramSecretResponse.fromJson(response);
@@ -406,7 +406,8 @@ class Kafka {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/clusters/${Uri.encodeComponent(clusterArn)}',
+      requestUri:
+          '/v1/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -433,7 +434,8 @@ class Kafka {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/clusters/${Uri.encodeComponent(clusterArn)}/policy',
+      requestUri:
+          '/v1/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}/policy',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -458,7 +460,8 @@ class Kafka {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/configurations/${Uri.encodeComponent(arn)}',
+      requestUri:
+          '/v1/configurations/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteConfigurationResponse.fromJson(response);
@@ -484,7 +487,8 @@ class Kafka {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/vpc-connection/${Uri.encodeComponent(arn)}',
+      requestUri:
+          '/v1/vpc-connection/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteVpcConnectionResponse.fromJson(response);
@@ -511,7 +515,8 @@ class Kafka {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/clusters/${Uri.encodeComponent(clusterArn)}',
+      requestUri:
+          '/v1/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeClusterResponse.fromJson(response);
@@ -538,7 +543,8 @@ class Kafka {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/api/v2/clusters/${Uri.encodeComponent(clusterArn)}',
+      requestUri:
+          '/api/v2/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeClusterV2Response.fromJson(response);
@@ -565,7 +571,8 @@ class Kafka {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/operations/${Uri.encodeComponent(clusterOperationArn)}',
+      requestUri:
+          '/v1/operations/${Uri.encodeQueryComponent(clusterOperationArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeClusterOperationResponse.fromJson(response);
@@ -593,7 +600,8 @@ class Kafka {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/configurations/${Uri.encodeComponent(arn)}',
+      requestUri:
+          '/v1/configurations/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeConfigurationResponse.fromJson(response);
@@ -628,7 +636,7 @@ class Kafka {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/configurations/${Uri.encodeComponent(arn)}/revisions/${Uri.encodeComponent(revision.toString())}',
+          '/v1/configurations/%24%7BUri.encodeQueryComponent%28arn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/revisions/${Uri.encodeQueryComponent(revision.toString()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeConfigurationRevisionResponse.fromJson(response);
@@ -656,7 +664,8 @@ class Kafka {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/vpc-connection/${Uri.encodeComponent(arn)}',
+      requestUri:
+          '/v1/vpc-connection/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeVpcConnectionResponse.fromJson(response);
@@ -694,7 +703,7 @@ class Kafka {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/v1/clusters/${Uri.encodeComponent(clusterArn)}/scram-secrets',
+          '/v1/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}/scram-secrets',
       exceptionFnMap: _exceptionFns,
     );
     return BatchDisassociateScramSecretResponse.fromJson(response);
@@ -721,7 +730,7 @@ class Kafka {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/clusters/${Uri.encodeComponent(clusterArn)}/bootstrap-brokers',
+          '/v1/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}/bootstrap-brokers',
       exceptionFnMap: _exceptionFns,
     );
     return GetBootstrapBrokersResponse.fromJson(response);
@@ -779,7 +788,8 @@ class Kafka {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/clusters/${Uri.encodeComponent(clusterArn)}/policy',
+      requestUri:
+          '/v1/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}/policy',
       exceptionFnMap: _exceptionFns,
     );
     return GetClusterPolicyResponse.fromJson(response);
@@ -830,7 +840,8 @@ class Kafka {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/clusters/${Uri.encodeComponent(clusterArn)}/operations',
+      requestUri:
+          '/v1/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}/operations',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -997,7 +1008,8 @@ class Kafka {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/configurations/${Uri.encodeComponent(arn)}/revisions',
+      requestUri:
+          '/v1/configurations/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}/revisions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1137,7 +1149,8 @@ class Kafka {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/clusters/${Uri.encodeComponent(clusterArn)}/nodes',
+      requestUri:
+          '/v1/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}/nodes',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1189,7 +1202,7 @@ class Kafka {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/clusters/${Uri.encodeComponent(clusterArn)}/scram-secrets',
+          '/v1/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}/scram-secrets',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1215,7 +1228,8 @@ class Kafka {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/v1/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1267,7 +1281,7 @@ class Kafka {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/clusters/${Uri.encodeComponent(clusterArn)}/client-vpc-connections',
+          '/v1/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}/client-vpc-connections',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1350,7 +1364,7 @@ class Kafka {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/clusters/${Uri.encodeComponent(clusterArn)}/client-vpc-connection',
+          '/v1/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}/client-vpc-connection',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1390,7 +1404,8 @@ class Kafka {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v1/clusters/${Uri.encodeComponent(clusterArn)}/policy',
+      requestUri:
+          '/v1/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}/policy',
       exceptionFnMap: _exceptionFns,
     );
     return PutClusterPolicyResponse.fromJson(response);
@@ -1427,7 +1442,7 @@ class Kafka {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/clusters/${Uri.encodeComponent(clusterArn)}/reboot-broker',
+          '/v1/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}/reboot-broker',
       exceptionFnMap: _exceptionFns,
     );
     return RebootBrokerResponse.fromJson(response);
@@ -1461,7 +1476,8 @@ class Kafka {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/v1/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1530,7 +1546,8 @@ class Kafka {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/v1/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1581,7 +1598,8 @@ class Kafka {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v1/clusters/${Uri.encodeComponent(clusterArn)}/nodes/count',
+      requestUri:
+          '/v1/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}/nodes/count',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBrokerCountResponse.fromJson(response);
@@ -1627,7 +1645,8 @@ class Kafka {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v1/clusters/${Uri.encodeComponent(clusterArn)}/nodes/type',
+      requestUri:
+          '/v1/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}/nodes/type',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBrokerTypeResponse.fromJson(response);
@@ -1672,7 +1691,7 @@ class Kafka {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/clusters/${Uri.encodeComponent(clusterArn)}/nodes/storage',
+          '/v1/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}/nodes/storage',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBrokerStorageResponse.fromJson(response);
@@ -1718,7 +1737,8 @@ class Kafka {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v1/configurations/${Uri.encodeComponent(arn)}',
+      requestUri:
+          '/v1/configurations/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateConfigurationResponse.fromJson(response);
@@ -1764,7 +1784,7 @@ class Kafka {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/clusters/${Uri.encodeComponent(clusterArn)}/connectivity',
+          '/v1/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}/connectivity',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateConnectivityResponse.fromJson(response);
@@ -1810,7 +1830,7 @@ class Kafka {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/clusters/${Uri.encodeComponent(clusterArn)}/configuration',
+          '/v1/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}/configuration',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateClusterConfigurationResponse.fromJson(response);
@@ -1862,7 +1882,8 @@ class Kafka {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v1/clusters/${Uri.encodeComponent(clusterArn)}/version',
+      requestUri:
+          '/v1/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}/version',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateClusterKafkaVersionResponse.fromJson(response);
@@ -1920,7 +1941,8 @@ class Kafka {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v1/clusters/${Uri.encodeComponent(clusterArn)}/monitoring',
+      requestUri:
+          '/v1/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}/monitoring',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateMonitoringResponse.fromJson(response);
@@ -1975,7 +1997,8 @@ class Kafka {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/v1/clusters/${Uri.encodeComponent(clusterArn)}/security',
+      requestUri:
+          '/v1/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}/security',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSecurityResponse.fromJson(response);
@@ -2034,7 +2057,8 @@ class Kafka {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v1/clusters/${Uri.encodeComponent(clusterArn)}/storage',
+      requestUri:
+          '/v1/clusters/${Uri.encodeQueryComponent(clusterArn).replaceAll('+', '%20')}/storage',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateStorageResponse.fromJson(response);

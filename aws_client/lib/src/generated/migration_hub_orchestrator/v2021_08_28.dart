@@ -241,7 +241,8 @@ class MigrationHubOrchestrator {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/migrationworkflow/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/migrationworkflow/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteMigrationWorkflowResponse.fromJson(response);
@@ -276,7 +277,8 @@ class MigrationHubOrchestrator {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/workflowstep/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/workflowstep/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -305,7 +307,8 @@ class MigrationHubOrchestrator {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/workflowstepgroup/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/workflowstepgroup/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -326,7 +329,8 @@ class MigrationHubOrchestrator {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/migrationworkflowtemplate/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/migrationworkflowtemplate/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetMigrationWorkflowTemplateResponse.fromJson(response);
@@ -360,7 +364,8 @@ class MigrationHubOrchestrator {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/templatestep/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/templatestep/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -388,7 +393,7 @@ class MigrationHubOrchestrator {
       payload: null,
       method: 'GET',
       requestUri:
-          '/templates/${Uri.encodeComponent(templateId)}/stepgroups/${Uri.encodeComponent(id)}',
+          '/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}/stepgroups/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetTemplateStepGroupResponse.fromJson(response);
@@ -410,7 +415,8 @@ class MigrationHubOrchestrator {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/migrationworkflow/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/migrationworkflow/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetMigrationWorkflowResponse.fromJson(response);
@@ -443,7 +449,8 @@ class MigrationHubOrchestrator {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/workflowstep/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/workflowstep/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -473,7 +480,8 @@ class MigrationHubOrchestrator {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/workflowstepgroup/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/workflowstepgroup/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -528,7 +536,8 @@ class MigrationHubOrchestrator {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -567,7 +576,8 @@ class MigrationHubOrchestrator {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/templatestepgroups/${Uri.encodeComponent(templateId)}',
+      requestUri:
+          '/templatestepgroups/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -742,7 +752,7 @@ class MigrationHubOrchestrator {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workflow/${Uri.encodeComponent(workflowId)}/workflowstepgroups/${Uri.encodeComponent(stepGroupId)}/workflowsteps',
+          '/workflow/${Uri.encodeQueryComponent(workflowId).replaceAll('+', '%20')}/workflowstepgroups/%24%7BUri.encodeQueryComponent%28stepGroupId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/workflowsteps',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -834,7 +844,8 @@ class MigrationHubOrchestrator {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/retryworkflowstep/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/retryworkflowstep/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -857,7 +868,8 @@ class MigrationHubOrchestrator {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/migrationworkflow/${Uri.encodeComponent(id)}/start',
+      requestUri:
+          '/migrationworkflow/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/start',
       exceptionFnMap: _exceptionFns,
     );
     return StartMigrationWorkflowResponse.fromJson(response);
@@ -879,7 +891,8 @@ class MigrationHubOrchestrator {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/migrationworkflow/${Uri.encodeComponent(id)}/stop',
+      requestUri:
+          '/migrationworkflow/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/stop',
       exceptionFnMap: _exceptionFns,
     );
     return StopMigrationWorkflowResponse.fromJson(response);
@@ -907,7 +920,8 @@ class MigrationHubOrchestrator {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -933,7 +947,8 @@ class MigrationHubOrchestrator {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -977,7 +992,8 @@ class MigrationHubOrchestrator {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/migrationworkflow/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/migrationworkflow/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateMigrationWorkflowResponse.fromJson(response);
@@ -1058,7 +1074,8 @@ class MigrationHubOrchestrator {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/workflowstep/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/workflowstep/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateWorkflowStepResponse.fromJson(response);
@@ -1109,7 +1126,8 @@ class MigrationHubOrchestrator {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/workflowstepgroup/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/workflowstepgroup/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

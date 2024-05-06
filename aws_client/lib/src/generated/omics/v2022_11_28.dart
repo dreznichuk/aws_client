@@ -75,7 +75,7 @@ class Omics {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/sequencestore/${Uri.encodeComponent(sequenceStoreId)}/upload/${Uri.encodeComponent(uploadId)}/abort',
+          '/sequencestore/%24%7BUri.encodeQueryComponent%28sequenceStoreId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/upload/${Uri.encodeQueryComponent(uploadId).replaceAll('+', '%20')}/abort',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -105,7 +105,7 @@ class Omics {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/sequencestore/${Uri.encodeComponent(sequenceStoreId)}/readset/batch/delete',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/readset/batch/delete',
       exceptionFnMap: _exceptionFns,
     );
     return BatchDeleteReadSetResponse.fromJson(response);
@@ -127,7 +127,8 @@ class Omics {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/import/annotation/${Uri.encodeComponent(jobId)}',
+      requestUri:
+          '/import/annotation/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -151,7 +152,8 @@ class Omics {
     await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/run/${Uri.encodeComponent(id)}/cancel',
+      requestUri:
+          '/run/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/cancel',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -172,7 +174,8 @@ class Omics {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/import/variant/${Uri.encodeComponent(jobId)}',
+      requestUri:
+          '/import/variant/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -209,7 +212,7 @@ class Omics {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/sequencestore/${Uri.encodeComponent(sequenceStoreId)}/upload/${Uri.encodeComponent(uploadId)}/complete',
+          '/sequencestore/%24%7BUri.encodeQueryComponent%28sequenceStoreId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/upload/${Uri.encodeQueryComponent(uploadId).replaceAll('+', '%20')}/complete',
       exceptionFnMap: _exceptionFns,
     );
     return CompleteMultipartReadSetUploadResponse.fromJson(response);
@@ -341,7 +344,7 @@ class Omics {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/sequencestore/${Uri.encodeComponent(sequenceStoreId)}/upload',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/upload',
       exceptionFnMap: _exceptionFns,
     );
     return CreateMultipartReadSetUploadResponse.fromJson(response);
@@ -686,7 +689,8 @@ class Omics {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/annotationStore/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/annotationStore/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -716,7 +720,7 @@ class Omics {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/referencestore/${Uri.encodeComponent(referenceStoreId)}/reference/${Uri.encodeComponent(id)}',
+          '/referencestore/${Uri.encodeQueryComponent(referenceStoreId).replaceAll('+', '%20')}/reference/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -739,7 +743,8 @@ class Omics {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/referencestore/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/referencestore/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -763,7 +768,7 @@ class Omics {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/run/${Uri.encodeComponent(id)}',
+      requestUri: '/run/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -787,7 +792,8 @@ class Omics {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/runGroup/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/runGroup/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -810,7 +816,8 @@ class Omics {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/sequencestore/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/sequencestore/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -839,7 +846,8 @@ class Omics {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/variantStore/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/variantStore/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -865,7 +873,8 @@ class Omics {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/workflow/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/workflow/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -886,7 +895,8 @@ class Omics {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/import/annotation/${Uri.encodeComponent(jobId)}',
+      requestUri:
+          '/import/annotation/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetAnnotationImportResponse.fromJson(response);
@@ -908,7 +918,8 @@ class Omics {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/annotationStore/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/annotationStore/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetAnnotationStoreResponse.fromJson(response);
@@ -957,7 +968,7 @@ class Omics {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sequencestore/${Uri.encodeComponent(sequenceStoreId)}/readset/${Uri.encodeComponent(id)}',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/readset/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -988,7 +999,7 @@ class Omics {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sequencestore/${Uri.encodeComponent(sequenceStoreId)}/activationjob/${Uri.encodeComponent(id)}',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/activationjob/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetReadSetActivationJobResponse.fromJson(response);
@@ -1016,7 +1027,7 @@ class Omics {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sequencestore/${Uri.encodeComponent(sequenceStoreId)}/exportjob/${Uri.encodeComponent(id)}',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/exportjob/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetReadSetExportJobResponse.fromJson(response);
@@ -1044,7 +1055,7 @@ class Omics {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sequencestore/${Uri.encodeComponent(sequenceStoreId)}/importjob/${Uri.encodeComponent(id)}',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/importjob/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetReadSetImportJobResponse.fromJson(response);
@@ -1072,7 +1083,7 @@ class Omics {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sequencestore/${Uri.encodeComponent(sequenceStoreId)}/readset/${Uri.encodeComponent(id)}/metadata',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/readset/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/metadata',
       exceptionFnMap: _exceptionFns,
     );
     return GetReadSetMetadataResponse.fromJson(response);
@@ -1127,7 +1138,7 @@ class Omics {
       payload: null,
       method: 'GET',
       requestUri:
-          '/referencestore/${Uri.encodeComponent(referenceStoreId)}/reference/${Uri.encodeComponent(id)}',
+          '/referencestore/${Uri.encodeQueryComponent(referenceStoreId).replaceAll('+', '%20')}/reference/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -1159,7 +1170,7 @@ class Omics {
       payload: null,
       method: 'GET',
       requestUri:
-          '/referencestore/${Uri.encodeComponent(referenceStoreId)}/importjob/${Uri.encodeComponent(id)}',
+          '/referencestore/${Uri.encodeQueryComponent(referenceStoreId).replaceAll('+', '%20')}/importjob/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetReferenceImportJobResponse.fromJson(response);
@@ -1187,7 +1198,7 @@ class Omics {
       payload: null,
       method: 'GET',
       requestUri:
-          '/referencestore/${Uri.encodeComponent(referenceStoreId)}/reference/${Uri.encodeComponent(id)}/metadata',
+          '/referencestore/${Uri.encodeQueryComponent(referenceStoreId).replaceAll('+', '%20')}/reference/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/metadata',
       exceptionFnMap: _exceptionFns,
     );
     return GetReferenceMetadataResponse.fromJson(response);
@@ -1210,7 +1221,8 @@ class Omics {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/referencestore/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/referencestore/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetReferenceStoreResponse.fromJson(response);
@@ -1242,7 +1254,7 @@ class Omics {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/run/${Uri.encodeComponent(id)}',
+      requestUri: '/run/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1268,7 +1280,8 @@ class Omics {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/runGroup/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/runGroup/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetRunGroupResponse.fromJson(response);
@@ -1298,7 +1311,7 @@ class Omics {
       payload: null,
       method: 'GET',
       requestUri:
-          '/run/${Uri.encodeComponent(id)}/task/${Uri.encodeComponent(taskId)}',
+          '/run/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/task/${Uri.encodeQueryComponent(taskId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetRunTaskResponse.fromJson(response);
@@ -1321,7 +1334,8 @@ class Omics {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/sequencestore/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/sequencestore/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSequenceStoreResponse.fromJson(response);
@@ -1343,7 +1357,8 @@ class Omics {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/import/variant/${Uri.encodeComponent(jobId)}',
+      requestUri:
+          '/import/variant/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetVariantImportResponse.fromJson(response);
@@ -1365,7 +1380,8 @@ class Omics {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/variantStore/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/variantStore/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetVariantStoreResponse.fromJson(response);
@@ -1402,7 +1418,8 @@ class Omics {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/workflow/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/workflow/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1548,7 +1565,7 @@ class Omics {
       payload: null,
       method: 'POST',
       requestUri:
-          '/sequencestore/${Uri.encodeComponent(sequenceStoreId)}/uploads',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/uploads',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1600,7 +1617,7 @@ class Omics {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/sequencestore/${Uri.encodeComponent(sequenceStoreId)}/activationjobs',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/activationjobs',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1651,7 +1668,7 @@ class Omics {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/sequencestore/${Uri.encodeComponent(sequenceStoreId)}/exportjobs',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/exportjobs',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1702,7 +1719,7 @@ class Omics {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/sequencestore/${Uri.encodeComponent(sequenceStoreId)}/importjobs',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/importjobs',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1765,7 +1782,7 @@ class Omics {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/sequencestore/${Uri.encodeComponent(sequenceStoreId)}/upload/${Uri.encodeComponent(uploadId)}/parts',
+          '/sequencestore/%24%7BUri.encodeQueryComponent%28sequenceStoreId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/upload/${Uri.encodeQueryComponent(uploadId).replaceAll('+', '%20')}/parts',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1816,7 +1833,7 @@ class Omics {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/sequencestore/${Uri.encodeComponent(sequenceStoreId)}/readsets',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/readsets',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1867,7 +1884,7 @@ class Omics {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/referencestore/${Uri.encodeComponent(referenceStoreId)}/importjobs',
+          '/referencestore/${Uri.encodeQueryComponent(referenceStoreId).replaceAll('+', '%20')}/importjobs',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1963,7 +1980,7 @@ class Omics {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/referencestore/${Uri.encodeComponent(referenceStoreId)}/references',
+          '/referencestore/${Uri.encodeQueryComponent(referenceStoreId).replaceAll('+', '%20')}/references',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2059,7 +2076,8 @@ class Omics {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/run/${Uri.encodeComponent(id)}/task',
+      requestUri:
+          '/run/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/task',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2186,7 +2204,8 @@ class Omics {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -2428,7 +2447,7 @@ class Omics {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/sequencestore/${Uri.encodeComponent(sequenceStoreId)}/activationjob',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/activationjob',
       exceptionFnMap: _exceptionFns,
     );
     return StartReadSetActivationJobResponse.fromJson(response);
@@ -2476,7 +2495,7 @@ class Omics {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/sequencestore/${Uri.encodeComponent(sequenceStoreId)}/exportjob',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/exportjob',
       exceptionFnMap: _exceptionFns,
     );
     return StartReadSetExportJobResponse.fromJson(response);
@@ -2519,7 +2538,7 @@ class Omics {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/sequencestore/${Uri.encodeComponent(sequenceStoreId)}/importjob',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/importjob',
       exceptionFnMap: _exceptionFns,
     );
     return StartReadSetImportJobResponse.fromJson(response);
@@ -2562,7 +2581,7 @@ class Omics {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/referencestore/${Uri.encodeComponent(referenceStoreId)}/importjob',
+          '/referencestore/${Uri.encodeQueryComponent(referenceStoreId).replaceAll('+', '%20')}/importjob',
       exceptionFnMap: _exceptionFns,
     );
     return StartReferenceImportJobResponse.fromJson(response);
@@ -2742,7 +2761,8 @@ class Omics {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2773,7 +2793,8 @@ class Omics {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2802,7 +2823,8 @@ class Omics {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/annotationStore/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/annotationStore/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAnnotationStoreResponse.fromJson(response);
@@ -2878,7 +2900,8 @@ class Omics {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/runGroup/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/runGroup/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2906,7 +2929,8 @@ class Omics {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/variantStore/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/variantStore/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateVariantStoreResponse.fromJson(response);
@@ -2943,7 +2967,8 @@ class Omics {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/workflow/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/workflow/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2997,7 +3022,7 @@ class Omics {
       payload: payload,
       method: 'PUT',
       requestUri:
-          '/sequencestore/${Uri.encodeComponent(sequenceStoreId)}/upload/${Uri.encodeComponent(uploadId)}/part',
+          '/sequencestore/%24%7BUri.encodeQueryComponent%28sequenceStoreId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/upload/${Uri.encodeQueryComponent(uploadId).replaceAll('+', '%20')}/part',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

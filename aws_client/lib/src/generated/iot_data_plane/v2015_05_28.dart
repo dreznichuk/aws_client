@@ -89,7 +89,8 @@ class IoTDataPlane {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'DELETE',
-      requestUri: '/things/${Uri.encodeComponent(thingName)}/shadow',
+      requestUri:
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/shadow',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -129,7 +130,8 @@ class IoTDataPlane {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/retainedMessage/${Uri.encodeComponent(topic)}',
+      requestUri:
+          '/retainedMessage/${Uri.encodeQueryComponent(topic).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetRetainedMessageResponse.fromJson(response);
@@ -169,7 +171,8 @@ class IoTDataPlane {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'GET',
-      requestUri: '/things/${Uri.encodeComponent(thingName)}/shadow',
+      requestUri:
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/shadow',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -219,7 +222,7 @@ class IoTDataPlane {
       payload: null,
       method: 'GET',
       requestUri:
-          '/api/things/shadow/ListNamedShadowsForThing/${Uri.encodeComponent(thingName)}',
+          '/api/things/shadow/ListNamedShadowsForThing/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -405,7 +408,8 @@ class IoTDataPlane {
     await _protocol.send(
       payload: payload,
       method: 'POST',
-      requestUri: '/topics/${Uri.encodeComponent(topic)}',
+      requestUri:
+          '/topics/${Uri.encodeQueryComponent(topic).replaceAll('+', '%20')}',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -451,7 +455,8 @@ class IoTDataPlane {
     final response = await _protocol.sendRaw(
       payload: payload,
       method: 'POST',
-      requestUri: '/things/${Uri.encodeComponent(thingName)}/shadow',
+      requestUri:
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/shadow',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

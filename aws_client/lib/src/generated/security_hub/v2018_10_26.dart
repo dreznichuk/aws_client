@@ -899,7 +899,7 @@ class SecurityHub {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/actionTargets/${actionTargetArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/actionTargets/${actionTargetArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteActionTargetResponse.fromJson(response);
@@ -929,7 +929,7 @@ class SecurityHub {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/findingAggregator/delete/${findingAggregatorArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/findingAggregator/delete/${findingAggregatorArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -951,7 +951,7 @@ class SecurityHub {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/insights/${insightArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/insights/${insightArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteInsightResponse.fromJson(response);
@@ -1250,7 +1250,7 @@ class SecurityHub {
       payload: null,
       method: 'GET',
       requestUri:
-          '/standards/controls/${standardsSubscriptionArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/standards/controls/${standardsSubscriptionArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1276,7 +1276,7 @@ class SecurityHub {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/productSubscriptions/${productSubscriptionArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/productSubscriptions/${productSubscriptionArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1643,7 +1643,7 @@ class SecurityHub {
       payload: null,
       method: 'GET',
       requestUri:
-          '/findingAggregator/get/${findingAggregatorArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/findingAggregator/get/${findingAggregatorArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetFindingAggregatorResponse.fromJson(response);
@@ -1826,7 +1826,7 @@ class SecurityHub {
       payload: null,
       method: 'GET',
       requestUri:
-          '/insights/results/${insightArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/insights/results/${insightArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetInsightResultsResponse.fromJson(response);
@@ -2347,7 +2347,8 @@ class SecurityHub {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -2376,7 +2377,8 @@ class SecurityHub {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2403,7 +2405,8 @@ class SecurityHub {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2439,7 +2442,7 @@ class SecurityHub {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/actionTargets/${actionTargetArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/actionTargets/${actionTargetArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2594,7 +2597,7 @@ class SecurityHub {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/insights/${insightArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/insights/${insightArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2720,7 +2723,7 @@ class SecurityHub {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/standards/control/${standardsControlArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/standards/control/${standardsControlArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
   }

@@ -222,7 +222,7 @@ class AppIntegrations {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/dataIntegrations/${Uri.encodeComponent(dataIntegrationIdentifier)}',
+          '/dataIntegrations/${Uri.encodeQueryComponent(dataIntegrationIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -244,7 +244,8 @@ class AppIntegrations {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/eventIntegrations/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/eventIntegrations/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -272,7 +273,8 @@ class AppIntegrations {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/dataIntegrations/${Uri.encodeComponent(identifier)}',
+      requestUri:
+          '/dataIntegrations/${Uri.encodeQueryComponent(identifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDataIntegrationResponse.fromJson(response);
@@ -294,7 +296,8 @@ class AppIntegrations {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/eventIntegrations/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/eventIntegrations/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetEventIntegrationResponse.fromJson(response);
@@ -344,7 +347,7 @@ class AppIntegrations {
       payload: null,
       method: 'GET',
       requestUri:
-          '/dataIntegrations/${Uri.encodeComponent(dataIntegrationIdentifier)}/associations',
+          '/dataIntegrations/${Uri.encodeQueryComponent(dataIntegrationIdentifier).replaceAll('+', '%20')}/associations',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -432,7 +435,7 @@ class AppIntegrations {
       payload: null,
       method: 'GET',
       requestUri:
-          '/eventIntegrations/${Uri.encodeComponent(eventIntegrationName)}/associations',
+          '/eventIntegrations/${Uri.encodeQueryComponent(eventIntegrationName).replaceAll('+', '%20')}/associations',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -491,7 +494,8 @@ class AppIntegrations {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -520,7 +524,8 @@ class AppIntegrations {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -547,7 +552,8 @@ class AppIntegrations {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -588,7 +594,8 @@ class AppIntegrations {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/dataIntegrations/${Uri.encodeComponent(identifier)}',
+      requestUri:
+          '/dataIntegrations/${Uri.encodeQueryComponent(identifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -616,7 +623,8 @@ class AppIntegrations {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/eventIntegrations/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/eventIntegrations/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

@@ -115,7 +115,7 @@ class AuditManager {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/assessments/${Uri.encodeComponent(assessmentId)}/associateToAssessmentReport',
+          '/assessments/${Uri.encodeQueryComponent(assessmentId).replaceAll('+', '%20')}/associateToAssessmentReport',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -150,7 +150,7 @@ class AuditManager {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/assessments/${Uri.encodeComponent(assessmentId)}/batchAssociateToAssessmentReport',
+          '/assessments/${Uri.encodeQueryComponent(assessmentId).replaceAll('+', '%20')}/batchAssociateToAssessmentReport',
       exceptionFnMap: _exceptionFns,
     );
     return BatchAssociateAssessmentReportEvidenceResponse.fromJson(response);
@@ -180,7 +180,7 @@ class AuditManager {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/assessments/${Uri.encodeComponent(assessmentId)}/delegations',
+          '/assessments/${Uri.encodeQueryComponent(assessmentId).replaceAll('+', '%20')}/delegations',
       exceptionFnMap: _exceptionFns,
     );
     return BatchCreateDelegationByAssessmentResponse.fromJson(response);
@@ -210,7 +210,7 @@ class AuditManager {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/assessments/${Uri.encodeComponent(assessmentId)}/delegations',
+          '/assessments/${Uri.encodeQueryComponent(assessmentId).replaceAll('+', '%20')}/delegations',
       exceptionFnMap: _exceptionFns,
     );
     return BatchDeleteDelegationByAssessmentResponse.fromJson(response);
@@ -246,7 +246,7 @@ class AuditManager {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/assessments/${Uri.encodeComponent(assessmentId)}/batchDisassociateFromAssessmentReport',
+          '/assessments/${Uri.encodeQueryComponent(assessmentId).replaceAll('+', '%20')}/batchDisassociateFromAssessmentReport',
       exceptionFnMap: _exceptionFns,
     );
     return BatchDisassociateAssessmentReportEvidenceResponse.fromJson(response);
@@ -312,7 +312,7 @@ class AuditManager {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/assessments/${Uri.encodeComponent(assessmentId)}/controlSets/${Uri.encodeComponent(controlSetId)}/controls/${Uri.encodeComponent(controlId)}/evidence',
+          '/assessments/%2524%257BUri.encodeQueryComponent%2528assessmentId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/controlSets/${Uri.encodeQueryComponent(controlSetId).replaceAll('+', '%20')}/controls/%24%7BUri.encodeQueryComponent%28controlId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/evidence',
       exceptionFnMap: _exceptionFns,
     );
     return BatchImportEvidenceToAssessmentControlResponse.fromJson(response);
@@ -468,7 +468,8 @@ class AuditManager {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/assessments/${Uri.encodeComponent(assessmentId)}/reports',
+      requestUri:
+          '/assessments/${Uri.encodeQueryComponent(assessmentId).replaceAll('+', '%20')}/reports',
       exceptionFnMap: _exceptionFns,
     );
     return CreateAssessmentReportResponse.fromJson(response);
@@ -545,7 +546,8 @@ class AuditManager {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/assessments/${Uri.encodeComponent(assessmentId)}',
+      requestUri:
+          '/assessments/${Uri.encodeQueryComponent(assessmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -565,7 +567,8 @@ class AuditManager {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/assessmentFrameworks/${Uri.encodeComponent(frameworkId)}',
+      requestUri:
+          '/assessmentFrameworks/${Uri.encodeQueryComponent(frameworkId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -594,7 +597,7 @@ class AuditManager {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/assessmentFrameworkShareRequests/${Uri.encodeComponent(requestId)}',
+          '/assessmentFrameworkShareRequests/${Uri.encodeQueryComponent(requestId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -650,7 +653,7 @@ class AuditManager {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/assessments/${Uri.encodeComponent(assessmentId)}/reports/${Uri.encodeComponent(assessmentReportId)}',
+          '/assessments/%24%7BUri.encodeQueryComponent%28assessmentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/reports/${Uri.encodeQueryComponent(assessmentReportId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -670,7 +673,8 @@ class AuditManager {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/controls/${Uri.encodeComponent(controlId)}',
+      requestUri:
+          '/controls/${Uri.encodeQueryComponent(controlId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -829,7 +833,7 @@ class AuditManager {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/assessments/${Uri.encodeComponent(assessmentId)}/disassociateFromAssessmentReport',
+          '/assessments/${Uri.encodeQueryComponent(assessmentId).replaceAll('+', '%20')}/disassociateFromAssessmentReport',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -862,7 +866,8 @@ class AuditManager {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/assessments/${Uri.encodeComponent(assessmentId)}',
+      requestUri:
+          '/assessments/${Uri.encodeQueryComponent(assessmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetAssessmentResponse.fromJson(response);
@@ -883,7 +888,8 @@ class AuditManager {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/assessmentFrameworks/${Uri.encodeComponent(frameworkId)}',
+      requestUri:
+          '/assessmentFrameworks/${Uri.encodeQueryComponent(frameworkId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetAssessmentFrameworkResponse.fromJson(response);
@@ -909,7 +915,7 @@ class AuditManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/assessments/${Uri.encodeComponent(assessmentId)}/reports/${Uri.encodeComponent(assessmentReportId)}/url',
+          '/assessments/%24%7BUri.encodeQueryComponent%28assessmentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/reports/${Uri.encodeQueryComponent(assessmentReportId).replaceAll('+', '%20')}/url',
       exceptionFnMap: _exceptionFns,
     );
     return GetAssessmentReportUrlResponse.fromJson(response);
@@ -960,7 +966,7 @@ class AuditManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/assessments/${Uri.encodeComponent(assessmentId)}/changelogs',
+          '/assessments/${Uri.encodeQueryComponent(assessmentId).replaceAll('+', '%20')}/changelogs',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -982,7 +988,8 @@ class AuditManager {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/controls/${Uri.encodeComponent(controlId)}',
+      requestUri:
+          '/controls/${Uri.encodeQueryComponent(controlId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetControlResponse.fromJson(response);
@@ -1052,7 +1059,7 @@ class AuditManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/assessments/${Uri.encodeComponent(assessmentId)}/controlSets/${Uri.encodeComponent(controlSetId)}/evidenceFolders/${Uri.encodeComponent(evidenceFolderId)}/evidence/${Uri.encodeComponent(evidenceId)}',
+          '/assessments/%252524%25257BUri.encodeQueryComponent%252528assessmentId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/controlSets/%2524%257BUri.encodeQueryComponent%2528controlSetId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/evidenceFolders/%24%7BUri.encodeQueryComponent%28evidenceFolderId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/evidence/${Uri.encodeQueryComponent(evidenceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetEvidenceResponse.fromJson(response);
@@ -1101,7 +1108,7 @@ class AuditManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/assessments/${Uri.encodeComponent(assessmentId)}/controlSets/${Uri.encodeComponent(controlSetId)}/evidenceFolders/${Uri.encodeComponent(evidenceFolderId)}/evidence',
+          '/assessments/%2524%257BUri.encodeQueryComponent%2528assessmentId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/controlSets/%24%7BUri.encodeQueryComponent%28controlSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/evidenceFolders/${Uri.encodeQueryComponent(evidenceFolderId).replaceAll('+', '%20')}/evidence',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1132,7 +1139,7 @@ class AuditManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/assessments/${Uri.encodeComponent(assessmentId)}/controlSets/${Uri.encodeComponent(controlSetId)}/evidenceFolders/${Uri.encodeComponent(evidenceFolderId)}',
+          '/assessments/%2524%257BUri.encodeQueryComponent%2528assessmentId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/controlSets/%24%7BUri.encodeQueryComponent%28controlSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/evidenceFolders/${Uri.encodeQueryComponent(evidenceFolderId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetEvidenceFolderResponse.fromJson(response);
@@ -1174,7 +1181,7 @@ class AuditManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/assessments/${Uri.encodeComponent(assessmentId)}/evidenceFolders',
+          '/assessments/${Uri.encodeQueryComponent(assessmentId).replaceAll('+', '%20')}/evidenceFolders',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1226,7 +1233,7 @@ class AuditManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/assessments/${Uri.encodeComponent(assessmentId)}/evidenceFolders-by-assessment-control/${Uri.encodeComponent(controlSetId)}/${Uri.encodeComponent(controlId)}',
+          '/assessments/%2524%257BUri.encodeQueryComponent%2528assessmentId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/evidenceFolders-by-assessment-control/${Uri.encodeQueryComponent(controlSetId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28controlId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1262,7 +1269,8 @@ class AuditManager {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/insights/assessments/${Uri.encodeComponent(assessmentId)}',
+      requestUri:
+          '/insights/assessments/${Uri.encodeQueryComponent(assessmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetInsightsByAssessmentResponse.fromJson(response);
@@ -1319,7 +1327,8 @@ class AuditManager {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/settings/${Uri.encodeComponent(attribute.toValue())}',
+      requestUri:
+          '/settings/${Uri.encodeQueryComponent(attribute.toValue()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSettingsResponse.fromJson(response);
@@ -1822,7 +1831,8 @@ class AuditManager {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1965,7 +1975,7 @@ class AuditManager {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/assessmentFrameworks/${Uri.encodeComponent(frameworkId)}/shareRequests',
+          '/assessmentFrameworks/${Uri.encodeQueryComponent(frameworkId).replaceAll('+', '%20')}/shareRequests',
       exceptionFnMap: _exceptionFns,
     );
     return StartAssessmentFrameworkShareResponse.fromJson(response);
@@ -1992,7 +2002,8 @@ class AuditManager {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2018,7 +2029,8 @@ class AuditManager {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2069,7 +2081,8 @@ class AuditManager {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/assessments/${Uri.encodeComponent(assessmentId)}',
+      requestUri:
+          '/assessments/${Uri.encodeQueryComponent(assessmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAssessmentResponse.fromJson(response);
@@ -2111,7 +2124,7 @@ class AuditManager {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/assessments/${Uri.encodeComponent(assessmentId)}/controlSets/${Uri.encodeComponent(controlSetId)}/controls/${Uri.encodeComponent(controlId)}',
+          '/assessments/%2524%257BUri.encodeQueryComponent%2528assessmentId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/controlSets/${Uri.encodeQueryComponent(controlSetId).replaceAll('+', '%20')}/controls/%24%7BUri.encodeQueryComponent%28controlId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAssessmentControlResponse.fromJson(response);
@@ -2150,7 +2163,7 @@ class AuditManager {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/assessments/${Uri.encodeComponent(assessmentId)}/controlSets/${Uri.encodeComponent(controlSetId)}/status',
+          '/assessments/%24%7BUri.encodeQueryComponent%28assessmentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/controlSets/${Uri.encodeQueryComponent(controlSetId).replaceAll('+', '%20')}/status',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAssessmentControlSetStatusResponse.fromJson(response);
@@ -2194,7 +2207,8 @@ class AuditManager {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/assessmentFrameworks/${Uri.encodeComponent(frameworkId)}',
+      requestUri:
+          '/assessmentFrameworks/${Uri.encodeQueryComponent(frameworkId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAssessmentFrameworkResponse.fromJson(response);
@@ -2231,7 +2245,7 @@ class AuditManager {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/assessmentFrameworkShareRequests/${Uri.encodeComponent(requestId)}',
+          '/assessmentFrameworkShareRequests/${Uri.encodeQueryComponent(requestId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAssessmentFrameworkShareResponse.fromJson(response);
@@ -2260,7 +2274,8 @@ class AuditManager {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/assessments/${Uri.encodeComponent(assessmentId)}/status',
+      requestUri:
+          '/assessments/${Uri.encodeQueryComponent(assessmentId).replaceAll('+', '%20')}/status',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAssessmentStatusResponse.fromJson(response);
@@ -2314,7 +2329,8 @@ class AuditManager {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/controls/${Uri.encodeComponent(controlId)}',
+      requestUri:
+          '/controls/${Uri.encodeQueryComponent(controlId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateControlResponse.fromJson(response);

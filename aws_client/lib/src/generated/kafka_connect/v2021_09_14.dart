@@ -247,7 +247,8 @@ class KafkaConnect {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/connectors/${Uri.encodeComponent(connectorArn)}',
+      requestUri:
+          '/v1/connectors/${Uri.encodeQueryComponent(connectorArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -273,7 +274,8 @@ class KafkaConnect {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/custom-plugins/${Uri.encodeComponent(customPluginArn)}',
+      requestUri:
+          '/v1/custom-plugins/${Uri.encodeQueryComponent(customPluginArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteCustomPluginResponse.fromJson(response);
@@ -297,7 +299,8 @@ class KafkaConnect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/connectors/${Uri.encodeComponent(connectorArn)}',
+      requestUri:
+          '/v1/connectors/${Uri.encodeQueryComponent(connectorArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeConnectorResponse.fromJson(response);
@@ -321,7 +324,8 @@ class KafkaConnect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/custom-plugins/${Uri.encodeComponent(customPluginArn)}',
+      requestUri:
+          '/v1/custom-plugins/${Uri.encodeQueryComponent(customPluginArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeCustomPluginResponse.fromJson(response);
@@ -347,7 +351,7 @@ class KafkaConnect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/worker-configurations/${Uri.encodeComponent(workerConfigurationArn)}',
+          '/v1/worker-configurations/${Uri.encodeQueryComponent(workerConfigurationArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeWorkerConfigurationResponse.fromJson(response);
@@ -517,7 +521,8 @@ class KafkaConnect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v1/connectors/${Uri.encodeComponent(connectorArn)}',
+      requestUri:
+          '/v1/connectors/${Uri.encodeQueryComponent(connectorArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

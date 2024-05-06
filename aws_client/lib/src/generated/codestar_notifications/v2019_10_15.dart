@@ -555,7 +555,8 @@ class CodeStarNotifications {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/untagResource/${Uri.encodeComponent(arn)}',
+      requestUri:
+          '/untagResource/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

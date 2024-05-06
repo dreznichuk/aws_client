@@ -75,7 +75,8 @@ class Polly {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/lexicons/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/v1/lexicons/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -166,7 +167,8 @@ class Polly {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/lexicons/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/v1/lexicons/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetLexiconOutput.fromJson(response);
@@ -189,7 +191,8 @@ class Polly {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/synthesisTasks/${Uri.encodeComponent(taskId)}',
+      requestUri:
+          '/v1/synthesisTasks/${Uri.encodeQueryComponent(taskId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSpeechSynthesisTaskOutput.fromJson(response);
@@ -300,7 +303,8 @@ class Polly {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v1/lexicons/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/v1/lexicons/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

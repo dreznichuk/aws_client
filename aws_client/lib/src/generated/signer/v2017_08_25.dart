@@ -120,7 +120,7 @@ class Signer {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/signing-profiles/${Uri.encodeComponent(profileName)}/permissions',
+          '/signing-profiles/${Uri.encodeQueryComponent(profileName).replaceAll('+', '%20')}/permissions',
       exceptionFnMap: _exceptionFns,
     );
     return AddProfilePermissionResponse.fromJson(response);
@@ -144,7 +144,8 @@ class Signer {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/signing-profiles/${Uri.encodeComponent(profileName)}',
+      requestUri:
+          '/signing-profiles/${Uri.encodeQueryComponent(profileName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -166,7 +167,8 @@ class Signer {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/signing-jobs/${Uri.encodeComponent(jobId)}',
+      requestUri:
+          '/signing-jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeSigningJobResponse.fromJson(response);
@@ -187,7 +189,8 @@ class Signer {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/signing-platforms/${Uri.encodeComponent(platformId)}',
+      requestUri:
+          '/signing-platforms/${Uri.encodeQueryComponent(platformId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSigningPlatformResponse.fromJson(response);
@@ -215,7 +218,8 @@ class Signer {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/signing-profiles/${Uri.encodeComponent(profileName)}',
+      requestUri:
+          '/signing-profiles/${Uri.encodeQueryComponent(profileName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -246,7 +250,7 @@ class Signer {
       payload: null,
       method: 'GET',
       requestUri:
-          '/signing-profiles/${Uri.encodeComponent(profileName)}/permissions',
+          '/signing-profiles/${Uri.encodeQueryComponent(profileName).replaceAll('+', '%20')}/permissions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -492,7 +496,8 @@ class Signer {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -556,7 +561,8 @@ class Signer {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/signing-profiles/${Uri.encodeComponent(profileName)}',
+      requestUri:
+          '/signing-profiles/${Uri.encodeQueryComponent(profileName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return PutSigningProfileResponse.fromJson(response);
@@ -592,7 +598,7 @@ class Signer {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/signing-profiles/${Uri.encodeComponent(profileName)}/permissions/${Uri.encodeComponent(statementId)}',
+          '/signing-profiles/%24%7BUri.encodeQueryComponent%28profileName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/permissions/${Uri.encodeQueryComponent(statementId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -628,7 +634,8 @@ class Signer {
     await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/signing-jobs/${Uri.encodeComponent(jobId)}/revoke',
+      requestUri:
+          '/signing-jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}/revoke',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -671,7 +678,7 @@ class Signer {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/signing-profiles/${Uri.encodeComponent(profileName)}/revoke',
+          '/signing-profiles/${Uri.encodeQueryComponent(profileName).replaceAll('+', '%20')}/revoke',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -780,7 +787,8 @@ class Signer {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -808,7 +816,8 @@ class Signer {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

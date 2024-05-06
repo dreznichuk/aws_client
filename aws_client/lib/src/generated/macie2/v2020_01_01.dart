@@ -703,7 +703,8 @@ class Macie2 {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/allow-lists/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/allow-lists/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -728,7 +729,8 @@ class Macie2 {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/custom-data-identifiers/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/custom-data-identifiers/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -752,7 +754,8 @@ class Macie2 {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/findingsfilters/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/findingsfilters/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -806,7 +809,8 @@ class Macie2 {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/members/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/members/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -874,7 +878,8 @@ class Macie2 {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/jobs/${Uri.encodeComponent(jobId)}',
+      requestUri:
+          '/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeClassificationJobResponse.fromJson(response);
@@ -1008,7 +1013,8 @@ class Macie2 {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/members/disassociate/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/members/disassociate/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1126,7 +1132,8 @@ class Macie2 {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/allow-lists/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/allow-lists/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetAllowListResponse.fromJson(response);
@@ -1216,7 +1223,8 @@ class Macie2 {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/classification-scopes/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/classification-scopes/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetClassificationScopeResponse.fromJson(response);
@@ -1241,7 +1249,8 @@ class Macie2 {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/custom-data-identifiers/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/custom-data-identifiers/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetCustomDataIdentifierResponse.fromJson(response);
@@ -1360,7 +1369,8 @@ class Macie2 {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/findingsfilters/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/findingsfilters/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetFindingsFilterResponse.fromJson(response);
@@ -1469,7 +1479,8 @@ class Macie2 {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/members/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/members/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetMemberResponse.fromJson(response);
@@ -1538,7 +1549,8 @@ class Macie2 {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/findings/${Uri.encodeComponent(findingId)}/reveal',
+      requestUri:
+          '/findings/${Uri.encodeQueryComponent(findingId).replaceAll('+', '%20')}/reveal',
       exceptionFnMap: _exceptionFns,
     );
     return GetSensitiveDataOccurrencesResponse.fromJson(response);
@@ -1562,7 +1574,7 @@ class Macie2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/findings/${Uri.encodeComponent(findingId)}/reveal/availability',
+          '/findings/${Uri.encodeQueryComponent(findingId).replaceAll('+', '%20')}/reveal/availability',
       exceptionFnMap: _exceptionFns,
     );
     return GetSensitiveDataOccurrencesAvailabilityResponse.fromJson(response);
@@ -1588,7 +1600,7 @@ class Macie2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/templates/sensitivity-inspections/${Uri.encodeComponent(id)}',
+          '/templates/sensitivity-inspections/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSensitivityInspectionTemplateResponse.fromJson(response);
@@ -2202,7 +2214,8 @@ class Macie2 {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -2342,7 +2355,8 @@ class Macie2 {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2429,7 +2443,8 @@ class Macie2 {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2478,7 +2493,8 @@ class Macie2 {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/allow-lists/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/allow-lists/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAllowListResponse.fromJson(response);
@@ -2576,7 +2592,8 @@ class Macie2 {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/jobs/${Uri.encodeComponent(jobId)}',
+      requestUri:
+          '/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2606,7 +2623,8 @@ class Macie2 {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/classification-scopes/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/classification-scopes/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2681,7 +2699,8 @@ class Macie2 {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/findingsfilters/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/findingsfilters/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateFindingsFilterResponse.fromJson(response);
@@ -2753,7 +2772,8 @@ class Macie2 {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/macie/members/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/macie/members/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2933,7 +2953,7 @@ class Macie2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/templates/sensitivity-inspections/${Uri.encodeComponent(id)}',
+          '/templates/sensitivity-inspections/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

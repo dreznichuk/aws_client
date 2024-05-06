@@ -125,7 +125,7 @@ class MigrationHubRefactorSpaces {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/environments/${Uri.encodeComponent(environmentIdentifier)}/applications',
+          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications',
       exceptionFnMap: _exceptionFns,
     );
     return CreateApplicationResponse.fromJson(response);
@@ -347,7 +347,7 @@ class MigrationHubRefactorSpaces {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/environments/${Uri.encodeComponent(environmentIdentifier)}/applications/${Uri.encodeComponent(applicationIdentifier)}/routes',
+          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications/%24%7BUri.encodeQueryComponent%28applicationIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/routes',
       exceptionFnMap: _exceptionFns,
     );
     return CreateRouteResponse.fromJson(response);
@@ -436,7 +436,7 @@ class MigrationHubRefactorSpaces {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/environments/${Uri.encodeComponent(environmentIdentifier)}/applications/${Uri.encodeComponent(applicationIdentifier)}/services',
+          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications/%24%7BUri.encodeQueryComponent%28applicationIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/services',
       exceptionFnMap: _exceptionFns,
     );
     return CreateServiceResponse.fromJson(response);
@@ -466,7 +466,7 @@ class MigrationHubRefactorSpaces {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/environments/${Uri.encodeComponent(environmentIdentifier)}/applications/${Uri.encodeComponent(applicationIdentifier)}',
+          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications/%24%7BUri.encodeQueryComponent%28applicationIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteApplicationResponse.fromJson(response);
@@ -491,7 +491,8 @@ class MigrationHubRefactorSpaces {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/environments/${Uri.encodeComponent(environmentIdentifier)}',
+      requestUri:
+          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteEnvironmentResponse.fromJson(response);
@@ -513,7 +514,8 @@ class MigrationHubRefactorSpaces {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/resourcepolicy/${Uri.encodeComponent(identifier)}',
+      requestUri:
+          '/resourcepolicy/${Uri.encodeQueryComponent(identifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -544,7 +546,7 @@ class MigrationHubRefactorSpaces {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/environments/${Uri.encodeComponent(environmentIdentifier)}/applications/${Uri.encodeComponent(applicationIdentifier)}/routes/${Uri.encodeComponent(routeIdentifier)}',
+          '/environments/%24%7BUri.encodeQueryComponent%28environmentIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/applications/%2524%257BUri.encodeQueryComponent%2528applicationIdentifier%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/routes/${Uri.encodeQueryComponent(routeIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteRouteResponse.fromJson(response);
@@ -581,7 +583,7 @@ class MigrationHubRefactorSpaces {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/environments/${Uri.encodeComponent(environmentIdentifier)}/applications/${Uri.encodeComponent(applicationIdentifier)}/services/${Uri.encodeComponent(serviceIdentifier)}',
+          '/environments/%24%7BUri.encodeQueryComponent%28environmentIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/applications/%2524%257BUri.encodeQueryComponent%2528applicationIdentifier%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteServiceResponse.fromJson(response);
@@ -608,7 +610,7 @@ class MigrationHubRefactorSpaces {
       payload: null,
       method: 'GET',
       requestUri:
-          '/environments/${Uri.encodeComponent(environmentIdentifier)}/applications/${Uri.encodeComponent(applicationIdentifier)}',
+          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications/%24%7BUri.encodeQueryComponent%28applicationIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetApplicationResponse.fromJson(response);
@@ -630,7 +632,8 @@ class MigrationHubRefactorSpaces {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/environments/${Uri.encodeComponent(environmentIdentifier)}',
+      requestUri:
+          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetEnvironmentResponse.fromJson(response);
@@ -653,7 +656,8 @@ class MigrationHubRefactorSpaces {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/resourcepolicy/${Uri.encodeComponent(identifier)}',
+      requestUri:
+          '/resourcepolicy/${Uri.encodeQueryComponent(identifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetResourcePolicyResponse.fromJson(response);
@@ -684,7 +688,7 @@ class MigrationHubRefactorSpaces {
       payload: null,
       method: 'GET',
       requestUri:
-          '/environments/${Uri.encodeComponent(environmentIdentifier)}/applications/${Uri.encodeComponent(applicationIdentifier)}/routes/${Uri.encodeComponent(routeIdentifier)}',
+          '/environments/%24%7BUri.encodeQueryComponent%28environmentIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/applications/%2524%257BUri.encodeQueryComponent%2528applicationIdentifier%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/routes/${Uri.encodeQueryComponent(routeIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetRouteResponse.fromJson(response);
@@ -715,7 +719,7 @@ class MigrationHubRefactorSpaces {
       payload: null,
       method: 'GET',
       requestUri:
-          '/environments/${Uri.encodeComponent(environmentIdentifier)}/applications/${Uri.encodeComponent(applicationIdentifier)}/services/${Uri.encodeComponent(serviceIdentifier)}',
+          '/environments/%24%7BUri.encodeQueryComponent%28environmentIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/applications/%2524%257BUri.encodeQueryComponent%2528applicationIdentifier%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetServiceResponse.fromJson(response);
@@ -761,7 +765,7 @@ class MigrationHubRefactorSpaces {
       payload: null,
       method: 'GET',
       requestUri:
-          '/environments/${Uri.encodeComponent(environmentIdentifier)}/applications',
+          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -806,7 +810,7 @@ class MigrationHubRefactorSpaces {
       payload: null,
       method: 'GET',
       requestUri:
-          '/environments/${Uri.encodeComponent(environmentIdentifier)}/vpcs',
+          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/vpcs',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -897,7 +901,7 @@ class MigrationHubRefactorSpaces {
       payload: null,
       method: 'GET',
       requestUri:
-          '/environments/${Uri.encodeComponent(environmentIdentifier)}/applications/${Uri.encodeComponent(applicationIdentifier)}/routes',
+          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications/%24%7BUri.encodeQueryComponent%28applicationIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/routes',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -948,7 +952,7 @@ class MigrationHubRefactorSpaces {
       payload: null,
       method: 'GET',
       requestUri:
-          '/environments/${Uri.encodeComponent(environmentIdentifier)}/applications/${Uri.encodeComponent(applicationIdentifier)}/services',
+          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications/%24%7BUri.encodeQueryComponent%28applicationIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/services',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -971,7 +975,8 @@ class MigrationHubRefactorSpaces {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1041,7 +1046,8 @@ class MigrationHubRefactorSpaces {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1070,7 +1076,8 @@ class MigrationHubRefactorSpaces {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1109,7 +1116,7 @@ class MigrationHubRefactorSpaces {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/environments/${Uri.encodeComponent(environmentIdentifier)}/applications/${Uri.encodeComponent(applicationIdentifier)}/routes/${Uri.encodeComponent(routeIdentifier)}',
+          '/environments/%24%7BUri.encodeQueryComponent%28environmentIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/applications/%2524%257BUri.encodeQueryComponent%2528applicationIdentifier%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/routes/${Uri.encodeQueryComponent(routeIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateRouteResponse.fromJson(response);

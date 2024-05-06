@@ -66,7 +66,8 @@ class SageMakerGeospatialCapabilities {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/earth-observation-jobs/${Uri.encodeComponent(arn)}',
+      requestUri:
+          '/earth-observation-jobs/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -88,7 +89,8 @@ class SageMakerGeospatialCapabilities {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/vector-enrichment-jobs/${Uri.encodeComponent(arn)}',
+      requestUri:
+          '/vector-enrichment-jobs/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -204,7 +206,8 @@ class SageMakerGeospatialCapabilities {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/earth-observation-jobs/${Uri.encodeComponent(arn)}',
+      requestUri:
+          '/earth-observation-jobs/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetEarthObservationJobOutput.fromJson(response);
@@ -226,7 +229,8 @@ class SageMakerGeospatialCapabilities {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/raster-data-collection/${Uri.encodeComponent(arn)}',
+      requestUri:
+          '/raster-data-collection/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetRasterDataCollectionOutput.fromJson(response);
@@ -306,7 +310,7 @@ class SageMakerGeospatialCapabilities {
       payload: null,
       method: 'GET',
       requestUri:
-          '/tile/${Uri.encodeComponent(z.toString())}/${Uri.encodeComponent(x.toString())}/${Uri.encodeComponent(y.toString())}',
+          '/tile/${Uri.encodeQueryComponent(z.toString()).replaceAll('+', '%20')}/%2524%257BUri.encodeQueryComponent%2528x.toString%2528%2529%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/%24%7BUri.encodeQueryComponent%28y.toString%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -332,7 +336,8 @@ class SageMakerGeospatialCapabilities {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/vector-enrichment-jobs/${Uri.encodeComponent(arn)}',
+      requestUri:
+          '/vector-enrichment-jobs/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetVectorEnrichmentJobOutput.fromJson(response);
@@ -446,7 +451,8 @@ class SageMakerGeospatialCapabilities {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -740,7 +746,8 @@ class SageMakerGeospatialCapabilities {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -768,7 +775,8 @@ class SageMakerGeospatialCapabilities {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

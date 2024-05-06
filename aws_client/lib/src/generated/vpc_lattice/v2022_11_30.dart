@@ -86,7 +86,7 @@ class VpcLattice {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/services/${Uri.encodeComponent(serviceIdentifier)}/listeners/${Uri.encodeComponent(listenerIdentifier)}/rules',
+          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/%24%7BUri.encodeQueryComponent%28listenerIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/rules',
       exceptionFnMap: _exceptionFns,
     );
     return BatchUpdateRuleResponse.fromJson(response);
@@ -221,7 +221,7 @@ class VpcLattice {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/services/${Uri.encodeComponent(serviceIdentifier)}/listeners',
+          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners',
       exceptionFnMap: _exceptionFns,
     );
     return CreateListenerResponse.fromJson(response);
@@ -302,7 +302,7 @@ class VpcLattice {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/services/${Uri.encodeComponent(serviceIdentifier)}/listeners/${Uri.encodeComponent(listenerIdentifier)}/rules',
+          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/%24%7BUri.encodeQueryComponent%28listenerIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/rules',
       exceptionFnMap: _exceptionFns,
     );
     return CreateRuleResponse.fromJson(response);
@@ -662,7 +662,7 @@ class VpcLattice {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accesslogsubscriptions/${Uri.encodeComponent(accessLogSubscriptionIdentifier)}',
+          '/accesslogsubscriptions/${Uri.encodeQueryComponent(accessLogSubscriptionIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -687,7 +687,8 @@ class VpcLattice {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/authpolicy/${Uri.encodeComponent(resourceIdentifier)}',
+      requestUri:
+          '/authpolicy/${Uri.encodeQueryComponent(resourceIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -714,7 +715,7 @@ class VpcLattice {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/services/${Uri.encodeComponent(serviceIdentifier)}/listeners/${Uri.encodeComponent(listenerIdentifier)}',
+          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/%24%7BUri.encodeQueryComponent%28listenerIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -735,7 +736,8 @@ class VpcLattice {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/resourcepolicy/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/resourcepolicy/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -774,7 +776,7 @@ class VpcLattice {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/services/${Uri.encodeComponent(serviceIdentifier)}/listeners/${Uri.encodeComponent(listenerIdentifier)}/rules/${Uri.encodeComponent(ruleIdentifier)}',
+          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/%2524%257BUri.encodeQueryComponent%2528listenerIdentifier%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/rules/%24%7BUri.encodeQueryComponent%28ruleIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -802,7 +804,8 @@ class VpcLattice {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/services/${Uri.encodeComponent(serviceIdentifier)}',
+      requestUri:
+          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteServiceResponse.fromJson(response);
@@ -832,7 +835,7 @@ class VpcLattice {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/servicenetworks/${Uri.encodeComponent(serviceNetworkIdentifier)}',
+          '/servicenetworks/${Uri.encodeQueryComponent(serviceNetworkIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -858,7 +861,7 @@ class VpcLattice {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/servicenetworkserviceassociations/${Uri.encodeComponent(serviceNetworkServiceAssociationIdentifier)}',
+          '/servicenetworkserviceassociations/${Uri.encodeQueryComponent(serviceNetworkServiceAssociationIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteServiceNetworkServiceAssociationResponse.fromJson(response);
@@ -884,7 +887,7 @@ class VpcLattice {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/servicenetworkvpcassociations/${Uri.encodeComponent(serviceNetworkVpcAssociationIdentifier)}',
+          '/servicenetworkvpcassociations/${Uri.encodeQueryComponent(serviceNetworkVpcAssociationIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteServiceNetworkVpcAssociationResponse.fromJson(response);
@@ -907,7 +910,8 @@ class VpcLattice {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/targetgroups/${Uri.encodeComponent(targetGroupIdentifier)}',
+      requestUri:
+          '/targetgroups/${Uri.encodeQueryComponent(targetGroupIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteTargetGroupResponse.fromJson(response);
@@ -938,7 +942,7 @@ class VpcLattice {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/targetgroups/${Uri.encodeComponent(targetGroupIdentifier)}/deregistertargets',
+          '/targetgroups/${Uri.encodeQueryComponent(targetGroupIdentifier).replaceAll('+', '%20')}/deregistertargets',
       exceptionFnMap: _exceptionFns,
     );
     return DeregisterTargetsResponse.fromJson(response);
@@ -961,7 +965,7 @@ class VpcLattice {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accesslogsubscriptions/${Uri.encodeComponent(accessLogSubscriptionIdentifier)}',
+          '/accesslogsubscriptions/${Uri.encodeQueryComponent(accessLogSubscriptionIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetAccessLogSubscriptionResponse.fromJson(response);
@@ -984,7 +988,8 @@ class VpcLattice {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/authpolicy/${Uri.encodeComponent(resourceIdentifier)}',
+      requestUri:
+          '/authpolicy/${Uri.encodeQueryComponent(resourceIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetAuthPolicyResponse.fromJson(response);
@@ -1012,7 +1017,7 @@ class VpcLattice {
       payload: null,
       method: 'GET',
       requestUri:
-          '/services/${Uri.encodeComponent(serviceIdentifier)}/listeners/${Uri.encodeComponent(listenerIdentifier)}',
+          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/%24%7BUri.encodeQueryComponent%28listenerIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetListenerResponse.fromJson(response);
@@ -1036,7 +1041,8 @@ class VpcLattice {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/resourcepolicy/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/resourcepolicy/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetResourcePolicyResponse.fromJson(response);
@@ -1070,7 +1076,7 @@ class VpcLattice {
       payload: null,
       method: 'GET',
       requestUri:
-          '/services/${Uri.encodeComponent(serviceIdentifier)}/listeners/${Uri.encodeComponent(listenerIdentifier)}/rules/${Uri.encodeComponent(ruleIdentifier)}',
+          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/%2524%257BUri.encodeQueryComponent%2528listenerIdentifier%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/rules/%24%7BUri.encodeQueryComponent%28ruleIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetRuleResponse.fromJson(response);
@@ -1092,7 +1098,8 @@ class VpcLattice {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/services/${Uri.encodeComponent(serviceIdentifier)}',
+      requestUri:
+          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetServiceResponse.fromJson(response);
@@ -1115,7 +1122,7 @@ class VpcLattice {
       payload: null,
       method: 'GET',
       requestUri:
-          '/servicenetworks/${Uri.encodeComponent(serviceNetworkIdentifier)}',
+          '/servicenetworks/${Uri.encodeQueryComponent(serviceNetworkIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetServiceNetworkResponse.fromJson(response);
@@ -1140,7 +1147,7 @@ class VpcLattice {
       payload: null,
       method: 'GET',
       requestUri:
-          '/servicenetworkserviceassociations/${Uri.encodeComponent(serviceNetworkServiceAssociationIdentifier)}',
+          '/servicenetworkserviceassociations/${Uri.encodeQueryComponent(serviceNetworkServiceAssociationIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetServiceNetworkServiceAssociationResponse.fromJson(response);
@@ -1165,7 +1172,7 @@ class VpcLattice {
       payload: null,
       method: 'GET',
       requestUri:
-          '/servicenetworkvpcassociations/${Uri.encodeComponent(serviceNetworkVpcAssociationIdentifier)}',
+          '/servicenetworkvpcassociations/${Uri.encodeQueryComponent(serviceNetworkVpcAssociationIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetServiceNetworkVpcAssociationResponse.fromJson(response);
@@ -1186,7 +1193,8 @@ class VpcLattice {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/targetgroups/${Uri.encodeComponent(targetGroupIdentifier)}',
+      requestUri:
+          '/targetgroups/${Uri.encodeQueryComponent(targetGroupIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetTargetGroupResponse.fromJson(response);
@@ -1268,7 +1276,7 @@ class VpcLattice {
       payload: null,
       method: 'GET',
       requestUri:
-          '/services/${Uri.encodeComponent(serviceIdentifier)}/listeners',
+          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1314,7 +1322,7 @@ class VpcLattice {
       payload: null,
       method: 'GET',
       requestUri:
-          '/services/${Uri.encodeComponent(serviceIdentifier)}/listeners/${Uri.encodeComponent(listenerIdentifier)}/rules',
+          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/%24%7BUri.encodeQueryComponent%28listenerIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/rules',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1517,7 +1525,8 @@ class VpcLattice {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1615,7 +1624,7 @@ class VpcLattice {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/targetgroups/${Uri.encodeComponent(targetGroupIdentifier)}/listtargets',
+          '/targetgroups/${Uri.encodeQueryComponent(targetGroupIdentifier).replaceAll('+', '%20')}/listtargets',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1648,7 +1657,8 @@ class VpcLattice {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/authpolicy/${Uri.encodeComponent(resourceIdentifier)}',
+      requestUri:
+          '/authpolicy/${Uri.encodeQueryComponent(resourceIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return PutAuthPolicyResponse.fromJson(response);
@@ -1682,7 +1692,8 @@ class VpcLattice {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/resourcepolicy/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/resourcepolicy/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1714,7 +1725,7 @@ class VpcLattice {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/targetgroups/${Uri.encodeComponent(targetGroupIdentifier)}/registertargets',
+          '/targetgroups/${Uri.encodeQueryComponent(targetGroupIdentifier).replaceAll('+', '%20')}/registertargets',
       exceptionFnMap: _exceptionFns,
     );
     return RegisterTargetsResponse.fromJson(response);
@@ -1743,7 +1754,8 @@ class VpcLattice {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1769,7 +1781,8 @@ class VpcLattice {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1800,7 +1813,7 @@ class VpcLattice {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/accesslogsubscriptions/${Uri.encodeComponent(accessLogSubscriptionIdentifier)}',
+          '/accesslogsubscriptions/${Uri.encodeQueryComponent(accessLogSubscriptionIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAccessLogSubscriptionResponse.fromJson(response);
@@ -1835,7 +1848,7 @@ class VpcLattice {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/services/${Uri.encodeComponent(serviceIdentifier)}/listeners/${Uri.encodeComponent(listenerIdentifier)}',
+          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/%24%7BUri.encodeQueryComponent%28listenerIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateListenerResponse.fromJson(response);
@@ -1892,7 +1905,7 @@ class VpcLattice {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/services/${Uri.encodeComponent(serviceIdentifier)}/listeners/${Uri.encodeComponent(listenerIdentifier)}/rules/${Uri.encodeComponent(ruleIdentifier)}',
+          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/%2524%257BUri.encodeQueryComponent%2528listenerIdentifier%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/rules/%24%7BUri.encodeQueryComponent%28ruleIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateRuleResponse.fromJson(response);
@@ -1938,7 +1951,8 @@ class VpcLattice {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/services/${Uri.encodeComponent(serviceIdentifier)}',
+      requestUri:
+          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateServiceResponse.fromJson(response);
@@ -1980,7 +1994,7 @@ class VpcLattice {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/servicenetworks/${Uri.encodeComponent(serviceNetworkIdentifier)}',
+          '/servicenetworks/${Uri.encodeQueryComponent(serviceNetworkIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateServiceNetworkResponse.fromJson(response);
@@ -2016,7 +2030,7 @@ class VpcLattice {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/servicenetworkvpcassociations/${Uri.encodeComponent(serviceNetworkVpcAssociationIdentifier)}',
+          '/servicenetworkvpcassociations/${Uri.encodeQueryComponent(serviceNetworkVpcAssociationIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateServiceNetworkVpcAssociationResponse.fromJson(response);
@@ -2045,7 +2059,8 @@ class VpcLattice {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/targetgroups/${Uri.encodeComponent(targetGroupIdentifier)}',
+      requestUri:
+          '/targetgroups/${Uri.encodeQueryComponent(targetGroupIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateTargetGroupResponse.fromJson(response);

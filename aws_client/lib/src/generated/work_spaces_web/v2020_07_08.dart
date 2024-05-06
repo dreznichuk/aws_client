@@ -80,7 +80,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/portals/${portalArn.split('/').map(Uri.encodeComponent).join('/')}/browserSettings',
+          '/portals/${portalArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}/browserSettings',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -112,7 +112,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/portals/${portalArn.split('/').map(Uri.encodeComponent).join('/')}/networkSettings',
+          '/portals/${portalArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}/networkSettings',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -143,7 +143,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/portals/${portalArn.split('/').map(Uri.encodeComponent).join('/')}/trustStores',
+          '/portals/${portalArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}/trustStores',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -176,7 +176,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/portals/${portalArn.split('/').map(Uri.encodeComponent).join('/')}/userAccessLoggingSettings',
+          '/portals/${portalArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}/userAccessLoggingSettings',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -208,7 +208,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/portals/${portalArn.split('/').map(Uri.encodeComponent).join('/')}/userSettings',
+          '/portals/${portalArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}/userSettings',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -773,7 +773,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/browserSettings/${browserSettingsArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/browserSettings/${browserSettingsArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -795,7 +795,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/identityProviders/${identityProviderArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/identityProviders/${identityProviderArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -817,7 +817,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/networkSettings/${networkSettingsArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/networkSettings/${networkSettingsArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -839,7 +839,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/portals/${portalArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/portals/${portalArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -861,7 +861,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/trustStores/${trustStoreArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/trustStores/${trustStoreArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -883,7 +883,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/userAccessLoggingSettings/${userAccessLoggingSettingsArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/userAccessLoggingSettings/${userAccessLoggingSettingsArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -905,7 +905,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/userSettings/${userSettingsArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/userSettings/${userSettingsArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -927,7 +927,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/portals/${portalArn.split('/').map(Uri.encodeComponent).join('/')}/browserSettings',
+          '/portals/${portalArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}/browserSettings',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -949,7 +949,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/portals/${portalArn.split('/').map(Uri.encodeComponent).join('/')}/networkSettings',
+          '/portals/${portalArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}/networkSettings',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -971,7 +971,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/portals/${portalArn.split('/').map(Uri.encodeComponent).join('/')}/trustStores',
+          '/portals/${portalArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}/trustStores',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -993,7 +993,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/portals/${portalArn.split('/').map(Uri.encodeComponent).join('/')}/userAccessLoggingSettings',
+          '/portals/${portalArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}/userAccessLoggingSettings',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1015,7 +1015,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/portals/${portalArn.split('/').map(Uri.encodeComponent).join('/')}/userSettings',
+          '/portals/${portalArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}/userSettings',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1037,7 +1037,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'GET',
       requestUri:
-          '/browserSettings/${browserSettingsArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/browserSettings/${browserSettingsArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetBrowserSettingsResponse.fromJson(response);
@@ -1060,7 +1060,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'GET',
       requestUri:
-          '/identityProviders/${identityProviderArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/identityProviders/${identityProviderArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetIdentityProviderResponse.fromJson(response);
@@ -1083,7 +1083,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'GET',
       requestUri:
-          '/networkSettings/${networkSettingsArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/networkSettings/${networkSettingsArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetNetworkSettingsResponse.fromJson(response);
@@ -1106,7 +1106,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'GET',
       requestUri:
-          '/portals/${portalArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/portals/${portalArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetPortalResponse.fromJson(response);
@@ -1130,7 +1130,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'GET',
       requestUri:
-          '/portalIdp/${portalArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/portalIdp/${portalArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetPortalServiceProviderMetadataResponse.fromJson(response);
@@ -1153,7 +1153,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'GET',
       requestUri:
-          '/trustStores/${trustStoreArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/trustStores/${trustStoreArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetTrustStoreResponse.fromJson(response);
@@ -1183,7 +1183,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'GET',
       requestUri:
-          '/trustStores/${trustStoreArn.split('/').map(Uri.encodeComponent).join('/')}/certificate',
+          '/trustStores/${trustStoreArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}/certificate',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1207,7 +1207,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'GET',
       requestUri:
-          '/userAccessLoggingSettings/${userAccessLoggingSettingsArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/userAccessLoggingSettings/${userAccessLoggingSettingsArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetUserAccessLoggingSettingsResponse.fromJson(response);
@@ -1230,7 +1230,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'GET',
       requestUri:
-          '/userSettings/${userSettingsArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/userSettings/${userSettingsArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetUserSettingsResponse.fromJson(response);
@@ -1308,7 +1308,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'GET',
       requestUri:
-          '/portals/${portalArn.split('/').map(Uri.encodeComponent).join('/')}/identityProviders',
+          '/portals/${portalArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}/identityProviders',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1406,7 +1406,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'GET',
       requestUri:
-          '/tags/${resourceArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/tags/${resourceArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1448,7 +1448,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'GET',
       requestUri:
-          '/trustStores/${trustStoreArn.split('/').map(Uri.encodeComponent).join('/')}/certificates',
+          '/trustStores/${trustStoreArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}/certificates',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1603,7 +1603,7 @@ class WorkSpacesWeb {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/tags/${resourceArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/tags/${resourceArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1632,7 +1632,7 @@ class WorkSpacesWeb {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/tags/${resourceArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/tags/${resourceArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1675,7 +1675,7 @@ class WorkSpacesWeb {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/browserSettings/${browserSettingsArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/browserSettings/${browserSettingsArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBrowserSettingsResponse.fromJson(response);
@@ -1832,7 +1832,7 @@ class WorkSpacesWeb {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/identityProviders/${identityProviderArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/identityProviders/${identityProviderArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateIdentityProviderResponse.fromJson(response);
@@ -1887,7 +1887,7 @@ class WorkSpacesWeb {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/networkSettings/${networkSettingsArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/networkSettings/${networkSettingsArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateNetworkSettingsResponse.fromJson(response);
@@ -1937,7 +1937,7 @@ class WorkSpacesWeb {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/portals/${portalArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/portals/${portalArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdatePortalResponse.fromJson(response);
@@ -1987,7 +1987,7 @@ class WorkSpacesWeb {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/trustStores/${trustStoreArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/trustStores/${trustStoreArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateTrustStoreResponse.fromJson(response);
@@ -2030,7 +2030,7 @@ class WorkSpacesWeb {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/userAccessLoggingSettings/${userAccessLoggingSettingsArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/userAccessLoggingSettings/${userAccessLoggingSettingsArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateUserAccessLoggingSettingsResponse.fromJson(response);
@@ -2123,7 +2123,7 @@ class WorkSpacesWeb {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/userSettings/${userSettingsArn.split('/').map(Uri.encodeComponent).join('/')}',
+          '/userSettings/${userSettingsArn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateUserSettingsResponse.fromJson(response);

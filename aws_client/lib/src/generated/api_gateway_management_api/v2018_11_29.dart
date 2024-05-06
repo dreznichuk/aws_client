@@ -65,7 +65,8 @@ class ApiGatewayManagementApi {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/%40connections/${Uri.encodeComponent(connectionId)}',
+      requestUri:
+          '/%40connections/${Uri.encodeQueryComponent(connectionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -81,7 +82,8 @@ class ApiGatewayManagementApi {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/%40connections/${Uri.encodeComponent(connectionId)}',
+      requestUri:
+          '/%40connections/${Uri.encodeQueryComponent(connectionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetConnectionResponse.fromJson(response);
@@ -106,7 +108,8 @@ class ApiGatewayManagementApi {
     await _protocol.send(
       payload: data,
       method: 'POST',
-      requestUri: '/%40connections/${Uri.encodeComponent(connectionId)}',
+      requestUri:
+          '/%40connections/${Uri.encodeQueryComponent(connectionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

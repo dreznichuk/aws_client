@@ -205,7 +205,8 @@ class IamRolesAnywhere {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/crl/${Uri.encodeComponent(crlId)}',
+      requestUri:
+          '/crl/${Uri.encodeQueryComponent(crlId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CrlDetailResponse.fromJson(response);
@@ -226,7 +227,8 @@ class IamRolesAnywhere {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/profile/${Uri.encodeComponent(profileId)}',
+      requestUri:
+          '/profile/${Uri.encodeQueryComponent(profileId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ProfileDetailResponse.fromJson(response);
@@ -248,7 +250,8 @@ class IamRolesAnywhere {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/trustanchor/${Uri.encodeComponent(trustAnchorId)}',
+      requestUri:
+          '/trustanchor/${Uri.encodeQueryComponent(trustAnchorId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return TrustAnchorDetailResponse.fromJson(response);
@@ -269,7 +272,8 @@ class IamRolesAnywhere {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/crl/${Uri.encodeComponent(crlId)}/disable',
+      requestUri:
+          '/crl/${Uri.encodeQueryComponent(crlId).replaceAll('+', '%20')}/disable',
       exceptionFnMap: _exceptionFns,
     );
     return CrlDetailResponse.fromJson(response);
@@ -291,7 +295,8 @@ class IamRolesAnywhere {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/profile/${Uri.encodeComponent(profileId)}/disable',
+      requestUri:
+          '/profile/${Uri.encodeQueryComponent(profileId).replaceAll('+', '%20')}/disable',
       exceptionFnMap: _exceptionFns,
     );
     return ProfileDetailResponse.fromJson(response);
@@ -314,7 +319,8 @@ class IamRolesAnywhere {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/trustanchor/${Uri.encodeComponent(trustAnchorId)}/disable',
+      requestUri:
+          '/trustanchor/${Uri.encodeQueryComponent(trustAnchorId).replaceAll('+', '%20')}/disable',
       exceptionFnMap: _exceptionFns,
     );
     return TrustAnchorDetailResponse.fromJson(response);
@@ -336,7 +342,8 @@ class IamRolesAnywhere {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/crl/${Uri.encodeComponent(crlId)}/enable',
+      requestUri:
+          '/crl/${Uri.encodeQueryComponent(crlId).replaceAll('+', '%20')}/enable',
       exceptionFnMap: _exceptionFns,
     );
     return CrlDetailResponse.fromJson(response);
@@ -357,7 +364,8 @@ class IamRolesAnywhere {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/profile/${Uri.encodeComponent(profileId)}/enable',
+      requestUri:
+          '/profile/${Uri.encodeQueryComponent(profileId).replaceAll('+', '%20')}/enable',
       exceptionFnMap: _exceptionFns,
     );
     return ProfileDetailResponse.fromJson(response);
@@ -380,7 +388,8 @@ class IamRolesAnywhere {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/trustanchor/${Uri.encodeComponent(trustAnchorId)}/enable',
+      requestUri:
+          '/trustanchor/${Uri.encodeQueryComponent(trustAnchorId).replaceAll('+', '%20')}/enable',
       exceptionFnMap: _exceptionFns,
     );
     return TrustAnchorDetailResponse.fromJson(response);
@@ -400,7 +409,8 @@ class IamRolesAnywhere {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/crl/${Uri.encodeComponent(crlId)}',
+      requestUri:
+          '/crl/${Uri.encodeQueryComponent(crlId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CrlDetailResponse.fromJson(response);
@@ -421,7 +431,8 @@ class IamRolesAnywhere {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/profile/${Uri.encodeComponent(profileId)}',
+      requestUri:
+          '/profile/${Uri.encodeQueryComponent(profileId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ProfileDetailResponse.fromJson(response);
@@ -446,7 +457,8 @@ class IamRolesAnywhere {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/subject/${Uri.encodeComponent(subjectId)}',
+      requestUri:
+          '/subject/${Uri.encodeQueryComponent(subjectId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return SubjectDetailResponse.fromJson(response);
@@ -468,7 +480,8 @@ class IamRolesAnywhere {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/trustanchor/${Uri.encodeComponent(trustAnchorId)}',
+      requestUri:
+          '/trustanchor/${Uri.encodeQueryComponent(trustAnchorId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return TrustAnchorDetailResponse.fromJson(response);
@@ -838,7 +851,8 @@ class IamRolesAnywhere {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/crl/${Uri.encodeComponent(crlId)}',
+      requestUri:
+          '/crl/${Uri.encodeQueryComponent(crlId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CrlDetailResponse.fromJson(response);
@@ -898,7 +912,8 @@ class IamRolesAnywhere {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/profile/${Uri.encodeComponent(profileId)}',
+      requestUri:
+          '/profile/${Uri.encodeQueryComponent(profileId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ProfileDetailResponse.fromJson(response);
@@ -938,7 +953,8 @@ class IamRolesAnywhere {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/trustanchor/${Uri.encodeComponent(trustAnchorId)}',
+      requestUri:
+          '/trustanchor/${Uri.encodeQueryComponent(trustAnchorId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return TrustAnchorDetailResponse.fromJson(response);

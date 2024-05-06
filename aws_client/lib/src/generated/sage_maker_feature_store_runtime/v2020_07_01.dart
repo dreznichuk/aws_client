@@ -173,7 +173,8 @@ class SageMakerFeatureStoreRuntime {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/FeatureGroup/${Uri.encodeComponent(featureGroupName)}',
+      requestUri:
+          '/FeatureGroup/${Uri.encodeQueryComponent(featureGroupName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -212,7 +213,8 @@ class SageMakerFeatureStoreRuntime {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/FeatureGroup/${Uri.encodeComponent(featureGroupName)}',
+      requestUri:
+          '/FeatureGroup/${Uri.encodeQueryComponent(featureGroupName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -267,7 +269,8 @@ class SageMakerFeatureStoreRuntime {
     await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/FeatureGroup/${Uri.encodeComponent(featureGroupName)}',
+      requestUri:
+          '/FeatureGroup/${Uri.encodeQueryComponent(featureGroupName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

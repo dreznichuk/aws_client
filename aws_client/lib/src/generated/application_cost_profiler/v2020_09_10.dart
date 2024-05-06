@@ -74,7 +74,8 @@ class ApplicationCostProfiler {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/reportDefinition/${Uri.encodeComponent(reportId)}',
+      requestUri:
+          '/reportDefinition/${Uri.encodeQueryComponent(reportId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteReportDefinitionResult.fromJson(response);
@@ -96,7 +97,8 @@ class ApplicationCostProfiler {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/reportDefinition/${Uri.encodeComponent(reportId)}',
+      requestUri:
+          '/reportDefinition/${Uri.encodeQueryComponent(reportId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetReportDefinitionResult.fromJson(response);
@@ -255,7 +257,8 @@ class ApplicationCostProfiler {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/reportDefinition/${Uri.encodeComponent(reportId)}',
+      requestUri:
+          '/reportDefinition/${Uri.encodeQueryComponent(reportId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateReportDefinitionResult.fromJson(response);

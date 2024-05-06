@@ -83,7 +83,7 @@ class ManagedGrafana {
       payload: null,
       method: 'POST',
       requestUri:
-          '/workspaces/${Uri.encodeComponent(workspaceId)}/licenses/${Uri.encodeComponent(licenseType.toValue())}',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/licenses/%24%7BUri.encodeQueryComponent%28licenseType.toValue%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return AssociateLicenseResponse.fromJson(response);
@@ -317,7 +317,8 @@ class ManagedGrafana {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/workspaces/${Uri.encodeComponent(workspaceId)}/apikeys',
+      requestUri:
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/apikeys',
       exceptionFnMap: _exceptionFns,
     );
     return CreateWorkspaceApiKeyResponse.fromJson(response);
@@ -340,7 +341,8 @@ class ManagedGrafana {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/workspaces/${Uri.encodeComponent(workspaceId)}',
+      requestUri:
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteWorkspaceResponse.fromJson(response);
@@ -368,7 +370,7 @@ class ManagedGrafana {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/workspaces/${Uri.encodeComponent(workspaceId)}/apikeys/${Uri.encodeComponent(keyName)}',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/apikeys/%24%7BUri.encodeQueryComponent%28keyName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteWorkspaceApiKeyResponse.fromJson(response);
@@ -390,7 +392,8 @@ class ManagedGrafana {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/workspaces/${Uri.encodeComponent(workspaceId)}',
+      requestUri:
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeWorkspaceResponse.fromJson(response);
@@ -415,7 +418,7 @@ class ManagedGrafana {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workspaces/${Uri.encodeComponent(workspaceId)}/authentication',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/authentication',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeWorkspaceAuthenticationResponse.fromJson(response);
@@ -438,7 +441,7 @@ class ManagedGrafana {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workspaces/${Uri.encodeComponent(workspaceId)}/configuration',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/configuration',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeWorkspaceConfigurationResponse.fromJson(response);
@@ -465,7 +468,7 @@ class ManagedGrafana {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/workspaces/${Uri.encodeComponent(workspaceId)}/licenses/${Uri.encodeComponent(licenseType.toValue())}',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/licenses/%24%7BUri.encodeQueryComponent%28licenseType.toValue%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DisassociateLicenseResponse.fromJson(response);
@@ -531,7 +534,8 @@ class ManagedGrafana {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/workspaces/${Uri.encodeComponent(workspaceId)}/permissions',
+      requestUri:
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/permissions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -557,7 +561,8 @@ class ManagedGrafana {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -634,7 +639,8 @@ class ManagedGrafana {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -663,7 +669,8 @@ class ManagedGrafana {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -693,7 +700,8 @@ class ManagedGrafana {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/workspaces/${Uri.encodeComponent(workspaceId)}/permissions',
+      requestUri:
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/permissions',
       exceptionFnMap: _exceptionFns,
     );
     return UpdatePermissionsResponse.fromJson(response);
@@ -872,7 +880,8 @@ class ManagedGrafana {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/workspaces/${Uri.encodeComponent(workspaceId)}',
+      requestUri:
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateWorkspaceResponse.fromJson(response);
@@ -924,7 +933,7 @@ class ManagedGrafana {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/workspaces/${Uri.encodeComponent(workspaceId)}/authentication',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/authentication',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateWorkspaceAuthenticationResponse.fromJson(response);
@@ -958,7 +967,7 @@ class ManagedGrafana {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/workspaces/${Uri.encodeComponent(workspaceId)}/configuration',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/configuration',
       exceptionFnMap: _exceptionFns,
     );
   }

@@ -151,7 +151,7 @@ class OpenSearchIngestion {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2022-01-01/osis/deletePipeline/${Uri.encodeComponent(pipelineName)}',
+          '/2022-01-01/osis/deletePipeline/${Uri.encodeQueryComponent(pipelineName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -172,7 +172,7 @@ class OpenSearchIngestion {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2022-01-01/osis/getPipeline/${Uri.encodeComponent(pipelineName)}',
+          '/2022-01-01/osis/getPipeline/${Uri.encodeQueryComponent(pipelineName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetPipelineResponse.fromJson(response);
@@ -198,7 +198,7 @@ class OpenSearchIngestion {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2022-01-01/osis/getPipelineBlueprint/${Uri.encodeComponent(blueprintName)}',
+          '/2022-01-01/osis/getPipelineBlueprint/${Uri.encodeQueryComponent(blueprintName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetPipelineBlueprintResponse.fromJson(response);
@@ -226,7 +226,7 @@ class OpenSearchIngestion {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2022-01-01/osis/getPipelineChangeProgress/${Uri.encodeComponent(pipelineName)}',
+          '/2022-01-01/osis/getPipelineChangeProgress/${Uri.encodeQueryComponent(pipelineName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetPipelineChangeProgressResponse.fromJson(response);
@@ -342,7 +342,7 @@ class OpenSearchIngestion {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/2022-01-01/osis/startPipeline/${Uri.encodeComponent(pipelineName)}',
+          '/2022-01-01/osis/startPipeline/${Uri.encodeQueryComponent(pipelineName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return StartPipelineResponse.fromJson(response);
@@ -367,7 +367,7 @@ class OpenSearchIngestion {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/2022-01-01/osis/stopPipeline/${Uri.encodeComponent(pipelineName)}',
+          '/2022-01-01/osis/stopPipeline/${Uri.encodeQueryComponent(pipelineName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return StopPipelineResponse.fromJson(response);
@@ -499,7 +499,7 @@ class OpenSearchIngestion {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/2022-01-01/osis/updatePipeline/${Uri.encodeComponent(pipelineName)}',
+          '/2022-01-01/osis/updatePipeline/${Uri.encodeQueryComponent(pipelineName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdatePipelineResponse.fromJson(response);

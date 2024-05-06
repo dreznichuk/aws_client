@@ -300,7 +300,7 @@ class ServerlessApplicationRepository {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/versions/${Uri.encodeComponent(semanticVersion)}',
+          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(semanticVersion).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateApplicationVersionResponse.fromJson(response);
@@ -469,7 +469,7 @@ class ServerlessApplicationRepository {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/changesets',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/changesets',
       exceptionFnMap: _exceptionFns,
     );
     return CreateCloudFormationChangeSetResponse.fromJson(response);
@@ -503,7 +503,7 @@ class ServerlessApplicationRepository {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/templates',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/templates',
       exceptionFnMap: _exceptionFns,
     );
     return CreateCloudFormationTemplateResponse.fromJson(response);
@@ -526,7 +526,8 @@ class ServerlessApplicationRepository {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -554,7 +555,8 @@ class ServerlessApplicationRepository {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -577,7 +579,8 @@ class ServerlessApplicationRepository {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}/policy',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/policy',
       exceptionFnMap: _exceptionFns,
     );
     return GetApplicationPolicyResponse.fromJson(response);
@@ -607,7 +610,7 @@ class ServerlessApplicationRepository {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/templates/${Uri.encodeComponent(templateId)}',
+          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetCloudFormationTemplateResponse.fromJson(response);
@@ -653,7 +656,7 @@ class ServerlessApplicationRepository {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/dependencies',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/dependencies',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -695,7 +698,7 @@ class ServerlessApplicationRepository {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/versions',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/versions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -766,7 +769,8 @@ class ServerlessApplicationRepository {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}/policy',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/policy',
       exceptionFnMap: _exceptionFns,
     );
     return PutApplicationPolicyResponse.fromJson(response);
@@ -797,7 +801,8 @@ class ServerlessApplicationRepository {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}/unshare',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/unshare',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -868,7 +873,8 @@ class ServerlessApplicationRepository {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateApplicationResponse.fromJson(response);

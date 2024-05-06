@@ -72,7 +72,7 @@ class BackupStorage {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/backup-jobs/${Uri.encodeComponent(backupJobId)}/object/${Uri.encodeComponent(objectName)}',
+          '/backup-jobs/%24%7BUri.encodeQueryComponent%28backupJobId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/object/${Uri.encodeQueryComponent(objectName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -100,7 +100,7 @@ class BackupStorage {
       payload: null,
       method: 'GET',
       requestUri:
-          '/restore-jobs/${Uri.encodeComponent(storageJobId)}/chunk/${Uri.encodeComponent(chunkToken)}',
+          '/restore-jobs/${Uri.encodeQueryComponent(storageJobId).replaceAll('+', '%20')}/chunk/%24%7BUri.encodeQueryComponent%28chunkToken%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetChunkOutput(
@@ -139,7 +139,7 @@ class BackupStorage {
       payload: null,
       method: 'GET',
       requestUri:
-          '/restore-jobs/${Uri.encodeComponent(storageJobId)}/object/${Uri.encodeComponent(objectToken)}/metadata',
+          '/restore-jobs/${Uri.encodeQueryComponent(storageJobId).replaceAll('+', '%20')}/object/%24%7BUri.encodeQueryComponent%28objectToken%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/metadata',
       exceptionFnMap: _exceptionFns,
     );
     return GetObjectMetadataOutput(
@@ -197,7 +197,7 @@ class BackupStorage {
       payload: null,
       method: 'GET',
       requestUri:
-          '/restore-jobs/${Uri.encodeComponent(storageJobId)}/chunks/${Uri.encodeComponent(objectToken)}/list',
+          '/restore-jobs/${Uri.encodeQueryComponent(storageJobId).replaceAll('+', '%20')}/chunks/%24%7BUri.encodeQueryComponent%28objectToken%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/list',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -268,7 +268,7 @@ class BackupStorage {
       payload: null,
       method: 'GET',
       requestUri:
-          '/restore-jobs/${Uri.encodeComponent(storageJobId)}/objects/list',
+          '/restore-jobs/${Uri.encodeQueryComponent(storageJobId).replaceAll('+', '%20')}/objects/list',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -341,7 +341,7 @@ class BackupStorage {
       payload: metadataBlob,
       method: 'PUT',
       requestUri:
-          '/backup-jobs/${Uri.encodeComponent(backupJobId)}/object/${Uri.encodeComponent(uploadId)}/complete',
+          '/backup-jobs/%24%7BUri.encodeQueryComponent%28backupJobId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/object/${Uri.encodeQueryComponent(uploadId).replaceAll('+', '%20')}/complete',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -397,7 +397,7 @@ class BackupStorage {
       payload: data,
       method: 'PUT',
       requestUri:
-          '/backup-jobs/${Uri.encodeComponent(backupJobId)}/chunk/${Uri.encodeComponent(uploadId)}/${Uri.encodeComponent(chunkIndex.toString())}',
+          '/backup-jobs/%2524%257BUri.encodeQueryComponent%2528backupJobId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/chunk/${Uri.encodeQueryComponent(uploadId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28chunkIndex.toString%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -474,7 +474,7 @@ class BackupStorage {
       payload: inlineChunk,
       method: 'PUT',
       requestUri:
-          '/backup-jobs/${Uri.encodeComponent(backupJobId)}/object/${Uri.encodeComponent(objectName)}/put-object',
+          '/backup-jobs/%24%7BUri.encodeQueryComponent%28backupJobId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/object/${Uri.encodeQueryComponent(objectName).replaceAll('+', '%20')}/put-object',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -512,7 +512,7 @@ class BackupStorage {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/backup-jobs/${Uri.encodeComponent(backupJobId)}/object/${Uri.encodeComponent(objectName)}',
+          '/backup-jobs/%24%7BUri.encodeQueryComponent%28backupJobId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/object/${Uri.encodeQueryComponent(objectName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return StartObjectOutput.fromJson(response);

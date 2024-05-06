@@ -86,7 +86,7 @@ class WellArchitected {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/workloads/${Uri.encodeComponent(workloadId)}/associateLenses',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/associateLenses',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -137,7 +137,8 @@ class WellArchitected {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/lenses/${Uri.encodeComponent(lensAlias)}/shares',
+      requestUri:
+          '/lenses/${Uri.encodeQueryComponent(lensAlias).replaceAll('+', '%20')}/shares',
       exceptionFnMap: _exceptionFns,
     );
     return CreateLensShareOutput.fromJson(response);
@@ -180,7 +181,8 @@ class WellArchitected {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/lenses/${Uri.encodeComponent(lensAlias)}/versions',
+      requestUri:
+          '/lenses/${Uri.encodeQueryComponent(lensAlias).replaceAll('+', '%20')}/versions',
       exceptionFnMap: _exceptionFns,
     );
     return CreateLensVersionOutput.fromJson(response);
@@ -207,7 +209,8 @@ class WellArchitected {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/workloads/${Uri.encodeComponent(workloadId)}/milestones',
+      requestUri:
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/milestones',
       exceptionFnMap: _exceptionFns,
     );
     return CreateMilestoneOutput.fromJson(response);
@@ -330,7 +333,8 @@ class WellArchitected {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/workloads/${Uri.encodeComponent(workloadId)}/shares',
+      requestUri:
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/shares',
       exceptionFnMap: _exceptionFns,
     );
     return CreateWorkloadShareOutput.fromJson(response);
@@ -374,7 +378,8 @@ class WellArchitected {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/lenses/${Uri.encodeComponent(lensAlias)}',
+      requestUri:
+          '/lenses/${Uri.encodeQueryComponent(lensAlias).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -416,7 +421,7 @@ class WellArchitected {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/lenses/${Uri.encodeComponent(lensAlias)}/shares/${Uri.encodeComponent(shareId)}',
+          '/lenses/%24%7BUri.encodeQueryComponent%28lensAlias%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/shares/${Uri.encodeQueryComponent(shareId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -441,7 +446,8 @@ class WellArchitected {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/workloads/${Uri.encodeComponent(workloadId)}',
+      requestUri:
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -468,7 +474,7 @@ class WellArchitected {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/workloads/${Uri.encodeComponent(workloadId)}/shares/${Uri.encodeComponent(shareId)}',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/shares/%24%7BUri.encodeQueryComponent%28shareId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -500,7 +506,7 @@ class WellArchitected {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/workloads/${Uri.encodeComponent(workloadId)}/disassociateLenses',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/disassociateLenses',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -543,7 +549,8 @@ class WellArchitected {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/lenses/${Uri.encodeComponent(lensAlias)}/export',
+      requestUri:
+          '/lenses/${Uri.encodeQueryComponent(lensAlias).replaceAll('+', '%20')}/export',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -577,7 +584,7 @@ class WellArchitected {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workloads/${Uri.encodeComponent(workloadId)}/lensReviews/${Uri.encodeComponent(lensAlias)}/answers/${Uri.encodeComponent(questionId)}',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/%2524%257BUri.encodeQueryComponent%2528lensAlias%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/answers/%24%7BUri.encodeQueryComponent%28questionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -655,7 +662,8 @@ class WellArchitected {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/lenses/${Uri.encodeComponent(lensAlias)}',
+      requestUri:
+          '/lenses/${Uri.encodeQueryComponent(lensAlias).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -688,7 +696,7 @@ class WellArchitected {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workloads/${Uri.encodeComponent(workloadId)}/lensReviews/${Uri.encodeComponent(lensAlias)}',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/%24%7BUri.encodeQueryComponent%28lensAlias%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -721,7 +729,7 @@ class WellArchitected {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workloads/${Uri.encodeComponent(workloadId)}/lensReviews/${Uri.encodeComponent(lensAlias)}/report',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/%24%7BUri.encodeQueryComponent%28lensAlias%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/report',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -753,7 +761,8 @@ class WellArchitected {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/lenses/${Uri.encodeComponent(lensAlias)}/versionDifference',
+      requestUri:
+          '/lenses/${Uri.encodeQueryComponent(lensAlias).replaceAll('+', '%20')}/versionDifference',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -782,7 +791,7 @@ class WellArchitected {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workloads/${Uri.encodeComponent(workloadId)}/milestones/${Uri.encodeComponent(milestoneNumber.toString())}',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/milestones/%24%7BUri.encodeQueryComponent%28milestoneNumber.toString%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetMilestoneOutput.fromJson(response);
@@ -801,7 +810,8 @@ class WellArchitected {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/workloads/${Uri.encodeComponent(workloadId)}',
+      requestUri:
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetWorkloadOutput.fromJson(response);
@@ -909,7 +919,7 @@ class WellArchitected {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workloads/${Uri.encodeComponent(workloadId)}/lensReviews/${Uri.encodeComponent(lensAlias)}/answers',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/%24%7BUri.encodeQueryComponent%28lensAlias%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/answers',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -952,7 +962,8 @@ class WellArchitected {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/workloads/${Uri.encodeComponent(workloadId)}/checks',
+      requestUri:
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/checks',
       exceptionFnMap: _exceptionFns,
     );
     return ListCheckDetailsOutput.fromJson(response);
@@ -996,7 +1007,7 @@ class WellArchitected {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/workloads/${Uri.encodeComponent(workloadId)}/checkSummaries',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/checkSummaries',
       exceptionFnMap: _exceptionFns,
     );
     return ListCheckSummariesOutput.fromJson(response);
@@ -1043,7 +1054,7 @@ class WellArchitected {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workloads/${Uri.encodeComponent(workloadId)}/lensReviews/${Uri.encodeComponent(lensAlias)}/improvements',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/%24%7BUri.encodeQueryComponent%28lensAlias%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/improvements',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1084,7 +1095,8 @@ class WellArchitected {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/workloads/${Uri.encodeComponent(workloadId)}/lensReviews',
+      requestUri:
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1127,7 +1139,8 @@ class WellArchitected {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/lenses/${Uri.encodeComponent(lensAlias)}/shares',
+      requestUri:
+          '/lenses/${Uri.encodeQueryComponent(lensAlias).replaceAll('+', '%20')}/shares',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1202,7 +1215,7 @@ class WellArchitected {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/workloads/${Uri.encodeComponent(workloadId)}/milestonesSummaries',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/milestonesSummaries',
       exceptionFnMap: _exceptionFns,
     );
     return ListMilestonesOutput.fromJson(response);
@@ -1304,7 +1317,8 @@ class WellArchitected {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(workloadArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(workloadArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceOutput.fromJson(response);
@@ -1346,7 +1360,8 @@ class WellArchitected {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/workloads/${Uri.encodeComponent(workloadId)}/shares',
+      requestUri:
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/shares',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1408,7 +1423,8 @@ class WellArchitected {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(workloadArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(workloadArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1439,7 +1455,8 @@ class WellArchitected {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(workloadArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(workloadArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1481,7 +1498,7 @@ class WellArchitected {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/workloads/${Uri.encodeComponent(workloadId)}/lensReviews/${Uri.encodeComponent(lensAlias)}/answers/${Uri.encodeComponent(questionId)}',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/%2524%257BUri.encodeQueryComponent%2528lensAlias%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/answers/%24%7BUri.encodeQueryComponent%28questionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAnswerOutput.fromJson(response);
@@ -1541,7 +1558,7 @@ class WellArchitected {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/workloads/${Uri.encodeComponent(workloadId)}/lensReviews/${Uri.encodeComponent(lensAlias)}',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/%24%7BUri.encodeQueryComponent%28lensAlias%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateLensReviewOutput.fromJson(response);
@@ -1572,7 +1589,8 @@ class WellArchitected {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/shareInvitations/${Uri.encodeComponent(shareInvitationId)}',
+      requestUri:
+          '/shareInvitations/${Uri.encodeQueryComponent(shareInvitationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateShareInvitationOutput.fromJson(response);
@@ -1644,7 +1662,8 @@ class WellArchitected {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/workloads/${Uri.encodeComponent(workloadId)}',
+      requestUri:
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateWorkloadOutput.fromJson(response);
@@ -1670,7 +1689,7 @@ class WellArchitected {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/workloads/${Uri.encodeComponent(workloadId)}/shares/${Uri.encodeComponent(shareId)}',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/shares/%24%7BUri.encodeQueryComponent%28shareId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateWorkloadShareOutput.fromJson(response);
@@ -1698,7 +1717,7 @@ class WellArchitected {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/workloads/${Uri.encodeComponent(workloadId)}/lensReviews/${Uri.encodeComponent(lensAlias)}/upgrade',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/%24%7BUri.encodeQueryComponent%28lensAlias%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/upgrade',
       exceptionFnMap: _exceptionFns,
     );
   }

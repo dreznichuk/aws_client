@@ -138,7 +138,8 @@ class DevOpsGuru {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/insights/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/insights/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -222,7 +223,8 @@ class DevOpsGuru {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/anomalies/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/anomalies/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -298,7 +300,8 @@ class DevOpsGuru {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/insights/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/insights/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -491,7 +494,7 @@ class DevOpsGuru {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/health/resource-collection/${Uri.encodeComponent(resourceCollectionType.toValue())}',
+          '/accounts/health/resource-collection/${Uri.encodeQueryComponent(resourceCollectionType.toValue()).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -585,7 +588,7 @@ class DevOpsGuru {
       payload: null,
       method: 'GET',
       requestUri:
-          '/resource-collections/${Uri.encodeComponent(resourceCollectionType.toValue())}',
+          '/resource-collections/${Uri.encodeQueryComponent(resourceCollectionType.toValue()).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -646,7 +649,8 @@ class DevOpsGuru {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/anomalies/insight/${Uri.encodeComponent(insightId)}',
+      requestUri:
+          '/anomalies/insight/${Uri.encodeQueryComponent(insightId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListAnomaliesForInsightResponse.fromJson(response);
@@ -1005,7 +1009,8 @@ class DevOpsGuru {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/channels/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/channels/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

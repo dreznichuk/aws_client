@@ -104,7 +104,8 @@ class CloudWatchEvidently {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/projects/${Uri.encodeComponent(project)}/evaluations',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/evaluations',
       exceptionFnMap: _exceptionFns,
     );
     return BatchEvaluateFeatureResponse.fromJson(response);
@@ -225,7 +226,8 @@ class CloudWatchEvidently {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/projects/${Uri.encodeComponent(project)}/experiments',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/experiments',
       exceptionFnMap: _exceptionFns,
     );
     return CreateExperimentResponse.fromJson(response);
@@ -324,7 +326,8 @@ class CloudWatchEvidently {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/projects/${Uri.encodeComponent(project)}/features',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/features',
       exceptionFnMap: _exceptionFns,
     );
     return CreateFeatureResponse.fromJson(response);
@@ -415,7 +418,8 @@ class CloudWatchEvidently {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/projects/${Uri.encodeComponent(project)}/launches',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/launches',
       exceptionFnMap: _exceptionFns,
     );
     return CreateLaunchResponse.fromJson(response);
@@ -599,7 +603,7 @@ class CloudWatchEvidently {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/projects/${Uri.encodeComponent(project)}/experiments/${Uri.encodeComponent(experiment)}',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/experiments/%24%7BUri.encodeQueryComponent%28experiment%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -625,7 +629,7 @@ class CloudWatchEvidently {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/projects/${Uri.encodeComponent(project)}/features/${Uri.encodeComponent(feature)}',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/features/%24%7BUri.encodeQueryComponent%28feature%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -655,7 +659,7 @@ class CloudWatchEvidently {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/projects/${Uri.encodeComponent(project)}/launches/${Uri.encodeComponent(launch)}',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/launches/%24%7BUri.encodeQueryComponent%28launch%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -679,7 +683,8 @@ class CloudWatchEvidently {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/projects/${Uri.encodeComponent(project)}',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -702,7 +707,8 @@ class CloudWatchEvidently {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/segments/${Uri.encodeComponent(segment)}',
+      requestUri:
+          '/segments/${Uri.encodeQueryComponent(segment).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -787,7 +793,7 @@ class CloudWatchEvidently {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/projects/${Uri.encodeComponent(project)}/evaluations/${Uri.encodeComponent(feature)}',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/evaluations/%24%7BUri.encodeQueryComponent%28feature%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return EvaluateFeatureResponse.fromJson(response);
@@ -815,7 +821,7 @@ class CloudWatchEvidently {
       payload: null,
       method: 'GET',
       requestUri:
-          '/projects/${Uri.encodeComponent(project)}/experiments/${Uri.encodeComponent(experiment)}',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/experiments/%24%7BUri.encodeQueryComponent%28experiment%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetExperimentResponse.fromJson(response);
@@ -937,7 +943,7 @@ class CloudWatchEvidently {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/projects/${Uri.encodeComponent(project)}/experiments/${Uri.encodeComponent(experiment)}/results',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/experiments/%24%7BUri.encodeQueryComponent%28experiment%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/results',
       exceptionFnMap: _exceptionFns,
     );
     return GetExperimentResultsResponse.fromJson(response);
@@ -965,7 +971,7 @@ class CloudWatchEvidently {
       payload: null,
       method: 'GET',
       requestUri:
-          '/projects/${Uri.encodeComponent(project)}/features/${Uri.encodeComponent(feature)}',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/features/%24%7BUri.encodeQueryComponent%28feature%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetFeatureResponse.fromJson(response);
@@ -993,7 +999,7 @@ class CloudWatchEvidently {
       payload: null,
       method: 'GET',
       requestUri:
-          '/projects/${Uri.encodeComponent(project)}/launches/${Uri.encodeComponent(launch)}',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/launches/%24%7BUri.encodeQueryComponent%28launch%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetLaunchResponse.fromJson(response);
@@ -1016,7 +1022,8 @@ class CloudWatchEvidently {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/projects/${Uri.encodeComponent(project)}',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetProjectResponse.fromJson(response);
@@ -1038,7 +1045,8 @@ class CloudWatchEvidently {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/segments/${Uri.encodeComponent(segment)}',
+      requestUri:
+          '/segments/${Uri.encodeQueryComponent(segment).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSegmentResponse.fromJson(response);
@@ -1084,7 +1092,8 @@ class CloudWatchEvidently {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/projects/${Uri.encodeComponent(project)}/experiments',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/experiments',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1126,7 +1135,8 @@ class CloudWatchEvidently {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/projects/${Uri.encodeComponent(project)}/features',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/features',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1173,7 +1183,8 @@ class CloudWatchEvidently {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/projects/${Uri.encodeComponent(project)}/launches',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/launches',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1259,7 +1270,8 @@ class CloudWatchEvidently {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/segments/${Uri.encodeComponent(segment)}/references',
+      requestUri:
+          '/segments/${Uri.encodeQueryComponent(segment).replaceAll('+', '%20')}/references',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1318,7 +1330,8 @@ class CloudWatchEvidently {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1348,7 +1361,8 @@ class CloudWatchEvidently {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/events/projects/${Uri.encodeComponent(project)}',
+      requestUri:
+          '/events/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return PutProjectEventsResponse.fromJson(response);
@@ -1385,7 +1399,7 @@ class CloudWatchEvidently {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/projects/${Uri.encodeComponent(project)}/experiments/${Uri.encodeComponent(experiment)}/start',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/experiments/%24%7BUri.encodeQueryComponent%28experiment%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/start',
       exceptionFnMap: _exceptionFns,
     );
     return StartExperimentResponse.fromJson(response);
@@ -1414,7 +1428,7 @@ class CloudWatchEvidently {
       payload: null,
       method: 'POST',
       requestUri:
-          '/projects/${Uri.encodeComponent(project)}/launches/${Uri.encodeComponent(launch)}/start',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/launches/%24%7BUri.encodeQueryComponent%28launch%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/start',
       exceptionFnMap: _exceptionFns,
     );
     return StartLaunchResponse.fromJson(response);
@@ -1456,7 +1470,7 @@ class CloudWatchEvidently {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/projects/${Uri.encodeComponent(project)}/experiments/${Uri.encodeComponent(experiment)}/cancel',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/experiments/%24%7BUri.encodeQueryComponent%28experiment%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/cancel',
       exceptionFnMap: _exceptionFns,
     );
     return StopExperimentResponse.fromJson(response);
@@ -1501,7 +1515,7 @@ class CloudWatchEvidently {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/projects/${Uri.encodeComponent(project)}/launches/${Uri.encodeComponent(launch)}/cancel',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/launches/%24%7BUri.encodeQueryComponent%28launch%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/cancel',
       exceptionFnMap: _exceptionFns,
     );
     return StopLaunchResponse.fromJson(response);
@@ -1549,7 +1563,8 @@ class CloudWatchEvidently {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1607,7 +1622,8 @@ class CloudWatchEvidently {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1705,7 +1721,7 @@ class CloudWatchEvidently {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/projects/${Uri.encodeComponent(project)}/experiments/${Uri.encodeComponent(experiment)}',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/experiments/%24%7BUri.encodeQueryComponent%28experiment%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateExperimentResponse.fromJson(response);
@@ -1790,7 +1806,7 @@ class CloudWatchEvidently {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/projects/${Uri.encodeComponent(project)}/features/${Uri.encodeComponent(feature)}',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/features/%24%7BUri.encodeQueryComponent%28feature%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateFeatureResponse.fromJson(response);
@@ -1857,7 +1873,7 @@ class CloudWatchEvidently {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/projects/${Uri.encodeComponent(project)}/launches/${Uri.encodeComponent(launch)}',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/launches/%24%7BUri.encodeQueryComponent%28launch%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateLaunchResponse.fromJson(response);
@@ -1909,7 +1925,8 @@ class CloudWatchEvidently {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/projects/${Uri.encodeComponent(project)}',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateProjectResponse.fromJson(response);
@@ -1952,7 +1969,8 @@ class CloudWatchEvidently {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/projects/${Uri.encodeComponent(project)}/data-delivery',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/data-delivery',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateProjectDataDeliveryResponse.fromJson(response);

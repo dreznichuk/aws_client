@@ -99,7 +99,7 @@ class EmrContainers {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/virtualclusters/${Uri.encodeComponent(virtualClusterId)}/jobruns/${Uri.encodeComponent(id)}',
+          '/virtualclusters/${Uri.encodeQueryComponent(virtualClusterId).replaceAll('+', '%20')}/jobruns/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return CancelJobRunResponse.fromJson(response);
@@ -213,7 +213,7 @@ class EmrContainers {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/virtualclusters/${Uri.encodeComponent(virtualClusterId)}/endpoints',
+          '/virtualclusters/${Uri.encodeQueryComponent(virtualClusterId).replaceAll('+', '%20')}/endpoints',
       exceptionFnMap: _exceptionFns,
     );
     return CreateManagedEndpointResponse.fromJson(response);
@@ -278,7 +278,8 @@ class EmrContainers {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/jobtemplates/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/jobtemplates/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteJobTemplateResponse.fromJson(response);
@@ -304,7 +305,7 @@ class EmrContainers {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/virtualclusters/${Uri.encodeComponent(virtualClusterId)}/endpoints/${Uri.encodeComponent(id)}',
+          '/virtualclusters/${Uri.encodeQueryComponent(virtualClusterId).replaceAll('+', '%20')}/endpoints/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteManagedEndpointResponse.fromJson(response);
@@ -328,7 +329,8 @@ class EmrContainers {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/virtualclusters/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/virtualclusters/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteVirtualClusterResponse.fromJson(response);
@@ -355,7 +357,7 @@ class EmrContainers {
       payload: null,
       method: 'GET',
       requestUri:
-          '/virtualclusters/${Uri.encodeComponent(virtualClusterId)}/jobruns/${Uri.encodeComponent(id)}',
+          '/virtualclusters/${Uri.encodeQueryComponent(virtualClusterId).replaceAll('+', '%20')}/jobruns/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeJobRunResponse.fromJson(response);
@@ -379,7 +381,8 @@ class EmrContainers {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/jobtemplates/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/jobtemplates/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeJobTemplateResponse.fromJson(response);
@@ -406,7 +409,7 @@ class EmrContainers {
       payload: null,
       method: 'GET',
       requestUri:
-          '/virtualclusters/${Uri.encodeComponent(virtualClusterId)}/endpoints/${Uri.encodeComponent(id)}',
+          '/virtualclusters/${Uri.encodeQueryComponent(virtualClusterId).replaceAll('+', '%20')}/endpoints/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeManagedEndpointResponse.fromJson(response);
@@ -432,7 +435,8 @@ class EmrContainers {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/virtualclusters/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/virtualclusters/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeVirtualClusterResponse.fromJson(response);
@@ -489,7 +493,7 @@ class EmrContainers {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/virtualclusters/${Uri.encodeComponent(virtualClusterIdentifier)}/endpoints/${Uri.encodeComponent(endpointIdentifier)}/credentials',
+          '/virtualclusters/${Uri.encodeQueryComponent(virtualClusterIdentifier).replaceAll('+', '%20')}/endpoints/%24%7BUri.encodeQueryComponent%28endpointIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/credentials',
       exceptionFnMap: _exceptionFns,
     );
     return GetManagedEndpointSessionCredentialsResponse.fromJson(response);
@@ -545,7 +549,7 @@ class EmrContainers {
       payload: null,
       method: 'GET',
       requestUri:
-          '/virtualclusters/${Uri.encodeComponent(virtualClusterId)}/jobruns',
+          '/virtualclusters/${Uri.encodeQueryComponent(virtualClusterId).replaceAll('+', '%20')}/jobruns',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -646,7 +650,7 @@ class EmrContainers {
       payload: null,
       method: 'GET',
       requestUri:
-          '/virtualclusters/${Uri.encodeComponent(virtualClusterId)}/endpoints',
+          '/virtualclusters/${Uri.encodeQueryComponent(virtualClusterId).replaceAll('+', '%20')}/endpoints',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -667,7 +671,8 @@ class EmrContainers {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -807,7 +812,7 @@ class EmrContainers {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/virtualclusters/${Uri.encodeComponent(virtualClusterId)}/jobruns',
+          '/virtualclusters/${Uri.encodeQueryComponent(virtualClusterId).replaceAll('+', '%20')}/jobruns',
       exceptionFnMap: _exceptionFns,
     );
     return StartJobRunResponse.fromJson(response);
@@ -843,7 +848,8 @@ class EmrContainers {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -869,7 +875,8 @@ class EmrContainers {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

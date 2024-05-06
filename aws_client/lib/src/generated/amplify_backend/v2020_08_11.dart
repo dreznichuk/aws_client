@@ -76,7 +76,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/${Uri.encodeComponent(appId)}/environments/${Uri.encodeComponent(backendEnvironmentName)}/clone',
+          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/environments/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/clone',
       exceptionFnMap: _exceptionFns,
     );
     return CloneBackendResponse.fromJson(response);
@@ -159,7 +159,8 @@ class AmplifyBackend {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/backend/${Uri.encodeComponent(appId)}/api',
+      requestUri:
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/api',
       exceptionFnMap: _exceptionFns,
     );
     return CreateBackendAPIResponse.fromJson(response);
@@ -197,7 +198,8 @@ class AmplifyBackend {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/backend/${Uri.encodeComponent(appId)}/auth',
+      requestUri:
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/auth',
       exceptionFnMap: _exceptionFns,
     );
     return CreateBackendAuthResponse.fromJson(response);
@@ -226,7 +228,8 @@ class AmplifyBackend {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/backend/${Uri.encodeComponent(appId)}/config',
+      requestUri:
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     return CreateBackendConfigResponse.fromJson(response);
@@ -264,7 +267,8 @@ class AmplifyBackend {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/backend/${Uri.encodeComponent(appId)}/storage',
+      requestUri:
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/storage',
       exceptionFnMap: _exceptionFns,
     );
     return CreateBackendStorageResponse.fromJson(response);
@@ -286,7 +290,8 @@ class AmplifyBackend {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/backend/${Uri.encodeComponent(appId)}/challenge',
+      requestUri:
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/challenge',
       exceptionFnMap: _exceptionFns,
     );
     return CreateTokenResponse.fromJson(response);
@@ -312,7 +317,7 @@ class AmplifyBackend {
       payload: null,
       method: 'POST',
       requestUri:
-          '/backend/${Uri.encodeComponent(appId)}/environments/${Uri.encodeComponent(backendEnvironmentName)}/remove',
+          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/environments/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/remove',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteBackendResponse.fromJson(response);
@@ -351,7 +356,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/${Uri.encodeComponent(appId)}/api/${Uri.encodeComponent(backendEnvironmentName)}/remove',
+          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/api/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/remove',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteBackendAPIResponse.fromJson(response);
@@ -384,7 +389,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/${Uri.encodeComponent(appId)}/auth/${Uri.encodeComponent(backendEnvironmentName)}/remove',
+          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/auth/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/remove',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteBackendAuthResponse.fromJson(response);
@@ -422,7 +427,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/${Uri.encodeComponent(appId)}/storage/${Uri.encodeComponent(backendEnvironmentName)}/remove',
+          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/storage/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/remove',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteBackendStorageResponse.fromJson(response);
@@ -448,7 +453,7 @@ class AmplifyBackend {
       payload: null,
       method: 'POST',
       requestUri:
-          '/backend/${Uri.encodeComponent(appId)}/challenge/${Uri.encodeComponent(sessionId)}/remove',
+          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/challenge/${Uri.encodeQueryComponent(sessionId).replaceAll('+', '%20')}/remove',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteTokenResponse.fromJson(response);
@@ -481,7 +486,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/${Uri.encodeComponent(appId)}/api/${Uri.encodeComponent(backendEnvironmentName)}/generateModels',
+          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/api/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/generateModels',
       exceptionFnMap: _exceptionFns,
     );
     return GenerateBackendAPIModelsResponse.fromJson(response);
@@ -510,7 +515,8 @@ class AmplifyBackend {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/backend/${Uri.encodeComponent(appId)}/details',
+      requestUri:
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/details',
       exceptionFnMap: _exceptionFns,
     );
     return GetBackendResponse.fromJson(response);
@@ -549,7 +555,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/${Uri.encodeComponent(appId)}/api/${Uri.encodeComponent(backendEnvironmentName)}/details',
+          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/api/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/details',
       exceptionFnMap: _exceptionFns,
     );
     return GetBackendAPIResponse.fromJson(response);
@@ -582,7 +588,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/${Uri.encodeComponent(appId)}/api/${Uri.encodeComponent(backendEnvironmentName)}/getModels',
+          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/api/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/getModels',
       exceptionFnMap: _exceptionFns,
     );
     return GetBackendAPIModelsResponse.fromJson(response);
@@ -615,7 +621,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/${Uri.encodeComponent(appId)}/auth/${Uri.encodeComponent(backendEnvironmentName)}/details',
+          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/auth/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/details',
       exceptionFnMap: _exceptionFns,
     );
     return GetBackendAuthResponse.fromJson(response);
@@ -645,7 +651,7 @@ class AmplifyBackend {
       payload: null,
       method: 'GET',
       requestUri:
-          '/backend/${Uri.encodeComponent(appId)}/job/${Uri.encodeComponent(backendEnvironmentName)}/${Uri.encodeComponent(jobId)}',
+          '/backend/%2524%257BUri.encodeQueryComponent%2528appId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/job/%24%7BUri.encodeQueryComponent%28backendEnvironmentName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetBackendJobResponse.fromJson(response);
@@ -678,7 +684,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/${Uri.encodeComponent(appId)}/storage/${Uri.encodeComponent(backendEnvironmentName)}/details',
+          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/storage/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/details',
       exceptionFnMap: _exceptionFns,
     );
     return GetBackendStorageResponse.fromJson(response);
@@ -704,7 +710,7 @@ class AmplifyBackend {
       payload: null,
       method: 'GET',
       requestUri:
-          '/backend/${Uri.encodeComponent(appId)}/challenge/${Uri.encodeComponent(sessionId)}',
+          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/challenge/${Uri.encodeQueryComponent(sessionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetTokenResponse.fromJson(response);
@@ -752,7 +758,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/${Uri.encodeComponent(appId)}/auth/${Uri.encodeComponent(backendEnvironmentName)}/import',
+          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/auth/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/import',
       exceptionFnMap: _exceptionFns,
     );
     return ImportBackendAuthResponse.fromJson(response);
@@ -790,7 +796,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/${Uri.encodeComponent(appId)}/storage/${Uri.encodeComponent(backendEnvironmentName)}/import',
+          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/storage/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/import',
       exceptionFnMap: _exceptionFns,
     );
     return ImportBackendStorageResponse.fromJson(response);
@@ -851,7 +857,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/${Uri.encodeComponent(appId)}/job/${Uri.encodeComponent(backendEnvironmentName)}',
+          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/job/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListBackendJobsResponse.fromJson(response);
@@ -903,7 +909,8 @@ class AmplifyBackend {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/backend/${Uri.encodeComponent(appId)}/remove',
+      requestUri:
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/remove',
       exceptionFnMap: _exceptionFns,
     );
     return RemoveAllBackendsResponse.fromJson(response);
@@ -924,7 +931,8 @@ class AmplifyBackend {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/backend/${Uri.encodeComponent(appId)}/config/remove',
+      requestUri:
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/config/remove',
       exceptionFnMap: _exceptionFns,
     );
     return RemoveBackendConfigResponse.fromJson(response);
@@ -963,7 +971,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/${Uri.encodeComponent(appId)}/api/${Uri.encodeComponent(backendEnvironmentName)}',
+          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/api/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBackendAPIResponse.fromJson(response);
@@ -1001,7 +1009,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/${Uri.encodeComponent(appId)}/auth/${Uri.encodeComponent(backendEnvironmentName)}',
+          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/auth/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBackendAuthResponse.fromJson(response);
@@ -1029,7 +1037,8 @@ class AmplifyBackend {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/backend/${Uri.encodeComponent(appId)}/config/update',
+      requestUri:
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/config/update',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBackendConfigResponse.fromJson(response);
@@ -1073,7 +1082,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/${Uri.encodeComponent(appId)}/job/${Uri.encodeComponent(backendEnvironmentName)}/${Uri.encodeComponent(jobId)}',
+          '/backend/%2524%257BUri.encodeQueryComponent%2528appId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/job/%24%7BUri.encodeQueryComponent%28backendEnvironmentName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBackendJobResponse.fromJson(response);
@@ -1111,7 +1120,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/${Uri.encodeComponent(appId)}/storage/${Uri.encodeComponent(backendEnvironmentName)}',
+          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/storage/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBackendStorageResponse.fromJson(response);

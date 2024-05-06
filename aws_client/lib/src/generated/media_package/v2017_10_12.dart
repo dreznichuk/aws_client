@@ -72,7 +72,8 @@ class MediaPackage {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/channels/${Uri.encodeComponent(id)}/configure_logs',
+      requestUri:
+          '/channels/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/configure_logs',
       exceptionFnMap: _exceptionFns,
     );
     return ConfigureLogsResponse.fromJson(response);
@@ -261,7 +262,8 @@ class MediaPackage {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/channels/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/channels/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -283,7 +285,8 @@ class MediaPackage {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/origin_endpoints/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/origin_endpoints/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -305,7 +308,8 @@ class MediaPackage {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/channels/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/channels/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeChannelResponse.fromJson(response);
@@ -328,7 +332,8 @@ class MediaPackage {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/harvest_jobs/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/harvest_jobs/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeHarvestJobResponse.fromJson(response);
@@ -351,7 +356,8 @@ class MediaPackage {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/origin_endpoints/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/origin_endpoints/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeOriginEndpointResponse.fromJson(response);
@@ -495,7 +501,8 @@ class MediaPackage {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -522,7 +529,8 @@ class MediaPackage {
     final response = await _protocol.send(
       payload: null,
       method: 'PUT',
-      requestUri: '/channels/${Uri.encodeComponent(id)}/credentials',
+      requestUri:
+          '/channels/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/credentials',
       exceptionFnMap: _exceptionFns,
     );
     return RotateChannelCredentialsResponse.fromJson(response);
@@ -552,7 +560,7 @@ class MediaPackage {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/channels/${Uri.encodeComponent(id)}/ingest_endpoints/${Uri.encodeComponent(ingestEndpointId)}/credentials',
+          '/channels/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/ingest_endpoints/${Uri.encodeQueryComponent(ingestEndpointId).replaceAll('+', '%20')}/credentials',
       exceptionFnMap: _exceptionFns,
     );
     return RotateIngestEndpointCredentialsResponse.fromJson(response);
@@ -568,7 +576,8 @@ class MediaPackage {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -586,7 +595,8 @@ class MediaPackage {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -616,7 +626,8 @@ class MediaPackage {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/channels/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/channels/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateChannelResponse.fromJson(response);
@@ -692,7 +703,8 @@ class MediaPackage {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/origin_endpoints/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/origin_endpoints/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateOriginEndpointResponse.fromJson(response);

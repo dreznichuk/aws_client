@@ -323,7 +323,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'POST',
       requestUri:
-          '/2019-03-26/distribution/${Uri.encodeComponent(distributionId)}/invalidation',
+          '/2019-03-26/distribution/${Uri.encodeQueryComponent(distributionId).replaceAll('+', '%20')}/invalidation',
       payload: invalidationBatch.toXml('InvalidationBatch'),
       exceptionFnMap: _exceptionFns,
     );
@@ -489,7 +489,7 @@ class CloudFront {
     await _protocol.send(
       method: 'DELETE',
       requestUri:
-          '/2019-03-26/origin-access-identity/cloudfront/${Uri.encodeComponent(id)}',
+          '/2019-03-26/origin-access-identity/cloudfront/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -518,7 +518,8 @@ class CloudFront {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/2019-03-26/distribution/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/2019-03-26/distribution/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -549,7 +550,7 @@ class CloudFront {
     await _protocol.send(
       method: 'DELETE',
       requestUri:
-          '/2019-03-26/field-level-encryption/${Uri.encodeComponent(id)}',
+          '/2019-03-26/field-level-encryption/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -580,7 +581,7 @@ class CloudFront {
     await _protocol.send(
       method: 'DELETE',
       requestUri:
-          '/2019-03-26/field-level-encryption-profile/${Uri.encodeComponent(id)}',
+          '/2019-03-26/field-level-encryption-profile/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -610,7 +611,8 @@ class CloudFront {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/2019-03-26/public-key/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/2019-03-26/public-key/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -689,7 +691,7 @@ class CloudFront {
     await _protocol.send(
       method: 'DELETE',
       requestUri:
-          '/2019-03-26/streaming-distribution/${Uri.encodeComponent(id)}',
+          '/2019-03-26/streaming-distribution/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -709,7 +711,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2019-03-26/origin-access-identity/cloudfront/${Uri.encodeComponent(id)}',
+          '/2019-03-26/origin-access-identity/cloudfront/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -734,7 +736,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2019-03-26/origin-access-identity/cloudfront/${Uri.encodeComponent(id)}/config',
+          '/2019-03-26/origin-access-identity/cloudfront/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -758,7 +760,8 @@ class CloudFront {
   }) async {
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/2019-03-26/distribution/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/2019-03-26/distribution/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -781,7 +784,8 @@ class CloudFront {
   }) async {
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/2019-03-26/distribution/${Uri.encodeComponent(id)}/config',
+      requestUri:
+          '/2019-03-26/distribution/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -804,7 +808,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2019-03-26/field-level-encryption/${Uri.encodeComponent(id)}',
+          '/2019-03-26/field-level-encryption/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -828,7 +832,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2019-03-26/field-level-encryption/${Uri.encodeComponent(id)}/config',
+          '/2019-03-26/field-level-encryption/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -852,7 +856,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2019-03-26/field-level-encryption-profile/${Uri.encodeComponent(id)}',
+          '/2019-03-26/field-level-encryption-profile/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -877,7 +881,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2019-03-26/field-level-encryption-profile/${Uri.encodeComponent(id)}/config',
+          '/2019-03-26/field-level-encryption-profile/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -907,7 +911,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2019-03-26/distribution/${Uri.encodeComponent(distributionId)}/invalidation/${Uri.encodeComponent(id)}',
+          '/2019-03-26/distribution/%24%7BUri.encodeQueryComponent%28distributionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/invalidation/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -928,7 +932,8 @@ class CloudFront {
   }) async {
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/2019-03-26/public-key/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/2019-03-26/public-key/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -950,7 +955,8 @@ class CloudFront {
   }) async {
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/2019-03-26/public-key/${Uri.encodeComponent(id)}/config',
+      requestUri:
+          '/2019-03-26/public-key/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -974,7 +980,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2019-03-26/streaming-distribution/${Uri.encodeComponent(id)}',
+          '/2019-03-26/streaming-distribution/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -998,7 +1004,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2019-03-26/streaming-distribution/${Uri.encodeComponent(id)}/config',
+          '/2019-03-26/streaming-distribution/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -1114,7 +1120,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2019-03-26/distributionsByWebACLId/${Uri.encodeComponent(webACLId)}',
+          '/2019-03-26/distributionsByWebACLId/${Uri.encodeQueryComponent(webACLId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1231,7 +1237,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2019-03-26/distribution/${Uri.encodeComponent(distributionId)}/invalidation',
+          '/2019-03-26/distribution/${Uri.encodeQueryComponent(distributionId).replaceAll('+', '%20')}/invalidation',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1423,7 +1429,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'PUT',
       requestUri:
-          '/2019-03-26/origin-access-identity/cloudfront/${Uri.encodeComponent(id)}/config',
+          '/2019-03-26/origin-access-identity/cloudfront/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       headers: headers,
       payload: cloudFrontOriginAccessIdentityConfig
           .toXml('CloudFrontOriginAccessIdentityConfig'),
@@ -1591,7 +1597,8 @@ class CloudFront {
     };
     final $result = await _protocol.sendRaw(
       method: 'PUT',
-      requestUri: '/2019-03-26/distribution/${Uri.encodeComponent(id)}/config',
+      requestUri:
+          '/2019-03-26/distribution/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       headers: headers,
       payload: distributionConfig.toXml('DistributionConfig'),
       exceptionFnMap: _exceptionFns,
@@ -1639,7 +1646,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'PUT',
       requestUri:
-          '/2019-03-26/field-level-encryption/${Uri.encodeComponent(id)}/config',
+          '/2019-03-26/field-level-encryption/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       headers: headers,
       payload: fieldLevelEncryptionConfig.toXml('FieldLevelEncryptionConfig'),
       exceptionFnMap: _exceptionFns,
@@ -1689,7 +1696,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'PUT',
       requestUri:
-          '/2019-03-26/field-level-encryption-profile/${Uri.encodeComponent(id)}/config',
+          '/2019-03-26/field-level-encryption-profile/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       headers: headers,
       payload: fieldLevelEncryptionProfileConfig
           .toXml('FieldLevelEncryptionProfileConfig'),
@@ -1733,7 +1740,8 @@ class CloudFront {
     };
     final $result = await _protocol.sendRaw(
       method: 'PUT',
-      requestUri: '/2019-03-26/public-key/${Uri.encodeComponent(id)}/config',
+      requestUri:
+          '/2019-03-26/public-key/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       headers: headers,
       payload: publicKeyConfig.toXml('PublicKeyConfig'),
       exceptionFnMap: _exceptionFns,
@@ -1783,7 +1791,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'PUT',
       requestUri:
-          '/2019-03-26/streaming-distribution/${Uri.encodeComponent(id)}/config',
+          '/2019-03-26/streaming-distribution/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       headers: headers,
       payload: streamingDistributionConfig.toXml('StreamingDistributionConfig'),
       exceptionFnMap: _exceptionFns,

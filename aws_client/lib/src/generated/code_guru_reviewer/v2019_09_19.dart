@@ -238,7 +238,8 @@ class CodeGuruReviewer {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/codereviews/${Uri.encodeComponent(codeReviewArn)}',
+      requestUri:
+          '/codereviews/${Uri.encodeQueryComponent(codeReviewArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeCodeReviewResponse.fromJson(response);
@@ -284,7 +285,8 @@ class CodeGuruReviewer {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/feedback/${Uri.encodeComponent(codeReviewArn)}',
+      requestUri:
+          '/feedback/${Uri.encodeQueryComponent(codeReviewArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -313,7 +315,8 @@ class CodeGuruReviewer {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/associations/${Uri.encodeComponent(associationArn)}',
+      requestUri:
+          '/associations/${Uri.encodeQueryComponent(associationArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeRepositoryAssociationResponse.fromJson(response);
@@ -339,7 +342,8 @@ class CodeGuruReviewer {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/associations/${Uri.encodeComponent(associationArn)}',
+      requestUri:
+          '/associations/${Uri.encodeQueryComponent(associationArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DisassociateRepositoryResponse.fromJson(response);
@@ -493,7 +497,7 @@ class CodeGuruReviewer {
       payload: null,
       method: 'GET',
       requestUri:
-          '/feedback/${Uri.encodeComponent(codeReviewArn)}/RecommendationFeedback',
+          '/feedback/${Uri.encodeQueryComponent(codeReviewArn).replaceAll('+', '%20')}/RecommendationFeedback',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -538,7 +542,7 @@ class CodeGuruReviewer {
       payload: null,
       method: 'GET',
       requestUri:
-          '/codereviews/${Uri.encodeComponent(codeReviewArn)}/Recommendations',
+          '/codereviews/${Uri.encodeQueryComponent(codeReviewArn).replaceAll('+', '%20')}/Recommendations',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -694,7 +698,8 @@ class CodeGuruReviewer {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -779,7 +784,8 @@ class CodeGuruReviewer {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -809,7 +815,8 @@ class CodeGuruReviewer {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

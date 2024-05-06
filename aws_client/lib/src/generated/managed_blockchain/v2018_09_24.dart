@@ -167,7 +167,8 @@ class ManagedBlockchain {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/networks/${Uri.encodeComponent(networkId)}/members',
+      requestUri:
+          '/networks/${Uri.encodeQueryComponent(networkId).replaceAll('+', '%20')}/members',
       exceptionFnMap: _exceptionFns,
     );
     return CreateMemberOutput.fromJson(response);
@@ -337,7 +338,8 @@ class ManagedBlockchain {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/networks/${Uri.encodeComponent(networkId)}/nodes',
+      requestUri:
+          '/networks/${Uri.encodeQueryComponent(networkId).replaceAll('+', '%20')}/nodes',
       exceptionFnMap: _exceptionFns,
     );
     return CreateNodeOutput.fromJson(response);
@@ -415,7 +417,8 @@ class ManagedBlockchain {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/networks/${Uri.encodeComponent(networkId)}/proposals',
+      requestUri:
+          '/networks/${Uri.encodeQueryComponent(networkId).replaceAll('+', '%20')}/proposals',
       exceptionFnMap: _exceptionFns,
     );
     return CreateProposalOutput.fromJson(response);
@@ -446,7 +449,8 @@ class ManagedBlockchain {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/accessors/${Uri.encodeComponent(accessorId)}',
+      requestUri:
+          '/accessors/${Uri.encodeQueryComponent(accessorId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -482,7 +486,7 @@ class ManagedBlockchain {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/networks/${Uri.encodeComponent(networkId)}/members/${Uri.encodeComponent(memberId)}',
+          '/networks/${Uri.encodeQueryComponent(networkId).replaceAll('+', '%20')}/members/%24%7BUri.encodeQueryComponent%28memberId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -535,7 +539,7 @@ class ManagedBlockchain {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/networks/${Uri.encodeComponent(networkId)}/nodes/${Uri.encodeComponent(nodeId)}',
+          '/networks/%24%7BUri.encodeQueryComponent%28networkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/nodes/${Uri.encodeQueryComponent(nodeId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -559,7 +563,8 @@ class ManagedBlockchain {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/accessors/${Uri.encodeComponent(accessorId)}',
+      requestUri:
+          '/accessors/${Uri.encodeQueryComponent(accessorId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetAccessorOutput.fromJson(response);
@@ -588,7 +593,7 @@ class ManagedBlockchain {
       payload: null,
       method: 'GET',
       requestUri:
-          '/networks/${Uri.encodeComponent(networkId)}/members/${Uri.encodeComponent(memberId)}',
+          '/networks/${Uri.encodeQueryComponent(networkId).replaceAll('+', '%20')}/members/%24%7BUri.encodeQueryComponent%28memberId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetMemberOutput.fromJson(response);
@@ -612,7 +617,8 @@ class ManagedBlockchain {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/networks/${Uri.encodeComponent(networkId)}',
+      requestUri:
+          '/networks/${Uri.encodeQueryComponent(networkId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetNetworkOutput.fromJson(response);
@@ -650,7 +656,7 @@ class ManagedBlockchain {
       payload: null,
       method: 'GET',
       requestUri:
-          '/networks/${Uri.encodeComponent(networkId)}/nodes/${Uri.encodeComponent(nodeId)}',
+          '/networks/%24%7BUri.encodeQueryComponent%28networkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/nodes/${Uri.encodeQueryComponent(nodeId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -680,7 +686,7 @@ class ManagedBlockchain {
       payload: null,
       method: 'GET',
       requestUri:
-          '/networks/${Uri.encodeComponent(networkId)}/proposals/${Uri.encodeComponent(proposalId)}',
+          '/networks/%24%7BUri.encodeQueryComponent%28networkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/proposals/${Uri.encodeQueryComponent(proposalId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetProposalOutput.fromJson(response);
@@ -820,7 +826,8 @@ class ManagedBlockchain {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/networks/${Uri.encodeComponent(networkId)}/members',
+      requestUri:
+          '/networks/${Uri.encodeQueryComponent(networkId).replaceAll('+', '%20')}/members',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -933,7 +940,8 @@ class ManagedBlockchain {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/networks/${Uri.encodeComponent(networkId)}/nodes',
+      requestUri:
+          '/networks/${Uri.encodeQueryComponent(networkId).replaceAll('+', '%20')}/nodes',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -981,7 +989,7 @@ class ManagedBlockchain {
       payload: null,
       method: 'GET',
       requestUri:
-          '/networks/${Uri.encodeComponent(networkId)}/proposals/${Uri.encodeComponent(proposalId)}/votes',
+          '/networks/%24%7BUri.encodeQueryComponent%28networkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/proposals/${Uri.encodeQueryComponent(proposalId).replaceAll('+', '%20')}/votes',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1024,7 +1032,8 @@ class ManagedBlockchain {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/networks/${Uri.encodeComponent(networkId)}/proposals',
+      requestUri:
+          '/networks/${Uri.encodeQueryComponent(networkId).replaceAll('+', '%20')}/proposals',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1059,7 +1068,8 @@ class ManagedBlockchain {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1086,7 +1096,8 @@ class ManagedBlockchain {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/invitations/${Uri.encodeComponent(invitationId)}',
+      requestUri:
+          '/invitations/${Uri.encodeQueryComponent(invitationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1137,7 +1148,8 @@ class ManagedBlockchain {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1176,7 +1188,8 @@ class ManagedBlockchain {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1214,7 +1227,7 @@ class ManagedBlockchain {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/networks/${Uri.encodeComponent(networkId)}/members/${Uri.encodeComponent(memberId)}',
+          '/networks/${Uri.encodeQueryComponent(networkId).replaceAll('+', '%20')}/members/%24%7BUri.encodeQueryComponent%28memberId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1257,7 +1270,7 @@ class ManagedBlockchain {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/networks/${Uri.encodeComponent(networkId)}/nodes/${Uri.encodeComponent(nodeId)}',
+          '/networks/%24%7BUri.encodeQueryComponent%28networkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/nodes/${Uri.encodeQueryComponent(nodeId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1301,7 +1314,7 @@ class ManagedBlockchain {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/networks/${Uri.encodeComponent(networkId)}/proposals/${Uri.encodeComponent(proposalId)}/votes',
+          '/networks/%24%7BUri.encodeQueryComponent%28networkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/proposals/${Uri.encodeQueryComponent(proposalId).replaceAll('+', '%20')}/votes',
       exceptionFnMap: _exceptionFns,
     );
   }

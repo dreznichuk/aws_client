@@ -71,7 +71,8 @@ class Outposts {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/orders/${Uri.encodeComponent(orderId)}/cancel',
+      requestUri:
+          '/orders/${Uri.encodeQueryComponent(orderId).replaceAll('+', '%20')}/cancel',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -237,7 +238,8 @@ class Outposts {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/outposts/${Uri.encodeComponent(outpostId)}',
+      requestUri:
+          '/outposts/${Uri.encodeQueryComponent(outpostId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -258,7 +260,8 @@ class Outposts {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/sites/${Uri.encodeComponent(siteId)}',
+      requestUri:
+          '/sites/${Uri.encodeQueryComponent(siteId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -277,7 +280,8 @@ class Outposts {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/catalog/item/${Uri.encodeComponent(catalogItemId)}',
+      requestUri:
+          '/catalog/item/${Uri.encodeQueryComponent(catalogItemId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetCatalogItemOutput.fromJson(response);
@@ -311,7 +315,8 @@ class Outposts {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/connections/${Uri.encodeComponent(connectionId)}',
+      requestUri:
+          '/connections/${Uri.encodeQueryComponent(connectionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetConnectionResponse.fromJson(response);
@@ -331,7 +336,8 @@ class Outposts {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/orders/${Uri.encodeComponent(orderId)}',
+      requestUri:
+          '/orders/${Uri.encodeQueryComponent(orderId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetOrderOutput.fromJson(response);
@@ -352,7 +358,8 @@ class Outposts {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/outposts/${Uri.encodeComponent(outpostId)}',
+      requestUri:
+          '/outposts/${Uri.encodeQueryComponent(outpostId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetOutpostOutput.fromJson(response);
@@ -385,7 +392,8 @@ class Outposts {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/outposts/${Uri.encodeComponent(outpostId)}/instanceTypes',
+      requestUri:
+          '/outposts/${Uri.encodeQueryComponent(outpostId).replaceAll('+', '%20')}/instanceTypes',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -407,7 +415,8 @@ class Outposts {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/sites/${Uri.encodeComponent(siteId)}',
+      requestUri:
+          '/sites/${Uri.encodeQueryComponent(siteId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSiteOutput.fromJson(response);
@@ -435,7 +444,8 @@ class Outposts {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/sites/${Uri.encodeComponent(siteId)}/address',
+      requestUri:
+          '/sites/${Uri.encodeQueryComponent(siteId).replaceAll('+', '%20')}/address',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -486,7 +496,8 @@ class Outposts {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/outposts/${Uri.encodeComponent(outpostIdentifier)}/assets',
+      requestUri:
+          '/outposts/${Uri.encodeQueryComponent(outpostIdentifier).replaceAll('+', '%20')}/assets',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -705,7 +716,8 @@ class Outposts {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -791,7 +803,8 @@ class Outposts {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -817,7 +830,8 @@ class Outposts {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -851,7 +865,8 @@ class Outposts {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/outposts/${Uri.encodeComponent(outpostId)}',
+      requestUri:
+          '/outposts/${Uri.encodeQueryComponent(outpostId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateOutpostOutput.fromJson(response);
@@ -884,7 +899,8 @@ class Outposts {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/sites/${Uri.encodeComponent(siteId)}',
+      requestUri:
+          '/sites/${Uri.encodeQueryComponent(siteId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSiteOutput.fromJson(response);
@@ -924,7 +940,8 @@ class Outposts {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/sites/${Uri.encodeComponent(siteId)}/address',
+      requestUri:
+          '/sites/${Uri.encodeQueryComponent(siteId).replaceAll('+', '%20')}/address',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSiteAddressOutput.fromJson(response);
@@ -1105,7 +1122,7 @@ class Outposts {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/sites/${Uri.encodeComponent(siteId)}/rackPhysicalProperties',
+          '/sites/${Uri.encodeQueryComponent(siteId).replaceAll('+', '%20')}/rackPhysicalProperties',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSiteRackPhysicalPropertiesOutput.fromJson(response);

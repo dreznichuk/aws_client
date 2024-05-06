@@ -94,7 +94,7 @@ class EmrServerless {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/jobruns/${Uri.encodeComponent(jobRunId)}',
+          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/jobruns/${Uri.encodeQueryComponent(jobRunId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CancelJobRunResponse.fromJson(response);
@@ -217,7 +217,8 @@ class EmrServerless {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -236,7 +237,8 @@ class EmrServerless {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetApplicationResponse.fromJson(response);
@@ -263,7 +265,7 @@ class EmrServerless {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/jobruns/${Uri.encodeComponent(jobRunId)}/dashboard',
+          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/jobruns/${Uri.encodeQueryComponent(jobRunId).replaceAll('+', '%20')}/dashboard',
       exceptionFnMap: _exceptionFns,
     );
     return GetDashboardForJobRunResponse.fromJson(response);
@@ -288,7 +290,7 @@ class EmrServerless {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/${Uri.encodeComponent(applicationId)}/jobruns/${Uri.encodeComponent(jobRunId)}',
+          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/jobruns/${Uri.encodeQueryComponent(jobRunId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetJobRunResponse.fromJson(response);
@@ -383,7 +385,8 @@ class EmrServerless {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}/jobruns',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/jobruns',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -406,7 +409,8 @@ class EmrServerless {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -428,7 +432,8 @@ class EmrServerless {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}/start',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/start',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -495,7 +500,8 @@ class EmrServerless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}/jobruns',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/jobruns',
       exceptionFnMap: _exceptionFns,
     );
     return StartJobRunResponse.fromJson(response);
@@ -517,7 +523,8 @@ class EmrServerless {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}/stop',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/stop',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -550,7 +557,8 @@ class EmrServerless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -578,7 +586,8 @@ class EmrServerless {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -661,7 +670,8 @@ class EmrServerless {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/applications/${Uri.encodeComponent(applicationId)}',
+      requestUri:
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateApplicationResponse.fromJson(response);

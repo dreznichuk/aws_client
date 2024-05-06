@@ -89,7 +89,7 @@ class CloudFront {
     await _protocol.send(
       method: 'PUT',
       requestUri:
-          '/2020-05-31/distribution/${Uri.encodeComponent(targetDistributionId)}/associate-alias',
+          '/2020-05-31/distribution/${Uri.encodeQueryComponent(targetDistributionId).replaceAll('+', '%20')}/associate-alias',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -201,7 +201,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'POST',
       requestUri:
-          '/2020-05-31/distribution/${Uri.encodeComponent(primaryDistributionId)}/copy',
+          '/2020-05-31/distribution/${Uri.encodeQueryComponent(primaryDistributionId).replaceAll('+', '%20')}/copy',
       headers: headers,
       payload: CopyDistributionRequest(
               callerReference: callerReference,
@@ -685,7 +685,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'POST',
       requestUri:
-          '/2020-05-31/distribution/${Uri.encodeComponent(distributionId)}/invalidation',
+          '/2020-05-31/distribution/${Uri.encodeQueryComponent(distributionId).replaceAll('+', '%20')}/invalidation',
       payload: invalidationBatch.toXml('InvalidationBatch'),
       exceptionFnMap: _exceptionFns,
     );
@@ -763,7 +763,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'POST',
       requestUri:
-          '/2020-05-31/distributions/${Uri.encodeComponent(distributionId)}/monitoring-subscription/',
+          '/2020-05-31/distributions/${Uri.encodeQueryComponent(distributionId).replaceAll('+', '%20')}/monitoring-subscription/',
       payload: monitoringSubscription.toXml('MonitoringSubscription'),
       exceptionFnMap: _exceptionFns,
     );
@@ -1127,7 +1127,8 @@ class CloudFront {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/2020-05-31/cache-policy/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/2020-05-31/cache-policy/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1158,7 +1159,7 @@ class CloudFront {
     await _protocol.send(
       method: 'DELETE',
       requestUri:
-          '/2020-05-31/origin-access-identity/cloudfront/${Uri.encodeComponent(id)}',
+          '/2020-05-31/origin-access-identity/cloudfront/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1193,7 +1194,7 @@ class CloudFront {
     await _protocol.send(
       method: 'DELETE',
       requestUri:
-          '/2020-05-31/continuous-deployment-policy/${Uri.encodeComponent(id)}',
+          '/2020-05-31/continuous-deployment-policy/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1222,7 +1223,8 @@ class CloudFront {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/2020-05-31/distribution/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/2020-05-31/distribution/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1253,7 +1255,7 @@ class CloudFront {
     await _protocol.send(
       method: 'DELETE',
       requestUri:
-          '/2020-05-31/field-level-encryption/${Uri.encodeComponent(id)}',
+          '/2020-05-31/field-level-encryption/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1284,7 +1286,7 @@ class CloudFront {
     await _protocol.send(
       method: 'DELETE',
       requestUri:
-          '/2020-05-31/field-level-encryption-profile/${Uri.encodeComponent(id)}',
+          '/2020-05-31/field-level-encryption-profile/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1321,7 +1323,8 @@ class CloudFront {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/2020-05-31/function/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/2020-05-31/function/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1359,7 +1362,8 @@ class CloudFront {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/2020-05-31/key-group/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/2020-05-31/key-group/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1381,7 +1385,7 @@ class CloudFront {
     await _protocol.send(
       method: 'DELETE',
       requestUri:
-          '/2020-05-31/distributions/${Uri.encodeComponent(distributionId)}/monitoring-subscription/',
+          '/2020-05-31/distributions/${Uri.encodeQueryComponent(distributionId).replaceAll('+', '%20')}/monitoring-subscription/',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1414,7 +1418,7 @@ class CloudFront {
     await _protocol.send(
       method: 'DELETE',
       requestUri:
-          '/2020-05-31/origin-access-control/${Uri.encodeComponent(id)}',
+          '/2020-05-31/origin-access-control/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1458,7 +1462,7 @@ class CloudFront {
     await _protocol.send(
       method: 'DELETE',
       requestUri:
-          '/2020-05-31/origin-request-policy/${Uri.encodeComponent(id)}',
+          '/2020-05-31/origin-request-policy/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1488,7 +1492,8 @@ class CloudFront {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/2020-05-31/public-key/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/2020-05-31/public-key/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1576,7 +1581,7 @@ class CloudFront {
     await _protocol.send(
       method: 'DELETE',
       requestUri:
-          '/2020-05-31/response-headers-policy/${Uri.encodeComponent(id)}',
+          '/2020-05-31/response-headers-policy/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1655,7 +1660,7 @@ class CloudFront {
     await _protocol.send(
       method: 'DELETE',
       requestUri:
-          '/2020-05-31/streaming-distribution/${Uri.encodeComponent(id)}',
+          '/2020-05-31/streaming-distribution/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1687,7 +1692,8 @@ class CloudFront {
     };
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/2020-05-31/function/${Uri.encodeComponent(name)}/describe',
+      requestUri:
+          '/2020-05-31/function/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/describe',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1730,7 +1736,8 @@ class CloudFront {
   }) async {
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/2020-05-31/cache-policy/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/2020-05-31/cache-policy/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -1764,7 +1771,8 @@ class CloudFront {
   }) async {
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/2020-05-31/cache-policy/${Uri.encodeComponent(id)}/config',
+      requestUri:
+          '/2020-05-31/cache-policy/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -1788,7 +1796,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/origin-access-identity/cloudfront/${Uri.encodeComponent(id)}',
+          '/2020-05-31/origin-access-identity/cloudfront/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -1813,7 +1821,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/origin-access-identity/cloudfront/${Uri.encodeComponent(id)}/config',
+          '/2020-05-31/origin-access-identity/cloudfront/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -1839,7 +1847,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/continuous-deployment-policy/${Uri.encodeComponent(id)}',
+          '/2020-05-31/continuous-deployment-policy/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -1864,7 +1872,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/continuous-deployment-policy/${Uri.encodeComponent(id)}/config',
+          '/2020-05-31/continuous-deployment-policy/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -1888,7 +1896,8 @@ class CloudFront {
   }) async {
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/2020-05-31/distribution/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/2020-05-31/distribution/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -1911,7 +1920,8 @@ class CloudFront {
   }) async {
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/2020-05-31/distribution/${Uri.encodeComponent(id)}/config',
+      requestUri:
+          '/2020-05-31/distribution/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -1934,7 +1944,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/field-level-encryption/${Uri.encodeComponent(id)}',
+          '/2020-05-31/field-level-encryption/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -1958,7 +1968,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/field-level-encryption/${Uri.encodeComponent(id)}/config',
+          '/2020-05-31/field-level-encryption/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -1982,7 +1992,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/field-level-encryption-profile/${Uri.encodeComponent(id)}',
+          '/2020-05-31/field-level-encryption-profile/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -2007,7 +2017,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/field-level-encryption-profile/${Uri.encodeComponent(id)}/config',
+          '/2020-05-31/field-level-encryption-profile/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -2042,7 +2052,8 @@ class CloudFront {
     };
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/2020-05-31/function/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/2020-05-31/function/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2072,7 +2083,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/distribution/${Uri.encodeComponent(distributionId)}/invalidation/${Uri.encodeComponent(id)}',
+          '/2020-05-31/distribution/%24%7BUri.encodeQueryComponent%28distributionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/invalidation/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -2101,7 +2112,8 @@ class CloudFront {
   }) async {
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/2020-05-31/key-group/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/2020-05-31/key-group/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -2130,7 +2142,8 @@ class CloudFront {
   }) async {
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/2020-05-31/key-group/${Uri.encodeComponent(id)}/config',
+      requestUri:
+          '/2020-05-31/key-group/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -2156,7 +2169,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/distributions/${Uri.encodeComponent(distributionId)}/monitoring-subscription/',
+          '/2020-05-31/distributions/${Uri.encodeQueryComponent(distributionId).replaceAll('+', '%20')}/monitoring-subscription/',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -2178,7 +2191,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/origin-access-control/${Uri.encodeComponent(id)}',
+          '/2020-05-31/origin-access-control/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -2202,7 +2215,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/origin-access-control/${Uri.encodeComponent(id)}/config',
+          '/2020-05-31/origin-access-control/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -2245,7 +2258,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/origin-request-policy/${Uri.encodeComponent(id)}',
+          '/2020-05-31/origin-request-policy/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -2281,7 +2294,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/origin-request-policy/${Uri.encodeComponent(id)}/config',
+          '/2020-05-31/origin-request-policy/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -2303,7 +2316,8 @@ class CloudFront {
   }) async {
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/2020-05-31/public-key/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/2020-05-31/public-key/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -2325,7 +2339,8 @@ class CloudFront {
   }) async {
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/2020-05-31/public-key/${Uri.encodeComponent(id)}/config',
+      requestUri:
+          '/2020-05-31/public-key/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -2397,7 +2412,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/response-headers-policy/${Uri.encodeComponent(id)}',
+          '/2020-05-31/response-headers-policy/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -2434,7 +2449,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/response-headers-policy/${Uri.encodeComponent(id)}/config',
+          '/2020-05-31/response-headers-policy/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -2458,7 +2473,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/streaming-distribution/${Uri.encodeComponent(id)}',
+          '/2020-05-31/streaming-distribution/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -2482,7 +2497,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/streaming-distribution/${Uri.encodeComponent(id)}/config',
+          '/2020-05-31/streaming-distribution/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);
@@ -2794,7 +2809,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/distributionsByCachePolicyId/${Uri.encodeComponent(cachePolicyId)}',
+          '/2020-05-31/distributionsByCachePolicyId/${Uri.encodeQueryComponent(cachePolicyId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2842,7 +2857,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/distributionsByKeyGroupId/${Uri.encodeComponent(keyGroupId)}',
+          '/2020-05-31/distributionsByKeyGroupId/${Uri.encodeQueryComponent(keyGroupId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2892,7 +2907,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/distributionsByOriginRequestPolicyId/${Uri.encodeComponent(originRequestPolicyId)}',
+          '/2020-05-31/distributionsByOriginRequestPolicyId/${Uri.encodeQueryComponent(originRequestPolicyId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3007,7 +3022,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/distributionsByResponseHeadersPolicyId/${Uri.encodeComponent(responseHeadersPolicyId)}',
+          '/2020-05-31/distributionsByResponseHeadersPolicyId/${Uri.encodeQueryComponent(responseHeadersPolicyId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3051,7 +3066,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/distributionsByWebACLId/${Uri.encodeComponent(webACLId)}',
+          '/2020-05-31/distributionsByWebACLId/${Uri.encodeQueryComponent(webACLId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3218,7 +3233,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2020-05-31/distribution/${Uri.encodeComponent(distributionId)}/invalidation',
+          '/2020-05-31/distribution/${Uri.encodeQueryComponent(distributionId).replaceAll('+', '%20')}/invalidation',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3608,7 +3623,8 @@ class CloudFront {
     };
     final $result = await _protocol.sendRaw(
       method: 'POST',
-      requestUri: '/2020-05-31/function/${Uri.encodeComponent(name)}/publish',
+      requestUri:
+          '/2020-05-31/function/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/publish',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -3696,7 +3712,8 @@ class CloudFront {
     };
     final $result = await _protocol.sendRaw(
       method: 'POST',
-      requestUri: '/2020-05-31/function/${Uri.encodeComponent(name)}/test',
+      requestUri:
+          '/2020-05-31/function/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/test',
       headers: headers,
       payload: TestFunctionRequest(
               eventObject: eventObject,
@@ -3799,7 +3816,8 @@ class CloudFront {
     };
     final $result = await _protocol.sendRaw(
       method: 'PUT',
-      requestUri: '/2020-05-31/cache-policy/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/2020-05-31/cache-policy/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       headers: headers,
       payload: cachePolicyConfig.toXml('CachePolicyConfig'),
       exceptionFnMap: _exceptionFns,
@@ -3845,7 +3863,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'PUT',
       requestUri:
-          '/2020-05-31/origin-access-identity/cloudfront/${Uri.encodeComponent(id)}/config',
+          '/2020-05-31/origin-access-identity/cloudfront/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       headers: headers,
       payload: cloudFrontOriginAccessIdentityConfig
           .toXml('CloudFrontOriginAccessIdentityConfig'),
@@ -3912,7 +3930,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'PUT',
       requestUri:
-          '/2020-05-31/continuous-deployment-policy/${Uri.encodeComponent(id)}',
+          '/2020-05-31/continuous-deployment-policy/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       headers: headers,
       payload: continuousDeploymentPolicyConfig
           .toXml('ContinuousDeploymentPolicyConfig'),
@@ -4046,7 +4064,8 @@ class CloudFront {
     };
     final $result = await _protocol.sendRaw(
       method: 'PUT',
-      requestUri: '/2020-05-31/distribution/${Uri.encodeComponent(id)}/config',
+      requestUri:
+          '/2020-05-31/distribution/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       headers: headers,
       payload: distributionConfig.toXml('DistributionConfig'),
       exceptionFnMap: _exceptionFns,
@@ -4163,7 +4182,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'PUT',
       requestUri:
-          '/2020-05-31/distribution/${Uri.encodeComponent(id)}/promote-staging-config',
+          '/2020-05-31/distribution/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/promote-staging-config',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -4211,7 +4230,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'PUT',
       requestUri:
-          '/2020-05-31/field-level-encryption/${Uri.encodeComponent(id)}/config',
+          '/2020-05-31/field-level-encryption/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       headers: headers,
       payload: fieldLevelEncryptionConfig.toXml('FieldLevelEncryptionConfig'),
       exceptionFnMap: _exceptionFns,
@@ -4261,7 +4280,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'PUT',
       requestUri:
-          '/2020-05-31/field-level-encryption-profile/${Uri.encodeComponent(id)}/config',
+          '/2020-05-31/field-level-encryption-profile/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       headers: headers,
       payload: fieldLevelEncryptionProfileConfig
           .toXml('FieldLevelEncryptionProfileConfig'),
@@ -4318,7 +4337,8 @@ class CloudFront {
     };
     final $result = await _protocol.sendRaw(
       method: 'PUT',
-      requestUri: '/2020-05-31/function/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/2020-05-31/function/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       headers: headers,
       payload: UpdateFunctionRequest(
               functionCode: functionCode,
@@ -4386,7 +4406,8 @@ class CloudFront {
     };
     final $result = await _protocol.sendRaw(
       method: 'PUT',
-      requestUri: '/2020-05-31/key-group/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/2020-05-31/key-group/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       headers: headers,
       payload: keyGroupConfig.toXml('KeyGroupConfig'),
       exceptionFnMap: _exceptionFns,
@@ -4428,7 +4449,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'PUT',
       requestUri:
-          '/2020-05-31/origin-access-control/${Uri.encodeComponent(id)}/config',
+          '/2020-05-31/origin-access-control/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       headers: headers,
       payload: originAccessControlConfig.toXml('OriginAccessControlConfig'),
       exceptionFnMap: _exceptionFns,
@@ -4497,7 +4518,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'PUT',
       requestUri:
-          '/2020-05-31/origin-request-policy/${Uri.encodeComponent(id)}',
+          '/2020-05-31/origin-request-policy/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       headers: headers,
       payload: originRequestPolicyConfig.toXml('OriginRequestPolicyConfig'),
       exceptionFnMap: _exceptionFns,
@@ -4540,7 +4561,8 @@ class CloudFront {
     };
     final $result = await _protocol.sendRaw(
       method: 'PUT',
-      requestUri: '/2020-05-31/public-key/${Uri.encodeComponent(id)}/config',
+      requestUri:
+          '/2020-05-31/public-key/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       headers: headers,
       payload: publicKeyConfig.toXml('PublicKeyConfig'),
       exceptionFnMap: _exceptionFns,
@@ -4684,7 +4706,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'PUT',
       requestUri:
-          '/2020-05-31/response-headers-policy/${Uri.encodeComponent(id)}',
+          '/2020-05-31/response-headers-policy/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       headers: headers,
       payload: responseHeadersPolicyConfig.toXml('ResponseHeadersPolicyConfig'),
       exceptionFnMap: _exceptionFns,
@@ -4735,7 +4757,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'PUT',
       requestUri:
-          '/2020-05-31/streaming-distribution/${Uri.encodeComponent(id)}/config',
+          '/2020-05-31/streaming-distribution/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/config',
       headers: headers,
       payload: streamingDistributionConfig.toXml('StreamingDistributionConfig'),
       exceptionFnMap: _exceptionFns,

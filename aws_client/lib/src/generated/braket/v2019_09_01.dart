@@ -77,7 +77,8 @@ class Braket {
     final response = await _protocol.send(
       payload: null,
       method: 'PUT',
-      requestUri: '/job/${Uri.encodeComponent(jobArn)}/cancel',
+      requestUri:
+          '/job/${Uri.encodeQueryComponent(jobArn).replaceAll('+', '%20')}/cancel',
       exceptionFnMap: _exceptionFns,
     );
     return CancelJobResponse.fromJson(response);
@@ -107,7 +108,8 @@ class Braket {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/quantum-task/${Uri.encodeComponent(quantumTaskArn)}/cancel',
+      requestUri:
+          '/quantum-task/${Uri.encodeQueryComponent(quantumTaskArn).replaceAll('+', '%20')}/cancel',
       exceptionFnMap: _exceptionFns,
     );
     return CancelQuantumTaskResponse.fromJson(response);
@@ -311,7 +313,8 @@ class Braket {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/device/${Uri.encodeComponent(deviceArn)}',
+      requestUri:
+          '/device/${Uri.encodeQueryComponent(deviceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDeviceResponse.fromJson(response);
@@ -333,7 +336,8 @@ class Braket {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/job/${Uri.encodeComponent(jobArn)}',
+      requestUri:
+          '/job/${Uri.encodeQueryComponent(jobArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetJobResponse.fromJson(response);
@@ -355,7 +359,8 @@ class Braket {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/quantum-task/${Uri.encodeComponent(quantumTaskArn)}',
+      requestUri:
+          '/quantum-task/${Uri.encodeQueryComponent(quantumTaskArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetQuantumTaskResponse.fromJson(response);
@@ -376,7 +381,8 @@ class Braket {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -530,7 +536,8 @@ class Braket {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -557,7 +564,8 @@ class Braket {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
