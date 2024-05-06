@@ -68,7 +68,7 @@ class MediaStoreData {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/${path.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}',
+          '/${path.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -90,7 +90,7 @@ class MediaStoreData {
       payload: null,
       method: 'HEAD',
       requestUri:
-          '/${path.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}',
+          '/${path.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -163,7 +163,7 @@ class MediaStoreData {
       payload: null,
       method: 'GET',
       requestUri:
-          '/${path.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}',
+          '/${path.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -326,7 +326,7 @@ class MediaStoreData {
       payload: body,
       method: 'PUT',
       requestUri:
-          '/${path.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}',
+          '/${path.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
