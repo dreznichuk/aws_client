@@ -100,7 +100,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}/administrator',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/administrator',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -135,7 +136,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}/master',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/master',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -166,7 +168,7 @@ class GuardDuty {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/findings/archive',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/findings/archive',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -477,7 +479,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}/filter',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/filter',
       exceptionFnMap: _exceptionFns,
     );
     return CreateFilterResponse.fromJson(response);
@@ -537,7 +540,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}/ipset',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/ipset',
       exceptionFnMap: _exceptionFns,
     );
     return CreateIPSetResponse.fromJson(response);
@@ -577,7 +581,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}/member',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/member',
       exceptionFnMap: _exceptionFns,
     );
     return CreateMembersResponse.fromJson(response);
@@ -618,7 +623,7 @@ class GuardDuty {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/publishingDestination',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/publishingDestination',
       exceptionFnMap: _exceptionFns,
     );
     return CreatePublishingDestinationResponse.fromJson(response);
@@ -647,7 +652,7 @@ class GuardDuty {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/findings/create',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/findings/create',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -703,7 +708,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}/threatintelset',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/threatintelset',
       exceptionFnMap: _exceptionFns,
     );
     return CreateThreatIntelSetResponse.fromJson(response);
@@ -747,7 +753,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -770,7 +777,7 @@ class GuardDuty {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/filter/${Uri.encodeComponent(filterName)}',
+          '/detector/%24%7BUri.encodeQueryComponent%28detectorId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/filter/${Uri.encodeQueryComponent(filterName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -794,7 +801,7 @@ class GuardDuty {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/ipset/${Uri.encodeComponent(ipSetId)}',
+          '/detector/%24%7BUri.encodeQueryComponent%28detectorId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/ipset/${Uri.encodeQueryComponent(ipSetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -851,7 +858,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}/member/delete',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/member/delete',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteMembersResponse.fromJson(response);
@@ -877,7 +885,7 @@ class GuardDuty {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/publishingDestination/${Uri.encodeComponent(destinationId)}',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/publishingDestination/%24%7BUri.encodeQueryComponent%28destinationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -900,7 +908,7 @@ class GuardDuty {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/threatintelset/${Uri.encodeComponent(threatIntelSetId)}',
+          '/detector/%24%7BUri.encodeQueryComponent%28detectorId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/threatintelset/${Uri.encodeQueryComponent(threatIntelSetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -963,7 +971,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}/malware-scans',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/malware-scans',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeMalwareScansResponse.fromJson(response);
@@ -1014,7 +1023,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}/admin',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/admin',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1041,7 +1051,7 @@ class GuardDuty {
       payload: null,
       method: 'GET',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/publishingDestination/${Uri.encodeComponent(destinationId)}',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/publishingDestination/%24%7BUri.encodeQueryComponent%28destinationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribePublishingDestinationResponse.fromJson(response);
@@ -1089,7 +1099,7 @@ class GuardDuty {
       payload: null,
       method: 'POST',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/administrator/disassociate',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/administrator/disassociate',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1111,7 +1121,7 @@ class GuardDuty {
       payload: null,
       method: 'POST',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/master/disassociate',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/master/disassociate',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1145,7 +1155,7 @@ class GuardDuty {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/member/disassociate',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/member/disassociate',
       exceptionFnMap: _exceptionFns,
     );
     return DisassociateMembersResponse.fromJson(response);
@@ -1188,7 +1198,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}/administrator',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/administrator',
       exceptionFnMap: _exceptionFns,
     );
     return GetAdministratorAccountResponse.fromJson(response);
@@ -1225,7 +1236,7 @@ class GuardDuty {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/coverage/statistics',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/coverage/statistics',
       exceptionFnMap: _exceptionFns,
     );
     return GetCoverageStatisticsResponse.fromJson(response);
@@ -1250,7 +1261,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDetectorResponse.fromJson(response);
@@ -1274,7 +1286,7 @@ class GuardDuty {
       payload: null,
       method: 'GET',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/filter/${Uri.encodeComponent(filterName)}',
+          '/detector/%24%7BUri.encodeQueryComponent%28detectorId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/filter/${Uri.encodeQueryComponent(filterName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetFilterResponse.fromJson(response);
@@ -1306,7 +1318,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}/findings/get',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/findings/get',
       exceptionFnMap: _exceptionFns,
     );
     return GetFindingsResponse.fromJson(response);
@@ -1340,7 +1353,7 @@ class GuardDuty {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/findings/statistics',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/findings/statistics',
       exceptionFnMap: _exceptionFns,
     );
     return GetFindingsStatisticsResponse.fromJson(response);
@@ -1364,7 +1377,7 @@ class GuardDuty {
       payload: null,
       method: 'GET',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/ipset/${Uri.encodeComponent(ipSetId)}',
+          '/detector/%24%7BUri.encodeQueryComponent%28detectorId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/ipset/${Uri.encodeQueryComponent(ipSetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetIPSetResponse.fromJson(response);
@@ -1405,7 +1418,7 @@ class GuardDuty {
       payload: null,
       method: 'GET',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/malware-scan-settings',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/malware-scan-settings',
       exceptionFnMap: _exceptionFns,
     );
     return GetMalwareScanSettingsResponse.fromJson(response);
@@ -1427,7 +1440,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}/master',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/master',
       exceptionFnMap: _exceptionFns,
     );
     return GetMasterAccountResponse.fromJson(response);
@@ -1461,7 +1475,7 @@ class GuardDuty {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/member/detector/get',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/member/detector/get',
       exceptionFnMap: _exceptionFns,
     );
     return GetMemberDetectorsResponse.fromJson(response);
@@ -1490,7 +1504,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}/member/get',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/member/get',
       exceptionFnMap: _exceptionFns,
     );
     return GetMembersResponse.fromJson(response);
@@ -1518,7 +1533,7 @@ class GuardDuty {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/freeTrial/daysRemaining',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/freeTrial/daysRemaining',
       exceptionFnMap: _exceptionFns,
     );
     return GetRemainingFreeTrialDaysResponse.fromJson(response);
@@ -1542,7 +1557,7 @@ class GuardDuty {
       payload: null,
       method: 'GET',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/threatintelset/${Uri.encodeComponent(threatIntelSetId)}',
+          '/detector/%24%7BUri.encodeQueryComponent%28detectorId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/threatintelset/${Uri.encodeQueryComponent(threatIntelSetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetThreatIntelSetResponse.fromJson(response);
@@ -1606,7 +1621,7 @@ class GuardDuty {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/usage/statistics',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/usage/statistics',
       exceptionFnMap: _exceptionFns,
     );
     return GetUsageStatisticsResponse.fromJson(response);
@@ -1651,7 +1666,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}/member/invite',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/member/invite',
       exceptionFnMap: _exceptionFns,
     );
     return InviteMembersResponse.fromJson(response);
@@ -1706,7 +1722,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}/coverage',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/coverage',
       exceptionFnMap: _exceptionFns,
     );
     return ListCoverageResponse.fromJson(response);
@@ -1787,7 +1804,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}/filter',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/filter',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1993,7 +2011,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}/findings',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/findings',
       exceptionFnMap: _exceptionFns,
     );
     return ListFindingsResponse.fromJson(response);
@@ -2036,7 +2055,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}/ipset',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/ipset',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2129,7 +2149,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}/member',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/member',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2211,7 +2232,7 @@ class GuardDuty {
       payload: null,
       method: 'GET',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/publishingDestination',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/publishingDestination',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2235,7 +2256,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -2279,7 +2301,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}/threatintelset',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/threatintelset',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2338,7 +2361,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}/member/start',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/member/start',
       exceptionFnMap: _exceptionFns,
     );
     return StartMonitoringMembersResponse.fromJson(response);
@@ -2371,7 +2395,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}/member/stop',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/member/stop',
       exceptionFnMap: _exceptionFns,
     );
     return StopMonitoringMembersResponse.fromJson(response);
@@ -2399,7 +2424,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2425,7 +2451,7 @@ class GuardDuty {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/findings/unarchive',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/findings/unarchive',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2451,7 +2477,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2506,7 +2533,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2564,7 +2592,7 @@ class GuardDuty {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/filter/${Uri.encodeComponent(filterName)}',
+          '/detector/%24%7BUri.encodeQueryComponent%28detectorId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/filter/${Uri.encodeQueryComponent(filterName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateFilterResponse.fromJson(response);
@@ -2602,7 +2630,7 @@ class GuardDuty {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/findings/feedback',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/findings/feedback',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2644,7 +2672,7 @@ class GuardDuty {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/ipset/${Uri.encodeComponent(ipSetId)}',
+          '/detector/%24%7BUri.encodeQueryComponent%28detectorId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/ipset/${Uri.encodeQueryComponent(ipSetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2685,7 +2713,7 @@ class GuardDuty {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/malware-scan-settings',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/malware-scan-settings',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2727,7 +2755,7 @@ class GuardDuty {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/member/detector/update',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/member/detector/update',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateMemberDetectorsResponse.fromJson(response);
@@ -2801,7 +2829,8 @@ class GuardDuty {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/detector/${Uri.encodeComponent(detectorId)}/admin',
+      requestUri:
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/admin',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2836,7 +2865,7 @@ class GuardDuty {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/publishingDestination/${Uri.encodeComponent(destinationId)}',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/publishingDestination/%24%7BUri.encodeQueryComponent%28destinationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2878,7 +2907,7 @@ class GuardDuty {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/detector/${Uri.encodeComponent(detectorId)}/threatintelset/${Uri.encodeComponent(threatIntelSetId)}',
+          '/detector/%24%7BUri.encodeQueryComponent%28detectorId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/threatintelset/${Uri.encodeQueryComponent(threatIntelSetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

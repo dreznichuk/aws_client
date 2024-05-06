@@ -87,7 +87,8 @@ class DataExchange {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/jobs/${Uri.encodeComponent(jobId)}',
+      requestUri:
+          '/v1/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -230,7 +231,8 @@ class DataExchange {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/data-sets/${Uri.encodeComponent(dataSetId)}/revisions',
+      requestUri:
+          '/v1/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}/revisions',
       exceptionFnMap: _exceptionFns,
     );
     return CreateRevisionResponse.fromJson(response);
@@ -262,7 +264,7 @@ class DataExchange {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/data-sets/${Uri.encodeComponent(dataSetId)}/revisions/${Uri.encodeComponent(revisionId)}/assets/${Uri.encodeComponent(assetId)}',
+          '/v1/data-sets/%24%7BUri.encodeQueryComponent%28dataSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}/assets/%2524%257BUri.encodeQueryComponent%2528assetId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -284,7 +286,8 @@ class DataExchange {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/data-sets/${Uri.encodeComponent(dataSetId)}',
+      requestUri:
+          '/v1/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -304,7 +307,8 @@ class DataExchange {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/event-actions/${Uri.encodeComponent(eventActionId)}',
+      requestUri:
+          '/v1/event-actions/${Uri.encodeQueryComponent(eventActionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -331,7 +335,7 @@ class DataExchange {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/data-sets/${Uri.encodeComponent(dataSetId)}/revisions/${Uri.encodeComponent(revisionId)}',
+          '/v1/data-sets/%24%7BUri.encodeQueryComponent%28dataSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -360,7 +364,7 @@ class DataExchange {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/data-sets/${Uri.encodeComponent(dataSetId)}/revisions/${Uri.encodeComponent(revisionId)}/assets/${Uri.encodeComponent(assetId)}',
+          '/v1/data-sets/%24%7BUri.encodeQueryComponent%28dataSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}/assets/%2524%257BUri.encodeQueryComponent%2528assetId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       exceptionFnMap: _exceptionFns,
     );
     return GetAssetResponse.fromJson(response);
@@ -381,7 +385,8 @@ class DataExchange {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/data-sets/${Uri.encodeComponent(dataSetId)}',
+      requestUri:
+          '/v1/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDataSetResponse.fromJson(response);
@@ -402,7 +407,8 @@ class DataExchange {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/event-actions/${Uri.encodeComponent(eventActionId)}',
+      requestUri:
+          '/v1/event-actions/${Uri.encodeQueryComponent(eventActionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetEventActionResponse.fromJson(response);
@@ -423,7 +429,8 @@ class DataExchange {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/jobs/${Uri.encodeComponent(jobId)}',
+      requestUri:
+          '/v1/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetJobResponse.fromJson(response);
@@ -449,7 +456,7 @@ class DataExchange {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/data-sets/${Uri.encodeComponent(dataSetId)}/revisions/${Uri.encodeComponent(revisionId)}',
+          '/v1/data-sets/%24%7BUri.encodeQueryComponent%28dataSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetRevisionResponse.fromJson(response);
@@ -490,7 +497,8 @@ class DataExchange {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/data-sets/${Uri.encodeComponent(dataSetId)}/revisions',
+      requestUri:
+          '/v1/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}/revisions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -671,7 +679,7 @@ class DataExchange {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/data-sets/${Uri.encodeComponent(dataSetId)}/revisions/${Uri.encodeComponent(revisionId)}/assets',
+          '/v1/data-sets/%24%7BUri.encodeQueryComponent%28dataSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}/assets',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -688,7 +696,8 @@ class DataExchange {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -724,7 +733,7 @@ class DataExchange {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/data-sets/${Uri.encodeComponent(dataSetId)}/revisions/${Uri.encodeComponent(revisionId)}/revoke',
+          '/v1/data-sets/%24%7BUri.encodeQueryComponent%28dataSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}/revoke',
       exceptionFnMap: _exceptionFns,
     );
     return RevokeRevisionResponse.fromJson(response);
@@ -824,7 +833,8 @@ class DataExchange {
     final response = await _protocol.send(
       payload: null,
       method: 'PATCH',
-      requestUri: '/v1/jobs/${Uri.encodeComponent(jobId)}',
+      requestUri:
+          '/v1/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -846,7 +856,8 @@ class DataExchange {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -868,7 +879,8 @@ class DataExchange {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -914,7 +926,7 @@ class DataExchange {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/v1/data-sets/${Uri.encodeComponent(dataSetId)}/revisions/${Uri.encodeComponent(revisionId)}/assets/${Uri.encodeComponent(assetId)}',
+          '/v1/data-sets/%24%7BUri.encodeQueryComponent%28dataSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}/assets/%2524%257BUri.encodeQueryComponent%2528assetId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAssetResponse.fromJson(response);
@@ -948,7 +960,8 @@ class DataExchange {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/v1/data-sets/${Uri.encodeComponent(dataSetId)}',
+      requestUri:
+          '/v1/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDataSetResponse.fromJson(response);
@@ -977,7 +990,8 @@ class DataExchange {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/v1/event-actions/${Uri.encodeComponent(eventActionId)}',
+      requestUri:
+          '/v1/event-actions/${Uri.encodeQueryComponent(eventActionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateEventActionResponse.fromJson(response);
@@ -1019,7 +1033,7 @@ class DataExchange {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/v1/data-sets/${Uri.encodeComponent(dataSetId)}/revisions/${Uri.encodeComponent(revisionId)}',
+          '/v1/data-sets/%24%7BUri.encodeQueryComponent%28dataSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateRevisionResponse.fromJson(response);

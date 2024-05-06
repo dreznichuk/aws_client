@@ -70,7 +70,8 @@ class MediaPackageVod {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/packaging_groups/${Uri.encodeComponent(id)}/configure_logs',
+      requestUri:
+          '/packaging_groups/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/configure_logs',
       exceptionFnMap: _exceptionFns,
     );
     return ConfigureLogsResponse.fromJson(response);
@@ -214,7 +215,8 @@ class MediaPackageVod {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/assets/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/assets/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -236,7 +238,8 @@ class MediaPackageVod {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/packaging_configurations/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/packaging_configurations/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -258,7 +261,8 @@ class MediaPackageVod {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/packaging_groups/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/packaging_groups/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -280,7 +284,8 @@ class MediaPackageVod {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/assets/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/assets/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeAssetResponse.fromJson(response);
@@ -305,7 +310,8 @@ class MediaPackageVod {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/packaging_configurations/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/packaging_configurations/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribePackagingConfigurationResponse.fromJson(response);
@@ -328,7 +334,8 @@ class MediaPackageVod {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/packaging_groups/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/packaging_groups/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribePackagingGroupResponse.fromJson(response);
@@ -470,7 +477,8 @@ class MediaPackageVod {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -495,7 +503,8 @@ class MediaPackageVod {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -519,7 +528,8 @@ class MediaPackageVod {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -547,7 +557,8 @@ class MediaPackageVod {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/packaging_groups/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/packaging_groups/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdatePackagingGroupResponse.fromJson(response);

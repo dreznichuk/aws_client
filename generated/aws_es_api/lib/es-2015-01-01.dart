@@ -66,7 +66,7 @@ class ElasticsearchService {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/2015-01-01/es/ccs/inboundConnection/${Uri.encodeComponent(crossClusterSearchConnectionId)}/accept',
+          '/2015-01-01/es/ccs/inboundConnection/${Uri.encodeQueryComponent(crossClusterSearchConnectionId).replaceAll('+', '%20')}/accept',
       exceptionFnMap: _exceptionFns,
     );
     return AcceptInboundCrossClusterSearchConnectionResponse.fromJson(response);
@@ -129,7 +129,7 @@ class ElasticsearchService {
       payload: null,
       method: 'POST',
       requestUri:
-          '/2015-01-01/packages/associate/${Uri.encodeComponent(packageID)}/${Uri.encodeComponent(domainName)}',
+          '/2015-01-01/packages/associate/${Uri.encodeQueryComponent(packageID).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28domainName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return AssociatePackageResponse.fromJson(response);
@@ -161,7 +161,7 @@ class ElasticsearchService {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2015-01-01/es/domain/${Uri.encodeComponent(domainName)}/authorizeVpcEndpointAccess',
+          '/2015-01-01/es/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/authorizeVpcEndpointAccess',
       exceptionFnMap: _exceptionFns,
     );
     return AuthorizeVpcEndpointAccessResponse.fromJson(response);
@@ -467,7 +467,8 @@ class ElasticsearchService {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/2015-01-01/es/domain/${Uri.encodeComponent(domainName)}',
+      requestUri:
+          '/2015-01-01/es/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteElasticsearchDomainResponse.fromJson(response);
@@ -509,7 +510,7 @@ class ElasticsearchService {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2015-01-01/es/ccs/inboundConnection/${Uri.encodeComponent(crossClusterSearchConnectionId)}',
+          '/2015-01-01/es/ccs/inboundConnection/${Uri.encodeQueryComponent(crossClusterSearchConnectionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteInboundCrossClusterSearchConnectionResponse.fromJson(response);
@@ -531,7 +532,7 @@ class ElasticsearchService {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2015-01-01/es/ccs/outboundConnection/${Uri.encodeComponent(crossClusterSearchConnectionId)}',
+          '/2015-01-01/es/ccs/outboundConnection/${Uri.encodeQueryComponent(crossClusterSearchConnectionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteOutboundCrossClusterSearchConnectionResponse.fromJson(
@@ -556,7 +557,8 @@ class ElasticsearchService {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/2015-01-01/packages/${Uri.encodeComponent(packageID)}',
+      requestUri:
+          '/2015-01-01/packages/${Uri.encodeQueryComponent(packageID).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeletePackageResponse.fromJson(response);
@@ -578,7 +580,7 @@ class ElasticsearchService {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2015-01-01/es/vpcEndpoints/${Uri.encodeComponent(vpcEndpointId)}',
+          '/2015-01-01/es/vpcEndpoints/${Uri.encodeQueryComponent(vpcEndpointId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteVpcEndpointResponse.fromJson(response);
@@ -617,7 +619,7 @@ class ElasticsearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-01-01/es/domain/${Uri.encodeComponent(domainName)}/autoTunes',
+          '/2015-01-01/es/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/autoTunes',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDomainAutoTunesResponse.fromJson(response);
@@ -649,7 +651,7 @@ class ElasticsearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-01-01/es/domain/${Uri.encodeComponent(domainName)}/progress',
+          '/2015-01-01/es/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/progress',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -672,7 +674,8 @@ class ElasticsearchService {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/2015-01-01/es/domain/${Uri.encodeComponent(domainName)}',
+      requestUri:
+          '/2015-01-01/es/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeElasticsearchDomainResponse.fromJson(response);
@@ -697,7 +700,7 @@ class ElasticsearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-01-01/es/domain/${Uri.encodeComponent(domainName)}/config',
+          '/2015-01-01/es/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeElasticsearchDomainConfigResponse.fromJson(response);
@@ -763,7 +766,7 @@ class ElasticsearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-01-01/es/instanceTypeLimits/${Uri.encodeComponent(elasticsearchVersion)}/${Uri.encodeComponent(instanceType.toValue())}',
+          '/2015-01-01/es/instanceTypeLimits/%24%7BUri.encodeQueryComponent%28elasticsearchVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(instanceType.toValue()).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1060,7 +1063,7 @@ class ElasticsearchService {
       payload: null,
       method: 'POST',
       requestUri:
-          '/2015-01-01/packages/dissociate/${Uri.encodeComponent(packageID)}/${Uri.encodeComponent(domainName)}',
+          '/2015-01-01/packages/dissociate/${Uri.encodeQueryComponent(packageID).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28domainName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DissociatePackageResponse.fromJson(response);
@@ -1129,7 +1132,7 @@ class ElasticsearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-01-01/packages/${Uri.encodeComponent(packageID)}/history',
+          '/2015-01-01/packages/${Uri.encodeQueryComponent(packageID).replaceAll('+', '%20')}/history',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1163,7 +1166,7 @@ class ElasticsearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-01-01/es/upgradeDomain/${Uri.encodeComponent(domainName)}/history',
+          '/2015-01-01/es/upgradeDomain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/history',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1185,7 +1188,7 @@ class ElasticsearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-01-01/es/upgradeDomain/${Uri.encodeComponent(domainName)}/status',
+          '/2015-01-01/es/upgradeDomain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/status',
       exceptionFnMap: _exceptionFns,
     );
     return GetUpgradeStatusResponse.fromJson(response);
@@ -1252,7 +1255,7 @@ class ElasticsearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-01-01/packages/${Uri.encodeComponent(packageID)}/domains',
+          '/2015-01-01/packages/${Uri.encodeQueryComponent(packageID).replaceAll('+', '%20')}/domains',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1305,7 +1308,7 @@ class ElasticsearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-01-01/es/instanceTypes/${Uri.encodeComponent(elasticsearchVersion)}',
+          '/2015-01-01/es/instanceTypes/${Uri.encodeQueryComponent(elasticsearchVersion).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1382,7 +1385,7 @@ class ElasticsearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-01-01/domain/${Uri.encodeComponent(domainName)}/packages',
+          '/2015-01-01/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/packages',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1441,7 +1444,7 @@ class ElasticsearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-01-01/es/domain/${Uri.encodeComponent(domainName)}/listVpcEndpointAccess',
+          '/2015-01-01/es/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/listVpcEndpointAccess',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1497,7 +1500,7 @@ class ElasticsearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-01-01/es/domain/${Uri.encodeComponent(domainName)}/vpcEndpoints',
+          '/2015-01-01/es/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/vpcEndpoints',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1565,7 +1568,7 @@ class ElasticsearchService {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/2015-01-01/es/ccs/inboundConnection/${Uri.encodeComponent(crossClusterSearchConnectionId)}/reject',
+          '/2015-01-01/es/ccs/inboundConnection/${Uri.encodeQueryComponent(crossClusterSearchConnectionId).replaceAll('+', '%20')}/reject',
       exceptionFnMap: _exceptionFns,
     );
     return RejectInboundCrossClusterSearchConnectionResponse.fromJson(response);
@@ -1625,7 +1628,7 @@ class ElasticsearchService {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2015-01-01/es/domain/${Uri.encodeComponent(domainName)}/revokeVpcEndpointAccess',
+          '/2015-01-01/es/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/revokeVpcEndpointAccess',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1774,7 +1777,7 @@ class ElasticsearchService {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2015-01-01/es/domain/${Uri.encodeComponent(domainName)}/config',
+          '/2015-01-01/es/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateElasticsearchDomainConfigResponse.fromJson(response);

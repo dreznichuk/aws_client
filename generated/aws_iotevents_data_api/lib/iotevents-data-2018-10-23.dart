@@ -297,7 +297,8 @@ class IoTEventsData {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/alarms/${Uri.encodeComponent(alarmModelName)}/keyValues/',
+      requestUri:
+          '/alarms/${Uri.encodeQueryComponent(alarmModelName).replaceAll('+', '%20')}/keyValues/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -330,7 +331,7 @@ class IoTEventsData {
       payload: null,
       method: 'GET',
       requestUri:
-          '/detectors/${Uri.encodeComponent(detectorModelName)}/keyValues/',
+          '/detectors/${Uri.encodeQueryComponent(detectorModelName).replaceAll('+', '%20')}/keyValues/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -372,7 +373,8 @@ class IoTEventsData {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/alarms/${Uri.encodeComponent(alarmModelName)}',
+      requestUri:
+          '/alarms/${Uri.encodeQueryComponent(alarmModelName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -419,7 +421,8 @@ class IoTEventsData {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/detectors/${Uri.encodeComponent(detectorModelName)}',
+      requestUri:
+          '/detectors/${Uri.encodeQueryComponent(detectorModelName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

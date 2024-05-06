@@ -144,7 +144,8 @@ class Lambda {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/2014-11-13/functions/${Uri.encodeComponent(functionName)}',
+      requestUri:
+          '/2014-11-13/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -168,7 +169,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2014-11-13/event-source-mappings/${Uri.encodeComponent(uuid)}',
+          '/2014-11-13/event-source-mappings/${Uri.encodeQueryComponent(uuid).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return EventSourceConfiguration.fromJson(response);
@@ -194,7 +195,8 @@ class Lambda {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/2014-11-13/functions/${Uri.encodeComponent(functionName)}',
+      requestUri:
+          '/2014-11-13/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetFunctionResponse.fromJson(response);
@@ -220,7 +222,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2014-11-13/functions/${Uri.encodeComponent(functionName)}/configuration',
+          '/2014-11-13/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/configuration',
       exceptionFnMap: _exceptionFns,
     );
     return FunctionConfiguration.fromJson(response);
@@ -251,7 +253,7 @@ class Lambda {
       payload: invokeArgs,
       method: 'POST',
       requestUri:
-          '/2014-11-13/functions/${Uri.encodeComponent(functionName)}/invoke-async/',
+          '/2014-11-13/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/invoke-async/',
       exceptionFnMap: _exceptionFns,
     );
     return InvokeAsyncResponse.fromJson(response);
@@ -374,7 +376,7 @@ class Lambda {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2014-11-13/event-source-mappings/${Uri.encodeComponent(uuid)}',
+          '/2014-11-13/event-source-mappings/${Uri.encodeQueryComponent(uuid).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -450,7 +452,7 @@ class Lambda {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/2014-11-13/functions/${Uri.encodeComponent(functionName)}/configuration',
+          '/2014-11-13/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/configuration',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -551,7 +553,8 @@ class Lambda {
     final response = await _protocol.send(
       payload: functionZip,
       method: 'PUT',
-      requestUri: '/2014-11-13/functions/${Uri.encodeComponent(functionName)}',
+      requestUri:
+          '/2014-11-13/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

@@ -184,7 +184,7 @@ class SESV2 {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v2/email/configuration-sets/${Uri.encodeComponent(configurationSetName)}/event-destinations',
+          '/v2/email/configuration-sets/${Uri.encodeQueryComponent(configurationSetName).replaceAll('+', '%20')}/event-destinations',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -229,7 +229,7 @@ class SESV2 {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v2/email/contact-lists/${Uri.encodeComponent(contactListName)}/contacts',
+          '/v2/email/contact-lists/${Uri.encodeQueryComponent(contactListName).replaceAll('+', '%20')}/contacts',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -569,7 +569,7 @@ class SESV2 {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v2/email/identities/${Uri.encodeComponent(emailIdentity)}/policies/${Uri.encodeComponent(policyName)}',
+          '/v2/email/identities/%24%7BUri.encodeQueryComponent%28emailIdentity%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/policies/${Uri.encodeQueryComponent(policyName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -659,7 +659,7 @@ class SESV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/email/configuration-sets/${Uri.encodeComponent(configurationSetName)}',
+          '/v2/email/configuration-sets/${Uri.encodeQueryComponent(configurationSetName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -691,7 +691,7 @@ class SESV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/email/configuration-sets/${Uri.encodeComponent(configurationSetName)}/event-destinations/${Uri.encodeComponent(eventDestinationName)}',
+          '/v2/email/configuration-sets/%24%7BUri.encodeQueryComponent%28configurationSetName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/event-destinations/${Uri.encodeQueryComponent(eventDestinationName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -715,7 +715,7 @@ class SESV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/email/contact-lists/${Uri.encodeComponent(contactListName)}/contacts/${Uri.encodeComponent(emailAddress)}',
+          '/v2/email/contact-lists/%24%7BUri.encodeQueryComponent%28contactListName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/contacts/${Uri.encodeQueryComponent(emailAddress).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -736,7 +736,7 @@ class SESV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/email/contact-lists/${Uri.encodeComponent(contactListName)}',
+          '/v2/email/contact-lists/${Uri.encodeQueryComponent(contactListName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -764,7 +764,7 @@ class SESV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/email/custom-verification-email-templates/${Uri.encodeComponent(templateName)}',
+          '/v2/email/custom-verification-email-templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -785,7 +785,7 @@ class SESV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/email/dedicated-ip-pools/${Uri.encodeComponent(poolName)}',
+          '/v2/email/dedicated-ip-pools/${Uri.encodeQueryComponent(poolName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -806,7 +806,8 @@ class SESV2 {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v2/email/identities/${Uri.encodeComponent(emailIdentity)}',
+      requestUri:
+          '/v2/email/identities/${Uri.encodeQueryComponent(emailIdentity).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -846,7 +847,7 @@ class SESV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/email/identities/${Uri.encodeComponent(emailIdentity)}/policies/${Uri.encodeComponent(policyName)}',
+          '/v2/email/identities/%24%7BUri.encodeQueryComponent%28emailIdentity%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/policies/${Uri.encodeQueryComponent(policyName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -867,7 +868,8 @@ class SESV2 {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v2/email/templates/${Uri.encodeComponent(templateName)}',
+      requestUri:
+          '/v2/email/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -888,7 +890,7 @@ class SESV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/email/suppression/addresses/${Uri.encodeComponent(emailAddress)}',
+          '/v2/email/suppression/addresses/${Uri.encodeQueryComponent(emailAddress).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -958,7 +960,7 @@ class SESV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/email/configuration-sets/${Uri.encodeComponent(configurationSetName)}',
+          '/v2/email/configuration-sets/${Uri.encodeQueryComponent(configurationSetName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetConfigurationSetResponse.fromJson(response);
@@ -988,7 +990,7 @@ class SESV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/email/configuration-sets/${Uri.encodeComponent(configurationSetName)}/event-destinations',
+          '/v2/email/configuration-sets/${Uri.encodeQueryComponent(configurationSetName).replaceAll('+', '%20')}/event-destinations',
       exceptionFnMap: _exceptionFns,
     );
     return GetConfigurationSetEventDestinationsResponse.fromJson(response);
@@ -1013,7 +1015,7 @@ class SESV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/email/contact-lists/${Uri.encodeComponent(contactListName)}/contacts/${Uri.encodeComponent(emailAddress)}',
+          '/v2/email/contact-lists/%24%7BUri.encodeQueryComponent%28contactListName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/contacts/${Uri.encodeQueryComponent(emailAddress).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetContactResponse.fromJson(response);
@@ -1035,7 +1037,7 @@ class SESV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/email/contact-lists/${Uri.encodeComponent(contactListName)}',
+          '/v2/email/contact-lists/${Uri.encodeQueryComponent(contactListName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetContactListResponse.fromJson(response);
@@ -1066,7 +1068,7 @@ class SESV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/email/custom-verification-email-templates/${Uri.encodeComponent(templateName)}',
+          '/v2/email/custom-verification-email-templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetCustomVerificationEmailTemplateResponse.fromJson(response);
@@ -1090,7 +1092,8 @@ class SESV2 {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v2/email/dedicated-ips/${Uri.encodeComponent(ip)}',
+      requestUri:
+          '/v2/email/dedicated-ips/${Uri.encodeQueryComponent(ip).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDedicatedIpResponse.fromJson(response);
@@ -1111,7 +1114,7 @@ class SESV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/email/dedicated-ip-pools/${Uri.encodeComponent(poolName)}',
+          '/v2/email/dedicated-ip-pools/${Uri.encodeQueryComponent(poolName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDedicatedIpPoolResponse.fromJson(response);
@@ -1198,7 +1201,7 @@ class SESV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/email/deliverability-dashboard/test-reports/${Uri.encodeComponent(reportId)}',
+          '/v2/email/deliverability-dashboard/test-reports/${Uri.encodeQueryComponent(reportId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDeliverabilityTestReportResponse.fromJson(response);
@@ -1223,7 +1226,7 @@ class SESV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/email/deliverability-dashboard/campaigns/${Uri.encodeComponent(campaignId)}',
+          '/v2/email/deliverability-dashboard/campaigns/${Uri.encodeQueryComponent(campaignId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDomainDeliverabilityCampaignResponse.fromJson(response);
@@ -1260,7 +1263,7 @@ class SESV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/email/deliverability-dashboard/statistics-report/${Uri.encodeComponent(domain)}',
+          '/v2/email/deliverability-dashboard/statistics-report/${Uri.encodeQueryComponent(domain).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1283,7 +1286,8 @@ class SESV2 {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v2/email/identities/${Uri.encodeComponent(emailIdentity)}',
+      requestUri:
+          '/v2/email/identities/${Uri.encodeQueryComponent(emailIdentity).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetEmailIdentityResponse.fromJson(response);
@@ -1318,7 +1322,7 @@ class SESV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/email/identities/${Uri.encodeComponent(emailIdentity)}/policies',
+          '/v2/email/identities/${Uri.encodeQueryComponent(emailIdentity).replaceAll('+', '%20')}/policies',
       exceptionFnMap: _exceptionFns,
     );
     return GetEmailIdentityPoliciesResponse.fromJson(response);
@@ -1341,7 +1345,8 @@ class SESV2 {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v2/email/templates/${Uri.encodeComponent(templateName)}',
+      requestUri:
+          '/v2/email/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetEmailTemplateResponse.fromJson(response);
@@ -1361,7 +1366,8 @@ class SESV2 {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v2/email/import-jobs/${Uri.encodeComponent(jobId)}',
+      requestUri:
+          '/v2/email/import-jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetImportJobResponse.fromJson(response);
@@ -1383,7 +1389,7 @@ class SESV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/email/suppression/addresses/${Uri.encodeComponent(emailAddress)}',
+          '/v2/email/suppression/addresses/${Uri.encodeQueryComponent(emailAddress).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSuppressedDestinationResponse.fromJson(response);
@@ -1504,7 +1510,7 @@ class SESV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/email/contact-lists/${Uri.encodeComponent(contactListName)}/contacts',
+          '/v2/email/contact-lists/${Uri.encodeQueryComponent(contactListName).replaceAll('+', '%20')}/contacts',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1679,7 +1685,7 @@ class SESV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/email/deliverability-dashboard/domains/${Uri.encodeComponent(subscribedDomain)}/campaigns',
+          '/v2/email/deliverability-dashboard/domains/${Uri.encodeQueryComponent(subscribedDomain).replaceAll('+', '%20')}/campaigns',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2142,7 +2148,7 @@ class SESV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v2/email/configuration-sets/${Uri.encodeComponent(configurationSetName)}/delivery-options',
+          '/v2/email/configuration-sets/${Uri.encodeQueryComponent(configurationSetName).replaceAll('+', '%20')}/delivery-options',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2174,7 +2180,7 @@ class SESV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v2/email/configuration-sets/${Uri.encodeComponent(configurationSetName)}/reputation-options',
+          '/v2/email/configuration-sets/${Uri.encodeQueryComponent(configurationSetName).replaceAll('+', '%20')}/reputation-options',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2204,7 +2210,7 @@ class SESV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v2/email/configuration-sets/${Uri.encodeComponent(configurationSetName)}/sending',
+          '/v2/email/configuration-sets/${Uri.encodeQueryComponent(configurationSetName).replaceAll('+', '%20')}/sending',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2248,7 +2254,7 @@ class SESV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v2/email/configuration-sets/${Uri.encodeComponent(configurationSetName)}/suppression-options',
+          '/v2/email/configuration-sets/${Uri.encodeQueryComponent(configurationSetName).replaceAll('+', '%20')}/suppression-options',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2277,7 +2283,7 @@ class SESV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v2/email/configuration-sets/${Uri.encodeComponent(configurationSetName)}/tracking-options',
+          '/v2/email/configuration-sets/${Uri.encodeQueryComponent(configurationSetName).replaceAll('+', '%20')}/tracking-options',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2307,7 +2313,7 @@ class SESV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v2/email/configuration-sets/${Uri.encodeComponent(configurationSetName)}/vdm-options',
+          '/v2/email/configuration-sets/${Uri.encodeQueryComponent(configurationSetName).replaceAll('+', '%20')}/vdm-options',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2343,7 +2349,8 @@ class SESV2 {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v2/email/dedicated-ips/${Uri.encodeComponent(ip)}/pool',
+      requestUri:
+          '/v2/email/dedicated-ips/${Uri.encodeQueryComponent(ip).replaceAll('+', '%20')}/pool',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2379,7 +2386,7 @@ class SESV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v2/email/dedicated-ip-pools/${Uri.encodeComponent(poolName)}/scaling',
+          '/v2/email/dedicated-ip-pools/${Uri.encodeQueryComponent(poolName).replaceAll('+', '%20')}/scaling',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2407,7 +2414,8 @@ class SESV2 {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v2/email/dedicated-ips/${Uri.encodeComponent(ip)}/warmup',
+      requestUri:
+          '/v2/email/dedicated-ips/${Uri.encodeQueryComponent(ip).replaceAll('+', '%20')}/warmup',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2475,7 +2483,7 @@ class SESV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v2/email/identities/${Uri.encodeComponent(emailIdentity)}/configuration-set',
+          '/v2/email/identities/${Uri.encodeQueryComponent(emailIdentity).replaceAll('+', '%20')}/configuration-set',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2506,7 +2514,7 @@ class SESV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v2/email/identities/${Uri.encodeComponent(emailIdentity)}/dkim',
+          '/v2/email/identities/${Uri.encodeQueryComponent(emailIdentity).replaceAll('+', '%20')}/dkim',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2580,7 +2588,7 @@ class SESV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/email/identities/${Uri.encodeComponent(emailIdentity)}/dkim/signing',
+          '/v1/email/identities/${Uri.encodeQueryComponent(emailIdentity).replaceAll('+', '%20')}/dkim/signing',
       exceptionFnMap: _exceptionFns,
     );
     return PutEmailIdentityDkimSigningAttributesResponse.fromJson(response);
@@ -2633,7 +2641,7 @@ class SESV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v2/email/identities/${Uri.encodeComponent(emailIdentity)}/feedback',
+          '/v2/email/identities/${Uri.encodeQueryComponent(emailIdentity).replaceAll('+', '%20')}/feedback',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2690,7 +2698,7 @@ class SESV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v2/email/identities/${Uri.encodeComponent(emailIdentity)}/mail-from',
+          '/v2/email/identities/${Uri.encodeQueryComponent(emailIdentity).replaceAll('+', '%20')}/mail-from',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3089,7 +3097,7 @@ class SESV2 {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v2/email/templates/${Uri.encodeComponent(templateName)}/render',
+          '/v2/email/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/render',
       exceptionFnMap: _exceptionFns,
     );
     return TestRenderEmailTemplateResponse.fromJson(response);
@@ -3166,7 +3174,7 @@ class SESV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v2/email/configuration-sets/${Uri.encodeComponent(configurationSetName)}/event-destinations/${Uri.encodeComponent(eventDestinationName)}',
+          '/v2/email/configuration-sets/%24%7BUri.encodeQueryComponent%28configurationSetName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/event-destinations/${Uri.encodeQueryComponent(eventDestinationName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3211,7 +3219,7 @@ class SESV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v2/email/contact-lists/${Uri.encodeComponent(contactListName)}/contacts/${Uri.encodeComponent(emailAddress)}',
+          '/v2/email/contact-lists/%24%7BUri.encodeQueryComponent%28contactListName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/contacts/${Uri.encodeQueryComponent(emailAddress).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3245,7 +3253,7 @@ class SESV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v2/email/contact-lists/${Uri.encodeComponent(contactListName)}',
+          '/v2/email/contact-lists/${Uri.encodeQueryComponent(contactListName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3307,7 +3315,7 @@ class SESV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v2/email/custom-verification-email-templates/${Uri.encodeComponent(templateName)}',
+          '/v2/email/custom-verification-email-templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3359,7 +3367,7 @@ class SESV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v2/email/identities/${Uri.encodeComponent(emailIdentity)}/policies/${Uri.encodeComponent(policyName)}',
+          '/v2/email/identities/%24%7BUri.encodeQueryComponent%28emailIdentity%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/policies/${Uri.encodeQueryComponent(policyName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3392,7 +3400,8 @@ class SESV2 {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v2/email/templates/${Uri.encodeComponent(templateName)}',
+      requestUri:
+          '/v2/email/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

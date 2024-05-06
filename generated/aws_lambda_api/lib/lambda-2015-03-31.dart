@@ -124,7 +124,7 @@ class Lambda {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2018-10-31/layers/${Uri.encodeComponent(layerName)}/versions/${Uri.encodeComponent(versionNumber.toString())}/policy',
+          '/2018-10-31/layers/%24%7BUri.encodeQueryComponent%28layerName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionNumber.toString()).replaceAll('+', '%20')}/policy',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -269,7 +269,7 @@ class Lambda {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2015-03-31/functions/${Uri.encodeComponent(functionName)}/policy',
+          '/2015-03-31/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/policy',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -340,7 +340,7 @@ class Lambda {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2015-03-31/functions/${Uri.encodeComponent(functionName)}/aliases',
+          '/2015-03-31/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/aliases',
       exceptionFnMap: _exceptionFns,
     );
     return AliasConfiguration.fromJson(response);
@@ -1165,7 +1165,7 @@ class Lambda {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2021-10-31/functions/${Uri.encodeComponent(functionName)}/url',
+          '/2021-10-31/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/url',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1209,7 +1209,7 @@ class Lambda {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2015-03-31/functions/${Uri.encodeComponent(functionName)}/aliases/${Uri.encodeComponent(name)}',
+          '/2015-03-31/functions/%24%7BUri.encodeQueryComponent%28functionName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/aliases/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1231,7 +1231,7 @@ class Lambda {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2020-04-22/code-signing-configs/${Uri.encodeComponent(codeSigningConfigArn)}',
+          '/2020-04-22/code-signing-configs/${Uri.encodeQueryComponent(codeSigningConfigArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1259,7 +1259,7 @@ class Lambda {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2015-03-31/event-source-mappings/${Uri.encodeComponent(uuid)}',
+          '/2015-03-31/event-source-mappings/${Uri.encodeQueryComponent(uuid).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return EventSourceMappingConfiguration.fromJson(response);
@@ -1314,7 +1314,8 @@ class Lambda {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/2015-03-31/functions/${Uri.encodeComponent(functionName)}',
+      requestUri:
+          '/2015-03-31/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1354,7 +1355,7 @@ class Lambda {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2020-06-30/functions/${Uri.encodeComponent(functionName)}/code-signing-config',
+          '/2020-06-30/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/code-signing-config',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1392,7 +1393,7 @@ class Lambda {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2017-10-31/functions/${Uri.encodeComponent(functionName)}/concurrency',
+          '/2017-10-31/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/concurrency',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1443,7 +1444,7 @@ class Lambda {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2019-09-25/functions/${Uri.encodeComponent(functionName)}/event-invoke-config',
+          '/2019-09-25/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/event-invoke-config',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1490,7 +1491,7 @@ class Lambda {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2021-10-31/functions/${Uri.encodeComponent(functionName)}/url',
+          '/2021-10-31/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/url',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1518,7 +1519,7 @@ class Lambda {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2018-10-31/layers/${Uri.encodeComponent(layerName)}/versions/${Uri.encodeComponent(versionNumber.toString())}',
+          '/2018-10-31/layers/%24%7BUri.encodeQueryComponent%28layerName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionNumber.toString()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1563,7 +1564,7 @@ class Lambda {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2019-09-30/functions/${Uri.encodeComponent(functionName)}/provisioned-concurrency',
+          '/2019-09-30/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/provisioned-concurrency',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1622,7 +1623,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-03-31/functions/${Uri.encodeComponent(functionName)}/aliases/${Uri.encodeComponent(name)}',
+          '/2015-03-31/functions/%24%7BUri.encodeQueryComponent%28functionName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/aliases/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return AliasConfiguration.fromJson(response);
@@ -1643,7 +1644,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-04-22/code-signing-configs/${Uri.encodeComponent(codeSigningConfigArn)}',
+          '/2020-04-22/code-signing-configs/${Uri.encodeQueryComponent(codeSigningConfigArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetCodeSigningConfigResponse.fromJson(response);
@@ -1666,7 +1667,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-03-31/event-source-mappings/${Uri.encodeComponent(uuid)}',
+          '/2015-03-31/event-source-mappings/${Uri.encodeQueryComponent(uuid).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return EventSourceMappingConfiguration.fromJson(response);
@@ -1716,7 +1717,8 @@ class Lambda {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/2015-03-31/functions/${Uri.encodeComponent(functionName)}',
+      requestUri:
+          '/2015-03-31/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1755,7 +1757,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-06-30/functions/${Uri.encodeComponent(functionName)}/code-signing-config',
+          '/2020-06-30/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/code-signing-config',
       exceptionFnMap: _exceptionFns,
     );
     return GetFunctionCodeSigningConfigResponse.fromJson(response);
@@ -1795,7 +1797,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2019-09-30/functions/${Uri.encodeComponent(functionName)}/concurrency',
+          '/2019-09-30/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/concurrency',
       exceptionFnMap: _exceptionFns,
     );
     return GetFunctionConcurrencyResponse.fromJson(response);
@@ -1848,7 +1850,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-03-31/functions/${Uri.encodeComponent(functionName)}/configuration',
+          '/2015-03-31/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/configuration',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1900,7 +1902,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2019-09-25/functions/${Uri.encodeComponent(functionName)}/event-invoke-config',
+          '/2019-09-25/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/event-invoke-config',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1946,7 +1948,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2021-10-31/functions/${Uri.encodeComponent(functionName)}/url',
+          '/2021-10-31/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/url',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1976,7 +1978,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2018-10-31/layers/${Uri.encodeComponent(layerName)}/versions/${Uri.encodeComponent(versionNumber.toString())}',
+          '/2018-10-31/layers/%24%7BUri.encodeQueryComponent%28layerName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionNumber.toString()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetLayerVersionResponse.fromJson(response);
@@ -2032,7 +2034,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2018-10-31/layers/${Uri.encodeComponent(layerName)}/versions/${Uri.encodeComponent(versionNumber.toString())}/policy',
+          '/2018-10-31/layers/%24%7BUri.encodeQueryComponent%28layerName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionNumber.toString()).replaceAll('+', '%20')}/policy',
       exceptionFnMap: _exceptionFns,
     );
     return GetLayerVersionPolicyResponse.fromJson(response);
@@ -2081,7 +2083,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-03-31/functions/${Uri.encodeComponent(functionName)}/policy',
+          '/2015-03-31/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/policy',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2130,7 +2132,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2019-09-30/functions/${Uri.encodeComponent(functionName)}/provisioned-concurrency',
+          '/2019-09-30/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/provisioned-concurrency',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2185,7 +2187,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2021-07-20/functions/${Uri.encodeComponent(functionName)}/runtime-management-config',
+          '/2021-07-20/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/runtime-management-config',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2356,7 +2358,7 @@ class Lambda {
       payload: payload,
       method: 'POST',
       requestUri:
-          '/2015-03-31/functions/${Uri.encodeComponent(functionName)}/invocations',
+          '/2015-03-31/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/invocations',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -2414,7 +2416,7 @@ class Lambda {
       payload: invokeArgs,
       method: 'POST',
       requestUri:
-          '/2014-11-13/functions/${Uri.encodeComponent(functionName)}/invoke-async/',
+          '/2014-11-13/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/invoke-async/',
       exceptionFnMap: _exceptionFns,
     );
     return InvokeAsyncResponse.fromJson(response);
@@ -2536,7 +2538,7 @@ class Lambda {
       payload: payload,
       method: 'POST',
       requestUri:
-          '/2021-11-15/functions/${Uri.encodeComponent(functionName)}/response-streaming-invocations',
+          '/2021-11-15/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/response-streaming-invocations',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -2610,7 +2612,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-03-31/functions/${Uri.encodeComponent(functionName)}/aliases',
+          '/2015-03-31/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/aliases',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2802,7 +2804,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2019-09-25/functions/${Uri.encodeComponent(functionName)}/event-invoke-config/list',
+          '/2019-09-25/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/event-invoke-config/list',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2862,7 +2864,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2021-10-31/functions/${Uri.encodeComponent(functionName)}/urls',
+          '/2021-10-31/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/urls',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2972,7 +2974,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2020-04-22/code-signing-configs/${Uri.encodeComponent(codeSigningConfigArn)}/functions',
+          '/2020-04-22/code-signing-configs/${Uri.encodeQueryComponent(codeSigningConfigArn).replaceAll('+', '%20')}/functions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3033,7 +3035,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2018-10-31/layers/${Uri.encodeComponent(layerName)}/versions',
+          '/2018-10-31/layers/${Uri.encodeQueryComponent(layerName).replaceAll('+', '%20')}/versions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3150,7 +3152,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2019-09-30/functions/${Uri.encodeComponent(functionName)}/provisioned-concurrency?List=ALL',
+          '/2019-09-30/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/provisioned-concurrency?List=ALL',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3175,7 +3177,8 @@ class Lambda {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/2017-03-31/tags/${Uri.encodeComponent(resource)}',
+      requestUri:
+          '/2017-03-31/tags/${Uri.encodeQueryComponent(resource).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsResponse.fromJson(response);
@@ -3237,7 +3240,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-03-31/functions/${Uri.encodeComponent(functionName)}/versions',
+          '/2015-03-31/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/versions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3318,7 +3321,7 @@ class Lambda {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2018-10-31/layers/${Uri.encodeComponent(layerName)}/versions',
+          '/2018-10-31/layers/${Uri.encodeQueryComponent(layerName).replaceAll('+', '%20')}/versions',
       exceptionFnMap: _exceptionFns,
     );
     return PublishLayerVersionResponse.fromJson(response);
@@ -3394,7 +3397,7 @@ class Lambda {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2015-03-31/functions/${Uri.encodeComponent(functionName)}/versions',
+          '/2015-03-31/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/versions',
       exceptionFnMap: _exceptionFns,
     );
     return FunctionConfiguration.fromJson(response);
@@ -3443,7 +3446,7 @@ class Lambda {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/2020-06-30/functions/${Uri.encodeComponent(functionName)}/code-signing-config',
+          '/2020-06-30/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/code-signing-config',
       exceptionFnMap: _exceptionFns,
     );
     return PutFunctionCodeSigningConfigResponse.fromJson(response);
@@ -3510,7 +3513,7 @@ class Lambda {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/2017-10-31/functions/${Uri.encodeComponent(functionName)}/concurrency',
+          '/2017-10-31/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/concurrency',
       exceptionFnMap: _exceptionFns,
     );
     return Concurrency.fromJson(response);
@@ -3628,7 +3631,7 @@ class Lambda {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/2019-09-25/functions/${Uri.encodeComponent(functionName)}/event-invoke-config',
+          '/2019-09-25/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/event-invoke-config',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3692,7 +3695,7 @@ class Lambda {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/2019-09-30/functions/${Uri.encodeComponent(functionName)}/provisioned-concurrency',
+          '/2019-09-30/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/provisioned-concurrency',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3788,7 +3791,7 @@ class Lambda {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/2021-07-20/functions/${Uri.encodeComponent(functionName)}/runtime-management-config',
+          '/2021-07-20/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/runtime-management-config',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3831,7 +3834,7 @@ class Lambda {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2018-10-31/layers/${Uri.encodeComponent(layerName)}/versions/${Uri.encodeComponent(versionNumber.toString())}/policy/${Uri.encodeComponent(statementId)}',
+          '/2018-10-31/layers/%2524%257BUri.encodeQueryComponent%2528layerName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/versions/${Uri.encodeQueryComponent(versionNumber.toString()).replaceAll('+', '%20')}/policy/%24%7BUri.encodeQueryComponent%28statementId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3893,7 +3896,7 @@ class Lambda {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2015-03-31/functions/${Uri.encodeComponent(functionName)}/policy/${Uri.encodeComponent(statementId)}',
+          '/2015-03-31/functions/%24%7BUri.encodeQueryComponent%28functionName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/policy/${Uri.encodeQueryComponent(statementId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3924,7 +3927,8 @@ class Lambda {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/2017-03-31/tags/${Uri.encodeComponent(resource)}',
+      requestUri:
+          '/2017-03-31/tags/${Uri.encodeQueryComponent(resource).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3954,7 +3958,8 @@ class Lambda {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/2017-03-31/tags/${Uri.encodeComponent(resource)}',
+      requestUri:
+          '/2017-03-31/tags/${Uri.encodeQueryComponent(resource).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4025,7 +4030,7 @@ class Lambda {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/2015-03-31/functions/${Uri.encodeComponent(functionName)}/aliases/${Uri.encodeComponent(name)}',
+          '/2015-03-31/functions/%24%7BUri.encodeQueryComponent%28functionName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/aliases/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return AliasConfiguration.fromJson(response);
@@ -4066,7 +4071,7 @@ class Lambda {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/2020-04-22/code-signing-configs/${Uri.encodeComponent(codeSigningConfigArn)}',
+          '/2020-04-22/code-signing-configs/${Uri.encodeQueryComponent(codeSigningConfigArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateCodeSigningConfigResponse.fromJson(response);
@@ -4403,7 +4408,7 @@ class Lambda {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/2015-03-31/event-source-mappings/${Uri.encodeComponent(uuid)}',
+          '/2015-03-31/event-source-mappings/${Uri.encodeQueryComponent(uuid).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return EventSourceMappingConfiguration.fromJson(response);
@@ -4538,7 +4543,7 @@ class Lambda {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/2015-03-31/functions/${Uri.encodeComponent(functionName)}/code',
+          '/2015-03-31/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/code',
       exceptionFnMap: _exceptionFns,
     );
     return FunctionConfiguration.fromJson(response);
@@ -4751,7 +4756,7 @@ class Lambda {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/2015-03-31/functions/${Uri.encodeComponent(functionName)}/configuration',
+          '/2015-03-31/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/configuration',
       exceptionFnMap: _exceptionFns,
     );
     return FunctionConfiguration.fromJson(response);
@@ -4852,7 +4857,7 @@ class Lambda {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2019-09-25/functions/${Uri.encodeComponent(functionName)}/event-invoke-config',
+          '/2019-09-25/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/event-invoke-config',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4940,7 +4945,7 @@ class Lambda {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/2021-10-31/functions/${Uri.encodeComponent(functionName)}/url',
+          '/2021-10-31/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/url',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

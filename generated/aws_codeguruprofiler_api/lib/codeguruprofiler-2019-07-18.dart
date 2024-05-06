@@ -96,7 +96,7 @@ class CodeGuruProfiler {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/profilingGroups/${Uri.encodeComponent(profilingGroupName)}/notificationConfiguration',
+          '/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}/notificationConfiguration',
       exceptionFnMap: _exceptionFns,
     );
     return AddNotificationChannelsResponse.fromJson(response);
@@ -178,7 +178,7 @@ class CodeGuruProfiler {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/profilingGroups/${Uri.encodeComponent(profilingGroupName)}/frames/-/metrics',
+          '/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}/frames/-/metrics',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -259,7 +259,7 @@ class CodeGuruProfiler {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/profilingGroups/${Uri.encodeComponent(profilingGroupName)}/configureAgent',
+          '/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}/configureAgent',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -343,7 +343,8 @@ class CodeGuruProfiler {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/profilingGroups/${Uri.encodeComponent(profilingGroupName)}',
+      requestUri:
+          '/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -366,7 +367,8 @@ class CodeGuruProfiler {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'GET',
-      requestUri: '/profilingGroups/${Uri.encodeComponent(profilingGroupName)}',
+      requestUri:
+          '/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -456,7 +458,7 @@ class CodeGuruProfiler {
       payload: null,
       method: 'GET',
       requestUri:
-          '/profilingGroups/${Uri.encodeComponent(profilingGroupName)}/notificationConfiguration',
+          '/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}/notificationConfiguration',
       exceptionFnMap: _exceptionFns,
     );
     return GetNotificationConfigurationResponse.fromJson(response);
@@ -477,7 +479,7 @@ class CodeGuruProfiler {
       payload: null,
       method: 'GET',
       requestUri:
-          '/profilingGroups/${Uri.encodeComponent(profilingGroupName)}/policy',
+          '/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}/policy',
       exceptionFnMap: _exceptionFns,
     );
     return GetPolicyResponse.fromJson(response);
@@ -605,7 +607,7 @@ class CodeGuruProfiler {
       payload: null,
       method: 'GET',
       requestUri:
-          '/profilingGroups/${Uri.encodeComponent(profilingGroupName)}/profile',
+          '/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}/profile',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -701,7 +703,7 @@ class CodeGuruProfiler {
       payload: null,
       method: 'GET',
       requestUri:
-          '/internal/profilingGroups/${Uri.encodeComponent(profilingGroupName)}/recommendations',
+          '/internal/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}/recommendations',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -782,7 +784,7 @@ class CodeGuruProfiler {
       payload: null,
       method: 'GET',
       requestUri:
-          '/internal/profilingGroups/${Uri.encodeComponent(profilingGroupName)}/findingsReports',
+          '/internal/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}/findingsReports',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -873,7 +875,7 @@ class CodeGuruProfiler {
       payload: null,
       method: 'GET',
       requestUri:
-          '/profilingGroups/${Uri.encodeComponent(profilingGroupName)}/profileTimes',
+          '/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}/profileTimes',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -958,7 +960,8 @@ class CodeGuruProfiler {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1013,7 +1016,7 @@ class CodeGuruProfiler {
       payload: agentProfile,
       method: 'POST',
       requestUri:
-          '/profilingGroups/${Uri.encodeComponent(profilingGroupName)}/agentProfile',
+          '/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}/agentProfile',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -1085,7 +1088,7 @@ class CodeGuruProfiler {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/profilingGroups/${Uri.encodeComponent(profilingGroupName)}/policy/${Uri.encodeComponent(actionGroup.toValue())}',
+          '/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}/policy/%24%7BUri.encodeQueryComponent%28actionGroup.toValue%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return PutPermissionResponse.fromJson(response);
@@ -1112,7 +1115,7 @@ class CodeGuruProfiler {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/profilingGroups/${Uri.encodeComponent(profilingGroupName)}/notificationConfiguration/${Uri.encodeComponent(channelId)}',
+          '/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}/notificationConfiguration/%24%7BUri.encodeQueryComponent%28channelId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return RemoveNotificationChannelResponse.fromJson(response);
@@ -1161,7 +1164,7 @@ class CodeGuruProfiler {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/profilingGroups/${Uri.encodeComponent(profilingGroupName)}/policy/${Uri.encodeComponent(actionGroup.toValue())}',
+          '/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}/policy/%24%7BUri.encodeQueryComponent%28actionGroup.toValue%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1205,7 +1208,7 @@ class CodeGuruProfiler {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/internal/profilingGroups/${Uri.encodeComponent(profilingGroupName)}/anomalies/${Uri.encodeComponent(anomalyInstanceId)}/feedback',
+          '/internal/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}/anomalies/%24%7BUri.encodeQueryComponent%28anomalyInstanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/feedback',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1231,7 +1234,8 @@ class CodeGuruProfiler {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1259,7 +1263,8 @@ class CodeGuruProfiler {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1288,7 +1293,8 @@ class CodeGuruProfiler {
     final response = await _protocol.sendRaw(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/profilingGroups/${Uri.encodeComponent(profilingGroupName)}',
+      requestUri:
+          '/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);

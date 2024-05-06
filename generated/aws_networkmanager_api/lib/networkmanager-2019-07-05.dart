@@ -71,7 +71,8 @@ class NetworkManager {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/attachments/${Uri.encodeComponent(attachmentId)}/accept',
+      requestUri:
+          '/attachments/${Uri.encodeQueryComponent(attachmentId).replaceAll('+', '%20')}/accept',
       exceptionFnMap: _exceptionFns,
     );
     return AcceptAttachmentResponse.fromJson(response);
@@ -118,7 +119,7 @@ class NetworkManager {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/connect-peer-associations',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/connect-peer-associations',
       exceptionFnMap: _exceptionFns,
     );
     return AssociateConnectPeerResponse.fromJson(response);
@@ -173,7 +174,7 @@ class NetworkManager {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/customer-gateway-associations',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/customer-gateway-associations',
       exceptionFnMap: _exceptionFns,
     );
     return AssociateCustomerGatewayResponse.fromJson(response);
@@ -212,7 +213,7 @@ class NetworkManager {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/link-associations',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/link-associations',
       exceptionFnMap: _exceptionFns,
     );
     return AssociateLinkResponse.fromJson(response);
@@ -263,7 +264,7 @@ class NetworkManager {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/transit-gateway-connect-peer-associations',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/transit-gateway-connect-peer-associations',
       exceptionFnMap: _exceptionFns,
     );
     return AssociateTransitGatewayConnectPeerResponse.fromJson(response);
@@ -439,7 +440,7 @@ class NetworkManager {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/connections',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/connections',
       exceptionFnMap: _exceptionFns,
     );
     return CreateConnectionResponse.fromJson(response);
@@ -570,7 +571,7 @@ class NetworkManager {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/devices',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/devices',
       exceptionFnMap: _exceptionFns,
     );
     return CreateDeviceResponse.fromJson(response);
@@ -668,7 +669,7 @@ class NetworkManager {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/links',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/links',
       exceptionFnMap: _exceptionFns,
     );
     return CreateLinkResponse.fromJson(response);
@@ -726,7 +727,7 @@ class NetworkManager {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/sites',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/sites',
       exceptionFnMap: _exceptionFns,
     );
     return CreateSiteResponse.fromJson(response);
@@ -928,7 +929,8 @@ class NetworkManager {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/attachments/${Uri.encodeComponent(attachmentId)}',
+      requestUri:
+          '/attachments/${Uri.encodeQueryComponent(attachmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteAttachmentResponse.fromJson(response);
@@ -951,7 +953,8 @@ class NetworkManager {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/connect-peers/${Uri.encodeComponent(connectPeerId)}',
+      requestUri:
+          '/connect-peers/${Uri.encodeQueryComponent(connectPeerId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteConnectPeerResponse.fromJson(response);
@@ -979,7 +982,7 @@ class NetworkManager {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/connections/${Uri.encodeComponent(connectionId)}',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/connections/%24%7BUri.encodeQueryComponent%28connectionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteConnectionResponse.fromJson(response);
@@ -1003,7 +1006,8 @@ class NetworkManager {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/core-networks/${Uri.encodeComponent(coreNetworkId)}',
+      requestUri:
+          '/core-networks/${Uri.encodeQueryComponent(coreNetworkId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteCoreNetworkResponse.fromJson(response);
@@ -1033,7 +1037,7 @@ class NetworkManager {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/core-networks/${Uri.encodeComponent(coreNetworkId)}/core-network-policy-versions/${Uri.encodeComponent(policyVersionId.toString())}',
+          '/core-networks/%24%7BUri.encodeQueryComponent%28coreNetworkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/core-network-policy-versions/${Uri.encodeQueryComponent(policyVersionId.toString()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteCoreNetworkPolicyVersionResponse.fromJson(response);
@@ -1062,7 +1066,7 @@ class NetworkManager {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/devices/${Uri.encodeComponent(deviceId)}',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/devices/%24%7BUri.encodeQueryComponent%28deviceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteDeviceResponse.fromJson(response);
@@ -1087,7 +1091,8 @@ class NetworkManager {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/global-networks/${Uri.encodeComponent(globalNetworkId)}',
+      requestUri:
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteGlobalNetworkResponse.fromJson(response);
@@ -1116,7 +1121,7 @@ class NetworkManager {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/links/${Uri.encodeComponent(linkId)}',
+          '/global-networks/%24%7BUri.encodeQueryComponent%28globalNetworkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/links/${Uri.encodeQueryComponent(linkId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteLinkResponse.fromJson(response);
@@ -1139,7 +1144,8 @@ class NetworkManager {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/peerings/${Uri.encodeComponent(peeringId)}',
+      requestUri:
+          '/peerings/${Uri.encodeQueryComponent(peeringId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeletePeeringResponse.fromJson(response);
@@ -1162,7 +1168,8 @@ class NetworkManager {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/resource-policy/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/resource-policy/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1190,7 +1197,7 @@ class NetworkManager {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/sites/${Uri.encodeComponent(siteId)}',
+          '/global-networks/%24%7BUri.encodeQueryComponent%28globalNetworkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/sites/${Uri.encodeQueryComponent(siteId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteSiteResponse.fromJson(response);
@@ -1220,7 +1227,7 @@ class NetworkManager {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/transit-gateway-registrations/${Uri.encodeComponent(transitGatewayArn)}',
+          '/global-networks/%24%7BUri.encodeQueryComponent%28globalNetworkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/transit-gateway-registrations/${Uri.encodeQueryComponent(transitGatewayArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeregisterTransitGatewayResponse.fromJson(response);
@@ -1294,7 +1301,7 @@ class NetworkManager {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/connect-peer-associations/${Uri.encodeComponent(connectPeerId)}',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/connect-peer-associations/%24%7BUri.encodeQueryComponent%28connectPeerId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DisassociateConnectPeerResponse.fromJson(response);
@@ -1322,7 +1329,7 @@ class NetworkManager {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/customer-gateway-associations/${Uri.encodeComponent(customerGatewayArn)}',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/customer-gateway-associations/%24%7BUri.encodeQueryComponent%28customerGatewayArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DisassociateCustomerGatewayResponse.fromJson(response);
@@ -1359,7 +1366,7 @@ class NetworkManager {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/link-associations',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/link-associations',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1389,7 +1396,7 @@ class NetworkManager {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/transit-gateway-connect-peer-associations/${Uri.encodeComponent(transitGatewayConnectPeerArn)}',
+          '/global-networks/%24%7BUri.encodeQueryComponent%28globalNetworkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/transit-gateway-connect-peer-associations/${Uri.encodeQueryComponent(transitGatewayConnectPeerArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DisassociateTransitGatewayConnectPeerResponse.fromJson(response);
@@ -1418,7 +1425,7 @@ class NetworkManager {
       payload: null,
       method: 'POST',
       requestUri:
-          '/core-networks/${Uri.encodeComponent(coreNetworkId)}/core-network-change-sets/${Uri.encodeComponent(policyVersionId.toString())}/execute',
+          '/core-networks/%24%7BUri.encodeQueryComponent%28coreNetworkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/core-network-change-sets/${Uri.encodeQueryComponent(policyVersionId.toString()).replaceAll('+', '%20')}/execute',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1439,7 +1446,8 @@ class NetworkManager {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/connect-attachments/${Uri.encodeComponent(attachmentId)}',
+      requestUri:
+          '/connect-attachments/${Uri.encodeQueryComponent(attachmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetConnectAttachmentResponse.fromJson(response);
@@ -1461,7 +1469,8 @@ class NetworkManager {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/connect-peers/${Uri.encodeComponent(connectPeerId)}',
+      requestUri:
+          '/connect-peers/${Uri.encodeQueryComponent(connectPeerId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetConnectPeerResponse.fromJson(response);
@@ -1508,7 +1517,7 @@ class NetworkManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/connect-peer-associations',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/connect-peer-associations',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1561,7 +1570,7 @@ class NetworkManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/connections',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/connections',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1584,7 +1593,8 @@ class NetworkManager {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/core-networks/${Uri.encodeComponent(coreNetworkId)}',
+      requestUri:
+          '/core-networks/${Uri.encodeQueryComponent(coreNetworkId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetCoreNetworkResponse.fromJson(response);
@@ -1629,7 +1639,7 @@ class NetworkManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/core-networks/${Uri.encodeComponent(coreNetworkId)}/core-network-change-events/${Uri.encodeComponent(policyVersionId.toString())}',
+          '/core-networks/%24%7BUri.encodeQueryComponent%28coreNetworkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/core-network-change-events/${Uri.encodeQueryComponent(policyVersionId.toString()).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1676,7 +1686,7 @@ class NetworkManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/core-networks/${Uri.encodeComponent(coreNetworkId)}/core-network-change-sets/${Uri.encodeComponent(policyVersionId.toString())}',
+          '/core-networks/%24%7BUri.encodeQueryComponent%28coreNetworkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/core-network-change-sets/${Uri.encodeQueryComponent(policyVersionId.toString()).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1714,7 +1724,7 @@ class NetworkManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/core-networks/${Uri.encodeComponent(coreNetworkId)}/core-network-policy',
+          '/core-networks/${Uri.encodeQueryComponent(coreNetworkId).replaceAll('+', '%20')}/core-network-policy',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1766,7 +1776,7 @@ class NetworkManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/customer-gateway-associations',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/customer-gateway-associations',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1818,7 +1828,7 @@ class NetworkManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/devices',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/devices',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1871,7 +1881,7 @@ class NetworkManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/link-associations',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/link-associations',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1936,7 +1946,7 @@ class NetworkManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/links',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/links',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2035,7 +2045,7 @@ class NetworkManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/network-resource-count',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/network-resource-count',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2161,7 +2171,7 @@ class NetworkManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/network-resource-relationships',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/network-resource-relationships',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2302,7 +2312,7 @@ class NetworkManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/network-resources',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/network-resources',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2376,7 +2386,7 @@ class NetworkManager {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/network-routes',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/network-routes',
       exceptionFnMap: _exceptionFns,
     );
     return GetNetworkRoutesResponse.fromJson(response);
@@ -2500,7 +2510,7 @@ class NetworkManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/network-telemetry',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/network-telemetry',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2522,7 +2532,8 @@ class NetworkManager {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/resource-policy/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/resource-policy/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetResourcePolicyResponse.fromJson(response);
@@ -2549,7 +2560,7 @@ class NetworkManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/route-analyses/${Uri.encodeComponent(routeAnalysisId)}',
+          '/global-networks/%24%7BUri.encodeQueryComponent%28globalNetworkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/route-analyses/${Uri.encodeQueryComponent(routeAnalysisId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetRouteAnalysisResponse.fromJson(response);
@@ -2572,7 +2583,7 @@ class NetworkManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/site-to-site-vpn-attachments/${Uri.encodeComponent(attachmentId)}',
+          '/site-to-site-vpn-attachments/${Uri.encodeQueryComponent(attachmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSiteToSiteVpnAttachmentResponse.fromJson(response);
@@ -2618,7 +2629,7 @@ class NetworkManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/sites',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/sites',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2669,7 +2680,7 @@ class NetworkManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/transit-gateway-connect-peer-associations',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/transit-gateway-connect-peer-associations',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2692,7 +2703,8 @@ class NetworkManager {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/transit-gateway-peerings/${Uri.encodeComponent(peeringId)}',
+      requestUri:
+          '/transit-gateway-peerings/${Uri.encodeQueryComponent(peeringId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetTransitGatewayPeeringResponse.fromJson(response);
@@ -2741,7 +2753,7 @@ class NetworkManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/transit-gateway-registrations',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/transit-gateway-registrations',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2766,7 +2778,7 @@ class NetworkManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/transit-gateway-route-table-attachments/${Uri.encodeComponent(attachmentId)}',
+          '/transit-gateway-route-table-attachments/${Uri.encodeQueryComponent(attachmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetTransitGatewayRouteTableAttachmentResponse.fromJson(response);
@@ -2788,7 +2800,8 @@ class NetworkManager {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/vpc-attachments/${Uri.encodeComponent(attachmentId)}',
+      requestUri:
+          '/vpc-attachments/${Uri.encodeQueryComponent(attachmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetVpcAttachmentResponse.fromJson(response);
@@ -2932,7 +2945,7 @@ class NetworkManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/core-networks/${Uri.encodeComponent(coreNetworkId)}/core-network-policy-versions',
+          '/core-networks/${Uri.encodeQueryComponent(coreNetworkId).replaceAll('+', '%20')}/core-network-policy-versions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3080,7 +3093,8 @@ class NetworkManager {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -3129,7 +3143,7 @@ class NetworkManager {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/core-networks/${Uri.encodeComponent(coreNetworkId)}/core-network-policy',
+          '/core-networks/${Uri.encodeQueryComponent(coreNetworkId).replaceAll('+', '%20')}/core-network-policy',
       exceptionFnMap: _exceptionFns,
     );
     return PutCoreNetworkPolicyResponse.fromJson(response);
@@ -3159,7 +3173,8 @@ class NetworkManager {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/resource-policy/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/resource-policy/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3197,7 +3212,7 @@ class NetworkManager {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/transit-gateway-registrations',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/transit-gateway-registrations',
       exceptionFnMap: _exceptionFns,
     );
     return RegisterTransitGatewayResponse.fromJson(response);
@@ -3220,7 +3235,8 @@ class NetworkManager {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/attachments/${Uri.encodeComponent(attachmentId)}/reject',
+      requestUri:
+          '/attachments/${Uri.encodeQueryComponent(attachmentId).replaceAll('+', '%20')}/reject',
       exceptionFnMap: _exceptionFns,
     );
     return RejectAttachmentResponse.fromJson(response);
@@ -3251,7 +3267,7 @@ class NetworkManager {
       payload: null,
       method: 'POST',
       requestUri:
-          '/core-networks/${Uri.encodeComponent(coreNetworkId)}/core-network-policy-versions/${Uri.encodeComponent(policyVersionId.toString())}/restore',
+          '/core-networks/%24%7BUri.encodeQueryComponent%28coreNetworkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/core-network-policy-versions/${Uri.encodeQueryComponent(policyVersionId.toString()).replaceAll('+', '%20')}/restore',
       exceptionFnMap: _exceptionFns,
     );
     return RestoreCoreNetworkPolicyVersionResponse.fromJson(response);
@@ -3332,7 +3348,7 @@ class NetworkManager {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/route-analyses',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/route-analyses',
       exceptionFnMap: _exceptionFns,
     );
     return StartRouteAnalysisResponse.fromJson(response);
@@ -3363,7 +3379,8 @@ class NetworkManager {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3392,7 +3409,8 @@ class NetworkManager {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3440,7 +3458,7 @@ class NetworkManager {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/connections/${Uri.encodeComponent(connectionId)}',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/connections/%24%7BUri.encodeQueryComponent%28connectionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateConnectionResponse.fromJson(response);
@@ -3470,7 +3488,8 @@ class NetworkManager {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/core-networks/${Uri.encodeComponent(coreNetworkId)}',
+      requestUri:
+          '/core-networks/${Uri.encodeQueryComponent(coreNetworkId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateCoreNetworkResponse.fromJson(response);
@@ -3547,7 +3566,7 @@ class NetworkManager {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/devices/${Uri.encodeComponent(deviceId)}',
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}/devices/%24%7BUri.encodeQueryComponent%28deviceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDeviceResponse.fromJson(response);
@@ -3580,7 +3599,8 @@ class NetworkManager {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/global-networks/${Uri.encodeComponent(globalNetworkId)}',
+      requestUri:
+          '/global-networks/${Uri.encodeQueryComponent(globalNetworkId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateGlobalNetworkResponse.fromJson(response);
@@ -3638,7 +3658,7 @@ class NetworkManager {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/links/${Uri.encodeComponent(linkId)}',
+          '/global-networks/%24%7BUri.encodeQueryComponent%28globalNetworkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/links/${Uri.encodeQueryComponent(linkId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateLinkResponse.fromJson(response);
@@ -3673,7 +3693,7 @@ class NetworkManager {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/network-resources/${Uri.encodeComponent(resourceArn)}/metadata',
+          '/global-networks/%24%7BUri.encodeQueryComponent%28globalNetworkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/network-resources/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}/metadata',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateNetworkResourceMetadataResponse.fromJson(response);
@@ -3728,7 +3748,7 @@ class NetworkManager {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/global-networks/${Uri.encodeComponent(globalNetworkId)}/sites/${Uri.encodeComponent(siteId)}',
+          '/global-networks/%24%7BUri.encodeQueryComponent%28globalNetworkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/sites/${Uri.encodeQueryComponent(siteId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSiteResponse.fromJson(response);
@@ -3768,7 +3788,8 @@ class NetworkManager {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/vpc-attachments/${Uri.encodeComponent(attachmentId)}',
+      requestUri:
+          '/vpc-attachments/${Uri.encodeQueryComponent(attachmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateVpcAttachmentResponse.fromJson(response);

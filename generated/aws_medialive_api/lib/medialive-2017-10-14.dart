@@ -72,7 +72,7 @@ class MediaLive {
       payload: null,
       method: 'POST',
       requestUri:
-          '/prod/inputDevices/${Uri.encodeComponent(inputDeviceId)}/accept',
+          '/prod/inputDevices/${Uri.encodeQueryComponent(inputDeviceId).replaceAll('+', '%20')}/accept',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -218,7 +218,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/prod/channels/${Uri.encodeComponent(channelId)}/schedule',
+      requestUri:
+          '/prod/channels/${Uri.encodeQueryComponent(channelId).replaceAll('+', '%20')}/schedule',
       exceptionFnMap: _exceptionFns,
     );
     return BatchUpdateScheduleResponse.fromJson(response);
@@ -246,7 +247,7 @@ class MediaLive {
       payload: null,
       method: 'POST',
       requestUri:
-          '/prod/inputDevices/${Uri.encodeComponent(inputDeviceId)}/cancel',
+          '/prod/inputDevices/${Uri.encodeQueryComponent(inputDeviceId).replaceAll('+', '%20')}/cancel',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -570,7 +571,7 @@ class MediaLive {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/prod/multiplexes/${Uri.encodeComponent(multiplexId)}/programs',
+          '/prod/multiplexes/${Uri.encodeQueryComponent(multiplexId).replaceAll('+', '%20')}/programs',
       exceptionFnMap: _exceptionFns,
     );
     return CreateMultiplexProgramResponse.fromJson(response);
@@ -606,7 +607,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/prod/inputs/${Uri.encodeComponent(inputId)}/partners',
+      requestUri:
+          '/prod/inputs/${Uri.encodeQueryComponent(inputId).replaceAll('+', '%20')}/partners',
       exceptionFnMap: _exceptionFns,
     );
     return CreatePartnerInputResponse.fromJson(response);
@@ -628,7 +630,8 @@ class MediaLive {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/prod/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/prod/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -652,7 +655,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/prod/channels/${Uri.encodeComponent(channelId)}',
+      requestUri:
+          '/prod/channels/${Uri.encodeQueryComponent(channelId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteChannelResponse.fromJson(response);
@@ -677,7 +681,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/prod/inputs/${Uri.encodeComponent(inputId)}',
+      requestUri:
+          '/prod/inputs/${Uri.encodeQueryComponent(inputId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -701,7 +706,7 @@ class MediaLive {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/prod/inputSecurityGroups/${Uri.encodeComponent(inputSecurityGroupId)}',
+          '/prod/inputSecurityGroups/${Uri.encodeQueryComponent(inputSecurityGroupId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -725,7 +730,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/prod/multiplexes/${Uri.encodeComponent(multiplexId)}',
+      requestUri:
+          '/prod/multiplexes/${Uri.encodeQueryComponent(multiplexId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteMultiplexResponse.fromJson(response);
@@ -755,7 +761,7 @@ class MediaLive {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/prod/multiplexes/${Uri.encodeComponent(multiplexId)}/programs/${Uri.encodeComponent(programName)}',
+          '/prod/multiplexes/%24%7BUri.encodeQueryComponent%28multiplexId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/programs/${Uri.encodeQueryComponent(programName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteMultiplexProgramResponse.fromJson(response);
@@ -780,7 +786,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/prod/reservations/${Uri.encodeComponent(reservationId)}',
+      requestUri:
+          '/prod/reservations/${Uri.encodeQueryComponent(reservationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteReservationResponse.fromJson(response);
@@ -804,7 +811,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/prod/channels/${Uri.encodeComponent(channelId)}/schedule',
+      requestUri:
+          '/prod/channels/${Uri.encodeQueryComponent(channelId).replaceAll('+', '%20')}/schedule',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -828,7 +836,8 @@ class MediaLive {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/prod/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/prod/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -852,7 +861,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/prod/channels/${Uri.encodeComponent(channelId)}',
+      requestUri:
+          '/prod/channels/${Uri.encodeQueryComponent(channelId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeChannelResponse.fromJson(response);
@@ -876,7 +886,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/prod/inputs/${Uri.encodeComponent(inputId)}',
+      requestUri:
+          '/prod/inputs/${Uri.encodeQueryComponent(inputId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeInputResponse.fromJson(response);
@@ -900,7 +911,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/prod/inputDevices/${Uri.encodeComponent(inputDeviceId)}',
+      requestUri:
+          '/prod/inputDevices/${Uri.encodeQueryComponent(inputDeviceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeInputDeviceResponse.fromJson(response);
@@ -932,7 +944,7 @@ class MediaLive {
       payload: null,
       method: 'GET',
       requestUri:
-          '/prod/inputDevices/${Uri.encodeComponent(inputDeviceId)}/thumbnailData',
+          '/prod/inputDevices/${Uri.encodeQueryComponent(inputDeviceId).replaceAll('+', '%20')}/thumbnailData',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -968,7 +980,7 @@ class MediaLive {
       payload: null,
       method: 'GET',
       requestUri:
-          '/prod/inputSecurityGroups/${Uri.encodeComponent(inputSecurityGroupId)}',
+          '/prod/inputSecurityGroups/${Uri.encodeQueryComponent(inputSecurityGroupId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeInputSecurityGroupResponse.fromJson(response);
@@ -992,7 +1004,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/prod/multiplexes/${Uri.encodeComponent(multiplexId)}',
+      requestUri:
+          '/prod/multiplexes/${Uri.encodeQueryComponent(multiplexId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeMultiplexResponse.fromJson(response);
@@ -1021,7 +1034,7 @@ class MediaLive {
       payload: null,
       method: 'GET',
       requestUri:
-          '/prod/multiplexes/${Uri.encodeComponent(multiplexId)}/programs/${Uri.encodeComponent(programName)}',
+          '/prod/multiplexes/%24%7BUri.encodeQueryComponent%28multiplexId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/programs/${Uri.encodeQueryComponent(programName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeMultiplexProgramResponse.fromJson(response);
@@ -1045,7 +1058,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/prod/offerings/${Uri.encodeComponent(offeringId)}',
+      requestUri:
+          '/prod/offerings/${Uri.encodeQueryComponent(offeringId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeOfferingResponse.fromJson(response);
@@ -1069,7 +1083,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/prod/reservations/${Uri.encodeComponent(reservationId)}',
+      requestUri:
+          '/prod/reservations/${Uri.encodeQueryComponent(reservationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeReservationResponse.fromJson(response);
@@ -1105,7 +1120,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/prod/channels/${Uri.encodeComponent(channelId)}/schedule',
+      requestUri:
+          '/prod/channels/${Uri.encodeQueryComponent(channelId).replaceAll('+', '%20')}/schedule',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1314,7 +1330,7 @@ class MediaLive {
       payload: null,
       method: 'GET',
       requestUri:
-          '/prod/multiplexes/${Uri.encodeComponent(multiplexId)}/programs',
+          '/prod/multiplexes/${Uri.encodeQueryComponent(multiplexId).replaceAll('+', '%20')}/programs',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1527,7 +1543,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/prod/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/prod/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1594,7 +1611,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/prod/offerings/${Uri.encodeComponent(offeringId)}/purchase',
+      requestUri:
+          '/prod/offerings/${Uri.encodeQueryComponent(offeringId).replaceAll('+', '%20')}/purchase',
       exceptionFnMap: _exceptionFns,
     );
     return PurchaseOfferingResponse.fromJson(response);
@@ -1633,7 +1651,7 @@ class MediaLive {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/prod/inputDevices/${Uri.encodeComponent(inputDeviceId)}/reboot',
+          '/prod/inputDevices/${Uri.encodeQueryComponent(inputDeviceId).replaceAll('+', '%20')}/reboot',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1660,7 +1678,7 @@ class MediaLive {
       payload: null,
       method: 'POST',
       requestUri:
-          '/prod/inputDevices/${Uri.encodeComponent(inputDeviceId)}/reject',
+          '/prod/inputDevices/${Uri.encodeQueryComponent(inputDeviceId).replaceAll('+', '%20')}/reject',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1684,7 +1702,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/prod/channels/${Uri.encodeComponent(channelId)}/start',
+      requestUri:
+          '/prod/channels/${Uri.encodeQueryComponent(channelId).replaceAll('+', '%20')}/start',
       exceptionFnMap: _exceptionFns,
     );
     return StartChannelResponse.fromJson(response);
@@ -1719,7 +1738,7 @@ class MediaLive {
       payload: null,
       method: 'POST',
       requestUri:
-          '/prod/inputDevices/${Uri.encodeComponent(inputDeviceId)}/startInputDeviceMaintenanceWindow',
+          '/prod/inputDevices/${Uri.encodeQueryComponent(inputDeviceId).replaceAll('+', '%20')}/startInputDeviceMaintenanceWindow',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1744,7 +1763,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/prod/multiplexes/${Uri.encodeComponent(multiplexId)}/start',
+      requestUri:
+          '/prod/multiplexes/${Uri.encodeQueryComponent(multiplexId).replaceAll('+', '%20')}/start',
       exceptionFnMap: _exceptionFns,
     );
     return StartMultiplexResponse.fromJson(response);
@@ -1769,7 +1789,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/prod/channels/${Uri.encodeComponent(channelId)}/stop',
+      requestUri:
+          '/prod/channels/${Uri.encodeQueryComponent(channelId).replaceAll('+', '%20')}/stop',
       exceptionFnMap: _exceptionFns,
     );
     return StopChannelResponse.fromJson(response);
@@ -1795,7 +1816,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/prod/multiplexes/${Uri.encodeComponent(multiplexId)}/stop',
+      requestUri:
+          '/prod/multiplexes/${Uri.encodeQueryComponent(multiplexId).replaceAll('+', '%20')}/stop',
       exceptionFnMap: _exceptionFns,
     );
     return StopMultiplexResponse.fromJson(response);
@@ -1840,7 +1862,7 @@ class MediaLive {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/prod/inputDevices/${Uri.encodeComponent(inputDeviceId)}/transfer',
+          '/prod/inputDevices/${Uri.encodeQueryComponent(inputDeviceId).replaceAll('+', '%20')}/transfer',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1910,7 +1932,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/prod/channels/${Uri.encodeComponent(channelId)}',
+      requestUri:
+          '/prod/channels/${Uri.encodeQueryComponent(channelId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateChannelResponse.fromJson(response);
@@ -1949,7 +1972,7 @@ class MediaLive {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/prod/channels/${Uri.encodeComponent(channelId)}/channelClass',
+          '/prod/channels/${Uri.encodeQueryComponent(channelId).replaceAll('+', '%20')}/channelClass',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateChannelClassResponse.fromJson(response);
@@ -2019,7 +2042,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/prod/inputs/${Uri.encodeComponent(inputId)}',
+      requestUri:
+          '/prod/inputs/${Uri.encodeQueryComponent(inputId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateInputResponse.fromJson(response);
@@ -2061,7 +2085,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/prod/inputDevices/${Uri.encodeComponent(inputDeviceId)}',
+      requestUri:
+          '/prod/inputDevices/${Uri.encodeQueryComponent(inputDeviceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateInputDeviceResponse.fromJson(response);
@@ -2098,7 +2123,7 @@ class MediaLive {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/prod/inputSecurityGroups/${Uri.encodeComponent(inputSecurityGroupId)}',
+          '/prod/inputSecurityGroups/${Uri.encodeQueryComponent(inputSecurityGroupId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateInputSecurityGroupResponse.fromJson(response);
@@ -2135,7 +2160,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/prod/multiplexes/${Uri.encodeComponent(multiplexId)}',
+      requestUri:
+          '/prod/multiplexes/${Uri.encodeQueryComponent(multiplexId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateMultiplexResponse.fromJson(response);
@@ -2173,7 +2199,7 @@ class MediaLive {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/prod/multiplexes/${Uri.encodeComponent(multiplexId)}/programs/${Uri.encodeComponent(programName)}',
+          '/prod/multiplexes/%24%7BUri.encodeQueryComponent%28multiplexId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/programs/${Uri.encodeQueryComponent(programName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateMultiplexProgramResponse.fromJson(response);
@@ -2210,7 +2236,8 @@ class MediaLive {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/prod/reservations/${Uri.encodeComponent(reservationId)}',
+      requestUri:
+          '/prod/reservations/${Uri.encodeQueryComponent(reservationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateReservationResponse.fromJson(response);

@@ -74,7 +74,8 @@ class MediaConnect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/bridges/${Uri.encodeComponent(bridgeArn)}/outputs',
+      requestUri:
+          '/v1/bridges/${Uri.encodeQueryComponent(bridgeArn).replaceAll('+', '%20')}/outputs',
       exceptionFnMap: _exceptionFns,
     );
     return AddBridgeOutputsResponse.fromJson(response);
@@ -105,7 +106,8 @@ class MediaConnect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/bridges/${Uri.encodeComponent(bridgeArn)}/sources',
+      requestUri:
+          '/v1/bridges/${Uri.encodeQueryComponent(bridgeArn).replaceAll('+', '%20')}/sources',
       exceptionFnMap: _exceptionFns,
     );
     return AddBridgeSourcesResponse.fromJson(response);
@@ -137,7 +139,8 @@ class MediaConnect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/flows/${Uri.encodeComponent(flowArn)}/mediaStreams',
+      requestUri:
+          '/v1/flows/${Uri.encodeQueryComponent(flowArn).replaceAll('+', '%20')}/mediaStreams',
       exceptionFnMap: _exceptionFns,
     );
     return AddFlowMediaStreamsResponse.fromJson(response);
@@ -169,7 +172,8 @@ class MediaConnect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/flows/${Uri.encodeComponent(flowArn)}/outputs',
+      requestUri:
+          '/v1/flows/${Uri.encodeQueryComponent(flowArn).replaceAll('+', '%20')}/outputs',
       exceptionFnMap: _exceptionFns,
     );
     return AddFlowOutputsResponse.fromJson(response);
@@ -199,7 +203,8 @@ class MediaConnect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/flows/${Uri.encodeComponent(flowArn)}/source',
+      requestUri:
+          '/v1/flows/${Uri.encodeQueryComponent(flowArn).replaceAll('+', '%20')}/source',
       exceptionFnMap: _exceptionFns,
     );
     return AddFlowSourcesResponse.fromJson(response);
@@ -229,7 +234,8 @@ class MediaConnect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/flows/${Uri.encodeComponent(flowArn)}/vpcInterfaces',
+      requestUri:
+          '/v1/flows/${Uri.encodeQueryComponent(flowArn).replaceAll('+', '%20')}/vpcInterfaces',
       exceptionFnMap: _exceptionFns,
     );
     return AddFlowVpcInterfacesResponse.fromJson(response);
@@ -424,7 +430,8 @@ class MediaConnect {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/bridges/${Uri.encodeComponent(bridgeArn)}',
+      requestUri:
+          '/v1/bridges/${Uri.encodeQueryComponent(bridgeArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteBridgeResponse.fromJson(response);
@@ -447,7 +454,8 @@ class MediaConnect {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/flows/${Uri.encodeComponent(flowArn)}',
+      requestUri:
+          '/v1/flows/${Uri.encodeQueryComponent(flowArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteFlowResponse.fromJson(response);
@@ -472,7 +480,8 @@ class MediaConnect {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/gateways/${Uri.encodeComponent(gatewayArn)}',
+      requestUri:
+          '/v1/gateways/${Uri.encodeQueryComponent(gatewayArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteGatewayResponse.fromJson(response);
@@ -508,7 +517,7 @@ class MediaConnect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/gateway-instances/${Uri.encodeComponent(gatewayInstanceArn)}',
+          '/v1/gateway-instances/${Uri.encodeQueryComponent(gatewayInstanceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -533,7 +542,8 @@ class MediaConnect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/bridges/${Uri.encodeComponent(bridgeArn)}',
+      requestUri:
+          '/v1/bridges/${Uri.encodeQueryComponent(bridgeArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeBridgeResponse.fromJson(response);
@@ -558,7 +568,8 @@ class MediaConnect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/flows/${Uri.encodeComponent(flowArn)}',
+      requestUri:
+          '/v1/flows/${Uri.encodeQueryComponent(flowArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeFlowResponse.fromJson(response);
@@ -583,7 +594,8 @@ class MediaConnect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/gateways/${Uri.encodeComponent(gatewayArn)}',
+      requestUri:
+          '/v1/gateways/${Uri.encodeQueryComponent(gatewayArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeGatewayResponse.fromJson(response);
@@ -609,7 +621,7 @@ class MediaConnect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/gateway-instances/${Uri.encodeComponent(gatewayInstanceArn)}',
+          '/v1/gateway-instances/${Uri.encodeQueryComponent(gatewayInstanceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeGatewayInstanceResponse.fromJson(response);
@@ -633,7 +645,8 @@ class MediaConnect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/offerings/${Uri.encodeComponent(offeringArn)}',
+      requestUri:
+          '/v1/offerings/${Uri.encodeQueryComponent(offeringArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeOfferingResponse.fromJson(response);
@@ -658,7 +671,8 @@ class MediaConnect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/reservations/${Uri.encodeComponent(reservationArn)}',
+      requestUri:
+          '/v1/reservations/${Uri.encodeQueryComponent(reservationArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeReservationResponse.fromJson(response);
@@ -689,7 +703,8 @@ class MediaConnect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/flows/${Uri.encodeComponent(flowArn)}/entitlements',
+      requestUri:
+          '/v1/flows/${Uri.encodeQueryComponent(flowArn).replaceAll('+', '%20')}/entitlements',
       exceptionFnMap: _exceptionFns,
     );
     return GrantFlowEntitlementsResponse.fromJson(response);
@@ -1059,7 +1074,8 @@ class MediaConnect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1100,7 +1116,8 @@ class MediaConnect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/offerings/${Uri.encodeComponent(offeringArn)}',
+      requestUri:
+          '/v1/offerings/${Uri.encodeQueryComponent(offeringArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return PurchaseOfferingResponse.fromJson(response);
@@ -1129,7 +1146,7 @@ class MediaConnect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/bridges/${Uri.encodeComponent(bridgeArn)}/outputs/${Uri.encodeComponent(outputName)}',
+          '/v1/bridges/%24%7BUri.encodeQueryComponent%28bridgeArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/outputs/${Uri.encodeQueryComponent(outputName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return RemoveBridgeOutputResponse.fromJson(response);
@@ -1158,7 +1175,7 @@ class MediaConnect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/bridges/${Uri.encodeComponent(bridgeArn)}/sources/${Uri.encodeComponent(sourceName)}',
+          '/v1/bridges/%24%7BUri.encodeQueryComponent%28bridgeArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/sources/${Uri.encodeQueryComponent(sourceName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return RemoveBridgeSourceResponse.fromJson(response);
@@ -1187,7 +1204,7 @@ class MediaConnect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/flows/${Uri.encodeComponent(flowArn)}/mediaStreams/${Uri.encodeComponent(mediaStreamName)}',
+          '/v1/flows/%24%7BUri.encodeQueryComponent%28flowArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/mediaStreams/${Uri.encodeQueryComponent(mediaStreamName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return RemoveFlowMediaStreamResponse.fromJson(response);
@@ -1219,7 +1236,7 @@ class MediaConnect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/flows/${Uri.encodeComponent(flowArn)}/outputs/${Uri.encodeComponent(outputArn)}',
+          '/v1/flows/%24%7BUri.encodeQueryComponent%28flowArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/outputs/${Uri.encodeQueryComponent(outputArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return RemoveFlowOutputResponse.fromJson(response);
@@ -1248,7 +1265,7 @@ class MediaConnect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/flows/${Uri.encodeComponent(flowArn)}/source/${Uri.encodeComponent(sourceArn)}',
+          '/v1/flows/%24%7BUri.encodeQueryComponent%28flowArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/source/${Uri.encodeQueryComponent(sourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return RemoveFlowSourceResponse.fromJson(response);
@@ -1280,7 +1297,7 @@ class MediaConnect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/flows/${Uri.encodeComponent(flowArn)}/vpcInterfaces/${Uri.encodeComponent(vpcInterfaceName)}',
+          '/v1/flows/%24%7BUri.encodeQueryComponent%28flowArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vpcInterfaces/${Uri.encodeQueryComponent(vpcInterfaceName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return RemoveFlowVpcInterfaceResponse.fromJson(response);
@@ -1310,7 +1327,7 @@ class MediaConnect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/flows/${Uri.encodeComponent(flowArn)}/entitlements/${Uri.encodeComponent(entitlementArn)}',
+          '/v1/flows/${Uri.encodeQueryComponent(flowArn).replaceAll('+', '%20')}/entitlements/%24%7BUri.encodeQueryComponent%28entitlementArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return RevokeFlowEntitlementResponse.fromJson(response);
@@ -1333,7 +1350,8 @@ class MediaConnect {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/v1/flows/start/${Uri.encodeComponent(flowArn)}',
+      requestUri:
+          '/v1/flows/start/${Uri.encodeQueryComponent(flowArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return StartFlowResponse.fromJson(response);
@@ -1356,7 +1374,8 @@ class MediaConnect {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/v1/flows/stop/${Uri.encodeComponent(flowArn)}',
+      requestUri:
+          '/v1/flows/stop/${Uri.encodeQueryComponent(flowArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return StopFlowResponse.fromJson(response);
@@ -1389,7 +1408,8 @@ class MediaConnect {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1416,7 +1436,8 @@ class MediaConnect {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1451,7 +1472,8 @@ class MediaConnect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v1/bridges/${Uri.encodeComponent(bridgeArn)}',
+      requestUri:
+          '/v1/bridges/${Uri.encodeQueryComponent(bridgeArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBridgeResponse.fromJson(response);
@@ -1484,7 +1506,7 @@ class MediaConnect {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/bridges/${Uri.encodeComponent(bridgeArn)}/outputs/${Uri.encodeComponent(outputName)}',
+          '/v1/bridges/%24%7BUri.encodeQueryComponent%28bridgeArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/outputs/${Uri.encodeQueryComponent(outputName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBridgeOutputResponse.fromJson(response);
@@ -1519,7 +1541,7 @@ class MediaConnect {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/bridges/${Uri.encodeComponent(bridgeArn)}/sources/${Uri.encodeComponent(sourceName)}',
+          '/v1/bridges/%24%7BUri.encodeQueryComponent%28bridgeArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/sources/${Uri.encodeQueryComponent(sourceName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBridgeSourceResponse.fromJson(response);
@@ -1547,7 +1569,8 @@ class MediaConnect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v1/bridges/${Uri.encodeComponent(bridgeArn)}/state',
+      requestUri:
+          '/v1/bridges/${Uri.encodeQueryComponent(bridgeArn).replaceAll('+', '%20')}/state',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBridgeStateResponse.fromJson(response);
@@ -1577,7 +1600,8 @@ class MediaConnect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v1/flows/${Uri.encodeComponent(flowArn)}',
+      requestUri:
+          '/v1/flows/${Uri.encodeQueryComponent(flowArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateFlowResponse.fromJson(response);
@@ -1638,7 +1662,7 @@ class MediaConnect {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/flows/${Uri.encodeComponent(flowArn)}/entitlements/${Uri.encodeComponent(entitlementArn)}',
+          '/v1/flows/${Uri.encodeQueryComponent(flowArn).replaceAll('+', '%20')}/entitlements/%24%7BUri.encodeQueryComponent%28entitlementArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateFlowEntitlementResponse.fromJson(response);
@@ -1695,7 +1719,7 @@ class MediaConnect {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/flows/${Uri.encodeComponent(flowArn)}/mediaStreams/${Uri.encodeComponent(mediaStreamName)}',
+          '/v1/flows/%24%7BUri.encodeQueryComponent%28flowArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/mediaStreams/${Uri.encodeQueryComponent(mediaStreamName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateFlowMediaStreamResponse.fromJson(response);
@@ -1817,7 +1841,7 @@ class MediaConnect {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/flows/${Uri.encodeComponent(flowArn)}/outputs/${Uri.encodeComponent(outputArn)}',
+          '/v1/flows/%24%7BUri.encodeQueryComponent%28flowArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/outputs/${Uri.encodeQueryComponent(outputArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateFlowOutputResponse.fromJson(response);
@@ -1957,7 +1981,7 @@ class MediaConnect {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/flows/${Uri.encodeComponent(flowArn)}/source/${Uri.encodeComponent(sourceArn)}',
+          '/v1/flows/%24%7BUri.encodeQueryComponent%28flowArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/source/${Uri.encodeQueryComponent(sourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateFlowSourceResponse.fromJson(response);
@@ -1992,7 +2016,7 @@ class MediaConnect {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/gateway-instances/${Uri.encodeComponent(gatewayInstanceArn)}',
+          '/v1/gateway-instances/${Uri.encodeQueryComponent(gatewayInstanceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateGatewayInstanceResponse.fromJson(response);

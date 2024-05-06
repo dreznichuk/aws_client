@@ -103,7 +103,7 @@ class PinpointSMSVoice {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/sms-voice/configuration-sets/${Uri.encodeComponent(configurationSetName)}/event-destinations',
+          '/v1/sms-voice/configuration-sets/${Uri.encodeQueryComponent(configurationSetName).replaceAll('+', '%20')}/event-destinations',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -124,7 +124,7 @@ class PinpointSMSVoice {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/sms-voice/configuration-sets/${Uri.encodeComponent(configurationSetName)}',
+          '/v1/sms-voice/configuration-sets/${Uri.encodeQueryComponent(configurationSetName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -149,7 +149,7 @@ class PinpointSMSVoice {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/sms-voice/configuration-sets/${Uri.encodeComponent(configurationSetName)}/event-destinations/${Uri.encodeComponent(eventDestinationName)}',
+          '/v1/sms-voice/configuration-sets/%24%7BUri.encodeQueryComponent%28configurationSetName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/event-destinations/${Uri.encodeQueryComponent(eventDestinationName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -173,7 +173,7 @@ class PinpointSMSVoice {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/sms-voice/configuration-sets/${Uri.encodeComponent(configurationSetName)}/event-destinations',
+          '/v1/sms-voice/configuration-sets/${Uri.encodeQueryComponent(configurationSetName).replaceAll('+', '%20')}/event-destinations',
       exceptionFnMap: _exceptionFns,
     );
     return GetConfigurationSetEventDestinationsResponse.fromJson(response);
@@ -286,7 +286,7 @@ class PinpointSMSVoice {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/sms-voice/configuration-sets/${Uri.encodeComponent(configurationSetName)}/event-destinations/${Uri.encodeComponent(eventDestinationName)}',
+          '/v1/sms-voice/configuration-sets/%24%7BUri.encodeQueryComponent%28configurationSetName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/event-destinations/${Uri.encodeQueryComponent(eventDestinationName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

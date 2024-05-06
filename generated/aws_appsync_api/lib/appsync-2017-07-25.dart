@@ -73,7 +73,7 @@ class AppSync {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/domainnames/${Uri.encodeComponent(domainName)}/apiassociation',
+          '/v1/domainnames/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/apiassociation',
       exceptionFnMap: _exceptionFns,
     );
     return AssociateApiResponse.fromJson(response);
@@ -124,7 +124,7 @@ class AppSync {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/sourceApis/${Uri.encodeComponent(sourceApiIdentifier)}/mergedApiAssociations',
+          '/v1/sourceApis/${Uri.encodeQueryComponent(sourceApiIdentifier).replaceAll('+', '%20')}/mergedApiAssociations',
       exceptionFnMap: _exceptionFns,
     );
     return AssociateMergedGraphqlApiResponse.fromJson(response);
@@ -175,7 +175,7 @@ class AppSync {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/mergedApis/${Uri.encodeComponent(mergedApiIdentifier)}/sourceApiAssociations',
+          '/v1/mergedApis/${Uri.encodeQueryComponent(mergedApiIdentifier).replaceAll('+', '%20')}/sourceApiAssociations',
       exceptionFnMap: _exceptionFns,
     );
     return AssociateSourceGraphqlApiResponse.fromJson(response);
@@ -297,7 +297,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/apis/${Uri.encodeComponent(apiId)}/ApiCaches',
+      requestUri:
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/ApiCaches',
       exceptionFnMap: _exceptionFns,
     );
     return CreateApiCacheResponse.fromJson(response);
@@ -338,7 +339,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/apis/${Uri.encodeComponent(apiId)}/apikeys',
+      requestUri:
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/apikeys',
       exceptionFnMap: _exceptionFns,
     );
     return CreateApiKeyResponse.fromJson(response);
@@ -427,7 +429,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/apis/${Uri.encodeComponent(apiId)}/datasources',
+      requestUri:
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/datasources',
       exceptionFnMap: _exceptionFns,
     );
     return CreateDataSourceResponse.fromJson(response);
@@ -546,7 +549,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/apis/${Uri.encodeComponent(apiId)}/functions',
+      requestUri:
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/functions',
       exceptionFnMap: _exceptionFns,
     );
     return CreateFunctionResponse.fromJson(response);
@@ -766,7 +770,7 @@ class AppSync {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/apis/${Uri.encodeComponent(apiId)}/types/${Uri.encodeComponent(typeName)}/resolvers',
+          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}/resolvers',
       exceptionFnMap: _exceptionFns,
     );
     return CreateResolverResponse.fromJson(response);
@@ -803,7 +807,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/apis/${Uri.encodeComponent(apiId)}/types',
+      requestUri:
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/types',
       exceptionFnMap: _exceptionFns,
     );
     return CreateTypeResponse.fromJson(response);
@@ -825,7 +830,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/apis/${Uri.encodeComponent(apiId)}/ApiCaches',
+      requestUri:
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/ApiCaches',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -850,7 +856,7 @@ class AppSync {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apis/${Uri.encodeComponent(apiId)}/apikeys/${Uri.encodeComponent(id)}',
+          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/apikeys/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -876,7 +882,7 @@ class AppSync {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apis/${Uri.encodeComponent(apiId)}/datasources/${Uri.encodeComponent(name)}',
+          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/datasources/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -897,7 +903,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/domainnames/${Uri.encodeComponent(domainName)}',
+      requestUri:
+          '/v1/domainnames/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -922,7 +929,7 @@ class AppSync {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apis/${Uri.encodeComponent(apiId)}/functions/${Uri.encodeComponent(functionId)}',
+          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/functions/${Uri.encodeQueryComponent(functionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -944,7 +951,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/apis/${Uri.encodeComponent(apiId)}',
+      requestUri:
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -974,7 +982,7 @@ class AppSync {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apis/${Uri.encodeComponent(apiId)}/types/${Uri.encodeComponent(typeName)}/resolvers/${Uri.encodeComponent(fieldName)}',
+          '/v1/apis/%2524%257BUri.encodeQueryComponent%2528apiId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}/resolvers/%24%7BUri.encodeQueryComponent%28fieldName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1000,7 +1008,7 @@ class AppSync {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apis/${Uri.encodeComponent(apiId)}/types/${Uri.encodeComponent(typeName)}',
+          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1022,7 +1030,7 @@ class AppSync {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/domainnames/${Uri.encodeComponent(domainName)}/apiassociation',
+          '/v1/domainnames/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/apiassociation',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1053,7 +1061,7 @@ class AppSync {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/sourceApis/${Uri.encodeComponent(sourceApiIdentifier)}/mergedApiAssociations/${Uri.encodeComponent(associationId)}',
+          '/v1/sourceApis/${Uri.encodeQueryComponent(sourceApiIdentifier).replaceAll('+', '%20')}/mergedApiAssociations/%24%7BUri.encodeQueryComponent%28associationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DisassociateMergedGraphqlApiResponse.fromJson(response);
@@ -1085,7 +1093,7 @@ class AppSync {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/mergedApis/${Uri.encodeComponent(mergedApiIdentifier)}/sourceApiAssociations/${Uri.encodeComponent(associationId)}',
+          '/v1/mergedApis/${Uri.encodeQueryComponent(mergedApiIdentifier).replaceAll('+', '%20')}/sourceApiAssociations/%24%7BUri.encodeQueryComponent%28associationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DisassociateSourceGraphqlApiResponse.fromJson(response);
@@ -1195,7 +1203,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/apis/${Uri.encodeComponent(apiId)}/FlushCache',
+      requestUri:
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/FlushCache',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1216,7 +1225,7 @@ class AppSync {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/domainnames/${Uri.encodeComponent(domainName)}/apiassociation',
+          '/v1/domainnames/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/apiassociation',
       exceptionFnMap: _exceptionFns,
     );
     return GetApiAssociationResponse.fromJson(response);
@@ -1238,7 +1247,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/apis/${Uri.encodeComponent(apiId)}/ApiCaches',
+      requestUri:
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/ApiCaches',
       exceptionFnMap: _exceptionFns,
     );
     return GetApiCacheResponse.fromJson(response);
@@ -1265,7 +1275,7 @@ class AppSync {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apis/${Uri.encodeComponent(apiId)}/datasources/${Uri.encodeComponent(name)}',
+          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/datasources/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDataSourceResponse.fromJson(response);
@@ -1286,7 +1296,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/domainnames/${Uri.encodeComponent(domainName)}',
+      requestUri:
+          '/v1/domainnames/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDomainNameResponse.fromJson(response);
@@ -1311,7 +1322,7 @@ class AppSync {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apis/${Uri.encodeComponent(apiId)}/functions/${Uri.encodeComponent(functionId)}',
+          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/functions/${Uri.encodeQueryComponent(functionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetFunctionResponse.fromJson(response);
@@ -1333,7 +1344,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/apis/${Uri.encodeComponent(apiId)}',
+      requestUri:
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetGraphqlApiResponse.fromJson(response);
@@ -1368,7 +1380,8 @@ class AppSync {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/apis/${Uri.encodeComponent(apiId)}/schema',
+      requestUri:
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/schema',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1400,7 +1413,7 @@ class AppSync {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apis/${Uri.encodeComponent(apiId)}/types/${Uri.encodeComponent(typeName)}/resolvers/${Uri.encodeComponent(fieldName)}',
+          '/v1/apis/%2524%257BUri.encodeQueryComponent%2528apiId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}/resolvers/%24%7BUri.encodeQueryComponent%28fieldName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetResolverResponse.fromJson(response);
@@ -1421,7 +1434,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/apis/${Uri.encodeComponent(apiId)}/schemacreation',
+      requestUri:
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/schemacreation',
       exceptionFnMap: _exceptionFns,
     );
     return GetSchemaCreationStatusResponse.fromJson(response);
@@ -1451,7 +1465,7 @@ class AppSync {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/mergedApis/${Uri.encodeComponent(mergedApiIdentifier)}/sourceApiAssociations/${Uri.encodeComponent(associationId)}',
+          '/v1/mergedApis/${Uri.encodeQueryComponent(mergedApiIdentifier).replaceAll('+', '%20')}/sourceApiAssociations/%24%7BUri.encodeQueryComponent%28associationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetSourceApiAssociationResponse.fromJson(response);
@@ -1485,7 +1499,7 @@ class AppSync {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apis/${Uri.encodeComponent(apiId)}/types/${Uri.encodeComponent(typeName)}',
+          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1532,7 +1546,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/apis/${Uri.encodeComponent(apiId)}/apikeys',
+      requestUri:
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/apikeys',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1573,7 +1588,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/apis/${Uri.encodeComponent(apiId)}/datasources',
+      requestUri:
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/datasources',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1650,7 +1666,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/apis/${Uri.encodeComponent(apiId)}/functions',
+      requestUri:
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/functions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1743,7 +1760,7 @@ class AppSync {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apis/${Uri.encodeComponent(apiId)}/types/${Uri.encodeComponent(typeName)}/resolvers',
+          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}/resolvers',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1789,7 +1806,7 @@ class AppSync {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apis/${Uri.encodeComponent(apiId)}/functions/${Uri.encodeComponent(functionId)}/resolvers',
+          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/functions/${Uri.encodeQueryComponent(functionId).replaceAll('+', '%20')}/resolvers',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1831,7 +1848,7 @@ class AppSync {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apis/${Uri.encodeComponent(apiId)}/sourceApiAssociations',
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/sourceApiAssociations',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1855,7 +1872,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/v1/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1901,7 +1919,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/apis/${Uri.encodeComponent(apiId)}/types',
+      requestUri:
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/types',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1957,7 +1976,7 @@ class AppSync {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/mergedApis/${Uri.encodeComponent(mergedApiIdentifier)}/sourceApiAssociations/${Uri.encodeComponent(associationId)}/types',
+          '/v1/mergedApis/${Uri.encodeQueryComponent(mergedApiIdentifier).replaceAll('+', '%20')}/sourceApiAssociations/%24%7BUri.encodeQueryComponent%28associationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/types',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1989,7 +2008,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/apis/${Uri.encodeComponent(apiId)}/schemacreation',
+      requestUri:
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/schemacreation',
       exceptionFnMap: _exceptionFns,
     );
     return StartSchemaCreationResponse.fromJson(response);
@@ -2021,7 +2041,7 @@ class AppSync {
       payload: null,
       method: 'POST',
       requestUri:
-          '/v1/mergedApis/${Uri.encodeComponent(mergedApiIdentifier)}/sourceApiAssociations/${Uri.encodeComponent(associationId)}/merge',
+          '/v1/mergedApis/${Uri.encodeQueryComponent(mergedApiIdentifier).replaceAll('+', '%20')}/sourceApiAssociations/%24%7BUri.encodeQueryComponent%28associationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/merge',
       exceptionFnMap: _exceptionFns,
     );
     return StartSchemaMergeResponse.fromJson(response);
@@ -2051,7 +2071,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/v1/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2080,7 +2101,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/v1/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2188,7 +2210,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/apis/${Uri.encodeComponent(apiId)}/ApiCaches/update',
+      requestUri:
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/ApiCaches/update',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateApiCacheResponse.fromJson(response);
@@ -2229,7 +2252,7 @@ class AppSync {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/apis/${Uri.encodeComponent(apiId)}/apikeys/${Uri.encodeComponent(id)}',
+          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/apikeys/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateApiKeyResponse.fromJson(response);
@@ -2316,7 +2339,7 @@ class AppSync {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/apis/${Uri.encodeComponent(apiId)}/datasources/${Uri.encodeComponent(name)}',
+          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/datasources/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDataSourceResponse.fromJson(response);
@@ -2345,7 +2368,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/domainnames/${Uri.encodeComponent(domainName)}',
+      requestUri:
+          '/v1/domainnames/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDomainNameResponse.fromJson(response);
@@ -2430,7 +2454,7 @@ class AppSync {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/apis/${Uri.encodeComponent(apiId)}/functions/${Uri.encodeComponent(functionId)}',
+          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/functions/${Uri.encodeQueryComponent(functionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateFunctionResponse.fromJson(response);
@@ -2520,7 +2544,8 @@ class AppSync {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/apis/${Uri.encodeComponent(apiId)}',
+      requestUri:
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateGraphqlApiResponse.fromJson(response);
@@ -2633,7 +2658,7 @@ class AppSync {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/apis/${Uri.encodeComponent(apiId)}/types/${Uri.encodeComponent(typeName)}/resolvers/${Uri.encodeComponent(fieldName)}',
+          '/v1/apis/%2524%257BUri.encodeQueryComponent%2528apiId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}/resolvers/%24%7BUri.encodeQueryComponent%28fieldName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateResolverResponse.fromJson(response);
@@ -2678,7 +2703,7 @@ class AppSync {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/mergedApis/${Uri.encodeComponent(mergedApiIdentifier)}/sourceApiAssociations/${Uri.encodeComponent(associationId)}',
+          '/v1/mergedApis/${Uri.encodeQueryComponent(mergedApiIdentifier).replaceAll('+', '%20')}/sourceApiAssociations/%24%7BUri.encodeQueryComponent%28associationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSourceApiAssociationResponse.fromJson(response);
@@ -2717,7 +2742,7 @@ class AppSync {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/apis/${Uri.encodeComponent(apiId)}/types/${Uri.encodeComponent(typeName)}',
+          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateTypeResponse.fromJson(response);

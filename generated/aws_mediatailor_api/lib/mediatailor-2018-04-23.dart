@@ -172,7 +172,8 @@ class MediaTailor {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/channel/${Uri.encodeComponent(channelName)}',
+      requestUri:
+          '/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateChannelResponse.fromJson(response);
@@ -209,7 +210,7 @@ class MediaTailor {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/sourceLocation/${Uri.encodeComponent(sourceLocationName)}/liveSource/${Uri.encodeComponent(liveSourceName)}',
+          '/sourceLocation/${Uri.encodeQueryComponent(sourceLocationName).replaceAll('+', '%20')}/liveSource/%24%7BUri.encodeQueryComponent%28liveSourceName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return CreateLiveSourceResponse.fromJson(response);
@@ -263,7 +264,7 @@ class MediaTailor {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/prefetchSchedule/${Uri.encodeComponent(playbackConfigurationName)}/${Uri.encodeComponent(name)}',
+          '/prefetchSchedule/${Uri.encodeQueryComponent(playbackConfigurationName).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return CreatePrefetchScheduleResponse.fromJson(response);
@@ -313,7 +314,7 @@ class MediaTailor {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/channel/${Uri.encodeComponent(channelName)}/program/${Uri.encodeComponent(programName)}',
+          '/channel/%24%7BUri.encodeQueryComponent%28channelName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/program/${Uri.encodeQueryComponent(programName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateProgramResponse.fromJson(response);
@@ -369,7 +370,8 @@ class MediaTailor {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/sourceLocation/${Uri.encodeComponent(sourceLocationName)}',
+      requestUri:
+          '/sourceLocation/${Uri.encodeQueryComponent(sourceLocationName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateSourceLocationResponse.fromJson(response);
@@ -406,7 +408,7 @@ class MediaTailor {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/sourceLocation/${Uri.encodeComponent(sourceLocationName)}/vodSource/${Uri.encodeComponent(vodSourceName)}',
+          '/sourceLocation/%24%7BUri.encodeQueryComponent%28sourceLocationName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vodSource/${Uri.encodeQueryComponent(vodSourceName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateVodSourceResponse.fromJson(response);
@@ -424,7 +426,8 @@ class MediaTailor {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/channel/${Uri.encodeComponent(channelName)}',
+      requestUri:
+          '/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -439,7 +442,8 @@ class MediaTailor {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/channel/${Uri.encodeComponent(channelName)}/policy',
+      requestUri:
+          '/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/policy',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -459,7 +463,7 @@ class MediaTailor {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/sourceLocation/${Uri.encodeComponent(sourceLocationName)}/liveSource/${Uri.encodeComponent(liveSourceName)}',
+          '/sourceLocation/${Uri.encodeQueryComponent(sourceLocationName).replaceAll('+', '%20')}/liveSource/%24%7BUri.encodeQueryComponent%28liveSourceName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -477,7 +481,8 @@ class MediaTailor {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/playbackConfiguration/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/playbackConfiguration/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -503,7 +508,7 @@ class MediaTailor {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/prefetchSchedule/${Uri.encodeComponent(playbackConfigurationName)}/${Uri.encodeComponent(name)}',
+          '/prefetchSchedule/${Uri.encodeQueryComponent(playbackConfigurationName).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -525,7 +530,7 @@ class MediaTailor {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/channel/${Uri.encodeComponent(channelName)}/program/${Uri.encodeComponent(programName)}',
+          '/channel/%24%7BUri.encodeQueryComponent%28channelName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/program/${Uri.encodeQueryComponent(programName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -543,7 +548,8 @@ class MediaTailor {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/sourceLocation/${Uri.encodeComponent(sourceLocationName)}',
+      requestUri:
+          '/sourceLocation/${Uri.encodeQueryComponent(sourceLocationName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -563,7 +569,7 @@ class MediaTailor {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/sourceLocation/${Uri.encodeComponent(sourceLocationName)}/vodSource/${Uri.encodeComponent(vodSourceName)}',
+          '/sourceLocation/%24%7BUri.encodeQueryComponent%28sourceLocationName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vodSource/${Uri.encodeQueryComponent(vodSourceName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -580,7 +586,8 @@ class MediaTailor {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/channel/${Uri.encodeComponent(channelName)}',
+      requestUri:
+          '/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeChannelResponse.fromJson(response);
@@ -601,7 +608,7 @@ class MediaTailor {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sourceLocation/${Uri.encodeComponent(sourceLocationName)}/liveSource/${Uri.encodeComponent(liveSourceName)}',
+          '/sourceLocation/${Uri.encodeQueryComponent(sourceLocationName).replaceAll('+', '%20')}/liveSource/%24%7BUri.encodeQueryComponent%28liveSourceName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeLiveSourceResponse.fromJson(response);
@@ -625,7 +632,7 @@ class MediaTailor {
       payload: null,
       method: 'GET',
       requestUri:
-          '/channel/${Uri.encodeComponent(channelName)}/program/${Uri.encodeComponent(programName)}',
+          '/channel/%24%7BUri.encodeQueryComponent%28channelName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/program/${Uri.encodeQueryComponent(programName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeProgramResponse.fromJson(response);
@@ -644,7 +651,8 @@ class MediaTailor {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/sourceLocation/${Uri.encodeComponent(sourceLocationName)}',
+      requestUri:
+          '/sourceLocation/${Uri.encodeQueryComponent(sourceLocationName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeSourceLocationResponse.fromJson(response);
@@ -666,7 +674,7 @@ class MediaTailor {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sourceLocation/${Uri.encodeComponent(sourceLocationName)}/vodSource/${Uri.encodeComponent(vodSourceName)}',
+          '/sourceLocation/%24%7BUri.encodeQueryComponent%28sourceLocationName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vodSource/${Uri.encodeQueryComponent(vodSourceName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeVodSourceResponse.fromJson(response);
@@ -683,7 +691,8 @@ class MediaTailor {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/channel/${Uri.encodeComponent(channelName)}/policy',
+      requestUri:
+          '/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/policy',
       exceptionFnMap: _exceptionFns,
     );
     return GetChannelPolicyResponse.fromJson(response);
@@ -737,7 +746,8 @@ class MediaTailor {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/channel/${Uri.encodeComponent(channelName)}/schedule',
+      requestUri:
+          '/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/schedule',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -757,7 +767,8 @@ class MediaTailor {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/playbackConfiguration/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/playbackConfiguration/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetPlaybackConfigurationResponse.fromJson(response);
@@ -787,7 +798,7 @@ class MediaTailor {
       payload: null,
       method: 'GET',
       requestUri:
-          '/prefetchSchedule/${Uri.encodeComponent(playbackConfigurationName)}/${Uri.encodeComponent(name)}',
+          '/prefetchSchedule/${Uri.encodeQueryComponent(playbackConfigurationName).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetPrefetchScheduleResponse.fromJson(response);
@@ -904,7 +915,7 @@ class MediaTailor {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sourceLocation/${Uri.encodeComponent(sourceLocationName)}/liveSources',
+          '/sourceLocation/${Uri.encodeQueryComponent(sourceLocationName).replaceAll('+', '%20')}/liveSources',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -999,7 +1010,7 @@ class MediaTailor {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/prefetchSchedule/${Uri.encodeComponent(playbackConfigurationName)}',
+          '/prefetchSchedule/${Uri.encodeQueryComponent(playbackConfigurationName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListPrefetchSchedulesResponse.fromJson(response);
@@ -1058,7 +1069,8 @@ class MediaTailor {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1098,7 +1110,7 @@ class MediaTailor {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sourceLocation/${Uri.encodeComponent(sourceLocationName)}/vodSources',
+          '/sourceLocation/${Uri.encodeQueryComponent(sourceLocationName).replaceAll('+', '%20')}/vodSources',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1123,7 +1135,8 @@ class MediaTailor {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/channel/${Uri.encodeComponent(channelName)}/policy',
+      requestUri:
+          '/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/policy',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1277,7 +1290,8 @@ class MediaTailor {
     final response = await _protocol.send(
       payload: null,
       method: 'PUT',
-      requestUri: '/channel/${Uri.encodeComponent(channelName)}/start',
+      requestUri:
+          '/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/start',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1294,7 +1308,8 @@ class MediaTailor {
     final response = await _protocol.send(
       payload: null,
       method: 'PUT',
-      requestUri: '/channel/${Uri.encodeComponent(channelName)}/stop',
+      requestUri:
+          '/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/stop',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1326,7 +1341,8 @@ class MediaTailor {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1350,7 +1366,8 @@ class MediaTailor {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1383,7 +1400,8 @@ class MediaTailor {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/channel/${Uri.encodeComponent(channelName)}',
+      requestUri:
+          '/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateChannelResponse.fromJson(response);
@@ -1411,7 +1429,7 @@ class MediaTailor {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/sourceLocation/${Uri.encodeComponent(sourceLocationName)}/liveSource/${Uri.encodeComponent(liveSourceName)}',
+          '/sourceLocation/${Uri.encodeQueryComponent(sourceLocationName).replaceAll('+', '%20')}/liveSource/%24%7BUri.encodeQueryComponent%28liveSourceName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateLiveSourceResponse.fromJson(response);
@@ -1444,7 +1462,7 @@ class MediaTailor {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/channel/${Uri.encodeComponent(channelName)}/program/${Uri.encodeComponent(programName)}',
+          '/channel/%24%7BUri.encodeQueryComponent%28channelName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/program/${Uri.encodeQueryComponent(programName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateProgramResponse.fromJson(response);
@@ -1491,7 +1509,8 @@ class MediaTailor {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/sourceLocation/${Uri.encodeComponent(sourceLocationName)}',
+      requestUri:
+          '/sourceLocation/${Uri.encodeQueryComponent(sourceLocationName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSourceLocationResponse.fromJson(response);
@@ -1519,7 +1538,7 @@ class MediaTailor {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/sourceLocation/${Uri.encodeComponent(sourceLocationName)}/vodSource/${Uri.encodeComponent(vodSourceName)}',
+          '/sourceLocation/%24%7BUri.encodeQueryComponent%28sourceLocationName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vodSource/${Uri.encodeQueryComponent(vodSourceName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateVodSourceResponse.fromJson(response);

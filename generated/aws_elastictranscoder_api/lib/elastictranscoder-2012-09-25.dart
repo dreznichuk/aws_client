@@ -75,7 +75,8 @@ class ElasticTranscoder {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/2012-09-25/jobs/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/2012-09-25/jobs/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -574,7 +575,8 @@ class ElasticTranscoder {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/2012-09-25/pipelines/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/2012-09-25/pipelines/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -601,7 +603,8 @@ class ElasticTranscoder {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/2012-09-25/presets/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/2012-09-25/presets/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -644,7 +647,7 @@ class ElasticTranscoder {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2012-09-25/jobsByPipeline/${Uri.encodeComponent(pipelineId)}',
+          '/2012-09-25/jobsByPipeline/${Uri.encodeQueryComponent(pipelineId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -688,7 +691,8 @@ class ElasticTranscoder {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/2012-09-25/jobsByStatus/${Uri.encodeComponent(status)}',
+      requestUri:
+          '/2012-09-25/jobsByStatus/${Uri.encodeQueryComponent(status).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -781,7 +785,8 @@ class ElasticTranscoder {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/2012-09-25/jobs/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/2012-09-25/jobs/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ReadJobResponse.fromJson(response);
@@ -803,7 +808,8 @@ class ElasticTranscoder {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/2012-09-25/pipelines/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/2012-09-25/pipelines/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ReadPipelineResponse.fromJson(response);
@@ -826,7 +832,8 @@ class ElasticTranscoder {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/2012-09-25/presets/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/2012-09-25/presets/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ReadPresetResponse.fromJson(response);
@@ -1158,7 +1165,8 @@ class ElasticTranscoder {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/2012-09-25/pipelines/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/2012-09-25/pipelines/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdatePipelineResponse.fromJson(response);
@@ -1222,7 +1230,7 @@ class ElasticTranscoder {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2012-09-25/pipelines/${Uri.encodeComponent(id)}/notifications',
+          '/2012-09-25/pipelines/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/notifications',
       exceptionFnMap: _exceptionFns,
     );
     return UpdatePipelineNotificationsResponse.fromJson(response);
@@ -1268,7 +1276,8 @@ class ElasticTranscoder {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/2012-09-25/pipelines/${Uri.encodeComponent(id)}/status',
+      requestUri:
+          '/2012-09-25/pipelines/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/status',
       exceptionFnMap: _exceptionFns,
     );
     return UpdatePipelineStatusResponse.fromJson(response);

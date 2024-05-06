@@ -149,7 +149,7 @@ class PinpointEmail {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/email/configuration-sets/${Uri.encodeComponent(configurationSetName)}/event-destinations',
+          '/v1/email/configuration-sets/${Uri.encodeQueryComponent(configurationSetName).replaceAll('+', '%20')}/event-destinations',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -313,7 +313,7 @@ class PinpointEmail {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/email/configuration-sets/${Uri.encodeComponent(configurationSetName)}',
+          '/v1/email/configuration-sets/${Uri.encodeQueryComponent(configurationSetName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -345,7 +345,7 @@ class PinpointEmail {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/email/configuration-sets/${Uri.encodeComponent(configurationSetName)}/event-destinations/${Uri.encodeComponent(eventDestinationName)}',
+          '/v1/email/configuration-sets/%24%7BUri.encodeQueryComponent%28configurationSetName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/event-destinations/${Uri.encodeQueryComponent(eventDestinationName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -366,7 +366,7 @@ class PinpointEmail {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/email/dedicated-ip-pools/${Uri.encodeComponent(poolName)}',
+          '/v1/email/dedicated-ip-pools/${Uri.encodeQueryComponent(poolName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -388,7 +388,8 @@ class PinpointEmail {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/email/identities/${Uri.encodeComponent(emailIdentity)}',
+      requestUri:
+          '/v1/email/identities/${Uri.encodeQueryComponent(emailIdentity).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -459,7 +460,7 @@ class PinpointEmail {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/email/configuration-sets/${Uri.encodeComponent(configurationSetName)}',
+          '/v1/email/configuration-sets/${Uri.encodeQueryComponent(configurationSetName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetConfigurationSetResponse.fromJson(response);
@@ -489,7 +490,7 @@ class PinpointEmail {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/email/configuration-sets/${Uri.encodeComponent(configurationSetName)}/event-destinations',
+          '/v1/email/configuration-sets/${Uri.encodeQueryComponent(configurationSetName).replaceAll('+', '%20')}/event-destinations',
       exceptionFnMap: _exceptionFns,
     );
     return GetConfigurationSetEventDestinationsResponse.fromJson(response);
@@ -513,7 +514,8 @@ class PinpointEmail {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/email/dedicated-ips/${Uri.encodeComponent(ip)}',
+      requestUri:
+          '/v1/email/dedicated-ips/${Uri.encodeQueryComponent(ip).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDedicatedIpResponse.fromJson(response);
@@ -601,7 +603,7 @@ class PinpointEmail {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/email/deliverability-dashboard/test-reports/${Uri.encodeComponent(reportId)}',
+          '/v1/email/deliverability-dashboard/test-reports/${Uri.encodeQueryComponent(reportId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDeliverabilityTestReportResponse.fromJson(response);
@@ -630,7 +632,7 @@ class PinpointEmail {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/email/deliverability-dashboard/campaigns/${Uri.encodeComponent(campaignId)}',
+          '/v1/email/deliverability-dashboard/campaigns/${Uri.encodeQueryComponent(campaignId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDomainDeliverabilityCampaignResponse.fromJson(response);
@@ -667,7 +669,7 @@ class PinpointEmail {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/email/deliverability-dashboard/statistics-report/${Uri.encodeComponent(domain)}',
+          '/v1/email/deliverability-dashboard/statistics-report/${Uri.encodeQueryComponent(domain).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -690,7 +692,8 @@ class PinpointEmail {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/email/identities/${Uri.encodeComponent(emailIdentity)}',
+      requestUri:
+          '/v1/email/identities/${Uri.encodeQueryComponent(emailIdentity).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetEmailIdentityResponse.fromJson(response);
@@ -861,7 +864,7 @@ class PinpointEmail {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/email/deliverability-dashboard/domains/${Uri.encodeComponent(subscribedDomain)}/campaigns',
+          '/v1/email/deliverability-dashboard/domains/${Uri.encodeQueryComponent(subscribedDomain).replaceAll('+', '%20')}/campaigns',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1023,7 +1026,7 @@ class PinpointEmail {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/email/configuration-sets/${Uri.encodeComponent(configurationSetName)}/delivery-options',
+          '/v1/email/configuration-sets/${Uri.encodeQueryComponent(configurationSetName).replaceAll('+', '%20')}/delivery-options',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1055,7 +1058,7 @@ class PinpointEmail {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/email/configuration-sets/${Uri.encodeComponent(configurationSetName)}/reputation-options',
+          '/v1/email/configuration-sets/${Uri.encodeQueryComponent(configurationSetName).replaceAll('+', '%20')}/reputation-options',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1086,7 +1089,7 @@ class PinpointEmail {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/email/configuration-sets/${Uri.encodeComponent(configurationSetName)}/sending',
+          '/v1/email/configuration-sets/${Uri.encodeQueryComponent(configurationSetName).replaceAll('+', '%20')}/sending',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1116,7 +1119,7 @@ class PinpointEmail {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/email/configuration-sets/${Uri.encodeComponent(configurationSetName)}/tracking-options',
+          '/v1/email/configuration-sets/${Uri.encodeQueryComponent(configurationSetName).replaceAll('+', '%20')}/tracking-options',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1152,7 +1155,8 @@ class PinpointEmail {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v1/email/dedicated-ips/${Uri.encodeComponent(ip)}/pool',
+      requestUri:
+          '/v1/email/dedicated-ips/${Uri.encodeQueryComponent(ip).replaceAll('+', '%20')}/pool',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1180,7 +1184,8 @@ class PinpointEmail {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v1/email/dedicated-ips/${Uri.encodeComponent(ip)}/warmup',
+      requestUri:
+          '/v1/email/dedicated-ips/${Uri.encodeQueryComponent(ip).replaceAll('+', '%20')}/warmup',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1255,7 +1260,7 @@ class PinpointEmail {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/email/identities/${Uri.encodeComponent(emailIdentity)}/dkim',
+          '/v1/email/identities/${Uri.encodeQueryComponent(emailIdentity).replaceAll('+', '%20')}/dkim',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1311,7 +1316,7 @@ class PinpointEmail {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/email/identities/${Uri.encodeComponent(emailIdentity)}/feedback',
+          '/v1/email/identities/${Uri.encodeQueryComponent(emailIdentity).replaceAll('+', '%20')}/feedback',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1370,7 +1375,7 @@ class PinpointEmail {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/email/identities/${Uri.encodeComponent(emailIdentity)}/mail-from',
+          '/v1/email/identities/${Uri.encodeQueryComponent(emailIdentity).replaceAll('+', '%20')}/mail-from',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1570,7 +1575,7 @@ class PinpointEmail {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/email/configuration-sets/${Uri.encodeComponent(configurationSetName)}/event-destinations/${Uri.encodeComponent(eventDestinationName)}',
+          '/v1/email/configuration-sets/%24%7BUri.encodeQueryComponent%28configurationSetName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/event-destinations/${Uri.encodeQueryComponent(eventDestinationName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

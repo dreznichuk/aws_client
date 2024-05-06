@@ -120,7 +120,8 @@ class Schemas {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/registries/name/${Uri.encodeComponent(registryName)}',
+      requestUri:
+          '/v1/registries/name/${Uri.encodeQueryComponent(registryName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateRegistryResponse.fromJson(response);
@@ -171,7 +172,7 @@ class Schemas {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/registries/name/${Uri.encodeComponent(registryName)}/schemas/name/${Uri.encodeComponent(schemaName)}',
+          '/v1/registries/name/%24%7BUri.encodeQueryComponent%28registryName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateSchemaResponse.fromJson(response);
@@ -194,7 +195,8 @@ class Schemas {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/discoverers/id/${Uri.encodeComponent(discovererId)}',
+      requestUri:
+          '/v1/discoverers/id/${Uri.encodeQueryComponent(discovererId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -216,7 +218,8 @@ class Schemas {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/registries/name/${Uri.encodeComponent(registryName)}',
+      requestUri:
+          '/v1/registries/name/${Uri.encodeQueryComponent(registryName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -269,7 +272,7 @@ class Schemas {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/registries/name/${Uri.encodeComponent(registryName)}/schemas/name/${Uri.encodeComponent(schemaName)}',
+          '/v1/registries/name/%24%7BUri.encodeQueryComponent%28registryName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -300,7 +303,7 @@ class Schemas {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/registries/name/${Uri.encodeComponent(registryName)}/schemas/name/${Uri.encodeComponent(schemaName)}/version/${Uri.encodeComponent(schemaVersion)}',
+          '/v1/registries/name/%2524%257BUri.encodeQueryComponent%2528registryName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/schemas/name/%24%7BUri.encodeQueryComponent%28schemaName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/version/${Uri.encodeQueryComponent(schemaVersion).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -338,7 +341,7 @@ class Schemas {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/registries/name/${Uri.encodeComponent(registryName)}/schemas/name/${Uri.encodeComponent(schemaName)}/language/${Uri.encodeComponent(language)}',
+          '/v1/registries/name/%24%7BUri.encodeQueryComponent%28registryName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}/language/%2524%257BUri.encodeQueryComponent%2528language%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -362,7 +365,8 @@ class Schemas {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/discoverers/id/${Uri.encodeComponent(discovererId)}',
+      requestUri:
+          '/v1/discoverers/id/${Uri.encodeQueryComponent(discovererId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDiscovererResponse.fromJson(response);
@@ -385,7 +389,8 @@ class Schemas {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/registries/name/${Uri.encodeComponent(registryName)}',
+      requestUri:
+          '/v1/registries/name/${Uri.encodeQueryComponent(registryName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeRegistryResponse.fromJson(response);
@@ -420,7 +425,7 @@ class Schemas {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/registries/name/${Uri.encodeComponent(registryName)}/schemas/name/${Uri.encodeComponent(schemaName)}',
+          '/v1/registries/name/%24%7BUri.encodeQueryComponent%28registryName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -458,7 +463,7 @@ class Schemas {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/registries/name/${Uri.encodeComponent(registryName)}/schemas/name/${Uri.encodeComponent(schemaName)}/export',
+          '/v1/registries/name/%24%7BUri.encodeQueryComponent%28registryName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}/export',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -498,7 +503,7 @@ class Schemas {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/registries/name/${Uri.encodeComponent(registryName)}/schemas/name/${Uri.encodeComponent(schemaName)}/language/${Uri.encodeComponent(language)}/source',
+          '/v1/registries/name/%24%7BUri.encodeQueryComponent%28registryName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}/language/%2524%257BUri.encodeQueryComponent%2528language%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/source',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -685,7 +690,7 @@ class Schemas {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/registries/name/${Uri.encodeComponent(registryName)}/schemas/name/${Uri.encodeComponent(schemaName)}/versions',
+          '/v1/registries/name/%24%7BUri.encodeQueryComponent%28registryName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}/versions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -726,7 +731,7 @@ class Schemas {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/registries/name/${Uri.encodeComponent(registryName)}/schemas',
+          '/v1/registries/name/${Uri.encodeQueryComponent(registryName).replaceAll('+', '%20')}/schemas',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -748,7 +753,8 @@ class Schemas {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -788,7 +794,7 @@ class Schemas {
       payload: null,
       method: 'POST',
       requestUri:
-          '/v1/registries/name/${Uri.encodeComponent(registryName)}/schemas/name/${Uri.encodeComponent(schemaName)}/language/${Uri.encodeComponent(language)}',
+          '/v1/registries/name/%24%7BUri.encodeQueryComponent%28registryName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}/language/%2524%257BUri.encodeQueryComponent%2528language%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -869,7 +875,7 @@ class Schemas {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/registries/name/${Uri.encodeComponent(registryName)}/schemas/search',
+          '/v1/registries/name/${Uri.encodeQueryComponent(registryName).replaceAll('+', '%20')}/schemas/search',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -894,7 +900,7 @@ class Schemas {
       payload: null,
       method: 'POST',
       requestUri:
-          '/v1/discoverers/id/${Uri.encodeComponent(discovererId)}/start',
+          '/v1/discoverers/id/${Uri.encodeQueryComponent(discovererId).replaceAll('+', '%20')}/start',
       exceptionFnMap: _exceptionFns,
     );
     return StartDiscovererResponse.fromJson(response);
@@ -918,7 +924,7 @@ class Schemas {
       payload: null,
       method: 'POST',
       requestUri:
-          '/v1/discoverers/id/${Uri.encodeComponent(discovererId)}/stop',
+          '/v1/discoverers/id/${Uri.encodeQueryComponent(discovererId).replaceAll('+', '%20')}/stop',
       exceptionFnMap: _exceptionFns,
     );
     return StopDiscovererResponse.fromJson(response);
@@ -946,7 +952,8 @@ class Schemas {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -973,7 +980,8 @@ class Schemas {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1009,7 +1017,8 @@ class Schemas {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v1/discoverers/id/${Uri.encodeComponent(discovererId)}',
+      requestUri:
+          '/v1/discoverers/id/${Uri.encodeQueryComponent(discovererId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDiscovererResponse.fromJson(response);
@@ -1039,7 +1048,8 @@ class Schemas {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v1/registries/name/${Uri.encodeComponent(registryName)}',
+      requestUri:
+          '/v1/registries/name/${Uri.encodeQueryComponent(registryName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateRegistryResponse.fromJson(response);
@@ -1091,7 +1101,7 @@ class Schemas {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/registries/name/${Uri.encodeComponent(registryName)}/schemas/name/${Uri.encodeComponent(schemaName)}',
+          '/v1/registries/name/%24%7BUri.encodeQueryComponent%28registryName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSchemaResponse.fromJson(response);

@@ -136,7 +136,8 @@ class EBS {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/snapshots/completion/${Uri.encodeComponent(snapshotId)}',
+      requestUri:
+          '/snapshots/completion/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -193,7 +194,7 @@ class EBS {
       payload: null,
       method: 'GET',
       requestUri:
-          '/snapshots/${Uri.encodeComponent(snapshotId)}/blocks/${Uri.encodeComponent(blockIndex.toString())}',
+          '/snapshots/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}/blocks/%24%7BUri.encodeQueryComponent%28blockIndex.toString%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -287,7 +288,7 @@ class EBS {
       payload: null,
       method: 'GET',
       requestUri:
-          '/snapshots/${Uri.encodeComponent(secondSnapshotId)}/changedblocks',
+          '/snapshots/${Uri.encodeQueryComponent(secondSnapshotId).replaceAll('+', '%20')}/changedblocks',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -357,7 +358,8 @@ class EBS {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/snapshots/${Uri.encodeComponent(snapshotId)}/blocks',
+      requestUri:
+          '/snapshots/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}/blocks',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -459,7 +461,7 @@ class EBS {
       payload: blockData,
       method: 'PUT',
       requestUri:
-          '/snapshots/${Uri.encodeComponent(snapshotId)}/blocks/${Uri.encodeComponent(blockIndex.toString())}',
+          '/snapshots/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}/blocks/%24%7BUri.encodeQueryComponent%28blockIndex.toString%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );

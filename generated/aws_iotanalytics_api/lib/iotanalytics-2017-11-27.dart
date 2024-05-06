@@ -154,7 +154,7 @@ class IoTAnalytics {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/pipelines/${Uri.encodeComponent(pipelineName)}/reprocessing/${Uri.encodeComponent(reprocessingId)}',
+          '/pipelines/%24%7BUri.encodeQueryComponent%28pipelineName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/reprocessing/${Uri.encodeQueryComponent(reprocessingId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -325,7 +325,8 @@ class IoTAnalytics {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/datasets/${Uri.encodeComponent(datasetName)}/content',
+      requestUri:
+          '/datasets/${Uri.encodeQueryComponent(datasetName).replaceAll('+', '%20')}/content',
       exceptionFnMap: _exceptionFns,
     );
     return CreateDatasetContentResponse.fromJson(response);
@@ -462,7 +463,8 @@ class IoTAnalytics {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/channels/${Uri.encodeComponent(channelName)}',
+      requestUri:
+          '/channels/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -486,7 +488,8 @@ class IoTAnalytics {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/datasets/${Uri.encodeComponent(datasetName)}',
+      requestUri:
+          '/datasets/${Uri.encodeQueryComponent(datasetName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -517,7 +520,8 @@ class IoTAnalytics {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/datasets/${Uri.encodeComponent(datasetName)}/content',
+      requestUri:
+          '/datasets/${Uri.encodeQueryComponent(datasetName).replaceAll('+', '%20')}/content',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -539,7 +543,8 @@ class IoTAnalytics {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/datastores/${Uri.encodeComponent(datastoreName)}',
+      requestUri:
+          '/datastores/${Uri.encodeQueryComponent(datastoreName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -560,7 +565,8 @@ class IoTAnalytics {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/pipelines/${Uri.encodeComponent(pipelineName)}',
+      requestUri:
+          '/pipelines/${Uri.encodeQueryComponent(pipelineName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -591,7 +597,8 @@ class IoTAnalytics {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/channels/${Uri.encodeComponent(channelName)}',
+      requestUri:
+          '/channels/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -614,7 +621,8 @@ class IoTAnalytics {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/datasets/${Uri.encodeComponent(datasetName)}',
+      requestUri:
+          '/datasets/${Uri.encodeQueryComponent(datasetName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDatasetResponse.fromJson(response);
@@ -646,7 +654,8 @@ class IoTAnalytics {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/datastores/${Uri.encodeComponent(datastoreName)}',
+      requestUri:
+          '/datastores/${Uri.encodeQueryComponent(datastoreName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -686,7 +695,8 @@ class IoTAnalytics {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/pipelines/${Uri.encodeComponent(pipelineName)}',
+      requestUri:
+          '/pipelines/${Uri.encodeQueryComponent(pipelineName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribePipelineResponse.fromJson(response);
@@ -718,7 +728,8 @@ class IoTAnalytics {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/datasets/${Uri.encodeComponent(datasetName)}/content',
+      requestUri:
+          '/datasets/${Uri.encodeQueryComponent(datasetName).replaceAll('+', '%20')}/content',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -815,7 +826,8 @@ class IoTAnalytics {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/datasets/${Uri.encodeComponent(datasetName)}/contents',
+      requestUri:
+          '/datasets/${Uri.encodeQueryComponent(datasetName).replaceAll('+', '%20')}/contents',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1068,7 +1080,8 @@ class IoTAnalytics {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/channels/${Uri.encodeComponent(channelName)}/sample',
+      requestUri:
+          '/channels/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/sample',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1119,7 +1132,7 @@ class IoTAnalytics {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/pipelines/${Uri.encodeComponent(pipelineName)}/reprocessing',
+          '/pipelines/${Uri.encodeQueryComponent(pipelineName).replaceAll('+', '%20')}/reprocessing',
       exceptionFnMap: _exceptionFns,
     );
     return StartPipelineReprocessingResponse.fromJson(response);
@@ -1223,7 +1236,8 @@ class IoTAnalytics {
     await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/channels/${Uri.encodeComponent(channelName)}',
+      requestUri:
+          '/channels/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1290,7 +1304,8 @@ class IoTAnalytics {
     await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/datasets/${Uri.encodeComponent(datasetName)}',
+      requestUri:
+          '/datasets/${Uri.encodeQueryComponent(datasetName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1340,7 +1355,8 @@ class IoTAnalytics {
     await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/datastores/${Uri.encodeComponent(datastoreName)}',
+      requestUri:
+          '/datastores/${Uri.encodeQueryComponent(datastoreName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1383,7 +1399,8 @@ class IoTAnalytics {
     await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/pipelines/${Uri.encodeComponent(pipelineName)}',
+      requestUri:
+          '/pipelines/${Uri.encodeQueryComponent(pipelineName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

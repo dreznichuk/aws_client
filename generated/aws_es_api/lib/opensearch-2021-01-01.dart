@@ -80,7 +80,7 @@ class OpenSearchService {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/2021-01-01/opensearch/cc/inboundConnection/${Uri.encodeComponent(connectionId)}/accept',
+          '/2021-01-01/opensearch/cc/inboundConnection/${Uri.encodeQueryComponent(connectionId).replaceAll('+', '%20')}/accept',
       exceptionFnMap: _exceptionFns,
     );
     return AcceptInboundConnectionResponse.fromJson(response);
@@ -145,7 +145,7 @@ class OpenSearchService {
       payload: null,
       method: 'POST',
       requestUri:
-          '/2021-01-01/packages/associate/${Uri.encodeComponent(packageID)}/${Uri.encodeComponent(domainName)}',
+          '/2021-01-01/packages/associate/${Uri.encodeQueryComponent(packageID).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28domainName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return AssociatePackageResponse.fromJson(response);
@@ -177,7 +177,7 @@ class OpenSearchService {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2021-01-01/opensearch/domain/${Uri.encodeComponent(domainName)}/authorizeVpcEndpointAccess',
+          '/2021-01-01/opensearch/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/authorizeVpcEndpointAccess',
       exceptionFnMap: _exceptionFns,
     );
     return AuthorizeVpcEndpointAccessResponse.fromJson(response);
@@ -533,7 +533,7 @@ class OpenSearchService {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2021-01-01/opensearch/domain/${Uri.encodeComponent(domainName)}',
+          '/2021-01-01/opensearch/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteDomainResponse.fromJson(response);
@@ -557,7 +557,7 @@ class OpenSearchService {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2021-01-01/opensearch/cc/inboundConnection/${Uri.encodeComponent(connectionId)}',
+          '/2021-01-01/opensearch/cc/inboundConnection/${Uri.encodeQueryComponent(connectionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteInboundConnectionResponse.fromJson(response);
@@ -581,7 +581,7 @@ class OpenSearchService {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2021-01-01/opensearch/cc/outboundConnection/${Uri.encodeComponent(connectionId)}',
+          '/2021-01-01/opensearch/cc/outboundConnection/${Uri.encodeQueryComponent(connectionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteOutboundConnectionResponse.fromJson(response);
@@ -607,7 +607,8 @@ class OpenSearchService {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/2021-01-01/packages/${Uri.encodeComponent(packageID)}',
+      requestUri:
+          '/2021-01-01/packages/${Uri.encodeQueryComponent(packageID).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeletePackageResponse.fromJson(response);
@@ -629,7 +630,7 @@ class OpenSearchService {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2021-01-01/opensearch/vpcEndpoints/${Uri.encodeComponent(vpcEndpointId)}',
+          '/2021-01-01/opensearch/vpcEndpoints/${Uri.encodeQueryComponent(vpcEndpointId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteVpcEndpointResponse.fromJson(response);
@@ -653,7 +654,7 @@ class OpenSearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2021-01-01/opensearch/domain/${Uri.encodeComponent(domainName)}',
+          '/2021-01-01/opensearch/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDomainResponse.fromJson(response);
@@ -697,7 +698,7 @@ class OpenSearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2021-01-01/opensearch/domain/${Uri.encodeComponent(domainName)}/autoTunes',
+          '/2021-01-01/opensearch/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/autoTunes',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDomainAutoTunesResponse.fromJson(response);
@@ -731,7 +732,7 @@ class OpenSearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2021-01-01/opensearch/domain/${Uri.encodeComponent(domainName)}/progress',
+          '/2021-01-01/opensearch/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/progress',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -755,7 +756,7 @@ class OpenSearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2021-01-01/opensearch/domain/${Uri.encodeComponent(domainName)}/config',
+          '/2021-01-01/opensearch/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDomainConfigResponse.fromJson(response);
@@ -779,7 +780,7 @@ class OpenSearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2021-01-01/opensearch/domain/${Uri.encodeComponent(domainName)}/health',
+          '/2021-01-01/opensearch/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/health',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDomainHealthResponse.fromJson(response);
@@ -805,7 +806,7 @@ class OpenSearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2021-01-01/opensearch/domain/${Uri.encodeComponent(domainName)}/nodes',
+          '/2021-01-01/opensearch/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/nodes',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDomainNodesResponse.fromJson(response);
@@ -872,7 +873,7 @@ class OpenSearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2021-01-01/opensearch/domain/${Uri.encodeComponent(domainName)}/dryRun',
+          '/2021-01-01/opensearch/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/dryRun',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -959,7 +960,7 @@ class OpenSearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2021-01-01/opensearch/instanceTypeLimits/${Uri.encodeComponent(engineVersion)}/${Uri.encodeComponent(instanceType.toValue())}',
+          '/2021-01-01/opensearch/instanceTypeLimits/%24%7BUri.encodeQueryComponent%28engineVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(instanceType.toValue()).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1221,7 +1222,7 @@ class OpenSearchService {
       payload: null,
       method: 'POST',
       requestUri:
-          '/2021-01-01/packages/dissociate/${Uri.encodeComponent(packageID)}/${Uri.encodeComponent(domainName)}',
+          '/2021-01-01/packages/dissociate/${Uri.encodeQueryComponent(packageID).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28domainName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DissociatePackageResponse.fromJson(response);
@@ -1299,7 +1300,7 @@ class OpenSearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2021-01-01/packages/${Uri.encodeComponent(packageID)}/history',
+          '/2021-01-01/packages/${Uri.encodeQueryComponent(packageID).replaceAll('+', '%20')}/history',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1347,7 +1348,7 @@ class OpenSearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2021-01-01/opensearch/upgradeDomain/${Uri.encodeComponent(domainName)}/history',
+          '/2021-01-01/opensearch/upgradeDomain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/history',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1372,7 +1373,7 @@ class OpenSearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2021-01-01/opensearch/upgradeDomain/${Uri.encodeComponent(domainName)}/status',
+          '/2021-01-01/opensearch/upgradeDomain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/status',
       exceptionFnMap: _exceptionFns,
     );
     return GetUpgradeStatusResponse.fromJson(response);
@@ -1445,7 +1446,7 @@ class OpenSearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2021-01-01/packages/${Uri.encodeComponent(packageID)}/domains',
+          '/2021-01-01/packages/${Uri.encodeQueryComponent(packageID).replaceAll('+', '%20')}/domains',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1510,7 +1511,7 @@ class OpenSearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2021-01-01/opensearch/instanceTypeDetails/${Uri.encodeComponent(engineVersion)}',
+          '/2021-01-01/opensearch/instanceTypeDetails/${Uri.encodeQueryComponent(engineVersion).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1560,7 +1561,7 @@ class OpenSearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2021-01-01/domain/${Uri.encodeComponent(domainName)}/packages',
+          '/2021-01-01/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/packages',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1612,7 +1613,7 @@ class OpenSearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2021-01-01/opensearch/domain/${Uri.encodeComponent(domainName)}/scheduledActions',
+          '/2021-01-01/opensearch/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/scheduledActions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1718,7 +1719,7 @@ class OpenSearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2021-01-01/opensearch/domain/${Uri.encodeComponent(domainName)}/listVpcEndpointAccess',
+          '/2021-01-01/opensearch/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/listVpcEndpointAccess',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1780,7 +1781,7 @@ class OpenSearchService {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2021-01-01/opensearch/domain/${Uri.encodeComponent(domainName)}/vpcEndpoints',
+          '/2021-01-01/opensearch/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/vpcEndpoints',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1845,7 +1846,7 @@ class OpenSearchService {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/2021-01-01/opensearch/cc/inboundConnection/${Uri.encodeComponent(connectionId)}/reject',
+          '/2021-01-01/opensearch/cc/inboundConnection/${Uri.encodeQueryComponent(connectionId).replaceAll('+', '%20')}/reject',
       exceptionFnMap: _exceptionFns,
     );
     return RejectInboundConnectionResponse.fromJson(response);
@@ -1907,7 +1908,7 @@ class OpenSearchService {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2021-01-01/opensearch/domain/${Uri.encodeComponent(domainName)}/revokeVpcEndpointAccess',
+          '/2021-01-01/opensearch/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/revokeVpcEndpointAccess',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2137,7 +2138,7 @@ class OpenSearchService {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2021-01-01/opensearch/domain/${Uri.encodeComponent(domainName)}/config',
+          '/2021-01-01/opensearch/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDomainConfigResponse.fromJson(response);
@@ -2261,7 +2262,7 @@ class OpenSearchService {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/2021-01-01/opensearch/domain/${Uri.encodeComponent(domainName)}/scheduledAction/update',
+          '/2021-01-01/opensearch/domain/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/scheduledAction/update',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateScheduledActionResponse.fromJson(response);

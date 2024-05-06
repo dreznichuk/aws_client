@@ -54,7 +54,8 @@ class URIParameterOnlyWithLocationName {
     await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/2014-01-01/jobsByPipeline/${Uri.encodeComponent(foo)}',
+      requestUri:
+          '/2014-01-01/jobsByPipeline/${Uri.encodeQueryComponent(foo).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

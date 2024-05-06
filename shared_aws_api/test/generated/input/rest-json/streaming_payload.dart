@@ -60,7 +60,7 @@ class StreamingPayload {
       payload: body,
       method: 'POST',
       requestUri:
-          '/2014-01-01/vaults/${Uri.encodeComponent(vaultName)}/archives',
+          '/2014-01-01/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/archives',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );

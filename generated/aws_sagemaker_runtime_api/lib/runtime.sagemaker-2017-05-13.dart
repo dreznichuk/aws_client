@@ -188,7 +188,8 @@ class SageMakerRuntime {
     final response = await _protocol.sendRaw(
       payload: body,
       method: 'POST',
-      requestUri: '/endpoints/${Uri.encodeComponent(endpointName)}/invocations',
+      requestUri:
+          '/endpoints/${Uri.encodeQueryComponent(endpointName).replaceAll('+', '%20')}/invocations',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -316,7 +317,7 @@ class SageMakerRuntime {
       payload: null,
       method: 'POST',
       requestUri:
-          '/endpoints/${Uri.encodeComponent(endpointName)}/async-invocations',
+          '/endpoints/${Uri.encodeQueryComponent(endpointName).replaceAll('+', '%20')}/async-invocations',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );

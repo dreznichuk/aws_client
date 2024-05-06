@@ -83,7 +83,7 @@ class IoT1ClickProjects {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/projects/${Uri.encodeComponent(projectName)}/placements/${Uri.encodeComponent(placementName)}/devices/${Uri.encodeComponent(deviceTemplateName)}',
+          '/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/placements/%24%7BUri.encodeQueryComponent%28placementName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/devices/%2524%257BUri.encodeQueryComponent%2528deviceTemplateName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -116,7 +116,8 @@ class IoT1ClickProjects {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/projects/${Uri.encodeComponent(projectName)}/placements',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/placements',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -192,7 +193,7 @@ class IoT1ClickProjects {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/projects/${Uri.encodeComponent(projectName)}/placements/${Uri.encodeComponent(placementName)}',
+          '/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/placements/%24%7BUri.encodeQueryComponent%28placementName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -216,7 +217,8 @@ class IoT1ClickProjects {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/projects/${Uri.encodeComponent(projectName)}',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -240,7 +242,7 @@ class IoT1ClickProjects {
       payload: null,
       method: 'GET',
       requestUri:
-          '/projects/${Uri.encodeComponent(projectName)}/placements/${Uri.encodeComponent(placementName)}',
+          '/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/placements/%24%7BUri.encodeQueryComponent%28placementName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribePlacementResponse.fromJson(response);
@@ -260,7 +262,8 @@ class IoT1ClickProjects {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/projects/${Uri.encodeComponent(projectName)}',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeProjectResponse.fromJson(response);
@@ -290,7 +293,7 @@ class IoT1ClickProjects {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/projects/${Uri.encodeComponent(projectName)}/placements/${Uri.encodeComponent(placementName)}/devices/${Uri.encodeComponent(deviceTemplateName)}',
+          '/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/placements/%24%7BUri.encodeQueryComponent%28placementName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/devices/%2524%257BUri.encodeQueryComponent%2528deviceTemplateName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -314,7 +317,7 @@ class IoT1ClickProjects {
       payload: null,
       method: 'GET',
       requestUri:
-          '/projects/${Uri.encodeComponent(projectName)}/placements/${Uri.encodeComponent(placementName)}/devices',
+          '/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/placements/%24%7BUri.encodeQueryComponent%28placementName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/devices',
       exceptionFnMap: _exceptionFns,
     );
     return GetDevicesInPlacementResponse.fromJson(response);
@@ -353,7 +356,8 @@ class IoT1ClickProjects {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/projects/${Uri.encodeComponent(projectName)}/placements',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/placements',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -411,7 +415,8 @@ class IoT1ClickProjects {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -445,7 +450,8 @@ class IoT1ClickProjects {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -471,7 +477,8 @@ class IoT1ClickProjects {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -506,7 +513,7 @@ class IoT1ClickProjects {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/projects/${Uri.encodeComponent(projectName)}/placements/${Uri.encodeComponent(placementName)}',
+          '/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/placements/%24%7BUri.encodeQueryComponent%28placementName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -545,7 +552,8 @@ class IoT1ClickProjects {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/projects/${Uri.encodeComponent(projectName)}',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

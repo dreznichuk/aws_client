@@ -67,7 +67,8 @@ class MediaStoreData {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/${path.split('/').map(Uri.encodeComponent).join('/')}',
+      requestUri:
+          '/${path.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -88,7 +89,8 @@ class MediaStoreData {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'HEAD',
-      requestUri: '/${path.split('/').map(Uri.encodeComponent).join('/')}',
+      requestUri:
+          '/${path.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -160,7 +162,8 @@ class MediaStoreData {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'GET',
-      requestUri: '/${path.split('/').map(Uri.encodeComponent).join('/')}',
+      requestUri:
+          '/${path.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -322,7 +325,8 @@ class MediaStoreData {
     final response = await _protocol.send(
       payload: body,
       method: 'PUT',
-      requestUri: '/${path.split('/').map(Uri.encodeComponent).join('/')}',
+      requestUri:
+          '/${path.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );

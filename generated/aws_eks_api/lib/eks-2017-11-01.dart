@@ -97,7 +97,7 @@ class EKS {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/clusters/${Uri.encodeComponent(clusterName)}/encryption-config/associate',
+          '/clusters/${Uri.encodeQueryComponent(clusterName).replaceAll('+', '%20')}/encryption-config/associate',
       exceptionFnMap: _exceptionFns,
     );
     return AssociateEncryptionConfigResponse.fromJson(response);
@@ -153,7 +153,7 @@ class EKS {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/clusters/${Uri.encodeComponent(clusterName)}/identity-provider-configs/associate',
+          '/clusters/${Uri.encodeQueryComponent(clusterName).replaceAll('+', '%20')}/identity-provider-configs/associate',
       exceptionFnMap: _exceptionFns,
     );
     return AssociateIdentityProviderConfigResponse.fromJson(response);
@@ -270,7 +270,8 @@ class EKS {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/clusters/${Uri.encodeComponent(clusterName)}/addons',
+      requestUri:
+          '/clusters/${Uri.encodeQueryComponent(clusterName).replaceAll('+', '%20')}/addons',
       exceptionFnMap: _exceptionFns,
     );
     return CreateAddonResponse.fromJson(response);
@@ -514,7 +515,7 @@ class EKS {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/clusters/${Uri.encodeComponent(clusterName)}/fargate-profiles',
+          '/clusters/${Uri.encodeQueryComponent(clusterName).replaceAll('+', '%20')}/fargate-profiles',
       exceptionFnMap: _exceptionFns,
     );
     return CreateFargateProfileResponse.fromJson(response);
@@ -740,7 +741,8 @@ class EKS {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/clusters/${Uri.encodeComponent(clusterName)}/node-groups',
+      requestUri:
+          '/clusters/${Uri.encodeQueryComponent(clusterName).replaceAll('+', '%20')}/node-groups',
       exceptionFnMap: _exceptionFns,
     );
     return CreateNodegroupResponse.fromJson(response);
@@ -783,7 +785,7 @@ class EKS {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/clusters/${Uri.encodeComponent(clusterName)}/addons/${Uri.encodeComponent(addonName)}',
+          '/clusters/${Uri.encodeQueryComponent(clusterName).replaceAll('+', '%20')}/addons/%24%7BUri.encodeQueryComponent%28addonName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -818,7 +820,8 @@ class EKS {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/clusters/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/clusters/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteClusterResponse.fromJson(response);
@@ -855,7 +858,7 @@ class EKS {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/clusters/${Uri.encodeComponent(clusterName)}/fargate-profiles/${Uri.encodeComponent(fargateProfileName)}',
+          '/clusters/%24%7BUri.encodeQueryComponent%28clusterName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/fargate-profiles/${Uri.encodeQueryComponent(fargateProfileName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteFargateProfileResponse.fromJson(response);
@@ -884,7 +887,7 @@ class EKS {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/clusters/${Uri.encodeComponent(clusterName)}/node-groups/${Uri.encodeComponent(nodegroupName)}',
+          '/clusters/%24%7BUri.encodeQueryComponent%28clusterName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/node-groups/${Uri.encodeQueryComponent(nodegroupName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteNodegroupResponse.fromJson(response);
@@ -908,7 +911,8 @@ class EKS {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/cluster-registrations/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/cluster-registrations/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeregisterClusterResponse.fromJson(response);
@@ -938,7 +942,7 @@ class EKS {
       payload: null,
       method: 'GET',
       requestUri:
-          '/clusters/${Uri.encodeComponent(clusterName)}/addons/${Uri.encodeComponent(addonName)}',
+          '/clusters/${Uri.encodeQueryComponent(clusterName).replaceAll('+', '%20')}/addons/%24%7BUri.encodeQueryComponent%28addonName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeAddonResponse.fromJson(response);
@@ -1081,7 +1085,8 @@ class EKS {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/clusters/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/clusters/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeClusterResponse.fromJson(response);
@@ -1107,7 +1112,7 @@ class EKS {
       payload: null,
       method: 'GET',
       requestUri:
-          '/clusters/${Uri.encodeComponent(clusterName)}/fargate-profiles/${Uri.encodeComponent(fargateProfileName)}',
+          '/clusters/%24%7BUri.encodeQueryComponent%28clusterName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/fargate-profiles/${Uri.encodeQueryComponent(fargateProfileName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeFargateProfileResponse.fromJson(response);
@@ -1139,7 +1144,7 @@ class EKS {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/clusters/${Uri.encodeComponent(clusterName)}/identity-provider-configs/describe',
+          '/clusters/${Uri.encodeQueryComponent(clusterName).replaceAll('+', '%20')}/identity-provider-configs/describe',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeIdentityProviderConfigResponse.fromJson(response);
@@ -1166,7 +1171,7 @@ class EKS {
       payload: null,
       method: 'GET',
       requestUri:
-          '/clusters/${Uri.encodeComponent(clusterName)}/node-groups/${Uri.encodeComponent(nodegroupName)}',
+          '/clusters/%24%7BUri.encodeQueryComponent%28clusterName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/node-groups/${Uri.encodeQueryComponent(nodegroupName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeNodegroupResponse.fromJson(response);
@@ -1214,7 +1219,7 @@ class EKS {
       payload: null,
       method: 'GET',
       requestUri:
-          '/clusters/${Uri.encodeComponent(name)}/updates/${Uri.encodeComponent(updateId)}',
+          '/clusters/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/updates/${Uri.encodeQueryComponent(updateId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1256,7 +1261,7 @@ class EKS {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/clusters/${Uri.encodeComponent(clusterName)}/identity-provider-configs/disassociate',
+          '/clusters/${Uri.encodeQueryComponent(clusterName).replaceAll('+', '%20')}/identity-provider-configs/disassociate',
       exceptionFnMap: _exceptionFns,
     );
     return DisassociateIdentityProviderConfigResponse.fromJson(response);
@@ -1313,7 +1318,8 @@ class EKS {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/clusters/${Uri.encodeComponent(clusterName)}/addons',
+      requestUri:
+          '/clusters/${Uri.encodeQueryComponent(clusterName).replaceAll('+', '%20')}/addons',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1430,7 +1436,7 @@ class EKS {
       payload: null,
       method: 'GET',
       requestUri:
-          '/clusters/${Uri.encodeComponent(clusterName)}/fargate-profiles',
+          '/clusters/${Uri.encodeQueryComponent(clusterName).replaceAll('+', '%20')}/fargate-profiles',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1486,7 +1492,7 @@ class EKS {
       payload: null,
       method: 'GET',
       requestUri:
-          '/clusters/${Uri.encodeComponent(clusterName)}/identity-provider-configs',
+          '/clusters/${Uri.encodeQueryComponent(clusterName).replaceAll('+', '%20')}/identity-provider-configs',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1543,7 +1549,8 @@ class EKS {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/clusters/${Uri.encodeComponent(clusterName)}/node-groups',
+      requestUri:
+          '/clusters/${Uri.encodeQueryComponent(clusterName).replaceAll('+', '%20')}/node-groups',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1565,7 +1572,8 @@ class EKS {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1627,7 +1635,8 @@ class EKS {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/clusters/${Uri.encodeComponent(name)}/updates',
+      requestUri:
+          '/clusters/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/updates',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1729,7 +1738,8 @@ class EKS {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1756,7 +1766,8 @@ class EKS {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1854,7 +1865,7 @@ class EKS {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/clusters/${Uri.encodeComponent(clusterName)}/addons/${Uri.encodeComponent(addonName)}/update',
+          '/clusters/${Uri.encodeQueryComponent(clusterName).replaceAll('+', '%20')}/addons/%24%7BUri.encodeQueryComponent%28addonName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/update',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAddonResponse.fromJson(response);
@@ -1934,7 +1945,8 @@ class EKS {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/clusters/${Uri.encodeComponent(name)}/update-config',
+      requestUri:
+          '/clusters/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/update-config',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateClusterConfigResponse.fromJson(response);
@@ -1983,7 +1995,8 @@ class EKS {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/clusters/${Uri.encodeComponent(name)}/updates',
+      requestUri:
+          '/clusters/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/updates',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateClusterVersionResponse.fromJson(response);
@@ -2048,7 +2061,7 @@ class EKS {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/clusters/${Uri.encodeComponent(clusterName)}/node-groups/${Uri.encodeComponent(nodegroupName)}/update-config',
+          '/clusters/%24%7BUri.encodeQueryComponent%28clusterName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/node-groups/${Uri.encodeQueryComponent(nodegroupName).replaceAll('+', '%20')}/update-config',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateNodegroupConfigResponse.fromJson(response);
@@ -2166,7 +2179,7 @@ class EKS {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/clusters/${Uri.encodeComponent(clusterName)}/node-groups/${Uri.encodeComponent(nodegroupName)}/update-version',
+          '/clusters/%24%7BUri.encodeQueryComponent%28clusterName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/node-groups/${Uri.encodeQueryComponent(nodegroupName).replaceAll('+', '%20')}/update-version',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateNodegroupVersionResponse.fromJson(response);

@@ -83,7 +83,8 @@ class Backup {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/legal-holds/${Uri.encodeComponent(legalHoldId)}',
+      requestUri:
+          '/legal-holds/${Uri.encodeQueryComponent(legalHoldId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -177,7 +178,7 @@ class Backup {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/backup/plans/${Uri.encodeComponent(backupPlanId)}/selections/',
+          '/backup/plans/${Uri.encodeQueryComponent(backupPlanId).replaceAll('+', '%20')}/selections/',
       exceptionFnMap: _exceptionFns,
     );
     return CreateBackupSelectionOutput.fromJson(response);
@@ -233,7 +234,8 @@ class Backup {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/backup-vaults/${Uri.encodeComponent(backupVaultName)}',
+      requestUri:
+          '/backup-vaults/${Uri.encodeQueryComponent(backupVaultName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateBackupVaultOutput.fromJson(response);
@@ -443,7 +445,8 @@ class Backup {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/backup/plans/${Uri.encodeComponent(backupPlanId)}',
+      requestUri:
+          '/backup/plans/${Uri.encodeQueryComponent(backupPlanId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteBackupPlanOutput.fromJson(response);
@@ -471,7 +474,7 @@ class Backup {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/backup/plans/${Uri.encodeComponent(backupPlanId)}/selections/${Uri.encodeComponent(selectionId)}',
+          '/backup/plans/%24%7BUri.encodeQueryComponent%28backupPlanId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/selections/${Uri.encodeQueryComponent(selectionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -496,7 +499,8 @@ class Backup {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/backup-vaults/${Uri.encodeComponent(backupVaultName)}',
+      requestUri:
+          '/backup-vaults/${Uri.encodeQueryComponent(backupVaultName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -520,7 +524,7 @@ class Backup {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/backup-vaults/${Uri.encodeComponent(backupVaultName)}/access-policy',
+          '/backup-vaults/${Uri.encodeQueryComponent(backupVaultName).replaceAll('+', '%20')}/access-policy',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -550,7 +554,7 @@ class Backup {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/backup-vaults/${Uri.encodeComponent(backupVaultName)}/vault-lock',
+          '/backup-vaults/${Uri.encodeQueryComponent(backupVaultName).replaceAll('+', '%20')}/vault-lock',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -574,7 +578,7 @@ class Backup {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/backup-vaults/${Uri.encodeComponent(backupVaultName)}/notification-configuration',
+          '/backup-vaults/${Uri.encodeQueryComponent(backupVaultName).replaceAll('+', '%20')}/notification-configuration',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -595,7 +599,8 @@ class Backup {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/audit/frameworks/${Uri.encodeComponent(frameworkName)}',
+      requestUri:
+          '/audit/frameworks/${Uri.encodeQueryComponent(frameworkName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -646,7 +651,7 @@ class Backup {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/backup-vaults/${Uri.encodeComponent(backupVaultName)}/recovery-points/${Uri.encodeComponent(recoveryPointArn)}',
+          '/backup-vaults/%24%7BUri.encodeQueryComponent%28backupVaultName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/recovery-points/${Uri.encodeQueryComponent(recoveryPointArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -667,7 +672,8 @@ class Backup {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/audit/report-plans/${Uri.encodeComponent(reportPlanName)}',
+      requestUri:
+          '/audit/report-plans/${Uri.encodeQueryComponent(reportPlanName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -688,7 +694,8 @@ class Backup {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/backup-jobs/${Uri.encodeComponent(backupJobId)}',
+      requestUri:
+          '/backup-jobs/${Uri.encodeQueryComponent(backupJobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeBackupJobOutput.fromJson(response);
@@ -712,7 +719,8 @@ class Backup {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/backup-vaults/${Uri.encodeComponent(backupVaultName)}',
+      requestUri:
+          '/backup-vaults/${Uri.encodeQueryComponent(backupVaultName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeBackupVaultOutput.fromJson(response);
@@ -733,7 +741,8 @@ class Backup {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/copy-jobs/${Uri.encodeComponent(copyJobId)}',
+      requestUri:
+          '/copy-jobs/${Uri.encodeQueryComponent(copyJobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeCopyJobOutput.fromJson(response);
@@ -755,7 +764,8 @@ class Backup {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/audit/frameworks/${Uri.encodeComponent(frameworkName)}',
+      requestUri:
+          '/audit/frameworks/${Uri.encodeQueryComponent(frameworkName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeFrameworkOutput.fromJson(response);
@@ -796,7 +806,8 @@ class Backup {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/resources/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/resources/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeProtectedResourceOutput.fromJson(response);
@@ -828,7 +839,7 @@ class Backup {
       payload: null,
       method: 'GET',
       requestUri:
-          '/backup-vaults/${Uri.encodeComponent(backupVaultName)}/recovery-points/${Uri.encodeComponent(recoveryPointArn)}',
+          '/backup-vaults/%24%7BUri.encodeQueryComponent%28backupVaultName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/recovery-points/${Uri.encodeQueryComponent(recoveryPointArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeRecoveryPointOutput.fromJson(response);
@@ -868,7 +879,8 @@ class Backup {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/audit/report-jobs/${Uri.encodeComponent(reportJobId)}',
+      requestUri:
+          '/audit/report-jobs/${Uri.encodeQueryComponent(reportJobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeReportJobOutput.fromJson(response);
@@ -890,7 +902,8 @@ class Backup {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/audit/report-plans/${Uri.encodeComponent(reportPlanName)}',
+      requestUri:
+          '/audit/report-plans/${Uri.encodeQueryComponent(reportPlanName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeReportPlanOutput.fromJson(response);
@@ -913,7 +926,8 @@ class Backup {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/restore-jobs/${Uri.encodeComponent(restoreJobId)}',
+      requestUri:
+          '/restore-jobs/${Uri.encodeQueryComponent(restoreJobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeRestoreJobOutput.fromJson(response);
@@ -948,7 +962,7 @@ class Backup {
       payload: null,
       method: 'POST',
       requestUri:
-          '/backup-vaults/${Uri.encodeComponent(backupVaultName)}/recovery-points/${Uri.encodeComponent(recoveryPointArn)}/disassociate',
+          '/backup-vaults/%24%7BUri.encodeQueryComponent%28backupVaultName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/recovery-points/${Uri.encodeQueryComponent(recoveryPointArn).replaceAll('+', '%20')}/disassociate',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -981,7 +995,7 @@ class Backup {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/backup-vaults/${Uri.encodeComponent(backupVaultName)}/recovery-points/${Uri.encodeComponent(recoveryPointArn)}/parentAssociation',
+          '/backup-vaults/%24%7BUri.encodeQueryComponent%28backupVaultName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/recovery-points/${Uri.encodeQueryComponent(recoveryPointArn).replaceAll('+', '%20')}/parentAssociation',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1003,7 +1017,7 @@ class Backup {
       payload: null,
       method: 'GET',
       requestUri:
-          '/backup/plans/${Uri.encodeComponent(backupPlanId)}/toTemplate/',
+          '/backup/plans/${Uri.encodeQueryComponent(backupPlanId).replaceAll('+', '%20')}/toTemplate/',
       exceptionFnMap: _exceptionFns,
     );
     return ExportBackupPlanTemplateOutput.fromJson(response);
@@ -1034,7 +1048,8 @@ class Backup {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/backup/plans/${Uri.encodeComponent(backupPlanId)}/',
+      requestUri:
+          '/backup/plans/${Uri.encodeQueryComponent(backupPlanId).replaceAll('+', '%20')}/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1083,7 +1098,7 @@ class Backup {
       payload: null,
       method: 'GET',
       requestUri:
-          '/backup/template/plans/${Uri.encodeComponent(backupPlanTemplateId)}/toPlan',
+          '/backup/template/plans/${Uri.encodeQueryComponent(backupPlanTemplateId).replaceAll('+', '%20')}/toPlan',
       exceptionFnMap: _exceptionFns,
     );
     return GetBackupPlanFromTemplateOutput.fromJson(response);
@@ -1111,7 +1126,7 @@ class Backup {
       payload: null,
       method: 'GET',
       requestUri:
-          '/backup/plans/${Uri.encodeComponent(backupPlanId)}/selections/${Uri.encodeComponent(selectionId)}',
+          '/backup/plans/%24%7BUri.encodeQueryComponent%28backupPlanId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/selections/${Uri.encodeQueryComponent(selectionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetBackupSelectionOutput.fromJson(response);
@@ -1137,7 +1152,7 @@ class Backup {
       payload: null,
       method: 'GET',
       requestUri:
-          '/backup-vaults/${Uri.encodeComponent(backupVaultName)}/access-policy',
+          '/backup-vaults/${Uri.encodeQueryComponent(backupVaultName).replaceAll('+', '%20')}/access-policy',
       exceptionFnMap: _exceptionFns,
     );
     return GetBackupVaultAccessPolicyOutput.fromJson(response);
@@ -1162,7 +1177,7 @@ class Backup {
       payload: null,
       method: 'GET',
       requestUri:
-          '/backup-vaults/${Uri.encodeComponent(backupVaultName)}/notification-configuration',
+          '/backup-vaults/${Uri.encodeQueryComponent(backupVaultName).replaceAll('+', '%20')}/notification-configuration',
       exceptionFnMap: _exceptionFns,
     );
     return GetBackupVaultNotificationsOutput.fromJson(response);
@@ -1185,7 +1200,8 @@ class Backup {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/legal-holds/${Uri.encodeComponent(legalHoldId)}/',
+      requestUri:
+          '/legal-holds/${Uri.encodeQueryComponent(legalHoldId).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
     return GetLegalHoldOutput.fromJson(response);
@@ -1218,7 +1234,7 @@ class Backup {
       payload: null,
       method: 'GET',
       requestUri:
-          '/backup-vaults/${Uri.encodeComponent(backupVaultName)}/recovery-points/${Uri.encodeComponent(recoveryPointArn)}/restore-metadata',
+          '/backup-vaults/%24%7BUri.encodeQueryComponent%28backupVaultName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/recovery-points/${Uri.encodeQueryComponent(recoveryPointArn).replaceAll('+', '%20')}/restore-metadata',
       exceptionFnMap: _exceptionFns,
     );
     return GetRecoveryPointRestoreMetadataOutput.fromJson(response);
@@ -1459,7 +1475,7 @@ class Backup {
       payload: null,
       method: 'GET',
       requestUri:
-          '/backup/plans/${Uri.encodeComponent(backupPlanId)}/versions/',
+          '/backup/plans/${Uri.encodeQueryComponent(backupPlanId).replaceAll('+', '%20')}/versions/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1552,7 +1568,7 @@ class Backup {
       payload: null,
       method: 'GET',
       requestUri:
-          '/backup/plans/${Uri.encodeComponent(backupPlanId)}/selections/',
+          '/backup/plans/${Uri.encodeQueryComponent(backupPlanId).replaceAll('+', '%20')}/selections/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1932,7 +1948,7 @@ class Backup {
       payload: null,
       method: 'GET',
       requestUri:
-          '/backup-vaults/${Uri.encodeComponent(backupVaultName)}/recovery-points/',
+          '/backup-vaults/${Uri.encodeQueryComponent(backupVaultName).replaceAll('+', '%20')}/recovery-points/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1976,7 +1992,7 @@ class Backup {
       payload: null,
       method: 'GET',
       requestUri:
-          '/legal-holds/${Uri.encodeComponent(legalHoldId)}/recovery-points',
+          '/legal-holds/${Uri.encodeQueryComponent(legalHoldId).replaceAll('+', '%20')}/recovery-points',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2029,7 +2045,7 @@ class Backup {
       payload: null,
       method: 'GET',
       requestUri:
-          '/resources/${Uri.encodeComponent(resourceArn)}/recovery-points/',
+          '/resources/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}/recovery-points/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2264,7 +2280,8 @@ class Backup {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}/',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2299,7 +2316,7 @@ class Backup {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/backup-vaults/${Uri.encodeComponent(backupVaultName)}/access-policy',
+          '/backup-vaults/${Uri.encodeQueryComponent(backupVaultName).replaceAll('+', '%20')}/access-policy',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2401,7 +2418,7 @@ class Backup {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/backup-vaults/${Uri.encodeComponent(backupVaultName)}/vault-lock',
+          '/backup-vaults/${Uri.encodeQueryComponent(backupVaultName).replaceAll('+', '%20')}/vault-lock',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2470,7 +2487,7 @@ class Backup {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/backup-vaults/${Uri.encodeComponent(backupVaultName)}/notification-configuration',
+          '/backup-vaults/${Uri.encodeQueryComponent(backupVaultName).replaceAll('+', '%20')}/notification-configuration',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2674,7 +2691,8 @@ class Backup {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/audit/report-jobs/${Uri.encodeComponent(reportPlanName)}',
+      requestUri:
+          '/audit/report-jobs/${Uri.encodeQueryComponent(reportPlanName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return StartReportJobOutput.fromJson(response);
@@ -2858,7 +2876,8 @@ class Backup {
     await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/backup-jobs/${Uri.encodeComponent(backupJobId)}',
+      requestUri:
+          '/backup-jobs/${Uri.encodeQueryComponent(backupJobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2891,7 +2910,8 @@ class Backup {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2920,7 +2940,8 @@ class Backup {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/untag/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/untag/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2950,7 +2971,8 @@ class Backup {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/backup/plans/${Uri.encodeComponent(backupPlanId)}',
+      requestUri:
+          '/backup/plans/${Uri.encodeQueryComponent(backupPlanId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBackupPlanOutput.fromJson(response);
@@ -2999,7 +3021,8 @@ class Backup {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/audit/frameworks/${Uri.encodeComponent(frameworkName)}',
+      requestUri:
+          '/audit/frameworks/${Uri.encodeQueryComponent(frameworkName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateFrameworkOutput.fromJson(response);
@@ -3092,7 +3115,7 @@ class Backup {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backup-vaults/${Uri.encodeComponent(backupVaultName)}/recovery-points/${Uri.encodeComponent(recoveryPointArn)}',
+          '/backup-vaults/%24%7BUri.encodeQueryComponent%28backupVaultName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/recovery-points/${Uri.encodeQueryComponent(recoveryPointArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateRecoveryPointLifecycleOutput.fromJson(response);
@@ -3196,7 +3219,8 @@ class Backup {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/audit/report-plans/${Uri.encodeComponent(reportPlanName)}',
+      requestUri:
+          '/audit/report-plans/${Uri.encodeQueryComponent(reportPlanName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateReportPlanOutput.fromJson(response);

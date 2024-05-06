@@ -64,7 +64,8 @@ class Enum {
     };
     await _protocol.send(
       method: 'POST',
-      requestUri: '/Enum/${Uri.encodeComponent(uRIFooEnum.toValue())}',
+      requestUri:
+          '/Enum/${Uri.encodeQueryComponent(uRIFooEnum.toValue()).replaceAll('+', '%20')}',
       queryParams: $query,
       headers: headers,
       payload: InputShape(

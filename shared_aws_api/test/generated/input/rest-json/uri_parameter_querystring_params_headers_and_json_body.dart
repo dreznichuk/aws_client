@@ -69,7 +69,7 @@ class URIParameterQuerystringParamsHeadersAndJSONBody {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2014-01-01/jobsByPipeline/${Uri.encodeComponent(pipelineId)}',
+          '/2014-01-01/jobsByPipeline/${Uri.encodeQueryComponent(pipelineId).replaceAll('+', '%20')}',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,

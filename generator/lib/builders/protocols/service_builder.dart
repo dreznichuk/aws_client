@@ -68,15 +68,15 @@ abstract class ServiceBuilder {
               if (!allMembersToReplace.any((e) => part.contains(e)) &&
                   !part.contains('Uri.encodeComponent') &&
                   !part.contains('?')) {
-                return Uri.encodeComponent(part);
+                return Uri.encodeQueryComponent(part).replaceAll('+', '%20');
               }
               return part;
             })
             .join('/')
             .replaceAll('{${m.locationName ?? m.name}}',
-                '\${Uri.encodeComponent($fieldCode)}')
+                '\${Uri.encodeQueryComponent($fieldCode).replaceAll(\'+\', \'%20\')}')
             .replaceAll('{${m.locationName ?? m.name}+}',
-                "\${$fieldCode.split('/').map(Uri.encodeComponent).join('/')}");
+                "\${$fieldCode.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}");
       }
     }
     return uri;

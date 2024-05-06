@@ -341,7 +341,8 @@ class MQ {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/v1/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/v1/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -391,7 +392,7 @@ class MQ {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/brokers/${Uri.encodeComponent(brokerId)}/users/${Uri.encodeComponent(username)}',
+          '/v1/brokers/%24%7BUri.encodeQueryComponent%28brokerId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(username).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -411,7 +412,8 @@ class MQ {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/brokers/${Uri.encodeComponent(brokerId)}',
+      requestUri:
+          '/v1/brokers/${Uri.encodeQueryComponent(brokerId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteBrokerResponse.fromJson(response);
@@ -439,7 +441,8 @@ class MQ {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/v1/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -467,7 +470,7 @@ class MQ {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/brokers/${Uri.encodeComponent(brokerId)}/users/${Uri.encodeComponent(username)}',
+          '/v1/brokers/%24%7BUri.encodeQueryComponent%28brokerId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(username).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -487,7 +490,8 @@ class MQ {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/brokers/${Uri.encodeComponent(brokerId)}',
+      requestUri:
+          '/v1/brokers/${Uri.encodeQueryComponent(brokerId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeBrokerResponse.fromJson(response);
@@ -602,7 +606,8 @@ class MQ {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/configurations/${Uri.encodeComponent(configurationId)}',
+      requestUri:
+          '/v1/configurations/${Uri.encodeQueryComponent(configurationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeConfigurationResponse.fromJson(response);
@@ -629,7 +634,7 @@ class MQ {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/configurations/${Uri.encodeComponent(configurationId)}/revisions/${Uri.encodeComponent(configurationRevision)}',
+          '/v1/configurations/%24%7BUri.encodeQueryComponent%28configurationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/revisions/${Uri.encodeQueryComponent(configurationRevision).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeConfigurationRevisionResponse.fromJson(response);
@@ -657,7 +662,7 @@ class MQ {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/brokers/${Uri.encodeComponent(brokerId)}/users/${Uri.encodeComponent(username)}',
+          '/v1/brokers/%24%7BUri.encodeQueryComponent%28brokerId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(username).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeUserResponse.fromJson(response);
@@ -736,7 +741,7 @@ class MQ {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/configurations/${Uri.encodeComponent(configurationId)}/revisions',
+          '/v1/configurations/${Uri.encodeQueryComponent(configurationId).replaceAll('+', '%20')}/revisions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -795,7 +800,8 @@ class MQ {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/v1/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsResponse.fromJson(response);
@@ -836,7 +842,8 @@ class MQ {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/brokers/${Uri.encodeComponent(brokerId)}/users',
+      requestUri:
+          '/v1/brokers/${Uri.encodeQueryComponent(brokerId).replaceAll('+', '%20')}/users',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -858,7 +865,8 @@ class MQ {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/v1/brokers/${Uri.encodeComponent(brokerId)}/reboot',
+      requestUri:
+          '/v1/brokers/${Uri.encodeQueryComponent(brokerId).replaceAll('+', '%20')}/reboot',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -940,7 +948,8 @@ class MQ {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v1/brokers/${Uri.encodeComponent(brokerId)}',
+      requestUri:
+          '/v1/brokers/${Uri.encodeQueryComponent(brokerId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBrokerResponse.fromJson(response);
@@ -974,7 +983,8 @@ class MQ {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/v1/configurations/${Uri.encodeComponent(configurationId)}',
+      requestUri:
+          '/v1/configurations/${Uri.encodeQueryComponent(configurationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateConfigurationResponse.fromJson(response);
@@ -1025,7 +1035,7 @@ class MQ {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/brokers/${Uri.encodeComponent(brokerId)}/users/${Uri.encodeComponent(username)}',
+          '/v1/brokers/%24%7BUri.encodeQueryComponent%28brokerId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(username).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

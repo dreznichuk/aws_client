@@ -114,7 +114,8 @@ class Mobile {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/projects/${Uri.encodeComponent(projectId)}',
+      requestUri:
+          '/projects/${Uri.encodeQueryComponent(projectId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteProjectResult.fromJson(response);
@@ -137,7 +138,8 @@ class Mobile {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/bundles/${Uri.encodeComponent(bundleId)}',
+      requestUri:
+          '/bundles/${Uri.encodeQueryComponent(bundleId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeBundleResult.fromJson(response);
@@ -209,7 +211,8 @@ class Mobile {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/bundles/${Uri.encodeComponent(bundleId)}',
+      requestUri:
+          '/bundles/${Uri.encodeQueryComponent(bundleId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -236,7 +239,8 @@ class Mobile {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/exports/${Uri.encodeComponent(projectId)}',
+      requestUri:
+          '/exports/${Uri.encodeQueryComponent(projectId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ExportProjectResult.fromJson(response);

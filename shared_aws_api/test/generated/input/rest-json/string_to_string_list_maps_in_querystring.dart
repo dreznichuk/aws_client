@@ -60,7 +60,7 @@ class StringToStringListMapsInQuerystring {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2014-01-01/jobsByPipeline/${Uri.encodeComponent(pipelineId)}',
+          '/2014-01-01/jobsByPipeline/${Uri.encodeQueryComponent(pipelineId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

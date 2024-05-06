@@ -139,7 +139,7 @@ class WorkDocs {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/api/v1/documents/${Uri.encodeComponent(documentId)}/versions/${Uri.encodeComponent(versionId)}',
+          '/api/v1/documents/%24%7BUri.encodeQueryComponent%28documentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -171,7 +171,8 @@ class WorkDocs {
     final response = await _protocol.send(
       payload: null,
       method: 'POST',
-      requestUri: '/api/v1/users/${Uri.encodeComponent(userId)}/activation',
+      requestUri:
+          '/api/v1/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}/activation',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -219,7 +220,7 @@ class WorkDocs {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/api/v1/resources/${Uri.encodeComponent(resourceId)}/permissions',
+          '/api/v1/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/permissions',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -291,7 +292,7 @@ class WorkDocs {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/api/v1/documents/${Uri.encodeComponent(documentId)}/versions/${Uri.encodeComponent(versionId)}/comment',
+          '/api/v1/documents/%24%7BUri.encodeQueryComponent%28documentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionId).replaceAll('+', '%20')}/comment',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -342,7 +343,7 @@ class WorkDocs {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/api/v1/resources/${Uri.encodeComponent(resourceId)}/customMetadata',
+          '/api/v1/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/customMetadata',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -428,7 +429,8 @@ class WorkDocs {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/api/v1/resources/${Uri.encodeComponent(resourceId)}/labels',
+      requestUri:
+          '/api/v1/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/labels',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -476,7 +478,7 @@ class WorkDocs {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/api/v1/organizations/${Uri.encodeComponent(organizationId)}/subscriptions',
+          '/api/v1/organizations/${Uri.encodeQueryComponent(organizationId).replaceAll('+', '%20')}/subscriptions',
       exceptionFnMap: _exceptionFns,
     );
     return CreateNotificationSubscriptionResponse.fromJson(response);
@@ -579,7 +581,8 @@ class WorkDocs {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/api/v1/users/${Uri.encodeComponent(userId)}/activation',
+      requestUri:
+          '/api/v1/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}/activation',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -621,7 +624,7 @@ class WorkDocs {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/api/v1/documents/${Uri.encodeComponent(documentId)}/versions/${Uri.encodeComponent(versionId)}/comment/${Uri.encodeComponent(commentId)}',
+          '/api/v1/documents/%24%7BUri.encodeQueryComponent%28documentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionId).replaceAll('+', '%20')}/comment/%2524%257BUri.encodeQueryComponent%2528commentId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -673,7 +676,7 @@ class WorkDocs {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/api/v1/resources/${Uri.encodeComponent(resourceId)}/customMetadata',
+          '/api/v1/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/customMetadata',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -709,7 +712,8 @@ class WorkDocs {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/api/v1/documents/${Uri.encodeComponent(documentId)}',
+      requestUri:
+          '/api/v1/documents/${Uri.encodeQueryComponent(documentId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -755,7 +759,7 @@ class WorkDocs {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/api/v1/documentVersions/${Uri.encodeComponent(documentId)}/versions/${Uri.encodeComponent(versionId)}',
+          '/api/v1/documentVersions/%24%7BUri.encodeQueryComponent%28documentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionId).replaceAll('+', '%20')}',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -791,7 +795,8 @@ class WorkDocs {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/api/v1/folders/${Uri.encodeComponent(folderId)}',
+      requestUri:
+          '/api/v1/folders/${Uri.encodeQueryComponent(folderId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -824,7 +829,8 @@ class WorkDocs {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/api/v1/folders/${Uri.encodeComponent(folderId)}/contents',
+      requestUri:
+          '/api/v1/folders/${Uri.encodeQueryComponent(folderId).replaceAll('+', '%20')}/contents',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -868,7 +874,8 @@ class WorkDocs {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/api/v1/resources/${Uri.encodeComponent(resourceId)}/labels',
+      requestUri:
+          '/api/v1/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/labels',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -895,7 +902,7 @@ class WorkDocs {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/api/v1/organizations/${Uri.encodeComponent(organizationId)}/subscriptions/${Uri.encodeComponent(subscriptionId)}',
+          '/api/v1/organizations/%24%7BUri.encodeQueryComponent%28organizationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/subscriptions/${Uri.encodeQueryComponent(subscriptionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -931,7 +938,8 @@ class WorkDocs {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/api/v1/users/${Uri.encodeComponent(userId)}',
+      requestUri:
+          '/api/v1/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1080,7 +1088,7 @@ class WorkDocs {
       payload: null,
       method: 'GET',
       requestUri:
-          '/api/v1/documents/${Uri.encodeComponent(documentId)}/versions/${Uri.encodeComponent(versionId)}/comments',
+          '/api/v1/documents/%24%7BUri.encodeQueryComponent%28documentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionId).replaceAll('+', '%20')}/comments',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -1150,7 +1158,7 @@ class WorkDocs {
       payload: null,
       method: 'GET',
       requestUri:
-          '/api/v1/documents/${Uri.encodeComponent(documentId)}/versions',
+          '/api/v1/documents/${Uri.encodeQueryComponent(documentId).replaceAll('+', '%20')}/versions',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -1230,7 +1238,8 @@ class WorkDocs {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/api/v1/folders/${Uri.encodeComponent(folderId)}/contents',
+      requestUri:
+          '/api/v1/folders/${Uri.encodeQueryComponent(folderId).replaceAll('+', '%20')}/contents',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -1331,7 +1340,7 @@ class WorkDocs {
       payload: null,
       method: 'GET',
       requestUri:
-          '/api/v1/organizations/${Uri.encodeComponent(organizationId)}/subscriptions',
+          '/api/v1/organizations/${Uri.encodeQueryComponent(organizationId).replaceAll('+', '%20')}/subscriptions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1388,7 +1397,7 @@ class WorkDocs {
       payload: null,
       method: 'GET',
       requestUri:
-          '/api/v1/resources/${Uri.encodeComponent(resourceId)}/permissions',
+          '/api/v1/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/permissions',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -1640,7 +1649,8 @@ class WorkDocs {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/api/v1/documents/${Uri.encodeComponent(documentId)}',
+      requestUri:
+          '/api/v1/documents/${Uri.encodeQueryComponent(documentId).replaceAll('+', '%20')}',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -1703,7 +1713,8 @@ class WorkDocs {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/api/v1/documents/${Uri.encodeComponent(documentId)}/path',
+      requestUri:
+          '/api/v1/documents/${Uri.encodeQueryComponent(documentId).replaceAll('+', '%20')}/path',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -1757,7 +1768,7 @@ class WorkDocs {
       payload: null,
       method: 'GET',
       requestUri:
-          '/api/v1/documents/${Uri.encodeComponent(documentId)}/versions/${Uri.encodeComponent(versionId)}',
+          '/api/v1/documents/%24%7BUri.encodeQueryComponent%28documentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionId).replaceAll('+', '%20')}',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -1800,7 +1811,8 @@ class WorkDocs {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/api/v1/folders/${Uri.encodeComponent(folderId)}',
+      requestUri:
+          '/api/v1/folders/${Uri.encodeQueryComponent(folderId).replaceAll('+', '%20')}',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -1863,7 +1875,8 @@ class WorkDocs {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/api/v1/folders/${Uri.encodeComponent(folderId)}/path',
+      requestUri:
+          '/api/v1/folders/${Uri.encodeQueryComponent(folderId).replaceAll('+', '%20')}/path',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -2042,7 +2055,7 @@ class WorkDocs {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/api/v1/resources/${Uri.encodeComponent(resourceId)}/permissions',
+          '/api/v1/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/permissions',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2085,7 +2098,7 @@ class WorkDocs {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/api/v1/resources/${Uri.encodeComponent(resourceId)}/permissions/${Uri.encodeComponent(principalId)}',
+          '/api/v1/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/permissions/%24%7BUri.encodeQueryComponent%28principalId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -2121,7 +2134,7 @@ class WorkDocs {
       payload: null,
       method: 'POST',
       requestUri:
-          '/api/v1/documentVersions/restore/${Uri.encodeComponent(documentId)}',
+          '/api/v1/documentVersions/restore/${Uri.encodeQueryComponent(documentId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2261,7 +2274,8 @@ class WorkDocs {
     await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/api/v1/documents/${Uri.encodeComponent(documentId)}',
+      requestUri:
+          '/api/v1/documents/${Uri.encodeQueryComponent(documentId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2311,7 +2325,7 @@ class WorkDocs {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/api/v1/documents/${Uri.encodeComponent(documentId)}/versions/${Uri.encodeComponent(versionId)}',
+          '/api/v1/documents/%24%7BUri.encodeQueryComponent%28documentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2366,7 +2380,8 @@ class WorkDocs {
     await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/api/v1/folders/${Uri.encodeComponent(folderId)}',
+      requestUri:
+          '/api/v1/folders/${Uri.encodeQueryComponent(folderId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2441,7 +2456,8 @@ class WorkDocs {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PATCH',
-      requestUri: '/api/v1/users/${Uri.encodeComponent(userId)}',
+      requestUri:
+          '/api/v1/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );

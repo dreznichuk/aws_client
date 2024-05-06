@@ -94,7 +94,8 @@ class MediaConvert {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/2017-08-29/jobs/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/2017-08-29/jobs/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -464,7 +465,8 @@ class MediaConvert {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/2017-08-29/jobTemplates/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/2017-08-29/jobTemplates/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -503,7 +505,8 @@ class MediaConvert {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/2017-08-29/presets/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/2017-08-29/presets/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -525,7 +528,8 @@ class MediaConvert {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/2017-08-29/queues/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/2017-08-29/queues/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -592,7 +596,8 @@ class MediaConvert {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/2017-08-29/certificates/${Uri.encodeComponent(arn)}',
+      requestUri:
+          '/2017-08-29/certificates/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -614,7 +619,8 @@ class MediaConvert {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/2017-08-29/jobs/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/2017-08-29/jobs/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetJobResponse.fromJson(response);
@@ -637,7 +643,8 @@ class MediaConvert {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/2017-08-29/jobTemplates/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/2017-08-29/jobTemplates/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetJobTemplateResponse.fromJson(response);
@@ -678,7 +685,8 @@ class MediaConvert {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/2017-08-29/presets/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/2017-08-29/presets/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetPresetResponse.fromJson(response);
@@ -701,7 +709,8 @@ class MediaConvert {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/2017-08-29/queues/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/2017-08-29/queues/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetQueueResponse.fromJson(response);
@@ -966,7 +975,8 @@ class MediaConvert {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/2017-08-29/tags/${Uri.encodeComponent(arn)}',
+      requestUri:
+          '/2017-08-29/tags/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -1063,7 +1073,8 @@ class MediaConvert {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/2017-08-29/tags/${Uri.encodeComponent(arn)}',
+      requestUri:
+          '/2017-08-29/tags/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1147,7 +1158,8 @@ class MediaConvert {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/2017-08-29/jobTemplates/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/2017-08-29/jobTemplates/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateJobTemplateResponse.fromJson(response);
@@ -1187,7 +1199,8 @@ class MediaConvert {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/2017-08-29/presets/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/2017-08-29/presets/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdatePresetResponse.fromJson(response);
@@ -1236,7 +1249,8 @@ class MediaConvert {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/2017-08-29/queues/${Uri.encodeComponent(name)}',
+      requestUri:
+          '/2017-08-29/queues/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateQueueResponse.fromJson(response);

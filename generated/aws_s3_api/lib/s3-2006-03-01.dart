@@ -143,7 +143,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'DELETE',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -415,7 +415,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'POST',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}',
       queryParams: $query,
       headers: headers,
       payload: multipartUpload?.toXml('CompleteMultipartUpload'),
@@ -1048,7 +1048,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'PUT',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1309,7 +1309,7 @@ class S3 {
     };
     final $result = await _protocol.sendRaw(
       method: 'PUT',
-      requestUri: '/${Uri.encodeComponent(bucket)}',
+      requestUri: '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}',
       headers: headers,
       payload: createBucketConfiguration?.toXml('CreateBucketConfiguration'),
       exceptionFnMap: _exceptionFns,
@@ -1870,7 +1870,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'POST',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}?uploads',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}?uploads',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1940,7 +1940,7 @@ class S3 {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/${Uri.encodeComponent(bucket)}',
+      requestUri: '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2004,7 +2004,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/${Uri.encodeComponent(bucket)}?analytics',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?analytics',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -2053,7 +2054,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/${Uri.encodeComponent(bucket)}?cors',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?cors',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2107,7 +2109,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/${Uri.encodeComponent(bucket)}?encryption',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?encryption',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2169,7 +2172,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/${Uri.encodeComponent(bucket)}?intelligent-tiering',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?intelligent-tiering',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2233,7 +2237,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/${Uri.encodeComponent(bucket)}?inventory',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?inventory',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -2288,7 +2293,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/${Uri.encodeComponent(bucket)}?lifecycle',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?lifecycle',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2360,7 +2366,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/${Uri.encodeComponent(bucket)}?metrics',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?metrics',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -2408,7 +2415,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/${Uri.encodeComponent(bucket)}?ownershipControls',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?ownershipControls',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2470,7 +2478,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/${Uri.encodeComponent(bucket)}?policy',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?policy',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2525,7 +2534,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/${Uri.encodeComponent(bucket)}?replication',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?replication',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2567,7 +2577,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/${Uri.encodeComponent(bucket)}?tagging',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?tagging',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2620,7 +2631,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/${Uri.encodeComponent(bucket)}?website',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?website',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2732,7 +2744,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'DELETE',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -2823,7 +2835,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'DELETE',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}?tagging',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}?tagging',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -2972,7 +2984,8 @@ class S3 {
     };
     final $result = await _protocol.sendRaw(
       method: 'POST',
-      requestUri: '/${Uri.encodeComponent(bucket)}?delete',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?delete',
       headers: headers,
       payload: delete.toXml('Delete'),
       exceptionFnMap: _exceptionFns,
@@ -3038,7 +3051,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'DELETE',
-      requestUri: '/${Uri.encodeComponent(bucket)}?publicAccessBlock',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?publicAccessBlock',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -3102,7 +3116,8 @@ class S3 {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?accelerate',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?accelerate',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -3172,7 +3187,8 @@ class S3 {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?acl',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?acl',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -3240,7 +3256,8 @@ class S3 {
     };
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?analytics',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?analytics',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -3314,7 +3331,8 @@ class S3 {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?cors',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?cors',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -3368,7 +3386,8 @@ class S3 {
     };
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?encryption',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?encryption',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -3435,7 +3454,8 @@ class S3 {
     };
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?intelligent-tiering',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?intelligent-tiering',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3505,7 +3525,8 @@ class S3 {
     };
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?inventory',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?inventory',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -3590,7 +3611,8 @@ class S3 {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?lifecycle',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?lifecycle',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -3676,7 +3698,8 @@ class S3 {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?lifecycle',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?lifecycle',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -3745,7 +3768,8 @@ class S3 {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?location',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?location',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -3785,7 +3809,8 @@ class S3 {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?logging',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?logging',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -3857,7 +3882,8 @@ class S3 {
     };
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?metrics',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?metrics',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -3900,7 +3926,8 @@ class S3 {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?notification',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?notification',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -3973,7 +4000,8 @@ class S3 {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?notification',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?notification',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -4021,7 +4049,8 @@ class S3 {
     };
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?ownershipControls',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?ownershipControls',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -4104,7 +4133,8 @@ class S3 {
     };
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?policy',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?policy',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -4165,7 +4195,8 @@ class S3 {
     };
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?policyStatus',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?policyStatus',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -4230,7 +4261,8 @@ class S3 {
     };
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?replication',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?replication',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -4273,7 +4305,8 @@ class S3 {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?requestPayment',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?requestPayment',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -4328,7 +4361,8 @@ class S3 {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?tagging',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?tagging',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -4379,7 +4413,8 @@ class S3 {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?versioning',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?versioning',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -4428,7 +4463,8 @@ class S3 {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?website',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?website',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -4783,7 +4819,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -4952,7 +4988,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}?acl',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}?acl',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -5208,7 +5244,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}?attributes',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}?attributes',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -5291,7 +5327,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}?legal-hold',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}?legal-hold',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -5344,7 +5380,8 @@ class S3 {
     };
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?object-lock',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?object-lock',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -5411,7 +5448,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}?retention',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}?retention',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -5508,7 +5545,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}?tagging',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}?tagging',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -5570,7 +5607,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}?torrent',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}?torrent',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -5642,7 +5679,8 @@ class S3 {
     };
     final $result = await _protocol.sendRaw(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?publicAccessBlock',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?publicAccessBlock',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -5737,7 +5775,7 @@ class S3 {
     };
     await _protocol.send(
       method: 'HEAD',
-      requestUri: '/${Uri.encodeComponent(bucket)}',
+      requestUri: '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -5992,7 +6030,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'HEAD',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -6145,7 +6183,8 @@ class S3 {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?analytics',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?analytics',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -6210,7 +6249,8 @@ class S3 {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?intelligent-tiering',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?intelligent-tiering',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -6291,7 +6331,8 @@ class S3 {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?inventory',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?inventory',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -6374,7 +6415,8 @@ class S3 {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?metrics',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?metrics',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -6543,7 +6585,8 @@ class S3 {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?uploads',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?uploads',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -6648,7 +6691,8 @@ class S3 {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?versions',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?versions',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -6765,7 +6809,7 @@ class S3 {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}',
+      requestUri: '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -6910,7 +6954,8 @@ class S3 {
     };
     final $result = await _protocol.send(
       method: 'GET',
-      requestUri: '/${Uri.encodeComponent(bucket)}?list-type=2',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?list-type=2',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -7068,7 +7113,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -7191,7 +7236,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/${Uri.encodeComponent(bucket)}?accelerate',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?accelerate',
       headers: headers,
       payload: accelerateConfiguration.toXml('AccelerateConfiguration'),
       exceptionFnMap: _exceptionFns,
@@ -7483,7 +7529,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/${Uri.encodeComponent(bucket)}?acl',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?acl',
       headers: headers,
       payload: accessControlPolicy?.toXml('AccessControlPolicy'),
       exceptionFnMap: _exceptionFns,
@@ -7611,7 +7658,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/${Uri.encodeComponent(bucket)}?analytics',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?analytics',
       queryParams: $query,
       headers: headers,
       payload: analyticsConfiguration.toXml('AnalyticsConfiguration'),
@@ -7733,7 +7781,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/${Uri.encodeComponent(bucket)}?cors',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?cors',
       headers: headers,
       payload: cORSConfiguration.toXml('CORSConfiguration'),
       exceptionFnMap: _exceptionFns,
@@ -7836,7 +7885,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/${Uri.encodeComponent(bucket)}?encryption',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?encryption',
       headers: headers,
       payload: serverSideEncryptionConfiguration
           .toXml('ServerSideEncryptionConfiguration'),
@@ -7924,7 +7974,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/${Uri.encodeComponent(bucket)}?intelligent-tiering',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?intelligent-tiering',
       queryParams: $query,
       payload: intelligentTieringConfiguration
           .toXml('IntelligentTieringConfiguration'),
@@ -8045,7 +8096,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/${Uri.encodeComponent(bucket)}?inventory',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?inventory',
       queryParams: $query,
       headers: headers,
       payload: inventoryConfiguration.toXml('InventoryConfiguration'),
@@ -8180,7 +8232,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/${Uri.encodeComponent(bucket)}?lifecycle',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?lifecycle',
       headers: headers,
       payload: lifecycleConfiguration?.toXml('LifecycleConfiguration'),
       exceptionFnMap: _exceptionFns,
@@ -8316,7 +8369,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/${Uri.encodeComponent(bucket)}?lifecycle',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?lifecycle',
       headers: headers,
       payload: lifecycleConfiguration?.toXml('LifecycleConfiguration'),
       exceptionFnMap: _exceptionFns,
@@ -8452,7 +8506,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/${Uri.encodeComponent(bucket)}?logging',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?logging',
       headers: headers,
       payload: bucketLoggingStatus.toXml('BucketLoggingStatus'),
       exceptionFnMap: _exceptionFns,
@@ -8542,7 +8597,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/${Uri.encodeComponent(bucket)}?metrics',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?metrics',
       queryParams: $query,
       headers: headers,
       payload: metricsConfiguration.toXml('MetricsConfiguration'),
@@ -8600,7 +8656,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/${Uri.encodeComponent(bucket)}?notification',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?notification',
       headers: headers,
       payload: notificationConfiguration.toXml('NotificationConfiguration'),
       exceptionFnMap: _exceptionFns,
@@ -8701,7 +8758,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/${Uri.encodeComponent(bucket)}?notification',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?notification',
       headers: headers,
       payload: notificationConfiguration.toXml('NotificationConfiguration'),
       exceptionFnMap: _exceptionFns,
@@ -8763,7 +8821,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/${Uri.encodeComponent(bucket)}?ownershipControls',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?ownershipControls',
       headers: headers,
       payload: ownershipControls.toXml('OwnershipControls'),
       exceptionFnMap: _exceptionFns,
@@ -8861,7 +8920,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/${Uri.encodeComponent(bucket)}?policy',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?policy',
       headers: headers,
       payload: policy,
       exceptionFnMap: _exceptionFns,
@@ -8996,7 +9056,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/${Uri.encodeComponent(bucket)}?replication',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?replication',
       headers: headers,
       payload: replicationConfiguration.toXml('ReplicationConfiguration'),
       exceptionFnMap: _exceptionFns,
@@ -9073,7 +9134,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/${Uri.encodeComponent(bucket)}?requestPayment',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?requestPayment',
       headers: headers,
       payload: requestPaymentConfiguration.toXml('RequestPaymentConfiguration'),
       exceptionFnMap: _exceptionFns,
@@ -9213,7 +9275,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/${Uri.encodeComponent(bucket)}?tagging',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?tagging',
       headers: headers,
       payload: tagging.toXml('Tagging'),
       exceptionFnMap: _exceptionFns,
@@ -9322,7 +9385,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/${Uri.encodeComponent(bucket)}?versioning',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?versioning',
       headers: headers,
       payload: versioningConfiguration.toXml('VersioningConfiguration'),
       exceptionFnMap: _exceptionFns,
@@ -9472,7 +9536,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/${Uri.encodeComponent(bucket)}?website',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?website',
       headers: headers,
       payload: websiteConfiguration.toXml('WebsiteConfiguration'),
       exceptionFnMap: _exceptionFns,
@@ -9949,7 +10014,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'PUT',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}',
       headers: headers,
       payload: body,
       exceptionFnMap: _exceptionFns,
@@ -10319,7 +10384,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'PUT',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}?acl',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}?acl',
       queryParams: $query,
       headers: headers,
       payload: accessControlPolicy?.toXml('AccessControlPolicy'),
@@ -10410,7 +10475,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'PUT',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}?legal-hold',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}?legal-hold',
       queryParams: $query,
       headers: headers,
       payload: legalHold?.toXml('LegalHold'),
@@ -10500,7 +10565,8 @@ class S3 {
     };
     final $result = await _protocol.sendRaw(
       method: 'PUT',
-      requestUri: '/${Uri.encodeComponent(bucket)}?object-lock',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?object-lock',
       headers: headers,
       payload: objectLockConfiguration?.toXml('ObjectLockConfiguration'),
       exceptionFnMap: _exceptionFns,
@@ -10602,7 +10668,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'PUT',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}?retention',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}?retention',
       queryParams: $query,
       headers: headers,
       payload: retention?.toXml('Retention'),
@@ -10778,7 +10844,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'PUT',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}?tagging',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}?tagging',
       queryParams: $query,
       headers: headers,
       payload: tagging.toXml('Tagging'),
@@ -10884,7 +10950,8 @@ class S3 {
     };
     await _protocol.send(
       method: 'PUT',
-      requestUri: '/${Uri.encodeComponent(bucket)}?publicAccessBlock',
+      requestUri:
+          '/${Uri.encodeQueryComponent(bucket).replaceAll('+', '%20')}?publicAccessBlock',
       headers: headers,
       payload: publicAccessBlockConfiguration
           .toXml('PublicAccessBlockConfiguration'),
@@ -11219,7 +11286,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'POST',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}?restore',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}?restore',
       queryParams: $query,
       headers: headers,
       payload: restoreRequest?.toXml('RestoreRequest'),
@@ -11444,7 +11511,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'POST',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}?select&select-type=2',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}?select&select-type=2',
       headers: headers,
       payload: SelectObjectContentRequest(
               bucket: bucket,
@@ -11779,7 +11846,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'PUT',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}',
       queryParams: $query,
       headers: headers,
       payload: body,
@@ -12180,7 +12247,7 @@ class S3 {
     final $result = await _protocol.sendRaw(
       method: 'PUT',
       requestUri:
-          '/${Uri.encodeComponent(bucket)}/${key.split('/').map(Uri.encodeComponent).join('/')}',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeComponent(e)..replaceAll('+', '%20')).join('/')}',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,

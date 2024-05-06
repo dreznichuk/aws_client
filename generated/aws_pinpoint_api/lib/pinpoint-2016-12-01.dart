@@ -94,7 +94,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: writeCampaignRequest,
       method: 'POST',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/campaigns',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/campaigns',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -124,7 +125,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: emailTemplateRequest,
       method: 'POST',
-      requestUri: '/v1/templates/${Uri.encodeComponent(templateName)}/email',
+      requestUri:
+          '/v1/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/email',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -153,7 +155,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: exportJobRequest,
       method: 'POST',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/jobs/export',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/jobs/export',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -182,7 +185,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: importJobRequest,
       method: 'POST',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/jobs/import',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/jobs/import',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -212,7 +216,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: inAppTemplateRequest,
       method: 'POST',
-      requestUri: '/v1/templates/${Uri.encodeComponent(templateName)}/inapp',
+      requestUri:
+          '/v1/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/inapp',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -241,7 +246,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: writeJourneyRequest,
       method: 'POST',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/journeys',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/journeys',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -271,7 +277,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: pushNotificationTemplateRequest,
       method: 'POST',
-      requestUri: '/v1/templates/${Uri.encodeComponent(templateName)}/push',
+      requestUri:
+          '/v1/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/push',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -328,7 +335,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: writeSegmentRequest,
       method: 'POST',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/segments',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/segments',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -358,7 +366,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: sMSTemplateRequest,
       method: 'POST',
-      requestUri: '/v1/templates/${Uri.encodeComponent(templateName)}/sms',
+      requestUri:
+          '/v1/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/sms',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -388,7 +397,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: voiceTemplateRequest,
       method: 'POST',
-      requestUri: '/v1/templates/${Uri.encodeComponent(templateName)}/voice',
+      requestUri:
+          '/v1/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/voice',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -417,7 +427,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/adm',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/adm',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -447,7 +458,7 @@ class Pinpoint {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/apns',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/apns',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -477,7 +488,7 @@ class Pinpoint {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/apns_sandbox',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/apns_sandbox',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -507,7 +518,7 @@ class Pinpoint {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/apns_voip',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/apns_voip',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -537,7 +548,7 @@ class Pinpoint {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/apns_voip_sandbox',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/apns_voip_sandbox',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -566,7 +577,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -596,7 +608,7 @@ class Pinpoint {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/baidu',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/baidu',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -629,7 +641,7 @@ class Pinpoint {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/campaigns/${Uri.encodeComponent(campaignId)}',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/campaigns/${Uri.encodeQueryComponent(campaignId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -659,7 +671,7 @@ class Pinpoint {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/email',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/email',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -725,7 +737,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/templates/${Uri.encodeComponent(templateName)}/email',
+      requestUri:
+          '/v1/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/email',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -759,7 +772,7 @@ class Pinpoint {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/endpoints/${Uri.encodeComponent(endpointId)}',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/endpoints/${Uri.encodeQueryComponent(endpointId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -787,7 +800,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/eventstream',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/eventstream',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -816,7 +830,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/gcm',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/gcm',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -882,7 +897,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/templates/${Uri.encodeComponent(templateName)}/inapp',
+      requestUri:
+          '/v1/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/inapp',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -916,7 +932,7 @@ class Pinpoint {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/journeys/${Uri.encodeComponent(journeyId)}',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -982,7 +998,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/templates/${Uri.encodeComponent(templateName)}/push',
+      requestUri:
+          '/v1/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/push',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1013,7 +1030,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/recommenders/${Uri.encodeComponent(recommenderId)}',
+      requestUri:
+          '/v1/recommenders/${Uri.encodeQueryComponent(recommenderId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1047,7 +1065,7 @@ class Pinpoint {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/segments/${Uri.encodeComponent(segmentId)}',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/segments/${Uri.encodeQueryComponent(segmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1076,7 +1094,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/sms',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/sms',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1142,7 +1161,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/templates/${Uri.encodeComponent(templateName)}/sms',
+      requestUri:
+          '/v1/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/sms',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1176,7 +1196,7 @@ class Pinpoint {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/users/${Uri.encodeComponent(userId)}',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1206,7 +1226,7 @@ class Pinpoint {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/voice',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/voice',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1272,7 +1292,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/templates/${Uri.encodeComponent(templateName)}/voice',
+      requestUri:
+          '/v1/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/voice',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1302,7 +1323,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/adm',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/adm',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1332,7 +1354,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/apns',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/apns',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1362,7 +1384,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/apns_sandbox',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/apns_sandbox',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1392,7 +1414,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/apns_voip',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/apns_voip',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1422,7 +1444,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/apns_voip_sandbox',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/apns_voip_sandbox',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1451,7 +1473,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1526,7 +1549,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/kpis/daterange/${Uri.encodeComponent(kpiName)}',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/kpis/daterange/${Uri.encodeQueryComponent(kpiName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1556,7 +1579,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/settings',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/settings',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1626,7 +1650,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/baidu',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/baidu',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1660,7 +1684,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/campaigns/${Uri.encodeComponent(campaignId)}',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/campaigns/${Uri.encodeQueryComponent(campaignId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1708,7 +1732,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/campaigns/${Uri.encodeComponent(campaignId)}/activities',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/campaigns/${Uri.encodeQueryComponent(campaignId).replaceAll('+', '%20')}/activities',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1788,7 +1812,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/campaigns/${Uri.encodeComponent(campaignId)}/kpis/daterange/${Uri.encodeComponent(kpiName)}',
+          '/v1/apps/%2524%257BUri.encodeQueryComponent%2528applicationId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/campaigns/%24%7BUri.encodeQueryComponent%28campaignId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/kpis/daterange/${Uri.encodeQueryComponent(kpiName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1828,7 +1852,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/campaigns/${Uri.encodeComponent(campaignId)}/versions/${Uri.encodeComponent(version)}',
+          '/v1/apps/%2524%257BUri.encodeQueryComponent%2528applicationId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/campaigns/%24%7BUri.encodeQueryComponent%28campaignId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(version).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1877,7 +1901,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/campaigns/${Uri.encodeComponent(campaignId)}/versions',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/campaigns/${Uri.encodeQueryComponent(campaignId).replaceAll('+', '%20')}/versions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1922,7 +1946,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/campaigns',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/campaigns',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1952,7 +1977,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/channels',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1982,7 +2008,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/email',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/email',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -2048,7 +2074,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/templates/${Uri.encodeComponent(templateName)}/email',
+      requestUri:
+          '/v1/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/email',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2083,7 +2110,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/endpoints/${Uri.encodeComponent(endpointId)}',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/endpoints/${Uri.encodeQueryComponent(endpointId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -2111,7 +2138,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/eventstream',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/eventstream',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -2145,7 +2173,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/jobs/export/${Uri.encodeComponent(jobId)}',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/jobs/export/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -2189,7 +2217,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/jobs/export',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/jobs/export',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2219,7 +2248,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/gcm',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/gcm',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -2253,7 +2283,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/jobs/import/${Uri.encodeComponent(jobId)}',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/jobs/import/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -2297,7 +2327,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/jobs/import',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/jobs/import',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2331,7 +2362,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/endpoints/${Uri.encodeComponent(endpointId)}/inappmessages',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/endpoints/${Uri.encodeQueryComponent(endpointId).replaceAll('+', '%20')}/inappmessages',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -2397,7 +2428,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/templates/${Uri.encodeComponent(templateName)}/inapp',
+      requestUri:
+          '/v1/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/inapp',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2432,7 +2464,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/journeys/${Uri.encodeComponent(journeyId)}',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -2511,7 +2543,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/journeys/${Uri.encodeComponent(journeyId)}/kpis/daterange/${Uri.encodeComponent(kpiName)}',
+          '/v1/apps/%2524%257BUri.encodeQueryComponent%2528applicationId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/journeys/%24%7BUri.encodeQueryComponent%28journeyId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/kpis/daterange/${Uri.encodeQueryComponent(kpiName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2567,7 +2599,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/journeys/${Uri.encodeComponent(journeyId)}/activities/${Uri.encodeComponent(journeyActivityId)}/execution-metrics',
+          '/v1/apps/%2524%257BUri.encodeQueryComponent%2528applicationId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}/activities/%24%7BUri.encodeQueryComponent%28journeyActivityId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/execution-metrics',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2619,7 +2651,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/journeys/${Uri.encodeComponent(journeyId)}/execution-metrics',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}/execution-metrics',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2680,7 +2712,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/journeys/${Uri.encodeComponent(journeyId)}/runs/${Uri.encodeComponent(runId)}/activities/${Uri.encodeComponent(journeyActivityId)}/execution-metrics',
+          '/v1/apps/%252524%25257BUri.encodeQueryComponent%252528applicationId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/journeys/%24%7BUri.encodeQueryComponent%28journeyId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/runs/${Uri.encodeQueryComponent(runId).replaceAll('+', '%20')}/activities/%2524%257BUri.encodeQueryComponent%2528journeyActivityId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/execution-metrics',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2736,7 +2768,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/journeys/${Uri.encodeComponent(journeyId)}/runs/${Uri.encodeComponent(runId)}/execution-metrics',
+          '/v1/apps/%2524%257BUri.encodeQueryComponent%2528applicationId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/journeys/%24%7BUri.encodeQueryComponent%28journeyId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/runs/${Uri.encodeQueryComponent(runId).replaceAll('+', '%20')}/execution-metrics',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2786,7 +2818,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/journeys/${Uri.encodeComponent(journeyId)}/runs',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}/runs',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2853,7 +2885,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/templates/${Uri.encodeComponent(templateName)}/push',
+      requestUri:
+          '/v1/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/push',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2885,7 +2918,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/recommenders/${Uri.encodeComponent(recommenderId)}',
+      requestUri:
+          '/v1/recommenders/${Uri.encodeQueryComponent(recommenderId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -2961,7 +2995,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/segments/${Uri.encodeComponent(segmentId)}',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/segments/${Uri.encodeQueryComponent(segmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -3010,7 +3044,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/segments/${Uri.encodeComponent(segmentId)}/jobs/export',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/segments/${Uri.encodeQueryComponent(segmentId).replaceAll('+', '%20')}/jobs/export',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3060,7 +3094,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/segments/${Uri.encodeComponent(segmentId)}/jobs/import',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/segments/${Uri.encodeQueryComponent(segmentId).replaceAll('+', '%20')}/jobs/import',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3100,7 +3134,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/segments/${Uri.encodeComponent(segmentId)}/versions/${Uri.encodeComponent(version)}',
+          '/v1/apps/%2524%257BUri.encodeQueryComponent%2528applicationId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/segments/%24%7BUri.encodeQueryComponent%28segmentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(version).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -3150,7 +3184,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/segments/${Uri.encodeComponent(segmentId)}/versions',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/segments/${Uri.encodeQueryComponent(segmentId).replaceAll('+', '%20')}/versions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3195,7 +3229,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/segments',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/segments',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3225,7 +3260,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/sms',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/sms',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -3291,7 +3327,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/templates/${Uri.encodeComponent(templateName)}/sms',
+      requestUri:
+          '/v1/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/sms',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3326,7 +3363,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/users/${Uri.encodeComponent(userId)}',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -3356,7 +3393,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/voice',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/voice',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -3422,7 +3459,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/templates/${Uri.encodeComponent(templateName)}/voice',
+      requestUri:
+          '/v1/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/voice',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3467,7 +3505,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/journeys',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/journeys',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3488,7 +3527,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: null,
       method: 'GET',
-      requestUri: '/v1/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/v1/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -3541,7 +3581,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/templates/${Uri.encodeComponent(templateName)}/${Uri.encodeComponent(templateType)}/versions',
+          '/v1/templates/%24%7BUri.encodeQueryComponent%28templateName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(templateType).replaceAll('+', '%20')}/versions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3649,7 +3689,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: writeEventStream,
       method: 'POST',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/eventstream',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/eventstream',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -3679,7 +3720,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: eventsRequest,
       method: 'POST',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/events',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/events',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -3731,7 +3773,7 @@ class Pinpoint {
       payload: updateAttributesRequest,
       method: 'PUT',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/attributes/${Uri.encodeComponent(attributeType)}',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/attributes/${Uri.encodeQueryComponent(attributeType).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -3760,7 +3802,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: messageRequest,
       method: 'POST',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/messages',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/messages',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -3788,7 +3831,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: sendOTPMessageRequestParameters,
       method: 'POST',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/otp',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/otp',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -3818,7 +3862,7 @@ class Pinpoint {
       payload: sendUsersMessageRequest,
       method: 'POST',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/users-messages',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/users-messages',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -3839,7 +3883,8 @@ class Pinpoint {
     await _protocol.send(
       payload: tagsModel,
       method: 'POST',
-      requestUri: '/v1/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/v1/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3864,7 +3909,8 @@ class Pinpoint {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/v1/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/v1/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3891,7 +3937,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: aDMChannelRequest,
       method: 'PUT',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/adm',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/adm',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -3922,7 +3969,7 @@ class Pinpoint {
       payload: aPNSChannelRequest,
       method: 'PUT',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/apns',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/apns',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -3953,7 +4000,7 @@ class Pinpoint {
       payload: aPNSSandboxChannelRequest,
       method: 'PUT',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/apns_sandbox',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/apns_sandbox',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -3984,7 +4031,7 @@ class Pinpoint {
       payload: aPNSVoipChannelRequest,
       method: 'PUT',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/apns_voip',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/apns_voip',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -4015,7 +4062,7 @@ class Pinpoint {
       payload: aPNSVoipSandboxChannelRequest,
       method: 'PUT',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/apns_voip_sandbox',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/apns_voip_sandbox',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -4045,7 +4092,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: writeApplicationSettingsRequest,
       method: 'PUT',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/settings',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/settings',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -4076,7 +4124,7 @@ class Pinpoint {
       payload: baiduChannelRequest,
       method: 'PUT',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/baidu',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/baidu',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -4110,7 +4158,7 @@ class Pinpoint {
       payload: writeCampaignRequest,
       method: 'PUT',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/campaigns/${Uri.encodeComponent(campaignId)}',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/campaigns/${Uri.encodeQueryComponent(campaignId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -4141,7 +4189,7 @@ class Pinpoint {
       payload: emailChannelRequest,
       method: 'PUT',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/email',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/email',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -4222,7 +4270,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: emailTemplateRequest,
       method: 'PUT',
-      requestUri: '/v1/templates/${Uri.encodeComponent(templateName)}/email',
+      requestUri:
+          '/v1/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/email',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4261,7 +4310,7 @@ class Pinpoint {
       payload: endpointRequest,
       method: 'PUT',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/endpoints/${Uri.encodeComponent(endpointId)}',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/endpoints/${Uri.encodeQueryComponent(endpointId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -4295,7 +4344,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: endpointBatchRequest,
       method: 'PUT',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/endpoints',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/endpoints',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -4325,7 +4375,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: gCMChannelRequest,
       method: 'PUT',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/gcm',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/gcm',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -4406,7 +4457,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: inAppTemplateRequest,
       method: 'PUT',
-      requestUri: '/v1/templates/${Uri.encodeComponent(templateName)}/inapp',
+      requestUri:
+          '/v1/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/inapp',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4442,7 +4494,7 @@ class Pinpoint {
       payload: writeJourneyRequest,
       method: 'PUT',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/journeys/${Uri.encodeComponent(journeyId)}',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -4476,7 +4528,7 @@ class Pinpoint {
       payload: journeyStateRequest,
       method: 'PUT',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/journeys/${Uri.encodeComponent(journeyId)}/state',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}/state',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -4557,7 +4609,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: pushNotificationTemplateRequest,
       method: 'PUT',
-      requestUri: '/v1/templates/${Uri.encodeComponent(templateName)}/push',
+      requestUri:
+          '/v1/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/push',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4589,7 +4642,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: updateRecommenderConfiguration,
       method: 'PUT',
-      requestUri: '/v1/recommenders/${Uri.encodeComponent(recommenderId)}',
+      requestUri:
+          '/v1/recommenders/${Uri.encodeQueryComponent(recommenderId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -4626,7 +4680,7 @@ class Pinpoint {
       payload: writeSegmentRequest,
       method: 'PUT',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/segments/${Uri.encodeComponent(segmentId)}',
+          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/segments/${Uri.encodeQueryComponent(segmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -4656,7 +4710,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: sMSChannelRequest,
       method: 'PUT',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/sms',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/sms',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -4737,7 +4792,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: sMSTemplateRequest,
       method: 'PUT',
-      requestUri: '/v1/templates/${Uri.encodeComponent(templateName)}/sms',
+      requestUri:
+          '/v1/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/sms',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4776,7 +4832,7 @@ class Pinpoint {
       payload: templateActiveVersionRequest,
       method: 'PUT',
       requestUri:
-          '/v1/templates/${Uri.encodeComponent(templateName)}/${Uri.encodeComponent(templateType)}/active-version',
+          '/v1/templates/%24%7BUri.encodeQueryComponent%28templateName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(templateType).replaceAll('+', '%20')}/active-version',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -4807,7 +4863,7 @@ class Pinpoint {
       payload: voiceChannelRequest,
       method: 'PUT',
       requestUri:
-          '/v1/apps/${Uri.encodeComponent(applicationId)}/channels/voice',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/channels/voice',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -4888,7 +4944,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: voiceTemplateRequest,
       method: 'PUT',
-      requestUri: '/v1/templates/${Uri.encodeComponent(templateName)}/voice',
+      requestUri:
+          '/v1/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/voice',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4918,7 +4975,8 @@ class Pinpoint {
     final response = await _protocol.sendRaw(
       payload: verifyOTPMessageRequestParameters,
       method: 'POST',
-      requestUri: '/v1/apps/${Uri.encodeComponent(applicationId)}/verify-otp',
+      requestUri:
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/verify-otp',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);

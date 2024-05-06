@@ -682,7 +682,7 @@ class EFS {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2015-02-01/file-systems/${Uri.encodeComponent(sourceFileSystemId)}/replication-configuration',
+          '/2015-02-01/file-systems/${Uri.encodeQueryComponent(sourceFileSystemId).replaceAll('+', '%20')}/replication-configuration',
       exceptionFnMap: _exceptionFns,
     );
     return ReplicationConfigurationDescription.fromJson(response);
@@ -725,7 +725,7 @@ class EFS {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2015-02-01/create-tags/${Uri.encodeComponent(fileSystemId)}',
+          '/2015-02-01/create-tags/${Uri.encodeQueryComponent(fileSystemId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -751,7 +751,7 @@ class EFS {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2015-02-01/access-points/${Uri.encodeComponent(accessPointId)}',
+          '/2015-02-01/access-points/${Uri.encodeQueryComponent(accessPointId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -795,7 +795,7 @@ class EFS {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2015-02-01/file-systems/${Uri.encodeComponent(fileSystemId)}',
+          '/2015-02-01/file-systems/${Uri.encodeQueryComponent(fileSystemId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -825,7 +825,7 @@ class EFS {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2015-02-01/file-systems/${Uri.encodeComponent(fileSystemId)}/policy',
+          '/2015-02-01/file-systems/${Uri.encodeQueryComponent(fileSystemId).replaceAll('+', '%20')}/policy',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -878,7 +878,7 @@ class EFS {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2015-02-01/mount-targets/${Uri.encodeComponent(mountTargetId)}',
+          '/2015-02-01/mount-targets/${Uri.encodeQueryComponent(mountTargetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -905,7 +905,7 @@ class EFS {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2015-02-01/file-systems/${Uri.encodeComponent(sourceFileSystemId)}/replication-configuration',
+          '/2015-02-01/file-systems/${Uri.encodeQueryComponent(sourceFileSystemId).replaceAll('+', '%20')}/replication-configuration',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -945,7 +945,7 @@ class EFS {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2015-02-01/delete-tags/${Uri.encodeComponent(fileSystemId)}',
+          '/2015-02-01/delete-tags/${Uri.encodeQueryComponent(fileSystemId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1064,7 +1064,7 @@ class EFS {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-02-01/file-systems/${Uri.encodeComponent(fileSystemId)}/backup-policy',
+          '/2015-02-01/file-systems/${Uri.encodeQueryComponent(fileSystemId).replaceAll('+', '%20')}/backup-policy',
       exceptionFnMap: _exceptionFns,
     );
     return BackupPolicyDescription.fromJson(response);
@@ -1091,7 +1091,7 @@ class EFS {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-02-01/file-systems/${Uri.encodeComponent(fileSystemId)}/policy',
+          '/2015-02-01/file-systems/${Uri.encodeQueryComponent(fileSystemId).replaceAll('+', '%20')}/policy',
       exceptionFnMap: _exceptionFns,
     );
     return FileSystemPolicyDescription.fromJson(response);
@@ -1203,7 +1203,7 @@ class EFS {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-02-01/file-systems/${Uri.encodeComponent(fileSystemId)}/lifecycle-configuration',
+          '/2015-02-01/file-systems/${Uri.encodeQueryComponent(fileSystemId).replaceAll('+', '%20')}/lifecycle-configuration',
       exceptionFnMap: _exceptionFns,
     );
     return LifecycleConfigurationDescription.fromJson(response);
@@ -1242,7 +1242,7 @@ class EFS {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-02-01/mount-targets/${Uri.encodeComponent(mountTargetId)}/security-groups',
+          '/2015-02-01/mount-targets/${Uri.encodeQueryComponent(mountTargetId).replaceAll('+', '%20')}/security-groups',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeMountTargetSecurityGroupsResponse.fromJson(response);
@@ -1422,7 +1422,8 @@ class EFS {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/2015-02-01/tags/${Uri.encodeComponent(fileSystemId)}/',
+      requestUri:
+          '/2015-02-01/tags/${Uri.encodeQueryComponent(fileSystemId).replaceAll('+', '%20')}/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1471,7 +1472,7 @@ class EFS {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-02-01/resource-tags/${Uri.encodeComponent(resourceId)}',
+          '/2015-02-01/resource-tags/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1524,7 +1525,7 @@ class EFS {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/2015-02-01/mount-targets/${Uri.encodeComponent(mountTargetId)}/security-groups',
+          '/2015-02-01/mount-targets/${Uri.encodeQueryComponent(mountTargetId).replaceAll('+', '%20')}/security-groups',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1598,7 +1599,7 @@ class EFS {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/2015-02-01/file-systems/${Uri.encodeComponent(fileSystemId)}/backup-policy',
+          '/2015-02-01/file-systems/${Uri.encodeQueryComponent(fileSystemId).replaceAll('+', '%20')}/backup-policy',
       exceptionFnMap: _exceptionFns,
     );
     return BackupPolicyDescription.fromJson(response);
@@ -1662,7 +1663,7 @@ class EFS {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/2015-02-01/file-systems/${Uri.encodeComponent(fileSystemId)}/policy',
+          '/2015-02-01/file-systems/${Uri.encodeQueryComponent(fileSystemId).replaceAll('+', '%20')}/policy',
       exceptionFnMap: _exceptionFns,
     );
     return FileSystemPolicyDescription.fromJson(response);
@@ -1774,7 +1775,7 @@ class EFS {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/2015-02-01/file-systems/${Uri.encodeComponent(fileSystemId)}/lifecycle-configuration',
+          '/2015-02-01/file-systems/${Uri.encodeQueryComponent(fileSystemId).replaceAll('+', '%20')}/lifecycle-configuration',
       exceptionFnMap: _exceptionFns,
     );
     return LifecycleConfigurationDescription.fromJson(response);
@@ -1808,7 +1809,7 @@ class EFS {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2015-02-01/resource-tags/${Uri.encodeComponent(resourceId)}',
+          '/2015-02-01/resource-tags/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1841,7 +1842,7 @@ class EFS {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2015-02-01/resource-tags/${Uri.encodeComponent(resourceId)}',
+          '/2015-02-01/resource-tags/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1894,7 +1895,7 @@ class EFS {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/2015-02-01/file-systems/${Uri.encodeComponent(fileSystemId)}',
+          '/2015-02-01/file-systems/${Uri.encodeQueryComponent(fileSystemId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return FileSystemDescription.fromJson(response);

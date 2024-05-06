@@ -106,7 +106,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/evaluation-forms/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(evaluationFormId)}/activate',
+          '/evaluation-forms/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28evaluationFormId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/activate',
       exceptionFnMap: _exceptionFns,
     );
     return ActivateEvaluationFormResponse.fromJson(response);
@@ -143,7 +143,7 @@ class Connect {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/instance/${Uri.encodeComponent(instanceId)}/approved-origin',
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/approved-origin',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -181,7 +181,8 @@ class Connect {
     await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/instance/${Uri.encodeComponent(instanceId)}/bot',
+      requestUri:
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/bot',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -222,7 +223,7 @@ class Connect {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/default-vocabulary/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(languageCode.toValue())}',
+          '/default-vocabulary/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(languageCode.toValue()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -270,7 +271,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/instance/${Uri.encodeComponent(instanceId)}/storage-config',
+      requestUri:
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/storage-config',
       exceptionFnMap: _exceptionFns,
     );
     return AssociateInstanceStorageConfigResponse.fromJson(response);
@@ -309,7 +311,7 @@ class Connect {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/instance/${Uri.encodeComponent(instanceId)}/lambda-function',
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/lambda-function',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -346,7 +348,8 @@ class Connect {
     await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/instance/${Uri.encodeComponent(instanceId)}/lex-bot',
+      requestUri:
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/lex-bot',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -395,7 +398,7 @@ class Connect {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/phone-number/${Uri.encodeComponent(phoneNumberId)}/contact-flow',
+          '/phone-number/${Uri.encodeQueryComponent(phoneNumberId).replaceAll('+', '%20')}/contact-flow',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -434,7 +437,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/queues/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(queueId)}/associate-quick-connects',
+          '/queues/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(queueId).replaceAll('+', '%20')}/associate-quick-connects',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -469,7 +472,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/routing-profiles/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(routingProfileId)}/associate-queues',
+          '/routing-profiles/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(routingProfileId).replaceAll('+', '%20')}/associate-queues',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -504,7 +507,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/instance/${Uri.encodeComponent(instanceId)}/security-key',
+      requestUri:
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/security-key',
       exceptionFnMap: _exceptionFns,
     );
     return AssociateSecurityKeyResponse.fromJson(response);
@@ -643,7 +647,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/agent-status/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/agent-status/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateAgentStatusResponse.fromJson(response);
@@ -702,7 +707,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/contact-flows/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/contact-flows/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateContactFlowResponse.fromJson(response);
@@ -763,7 +769,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/contact-flow-modules/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/contact-flow-modules/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateContactFlowModuleResponse.fromJson(response);
@@ -824,7 +831,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/evaluation-forms/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/evaluation-forms/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateEvaluationFormResponse.fromJson(response);
@@ -882,7 +890,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/hours-of-operations/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/hours-of-operations/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateHoursOfOperationResponse.fromJson(response);
@@ -1012,7 +1021,7 @@ class Connect {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/instance/${Uri.encodeComponent(instanceId)}/integration-associations',
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/integration-associations',
       exceptionFnMap: _exceptionFns,
     );
     return CreateIntegrationAssociationResponse.fromJson(response);
@@ -1119,7 +1128,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/prompts/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/prompts/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreatePromptResponse.fromJson(response);
@@ -1208,7 +1218,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/queues/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/queues/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateQueueResponse.fromJson(response);
@@ -1257,7 +1268,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/quick-connects/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/quick-connects/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateQuickConnectResponse.fromJson(response);
@@ -1325,7 +1337,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/routing-profiles/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/routing-profiles/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateRoutingProfileResponse.fromJson(response);
@@ -1391,7 +1404,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/rules/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/rules/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateRuleResponse.fromJson(response);
@@ -1462,7 +1476,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/security-profiles/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/security-profiles/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateSecurityProfileResponse.fromJson(response);
@@ -1538,7 +1553,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/instance/${Uri.encodeComponent(instanceId)}/task/template',
+      requestUri:
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/task/template',
       exceptionFnMap: _exceptionFns,
     );
     return CreateTaskTemplateResponse.fromJson(response);
@@ -1642,7 +1658,7 @@ class Connect {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/instance/${Uri.encodeComponent(instanceId)}/integration-associations/${Uri.encodeComponent(integrationAssociationId)}/use-cases',
+          '/instance/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/integration-associations/${Uri.encodeQueryComponent(integrationAssociationId).replaceAll('+', '%20')}/use-cases',
       exceptionFnMap: _exceptionFns,
     );
     return CreateUseCaseResponse.fromJson(response);
@@ -1735,7 +1751,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/users/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/users/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateUserResponse.fromJson(response);
@@ -1781,7 +1798,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/user-hierarchy-groups/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/user-hierarchy-groups/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateUserHierarchyGroupResponse.fromJson(response);
@@ -1853,7 +1871,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/vocabulary/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/vocabulary/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateVocabularyResponse.fromJson(response);
@@ -1899,7 +1918,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/evaluation-forms/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(evaluationFormId)}/deactivate',
+          '/evaluation-forms/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28evaluationFormId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/deactivate',
       exceptionFnMap: _exceptionFns,
     );
     return DeactivateEvaluationFormResponse.fromJson(response);
@@ -1928,7 +1947,7 @@ class Connect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/contact-evaluations/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(evaluationId)}',
+          '/contact-evaluations/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28evaluationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1957,7 +1976,7 @@ class Connect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/contact-flows/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(contactFlowId)}',
+          '/contact-flows/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28contactFlowId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1986,7 +2005,7 @@ class Connect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/contact-flow-modules/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(contactFlowModuleId)}',
+          '/contact-flow-modules/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28contactFlowModuleId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2038,7 +2057,7 @@ class Connect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/evaluation-forms/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(evaluationFormId)}',
+          '/evaluation-forms/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28evaluationFormId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2070,7 +2089,7 @@ class Connect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/hours-of-operations/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(hoursOfOperationId)}',
+          '/hours-of-operations/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28hoursOfOperationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2100,7 +2119,8 @@ class Connect {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/instance/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2128,7 +2148,7 @@ class Connect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/instance/${Uri.encodeComponent(instanceId)}/integration-associations/${Uri.encodeComponent(integrationAssociationId)}',
+          '/instance/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/integration-associations/${Uri.encodeQueryComponent(integrationAssociationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2156,7 +2176,7 @@ class Connect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/prompts/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(promptId)}',
+          '/prompts/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(promptId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2184,7 +2204,7 @@ class Connect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/quick-connects/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(quickConnectId)}',
+          '/quick-connects/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(quickConnectId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2212,7 +2232,7 @@ class Connect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/rules/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(ruleId)}',
+          '/rules/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(ruleId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2245,7 +2265,7 @@ class Connect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/security-profiles/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(securityProfileId)}',
+          '/security-profiles/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(securityProfileId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2273,7 +2293,7 @@ class Connect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/instance/${Uri.encodeComponent(instanceId)}/task/template/${Uri.encodeComponent(taskTemplateId)}',
+          '/instance/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/task/template/${Uri.encodeQueryComponent(taskTemplateId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2304,7 +2324,7 @@ class Connect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/traffic-distribution-group/${Uri.encodeComponent(trafficDistributionGroupId)}',
+          '/traffic-distribution-group/${Uri.encodeQueryComponent(trafficDistributionGroupId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2335,7 +2355,7 @@ class Connect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/instance/${Uri.encodeComponent(instanceId)}/integration-associations/${Uri.encodeComponent(integrationAssociationId)}/use-cases/${Uri.encodeComponent(useCaseId)}',
+          '/instance/%2524%257BUri.encodeQueryComponent%2528instanceId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/integration-associations/%24%7BUri.encodeQueryComponent%28integrationAssociationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/use-cases/${Uri.encodeQueryComponent(useCaseId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2369,7 +2389,7 @@ class Connect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/users/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(userId)}',
+          '/users/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2399,7 +2419,7 @@ class Connect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/user-hierarchy-groups/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(hierarchyGroupId)}',
+          '/user-hierarchy-groups/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28hierarchyGroupId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2428,7 +2448,7 @@ class Connect {
       payload: null,
       method: 'POST',
       requestUri:
-          '/vocabulary-remove/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(vocabularyId)}',
+          '/vocabulary-remove/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(vocabularyId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteVocabularyResponse.fromJson(response);
@@ -2460,7 +2480,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/agent-status/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(agentStatusId)}',
+          '/agent-status/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28agentStatusId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeAgentStatusResponse.fromJson(response);
@@ -2498,7 +2518,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/contacts/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(contactId)}',
+          '/contacts/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28contactId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeContactResponse.fromJson(response);
@@ -2526,7 +2546,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/contact-evaluations/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(evaluationId)}',
+          '/contact-evaluations/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28evaluationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeContactEvaluationResponse.fromJson(response);
@@ -2558,7 +2578,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/contact-flows/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(contactFlowId)}',
+          '/contact-flows/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28contactFlowId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeContactFlowResponse.fromJson(response);
@@ -2588,7 +2608,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/contact-flow-modules/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(contactFlowModuleId)}',
+          '/contact-flow-modules/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28contactFlowModuleId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeContactFlowModuleResponse.fromJson(response);
@@ -2632,7 +2652,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/evaluation-forms/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(evaluationFormId)}',
+          '/evaluation-forms/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28evaluationFormId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2665,7 +2685,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/hours-of-operations/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(hoursOfOperationId)}',
+          '/hours-of-operations/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28hoursOfOperationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeHoursOfOperationResponse.fromJson(response);
@@ -2697,7 +2717,8 @@ class Connect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/instance/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeInstanceResponse.fromJson(response);
@@ -2729,7 +2750,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/instance/${Uri.encodeComponent(instanceId)}/attribute/${Uri.encodeComponent(attributeType.toValue())}',
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/attribute/%24%7BUri.encodeQueryComponent%28attributeType.toValue%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeInstanceAttributeResponse.fromJson(response);
@@ -2770,7 +2791,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/instance/${Uri.encodeComponent(instanceId)}/storage-config/${Uri.encodeComponent(associationId)}',
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/storage-config/%24%7BUri.encodeQueryComponent%28associationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2805,7 +2826,8 @@ class Connect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/phone-number/${Uri.encodeComponent(phoneNumberId)}',
+      requestUri:
+          '/phone-number/${Uri.encodeQueryComponent(phoneNumberId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribePhoneNumberResponse.fromJson(response);
@@ -2834,7 +2856,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/prompts/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(promptId)}',
+          '/prompts/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(promptId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribePromptResponse.fromJson(response);
@@ -2866,7 +2888,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/queues/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(queueId)}',
+          '/queues/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(queueId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeQueueResponse.fromJson(response);
@@ -2895,7 +2917,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/quick-connects/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(quickConnectId)}',
+          '/quick-connects/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(quickConnectId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeQuickConnectResponse.fromJson(response);
@@ -2924,7 +2946,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/routing-profiles/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(routingProfileId)}',
+          '/routing-profiles/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(routingProfileId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeRoutingProfileResponse.fromJson(response);
@@ -2953,7 +2975,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/rules/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(ruleId)}',
+          '/rules/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(ruleId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeRuleResponse.fromJson(response);
@@ -2985,7 +3007,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/security-profiles/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(securityProfileId)}',
+          '/security-profiles/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(securityProfileId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeSecurityProfileResponse.fromJson(response);
@@ -3012,7 +3034,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/traffic-distribution-group/${Uri.encodeComponent(trafficDistributionGroupId)}',
+          '/traffic-distribution-group/${Uri.encodeQueryComponent(trafficDistributionGroupId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeTrafficDistributionGroupResponse.fromJson(response);
@@ -3045,7 +3067,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/users/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(userId)}',
+          '/users/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeUserResponse.fromJson(response);
@@ -3074,7 +3096,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/user-hierarchy-groups/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(hierarchyGroupId)}',
+          '/user-hierarchy-groups/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28hierarchyGroupId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeUserHierarchyGroupResponse.fromJson(response);
@@ -3101,7 +3123,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/user-hierarchy-structure/${Uri.encodeComponent(instanceId)}',
+          '/user-hierarchy-structure/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeUserHierarchyStructureResponse.fromJson(response);
@@ -3130,7 +3152,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/vocabulary/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(vocabularyId)}',
+          '/vocabulary/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(vocabularyId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeVocabularyResponse.fromJson(response);
@@ -3165,7 +3187,7 @@ class Connect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/instance/${Uri.encodeComponent(instanceId)}/approved-origin',
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/approved-origin',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3201,7 +3223,8 @@ class Connect {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/instance/${Uri.encodeComponent(instanceId)}/bot',
+      requestUri:
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/bot',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3241,7 +3264,7 @@ class Connect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/instance/${Uri.encodeComponent(instanceId)}/storage-config/${Uri.encodeComponent(associationId)}',
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/storage-config/%24%7BUri.encodeQueryComponent%28associationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3277,7 +3300,7 @@ class Connect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/instance/${Uri.encodeComponent(instanceId)}/lambda-function',
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/lambda-function',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3318,7 +3341,8 @@ class Connect {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/instance/${Uri.encodeComponent(instanceId)}/lex-bot',
+      requestUri:
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/lex-bot',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3363,7 +3387,7 @@ class Connect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/phone-number/${Uri.encodeComponent(phoneNumberId)}/contact-flow',
+          '/phone-number/${Uri.encodeQueryComponent(phoneNumberId).replaceAll('+', '%20')}/contact-flow',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3402,7 +3426,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/queues/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(queueId)}/disassociate-quick-connects',
+          '/queues/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(queueId).replaceAll('+', '%20')}/disassociate-quick-connects',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3437,7 +3461,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/routing-profiles/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(routingProfileId)}/disassociate-queues',
+          '/routing-profiles/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(routingProfileId).replaceAll('+', '%20')}/disassociate-queues',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3469,7 +3493,7 @@ class Connect {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/instance/${Uri.encodeComponent(instanceId)}/security-key/${Uri.encodeComponent(associationId)}',
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/security-key/%24%7BUri.encodeQueryComponent%28associationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3510,7 +3534,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/users/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(userId)}/contact',
+          '/users/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}/contact',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3534,7 +3558,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/contact/attributes/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(initialContactId)}',
+          '/contact/attributes/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28initialContactId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return GetContactAttributesResponse.fromJson(response);
@@ -3742,7 +3766,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/metrics/current/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/metrics/current/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetCurrentMetricDataResponse.fromJson(response);
@@ -3816,7 +3841,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/metrics/userdata/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/metrics/userdata/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetCurrentUserDataResponse.fromJson(response);
@@ -3849,7 +3875,8 @@ class Connect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/user/federate/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/user/federate/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetFederationTokenResponse.fromJson(response);
@@ -4060,7 +4087,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/metrics/historical/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/metrics/historical/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetMetricDataResponse.fromJson(response);
@@ -4415,7 +4443,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/prompts/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(promptId)}/file',
+          '/prompts/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(promptId).replaceAll('+', '%20')}/file',
       exceptionFnMap: _exceptionFns,
     );
     return GetPromptFileResponse.fromJson(response);
@@ -4453,7 +4481,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/instance/${Uri.encodeComponent(instanceId)}/task/template/${Uri.encodeComponent(taskTemplateId)}',
+          '/instance/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/task/template/${Uri.encodeQueryComponent(taskTemplateId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4477,7 +4505,8 @@ class Connect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/traffic-distribution/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/traffic-distribution/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetTrafficDistributionResponse.fromJson(response);
@@ -4529,7 +4558,8 @@ class Connect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/agent-status/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/agent-status/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4578,7 +4608,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/instance/${Uri.encodeComponent(instanceId)}/approved-origins',
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/approved-origins',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4631,7 +4661,8 @@ class Connect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/instance/${Uri.encodeComponent(instanceId)}/bots',
+      requestUri:
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/bots',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4672,7 +4703,8 @@ class Connect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/contact-evaluations/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/contact-evaluations/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4725,7 +4757,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/contact-flow-modules-summary/${Uri.encodeComponent(instanceId)}',
+          '/contact-flow-modules-summary/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4785,7 +4817,8 @@ class Connect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/contact-flows-summary/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/contact-flows-summary/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4836,7 +4869,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/contact/references/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(contactId)}',
+          '/contact/references/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28contactId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4888,7 +4921,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/default-vocabulary-summary/${Uri.encodeComponent(instanceId)}',
+          '/default-vocabulary-summary/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListDefaultVocabulariesResponse.fromJson(response);
@@ -4936,7 +4969,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/evaluation-forms/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(evaluationFormId)}/versions',
+          '/evaluation-forms/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28evaluationFormId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4979,7 +5012,8 @@ class Connect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/evaluation-forms/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/evaluation-forms/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5031,7 +5065,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/hours-of-operations-summary/${Uri.encodeComponent(instanceId)}',
+          '/hours-of-operations-summary/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5078,7 +5112,8 @@ class Connect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/instance/${Uri.encodeComponent(instanceId)}/attributes',
+      requestUri:
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/attributes',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5132,7 +5167,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/instance/${Uri.encodeComponent(instanceId)}/storage-configs',
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/storage-configs',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5224,7 +5259,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/instance/${Uri.encodeComponent(instanceId)}/integration-associations',
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/integration-associations',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5273,7 +5308,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/instance/${Uri.encodeComponent(instanceId)}/lambda-functions',
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/lambda-functions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5325,7 +5360,8 @@ class Connect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/instance/${Uri.encodeComponent(instanceId)}/lex-bots',
+      requestUri:
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/lex-bots',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5399,7 +5435,8 @@ class Connect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/phone-numbers-summary/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/phone-numbers-summary/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5516,7 +5553,8 @@ class Connect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/prompts-summary/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/prompts-summary/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5569,7 +5607,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/queues/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(queueId)}/quick-connects',
+          '/queues/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(queueId).replaceAll('+', '%20')}/quick-connects',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5630,7 +5668,8 @@ class Connect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/queues-summary/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/queues-summary/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5684,7 +5723,8 @@ class Connect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/quick-connects/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/quick-connects/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5734,7 +5774,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/routing-profiles/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(routingProfileId)}/queues',
+          '/routing-profiles/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(routingProfileId).replaceAll('+', '%20')}/queues',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5787,7 +5827,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/routing-profiles-summary/${Uri.encodeComponent(instanceId)}',
+          '/routing-profiles-summary/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5842,7 +5882,8 @@ class Connect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/rules/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/rules/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5890,7 +5931,8 @@ class Connect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/instance/${Uri.encodeComponent(instanceId)}/security-keys',
+      requestUri:
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/security-keys',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5943,7 +5985,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/security-profiles-permissions/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(securityProfileId)}',
+          '/security-profiles-permissions/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(securityProfileId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5994,7 +6036,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/security-profiles-summary/${Uri.encodeComponent(instanceId)}',
+          '/security-profiles-summary/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -6026,7 +6068,8 @@ class Connect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -6089,7 +6132,8 @@ class Connect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/instance/${Uri.encodeComponent(instanceId)}/task/template',
+      requestUri:
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/task/template',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -6181,7 +6225,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/instance/${Uri.encodeComponent(instanceId)}/integration-associations/${Uri.encodeComponent(integrationAssociationId)}/use-cases',
+          '/instance/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/integration-associations/${Uri.encodeQueryComponent(integrationAssociationId).replaceAll('+', '%20')}/use-cases',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -6232,7 +6276,7 @@ class Connect {
       payload: null,
       method: 'GET',
       requestUri:
-          '/user-hierarchy-groups-summary/${Uri.encodeComponent(instanceId)}',
+          '/user-hierarchy-groups-summary/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -6278,7 +6322,8 @@ class Connect {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/users-summary/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/users-summary/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -6380,7 +6425,7 @@ class Connect {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/users/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(userId)}/status',
+          '/users/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}/status',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -6425,7 +6470,8 @@ class Connect {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/phone-number/${Uri.encodeComponent(phoneNumberId)}',
+      requestUri:
+          '/phone-number/${Uri.encodeQueryComponent(phoneNumberId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -6482,7 +6528,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/instance/${Uri.encodeComponent(instanceId)}/replicate',
+      requestUri:
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/replicate',
       exceptionFnMap: _exceptionFns,
     );
     return ReplicateInstanceResponse.fromJson(response);
@@ -6891,7 +6938,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/vocabulary-summary/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/vocabulary-summary/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return SearchVocabulariesResponse.fromJson(response);
@@ -7102,7 +7150,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/contact-evaluations/${Uri.encodeComponent(instanceId)}',
+      requestUri:
+          '/contact-evaluations/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return StartContactEvaluationResponse.fromJson(response);
@@ -7628,7 +7677,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/contact-evaluations/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(evaluationId)}/submit',
+          '/contact-evaluations/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28evaluationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/submit',
       exceptionFnMap: _exceptionFns,
     );
     return SubmitContactEvaluationResponse.fromJson(response);
@@ -7713,7 +7762,8 @@ class Connect {
     await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -7827,7 +7877,8 @@ class Connect {
     await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/tags/${Uri.encodeComponent(resourceArn)}',
+      requestUri:
+          '/tags/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -7894,7 +7945,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/agent-status/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(agentStatusId)}',
+          '/agent-status/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28agentStatusId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -7950,7 +8001,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/contacts/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(contactId)}',
+          '/contacts/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28contactId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -8051,7 +8102,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/contact-evaluations/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(evaluationId)}',
+          '/contact-evaluations/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28evaluationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateContactEvaluationResponse.fromJson(response);
@@ -8092,7 +8143,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/contact-flows/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(contactFlowId)}/content',
+          '/contact-flows/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28contactFlowId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/content',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -8139,7 +8190,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/contact-flows/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(contactFlowId)}/metadata',
+          '/contact-flows/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28contactFlowId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/metadata',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -8175,7 +8226,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/contact-flow-modules/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(contactFlowModuleId)}/content',
+          '/contact-flow-modules/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28contactFlowModuleId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/content',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -8222,7 +8273,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/contact-flow-modules/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(contactFlowModuleId)}/metadata',
+          '/contact-flow-modules/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28contactFlowModuleId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/metadata',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -8265,7 +8316,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/contact-flows/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(contactFlowId)}/name',
+          '/contact-flows/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28contactFlowId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/name',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -8388,7 +8439,7 @@ class Connect {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/evaluation-forms/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(evaluationFormId)}',
+          '/evaluation-forms/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28evaluationFormId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateEvaluationFormResponse.fromJson(response);
@@ -8443,7 +8494,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/hours-of-operations/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(hoursOfOperationId)}',
+          '/hours-of-operations/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28hoursOfOperationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -8485,7 +8536,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/instance/${Uri.encodeComponent(instanceId)}/attribute/${Uri.encodeComponent(attributeType.toValue())}',
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/attribute/%24%7BUri.encodeQueryComponent%28attributeType.toValue%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -8529,7 +8580,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/instance/${Uri.encodeComponent(instanceId)}/storage-config/${Uri.encodeComponent(associationId)}',
+          '/instance/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/storage-config/%24%7BUri.encodeQueryComponent%28associationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -8586,7 +8637,7 @@ class Connect {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/contact/participant-role-config/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(contactId)}',
+          '/contact/participant-role-config/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28contactId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -8641,7 +8692,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/phone-number/${Uri.encodeComponent(phoneNumberId)}',
+      requestUri:
+          '/phone-number/${Uri.encodeQueryComponent(phoneNumberId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdatePhoneNumberResponse.fromJson(response);
@@ -8687,7 +8739,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/prompts/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(promptId)}',
+          '/prompts/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(promptId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdatePromptResponse.fromJson(response);
@@ -8726,7 +8778,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/queues/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(queueId)}/hours-of-operation',
+          '/queues/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(queueId).replaceAll('+', '%20')}/hours-of-operation',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -8772,7 +8824,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/queues/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(queueId)}/max-contacts',
+          '/queues/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(queueId).replaceAll('+', '%20')}/max-contacts',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -8817,7 +8869,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/queues/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(queueId)}/name',
+          '/queues/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(queueId).replaceAll('+', '%20')}/name',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -8870,7 +8922,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/queues/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(queueId)}/outbound-caller-config',
+          '/queues/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(queueId).replaceAll('+', '%20')}/outbound-caller-config',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -8908,7 +8960,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/queues/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(queueId)}/status',
+          '/queues/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(queueId).replaceAll('+', '%20')}/status',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -8943,7 +8995,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/quick-connects/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(quickConnectId)}/config',
+          '/quick-connects/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(quickConnectId).replaceAll('+', '%20')}/config',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -8985,7 +9037,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/quick-connects/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(quickConnectId)}/name',
+          '/quick-connects/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(quickConnectId).replaceAll('+', '%20')}/name',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -9021,7 +9073,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/routing-profiles/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(routingProfileId)}/concurrency',
+          '/routing-profiles/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(routingProfileId).replaceAll('+', '%20')}/concurrency',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -9056,7 +9108,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/routing-profiles/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(routingProfileId)}/default-outbound-queue',
+          '/routing-profiles/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(routingProfileId).replaceAll('+', '%20')}/default-outbound-queue',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -9100,7 +9152,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/routing-profiles/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(routingProfileId)}/name',
+          '/routing-profiles/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(routingProfileId).replaceAll('+', '%20')}/name',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -9138,7 +9190,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/routing-profiles/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(routingProfileId)}/queues',
+          '/routing-profiles/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(routingProfileId).replaceAll('+', '%20')}/queues',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -9197,7 +9249,7 @@ class Connect {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/rules/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(ruleId)}',
+          '/rules/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(ruleId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -9257,7 +9309,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/security-profiles/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(securityProfileId)}',
+          '/security-profiles/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(securityProfileId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -9330,7 +9382,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/instance/${Uri.encodeComponent(instanceId)}/task/template/${Uri.encodeComponent(taskTemplateId)}',
+          '/instance/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/task/template/${Uri.encodeQueryComponent(taskTemplateId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateTaskTemplateResponse.fromJson(response);
@@ -9368,7 +9420,8 @@ class Connect {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/traffic-distribution/${Uri.encodeComponent(id)}',
+      requestUri:
+          '/traffic-distribution/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -9403,7 +9456,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/users/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(userId)}/hierarchy',
+          '/users/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}/hierarchy',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -9439,7 +9492,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/user-hierarchy-groups/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(hierarchyGroupId)}/name',
+          '/user-hierarchy-groups/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28hierarchyGroupId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/name',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -9472,7 +9525,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/user-hierarchy-structure/${Uri.encodeComponent(instanceId)}',
+          '/user-hierarchy-structure/${Uri.encodeQueryComponent(instanceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -9518,7 +9571,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/users/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(userId)}/identity-info',
+          '/users/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}/identity-info',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -9553,7 +9606,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/users/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(userId)}/phone-config',
+          '/users/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}/phone-config',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -9588,7 +9641,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/users/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(userId)}/routing-profile',
+          '/users/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}/routing-profile',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -9623,7 +9676,7 @@ class Connect {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/users/${Uri.encodeComponent(instanceId)}/${Uri.encodeComponent(userId)}/security-profiles',
+          '/users/%24%7BUri.encodeQueryComponent%28instanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}/security-profiles',
       exceptionFnMap: _exceptionFns,
     );
   }

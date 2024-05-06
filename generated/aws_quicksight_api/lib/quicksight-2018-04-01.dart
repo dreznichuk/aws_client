@@ -78,7 +78,7 @@ class QuickSight {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sets/${Uri.encodeComponent(dataSetId)}/ingestions/${Uri.encodeComponent(ingestionId)}',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528awsAccountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/data-sets/%24%7BUri.encodeQueryComponent%28dataSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/ingestions/${Uri.encodeQueryComponent(ingestionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CancelIngestionResponse.fromJson(response);
@@ -160,7 +160,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/customizations',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/customizations',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -364,7 +364,8 @@ class QuickSight {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/account/${Uri.encodeComponent(awsAccountId)}',
+      requestUri:
+          '/account/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateAccountSubscriptionResponse.fromJson(response);
@@ -457,7 +458,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/analyses/${Uri.encodeComponent(analysisId)}',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/analyses/%24%7BUri.encodeQueryComponent%28analysisId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return CreateAnalysisResponse.fromJson(response);
@@ -602,7 +603,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/dashboards/${Uri.encodeComponent(dashboardId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/dashboards/${Uri.encodeQueryComponent(dashboardId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateDashboardResponse.fromJson(response);
@@ -712,7 +713,8 @@ class QuickSight {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sets',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/data-sets',
       exceptionFnMap: _exceptionFns,
     );
     return CreateDataSetResponse.fromJson(response);
@@ -796,7 +798,8 @@ class QuickSight {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sources',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/data-sources',
       exceptionFnMap: _exceptionFns,
     );
     return CreateDataSourceResponse.fromJson(response);
@@ -862,7 +865,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/folders/${Uri.encodeComponent(folderId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/folders/${Uri.encodeQueryComponent(folderId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateFolderResponse.fromJson(response);
@@ -901,7 +904,7 @@ class QuickSight {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/folders/${Uri.encodeComponent(folderId)}/members/${Uri.encodeComponent(memberType.toValue())}/${Uri.encodeComponent(memberId)}',
+          '/accounts/%252524%25257BUri.encodeQueryComponent%252528awsAccountId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/folders/%2524%257BUri.encodeQueryComponent%2528folderId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/members/${Uri.encodeQueryComponent(memberType.toValue()).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28memberId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return CreateFolderMembershipResponse.fromJson(response);
@@ -954,7 +957,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}/groups',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/namespaces/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/groups',
       exceptionFnMap: _exceptionFns,
     );
     return CreateGroupResponse.fromJson(response);
@@ -993,7 +996,7 @@ class QuickSight {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}/groups/${Uri.encodeComponent(groupName)}/members/${Uri.encodeComponent(memberName)}',
+          '/accounts/%252524%25257BUri.encodeQueryComponent%252528awsAccountId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/namespaces/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/groups/%2524%257BUri.encodeQueryComponent%2528groupName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/members/%24%7BUri.encodeQueryComponent%28memberName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return CreateGroupMembershipResponse.fromJson(response);
@@ -1067,7 +1070,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}/iam-policy-assignments/',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/namespaces/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/iam-policy-assignments/',
       exceptionFnMap: _exceptionFns,
     );
     return CreateIAMPolicyAssignmentResponse.fromJson(response);
@@ -1118,7 +1121,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sets/${Uri.encodeComponent(dataSetId)}/ingestions/${Uri.encodeComponent(ingestionId)}',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528awsAccountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/data-sets/%24%7BUri.encodeQueryComponent%28dataSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/ingestions/${Uri.encodeQueryComponent(ingestionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateIngestionResponse.fromJson(response);
@@ -1176,7 +1179,8 @@ class QuickSight {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/accounts/${Uri.encodeComponent(awsAccountId)}',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateNamespaceResponse.fromJson(response);
@@ -1214,7 +1218,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sets/${Uri.encodeComponent(dataSetId)}/refresh-schedules',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}/refresh-schedules',
       exceptionFnMap: _exceptionFns,
     );
     return CreateRefreshScheduleResponse.fromJson(response);
@@ -1318,7 +1322,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/templates/${Uri.encodeComponent(templateId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateTemplateResponse.fromJson(response);
@@ -1369,7 +1373,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/templates/${Uri.encodeComponent(templateId)}/aliases/${Uri.encodeComponent(aliasName)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}/aliases/%2524%257BUri.encodeQueryComponent%2528aliasName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       exceptionFnMap: _exceptionFns,
     );
     return CreateTemplateAliasResponse.fromJson(response);
@@ -1446,7 +1450,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/themes/${Uri.encodeComponent(themeId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/themes/${Uri.encodeQueryComponent(themeId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateThemeResponse.fromJson(response);
@@ -1497,7 +1501,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/themes/${Uri.encodeComponent(themeId)}/aliases/${Uri.encodeComponent(aliasName)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/themes/${Uri.encodeQueryComponent(themeId).replaceAll('+', '%20')}/aliases/%2524%257BUri.encodeQueryComponent%2528aliasName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       exceptionFnMap: _exceptionFns,
     );
     return CreateThemeAliasResponse.fromJson(response);
@@ -1542,7 +1546,8 @@ class QuickSight {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/accounts/${Uri.encodeComponent(awsAccountId)}/topics',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/topics',
       exceptionFnMap: _exceptionFns,
     );
     return CreateTopicResponse.fromJson(response);
@@ -1591,7 +1596,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/topics/${Uri.encodeComponent(topicId)}/schedules',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/topics/${Uri.encodeQueryComponent(topicId).replaceAll('+', '%20')}/schedules',
       exceptionFnMap: _exceptionFns,
     );
     return CreateTopicRefreshScheduleResponse.fromJson(response);
@@ -1658,7 +1663,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/vpc-connections',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/vpc-connections',
       exceptionFnMap: _exceptionFns,
     );
     return CreateVPCConnectionResponse.fromJson(response);
@@ -1694,7 +1699,7 @@ class QuickSight {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/customizations',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/customizations',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1725,7 +1730,8 @@ class QuickSight {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/account/${Uri.encodeComponent(awsAccountId)}',
+      requestUri:
+          '/account/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteAccountSubscriptionResponse.fromJson(response);
@@ -1797,7 +1803,7 @@ class QuickSight {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/analyses/${Uri.encodeComponent(analysisId)}',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/analyses/%24%7BUri.encodeQueryComponent%28analysisId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1841,7 +1847,7 @@ class QuickSight {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/dashboards/${Uri.encodeComponent(dashboardId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/dashboards/${Uri.encodeQueryComponent(dashboardId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1870,7 +1876,7 @@ class QuickSight {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sets/${Uri.encodeComponent(dataSetId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteDataSetResponse.fromJson(response);
@@ -1900,7 +1906,7 @@ class QuickSight {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sets/${Uri.encodeComponent(dataSetId)}/refresh-properties',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}/refresh-properties',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteDataSetRefreshPropertiesResponse.fromJson(response);
@@ -1929,7 +1935,7 @@ class QuickSight {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sources/${Uri.encodeComponent(dataSourceId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/data-sources/${Uri.encodeQueryComponent(dataSourceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteDataSourceResponse.fromJson(response);
@@ -1959,7 +1965,7 @@ class QuickSight {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/folders/${Uri.encodeComponent(folderId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/folders/${Uri.encodeQueryComponent(folderId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteFolderResponse.fromJson(response);
@@ -1998,7 +2004,7 @@ class QuickSight {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/folders/${Uri.encodeComponent(folderId)}/members/${Uri.encodeComponent(memberType.toValue())}/${Uri.encodeComponent(memberId)}',
+          '/accounts/%252524%25257BUri.encodeQueryComponent%252528awsAccountId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/folders/%2524%257BUri.encodeQueryComponent%2528folderId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/members/${Uri.encodeQueryComponent(memberType.toValue()).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28memberId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteFolderMembershipResponse.fromJson(response);
@@ -2033,7 +2039,7 @@ class QuickSight {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}/groups/${Uri.encodeComponent(groupName)}',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528awsAccountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/namespaces/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/groups/%24%7BUri.encodeQueryComponent%28groupName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteGroupResponse.fromJson(response);
@@ -2073,7 +2079,7 @@ class QuickSight {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}/groups/${Uri.encodeComponent(groupName)}/members/${Uri.encodeComponent(memberName)}',
+          '/accounts/%252524%25257BUri.encodeQueryComponent%252528awsAccountId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/namespaces/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/groups/%2524%257BUri.encodeQueryComponent%2528groupName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/members/%24%7BUri.encodeQueryComponent%28memberName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteGroupMembershipResponse.fromJson(response);
@@ -2107,7 +2113,7 @@ class QuickSight {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespace/${Uri.encodeComponent(namespace)}/iam-policy-assignments/${Uri.encodeComponent(assignmentName)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/namespace/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/iam-policy-assignments/%2524%257BUri.encodeQueryComponent%2528assignmentName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteIAMPolicyAssignmentResponse.fromJson(response);
@@ -2140,7 +2146,7 @@ class QuickSight {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/namespaces/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteNamespaceResponse.fromJson(response);
@@ -2172,7 +2178,7 @@ class QuickSight {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sets/${Uri.encodeComponent(dataSetId)}/refresh-schedules/${Uri.encodeComponent(scheduleId)}',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528awsAccountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/data-sets/%24%7BUri.encodeQueryComponent%28dataSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/refresh-schedules/${Uri.encodeQueryComponent(scheduleId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteRefreshScheduleResponse.fromJson(response);
@@ -2217,7 +2223,7 @@ class QuickSight {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/templates/${Uri.encodeComponent(templateId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2255,7 +2261,7 @@ class QuickSight {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/templates/${Uri.encodeComponent(templateId)}/aliases/${Uri.encodeComponent(aliasName)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}/aliases/%2524%257BUri.encodeQueryComponent%2528aliasName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteTemplateAliasResponse.fromJson(response);
@@ -2301,7 +2307,7 @@ class QuickSight {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/themes/${Uri.encodeComponent(themeId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/themes/${Uri.encodeQueryComponent(themeId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2337,7 +2343,7 @@ class QuickSight {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/themes/${Uri.encodeComponent(themeId)}/aliases/${Uri.encodeComponent(aliasName)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/themes/${Uri.encodeQueryComponent(themeId).replaceAll('+', '%20')}/aliases/%2524%257BUri.encodeQueryComponent%2528aliasName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteThemeAliasResponse.fromJson(response);
@@ -2367,7 +2373,7 @@ class QuickSight {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/topics/${Uri.encodeComponent(topicId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/topics/${Uri.encodeQueryComponent(topicId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteTopicResponse.fromJson(response);
@@ -2402,7 +2408,7 @@ class QuickSight {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/topics/${Uri.encodeComponent(topicId)}/schedules/${Uri.encodeComponent(datasetId)}',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528awsAccountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/topics/${Uri.encodeQueryComponent(topicId).replaceAll('+', '%20')}/schedules/%24%7BUri.encodeQueryComponent%28datasetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteTopicRefreshScheduleResponse.fromJson(response);
@@ -2439,7 +2445,7 @@ class QuickSight {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}/users/${Uri.encodeComponent(userName)}',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528awsAccountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/namespaces/%24%7BUri.encodeQueryComponent%28namespace%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(userName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteUserResponse.fromJson(response);
@@ -2474,7 +2480,7 @@ class QuickSight {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}/user-principals/${Uri.encodeComponent(principalId)}',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528awsAccountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/namespaces/%24%7BUri.encodeQueryComponent%28namespace%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/user-principals/${Uri.encodeQueryComponent(principalId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteUserByPrincipalIdResponse.fromJson(response);
@@ -2506,7 +2512,7 @@ class QuickSight {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/vpc-connections/${Uri.encodeComponent(vPCConnectionId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vpc-connections/${Uri.encodeQueryComponent(vPCConnectionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteVPCConnectionResponse.fromJson(response);
@@ -2619,7 +2625,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/customizations',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/customizations',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2645,7 +2651,8 @@ class QuickSight {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/accounts/${Uri.encodeComponent(awsAccountId)}/settings',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/settings',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeAccountSettingsResponse.fromJson(response);
@@ -2673,7 +2680,8 @@ class QuickSight {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/account/${Uri.encodeComponent(awsAccountId)}',
+      requestUri:
+          '/account/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeAccountSubscriptionResponse.fromJson(response);
@@ -2703,7 +2711,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/analyses/${Uri.encodeComponent(analysisId)}',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/analyses/%24%7BUri.encodeQueryComponent%28analysisId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeAnalysisResponse.fromJson(response);
@@ -2742,7 +2750,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/analyses/${Uri.encodeComponent(analysisId)}/definition',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/analyses/%24%7BUri.encodeQueryComponent%28analysisId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/definition',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeAnalysisDefinitionResponse.fromJson(response);
@@ -2772,7 +2780,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/analyses/${Uri.encodeComponent(analysisId)}/permissions',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/analyses/%24%7BUri.encodeQueryComponent%28analysisId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/permissions',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeAnalysisPermissionsResponse.fromJson(response);
@@ -2806,7 +2814,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/asset-bundle-export-jobs/${Uri.encodeComponent(assetBundleExportJobId)}',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/asset-bundle-export-jobs/%24%7BUri.encodeQueryComponent%28assetBundleExportJobId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeAssetBundleExportJobResponse.fromJson(response);
@@ -2835,7 +2843,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/asset-bundle-import-jobs/${Uri.encodeComponent(assetBundleImportJobId)}',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/asset-bundle-import-jobs/%24%7BUri.encodeQueryComponent%28assetBundleImportJobId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeAssetBundleImportJobResponse.fromJson(response);
@@ -2883,7 +2891,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/dashboards/${Uri.encodeComponent(dashboardId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/dashboards/${Uri.encodeQueryComponent(dashboardId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2941,7 +2949,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/dashboards/${Uri.encodeComponent(dashboardId)}/definition',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/dashboards/${Uri.encodeQueryComponent(dashboardId).replaceAll('+', '%20')}/definition',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2970,7 +2978,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/dashboards/${Uri.encodeComponent(dashboardId)}/permissions',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/dashboards/${Uri.encodeQueryComponent(dashboardId).replaceAll('+', '%20')}/permissions',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDashboardPermissionsResponse.fromJson(response);
@@ -2999,7 +3007,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sets/${Uri.encodeComponent(dataSetId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDataSetResponse.fromJson(response);
@@ -3030,7 +3038,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sets/${Uri.encodeComponent(dataSetId)}/permissions',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}/permissions',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDataSetPermissionsResponse.fromJson(response);
@@ -3060,7 +3068,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sets/${Uri.encodeComponent(dataSetId)}/refresh-properties',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}/refresh-properties',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDataSetRefreshPropertiesResponse.fromJson(response);
@@ -3088,7 +3096,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sources/${Uri.encodeComponent(dataSourceId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/data-sources/${Uri.encodeQueryComponent(dataSourceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDataSourceResponse.fromJson(response);
@@ -3116,7 +3124,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sources/${Uri.encodeComponent(dataSourceId)}/permissions',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/data-sources/${Uri.encodeQueryComponent(dataSourceId).replaceAll('+', '%20')}/permissions',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDataSourcePermissionsResponse.fromJson(response);
@@ -3144,7 +3152,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/folders/${Uri.encodeComponent(folderId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/folders/${Uri.encodeQueryComponent(folderId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeFolderResponse.fromJson(response);
@@ -3172,7 +3180,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/folders/${Uri.encodeComponent(folderId)}/permissions',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/folders/${Uri.encodeQueryComponent(folderId).replaceAll('+', '%20')}/permissions',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeFolderPermissionsResponse.fromJson(response);
@@ -3203,7 +3211,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/folders/${Uri.encodeComponent(folderId)}/resolved-permissions',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/folders/${Uri.encodeQueryComponent(folderId).replaceAll('+', '%20')}/resolved-permissions',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeFolderResolvedPermissionsResponse.fromJson(response);
@@ -3239,7 +3247,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}/groups/${Uri.encodeComponent(groupName)}',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528awsAccountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/namespaces/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/groups/%24%7BUri.encodeQueryComponent%28groupName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeGroupResponse.fromJson(response);
@@ -3281,7 +3289,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}/groups/${Uri.encodeComponent(groupName)}/members/${Uri.encodeComponent(memberName)}',
+          '/accounts/%252524%25257BUri.encodeQueryComponent%252528awsAccountId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/namespaces/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/groups/%2524%257BUri.encodeQueryComponent%2528groupName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/members/%24%7BUri.encodeQueryComponent%28memberName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeGroupMembershipResponse.fromJson(response);
@@ -3315,7 +3323,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}/iam-policy-assignments/${Uri.encodeComponent(assignmentName)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/namespaces/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/iam-policy-assignments/%2524%257BUri.encodeQueryComponent%2528assignmentName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeIAMPolicyAssignmentResponse.fromJson(response);
@@ -3347,7 +3355,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sets/${Uri.encodeComponent(dataSetId)}/ingestions/${Uri.encodeComponent(ingestionId)}',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528awsAccountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/data-sets/%24%7BUri.encodeQueryComponent%28dataSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/ingestions/${Uri.encodeQueryComponent(ingestionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeIngestionResponse.fromJson(response);
@@ -3370,7 +3378,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/ip-restriction',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/ip-restriction',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeIpRestrictionResponse.fromJson(response);
@@ -3399,7 +3407,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/namespaces/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeNamespaceResponse.fromJson(response);
@@ -3431,7 +3439,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sets/${Uri.encodeComponent(dataSetId)}/refresh-schedules/${Uri.encodeComponent(scheduleId)}',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528awsAccountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/data-sets/%24%7BUri.encodeQueryComponent%28dataSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/refresh-schedules/${Uri.encodeQueryComponent(scheduleId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeRefreshScheduleResponse.fromJson(response);
@@ -3486,7 +3494,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/templates/${Uri.encodeComponent(templateId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3522,7 +3530,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/templates/${Uri.encodeComponent(templateId)}/aliases/${Uri.encodeComponent(aliasName)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}/aliases/%2524%257BUri.encodeQueryComponent%2528aliasName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeTemplateAliasResponse.fromJson(response);
@@ -3582,7 +3590,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/templates/${Uri.encodeComponent(templateId)}/definition',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}/definition',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3612,7 +3620,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/templates/${Uri.encodeComponent(templateId)}/permissions',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}/permissions',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeTemplatePermissionsResponse.fromJson(response);
@@ -3666,7 +3674,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/themes/${Uri.encodeComponent(themeId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/themes/${Uri.encodeQueryComponent(themeId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3700,7 +3708,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/themes/${Uri.encodeComponent(themeId)}/aliases/${Uri.encodeComponent(aliasName)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/themes/${Uri.encodeQueryComponent(themeId).replaceAll('+', '%20')}/aliases/%2524%257BUri.encodeQueryComponent%2528aliasName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeThemeAliasResponse.fromJson(response);
@@ -3729,7 +3737,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/themes/${Uri.encodeComponent(themeId)}/permissions',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/themes/${Uri.encodeQueryComponent(themeId).replaceAll('+', '%20')}/permissions',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeThemePermissionsResponse.fromJson(response);
@@ -3757,7 +3765,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/topics/${Uri.encodeComponent(topicId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/topics/${Uri.encodeQueryComponent(topicId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeTopicResponse.fromJson(response);
@@ -3786,7 +3794,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/topics/${Uri.encodeComponent(topicId)}/permissions',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/topics/${Uri.encodeQueryComponent(topicId).replaceAll('+', '%20')}/permissions',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeTopicPermissionsResponse.fromJson(response);
@@ -3820,7 +3828,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/topics/${Uri.encodeComponent(topicId)}/refresh/${Uri.encodeComponent(refreshId)}',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528awsAccountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/topics/${Uri.encodeQueryComponent(topicId).replaceAll('+', '%20')}/refresh/%24%7BUri.encodeQueryComponent%28refreshId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeTopicRefreshResponse.fromJson(response);
@@ -3856,7 +3864,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/topics/${Uri.encodeComponent(topicId)}/schedules/${Uri.encodeComponent(datasetId)}',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528awsAccountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/topics/${Uri.encodeQueryComponent(topicId).replaceAll('+', '%20')}/schedules/%24%7BUri.encodeQueryComponent%28datasetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeTopicRefreshScheduleResponse.fromJson(response);
@@ -3891,7 +3899,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}/users/${Uri.encodeComponent(userName)}',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528awsAccountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/namespaces/%24%7BUri.encodeQueryComponent%28namespace%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(userName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeUserResponse.fromJson(response);
@@ -3922,7 +3930,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/vpc-connections/${Uri.encodeComponent(vPCConnectionId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vpc-connections/${Uri.encodeQueryComponent(vPCConnectionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeVPCConnectionResponse.fromJson(response);
@@ -4047,7 +4055,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/embed-url/anonymous-user',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/embed-url/anonymous-user',
       exceptionFnMap: _exceptionFns,
     );
     return GenerateEmbedUrlForAnonymousUserResponse.fromJson(response);
@@ -4153,7 +4161,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/embed-url/registered-user',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/embed-url/registered-user',
       exceptionFnMap: _exceptionFns,
     );
     return GenerateEmbedUrlForRegisteredUserResponse.fromJson(response);
@@ -4315,7 +4323,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/dashboards/${Uri.encodeComponent(dashboardId)}/embed-url',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/dashboards/${Uri.encodeQueryComponent(dashboardId).replaceAll('+', '%20')}/embed-url',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4437,7 +4445,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/session-embed-url',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/session-embed-url',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4478,7 +4486,8 @@ class QuickSight {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/accounts/${Uri.encodeComponent(awsAccountId)}/analyses',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/analyses',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4526,7 +4535,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/asset-bundle-export-jobs',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/asset-bundle-export-jobs',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4574,7 +4583,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/asset-bundle-import-jobs',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/asset-bundle-import-jobs',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4624,7 +4633,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/dashboards/${Uri.encodeComponent(dashboardId)}/versions',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/dashboards/${Uri.encodeQueryComponent(dashboardId).replaceAll('+', '%20')}/versions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4666,7 +4675,8 @@ class QuickSight {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/accounts/${Uri.encodeComponent(awsAccountId)}/dashboards',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/dashboards',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4712,7 +4722,8 @@ class QuickSight {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sets',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/data-sets',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4755,7 +4766,8 @@ class QuickSight {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sources',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/data-sources',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4805,7 +4817,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/folders/${Uri.encodeComponent(folderId)}/members',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/folders/${Uri.encodeQueryComponent(folderId).replaceAll('+', '%20')}/members',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4849,7 +4861,8 @@ class QuickSight {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/accounts/${Uri.encodeComponent(awsAccountId)}/folders',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/folders',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4904,7 +4917,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}/groups/${Uri.encodeComponent(groupName)}/members',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528awsAccountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/namespaces/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/groups/%24%7BUri.encodeQueryComponent%28groupName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/members',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4955,7 +4968,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}/groups',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/namespaces/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/groups',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5010,7 +5023,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}/v2/iam-policy-assignments',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/namespaces/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/v2/iam-policy-assignments',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5066,7 +5079,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}/users/${Uri.encodeComponent(userName)}/iam-policy-assignments',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528awsAccountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/namespaces/%24%7BUri.encodeQueryComponent%28namespace%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(userName).replaceAll('+', '%20')}/iam-policy-assignments',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5115,7 +5128,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sets/${Uri.encodeComponent(dataSetId)}/ingestions',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}/ingestions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5168,7 +5181,8 @@ class QuickSight {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/namespaces',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5198,7 +5212,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sets/${Uri.encodeComponent(dataSetId)}/refresh-schedules',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}/refresh-schedules',
       exceptionFnMap: _exceptionFns,
     );
     return ListRefreshSchedulesResponse.fromJson(response);
@@ -5221,7 +5235,8 @@ class QuickSight {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/resources/${Uri.encodeComponent(resourceArn)}/tags',
+      requestUri:
+          '/resources/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}/tags',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromJson(response);
@@ -5268,7 +5283,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/templates/${Uri.encodeComponent(templateId)}/aliases',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}/aliases',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5318,7 +5333,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/templates/${Uri.encodeComponent(templateId)}/versions',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}/versions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5362,7 +5377,8 @@ class QuickSight {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/accounts/${Uri.encodeComponent(awsAccountId)}/templates',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/templates',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5412,7 +5428,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/themes/${Uri.encodeComponent(themeId)}/aliases',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/themes/${Uri.encodeQueryComponent(themeId).replaceAll('+', '%20')}/aliases',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5463,7 +5479,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/themes/${Uri.encodeComponent(themeId)}/versions',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/themes/${Uri.encodeQueryComponent(themeId).replaceAll('+', '%20')}/versions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5528,7 +5544,8 @@ class QuickSight {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/accounts/${Uri.encodeComponent(awsAccountId)}/themes',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/themes',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5561,7 +5578,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/topics/${Uri.encodeComponent(topicId)}/schedules',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/topics/${Uri.encodeQueryComponent(topicId).replaceAll('+', '%20')}/schedules',
       exceptionFnMap: _exceptionFns,
     );
     return ListTopicRefreshSchedulesResponse.fromJson(response);
@@ -5603,7 +5620,8 @@ class QuickSight {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/accounts/${Uri.encodeComponent(awsAccountId)}/topics',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/topics',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5659,7 +5677,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}/users/${Uri.encodeComponent(userName)}/groups',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528awsAccountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/namespaces/%24%7BUri.encodeQueryComponent%28namespace%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(userName).replaceAll('+', '%20')}/groups',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5711,7 +5729,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}/users',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/namespaces/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/users',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5757,7 +5775,7 @@ class QuickSight {
       payload: null,
       method: 'GET',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/vpc-connections',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/vpc-connections',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -5795,7 +5813,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sets/${Uri.encodeComponent(dataSetId)}/refresh-properties',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}/refresh-properties',
       exceptionFnMap: _exceptionFns,
     );
     return PutDataSetRefreshPropertiesResponse.fromJson(response);
@@ -5994,7 +6012,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}/users',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/namespaces/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/users',
       exceptionFnMap: _exceptionFns,
     );
     return RegisterUserResponse.fromJson(response);
@@ -6022,7 +6040,7 @@ class QuickSight {
       payload: null,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/restore/analyses/${Uri.encodeComponent(analysisId)}',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/restore/analyses/%24%7BUri.encodeQueryComponent%28analysisId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return RestoreAnalysisResponse.fromJson(response);
@@ -6075,7 +6093,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/search/analyses',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/search/analyses',
       exceptionFnMap: _exceptionFns,
     );
     return SearchAnalysesResponse.fromJson(response);
@@ -6131,7 +6149,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/search/dashboards',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/search/dashboards',
       exceptionFnMap: _exceptionFns,
     );
     return SearchDashboardsResponse.fromJson(response);
@@ -6179,7 +6197,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/search/data-sets',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/search/data-sets',
       exceptionFnMap: _exceptionFns,
     );
     return SearchDataSetsResponse.fromJson(response);
@@ -6227,7 +6245,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/search/data-sources',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/search/data-sources',
       exceptionFnMap: _exceptionFns,
     );
     return SearchDataSourcesResponse.fromJson(response);
@@ -6280,7 +6298,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/search/folders',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/search/folders',
       exceptionFnMap: _exceptionFns,
     );
     return SearchFoldersResponse.fromJson(response);
@@ -6339,7 +6357,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}/groups-search',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/namespaces/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/groups-search',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -6447,7 +6465,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/asset-bundle-export-jobs/export',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/asset-bundle-export-jobs/export',
       exceptionFnMap: _exceptionFns,
     );
     return StartAssetBundleExportJobResponse.fromJson(response);
@@ -6516,7 +6534,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/asset-bundle-import-jobs/import',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/asset-bundle-import-jobs/import',
       exceptionFnMap: _exceptionFns,
     );
     return StartAssetBundleImportJobResponse.fromJson(response);
@@ -6576,7 +6594,8 @@ class QuickSight {
     final response = await _protocol.send(
       payload: $payload,
       method: 'POST',
-      requestUri: '/resources/${Uri.encodeComponent(resourceArn)}/tags',
+      requestUri:
+          '/resources/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}/tags',
       exceptionFnMap: _exceptionFns,
     );
     return TagResourceResponse.fromJson(response);
@@ -6606,7 +6625,8 @@ class QuickSight {
     final response = await _protocol.send(
       payload: null,
       method: 'DELETE',
-      requestUri: '/resources/${Uri.encodeComponent(resourceArn)}/tags',
+      requestUri:
+          '/resources/${Uri.encodeQueryComponent(resourceArn).replaceAll('+', '%20')}/tags',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -6657,7 +6677,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/customizations',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/customizations',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -6710,7 +6730,8 @@ class QuickSight {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/accounts/${Uri.encodeComponent(awsAccountId)}/settings',
+      requestUri:
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/settings',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAccountSettingsResponse.fromJson(response);
@@ -6778,7 +6799,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/analyses/${Uri.encodeComponent(analysisId)}',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/analyses/%24%7BUri.encodeQueryComponent%28analysisId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAnalysisResponse.fromJson(response);
@@ -6824,7 +6845,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/analyses/${Uri.encodeComponent(analysisId)}/permissions',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/analyses/%24%7BUri.encodeQueryComponent%28analysisId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/permissions',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAnalysisPermissionsResponse.fromJson(response);
@@ -6943,7 +6964,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/dashboards/${Uri.encodeComponent(dashboardId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/dashboards/${Uri.encodeQueryComponent(dashboardId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDashboardResponse.fromJson(response);
@@ -6997,7 +7018,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/dashboards/${Uri.encodeComponent(dashboardId)}/permissions',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/dashboards/${Uri.encodeQueryComponent(dashboardId).replaceAll('+', '%20')}/permissions',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDashboardPermissionsResponse.fromJson(response);
@@ -7038,7 +7059,7 @@ class QuickSight {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/dashboards/${Uri.encodeComponent(dashboardId)}/versions/${Uri.encodeComponent(versionNumber.toString())}',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528awsAccountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/dashboards/%24%7BUri.encodeQueryComponent%28dashboardId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionNumber.toString()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDashboardPublishedVersionResponse.fromJson(response);
@@ -7137,7 +7158,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sets/${Uri.encodeComponent(dataSetId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDataSetResponse.fromJson(response);
@@ -7182,7 +7203,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sets/${Uri.encodeComponent(dataSetId)}/permissions',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}/permissions',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDataSetPermissionsResponse.fromJson(response);
@@ -7245,7 +7266,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sources/${Uri.encodeComponent(dataSourceId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/data-sources/${Uri.encodeQueryComponent(dataSourceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDataSourceResponse.fromJson(response);
@@ -7286,7 +7307,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sources/${Uri.encodeComponent(dataSourceId)}/permissions',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/data-sources/${Uri.encodeQueryComponent(dataSourceId).replaceAll('+', '%20')}/permissions',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDataSourcePermissionsResponse.fromJson(response);
@@ -7324,7 +7345,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/folders/${Uri.encodeComponent(folderId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/folders/${Uri.encodeQueryComponent(folderId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateFolderResponse.fromJson(response);
@@ -7366,7 +7387,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/folders/${Uri.encodeComponent(folderId)}/permissions',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/folders/${Uri.encodeQueryComponent(folderId).replaceAll('+', '%20')}/permissions',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateFolderPermissionsResponse.fromJson(response);
@@ -7408,7 +7429,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}/groups/${Uri.encodeComponent(groupName)}',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528awsAccountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/namespaces/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/groups/%24%7BUri.encodeQueryComponent%28groupName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateGroupResponse.fromJson(response);
@@ -7480,7 +7501,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}/iam-policy-assignments/${Uri.encodeComponent(assignmentName)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/namespaces/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/iam-policy-assignments/%2524%257BUri.encodeQueryComponent%2528assignmentName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateIAMPolicyAssignmentResponse.fromJson(response);
@@ -7520,7 +7541,7 @@ class QuickSight {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/ip-restriction',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/ip-restriction',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateIpRestrictionResponse.fromJson(response);
@@ -7565,7 +7586,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/public-sharing-settings',
+          '/accounts/${Uri.encodeQueryComponent(awsAccountId).replaceAll('+', '%20')}/public-sharing-settings',
       exceptionFnMap: _exceptionFns,
     );
     return UpdatePublicSharingSettingsResponse.fromJson(response);
@@ -7601,7 +7622,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/data-sets/${Uri.encodeComponent(dataSetId)}/refresh-schedules',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}/refresh-schedules',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateRefreshScheduleResponse.fromJson(response);
@@ -7674,7 +7695,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/templates/${Uri.encodeComponent(templateId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateTemplateResponse.fromJson(response);
@@ -7725,7 +7746,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/templates/${Uri.encodeComponent(templateId)}/aliases/${Uri.encodeComponent(aliasName)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}/aliases/%2524%257BUri.encodeQueryComponent%2528aliasName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateTemplateAliasResponse.fromJson(response);
@@ -7766,7 +7787,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/templates/${Uri.encodeComponent(templateId)}/permissions',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}/permissions',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateTemplatePermissionsResponse.fromJson(response);
@@ -7823,7 +7844,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/themes/${Uri.encodeComponent(themeId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/themes/${Uri.encodeQueryComponent(themeId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateThemeResponse.fromJson(response);
@@ -7871,7 +7892,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/themes/${Uri.encodeComponent(themeId)}/aliases/${Uri.encodeComponent(aliasName)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/themes/${Uri.encodeQueryComponent(themeId).replaceAll('+', '%20')}/aliases/%2524%257BUri.encodeQueryComponent%2528aliasName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateThemeAliasResponse.fromJson(response);
@@ -7979,7 +8000,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/themes/${Uri.encodeComponent(themeId)}/permissions',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/themes/${Uri.encodeQueryComponent(themeId).replaceAll('+', '%20')}/permissions',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateThemePermissionsResponse.fromJson(response);
@@ -8018,7 +8039,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/topics/${Uri.encodeComponent(topicId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/topics/${Uri.encodeQueryComponent(topicId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateTopicResponse.fromJson(response);
@@ -8062,7 +8083,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/topics/${Uri.encodeComponent(topicId)}/permissions',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/topics/${Uri.encodeQueryComponent(topicId).replaceAll('+', '%20')}/permissions',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateTopicPermissionsResponse.fromJson(response);
@@ -8105,7 +8126,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/topics/${Uri.encodeComponent(topicId)}/schedules/${Uri.encodeComponent(datasetId)}',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528awsAccountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/topics/${Uri.encodeQueryComponent(topicId).replaceAll('+', '%20')}/schedules/%24%7BUri.encodeQueryComponent%28datasetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateTopicRefreshScheduleResponse.fromJson(response);
@@ -8260,7 +8281,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/namespaces/${Uri.encodeComponent(namespace)}/users/${Uri.encodeComponent(userName)}',
+          '/accounts/%2524%257BUri.encodeQueryComponent%2528awsAccountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/namespaces/%24%7BUri.encodeQueryComponent%28namespace%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(userName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateUserResponse.fromJson(response);
@@ -8320,7 +8341,7 @@ class QuickSight {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/accounts/${Uri.encodeComponent(awsAccountId)}/vpc-connections/${Uri.encodeComponent(vPCConnectionId)}',
+          '/accounts/%24%7BUri.encodeQueryComponent%28awsAccountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vpc-connections/${Uri.encodeQueryComponent(vPCConnectionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateVPCConnectionResponse.fromJson(response);

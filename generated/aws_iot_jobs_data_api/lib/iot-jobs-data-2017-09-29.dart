@@ -102,7 +102,7 @@ class IoTJobsDataPlane {
       payload: null,
       method: 'GET',
       requestUri:
-          '/things/${Uri.encodeComponent(thingName)}/jobs/${Uri.encodeComponent(jobId)}',
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/jobs/%24%7BUri.encodeQueryComponent%28jobId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -125,7 +125,8 @@ class IoTJobsDataPlane {
     final response = await _protocol.send(
       payload: null,
       method: 'GET',
-      requestUri: '/things/${Uri.encodeComponent(thingName)}/jobs',
+      requestUri:
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/jobs',
       exceptionFnMap: _exceptionFns,
     );
     return GetPendingJobExecutionsResponse.fromJson(response);
@@ -171,7 +172,8 @@ class IoTJobsDataPlane {
     final response = await _protocol.send(
       payload: $payload,
       method: 'PUT',
-      requestUri: '/things/${Uri.encodeComponent(thingName)}/jobs/%24next',
+      requestUri:
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/jobs/%24next',
       exceptionFnMap: _exceptionFns,
     );
     return StartNextPendingJobExecutionResponse.fromJson(response);
@@ -258,7 +260,7 @@ class IoTJobsDataPlane {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/things/${Uri.encodeComponent(thingName)}/jobs/${Uri.encodeComponent(jobId)}',
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/jobs/%24%7BUri.encodeQueryComponent%28jobId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateJobExecutionResponse.fromJson(response);
