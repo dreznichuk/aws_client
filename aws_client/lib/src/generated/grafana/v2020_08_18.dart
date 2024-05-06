@@ -83,7 +83,7 @@ class ManagedGrafana {
       payload: null,
       method: 'POST',
       requestUri:
-          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/licenses/%24%7BUri.encodeQueryComponent%28licenseType.toValue%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/licenses/${Uri.encodeQueryComponent(licenseType.toValue()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return AssociateLicenseResponse.fromJson(response);
@@ -370,7 +370,7 @@ class ManagedGrafana {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/apikeys/%24%7BUri.encodeQueryComponent%28keyName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/apikeys/${Uri.encodeQueryComponent(keyName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteWorkspaceApiKeyResponse.fromJson(response);
@@ -468,7 +468,7 @@ class ManagedGrafana {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/licenses/%24%7BUri.encodeQueryComponent%28licenseType.toValue%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/licenses/${Uri.encodeQueryComponent(licenseType.toValue()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DisassociateLicenseResponse.fromJson(response);

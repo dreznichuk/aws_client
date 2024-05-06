@@ -392,7 +392,7 @@ class MQ {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/brokers/%24%7BUri.encodeQueryComponent%28brokerId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(username).replaceAll('+', '%20')}',
+          '/v1/brokers/${Uri.encodeQueryComponent(brokerId).replaceAll('+', '%20')}/users/${Uri.encodeQueryComponent(username).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -470,7 +470,7 @@ class MQ {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/brokers/%24%7BUri.encodeQueryComponent%28brokerId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(username).replaceAll('+', '%20')}',
+          '/v1/brokers/${Uri.encodeQueryComponent(brokerId).replaceAll('+', '%20')}/users/${Uri.encodeQueryComponent(username).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -634,7 +634,7 @@ class MQ {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/configurations/%24%7BUri.encodeQueryComponent%28configurationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/revisions/${Uri.encodeQueryComponent(configurationRevision).replaceAll('+', '%20')}',
+          '/v1/configurations/${Uri.encodeQueryComponent(configurationId).replaceAll('+', '%20')}/revisions/${Uri.encodeQueryComponent(configurationRevision).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeConfigurationRevisionResponse.fromJson(response);
@@ -662,7 +662,7 @@ class MQ {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/brokers/%24%7BUri.encodeQueryComponent%28brokerId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(username).replaceAll('+', '%20')}',
+          '/v1/brokers/${Uri.encodeQueryComponent(brokerId).replaceAll('+', '%20')}/users/${Uri.encodeQueryComponent(username).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeUserResponse.fromJson(response);
@@ -1035,7 +1035,7 @@ class MQ {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/brokers/%24%7BUri.encodeQueryComponent%28brokerId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(username).replaceAll('+', '%20')}',
+          '/v1/brokers/${Uri.encodeQueryComponent(brokerId).replaceAll('+', '%20')}/users/${Uri.encodeQueryComponent(username).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

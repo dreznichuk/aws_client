@@ -761,7 +761,7 @@ class MediaLive {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/prod/multiplexes/%24%7BUri.encodeQueryComponent%28multiplexId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/programs/${Uri.encodeQueryComponent(programName).replaceAll('+', '%20')}',
+          '/prod/multiplexes/${Uri.encodeQueryComponent(multiplexId).replaceAll('+', '%20')}/programs/${Uri.encodeQueryComponent(programName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteMultiplexProgramResponse.fromJson(response);
@@ -1034,7 +1034,7 @@ class MediaLive {
       payload: null,
       method: 'GET',
       requestUri:
-          '/prod/multiplexes/%24%7BUri.encodeQueryComponent%28multiplexId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/programs/${Uri.encodeQueryComponent(programName).replaceAll('+', '%20')}',
+          '/prod/multiplexes/${Uri.encodeQueryComponent(multiplexId).replaceAll('+', '%20')}/programs/${Uri.encodeQueryComponent(programName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeMultiplexProgramResponse.fromJson(response);
@@ -2199,7 +2199,7 @@ class MediaLive {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/prod/multiplexes/%24%7BUri.encodeQueryComponent%28multiplexId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/programs/${Uri.encodeQueryComponent(programName).replaceAll('+', '%20')}',
+          '/prod/multiplexes/${Uri.encodeQueryComponent(multiplexId).replaceAll('+', '%20')}/programs/${Uri.encodeQueryComponent(programName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateMultiplexProgramResponse.fromJson(response);

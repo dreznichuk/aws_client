@@ -1390,7 +1390,7 @@ class IoTSiteWise {
       payload: null,
       method: 'GET',
       requestUri:
-          '/assets/%24%7BUri.encodeQueryComponent%28assetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/properties/${Uri.encodeQueryComponent(propertyId).replaceAll('+', '%20')}',
+          '/assets/${Uri.encodeQueryComponent(assetId).replaceAll('+', '%20')}/properties/${Uri.encodeQueryComponent(propertyId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeAssetPropertyResponse.fromJson(response);
@@ -1517,7 +1517,7 @@ class IoTSiteWise {
       payload: null,
       method: 'GET',
       requestUri:
-          '/20200301/gateways/${Uri.encodeQueryComponent(gatewayId).replaceAll('+', '%20')}/capability/%24%7BUri.encodeQueryComponent%28capabilityNamespace%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/20200301/gateways/${Uri.encodeQueryComponent(gatewayId).replaceAll('+', '%20')}/capability/${Uri.encodeQueryComponent(capabilityNamespace).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeGatewayCapabilityConfigurationResponse.fromJson(response);
@@ -3539,7 +3539,7 @@ class IoTSiteWise {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/assets/%24%7BUri.encodeQueryComponent%28assetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/properties/${Uri.encodeQueryComponent(propertyId).replaceAll('+', '%20')}',
+          '/assets/${Uri.encodeQueryComponent(assetId).replaceAll('+', '%20')}/properties/${Uri.encodeQueryComponent(propertyId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

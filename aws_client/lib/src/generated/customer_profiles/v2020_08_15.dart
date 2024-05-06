@@ -590,7 +590,7 @@ class CustomerProfiles {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/domains/%24%7BUri.encodeQueryComponent%28domainName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/object-types/${Uri.encodeQueryComponent(objectTypeName).replaceAll('+', '%20')}',
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/object-types/${Uri.encodeQueryComponent(objectTypeName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteProfileObjectTypeResponse.fromJson(response);
@@ -618,7 +618,7 @@ class CustomerProfiles {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/domains/%24%7BUri.encodeQueryComponent%28domainName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/workflows/${Uri.encodeQueryComponent(workflowId).replaceAll('+', '%20')}',
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/workflows/${Uri.encodeQueryComponent(workflowId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -738,7 +738,7 @@ class CustomerProfiles {
       payload: null,
       method: 'GET',
       requestUri:
-          '/domains/%24%7BUri.encodeQueryComponent%28domainName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/identity-resolution-jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/identity-resolution-jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetIdentityResolutionJobResponse.fromJson(response);
@@ -892,7 +892,7 @@ class CustomerProfiles {
       payload: null,
       method: 'GET',
       requestUri:
-          '/domains/%24%7BUri.encodeQueryComponent%28domainName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/object-types/${Uri.encodeQueryComponent(objectTypeName).replaceAll('+', '%20')}',
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/object-types/${Uri.encodeQueryComponent(objectTypeName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetProfileObjectTypeResponse.fromJson(response);
@@ -947,7 +947,7 @@ class CustomerProfiles {
       payload: null,
       method: 'GET',
       requestUri:
-          '/domains/%24%7BUri.encodeQueryComponent%28domainName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/workflows/${Uri.encodeQueryComponent(workflowId).replaceAll('+', '%20')}',
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/workflows/${Uri.encodeQueryComponent(workflowId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetWorkflowResponse.fromJson(response);
@@ -993,7 +993,7 @@ class CustomerProfiles {
       payload: null,
       method: 'GET',
       requestUri:
-          '/domains/%24%7BUri.encodeQueryComponent%28domainName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/workflows/${Uri.encodeQueryComponent(workflowId).replaceAll('+', '%20')}/steps',
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/workflows/${Uri.encodeQueryComponent(workflowId).replaceAll('+', '%20')}/steps',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1705,7 +1705,7 @@ class CustomerProfiles {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/domains/%24%7BUri.encodeQueryComponent%28domainName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/object-types/${Uri.encodeQueryComponent(objectTypeName).replaceAll('+', '%20')}',
+          '/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/object-types/${Uri.encodeQueryComponent(objectTypeName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return PutProfileObjectTypeResponse.fromJson(response);

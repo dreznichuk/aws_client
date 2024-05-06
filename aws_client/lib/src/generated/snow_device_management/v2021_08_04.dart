@@ -207,7 +207,7 @@ class SnowDeviceManagement {
       payload: null,
       method: 'POST',
       requestUri:
-          '/task/${Uri.encodeQueryComponent(taskId).replaceAll('+', '%20')}/execution/%24%7BUri.encodeQueryComponent%28managedDeviceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/task/${Uri.encodeQueryComponent(taskId).replaceAll('+', '%20')}/execution/${Uri.encodeQueryComponent(managedDeviceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeExecutionOutput.fromJson(response);

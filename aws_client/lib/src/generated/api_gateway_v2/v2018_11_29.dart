@@ -733,7 +733,7 @@ class ApiGatewayV2 {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/integrations/${Uri.encodeQueryComponent(integrationId).replaceAll('+', '%20')}/integrationresponses',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/integrations/${Uri.encodeQueryComponent(integrationId).replaceAll('+', '%20')}/integrationresponses',
       exceptionFnMap: _exceptionFns,
     );
     return CreateIntegrationResponseResponse.fromJson(response);
@@ -920,7 +920,7 @@ class ApiGatewayV2 {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/routes/${Uri.encodeQueryComponent(routeId).replaceAll('+', '%20')}/routeresponses',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/routes/${Uri.encodeQueryComponent(routeId).replaceAll('+', '%20')}/routeresponses',
       exceptionFnMap: _exceptionFns,
     );
     return CreateRouteResponseResponse.fromJson(response);
@@ -1064,7 +1064,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/accesslogsettings',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/accesslogsettings',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1107,7 +1107,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/domainnames/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/apimappings/%24%7BUri.encodeQueryComponent%28apiMappingId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/v2/domainnames/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/apimappings/${Uri.encodeQueryComponent(apiMappingId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1130,7 +1130,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/authorizers/${Uri.encodeQueryComponent(authorizerId).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/authorizers/${Uri.encodeQueryComponent(authorizerId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1172,7 +1172,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/deployments/${Uri.encodeQueryComponent(deploymentId).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/deployments/${Uri.encodeQueryComponent(deploymentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1214,7 +1214,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/integrations/${Uri.encodeQueryComponent(integrationId).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/integrations/${Uri.encodeQueryComponent(integrationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1241,7 +1241,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/apis/%2524%257BUri.encodeQueryComponent%2528apiId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/integrations/%24%7BUri.encodeQueryComponent%28integrationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/integrationresponses/${Uri.encodeQueryComponent(integrationResponseId).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/integrations/${Uri.encodeQueryComponent(integrationId).replaceAll('+', '%20')}/integrationresponses/${Uri.encodeQueryComponent(integrationResponseId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1264,7 +1264,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/models/${Uri.encodeQueryComponent(modelId).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/models/${Uri.encodeQueryComponent(modelId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1287,7 +1287,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/routes/${Uri.encodeQueryComponent(routeId).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/routes/${Uri.encodeQueryComponent(routeId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1314,7 +1314,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/apis/%2524%257BUri.encodeQueryComponent%2528apiId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/routes/${Uri.encodeQueryComponent(routeId).replaceAll('+', '%20')}/requestparameters/%24%7BUri.encodeQueryComponent%28requestParameterKey%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/routes/${Uri.encodeQueryComponent(routeId).replaceAll('+', '%20')}/requestparameters/${Uri.encodeQueryComponent(requestParameterKey).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1341,7 +1341,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/apis/%2524%257BUri.encodeQueryComponent%2528apiId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/routes/%24%7BUri.encodeQueryComponent%28routeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/routeresponses/${Uri.encodeQueryComponent(routeResponseId).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/routes/${Uri.encodeQueryComponent(routeId).replaceAll('+', '%20')}/routeresponses/${Uri.encodeQueryComponent(routeResponseId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1369,7 +1369,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/apis/%2524%257BUri.encodeQueryComponent%2528apiId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/routesettings/%24%7BUri.encodeQueryComponent%28routeKey%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/routesettings/${Uri.encodeQueryComponent(routeKey).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1393,7 +1393,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1465,7 +1465,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/exports/${Uri.encodeQueryComponent(specification).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/exports/${Uri.encodeQueryComponent(specification).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1495,7 +1495,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/cache/authorizers',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/cache/authorizers',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1539,7 +1539,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/domainnames/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/apimappings/%24%7BUri.encodeQueryComponent%28apiMappingId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/v2/domainnames/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/apimappings/${Uri.encodeQueryComponent(apiMappingId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetApiMappingResponse.fromJson(response);
@@ -1628,7 +1628,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/authorizers/${Uri.encodeQueryComponent(authorizerId).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/authorizers/${Uri.encodeQueryComponent(authorizerId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetAuthorizerResponse.fromJson(response);
@@ -1687,7 +1687,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/deployments/${Uri.encodeQueryComponent(deploymentId).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/deployments/${Uri.encodeQueryComponent(deploymentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDeploymentResponse.fromJson(response);
@@ -1796,7 +1796,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/integrations/${Uri.encodeQueryComponent(integrationId).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/integrations/${Uri.encodeQueryComponent(integrationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetIntegrationResult.fromJson(response);
@@ -1824,7 +1824,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/apis/%2524%257BUri.encodeQueryComponent%2528apiId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/integrations/%24%7BUri.encodeQueryComponent%28integrationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/integrationresponses/${Uri.encodeQueryComponent(integrationResponseId).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/integrations/${Uri.encodeQueryComponent(integrationId).replaceAll('+', '%20')}/integrationresponses/${Uri.encodeQueryComponent(integrationResponseId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetIntegrationResponseResponse.fromJson(response);
@@ -1862,7 +1862,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/integrations/${Uri.encodeQueryComponent(integrationId).replaceAll('+', '%20')}/integrationresponses',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/integrations/${Uri.encodeQueryComponent(integrationId).replaceAll('+', '%20')}/integrationresponses',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1922,7 +1922,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/models/${Uri.encodeQueryComponent(modelId).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/models/${Uri.encodeQueryComponent(modelId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetModelResponse.fromJson(response);
@@ -1946,7 +1946,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/models/${Uri.encodeQueryComponent(modelId).replaceAll('+', '%20')}/template',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/models/${Uri.encodeQueryComponent(modelId).replaceAll('+', '%20')}/template',
       exceptionFnMap: _exceptionFns,
     );
     return GetModelTemplateResponse.fromJson(response);
@@ -2005,7 +2005,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/routes/${Uri.encodeQueryComponent(routeId).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/routes/${Uri.encodeQueryComponent(routeId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetRouteResult.fromJson(response);
@@ -2033,7 +2033,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/apis/%2524%257BUri.encodeQueryComponent%2528apiId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/routes/%24%7BUri.encodeQueryComponent%28routeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/routeresponses/${Uri.encodeQueryComponent(routeResponseId).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/routes/${Uri.encodeQueryComponent(routeId).replaceAll('+', '%20')}/routeresponses/${Uri.encodeQueryComponent(routeResponseId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetRouteResponseResponse.fromJson(response);
@@ -2071,7 +2071,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/routes/${Uri.encodeQueryComponent(routeId).replaceAll('+', '%20')}/routeresponses',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/routes/${Uri.encodeQueryComponent(routeId).replaceAll('+', '%20')}/routeresponses',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2132,7 +2132,7 @@ class ApiGatewayV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetStageResponse.fromJson(response);
@@ -2540,7 +2540,7 @@ class ApiGatewayV2 {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/v2/domainnames/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/apimappings/%24%7BUri.encodeQueryComponent%28apiMappingId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/v2/domainnames/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/apimappings/${Uri.encodeQueryComponent(apiMappingId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateApiMappingResponse.fromJson(response);
@@ -2680,7 +2680,7 @@ class ApiGatewayV2 {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/authorizers/${Uri.encodeQueryComponent(authorizerId).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/authorizers/${Uri.encodeQueryComponent(authorizerId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAuthorizerResponse.fromJson(response);
@@ -2713,7 +2713,7 @@ class ApiGatewayV2 {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/deployments/${Uri.encodeQueryComponent(deploymentId).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/deployments/${Uri.encodeQueryComponent(deploymentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDeploymentResponse.fromJson(response);
@@ -2992,7 +2992,7 @@ class ApiGatewayV2 {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/integrations/${Uri.encodeQueryComponent(integrationId).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/integrations/${Uri.encodeQueryComponent(integrationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateIntegrationResult.fromJson(response);
@@ -3082,7 +3082,7 @@ class ApiGatewayV2 {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/v2/apis/%2524%257BUri.encodeQueryComponent%2528apiId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/integrations/%24%7BUri.encodeQueryComponent%28integrationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/integrationresponses/${Uri.encodeQueryComponent(integrationResponseId).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/integrations/${Uri.encodeQueryComponent(integrationId).replaceAll('+', '%20')}/integrationresponses/${Uri.encodeQueryComponent(integrationResponseId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateIntegrationResponseResponse.fromJson(response);
@@ -3131,7 +3131,7 @@ class ApiGatewayV2 {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/models/${Uri.encodeQueryComponent(modelId).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/models/${Uri.encodeQueryComponent(modelId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateModelResponse.fromJson(response);
@@ -3227,7 +3227,7 @@ class ApiGatewayV2 {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/routes/${Uri.encodeQueryComponent(routeId).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/routes/${Uri.encodeQueryComponent(routeId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateRouteResult.fromJson(response);
@@ -3281,7 +3281,7 @@ class ApiGatewayV2 {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/v2/apis/%2524%257BUri.encodeQueryComponent%2528apiId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/routes/%24%7BUri.encodeQueryComponent%28routeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/routeresponses/${Uri.encodeQueryComponent(routeResponseId).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/routes/${Uri.encodeQueryComponent(routeId).replaceAll('+', '%20')}/routeresponses/${Uri.encodeQueryComponent(routeResponseId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateRouteResponseResponse.fromJson(response);
@@ -3357,7 +3357,7 @@ class ApiGatewayV2 {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/v2/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}',
+          '/v2/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateStageResponse.fromJson(response);

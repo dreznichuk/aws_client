@@ -393,7 +393,7 @@ class MigrationHubOrchestrator {
       payload: null,
       method: 'GET',
       requestUri:
-          '/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}/stepgroups/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}/stepgroups/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetTemplateStepGroupResponse.fromJson(response);
@@ -752,7 +752,7 @@ class MigrationHubOrchestrator {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workflow/${Uri.encodeQueryComponent(workflowId).replaceAll('+', '%20')}/workflowstepgroups/%24%7BUri.encodeQueryComponent%28stepGroupId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/workflowsteps',
+          '/workflow/${Uri.encodeQueryComponent(workflowId).replaceAll('+', '%20')}/workflowstepgroups/${Uri.encodeQueryComponent(stepGroupId).replaceAll('+', '%20')}/workflowsteps',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

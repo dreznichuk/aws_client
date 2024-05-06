@@ -99,7 +99,7 @@ class EmrContainers {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/virtualclusters/${Uri.encodeQueryComponent(virtualClusterId).replaceAll('+', '%20')}/jobruns/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/virtualclusters/${Uri.encodeQueryComponent(virtualClusterId).replaceAll('+', '%20')}/jobruns/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CancelJobRunResponse.fromJson(response);
@@ -305,7 +305,7 @@ class EmrContainers {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/virtualclusters/${Uri.encodeQueryComponent(virtualClusterId).replaceAll('+', '%20')}/endpoints/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/virtualclusters/${Uri.encodeQueryComponent(virtualClusterId).replaceAll('+', '%20')}/endpoints/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteManagedEndpointResponse.fromJson(response);
@@ -357,7 +357,7 @@ class EmrContainers {
       payload: null,
       method: 'GET',
       requestUri:
-          '/virtualclusters/${Uri.encodeQueryComponent(virtualClusterId).replaceAll('+', '%20')}/jobruns/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/virtualclusters/${Uri.encodeQueryComponent(virtualClusterId).replaceAll('+', '%20')}/jobruns/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeJobRunResponse.fromJson(response);
@@ -409,7 +409,7 @@ class EmrContainers {
       payload: null,
       method: 'GET',
       requestUri:
-          '/virtualclusters/${Uri.encodeQueryComponent(virtualClusterId).replaceAll('+', '%20')}/endpoints/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/virtualclusters/${Uri.encodeQueryComponent(virtualClusterId).replaceAll('+', '%20')}/endpoints/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeManagedEndpointResponse.fromJson(response);
@@ -493,7 +493,7 @@ class EmrContainers {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/virtualclusters/${Uri.encodeQueryComponent(virtualClusterIdentifier).replaceAll('+', '%20')}/endpoints/%24%7BUri.encodeQueryComponent%28endpointIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/credentials',
+          '/virtualclusters/${Uri.encodeQueryComponent(virtualClusterIdentifier).replaceAll('+', '%20')}/endpoints/${Uri.encodeQueryComponent(endpointIdentifier).replaceAll('+', '%20')}/credentials',
       exceptionFnMap: _exceptionFns,
     );
     return GetManagedEndpointSessionCredentialsResponse.fromJson(response);

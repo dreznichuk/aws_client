@@ -631,7 +631,7 @@ class GreengrassV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/greengrass/v2/components/%24%7BUri.encodeQueryComponent%28arn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/artifacts/${artifactName.split('/').map((e) => Uri.encodeQueryComponent(e).replaceAll('+', '%20')).join('/')}',
+          '/greengrass/v2/components/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}/artifacts/${artifactName.split('/').map((e) => Uri.encodeQueryComponent(e).replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetComponentVersionArtifactResponse.fromJson(response);

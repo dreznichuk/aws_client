@@ -682,7 +682,7 @@ class ApiGateway {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/%24%7BUri.encodeQueryComponent%28parentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(parentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return Resource.fromJson(response);
@@ -1054,7 +1054,7 @@ class ApiGateway {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/authorizers/%24%7BUri.encodeQueryComponent%28authorizerId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/authorizers/${Uri.encodeQueryComponent(authorizerId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1083,7 +1083,7 @@ class ApiGateway {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/domainnames/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/basepathmappings/%24%7BUri.encodeQueryComponent%28basePath%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/domainnames/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/basepathmappings/${Uri.encodeQueryComponent(basePath).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1133,7 +1133,7 @@ class ApiGateway {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/deployments/%24%7BUri.encodeQueryComponent%28deploymentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/deployments/${Uri.encodeQueryComponent(deploymentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1159,7 +1159,7 @@ class ApiGateway {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/documentation/parts/%24%7BUri.encodeQueryComponent%28documentationPartId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/documentation/parts/${Uri.encodeQueryComponent(documentationPartId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1185,7 +1185,7 @@ class ApiGateway {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/documentation/versions/%24%7BUri.encodeQueryComponent%28documentationVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/documentation/versions/${Uri.encodeQueryComponent(documentationVersion).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1234,7 +1234,7 @@ class ApiGateway {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/gatewayresponses/%24%7BUri.encodeQueryComponent%28responseType.toValue%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/gatewayresponses/${Uri.encodeQueryComponent(responseType.toValue()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1264,7 +1264,7 @@ class ApiGateway {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/%24%7BUri.encodeQueryComponent%28resourceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/methods/%2524%257BUri.encodeQueryComponent%2528httpMethod%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/integration',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/methods/${Uri.encodeQueryComponent(httpMethod).replaceAll('+', '%20')}/integration',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1298,7 +1298,7 @@ class ApiGateway {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/restapis/%24%7BUri.encodeQueryComponent%28restApiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/resources/%2524%257BUri.encodeQueryComponent%2528resourceId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/methods/%252524%25257BUri.encodeQueryComponent%252528httpMethod%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/integration/responses/${Uri.encodeQueryComponent(statusCode).replaceAll('+', '%20')}',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/methods/${Uri.encodeQueryComponent(httpMethod).replaceAll('+', '%20')}/integration/responses/${Uri.encodeQueryComponent(statusCode).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1327,7 +1327,7 @@ class ApiGateway {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/%24%7BUri.encodeQueryComponent%28resourceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/methods/%2524%257BUri.encodeQueryComponent%2528httpMethod%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/methods/${Uri.encodeQueryComponent(httpMethod).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1361,7 +1361,7 @@ class ApiGateway {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/restapis/%24%7BUri.encodeQueryComponent%28restApiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/resources/%2524%257BUri.encodeQueryComponent%2528resourceId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/methods/%252524%25257BUri.encodeQueryComponent%252528httpMethod%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/responses/${Uri.encodeQueryComponent(statusCode).replaceAll('+', '%20')}',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/methods/${Uri.encodeQueryComponent(httpMethod).replaceAll('+', '%20')}/responses/${Uri.encodeQueryComponent(statusCode).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1387,7 +1387,7 @@ class ApiGateway {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/models/%24%7BUri.encodeQueryComponent%28modelName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/models/${Uri.encodeQueryComponent(modelName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1413,7 +1413,7 @@ class ApiGateway {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/requestvalidators/%24%7BUri.encodeQueryComponent%28requestValidatorId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/requestvalidators/${Uri.encodeQueryComponent(requestValidatorId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1439,7 +1439,7 @@ class ApiGateway {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/%24%7BUri.encodeQueryComponent%28resourceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1488,7 +1488,7 @@ class ApiGateway {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/restapis/%24%7BUri.encodeQueryComponent%28restApiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1538,7 +1538,7 @@ class ApiGateway {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/usageplans/${Uri.encodeQueryComponent(usagePlanId).replaceAll('+', '%20')}/keys/%24%7BUri.encodeQueryComponent%28keyId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/usageplans/${Uri.encodeQueryComponent(usagePlanId).replaceAll('+', '%20')}/keys/${Uri.encodeQueryComponent(keyId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1588,7 +1588,7 @@ class ApiGateway {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/restapis/%24%7BUri.encodeQueryComponent%28restApiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/cache/authorizers',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/cache/authorizers',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1615,7 +1615,7 @@ class ApiGateway {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/restapis/%24%7BUri.encodeQueryComponent%28restApiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/cache/data',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/cache/data',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1767,7 +1767,7 @@ class ApiGateway {
       payload: null,
       method: 'GET',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/authorizers/%24%7BUri.encodeQueryComponent%28authorizerId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/authorizers/${Uri.encodeQueryComponent(authorizerId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return Authorizer.fromJson(response);
@@ -1832,7 +1832,7 @@ class ApiGateway {
       payload: null,
       method: 'GET',
       requestUri:
-          '/domainnames/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/basepathmappings/%24%7BUri.encodeQueryComponent%28basePath%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/domainnames/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/basepathmappings/${Uri.encodeQueryComponent(basePath).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return BasePathMapping.fromJson(response);
@@ -1965,7 +1965,7 @@ class ApiGateway {
       payload: null,
       method: 'GET',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/deployments/%24%7BUri.encodeQueryComponent%28deploymentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/deployments/${Uri.encodeQueryComponent(deploymentId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2029,7 +2029,7 @@ class ApiGateway {
       payload: null,
       method: 'GET',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/documentation/parts/%24%7BUri.encodeQueryComponent%28documentationPartId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/documentation/parts/${Uri.encodeQueryComponent(documentationPartId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DocumentationPart.fromJson(response);
@@ -2113,7 +2113,7 @@ class ApiGateway {
       payload: null,
       method: 'GET',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/documentation/versions/%24%7BUri.encodeQueryComponent%28documentationVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/documentation/versions/${Uri.encodeQueryComponent(documentationVersion).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DocumentationVersion.fromJson(response);
@@ -2265,7 +2265,7 @@ class ApiGateway {
       payload: null,
       method: 'GET',
       requestUri:
-          '/restapis/%24%7BUri.encodeQueryComponent%28restApiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/exports/%2524%257BUri.encodeQueryComponent%2528exportType%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/exports/${Uri.encodeQueryComponent(exportType).replaceAll('+', '%20')}',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -2299,7 +2299,7 @@ class ApiGateway {
       payload: null,
       method: 'GET',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/gatewayresponses/%24%7BUri.encodeQueryComponent%28responseType.toValue%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/gatewayresponses/${Uri.encodeQueryComponent(responseType.toValue()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GatewayResponse.fromJson(response);
@@ -2371,7 +2371,7 @@ class ApiGateway {
       payload: null,
       method: 'GET',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/%24%7BUri.encodeQueryComponent%28resourceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/methods/%2524%257BUri.encodeQueryComponent%2528httpMethod%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/integration',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/methods/${Uri.encodeQueryComponent(httpMethod).replaceAll('+', '%20')}/integration',
       exceptionFnMap: _exceptionFns,
     );
     return Integration.fromJson(response);
@@ -2405,7 +2405,7 @@ class ApiGateway {
       payload: null,
       method: 'GET',
       requestUri:
-          '/restapis/%24%7BUri.encodeQueryComponent%28restApiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/resources/%2524%257BUri.encodeQueryComponent%2528resourceId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/methods/%252524%25257BUri.encodeQueryComponent%252528httpMethod%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/integration/responses/${Uri.encodeQueryComponent(statusCode).replaceAll('+', '%20')}',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/methods/${Uri.encodeQueryComponent(httpMethod).replaceAll('+', '%20')}/integration/responses/${Uri.encodeQueryComponent(statusCode).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return IntegrationResponse.fromJson(response);
@@ -2434,7 +2434,7 @@ class ApiGateway {
       payload: null,
       method: 'GET',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/%24%7BUri.encodeQueryComponent%28resourceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/methods/%2524%257BUri.encodeQueryComponent%2528httpMethod%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/methods/${Uri.encodeQueryComponent(httpMethod).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return Method.fromJson(response);
@@ -2467,7 +2467,7 @@ class ApiGateway {
       payload: null,
       method: 'GET',
       requestUri:
-          '/restapis/%24%7BUri.encodeQueryComponent%28restApiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/resources/%2524%257BUri.encodeQueryComponent%2528resourceId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/methods/%252524%25257BUri.encodeQueryComponent%252528httpMethod%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/responses/${Uri.encodeQueryComponent(statusCode).replaceAll('+', '%20')}',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/methods/${Uri.encodeQueryComponent(httpMethod).replaceAll('+', '%20')}/responses/${Uri.encodeQueryComponent(statusCode).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return MethodResponse.fromJson(response);
@@ -2502,7 +2502,7 @@ class ApiGateway {
       payload: null,
       method: 'GET',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/models/%24%7BUri.encodeQueryComponent%28modelName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/models/${Uri.encodeQueryComponent(modelName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2530,7 +2530,7 @@ class ApiGateway {
       payload: null,
       method: 'GET',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/models/%24%7BUri.encodeQueryComponent%28modelName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/default_template',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/models/${Uri.encodeQueryComponent(modelName).replaceAll('+', '%20')}/default_template',
       exceptionFnMap: _exceptionFns,
     );
     return Template.fromJson(response);
@@ -2592,7 +2592,7 @@ class ApiGateway {
       payload: null,
       method: 'GET',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/requestvalidators/%24%7BUri.encodeQueryComponent%28requestValidatorId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/requestvalidators/${Uri.encodeQueryComponent(requestValidatorId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return RequestValidator.fromJson(response);
@@ -2666,7 +2666,7 @@ class ApiGateway {
       payload: null,
       method: 'GET',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/%24%7BUri.encodeQueryComponent%28resourceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2818,7 +2818,7 @@ class ApiGateway {
       payload: null,
       method: 'GET',
       requestUri:
-          '/restapis/%2524%257BUri.encodeQueryComponent%2528restApiId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/sdks/%24%7BUri.encodeQueryComponent%28sdkType%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/sdks/${Uri.encodeQueryComponent(sdkType).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2906,7 +2906,7 @@ class ApiGateway {
       payload: null,
       method: 'GET',
       requestUri:
-          '/restapis/%24%7BUri.encodeQueryComponent%28restApiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return Stage.fromJson(response);
@@ -3076,7 +3076,7 @@ class ApiGateway {
       payload: null,
       method: 'GET',
       requestUri:
-          '/usageplans/${Uri.encodeQueryComponent(usagePlanId).replaceAll('+', '%20')}/keys/%24%7BUri.encodeQueryComponent%28keyId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/usageplans/${Uri.encodeQueryComponent(usagePlanId).replaceAll('+', '%20')}/keys/${Uri.encodeQueryComponent(keyId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UsagePlanKey.fromJson(response);
@@ -3407,7 +3407,7 @@ class ApiGateway {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/gatewayresponses/%24%7BUri.encodeQueryComponent%28responseType.toValue%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/gatewayresponses/${Uri.encodeQueryComponent(responseType.toValue()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GatewayResponse.fromJson(response);
@@ -3566,7 +3566,7 @@ class ApiGateway {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/%24%7BUri.encodeQueryComponent%28resourceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/methods/%2524%257BUri.encodeQueryComponent%2528httpMethod%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/integration',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/methods/${Uri.encodeQueryComponent(httpMethod).replaceAll('+', '%20')}/integration',
       exceptionFnMap: _exceptionFns,
     );
     return Integration.fromJson(response);
@@ -3643,7 +3643,7 @@ class ApiGateway {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/restapis/%24%7BUri.encodeQueryComponent%28restApiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/resources/%2524%257BUri.encodeQueryComponent%2528resourceId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/methods/%252524%25257BUri.encodeQueryComponent%252528httpMethod%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/integration/responses/${Uri.encodeQueryComponent(statusCode).replaceAll('+', '%20')}',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/methods/${Uri.encodeQueryComponent(httpMethod).replaceAll('+', '%20')}/integration/responses/${Uri.encodeQueryComponent(statusCode).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return IntegrationResponse.fromJson(response);
@@ -3743,7 +3743,7 @@ class ApiGateway {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/%24%7BUri.encodeQueryComponent%28resourceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/methods/%2524%257BUri.encodeQueryComponent%2528httpMethod%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/methods/${Uri.encodeQueryComponent(httpMethod).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return Method.fromJson(response);
@@ -3807,7 +3807,7 @@ class ApiGateway {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/restapis/%24%7BUri.encodeQueryComponent%28restApiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/resources/%2524%257BUri.encodeQueryComponent%2528resourceId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/methods/%252524%25257BUri.encodeQueryComponent%252528httpMethod%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/responses/${Uri.encodeQueryComponent(statusCode).replaceAll('+', '%20')}',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/methods/${Uri.encodeQueryComponent(httpMethod).replaceAll('+', '%20')}/responses/${Uri.encodeQueryComponent(statusCode).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return MethodResponse.fromJson(response);
@@ -3966,7 +3966,7 @@ class ApiGateway {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/authorizers/%24%7BUri.encodeQueryComponent%28authorizerId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/authorizers/${Uri.encodeQueryComponent(authorizerId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return TestInvokeAuthorizerResponse.fromJson(response);
@@ -4036,7 +4036,7 @@ class ApiGateway {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/%24%7BUri.encodeQueryComponent%28resourceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/methods/%2524%257BUri.encodeQueryComponent%2528httpMethod%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/methods/${Uri.encodeQueryComponent(httpMethod).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return TestInvokeMethodResponse.fromJson(response);
@@ -4165,7 +4165,7 @@ class ApiGateway {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/authorizers/%24%7BUri.encodeQueryComponent%28authorizerId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/authorizers/${Uri.encodeQueryComponent(authorizerId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return Authorizer.fromJson(response);
@@ -4205,7 +4205,7 @@ class ApiGateway {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/domainnames/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/basepathmappings/%24%7BUri.encodeQueryComponent%28basePath%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/domainnames/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}/basepathmappings/${Uri.encodeQueryComponent(basePath).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return BasePathMapping.fromJson(response);
@@ -4277,7 +4277,7 @@ class ApiGateway {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/deployments/%24%7BUri.encodeQueryComponent%28deploymentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/deployments/${Uri.encodeQueryComponent(deploymentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return Deployment.fromJson(response);
@@ -4314,7 +4314,7 @@ class ApiGateway {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/documentation/parts/%24%7BUri.encodeQueryComponent%28documentationPartId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/documentation/parts/${Uri.encodeQueryComponent(documentationPartId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DocumentationPart.fromJson(response);
@@ -4351,7 +4351,7 @@ class ApiGateway {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/documentation/versions/%24%7BUri.encodeQueryComponent%28documentationVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/documentation/versions/${Uri.encodeQueryComponent(documentationVersion).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DocumentationVersion.fromJson(response);
@@ -4422,7 +4422,7 @@ class ApiGateway {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/gatewayresponses/%24%7BUri.encodeQueryComponent%28responseType.toValue%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/gatewayresponses/${Uri.encodeQueryComponent(responseType.toValue()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GatewayResponse.fromJson(response);
@@ -4463,7 +4463,7 @@ class ApiGateway {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/%24%7BUri.encodeQueryComponent%28resourceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/methods/%2524%257BUri.encodeQueryComponent%2528httpMethod%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/integration',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/methods/${Uri.encodeQueryComponent(httpMethod).replaceAll('+', '%20')}/integration',
       exceptionFnMap: _exceptionFns,
     );
     return Integration.fromJson(response);
@@ -4508,7 +4508,7 @@ class ApiGateway {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/restapis/%24%7BUri.encodeQueryComponent%28restApiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/resources/%2524%257BUri.encodeQueryComponent%2528resourceId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/methods/%252524%25257BUri.encodeQueryComponent%252528httpMethod%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/integration/responses/${Uri.encodeQueryComponent(statusCode).replaceAll('+', '%20')}',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/methods/${Uri.encodeQueryComponent(httpMethod).replaceAll('+', '%20')}/integration/responses/${Uri.encodeQueryComponent(statusCode).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return IntegrationResponse.fromJson(response);
@@ -4548,7 +4548,7 @@ class ApiGateway {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/%24%7BUri.encodeQueryComponent%28resourceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/methods/%2524%257BUri.encodeQueryComponent%2528httpMethod%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/methods/${Uri.encodeQueryComponent(httpMethod).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return Method.fromJson(response);
@@ -4593,7 +4593,7 @@ class ApiGateway {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/restapis/%24%7BUri.encodeQueryComponent%28restApiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/resources/%2524%257BUri.encodeQueryComponent%2528resourceId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/methods/%252524%25257BUri.encodeQueryComponent%252528httpMethod%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/responses/${Uri.encodeQueryComponent(statusCode).replaceAll('+', '%20')}',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/methods/${Uri.encodeQueryComponent(httpMethod).replaceAll('+', '%20')}/responses/${Uri.encodeQueryComponent(statusCode).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return MethodResponse.fromJson(response);
@@ -4630,7 +4630,7 @@ class ApiGateway {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/models/%24%7BUri.encodeQueryComponent%28modelName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/models/${Uri.encodeQueryComponent(modelName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return Model.fromJson(response);
@@ -4667,7 +4667,7 @@ class ApiGateway {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/requestvalidators/%24%7BUri.encodeQueryComponent%28requestValidatorId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/requestvalidators/${Uri.encodeQueryComponent(requestValidatorId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return RequestValidator.fromJson(response);
@@ -4703,7 +4703,7 @@ class ApiGateway {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/%24%7BUri.encodeQueryComponent%28resourceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return Resource.fromJson(response);
@@ -4773,7 +4773,7 @@ class ApiGateway {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/restapis/%24%7BUri.encodeQueryComponent%28restApiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}',
+          '/restapis/${Uri.encodeQueryComponent(restApiId).replaceAll('+', '%20')}/stages/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return Stage.fromJson(response);
@@ -4812,7 +4812,7 @@ class ApiGateway {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/usageplans/${Uri.encodeQueryComponent(usagePlanId).replaceAll('+', '%20')}/keys/%24%7BUri.encodeQueryComponent%28keyId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/usage',
+          '/usageplans/${Uri.encodeQueryComponent(usagePlanId).replaceAll('+', '%20')}/keys/${Uri.encodeQueryComponent(keyId).replaceAll('+', '%20')}/usage',
       exceptionFnMap: _exceptionFns,
     );
     return Usage.fromJson(response);

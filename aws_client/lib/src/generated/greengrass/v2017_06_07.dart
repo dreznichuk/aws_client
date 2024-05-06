@@ -1195,7 +1195,7 @@ class Greengrass {
       payload: null,
       method: 'GET',
       requestUri:
-          '/greengrass/definition/connectors/%24%7BUri.encodeQueryComponent%28connectorDefinitionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(connectorDefinitionVersionId).replaceAll('+', '%20')}',
+          '/greengrass/definition/connectors/${Uri.encodeQueryComponent(connectorDefinitionId).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(connectorDefinitionVersionId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1243,7 +1243,7 @@ class Greengrass {
       payload: null,
       method: 'GET',
       requestUri:
-          '/greengrass/definition/cores/%24%7BUri.encodeQueryComponent%28coreDefinitionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(coreDefinitionVersionId).replaceAll('+', '%20')}',
+          '/greengrass/definition/cores/${Uri.encodeQueryComponent(coreDefinitionId).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(coreDefinitionVersionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetCoreDefinitionVersionResponse.fromJson(response);
@@ -1266,7 +1266,7 @@ class Greengrass {
       payload: null,
       method: 'GET',
       requestUri:
-          '/greengrass/groups/${Uri.encodeQueryComponent(groupId).replaceAll('+', '%20')}/deployments/%24%7BUri.encodeQueryComponent%28deploymentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/status',
+          '/greengrass/groups/${Uri.encodeQueryComponent(groupId).replaceAll('+', '%20')}/deployments/${Uri.encodeQueryComponent(deploymentId).replaceAll('+', '%20')}/status',
       exceptionFnMap: _exceptionFns,
     );
     return GetDeploymentStatusResponse.fromJson(response);
@@ -1321,7 +1321,7 @@ class Greengrass {
       payload: null,
       method: 'GET',
       requestUri:
-          '/greengrass/definition/devices/%24%7BUri.encodeQueryComponent%28deviceDefinitionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(deviceDefinitionVersionId).replaceAll('+', '%20')}',
+          '/greengrass/definition/devices/${Uri.encodeQueryComponent(deviceDefinitionId).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(deviceDefinitionVersionId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1380,7 +1380,7 @@ class Greengrass {
       payload: null,
       method: 'GET',
       requestUri:
-          '/greengrass/definition/functions/%24%7BUri.encodeQueryComponent%28functionDefinitionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(functionDefinitionVersionId).replaceAll('+', '%20')}',
+          '/greengrass/definition/functions/${Uri.encodeQueryComponent(functionDefinitionId).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(functionDefinitionVersionId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1425,7 +1425,7 @@ class Greengrass {
       payload: null,
       method: 'GET',
       requestUri:
-          '/greengrass/groups/${Uri.encodeQueryComponent(groupId).replaceAll('+', '%20')}/certificateauthorities/%24%7BUri.encodeQueryComponent%28certificateAuthorityId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/greengrass/groups/${Uri.encodeQueryComponent(groupId).replaceAll('+', '%20')}/certificateauthorities/${Uri.encodeQueryComponent(certificateAuthorityId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetGroupCertificateAuthorityResponse.fromJson(response);
@@ -1473,7 +1473,7 @@ class Greengrass {
       payload: null,
       method: 'GET',
       requestUri:
-          '/greengrass/groups/%24%7BUri.encodeQueryComponent%28groupId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(groupVersionId).replaceAll('+', '%20')}',
+          '/greengrass/groups/${Uri.encodeQueryComponent(groupId).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(groupVersionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetGroupVersionResponse.fromJson(response);
@@ -1528,7 +1528,7 @@ class Greengrass {
       payload: null,
       method: 'GET',
       requestUri:
-          '/greengrass/definition/loggers/%24%7BUri.encodeQueryComponent%28loggerDefinitionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(loggerDefinitionVersionId).replaceAll('+', '%20')}',
+          '/greengrass/definition/loggers/${Uri.encodeQueryComponent(loggerDefinitionId).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(loggerDefinitionVersionId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1578,7 +1578,7 @@ class Greengrass {
       payload: null,
       method: 'GET',
       requestUri:
-          '/greengrass/definition/resources/%24%7BUri.encodeQueryComponent%28resourceDefinitionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(resourceDefinitionVersionId).replaceAll('+', '%20')}',
+          '/greengrass/definition/resources/${Uri.encodeQueryComponent(resourceDefinitionId).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(resourceDefinitionVersionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetResourceDefinitionVersionResponse.fromJson(response);
@@ -1647,7 +1647,7 @@ class Greengrass {
       payload: null,
       method: 'GET',
       requestUri:
-          '/greengrass/definition/subscriptions/%24%7BUri.encodeQueryComponent%28subscriptionDefinitionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(subscriptionDefinitionVersionId).replaceAll('+', '%20')}',
+          '/greengrass/definition/subscriptions/${Uri.encodeQueryComponent(subscriptionDefinitionId).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(subscriptionDefinitionVersionId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

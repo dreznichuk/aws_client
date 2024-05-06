@@ -152,7 +152,7 @@ class IoTTwinMaker {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/component-types/%24%7BUri.encodeQueryComponent%28componentTypeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/component-types/${Uri.encodeQueryComponent(componentTypeId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateComponentTypeResponse.fromJson(response);
@@ -310,7 +310,7 @@ class IoTTwinMaker {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/sync-jobs/%24%7BUri.encodeQueryComponent%28syncSource%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/sync-jobs/${Uri.encodeQueryComponent(syncSource).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateSyncJobResponse.fromJson(response);
@@ -384,7 +384,7 @@ class IoTTwinMaker {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/component-types/%24%7BUri.encodeQueryComponent%28componentTypeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/component-types/${Uri.encodeQueryComponent(componentTypeId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteComponentTypeResponse.fromJson(response);
@@ -419,7 +419,7 @@ class IoTTwinMaker {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/entities/%24%7BUri.encodeQueryComponent%28entityId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/entities/${Uri.encodeQueryComponent(entityId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -447,7 +447,7 @@ class IoTTwinMaker {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/scenes/%24%7BUri.encodeQueryComponent%28sceneId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/scenes/${Uri.encodeQueryComponent(sceneId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -477,7 +477,7 @@ class IoTTwinMaker {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/sync-jobs/%24%7BUri.encodeQueryComponent%28syncSource%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/sync-jobs/${Uri.encodeQueryComponent(syncSource).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteSyncJobResponse.fromJson(response);
@@ -576,7 +576,7 @@ class IoTTwinMaker {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/component-types/%24%7BUri.encodeQueryComponent%28componentTypeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/component-types/${Uri.encodeQueryComponent(componentTypeId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetComponentTypeResponse.fromJson(response);
@@ -603,7 +603,7 @@ class IoTTwinMaker {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/entities/%24%7BUri.encodeQueryComponent%28entityId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/entities/${Uri.encodeQueryComponent(entityId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetEntityResponse.fromJson(response);
@@ -842,7 +842,7 @@ class IoTTwinMaker {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/scenes/%24%7BUri.encodeQueryComponent%28sceneId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/scenes/${Uri.encodeQueryComponent(sceneId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSceneResponse.fromJson(response);
@@ -1149,7 +1149,7 @@ class IoTTwinMaker {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/sync-jobs/%24%7BUri.encodeQueryComponent%28syncSource%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/resources-list',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/sync-jobs/${Uri.encodeQueryComponent(syncSource).replaceAll('+', '%20')}/resources-list',
       exceptionFnMap: _exceptionFns,
     );
     return ListSyncResourcesResponse.fromJson(response);
@@ -1350,7 +1350,7 @@ class IoTTwinMaker {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/component-types/%24%7BUri.encodeQueryComponent%28componentTypeId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/component-types/${Uri.encodeQueryComponent(componentTypeId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateComponentTypeResponse.fromJson(response);
@@ -1402,7 +1402,7 @@ class IoTTwinMaker {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/entities/%24%7BUri.encodeQueryComponent%28entityId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/entities/${Uri.encodeQueryComponent(entityId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateEntityResponse.fromJson(response);
@@ -1481,7 +1481,7 @@ class IoTTwinMaker {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/scenes/%24%7BUri.encodeQueryComponent%28sceneId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/scenes/${Uri.encodeQueryComponent(sceneId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSceneResponse.fromJson(response);

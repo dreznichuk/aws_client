@@ -83,7 +83,7 @@ class IoT1ClickProjects {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/placements/%24%7BUri.encodeQueryComponent%28placementName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/devices/%2524%257BUri.encodeQueryComponent%2528deviceTemplateName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
+          '/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/placements/${Uri.encodeQueryComponent(placementName).replaceAll('+', '%20')}/devices/${Uri.encodeQueryComponent(deviceTemplateName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -193,7 +193,7 @@ class IoT1ClickProjects {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/placements/%24%7BUri.encodeQueryComponent%28placementName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/placements/${Uri.encodeQueryComponent(placementName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -242,7 +242,7 @@ class IoT1ClickProjects {
       payload: null,
       method: 'GET',
       requestUri:
-          '/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/placements/%24%7BUri.encodeQueryComponent%28placementName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/placements/${Uri.encodeQueryComponent(placementName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribePlacementResponse.fromJson(response);
@@ -293,7 +293,7 @@ class IoT1ClickProjects {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/placements/%24%7BUri.encodeQueryComponent%28placementName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/devices/%2524%257BUri.encodeQueryComponent%2528deviceTemplateName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
+          '/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/placements/${Uri.encodeQueryComponent(placementName).replaceAll('+', '%20')}/devices/${Uri.encodeQueryComponent(deviceTemplateName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -317,7 +317,7 @@ class IoT1ClickProjects {
       payload: null,
       method: 'GET',
       requestUri:
-          '/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/placements/%24%7BUri.encodeQueryComponent%28placementName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/devices',
+          '/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/placements/${Uri.encodeQueryComponent(placementName).replaceAll('+', '%20')}/devices',
       exceptionFnMap: _exceptionFns,
     );
     return GetDevicesInPlacementResponse.fromJson(response);
@@ -513,7 +513,7 @@ class IoT1ClickProjects {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/placements/%24%7BUri.encodeQueryComponent%28placementName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/projects/${Uri.encodeQueryComponent(projectName).replaceAll('+', '%20')}/placements/${Uri.encodeQueryComponent(placementName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

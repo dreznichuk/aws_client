@@ -300,7 +300,7 @@ class ServerlessApplicationRepository {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(semanticVersion).replaceAll('+', '%20')}',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(semanticVersion).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateApplicationVersionResponse.fromJson(response);
@@ -610,7 +610,7 @@ class ServerlessApplicationRepository {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetCloudFormationTemplateResponse.fromJson(response);

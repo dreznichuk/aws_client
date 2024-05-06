@@ -102,7 +102,7 @@ class IoTJobsDataPlane {
       payload: null,
       method: 'GET',
       requestUri:
-          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/jobs/%24%7BUri.encodeQueryComponent%28jobId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -260,7 +260,7 @@ class IoTJobsDataPlane {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/jobs/%24%7BUri.encodeQueryComponent%28jobId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateJobExecutionResponse.fromJson(response);

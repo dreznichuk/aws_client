@@ -569,7 +569,7 @@ class SesV2 {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v2/email/identities/%24%7BUri.encodeQueryComponent%28emailIdentity%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/policies/${Uri.encodeQueryComponent(policyName).replaceAll('+', '%20')}',
+          '/v2/email/identities/${Uri.encodeQueryComponent(emailIdentity).replaceAll('+', '%20')}/policies/${Uri.encodeQueryComponent(policyName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -691,7 +691,7 @@ class SesV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/email/configuration-sets/%24%7BUri.encodeQueryComponent%28configurationSetName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/event-destinations/${Uri.encodeQueryComponent(eventDestinationName).replaceAll('+', '%20')}',
+          '/v2/email/configuration-sets/${Uri.encodeQueryComponent(configurationSetName).replaceAll('+', '%20')}/event-destinations/${Uri.encodeQueryComponent(eventDestinationName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -715,7 +715,7 @@ class SesV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/email/contact-lists/%24%7BUri.encodeQueryComponent%28contactListName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/contacts/${Uri.encodeQueryComponent(emailAddress).replaceAll('+', '%20')}',
+          '/v2/email/contact-lists/${Uri.encodeQueryComponent(contactListName).replaceAll('+', '%20')}/contacts/${Uri.encodeQueryComponent(emailAddress).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -847,7 +847,7 @@ class SesV2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v2/email/identities/%24%7BUri.encodeQueryComponent%28emailIdentity%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/policies/${Uri.encodeQueryComponent(policyName).replaceAll('+', '%20')}',
+          '/v2/email/identities/${Uri.encodeQueryComponent(emailIdentity).replaceAll('+', '%20')}/policies/${Uri.encodeQueryComponent(policyName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1015,7 +1015,7 @@ class SesV2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v2/email/contact-lists/%24%7BUri.encodeQueryComponent%28contactListName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/contacts/${Uri.encodeQueryComponent(emailAddress).replaceAll('+', '%20')}',
+          '/v2/email/contact-lists/${Uri.encodeQueryComponent(contactListName).replaceAll('+', '%20')}/contacts/${Uri.encodeQueryComponent(emailAddress).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetContactResponse.fromJson(response);
@@ -3174,7 +3174,7 @@ class SesV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v2/email/configuration-sets/%24%7BUri.encodeQueryComponent%28configurationSetName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/event-destinations/${Uri.encodeQueryComponent(eventDestinationName).replaceAll('+', '%20')}',
+          '/v2/email/configuration-sets/${Uri.encodeQueryComponent(configurationSetName).replaceAll('+', '%20')}/event-destinations/${Uri.encodeQueryComponent(eventDestinationName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3219,7 +3219,7 @@ class SesV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v2/email/contact-lists/%24%7BUri.encodeQueryComponent%28contactListName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/contacts/${Uri.encodeQueryComponent(emailAddress).replaceAll('+', '%20')}',
+          '/v2/email/contact-lists/${Uri.encodeQueryComponent(contactListName).replaceAll('+', '%20')}/contacts/${Uri.encodeQueryComponent(emailAddress).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3367,7 +3367,7 @@ class SesV2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v2/email/identities/%24%7BUri.encodeQueryComponent%28emailIdentity%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/policies/${Uri.encodeQueryComponent(policyName).replaceAll('+', '%20')}',
+          '/v2/email/identities/${Uri.encodeQueryComponent(emailIdentity).replaceAll('+', '%20')}/policies/${Uri.encodeQueryComponent(policyName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

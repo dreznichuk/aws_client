@@ -302,7 +302,7 @@ class Prometheus {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/rulegroupsnamespaces/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/rulegroupsnamespaces/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -407,7 +407,7 @@ class Prometheus {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/rulegroupsnamespaces/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/rulegroupsnamespaces/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeRuleGroupsNamespaceResponse.fromJson(response);
@@ -626,7 +626,7 @@ class Prometheus {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/rulegroupsnamespaces/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workspaces/${Uri.encodeQueryComponent(workspaceId).replaceAll('+', '%20')}/rulegroupsnamespaces/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return PutRuleGroupsNamespaceResponse.fromJson(response);

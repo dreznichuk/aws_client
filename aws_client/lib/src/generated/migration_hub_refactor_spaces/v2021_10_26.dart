@@ -347,7 +347,7 @@ class MigrationHubRefactorSpaces {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications/%24%7BUri.encodeQueryComponent%28applicationIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/routes',
+          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications/${Uri.encodeQueryComponent(applicationIdentifier).replaceAll('+', '%20')}/routes',
       exceptionFnMap: _exceptionFns,
     );
     return CreateRouteResponse.fromJson(response);
@@ -436,7 +436,7 @@ class MigrationHubRefactorSpaces {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications/%24%7BUri.encodeQueryComponent%28applicationIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/services',
+          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications/${Uri.encodeQueryComponent(applicationIdentifier).replaceAll('+', '%20')}/services',
       exceptionFnMap: _exceptionFns,
     );
     return CreateServiceResponse.fromJson(response);
@@ -466,7 +466,7 @@ class MigrationHubRefactorSpaces {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications/%24%7BUri.encodeQueryComponent%28applicationIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications/${Uri.encodeQueryComponent(applicationIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteApplicationResponse.fromJson(response);
@@ -546,7 +546,7 @@ class MigrationHubRefactorSpaces {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/environments/%24%7BUri.encodeQueryComponent%28environmentIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/applications/%2524%257BUri.encodeQueryComponent%2528applicationIdentifier%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/routes/${Uri.encodeQueryComponent(routeIdentifier).replaceAll('+', '%20')}',
+          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications/${Uri.encodeQueryComponent(applicationIdentifier).replaceAll('+', '%20')}/routes/${Uri.encodeQueryComponent(routeIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteRouteResponse.fromJson(response);
@@ -583,7 +583,7 @@ class MigrationHubRefactorSpaces {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/environments/%24%7BUri.encodeQueryComponent%28environmentIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/applications/%2524%257BUri.encodeQueryComponent%2528applicationIdentifier%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}',
+          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications/${Uri.encodeQueryComponent(applicationIdentifier).replaceAll('+', '%20')}/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteServiceResponse.fromJson(response);
@@ -610,7 +610,7 @@ class MigrationHubRefactorSpaces {
       payload: null,
       method: 'GET',
       requestUri:
-          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications/%24%7BUri.encodeQueryComponent%28applicationIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications/${Uri.encodeQueryComponent(applicationIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetApplicationResponse.fromJson(response);
@@ -688,7 +688,7 @@ class MigrationHubRefactorSpaces {
       payload: null,
       method: 'GET',
       requestUri:
-          '/environments/%24%7BUri.encodeQueryComponent%28environmentIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/applications/%2524%257BUri.encodeQueryComponent%2528applicationIdentifier%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/routes/${Uri.encodeQueryComponent(routeIdentifier).replaceAll('+', '%20')}',
+          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications/${Uri.encodeQueryComponent(applicationIdentifier).replaceAll('+', '%20')}/routes/${Uri.encodeQueryComponent(routeIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetRouteResponse.fromJson(response);
@@ -719,7 +719,7 @@ class MigrationHubRefactorSpaces {
       payload: null,
       method: 'GET',
       requestUri:
-          '/environments/%24%7BUri.encodeQueryComponent%28environmentIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/applications/%2524%257BUri.encodeQueryComponent%2528applicationIdentifier%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}',
+          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications/${Uri.encodeQueryComponent(applicationIdentifier).replaceAll('+', '%20')}/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetServiceResponse.fromJson(response);
@@ -901,7 +901,7 @@ class MigrationHubRefactorSpaces {
       payload: null,
       method: 'GET',
       requestUri:
-          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications/%24%7BUri.encodeQueryComponent%28applicationIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/routes',
+          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications/${Uri.encodeQueryComponent(applicationIdentifier).replaceAll('+', '%20')}/routes',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -952,7 +952,7 @@ class MigrationHubRefactorSpaces {
       payload: null,
       method: 'GET',
       requestUri:
-          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications/%24%7BUri.encodeQueryComponent%28applicationIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/services',
+          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications/${Uri.encodeQueryComponent(applicationIdentifier).replaceAll('+', '%20')}/services',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1116,7 +1116,7 @@ class MigrationHubRefactorSpaces {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/environments/%24%7BUri.encodeQueryComponent%28environmentIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/applications/%2524%257BUri.encodeQueryComponent%2528applicationIdentifier%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/routes/${Uri.encodeQueryComponent(routeIdentifier).replaceAll('+', '%20')}',
+          '/environments/${Uri.encodeQueryComponent(environmentIdentifier).replaceAll('+', '%20')}/applications/${Uri.encodeQueryComponent(applicationIdentifier).replaceAll('+', '%20')}/routes/${Uri.encodeQueryComponent(routeIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateRouteResponse.fromJson(response);

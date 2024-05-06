@@ -172,7 +172,7 @@ class Schemas {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/registries/name/%24%7BUri.encodeQueryComponent%28registryName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}',
+          '/v1/registries/name/${Uri.encodeQueryComponent(registryName).replaceAll('+', '%20')}/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CreateSchemaResponse.fromJson(response);
@@ -272,7 +272,7 @@ class Schemas {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/registries/name/%24%7BUri.encodeQueryComponent%28registryName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}',
+          '/v1/registries/name/${Uri.encodeQueryComponent(registryName).replaceAll('+', '%20')}/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -303,7 +303,7 @@ class Schemas {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/registries/name/%2524%257BUri.encodeQueryComponent%2528registryName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/schemas/name/%24%7BUri.encodeQueryComponent%28schemaName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/version/${Uri.encodeQueryComponent(schemaVersion).replaceAll('+', '%20')}',
+          '/v1/registries/name/${Uri.encodeQueryComponent(registryName).replaceAll('+', '%20')}/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}/version/${Uri.encodeQueryComponent(schemaVersion).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -341,7 +341,7 @@ class Schemas {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/registries/name/%24%7BUri.encodeQueryComponent%28registryName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}/language/%2524%257BUri.encodeQueryComponent%2528language%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
+          '/v1/registries/name/${Uri.encodeQueryComponent(registryName).replaceAll('+', '%20')}/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}/language/${Uri.encodeQueryComponent(language).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -425,7 +425,7 @@ class Schemas {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/registries/name/%24%7BUri.encodeQueryComponent%28registryName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}',
+          '/v1/registries/name/${Uri.encodeQueryComponent(registryName).replaceAll('+', '%20')}/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -463,7 +463,7 @@ class Schemas {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/registries/name/%24%7BUri.encodeQueryComponent%28registryName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}/export',
+          '/v1/registries/name/${Uri.encodeQueryComponent(registryName).replaceAll('+', '%20')}/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}/export',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -503,7 +503,7 @@ class Schemas {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/registries/name/%24%7BUri.encodeQueryComponent%28registryName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}/language/%2524%257BUri.encodeQueryComponent%2528language%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/source',
+          '/v1/registries/name/${Uri.encodeQueryComponent(registryName).replaceAll('+', '%20')}/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}/language/${Uri.encodeQueryComponent(language).replaceAll('+', '%20')}/source',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -690,7 +690,7 @@ class Schemas {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/registries/name/%24%7BUri.encodeQueryComponent%28registryName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}/versions',
+          '/v1/registries/name/${Uri.encodeQueryComponent(registryName).replaceAll('+', '%20')}/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}/versions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -794,7 +794,7 @@ class Schemas {
       payload: null,
       method: 'POST',
       requestUri:
-          '/v1/registries/name/%24%7BUri.encodeQueryComponent%28registryName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}/language/%2524%257BUri.encodeQueryComponent%2528language%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
+          '/v1/registries/name/${Uri.encodeQueryComponent(registryName).replaceAll('+', '%20')}/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}/language/${Uri.encodeQueryComponent(language).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1101,7 +1101,7 @@ class Schemas {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/v1/registries/name/%24%7BUri.encodeQueryComponent%28registryName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}',
+          '/v1/registries/name/${Uri.encodeQueryComponent(registryName).replaceAll('+', '%20')}/schemas/name/${Uri.encodeQueryComponent(schemaName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSchemaResponse.fromJson(response);

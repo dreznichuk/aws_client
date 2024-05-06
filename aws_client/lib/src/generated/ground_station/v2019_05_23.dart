@@ -369,7 +369,7 @@ class GroundStation {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/config/${Uri.encodeQueryComponent(configType.toValue()).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28configId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/config/${Uri.encodeQueryComponent(configType.toValue()).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(configId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ConfigIdResponse.fromJson(response);
@@ -525,7 +525,7 @@ class GroundStation {
       payload: null,
       method: 'GET',
       requestUri:
-          '/config/${Uri.encodeQueryComponent(configType.toValue()).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28configId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/config/${Uri.encodeQueryComponent(configType.toValue()).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(configId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetConfigResponse.fromJson(response);
@@ -1184,7 +1184,7 @@ class GroundStation {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/config/${Uri.encodeQueryComponent(configType.toValue()).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28configId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/config/${Uri.encodeQueryComponent(configType.toValue()).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(configId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ConfigIdResponse.fromJson(response);

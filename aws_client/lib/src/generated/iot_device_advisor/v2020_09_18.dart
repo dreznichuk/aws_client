@@ -211,7 +211,7 @@ class IoTDeviceAdvisor {
       payload: null,
       method: 'GET',
       requestUri:
-          '/suiteDefinitions/%24%7BUri.encodeQueryComponent%28suiteDefinitionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/suiteRuns/${Uri.encodeQueryComponent(suiteRunId).replaceAll('+', '%20')}',
+          '/suiteDefinitions/${Uri.encodeQueryComponent(suiteDefinitionId).replaceAll('+', '%20')}/suiteRuns/${Uri.encodeQueryComponent(suiteRunId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSuiteRunResponse.fromJson(response);
@@ -241,7 +241,7 @@ class IoTDeviceAdvisor {
       payload: null,
       method: 'GET',
       requestUri:
-          '/suiteDefinitions/%24%7BUri.encodeQueryComponent%28suiteDefinitionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/suiteRuns/${Uri.encodeQueryComponent(suiteRunId).replaceAll('+', '%20')}/report',
+          '/suiteDefinitions/${Uri.encodeQueryComponent(suiteDefinitionId).replaceAll('+', '%20')}/suiteRuns/${Uri.encodeQueryComponent(suiteRunId).replaceAll('+', '%20')}/report',
       exceptionFnMap: _exceptionFns,
     );
     return GetSuiteRunReportResponse.fromJson(response);
@@ -430,7 +430,7 @@ class IoTDeviceAdvisor {
       payload: null,
       method: 'POST',
       requestUri:
-          '/suiteDefinitions/%24%7BUri.encodeQueryComponent%28suiteDefinitionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/suiteRuns/${Uri.encodeQueryComponent(suiteRunId).replaceAll('+', '%20')}/stop',
+          '/suiteDefinitions/${Uri.encodeQueryComponent(suiteDefinitionId).replaceAll('+', '%20')}/suiteRuns/${Uri.encodeQueryComponent(suiteRunId).replaceAll('+', '%20')}/stop',
       exceptionFnMap: _exceptionFns,
     );
   }

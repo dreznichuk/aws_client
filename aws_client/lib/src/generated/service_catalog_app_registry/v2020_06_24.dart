@@ -77,7 +77,7 @@ class AppRegistry {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/applications/%24%7BUri.encodeQueryComponent%28application%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/attribute-groups/${Uri.encodeQueryComponent(attributeGroup).replaceAll('+', '%20')}',
+          '/applications/${Uri.encodeQueryComponent(application).replaceAll('+', '%20')}/attribute-groups/${Uri.encodeQueryComponent(attributeGroup).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return AssociateAttributeGroupResponse.fromJson(response);
@@ -111,7 +111,7 @@ class AppRegistry {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/applications/%2524%257BUri.encodeQueryComponent%2528application%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/resources/${Uri.encodeQueryComponent(resourceType.toValue()).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28resource%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/applications/${Uri.encodeQueryComponent(application).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(resourceType.toValue()).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(resource).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return AssociateResourceResponse.fromJson(response);
@@ -283,7 +283,7 @@ class AppRegistry {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/applications/%24%7BUri.encodeQueryComponent%28application%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/attribute-groups/${Uri.encodeQueryComponent(attributeGroup).replaceAll('+', '%20')}',
+          '/applications/${Uri.encodeQueryComponent(application).replaceAll('+', '%20')}/attribute-groups/${Uri.encodeQueryComponent(attributeGroup).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DisassociateAttributeGroupResponse.fromJson(response);
@@ -314,7 +314,7 @@ class AppRegistry {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/applications/%2524%257BUri.encodeQueryComponent%2528application%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/resources/${Uri.encodeQueryComponent(resourceType.toValue()).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28resource%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/applications/${Uri.encodeQueryComponent(application).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(resourceType.toValue()).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(resource).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DisassociateResourceResponse.fromJson(response);
@@ -370,7 +370,7 @@ class AppRegistry {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/%2524%257BUri.encodeQueryComponent%2528application%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/resources/${Uri.encodeQueryComponent(resourceType.toValue()).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28resource%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/applications/${Uri.encodeQueryComponent(application).replaceAll('+', '%20')}/resources/${Uri.encodeQueryComponent(resourceType.toValue()).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(resource).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetAssociatedResourceResponse.fromJson(response);
@@ -693,7 +693,7 @@ class AppRegistry {
       payload: null,
       method: 'POST',
       requestUri:
-          '/sync/${Uri.encodeQueryComponent(resourceType.toValue()).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28resource%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/sync/${Uri.encodeQueryComponent(resourceType.toValue()).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(resource).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return SyncResourceResponse.fromJson(response);

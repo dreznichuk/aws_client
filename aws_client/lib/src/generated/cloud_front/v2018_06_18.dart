@@ -910,7 +910,7 @@ class CloudFront {
     final $result = await _protocol.sendRaw(
       method: 'GET',
       requestUri:
-          '/2018-06-18/distribution/%24%7BUri.encodeQueryComponent%28distributionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/invalidation/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
+          '/2018-06-18/distribution/${Uri.encodeQueryComponent(distributionId).replaceAll('+', '%20')}/invalidation/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $elem = await _s.xmlFromResponse($result);

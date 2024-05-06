@@ -129,7 +129,7 @@ class Elasticsearch {
       payload: null,
       method: 'POST',
       requestUri:
-          '/2015-01-01/packages/associate/${Uri.encodeQueryComponent(packageID).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28domainName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/2015-01-01/packages/associate/${Uri.encodeQueryComponent(packageID).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return AssociatePackageResponse.fromJson(response);
@@ -766,7 +766,7 @@ class Elasticsearch {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-01-01/es/instanceTypeLimits/%24%7BUri.encodeQueryComponent%28elasticsearchVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(instanceType.toValue()).replaceAll('+', '%20')}',
+          '/2015-01-01/es/instanceTypeLimits/${Uri.encodeQueryComponent(elasticsearchVersion).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(instanceType.toValue()).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1063,7 +1063,7 @@ class Elasticsearch {
       payload: null,
       method: 'POST',
       requestUri:
-          '/2015-01-01/packages/dissociate/${Uri.encodeQueryComponent(packageID).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28domainName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/2015-01-01/packages/dissociate/${Uri.encodeQueryComponent(packageID).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DissociatePackageResponse.fromJson(response);

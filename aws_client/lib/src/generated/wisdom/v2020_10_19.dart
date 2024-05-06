@@ -423,7 +423,7 @@ class ConnectWisdom {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/assistants/${Uri.encodeQueryComponent(assistantId).replaceAll('+', '%20')}/associations/%24%7BUri.encodeQueryComponent%28assistantAssociationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/assistants/${Uri.encodeQueryComponent(assistantId).replaceAll('+', '%20')}/associations/${Uri.encodeQueryComponent(assistantAssociationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -449,7 +449,7 @@ class ConnectWisdom {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/knowledgeBases/${Uri.encodeQueryComponent(knowledgeBaseId).replaceAll('+', '%20')}/contents/%24%7BUri.encodeQueryComponent%28contentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/knowledgeBases/${Uri.encodeQueryComponent(knowledgeBaseId).replaceAll('+', '%20')}/contents/${Uri.encodeQueryComponent(contentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -531,7 +531,7 @@ class ConnectWisdom {
       payload: null,
       method: 'GET',
       requestUri:
-          '/assistants/${Uri.encodeQueryComponent(assistantId).replaceAll('+', '%20')}/associations/%24%7BUri.encodeQueryComponent%28assistantAssociationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/assistants/${Uri.encodeQueryComponent(assistantId).replaceAll('+', '%20')}/associations/${Uri.encodeQueryComponent(assistantAssociationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetAssistantAssociationResponse.fromJson(response);
@@ -558,7 +558,7 @@ class ConnectWisdom {
       payload: null,
       method: 'GET',
       requestUri:
-          '/knowledgeBases/${Uri.encodeQueryComponent(knowledgeBaseId).replaceAll('+', '%20')}/contents/%24%7BUri.encodeQueryComponent%28contentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/knowledgeBases/${Uri.encodeQueryComponent(knowledgeBaseId).replaceAll('+', '%20')}/contents/${Uri.encodeQueryComponent(contentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetContentResponse.fromJson(response);
@@ -585,7 +585,7 @@ class ConnectWisdom {
       payload: null,
       method: 'GET',
       requestUri:
-          '/knowledgeBases/${Uri.encodeQueryComponent(knowledgeBaseId).replaceAll('+', '%20')}/contents/%24%7BUri.encodeQueryComponent%28contentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/summary',
+          '/knowledgeBases/${Uri.encodeQueryComponent(knowledgeBaseId).replaceAll('+', '%20')}/contents/${Uri.encodeQueryComponent(contentId).replaceAll('+', '%20')}/summary',
       exceptionFnMap: _exceptionFns,
     );
     return GetContentSummaryResponse.fromJson(response);
@@ -670,7 +670,7 @@ class ConnectWisdom {
       payload: null,
       method: 'GET',
       requestUri:
-          '/assistants/%24%7BUri.encodeQueryComponent%28assistantId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/sessions/${Uri.encodeQueryComponent(sessionId).replaceAll('+', '%20')}/recommendations',
+          '/assistants/${Uri.encodeQueryComponent(assistantId).replaceAll('+', '%20')}/sessions/${Uri.encodeQueryComponent(sessionId).replaceAll('+', '%20')}/recommendations',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -698,7 +698,7 @@ class ConnectWisdom {
       payload: null,
       method: 'GET',
       requestUri:
-          '/assistants/%24%7BUri.encodeQueryComponent%28assistantId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/sessions/${Uri.encodeQueryComponent(sessionId).replaceAll('+', '%20')}',
+          '/assistants/${Uri.encodeQueryComponent(assistantId).replaceAll('+', '%20')}/sessions/${Uri.encodeQueryComponent(sessionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSessionResponse.fromJson(response);
@@ -910,7 +910,7 @@ class ConnectWisdom {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/assistants/%24%7BUri.encodeQueryComponent%28assistantId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/sessions/${Uri.encodeQueryComponent(sessionId).replaceAll('+', '%20')}/recommendations/notify',
+          '/assistants/${Uri.encodeQueryComponent(assistantId).replaceAll('+', '%20')}/sessions/${Uri.encodeQueryComponent(sessionId).replaceAll('+', '%20')}/recommendations/notify',
       exceptionFnMap: _exceptionFns,
     );
     return NotifyRecommendationsReceivedResponse.fromJson(response);
@@ -1239,7 +1239,7 @@ class ConnectWisdom {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/knowledgeBases/${Uri.encodeQueryComponent(knowledgeBaseId).replaceAll('+', '%20')}/contents/%24%7BUri.encodeQueryComponent%28contentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/knowledgeBases/${Uri.encodeQueryComponent(knowledgeBaseId).replaceAll('+', '%20')}/contents/${Uri.encodeQueryComponent(contentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateContentResponse.fromJson(response);

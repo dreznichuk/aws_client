@@ -222,7 +222,7 @@ class GameSparks {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/game/%24%7BUri.encodeQueryComponent%28gameName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}',
+          '/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -255,7 +255,7 @@ class GameSparks {
       payload: null,
       method: 'POST',
       requestUri:
-          '/runtime/game/%2524%257BUri.encodeQueryComponent%2528gameName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/player/%24%7BUri.encodeQueryComponent%28playerId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/disconnect',
+          '/runtime/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/player/${Uri.encodeQueryComponent(playerId).replaceAll('+', '%20')}/disconnect',
       exceptionFnMap: _exceptionFns,
     );
     return DisconnectPlayerResult.fromJson(response);
@@ -282,7 +282,7 @@ class GameSparks {
       payload: null,
       method: 'GET',
       requestUri:
-          '/game/%24%7BUri.encodeQueryComponent%28gameName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/snapshot/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}/export',
+          '/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}/snapshot/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}/export',
       exceptionFnMap: _exceptionFns,
     );
     return ExportSnapshotResult.fromJson(response);
@@ -309,7 +309,7 @@ class GameSparks {
       payload: null,
       method: 'GET',
       requestUri:
-          '/extension/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/extension/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetExtensionResult.fromJson(response);
@@ -340,7 +340,7 @@ class GameSparks {
       payload: null,
       method: 'GET',
       requestUri:
-          '/extension/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/version/%2524%257BUri.encodeQueryComponent%2528extensionVersion%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
+          '/extension/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/version/${Uri.encodeQueryComponent(extensionVersion).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetExtensionVersionResult.fromJson(response);
@@ -425,7 +425,7 @@ class GameSparks {
       payload: null,
       method: 'GET',
       requestUri:
-          '/game/%2524%257BUri.encodeQueryComponent%2528gameName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/snapshot/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}/generated-sdk-code-job/%24%7BUri.encodeQueryComponent%28jobId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}/snapshot/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}/generated-sdk-code-job/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetGeneratedCodeJobResult.fromJson(response);
@@ -460,7 +460,7 @@ class GameSparks {
       payload: null,
       method: 'GET',
       requestUri:
-          '/runtime/game/%2524%257BUri.encodeQueryComponent%2528gameName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/player/%24%7BUri.encodeQueryComponent%28playerId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/connection',
+          '/runtime/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/player/${Uri.encodeQueryComponent(playerId).replaceAll('+', '%20')}/connection',
       exceptionFnMap: _exceptionFns,
     );
     return GetPlayerConnectionStatusResult.fromJson(response);
@@ -494,7 +494,7 @@ class GameSparks {
       payload: null,
       method: 'GET',
       requestUri:
-          '/game/%24%7BUri.encodeQueryComponent%28gameName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/snapshot/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}',
+          '/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}/snapshot/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -522,7 +522,7 @@ class GameSparks {
       payload: null,
       method: 'GET',
       requestUri:
-          '/game/%24%7BUri.encodeQueryComponent%28gameName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}',
+          '/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetStageResult.fromJson(response);
@@ -557,7 +557,7 @@ class GameSparks {
       payload: null,
       method: 'GET',
       requestUri:
-          '/game/%24%7BUri.encodeQueryComponent%28gameName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/deployment',
+          '/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/deployment',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -649,7 +649,7 @@ class GameSparks {
       payload: null,
       method: 'GET',
       requestUri:
-          '/extension/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/version',
+          '/extension/${Uri.encodeQueryComponent(namespace).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/version',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -787,7 +787,7 @@ class GameSparks {
       payload: null,
       method: 'GET',
       requestUri:
-          '/game/%24%7BUri.encodeQueryComponent%28gameName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/snapshot/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}/generated-sdk-code-jobs',
+          '/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}/snapshot/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}/generated-sdk-code-jobs',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -887,7 +887,7 @@ class GameSparks {
       payload: null,
       method: 'GET',
       requestUri:
-          '/game/%24%7BUri.encodeQueryComponent%28gameName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/deployments',
+          '/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/deployments',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -993,7 +993,7 @@ class GameSparks {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/game/%24%7BUri.encodeQueryComponent%28gameName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/snapshot/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}/generated-sdk-code-job',
+          '/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}/snapshot/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}/generated-sdk-code-job',
       exceptionFnMap: _exceptionFns,
     );
     return StartGeneratedCodeJobResult.fromJson(response);
@@ -1043,7 +1043,7 @@ class GameSparks {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/game/%24%7BUri.encodeQueryComponent%28gameName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/deployment',
+          '/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}/deployment',
       exceptionFnMap: _exceptionFns,
     );
     return StartStageDeploymentResult.fromJson(response);
@@ -1193,7 +1193,7 @@ class GameSparks {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/game/%24%7BUri.encodeQueryComponent%28gameName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/snapshot/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}',
+          '/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}/snapshot/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSnapshotResult.fromJson(response);
@@ -1233,7 +1233,7 @@ class GameSparks {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/game/%24%7BUri.encodeQueryComponent%28gameName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}',
+          '/game/${Uri.encodeQueryComponent(gameName).replaceAll('+', '%20')}/stage/${Uri.encodeQueryComponent(stageName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateStageResult.fromJson(response);

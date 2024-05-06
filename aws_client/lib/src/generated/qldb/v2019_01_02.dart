@@ -74,7 +74,7 @@ class Qldb {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/ledgers/%24%7BUri.encodeQueryComponent%28ledgerName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/journal-kinesis-streams/${Uri.encodeQueryComponent(streamId).replaceAll('+', '%20')}',
+          '/ledgers/${Uri.encodeQueryComponent(ledgerName).replaceAll('+', '%20')}/journal-kinesis-streams/${Uri.encodeQueryComponent(streamId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CancelJournalKinesisStreamResponse.fromJson(response);
@@ -277,7 +277,7 @@ class Qldb {
       payload: null,
       method: 'GET',
       requestUri:
-          '/ledgers/%24%7BUri.encodeQueryComponent%28ledgerName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/journal-kinesis-streams/${Uri.encodeQueryComponent(streamId).replaceAll('+', '%20')}',
+          '/ledgers/${Uri.encodeQueryComponent(ledgerName).replaceAll('+', '%20')}/journal-kinesis-streams/${Uri.encodeQueryComponent(streamId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeJournalKinesisStreamResponse.fromJson(response);
@@ -314,7 +314,7 @@ class Qldb {
       payload: null,
       method: 'GET',
       requestUri:
-          '/ledgers/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/journal-s3-exports/%24%7BUri.encodeQueryComponent%28exportId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/ledgers/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/journal-s3-exports/${Uri.encodeQueryComponent(exportId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeJournalS3ExportResponse.fromJson(response);

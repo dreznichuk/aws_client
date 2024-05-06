@@ -264,7 +264,7 @@ class DataExchange {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/data-sets/%24%7BUri.encodeQueryComponent%28dataSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}/assets/%2524%257BUri.encodeQueryComponent%2528assetId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
+          '/v1/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}/assets/${Uri.encodeQueryComponent(assetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -335,7 +335,7 @@ class DataExchange {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/data-sets/%24%7BUri.encodeQueryComponent%28dataSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}',
+          '/v1/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -364,7 +364,7 @@ class DataExchange {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/data-sets/%24%7BUri.encodeQueryComponent%28dataSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}/assets/%2524%257BUri.encodeQueryComponent%2528assetId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
+          '/v1/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}/assets/${Uri.encodeQueryComponent(assetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetAssetResponse.fromJson(response);
@@ -456,7 +456,7 @@ class DataExchange {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/data-sets/%24%7BUri.encodeQueryComponent%28dataSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}',
+          '/v1/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetRevisionResponse.fromJson(response);
@@ -679,7 +679,7 @@ class DataExchange {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/data-sets/%24%7BUri.encodeQueryComponent%28dataSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}/assets',
+          '/v1/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}/assets',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -733,7 +733,7 @@ class DataExchange {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/data-sets/%24%7BUri.encodeQueryComponent%28dataSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}/revoke',
+          '/v1/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}/revoke',
       exceptionFnMap: _exceptionFns,
     );
     return RevokeRevisionResponse.fromJson(response);
@@ -926,7 +926,7 @@ class DataExchange {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/v1/data-sets/%24%7BUri.encodeQueryComponent%28dataSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}/assets/%2524%257BUri.encodeQueryComponent%2528assetId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
+          '/v1/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}/assets/${Uri.encodeQueryComponent(assetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAssetResponse.fromJson(response);
@@ -1033,7 +1033,7 @@ class DataExchange {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/v1/data-sets/%24%7BUri.encodeQueryComponent%28dataSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}',
+          '/v1/data-sets/${Uri.encodeQueryComponent(dataSetId).replaceAll('+', '%20')}/revisions/${Uri.encodeQueryComponent(revisionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateRevisionResponse.fromJson(response);

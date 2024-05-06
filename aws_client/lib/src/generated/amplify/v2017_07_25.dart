@@ -416,7 +416,7 @@ class Amplify {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}/deployments',
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}/deployments',
       exceptionFnMap: _exceptionFns,
     );
     return CreateDeploymentResult.fromJson(response);
@@ -558,7 +558,7 @@ class Amplify {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/backendenvironments/${Uri.encodeQueryComponent(environmentName).replaceAll('+', '%20')}',
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/backendenvironments/${Uri.encodeQueryComponent(environmentName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteBackendEnvironmentResult.fromJson(response);
@@ -585,7 +585,7 @@ class Amplify {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}',
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteBranchResult.fromJson(response);
@@ -612,7 +612,7 @@ class Amplify {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}',
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteDomainAssociationResult.fromJson(response);
@@ -643,7 +643,7 @@ class Amplify {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/apps/%2524%257BUri.encodeQueryComponent%2528appId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/branches/%24%7BUri.encodeQueryComponent%28branchName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteJobResult.fromJson(response);
@@ -779,7 +779,7 @@ class Amplify {
       payload: null,
       method: 'GET',
       requestUri:
-          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/backendenvironments/${Uri.encodeQueryComponent(environmentName).replaceAll('+', '%20')}',
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/backendenvironments/${Uri.encodeQueryComponent(environmentName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetBackendEnvironmentResult.fromJson(response);
@@ -805,7 +805,7 @@ class Amplify {
       payload: null,
       method: 'GET',
       requestUri:
-          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}',
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetBranchResult.fromJson(response);
@@ -831,7 +831,7 @@ class Amplify {
       payload: null,
       method: 'GET',
       requestUri:
-          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}',
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDomainAssociationResult.fromJson(response);
@@ -862,7 +862,7 @@ class Amplify {
       payload: null,
       method: 'GET',
       requestUri:
-          '/apps/%2524%257BUri.encodeQueryComponent%2528appId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/branches/%24%7BUri.encodeQueryComponent%28branchName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetJobResult.fromJson(response);
@@ -972,7 +972,7 @@ class Amplify {
       payload: null,
       method: 'GET',
       requestUri:
-          '/apps/%2524%257BUri.encodeQueryComponent%2528appId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/branches/%24%7BUri.encodeQueryComponent%28branchName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}/artifacts',
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}/artifacts',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1150,7 +1150,7 @@ class Amplify {
       payload: null,
       method: 'GET',
       requestUri:
-          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}/jobs',
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}/jobs',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1258,7 +1258,7 @@ class Amplify {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}/deployments/start',
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}/deployments/start',
       exceptionFnMap: _exceptionFns,
     );
     return StartDeploymentResult.fromJson(response);
@@ -1322,7 +1322,7 @@ class Amplify {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}/jobs',
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}/jobs',
       exceptionFnMap: _exceptionFns,
     );
     return StartJobResult.fromJson(response);
@@ -1353,7 +1353,7 @@ class Amplify {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/apps/%2524%257BUri.encodeQueryComponent%2528appId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/branches/%24%7BUri.encodeQueryComponent%28branchName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}/stop',
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}/stop',
       exceptionFnMap: _exceptionFns,
     );
     return StopJobResult.fromJson(response);
@@ -1689,7 +1689,7 @@ class Amplify {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}',
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/branches/${Uri.encodeQueryComponent(branchName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBranchResult.fromJson(response);
@@ -1742,7 +1742,7 @@ class Amplify {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/apps/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}',
+          '/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/domains/${Uri.encodeQueryComponent(domainName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDomainAssociationResult.fromJson(response);

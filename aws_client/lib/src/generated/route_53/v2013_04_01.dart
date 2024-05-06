@@ -99,7 +99,7 @@ class Route53 {
     final $result = await _protocol.send(
       method: 'POST',
       requestUri:
-          '/2013-04-01/keysigningkey/%24%7BUri.encodeQueryComponent%28hostedZoneId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/activate',
+          '/2013-04-01/keysigningkey/${Uri.encodeQueryComponent(hostedZoneId).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/activate',
       exceptionFnMap: _exceptionFns,
     );
     return ActivateKeySigningKeyResponse.fromXml($result.body);
@@ -458,7 +458,7 @@ class Route53 {
     await _protocol.send(
       method: 'POST',
       requestUri:
-          '/2013-04-01/tags/${Uri.encodeQueryComponent(resourceType.toValue()).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28resourceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/2013-04-01/tags/${Uri.encodeQueryComponent(resourceType.toValue()).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}',
       payload: ChangeTagsForResourceRequest(
               resourceId: resourceId,
               resourceType: resourceType,
@@ -1458,7 +1458,7 @@ class Route53 {
     final $result = await _protocol.send(
       method: 'POST',
       requestUri:
-          '/2013-04-01/keysigningkey/%24%7BUri.encodeQueryComponent%28hostedZoneId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/deactivate',
+          '/2013-04-01/keysigningkey/${Uri.encodeQueryComponent(hostedZoneId).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/deactivate',
       exceptionFnMap: _exceptionFns,
     );
     return DeactivateKeySigningKeyResponse.fromXml($result.body);
@@ -1628,7 +1628,7 @@ class Route53 {
     final $result = await _protocol.send(
       method: 'DELETE',
       requestUri:
-          '/2013-04-01/keysigningkey/%24%7BUri.encodeQueryComponent%28hostedZoneId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
+          '/2013-04-01/keysigningkey/${Uri.encodeQueryComponent(hostedZoneId).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteKeySigningKeyResponse.fromXml($result.body);
@@ -1733,7 +1733,7 @@ class Route53 {
     await _protocol.send(
       method: 'DELETE',
       requestUri:
-          '/2013-04-01/trafficpolicy/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(version.toString()).replaceAll('+', '%20')}',
+          '/2013-04-01/trafficpolicy/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(version.toString()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2344,7 +2344,7 @@ class Route53 {
     final $result = await _protocol.send(
       method: 'GET',
       requestUri:
-          '/2013-04-01/hostedzonelimit/%24%7BUri.encodeQueryComponent%28hostedZoneId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(type.toValue()).replaceAll('+', '%20')}',
+          '/2013-04-01/hostedzonelimit/${Uri.encodeQueryComponent(hostedZoneId).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(type.toValue()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetHostedZoneLimitResponse.fromXml($result.body);
@@ -2425,7 +2425,7 @@ class Route53 {
     final $result = await _protocol.send(
       method: 'GET',
       requestUri:
-          '/2013-04-01/reusabledelegationsetlimit/%24%7BUri.encodeQueryComponent%28delegationSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(type.toValue()).replaceAll('+', '%20')}',
+          '/2013-04-01/reusabledelegationsetlimit/${Uri.encodeQueryComponent(delegationSetId).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(type.toValue()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetReusableDelegationSetLimitResponse.fromXml($result.body);
@@ -2460,7 +2460,7 @@ class Route53 {
     final $result = await _protocol.send(
       method: 'GET',
       requestUri:
-          '/2013-04-01/trafficpolicy/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(version.toString()).replaceAll('+', '%20')}',
+          '/2013-04-01/trafficpolicy/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(version.toString()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetTrafficPolicyResponse.fromXml($result.body);
@@ -3292,7 +3292,7 @@ class Route53 {
     final $result = await _protocol.send(
       method: 'GET',
       requestUri:
-          '/2013-04-01/tags/${Uri.encodeQueryComponent(resourceType.toValue()).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28resourceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/2013-04-01/tags/${Uri.encodeQueryComponent(resourceType.toValue()).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForResourceResponse.fromXml($result.body);
@@ -4373,7 +4373,7 @@ class Route53 {
     final $result = await _protocol.send(
       method: 'POST',
       requestUri:
-          '/2013-04-01/trafficpolicy/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(version.toString()).replaceAll('+', '%20')}',
+          '/2013-04-01/trafficpolicy/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(version.toString()).replaceAll('+', '%20')}',
       payload: UpdateTrafficPolicyCommentRequest(
               comment: comment, id: id, version: version)
           .toXml(

@@ -1149,7 +1149,7 @@ class IoTWireless {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/fuota-tasks/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/multicast-groups/${Uri.encodeQueryComponent(multicastGroupId).replaceAll('+', '%20')}',
+          '/fuota-tasks/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/multicast-groups/${Uri.encodeQueryComponent(multicastGroupId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1170,7 +1170,7 @@ class IoTWireless {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/fuota-tasks/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/wireless-devices/${Uri.encodeQueryComponent(wirelessDeviceId).replaceAll('+', '%20')}',
+          '/fuota-tasks/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/wireless-devices/${Uri.encodeQueryComponent(wirelessDeviceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1190,7 +1190,7 @@ class IoTWireless {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/multicast-groups/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/wireless-devices/${Uri.encodeQueryComponent(wirelessDeviceId).replaceAll('+', '%20')}',
+          '/multicast-groups/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/wireless-devices/${Uri.encodeQueryComponent(wirelessDeviceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

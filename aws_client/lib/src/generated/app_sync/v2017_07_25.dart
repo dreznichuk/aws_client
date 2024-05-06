@@ -770,7 +770,7 @@ class AppSync {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}/resolvers',
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}/resolvers',
       exceptionFnMap: _exceptionFns,
     );
     return CreateResolverResponse.fromJson(response);
@@ -856,7 +856,7 @@ class AppSync {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/apikeys/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/apikeys/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -882,7 +882,7 @@ class AppSync {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/datasources/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/datasources/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -929,7 +929,7 @@ class AppSync {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/functions/${Uri.encodeQueryComponent(functionId).replaceAll('+', '%20')}',
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/functions/${Uri.encodeQueryComponent(functionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -982,7 +982,7 @@ class AppSync {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apis/%2524%257BUri.encodeQueryComponent%2528apiId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}/resolvers/%24%7BUri.encodeQueryComponent%28fieldName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}/resolvers/${Uri.encodeQueryComponent(fieldName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1008,7 +1008,7 @@ class AppSync {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}',
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1061,7 +1061,7 @@ class AppSync {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/sourceApis/${Uri.encodeQueryComponent(sourceApiIdentifier).replaceAll('+', '%20')}/mergedApiAssociations/%24%7BUri.encodeQueryComponent%28associationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/v1/sourceApis/${Uri.encodeQueryComponent(sourceApiIdentifier).replaceAll('+', '%20')}/mergedApiAssociations/${Uri.encodeQueryComponent(associationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DisassociateMergedGraphqlApiResponse.fromJson(response);
@@ -1093,7 +1093,7 @@ class AppSync {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/mergedApis/${Uri.encodeQueryComponent(mergedApiIdentifier).replaceAll('+', '%20')}/sourceApiAssociations/%24%7BUri.encodeQueryComponent%28associationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/v1/mergedApis/${Uri.encodeQueryComponent(mergedApiIdentifier).replaceAll('+', '%20')}/sourceApiAssociations/${Uri.encodeQueryComponent(associationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DisassociateSourceGraphqlApiResponse.fromJson(response);
@@ -1275,7 +1275,7 @@ class AppSync {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/datasources/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/datasources/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDataSourceResponse.fromJson(response);
@@ -1322,7 +1322,7 @@ class AppSync {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/functions/${Uri.encodeQueryComponent(functionId).replaceAll('+', '%20')}',
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/functions/${Uri.encodeQueryComponent(functionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetFunctionResponse.fromJson(response);
@@ -1413,7 +1413,7 @@ class AppSync {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apis/%2524%257BUri.encodeQueryComponent%2528apiId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}/resolvers/%24%7BUri.encodeQueryComponent%28fieldName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}/resolvers/${Uri.encodeQueryComponent(fieldName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetResolverResponse.fromJson(response);
@@ -1465,7 +1465,7 @@ class AppSync {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/mergedApis/${Uri.encodeQueryComponent(mergedApiIdentifier).replaceAll('+', '%20')}/sourceApiAssociations/%24%7BUri.encodeQueryComponent%28associationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/v1/mergedApis/${Uri.encodeQueryComponent(mergedApiIdentifier).replaceAll('+', '%20')}/sourceApiAssociations/${Uri.encodeQueryComponent(associationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSourceApiAssociationResponse.fromJson(response);
@@ -1499,7 +1499,7 @@ class AppSync {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}',
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1760,7 +1760,7 @@ class AppSync {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}/resolvers',
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}/resolvers',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1806,7 +1806,7 @@ class AppSync {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/functions/${Uri.encodeQueryComponent(functionId).replaceAll('+', '%20')}/resolvers',
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/functions/${Uri.encodeQueryComponent(functionId).replaceAll('+', '%20')}/resolvers',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1976,7 +1976,7 @@ class AppSync {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/mergedApis/${Uri.encodeQueryComponent(mergedApiIdentifier).replaceAll('+', '%20')}/sourceApiAssociations/%24%7BUri.encodeQueryComponent%28associationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/types',
+          '/v1/mergedApis/${Uri.encodeQueryComponent(mergedApiIdentifier).replaceAll('+', '%20')}/sourceApiAssociations/${Uri.encodeQueryComponent(associationId).replaceAll('+', '%20')}/types',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2041,7 +2041,7 @@ class AppSync {
       payload: null,
       method: 'POST',
       requestUri:
-          '/v1/mergedApis/${Uri.encodeQueryComponent(mergedApiIdentifier).replaceAll('+', '%20')}/sourceApiAssociations/%24%7BUri.encodeQueryComponent%28associationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/merge',
+          '/v1/mergedApis/${Uri.encodeQueryComponent(mergedApiIdentifier).replaceAll('+', '%20')}/sourceApiAssociations/${Uri.encodeQueryComponent(associationId).replaceAll('+', '%20')}/merge',
       exceptionFnMap: _exceptionFns,
     );
     return StartSchemaMergeResponse.fromJson(response);
@@ -2252,7 +2252,7 @@ class AppSync {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/apikeys/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/apikeys/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateApiKeyResponse.fromJson(response);
@@ -2339,7 +2339,7 @@ class AppSync {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/datasources/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/datasources/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateDataSourceResponse.fromJson(response);
@@ -2454,7 +2454,7 @@ class AppSync {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/functions/${Uri.encodeQueryComponent(functionId).replaceAll('+', '%20')}',
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/functions/${Uri.encodeQueryComponent(functionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateFunctionResponse.fromJson(response);
@@ -2658,7 +2658,7 @@ class AppSync {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/apis/%2524%257BUri.encodeQueryComponent%2528apiId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}/resolvers/%24%7BUri.encodeQueryComponent%28fieldName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}/resolvers/${Uri.encodeQueryComponent(fieldName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateResolverResponse.fromJson(response);
@@ -2703,7 +2703,7 @@ class AppSync {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/mergedApis/${Uri.encodeQueryComponent(mergedApiIdentifier).replaceAll('+', '%20')}/sourceApiAssociations/%24%7BUri.encodeQueryComponent%28associationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/v1/mergedApis/${Uri.encodeQueryComponent(mergedApiIdentifier).replaceAll('+', '%20')}/sourceApiAssociations/${Uri.encodeQueryComponent(associationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSourceApiAssociationResponse.fromJson(response);
@@ -2742,7 +2742,7 @@ class AppSync {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/v1/apis/%24%7BUri.encodeQueryComponent%28apiId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}',
+          '/v1/apis/${Uri.encodeQueryComponent(apiId).replaceAll('+', '%20')}/types/${Uri.encodeQueryComponent(typeName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateTypeResponse.fromJson(response);

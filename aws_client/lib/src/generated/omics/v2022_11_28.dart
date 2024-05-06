@@ -75,7 +75,7 @@ class Omics {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/sequencestore/%24%7BUri.encodeQueryComponent%28sequenceStoreId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/upload/${Uri.encodeQueryComponent(uploadId).replaceAll('+', '%20')}/abort',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/upload/${Uri.encodeQueryComponent(uploadId).replaceAll('+', '%20')}/abort',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -212,7 +212,7 @@ class Omics {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/sequencestore/%24%7BUri.encodeQueryComponent%28sequenceStoreId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/upload/${Uri.encodeQueryComponent(uploadId).replaceAll('+', '%20')}/complete',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/upload/${Uri.encodeQueryComponent(uploadId).replaceAll('+', '%20')}/complete',
       exceptionFnMap: _exceptionFns,
     );
     return CompleteMultipartReadSetUploadResponse.fromJson(response);
@@ -720,7 +720,7 @@ class Omics {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/referencestore/${Uri.encodeQueryComponent(referenceStoreId).replaceAll('+', '%20')}/reference/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/referencestore/${Uri.encodeQueryComponent(referenceStoreId).replaceAll('+', '%20')}/reference/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -968,7 +968,7 @@ class Omics {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/readset/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/readset/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -999,7 +999,7 @@ class Omics {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/activationjob/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/activationjob/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetReadSetActivationJobResponse.fromJson(response);
@@ -1027,7 +1027,7 @@ class Omics {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/exportjob/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/exportjob/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetReadSetExportJobResponse.fromJson(response);
@@ -1055,7 +1055,7 @@ class Omics {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/importjob/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/importjob/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetReadSetImportJobResponse.fromJson(response);
@@ -1083,7 +1083,7 @@ class Omics {
       payload: null,
       method: 'GET',
       requestUri:
-          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/readset/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/metadata',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/readset/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/metadata',
       exceptionFnMap: _exceptionFns,
     );
     return GetReadSetMetadataResponse.fromJson(response);
@@ -1138,7 +1138,7 @@ class Omics {
       payload: null,
       method: 'GET',
       requestUri:
-          '/referencestore/${Uri.encodeQueryComponent(referenceStoreId).replaceAll('+', '%20')}/reference/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/referencestore/${Uri.encodeQueryComponent(referenceStoreId).replaceAll('+', '%20')}/reference/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -1170,7 +1170,7 @@ class Omics {
       payload: null,
       method: 'GET',
       requestUri:
-          '/referencestore/${Uri.encodeQueryComponent(referenceStoreId).replaceAll('+', '%20')}/importjob/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/referencestore/${Uri.encodeQueryComponent(referenceStoreId).replaceAll('+', '%20')}/importjob/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetReferenceImportJobResponse.fromJson(response);
@@ -1198,7 +1198,7 @@ class Omics {
       payload: null,
       method: 'GET',
       requestUri:
-          '/referencestore/${Uri.encodeQueryComponent(referenceStoreId).replaceAll('+', '%20')}/reference/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/metadata',
+          '/referencestore/${Uri.encodeQueryComponent(referenceStoreId).replaceAll('+', '%20')}/reference/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/metadata',
       exceptionFnMap: _exceptionFns,
     );
     return GetReferenceMetadataResponse.fromJson(response);
@@ -1311,7 +1311,7 @@ class Omics {
       payload: null,
       method: 'GET',
       requestUri:
-          '/run/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/task/${Uri.encodeQueryComponent(taskId).replaceAll('+', '%20')}',
+          '/run/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/task/${Uri.encodeQueryComponent(taskId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetRunTaskResponse.fromJson(response);
@@ -1782,7 +1782,7 @@ class Omics {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/sequencestore/%24%7BUri.encodeQueryComponent%28sequenceStoreId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/upload/${Uri.encodeQueryComponent(uploadId).replaceAll('+', '%20')}/parts',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/upload/${Uri.encodeQueryComponent(uploadId).replaceAll('+', '%20')}/parts',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3022,7 +3022,7 @@ class Omics {
       payload: payload,
       method: 'PUT',
       requestUri:
-          '/sequencestore/%24%7BUri.encodeQueryComponent%28sequenceStoreId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/upload/${Uri.encodeQueryComponent(uploadId).replaceAll('+', '%20')}/part',
+          '/sequencestore/${Uri.encodeQueryComponent(sequenceStoreId).replaceAll('+', '%20')}/upload/${Uri.encodeQueryComponent(uploadId).replaceAll('+', '%20')}/part',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

@@ -306,7 +306,7 @@ class Mediapackagev2 {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/channelGroup/%24%7BUri.encodeQueryComponent%28channelGroupName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/originEndpoint',
+          '/channelGroup/${Uri.encodeQueryComponent(channelGroupName).replaceAll('+', '%20')}/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/originEndpoint',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -340,7 +340,7 @@ class Mediapackagev2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/channelGroup/%24%7BUri.encodeQueryComponent%28channelGroupName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/',
+          '/channelGroup/${Uri.encodeQueryComponent(channelGroupName).replaceAll('+', '%20')}/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -397,7 +397,7 @@ class Mediapackagev2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/channelGroup/%24%7BUri.encodeQueryComponent%28channelGroupName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/policy',
+          '/channelGroup/${Uri.encodeQueryComponent(channelGroupName).replaceAll('+', '%20')}/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/policy',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -434,7 +434,7 @@ class Mediapackagev2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/channelGroup/%2524%257BUri.encodeQueryComponent%2528channelGroupName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/channel/%24%7BUri.encodeQueryComponent%28channelName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/originEndpoint/${Uri.encodeQueryComponent(originEndpointName).replaceAll('+', '%20')}',
+          '/channelGroup/${Uri.encodeQueryComponent(channelGroupName).replaceAll('+', '%20')}/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/originEndpoint/${Uri.encodeQueryComponent(originEndpointName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -470,7 +470,7 @@ class Mediapackagev2 {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/channelGroup/%2524%257BUri.encodeQueryComponent%2528channelGroupName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/channel/%24%7BUri.encodeQueryComponent%28channelName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/originEndpoint/${Uri.encodeQueryComponent(originEndpointName).replaceAll('+', '%20')}/policy',
+          '/channelGroup/${Uri.encodeQueryComponent(channelGroupName).replaceAll('+', '%20')}/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/originEndpoint/${Uri.encodeQueryComponent(originEndpointName).replaceAll('+', '%20')}/policy',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -501,7 +501,7 @@ class Mediapackagev2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/channelGroup/%24%7BUri.encodeQueryComponent%28channelGroupName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/',
+          '/channelGroup/${Uri.encodeQueryComponent(channelGroupName).replaceAll('+', '%20')}/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
     return GetChannelResponse.fromJson(response);
@@ -561,7 +561,7 @@ class Mediapackagev2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/channelGroup/%24%7BUri.encodeQueryComponent%28channelGroupName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/policy',
+          '/channelGroup/${Uri.encodeQueryComponent(channelGroupName).replaceAll('+', '%20')}/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/policy',
       exceptionFnMap: _exceptionFns,
     );
     return GetChannelPolicyResponse.fromJson(response);
@@ -600,7 +600,7 @@ class Mediapackagev2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/channelGroup/%2524%257BUri.encodeQueryComponent%2528channelGroupName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/channel/%24%7BUri.encodeQueryComponent%28channelName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/originEndpoint/${Uri.encodeQueryComponent(originEndpointName).replaceAll('+', '%20')}',
+          '/channelGroup/${Uri.encodeQueryComponent(channelGroupName).replaceAll('+', '%20')}/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/originEndpoint/${Uri.encodeQueryComponent(originEndpointName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetOriginEndpointResponse.fromJson(response);
@@ -638,7 +638,7 @@ class Mediapackagev2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/channelGroup/%2524%257BUri.encodeQueryComponent%2528channelGroupName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/channel/%24%7BUri.encodeQueryComponent%28channelName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/originEndpoint/${Uri.encodeQueryComponent(originEndpointName).replaceAll('+', '%20')}/policy',
+          '/channelGroup/${Uri.encodeQueryComponent(channelGroupName).replaceAll('+', '%20')}/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/originEndpoint/${Uri.encodeQueryComponent(originEndpointName).replaceAll('+', '%20')}/policy',
       exceptionFnMap: _exceptionFns,
     );
     return GetOriginEndpointPolicyResponse.fromJson(response);
@@ -774,7 +774,7 @@ class Mediapackagev2 {
       payload: null,
       method: 'GET',
       requestUri:
-          '/channelGroup/%24%7BUri.encodeQueryComponent%28channelGroupName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/originEndpoint',
+          '/channelGroup/${Uri.encodeQueryComponent(channelGroupName).replaceAll('+', '%20')}/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/originEndpoint',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -835,7 +835,7 @@ class Mediapackagev2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/channelGroup/%24%7BUri.encodeQueryComponent%28channelGroupName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/policy',
+          '/channelGroup/${Uri.encodeQueryComponent(channelGroupName).replaceAll('+', '%20')}/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/policy',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -880,7 +880,7 @@ class Mediapackagev2 {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/channelGroup/%2524%257BUri.encodeQueryComponent%2528channelGroupName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/channel/%24%7BUri.encodeQueryComponent%28channelName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/originEndpoint/${Uri.encodeQueryComponent(originEndpointName).replaceAll('+', '%20')}/policy',
+          '/channelGroup/${Uri.encodeQueryComponent(channelGroupName).replaceAll('+', '%20')}/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/originEndpoint/${Uri.encodeQueryComponent(originEndpointName).replaceAll('+', '%20')}/policy',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -988,7 +988,7 @@ class Mediapackagev2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/channelGroup/%24%7BUri.encodeQueryComponent%28channelGroupName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/',
+          '/channelGroup/${Uri.encodeQueryComponent(channelGroupName).replaceAll('+', '%20')}/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateChannelResponse.fromJson(response);
@@ -1118,7 +1118,7 @@ class Mediapackagev2 {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/channelGroup/%2524%257BUri.encodeQueryComponent%2528channelGroupName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/channel/%24%7BUri.encodeQueryComponent%28channelName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/originEndpoint/${Uri.encodeQueryComponent(originEndpointName).replaceAll('+', '%20')}',
+          '/channelGroup/${Uri.encodeQueryComponent(channelGroupName).replaceAll('+', '%20')}/channel/${Uri.encodeQueryComponent(channelName).replaceAll('+', '%20')}/originEndpoint/${Uri.encodeQueryComponent(originEndpointName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateOriginEndpointResponse.fromJson(response);

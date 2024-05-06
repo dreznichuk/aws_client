@@ -693,7 +693,7 @@ class ChimeSdkMessaging {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/bans/${Uri.encodeQueryComponent(memberArn).replaceAll('+', '%20')}',
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/bans/${Uri.encodeQueryComponent(memberArn).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -777,7 +777,7 @@ class ChimeSdkMessaging {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/memberships/${Uri.encodeQueryComponent(memberArn).replaceAll('+', '%20')}',
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/memberships/${Uri.encodeQueryComponent(memberArn).replaceAll('+', '%20')}',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -832,7 +832,7 @@ class ChimeSdkMessaging {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/messages/${Uri.encodeQueryComponent(messageId).replaceAll('+', '%20')}',
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/messages/${Uri.encodeQueryComponent(messageId).replaceAll('+', '%20')}',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -874,7 +874,7 @@ class ChimeSdkMessaging {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/moderators/${Uri.encodeQueryComponent(channelModeratorArn).replaceAll('+', '%20')}',
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/moderators/${Uri.encodeQueryComponent(channelModeratorArn).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -981,7 +981,7 @@ class ChimeSdkMessaging {
       payload: null,
       method: 'GET',
       requestUri:
-          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/bans/${Uri.encodeQueryComponent(memberArn).replaceAll('+', '%20')}',
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/bans/${Uri.encodeQueryComponent(memberArn).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1060,7 +1060,7 @@ class ChimeSdkMessaging {
       payload: null,
       method: 'GET',
       requestUri:
-          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/memberships/${Uri.encodeQueryComponent(memberArn).replaceAll('+', '%20')}',
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/memberships/${Uri.encodeQueryComponent(memberArn).replaceAll('+', '%20')}',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -1201,7 +1201,7 @@ class ChimeSdkMessaging {
       payload: null,
       method: 'GET',
       requestUri:
-          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/moderators/${Uri.encodeQueryComponent(channelModeratorArn).replaceAll('+', '%20')}',
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/moderators/${Uri.encodeQueryComponent(channelModeratorArn).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1248,7 +1248,7 @@ class ChimeSdkMessaging {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/channel-flow/${Uri.encodeQueryComponent(channelFlowArn).replaceAll('+', '%20')}',
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/channel-flow/${Uri.encodeQueryComponent(channelFlowArn).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1297,7 +1297,7 @@ class ChimeSdkMessaging {
       payload: null,
       method: 'GET',
       requestUri:
-          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/memberships/${Uri.encodeQueryComponent(memberArn).replaceAll('+', '%20')}/preferences',
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/memberships/${Uri.encodeQueryComponent(memberArn).replaceAll('+', '%20')}/preferences',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1351,7 +1351,7 @@ class ChimeSdkMessaging {
       payload: null,
       method: 'GET',
       requestUri:
-          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/messages/${Uri.encodeQueryComponent(messageId).replaceAll('+', '%20')}',
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/messages/${Uri.encodeQueryComponent(messageId).replaceAll('+', '%20')}',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -1428,7 +1428,7 @@ class ChimeSdkMessaging {
       payload: null,
       method: 'GET',
       requestUri:
-          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/messages/${Uri.encodeQueryComponent(messageId).replaceAll('+', '%20')}?scope=message-status',
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/messages/${Uri.encodeQueryComponent(messageId).replaceAll('+', '%20')}?scope=message-status',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -2250,7 +2250,7 @@ class ChimeSdkMessaging {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/memberships/${Uri.encodeQueryComponent(memberArn).replaceAll('+', '%20')}/preferences',
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/memberships/${Uri.encodeQueryComponent(memberArn).replaceAll('+', '%20')}/preferences',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2338,7 +2338,7 @@ class ChimeSdkMessaging {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/messages/${Uri.encodeQueryComponent(messageId).replaceAll('+', '%20')}?operation=redact',
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/messages/${Uri.encodeQueryComponent(messageId).replaceAll('+', '%20')}?operation=redact',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2718,7 +2718,7 @@ class ChimeSdkMessaging {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/channels/%24%7BUri.encodeQueryComponent%28channelArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/messages/${Uri.encodeQueryComponent(messageId).replaceAll('+', '%20')}',
+          '/channels/${Uri.encodeQueryComponent(channelArn).replaceAll('+', '%20')}/messages/${Uri.encodeQueryComponent(messageId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );

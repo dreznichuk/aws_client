@@ -118,7 +118,7 @@ class Honeycode {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/workbooks/${Uri.encodeQueryComponent(workbookId).replaceAll('+', '%20')}/tables/%24%7BUri.encodeQueryComponent%28tableId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/rows/batchcreate',
+          '/workbooks/${Uri.encodeQueryComponent(workbookId).replaceAll('+', '%20')}/tables/${Uri.encodeQueryComponent(tableId).replaceAll('+', '%20')}/rows/batchcreate',
       exceptionFnMap: _exceptionFns,
     );
     return BatchCreateTableRowsResult.fromJson(response);
@@ -179,7 +179,7 @@ class Honeycode {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/workbooks/${Uri.encodeQueryComponent(workbookId).replaceAll('+', '%20')}/tables/%24%7BUri.encodeQueryComponent%28tableId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/rows/batchdelete',
+          '/workbooks/${Uri.encodeQueryComponent(workbookId).replaceAll('+', '%20')}/tables/${Uri.encodeQueryComponent(tableId).replaceAll('+', '%20')}/rows/batchdelete',
       exceptionFnMap: _exceptionFns,
     );
     return BatchDeleteTableRowsResult.fromJson(response);
@@ -248,7 +248,7 @@ class Honeycode {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/workbooks/${Uri.encodeQueryComponent(workbookId).replaceAll('+', '%20')}/tables/%24%7BUri.encodeQueryComponent%28tableId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/rows/batchupdate',
+          '/workbooks/${Uri.encodeQueryComponent(workbookId).replaceAll('+', '%20')}/tables/${Uri.encodeQueryComponent(tableId).replaceAll('+', '%20')}/rows/batchupdate',
       exceptionFnMap: _exceptionFns,
     );
     return BatchUpdateTableRowsResult.fromJson(response);
@@ -325,7 +325,7 @@ class Honeycode {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/workbooks/${Uri.encodeQueryComponent(workbookId).replaceAll('+', '%20')}/tables/%24%7BUri.encodeQueryComponent%28tableId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/rows/batchupsert',
+          '/workbooks/${Uri.encodeQueryComponent(workbookId).replaceAll('+', '%20')}/tables/${Uri.encodeQueryComponent(tableId).replaceAll('+', '%20')}/rows/batchupsert',
       exceptionFnMap: _exceptionFns,
     );
     return BatchUpsertTableRowsResult.fromJson(response);
@@ -369,7 +369,7 @@ class Honeycode {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workbooks/${Uri.encodeQueryComponent(workbookId).replaceAll('+', '%20')}/tables/%24%7BUri.encodeQueryComponent%28tableId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/import/%2524%257BUri.encodeQueryComponent%2528jobId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
+          '/workbooks/${Uri.encodeQueryComponent(workbookId).replaceAll('+', '%20')}/tables/${Uri.encodeQueryComponent(tableId).replaceAll('+', '%20')}/import/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeTableDataImportJobResult.fromJson(response);
@@ -516,7 +516,7 @@ class Honeycode {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/workbooks/${Uri.encodeQueryComponent(workbookId).replaceAll('+', '%20')}/apps/%252524%25257BUri.encodeQueryComponent%252528appId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/screens/%24%7BUri.encodeQueryComponent%28screenId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/automations/%2524%257BUri.encodeQueryComponent%2528screenAutomationId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
+          '/workbooks/${Uri.encodeQueryComponent(workbookId).replaceAll('+', '%20')}/apps/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/screens/${Uri.encodeQueryComponent(screenId).replaceAll('+', '%20')}/automations/${Uri.encodeQueryComponent(screenAutomationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return InvokeScreenAutomationResult.fromJson(response);
@@ -564,7 +564,7 @@ class Honeycode {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workbooks/${Uri.encodeQueryComponent(workbookId).replaceAll('+', '%20')}/tables/%24%7BUri.encodeQueryComponent%28tableId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/columns',
+          '/workbooks/${Uri.encodeQueryComponent(workbookId).replaceAll('+', '%20')}/tables/${Uri.encodeQueryComponent(tableId).replaceAll('+', '%20')}/columns',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -631,7 +631,7 @@ class Honeycode {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/workbooks/${Uri.encodeQueryComponent(workbookId).replaceAll('+', '%20')}/tables/%24%7BUri.encodeQueryComponent%28tableId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/rows/list',
+          '/workbooks/${Uri.encodeQueryComponent(workbookId).replaceAll('+', '%20')}/tables/${Uri.encodeQueryComponent(tableId).replaceAll('+', '%20')}/rows/list',
       exceptionFnMap: _exceptionFns,
     );
     return ListTableRowsResult.fromJson(response);
@@ -772,7 +772,7 @@ class Honeycode {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/workbooks/${Uri.encodeQueryComponent(workbookId).replaceAll('+', '%20')}/tables/%24%7BUri.encodeQueryComponent%28tableId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/rows/query',
+          '/workbooks/${Uri.encodeQueryComponent(workbookId).replaceAll('+', '%20')}/tables/${Uri.encodeQueryComponent(tableId).replaceAll('+', '%20')}/rows/query',
       exceptionFnMap: _exceptionFns,
     );
     return QueryTableRowsResult.fromJson(response);
@@ -844,7 +844,7 @@ class Honeycode {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/workbooks/${Uri.encodeQueryComponent(workbookId).replaceAll('+', '%20')}/tables/%24%7BUri.encodeQueryComponent%28destinationTableId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/import',
+          '/workbooks/${Uri.encodeQueryComponent(workbookId).replaceAll('+', '%20')}/tables/${Uri.encodeQueryComponent(destinationTableId).replaceAll('+', '%20')}/import',
       exceptionFnMap: _exceptionFns,
     );
     return StartTableDataImportJobResult.fromJson(response);

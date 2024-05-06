@@ -94,7 +94,7 @@ class EmrServerless {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/jobruns/${Uri.encodeQueryComponent(jobRunId).replaceAll('+', '%20')}',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/jobruns/${Uri.encodeQueryComponent(jobRunId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return CancelJobRunResponse.fromJson(response);
@@ -265,7 +265,7 @@ class EmrServerless {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/jobruns/${Uri.encodeQueryComponent(jobRunId).replaceAll('+', '%20')}/dashboard',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/jobruns/${Uri.encodeQueryComponent(jobRunId).replaceAll('+', '%20')}/dashboard',
       exceptionFnMap: _exceptionFns,
     );
     return GetDashboardForJobRunResponse.fromJson(response);
@@ -290,7 +290,7 @@ class EmrServerless {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/jobruns/${Uri.encodeQueryComponent(jobRunId).replaceAll('+', '%20')}',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/jobruns/${Uri.encodeQueryComponent(jobRunId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetJobRunResponse.fromJson(response);

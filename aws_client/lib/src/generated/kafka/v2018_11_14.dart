@@ -636,7 +636,7 @@ class Kafka {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/configurations/%24%7BUri.encodeQueryComponent%28arn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/revisions/${Uri.encodeQueryComponent(revision.toString()).replaceAll('+', '%20')}',
+          '/v1/configurations/${Uri.encodeQueryComponent(arn).replaceAll('+', '%20')}/revisions/${Uri.encodeQueryComponent(revision.toString()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeConfigurationRevisionResponse.fromJson(response);

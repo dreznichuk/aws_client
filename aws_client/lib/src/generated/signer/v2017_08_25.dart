@@ -598,7 +598,7 @@ class Signer {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/signing-profiles/%24%7BUri.encodeQueryComponent%28profileName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/permissions/${Uri.encodeQueryComponent(statementId).replaceAll('+', '%20')}',
+          '/signing-profiles/${Uri.encodeQueryComponent(profileName).replaceAll('+', '%20')}/permissions/${Uri.encodeQueryComponent(statementId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

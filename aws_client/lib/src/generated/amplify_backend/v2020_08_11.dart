@@ -76,7 +76,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/environments/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/clone',
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/environments/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/clone',
       exceptionFnMap: _exceptionFns,
     );
     return CloneBackendResponse.fromJson(response);
@@ -317,7 +317,7 @@ class AmplifyBackend {
       payload: null,
       method: 'POST',
       requestUri:
-          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/environments/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/remove',
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/environments/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/remove',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteBackendResponse.fromJson(response);
@@ -356,7 +356,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/api/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/remove',
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/api/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/remove',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteBackendAPIResponse.fromJson(response);
@@ -389,7 +389,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/auth/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/remove',
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/auth/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/remove',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteBackendAuthResponse.fromJson(response);
@@ -427,7 +427,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/storage/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/remove',
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/storage/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/remove',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteBackendStorageResponse.fromJson(response);
@@ -453,7 +453,7 @@ class AmplifyBackend {
       payload: null,
       method: 'POST',
       requestUri:
-          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/challenge/${Uri.encodeQueryComponent(sessionId).replaceAll('+', '%20')}/remove',
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/challenge/${Uri.encodeQueryComponent(sessionId).replaceAll('+', '%20')}/remove',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteTokenResponse.fromJson(response);
@@ -486,7 +486,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/api/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/generateModels',
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/api/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/generateModels',
       exceptionFnMap: _exceptionFns,
     );
     return GenerateBackendAPIModelsResponse.fromJson(response);
@@ -555,7 +555,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/api/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/details',
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/api/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/details',
       exceptionFnMap: _exceptionFns,
     );
     return GetBackendAPIResponse.fromJson(response);
@@ -588,7 +588,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/api/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/getModels',
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/api/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/getModels',
       exceptionFnMap: _exceptionFns,
     );
     return GetBackendAPIModelsResponse.fromJson(response);
@@ -621,7 +621,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/auth/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/details',
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/auth/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/details',
       exceptionFnMap: _exceptionFns,
     );
     return GetBackendAuthResponse.fromJson(response);
@@ -651,7 +651,7 @@ class AmplifyBackend {
       payload: null,
       method: 'GET',
       requestUri:
-          '/backend/%2524%257BUri.encodeQueryComponent%2528appId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/job/%24%7BUri.encodeQueryComponent%28backendEnvironmentName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/job/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetBackendJobResponse.fromJson(response);
@@ -684,7 +684,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/storage/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/details',
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/storage/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/details',
       exceptionFnMap: _exceptionFns,
     );
     return GetBackendStorageResponse.fromJson(response);
@@ -710,7 +710,7 @@ class AmplifyBackend {
       payload: null,
       method: 'GET',
       requestUri:
-          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/challenge/${Uri.encodeQueryComponent(sessionId).replaceAll('+', '%20')}',
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/challenge/${Uri.encodeQueryComponent(sessionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetTokenResponse.fromJson(response);
@@ -758,7 +758,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/auth/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/import',
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/auth/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/import',
       exceptionFnMap: _exceptionFns,
     );
     return ImportBackendAuthResponse.fromJson(response);
@@ -796,7 +796,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/storage/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/import',
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/storage/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/import',
       exceptionFnMap: _exceptionFns,
     );
     return ImportBackendStorageResponse.fromJson(response);
@@ -857,7 +857,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/job/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}',
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/job/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return ListBackendJobsResponse.fromJson(response);
@@ -971,7 +971,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/api/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}',
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/api/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBackendAPIResponse.fromJson(response);
@@ -1009,7 +1009,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/auth/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}',
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/auth/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBackendAuthResponse.fromJson(response);
@@ -1082,7 +1082,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/%2524%257BUri.encodeQueryComponent%2528appId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/job/%24%7BUri.encodeQueryComponent%28backendEnvironmentName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/job/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBackendJobResponse.fromJson(response);
@@ -1120,7 +1120,7 @@ class AmplifyBackend {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backend/%24%7BUri.encodeQueryComponent%28appId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/storage/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}',
+          '/backend/${Uri.encodeQueryComponent(appId).replaceAll('+', '%20')}/storage/${Uri.encodeQueryComponent(backendEnvironmentName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateBackendStorageResponse.fromJson(response);

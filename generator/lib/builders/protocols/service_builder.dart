@@ -57,7 +57,7 @@ abstract class ServiceBuilder {
       final allMembersToReplace = sc.uriMembers
           .expand((m) => [
                 '{${m.locationName ?? m.name}}',
-                '{${m.locationName ?? m.name}+'
+                '{${m.locationName ?? m.name}+}'
               ])
           .toSet();
       for (var m in sc.uriMembers) {
@@ -66,7 +66,7 @@ abstract class ServiceBuilder {
             .split('/')
             .map((part) {
               if (!allMembersToReplace.any((e) => part.contains(e)) &&
-                  !part.contains('Uri.encodeComponent') &&
+                  !part.contains('Uri.encodeQueryComponent') &&
                   !part.contains('?')) {
                 return Uri.encodeQueryComponent(part).replaceAll('+', '%20');
               }
@@ -74,7 +74,7 @@ abstract class ServiceBuilder {
             })
             .join('/')
             .replaceAll('{${m.locationName ?? m.name}}',
-                '\${Uri.encodeQueryComponent($fieldCode).replaceAll(\'+\', \'%20\')}')
+                "\${Uri.encodeQueryComponent($fieldCode).replaceAll('+', '%20')}")
             .replaceAll('{${m.locationName ?? m.name}+}',
                 "\${$fieldCode.split('/').map((e) => Uri.encodeQueryComponent(e).replaceAll('+', '%20')).join('/')}");
       }

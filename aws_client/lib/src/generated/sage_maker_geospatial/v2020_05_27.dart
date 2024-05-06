@@ -310,7 +310,7 @@ class SageMakerGeospatialCapabilities {
       payload: null,
       method: 'GET',
       requestUri:
-          '/tile/${Uri.encodeQueryComponent(z.toString()).replaceAll('+', '%20')}/%2524%257BUri.encodeQueryComponent%2528x.toString%2528%2529%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/%24%7BUri.encodeQueryComponent%28y.toString%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/tile/${Uri.encodeQueryComponent(z.toString()).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(x.toString()).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(y.toString()).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );

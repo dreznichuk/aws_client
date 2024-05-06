@@ -320,7 +320,7 @@ class ChimeSdkIdentity {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/app-instances/${Uri.encodeQueryComponent(appInstanceArn).replaceAll('+', '%20')}/admins/%24%7BUri.encodeQueryComponent%28appInstanceAdminArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/app-instances/${Uri.encodeQueryComponent(appInstanceArn).replaceAll('+', '%20')}/admins/${Uri.encodeQueryComponent(appInstanceAdminArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -397,7 +397,7 @@ class ChimeSdkIdentity {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/app-instance-users/%24%7BUri.encodeQueryComponent%28appInstanceUserArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/endpoints/${Uri.encodeQueryComponent(endpointId).replaceAll('+', '%20')}',
+          '/app-instance-users/${Uri.encodeQueryComponent(appInstanceUserArn).replaceAll('+', '%20')}/endpoints/${Uri.encodeQueryComponent(endpointId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -448,7 +448,7 @@ class ChimeSdkIdentity {
       payload: null,
       method: 'GET',
       requestUri:
-          '/app-instances/${Uri.encodeQueryComponent(appInstanceArn).replaceAll('+', '%20')}/admins/%24%7BUri.encodeQueryComponent%28appInstanceAdminArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/app-instances/${Uri.encodeQueryComponent(appInstanceArn).replaceAll('+', '%20')}/admins/${Uri.encodeQueryComponent(appInstanceAdminArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeAppInstanceAdminResponse.fromJson(response);
@@ -526,7 +526,7 @@ class ChimeSdkIdentity {
       payload: null,
       method: 'GET',
       requestUri:
-          '/app-instance-users/%24%7BUri.encodeQueryComponent%28appInstanceUserArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/endpoints/${Uri.encodeQueryComponent(endpointId).replaceAll('+', '%20')}',
+          '/app-instance-users/${Uri.encodeQueryComponent(appInstanceUserArn).replaceAll('+', '%20')}/endpoints/${Uri.encodeQueryComponent(endpointId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeAppInstanceUserEndpointResponse.fromJson(response);
@@ -1177,7 +1177,7 @@ class ChimeSdkIdentity {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/app-instance-users/%24%7BUri.encodeQueryComponent%28appInstanceUserArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/endpoints/${Uri.encodeQueryComponent(endpointId).replaceAll('+', '%20')}',
+          '/app-instance-users/${Uri.encodeQueryComponent(appInstanceUserArn).replaceAll('+', '%20')}/endpoints/${Uri.encodeQueryComponent(endpointId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAppInstanceUserEndpointResponse.fromJson(response);

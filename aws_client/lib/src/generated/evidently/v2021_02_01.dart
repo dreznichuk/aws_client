@@ -603,7 +603,7 @@ class CloudWatchEvidently {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/experiments/%24%7BUri.encodeQueryComponent%28experiment%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/experiments/${Uri.encodeQueryComponent(experiment).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -629,7 +629,7 @@ class CloudWatchEvidently {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/features/%24%7BUri.encodeQueryComponent%28feature%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/features/${Uri.encodeQueryComponent(feature).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -659,7 +659,7 @@ class CloudWatchEvidently {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/launches/%24%7BUri.encodeQueryComponent%28launch%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/launches/${Uri.encodeQueryComponent(launch).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -793,7 +793,7 @@ class CloudWatchEvidently {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/evaluations/%24%7BUri.encodeQueryComponent%28feature%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/evaluations/${Uri.encodeQueryComponent(feature).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return EvaluateFeatureResponse.fromJson(response);
@@ -821,7 +821,7 @@ class CloudWatchEvidently {
       payload: null,
       method: 'GET',
       requestUri:
-          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/experiments/%24%7BUri.encodeQueryComponent%28experiment%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/experiments/${Uri.encodeQueryComponent(experiment).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetExperimentResponse.fromJson(response);
@@ -943,7 +943,7 @@ class CloudWatchEvidently {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/experiments/%24%7BUri.encodeQueryComponent%28experiment%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/results',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/experiments/${Uri.encodeQueryComponent(experiment).replaceAll('+', '%20')}/results',
       exceptionFnMap: _exceptionFns,
     );
     return GetExperimentResultsResponse.fromJson(response);
@@ -971,7 +971,7 @@ class CloudWatchEvidently {
       payload: null,
       method: 'GET',
       requestUri:
-          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/features/%24%7BUri.encodeQueryComponent%28feature%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/features/${Uri.encodeQueryComponent(feature).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetFeatureResponse.fromJson(response);
@@ -999,7 +999,7 @@ class CloudWatchEvidently {
       payload: null,
       method: 'GET',
       requestUri:
-          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/launches/%24%7BUri.encodeQueryComponent%28launch%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/launches/${Uri.encodeQueryComponent(launch).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetLaunchResponse.fromJson(response);
@@ -1399,7 +1399,7 @@ class CloudWatchEvidently {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/experiments/%24%7BUri.encodeQueryComponent%28experiment%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/start',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/experiments/${Uri.encodeQueryComponent(experiment).replaceAll('+', '%20')}/start',
       exceptionFnMap: _exceptionFns,
     );
     return StartExperimentResponse.fromJson(response);
@@ -1428,7 +1428,7 @@ class CloudWatchEvidently {
       payload: null,
       method: 'POST',
       requestUri:
-          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/launches/%24%7BUri.encodeQueryComponent%28launch%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/start',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/launches/${Uri.encodeQueryComponent(launch).replaceAll('+', '%20')}/start',
       exceptionFnMap: _exceptionFns,
     );
     return StartLaunchResponse.fromJson(response);
@@ -1470,7 +1470,7 @@ class CloudWatchEvidently {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/experiments/%24%7BUri.encodeQueryComponent%28experiment%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/cancel',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/experiments/${Uri.encodeQueryComponent(experiment).replaceAll('+', '%20')}/cancel',
       exceptionFnMap: _exceptionFns,
     );
     return StopExperimentResponse.fromJson(response);
@@ -1515,7 +1515,7 @@ class CloudWatchEvidently {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/launches/%24%7BUri.encodeQueryComponent%28launch%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/cancel',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/launches/${Uri.encodeQueryComponent(launch).replaceAll('+', '%20')}/cancel',
       exceptionFnMap: _exceptionFns,
     );
     return StopLaunchResponse.fromJson(response);
@@ -1721,7 +1721,7 @@ class CloudWatchEvidently {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/experiments/%24%7BUri.encodeQueryComponent%28experiment%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/experiments/${Uri.encodeQueryComponent(experiment).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateExperimentResponse.fromJson(response);
@@ -1806,7 +1806,7 @@ class CloudWatchEvidently {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/features/%24%7BUri.encodeQueryComponent%28feature%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/features/${Uri.encodeQueryComponent(feature).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateFeatureResponse.fromJson(response);
@@ -1873,7 +1873,7 @@ class CloudWatchEvidently {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/launches/%24%7BUri.encodeQueryComponent%28launch%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/projects/${Uri.encodeQueryComponent(project).replaceAll('+', '%20')}/launches/${Uri.encodeQueryComponent(launch).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateLaunchResponse.fromJson(response);

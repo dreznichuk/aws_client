@@ -641,7 +641,7 @@ class Pinpoint {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/campaigns/${Uri.encodeQueryComponent(campaignId).replaceAll('+', '%20')}',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/campaigns/${Uri.encodeQueryComponent(campaignId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -772,7 +772,7 @@ class Pinpoint {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/endpoints/${Uri.encodeQueryComponent(endpointId).replaceAll('+', '%20')}',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/endpoints/${Uri.encodeQueryComponent(endpointId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -932,7 +932,7 @@ class Pinpoint {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1065,7 +1065,7 @@ class Pinpoint {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/segments/${Uri.encodeQueryComponent(segmentId).replaceAll('+', '%20')}',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/segments/${Uri.encodeQueryComponent(segmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1196,7 +1196,7 @@ class Pinpoint {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1549,7 +1549,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/kpis/daterange/${Uri.encodeQueryComponent(kpiName).replaceAll('+', '%20')}',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/kpis/daterange/${Uri.encodeQueryComponent(kpiName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1684,7 +1684,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/campaigns/${Uri.encodeQueryComponent(campaignId).replaceAll('+', '%20')}',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/campaigns/${Uri.encodeQueryComponent(campaignId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1732,7 +1732,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/campaigns/${Uri.encodeQueryComponent(campaignId).replaceAll('+', '%20')}/activities',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/campaigns/${Uri.encodeQueryComponent(campaignId).replaceAll('+', '%20')}/activities',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1812,7 +1812,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/%2524%257BUri.encodeQueryComponent%2528applicationId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/campaigns/%24%7BUri.encodeQueryComponent%28campaignId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/kpis/daterange/${Uri.encodeQueryComponent(kpiName).replaceAll('+', '%20')}',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/campaigns/${Uri.encodeQueryComponent(campaignId).replaceAll('+', '%20')}/kpis/daterange/${Uri.encodeQueryComponent(kpiName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1852,7 +1852,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/%2524%257BUri.encodeQueryComponent%2528applicationId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/campaigns/%24%7BUri.encodeQueryComponent%28campaignId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(version).replaceAll('+', '%20')}',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/campaigns/${Uri.encodeQueryComponent(campaignId).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(version).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1901,7 +1901,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/campaigns/${Uri.encodeQueryComponent(campaignId).replaceAll('+', '%20')}/versions',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/campaigns/${Uri.encodeQueryComponent(campaignId).replaceAll('+', '%20')}/versions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2110,7 +2110,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/endpoints/${Uri.encodeQueryComponent(endpointId).replaceAll('+', '%20')}',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/endpoints/${Uri.encodeQueryComponent(endpointId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -2173,7 +2173,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/jobs/export/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/jobs/export/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -2283,7 +2283,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/jobs/import/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/jobs/import/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -2362,7 +2362,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/endpoints/${Uri.encodeQueryComponent(endpointId).replaceAll('+', '%20')}/inappmessages',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/endpoints/${Uri.encodeQueryComponent(endpointId).replaceAll('+', '%20')}/inappmessages',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -2464,7 +2464,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -2543,7 +2543,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/%2524%257BUri.encodeQueryComponent%2528applicationId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/journeys/%24%7BUri.encodeQueryComponent%28journeyId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/kpis/daterange/${Uri.encodeQueryComponent(kpiName).replaceAll('+', '%20')}',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}/kpis/daterange/${Uri.encodeQueryComponent(kpiName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2599,7 +2599,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/%2524%257BUri.encodeQueryComponent%2528applicationId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}/activities/%24%7BUri.encodeQueryComponent%28journeyActivityId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/execution-metrics',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}/activities/${Uri.encodeQueryComponent(journeyActivityId).replaceAll('+', '%20')}/execution-metrics',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2651,7 +2651,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}/execution-metrics',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}/execution-metrics',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2712,7 +2712,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/%252524%25257BUri.encodeQueryComponent%252528applicationId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/journeys/%24%7BUri.encodeQueryComponent%28journeyId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/runs/${Uri.encodeQueryComponent(runId).replaceAll('+', '%20')}/activities/%2524%257BUri.encodeQueryComponent%2528journeyActivityId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/execution-metrics',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}/runs/${Uri.encodeQueryComponent(runId).replaceAll('+', '%20')}/activities/${Uri.encodeQueryComponent(journeyActivityId).replaceAll('+', '%20')}/execution-metrics',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2768,7 +2768,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/%2524%257BUri.encodeQueryComponent%2528applicationId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/journeys/%24%7BUri.encodeQueryComponent%28journeyId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/runs/${Uri.encodeQueryComponent(runId).replaceAll('+', '%20')}/execution-metrics',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}/runs/${Uri.encodeQueryComponent(runId).replaceAll('+', '%20')}/execution-metrics',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2818,7 +2818,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}/runs',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}/runs',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2995,7 +2995,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/segments/${Uri.encodeQueryComponent(segmentId).replaceAll('+', '%20')}',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/segments/${Uri.encodeQueryComponent(segmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -3044,7 +3044,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/segments/${Uri.encodeQueryComponent(segmentId).replaceAll('+', '%20')}/jobs/export',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/segments/${Uri.encodeQueryComponent(segmentId).replaceAll('+', '%20')}/jobs/export',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3094,7 +3094,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/segments/${Uri.encodeQueryComponent(segmentId).replaceAll('+', '%20')}/jobs/import',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/segments/${Uri.encodeQueryComponent(segmentId).replaceAll('+', '%20')}/jobs/import',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3134,7 +3134,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/%2524%257BUri.encodeQueryComponent%2528applicationId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/segments/%24%7BUri.encodeQueryComponent%28segmentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(version).replaceAll('+', '%20')}',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/segments/${Uri.encodeQueryComponent(segmentId).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(version).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -3184,7 +3184,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/segments/${Uri.encodeQueryComponent(segmentId).replaceAll('+', '%20')}/versions',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/segments/${Uri.encodeQueryComponent(segmentId).replaceAll('+', '%20')}/versions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3363,7 +3363,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -3581,7 +3581,7 @@ class Pinpoint {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v1/templates/%24%7BUri.encodeQueryComponent%28templateName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(templateType).replaceAll('+', '%20')}/versions',
+          '/v1/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(templateType).replaceAll('+', '%20')}/versions',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3773,7 +3773,7 @@ class Pinpoint {
       payload: updateAttributesRequest,
       method: 'PUT',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/attributes/${Uri.encodeQueryComponent(attributeType).replaceAll('+', '%20')}',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/attributes/${Uri.encodeQueryComponent(attributeType).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -4158,7 +4158,7 @@ class Pinpoint {
       payload: writeCampaignRequest,
       method: 'PUT',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/campaigns/${Uri.encodeQueryComponent(campaignId).replaceAll('+', '%20')}',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/campaigns/${Uri.encodeQueryComponent(campaignId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -4310,7 +4310,7 @@ class Pinpoint {
       payload: endpointRequest,
       method: 'PUT',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/endpoints/${Uri.encodeQueryComponent(endpointId).replaceAll('+', '%20')}',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/endpoints/${Uri.encodeQueryComponent(endpointId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -4494,7 +4494,7 @@ class Pinpoint {
       payload: writeJourneyRequest,
       method: 'PUT',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -4528,7 +4528,7 @@ class Pinpoint {
       payload: journeyStateRequest,
       method: 'PUT',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}/state',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/journeys/${Uri.encodeQueryComponent(journeyId).replaceAll('+', '%20')}/state',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -4680,7 +4680,7 @@ class Pinpoint {
       payload: writeSegmentRequest,
       method: 'PUT',
       requestUri:
-          '/v1/apps/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/segments/${Uri.encodeQueryComponent(segmentId).replaceAll('+', '%20')}',
+          '/v1/apps/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/segments/${Uri.encodeQueryComponent(segmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -4832,7 +4832,7 @@ class Pinpoint {
       payload: templateActiveVersionRequest,
       method: 'PUT',
       requestUri:
-          '/v1/templates/%24%7BUri.encodeQueryComponent%28templateName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${Uri.encodeQueryComponent(templateType).replaceAll('+', '%20')}/active-version',
+          '/v1/templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(templateType).replaceAll('+', '%20')}/active-version',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);

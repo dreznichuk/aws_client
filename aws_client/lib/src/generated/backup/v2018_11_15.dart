@@ -474,7 +474,7 @@ class Backup {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/backup/plans/%24%7BUri.encodeQueryComponent%28backupPlanId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/selections/${Uri.encodeQueryComponent(selectionId).replaceAll('+', '%20')}',
+          '/backup/plans/${Uri.encodeQueryComponent(backupPlanId).replaceAll('+', '%20')}/selections/${Uri.encodeQueryComponent(selectionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -651,7 +651,7 @@ class Backup {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/backup-vaults/%24%7BUri.encodeQueryComponent%28backupVaultName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/recovery-points/${Uri.encodeQueryComponent(recoveryPointArn).replaceAll('+', '%20')}',
+          '/backup-vaults/${Uri.encodeQueryComponent(backupVaultName).replaceAll('+', '%20')}/recovery-points/${Uri.encodeQueryComponent(recoveryPointArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -839,7 +839,7 @@ class Backup {
       payload: null,
       method: 'GET',
       requestUri:
-          '/backup-vaults/%24%7BUri.encodeQueryComponent%28backupVaultName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/recovery-points/${Uri.encodeQueryComponent(recoveryPointArn).replaceAll('+', '%20')}',
+          '/backup-vaults/${Uri.encodeQueryComponent(backupVaultName).replaceAll('+', '%20')}/recovery-points/${Uri.encodeQueryComponent(recoveryPointArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeRecoveryPointOutput.fromJson(response);
@@ -962,7 +962,7 @@ class Backup {
       payload: null,
       method: 'POST',
       requestUri:
-          '/backup-vaults/%24%7BUri.encodeQueryComponent%28backupVaultName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/recovery-points/${Uri.encodeQueryComponent(recoveryPointArn).replaceAll('+', '%20')}/disassociate',
+          '/backup-vaults/${Uri.encodeQueryComponent(backupVaultName).replaceAll('+', '%20')}/recovery-points/${Uri.encodeQueryComponent(recoveryPointArn).replaceAll('+', '%20')}/disassociate',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -995,7 +995,7 @@ class Backup {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/backup-vaults/%24%7BUri.encodeQueryComponent%28backupVaultName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/recovery-points/${Uri.encodeQueryComponent(recoveryPointArn).replaceAll('+', '%20')}/parentAssociation',
+          '/backup-vaults/${Uri.encodeQueryComponent(backupVaultName).replaceAll('+', '%20')}/recovery-points/${Uri.encodeQueryComponent(recoveryPointArn).replaceAll('+', '%20')}/parentAssociation',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1126,7 +1126,7 @@ class Backup {
       payload: null,
       method: 'GET',
       requestUri:
-          '/backup/plans/%24%7BUri.encodeQueryComponent%28backupPlanId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/selections/${Uri.encodeQueryComponent(selectionId).replaceAll('+', '%20')}',
+          '/backup/plans/${Uri.encodeQueryComponent(backupPlanId).replaceAll('+', '%20')}/selections/${Uri.encodeQueryComponent(selectionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetBackupSelectionOutput.fromJson(response);
@@ -1234,7 +1234,7 @@ class Backup {
       payload: null,
       method: 'GET',
       requestUri:
-          '/backup-vaults/%24%7BUri.encodeQueryComponent%28backupVaultName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/recovery-points/${Uri.encodeQueryComponent(recoveryPointArn).replaceAll('+', '%20')}/restore-metadata',
+          '/backup-vaults/${Uri.encodeQueryComponent(backupVaultName).replaceAll('+', '%20')}/recovery-points/${Uri.encodeQueryComponent(recoveryPointArn).replaceAll('+', '%20')}/restore-metadata',
       exceptionFnMap: _exceptionFns,
     );
     return GetRecoveryPointRestoreMetadataOutput.fromJson(response);
@@ -3115,7 +3115,7 @@ class Backup {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/backup-vaults/%24%7BUri.encodeQueryComponent%28backupVaultName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/recovery-points/${Uri.encodeQueryComponent(recoveryPointArn).replaceAll('+', '%20')}',
+          '/backup-vaults/${Uri.encodeQueryComponent(backupVaultName).replaceAll('+', '%20')}/recovery-points/${Uri.encodeQueryComponent(recoveryPointArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateRecoveryPointLifecycleOutput.fromJson(response);

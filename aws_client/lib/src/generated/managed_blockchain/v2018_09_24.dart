@@ -486,7 +486,7 @@ class ManagedBlockchain {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/networks/${Uri.encodeQueryComponent(networkId).replaceAll('+', '%20')}/members/%24%7BUri.encodeQueryComponent%28memberId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/networks/${Uri.encodeQueryComponent(networkId).replaceAll('+', '%20')}/members/${Uri.encodeQueryComponent(memberId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -539,7 +539,7 @@ class ManagedBlockchain {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/networks/%24%7BUri.encodeQueryComponent%28networkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/nodes/${Uri.encodeQueryComponent(nodeId).replaceAll('+', '%20')}',
+          '/networks/${Uri.encodeQueryComponent(networkId).replaceAll('+', '%20')}/nodes/${Uri.encodeQueryComponent(nodeId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -593,7 +593,7 @@ class ManagedBlockchain {
       payload: null,
       method: 'GET',
       requestUri:
-          '/networks/${Uri.encodeQueryComponent(networkId).replaceAll('+', '%20')}/members/%24%7BUri.encodeQueryComponent%28memberId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/networks/${Uri.encodeQueryComponent(networkId).replaceAll('+', '%20')}/members/${Uri.encodeQueryComponent(memberId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetMemberOutput.fromJson(response);
@@ -656,7 +656,7 @@ class ManagedBlockchain {
       payload: null,
       method: 'GET',
       requestUri:
-          '/networks/%24%7BUri.encodeQueryComponent%28networkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/nodes/${Uri.encodeQueryComponent(nodeId).replaceAll('+', '%20')}',
+          '/networks/${Uri.encodeQueryComponent(networkId).replaceAll('+', '%20')}/nodes/${Uri.encodeQueryComponent(nodeId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -686,7 +686,7 @@ class ManagedBlockchain {
       payload: null,
       method: 'GET',
       requestUri:
-          '/networks/%24%7BUri.encodeQueryComponent%28networkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/proposals/${Uri.encodeQueryComponent(proposalId).replaceAll('+', '%20')}',
+          '/networks/${Uri.encodeQueryComponent(networkId).replaceAll('+', '%20')}/proposals/${Uri.encodeQueryComponent(proposalId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetProposalOutput.fromJson(response);
@@ -989,7 +989,7 @@ class ManagedBlockchain {
       payload: null,
       method: 'GET',
       requestUri:
-          '/networks/%24%7BUri.encodeQueryComponent%28networkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/proposals/${Uri.encodeQueryComponent(proposalId).replaceAll('+', '%20')}/votes',
+          '/networks/${Uri.encodeQueryComponent(networkId).replaceAll('+', '%20')}/proposals/${Uri.encodeQueryComponent(proposalId).replaceAll('+', '%20')}/votes',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1227,7 +1227,7 @@ class ManagedBlockchain {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/networks/${Uri.encodeQueryComponent(networkId).replaceAll('+', '%20')}/members/%24%7BUri.encodeQueryComponent%28memberId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/networks/${Uri.encodeQueryComponent(networkId).replaceAll('+', '%20')}/members/${Uri.encodeQueryComponent(memberId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1270,7 +1270,7 @@ class ManagedBlockchain {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/networks/%24%7BUri.encodeQueryComponent%28networkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/nodes/${Uri.encodeQueryComponent(nodeId).replaceAll('+', '%20')}',
+          '/networks/${Uri.encodeQueryComponent(networkId).replaceAll('+', '%20')}/nodes/${Uri.encodeQueryComponent(nodeId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1314,7 +1314,7 @@ class ManagedBlockchain {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/networks/%24%7BUri.encodeQueryComponent%28networkId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/proposals/${Uri.encodeQueryComponent(proposalId).replaceAll('+', '%20')}/votes',
+          '/networks/${Uri.encodeQueryComponent(networkId).replaceAll('+', '%20')}/proposals/${Uri.encodeQueryComponent(proposalId).replaceAll('+', '%20')}/votes',
       exceptionFnMap: _exceptionFns,
     );
   }

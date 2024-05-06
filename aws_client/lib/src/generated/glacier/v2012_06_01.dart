@@ -136,7 +136,7 @@ class Glacier {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/%2524%257BUri.encodeQueryComponent%2528accountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/multipart-uploads/%24%7BUri.encodeQueryComponent%28uploadId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/multipart-uploads/${Uri.encodeQueryComponent(uploadId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -185,7 +185,7 @@ class Glacier {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/lock-policy',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/lock-policy',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -230,7 +230,7 @@ class Glacier {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/tags?operation=add',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/tags?operation=add',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -327,7 +327,7 @@ class Glacier {
       payload: null,
       method: 'POST',
       requestUri:
-          '/%2524%257BUri.encodeQueryComponent%2528accountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/multipart-uploads/%24%7BUri.encodeQueryComponent%28uploadId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/multipart-uploads/${Uri.encodeQueryComponent(uploadId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -389,7 +389,7 @@ class Glacier {
       payload: null,
       method: 'POST',
       requestUri:
-          '/%2524%257BUri.encodeQueryComponent%2528accountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/lock-policy/%24%7BUri.encodeQueryComponent%28lockId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/lock-policy/${Uri.encodeQueryComponent(lockId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -448,7 +448,7 @@ class Glacier {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -516,7 +516,7 @@ class Glacier {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/%2524%257BUri.encodeQueryComponent%2528accountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/archives/%24%7BUri.encodeQueryComponent%28archiveId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/archives/${Uri.encodeQueryComponent(archiveId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -571,7 +571,7 @@ class Glacier {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -610,7 +610,7 @@ class Glacier {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/access-policy',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/access-policy',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -657,7 +657,7 @@ class Glacier {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/notification-configuration',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/notification-configuration',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -714,7 +714,7 @@ class Glacier {
       payload: null,
       method: 'GET',
       requestUri:
-          '/%2524%257BUri.encodeQueryComponent%2528accountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/jobs/%24%7BUri.encodeQueryComponent%28jobId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GlacierJobDescription.fromJson(response);
@@ -767,7 +767,7 @@ class Glacier {
       payload: null,
       method: 'GET',
       requestUri:
-          '/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeVaultOutput.fromJson(response);
@@ -921,7 +921,7 @@ class Glacier {
       payload: null,
       method: 'GET',
       requestUri:
-          '/%2524%257BUri.encodeQueryComponent%2528accountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/jobs/%24%7BUri.encodeQueryComponent%28jobId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/output',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}/output',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -972,7 +972,7 @@ class Glacier {
       payload: null,
       method: 'GET',
       requestUri:
-          '/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/access-policy',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/access-policy',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1037,7 +1037,7 @@ class Glacier {
       payload: null,
       method: 'GET',
       requestUri:
-          '/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/lock-policy',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/lock-policy',
       exceptionFnMap: _exceptionFns,
     );
     return GetVaultLockOutput.fromJson(response);
@@ -1089,7 +1089,7 @@ class Glacier {
       payload: null,
       method: 'GET',
       requestUri:
-          '/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/notification-configuration',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/notification-configuration',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1133,7 +1133,7 @@ class Glacier {
       payload: jobParameters,
       method: 'POST',
       requestUri:
-          '/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/jobs',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/jobs',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1225,7 +1225,7 @@ class Glacier {
       payload: null,
       method: 'POST',
       requestUri:
-          '/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/multipart-uploads',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/multipart-uploads',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -1305,7 +1305,7 @@ class Glacier {
       payload: policy,
       method: 'POST',
       requestUri:
-          '/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/lock-policy',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/lock-policy',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -1408,7 +1408,7 @@ class Glacier {
       payload: null,
       method: 'GET',
       requestUri:
-          '/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/jobs',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/jobs',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1490,7 +1490,7 @@ class Glacier {
       payload: null,
       method: 'GET',
       requestUri:
-          '/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/multipart-uploads',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/multipart-uploads',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1571,7 +1571,7 @@ class Glacier {
       payload: null,
       method: 'GET',
       requestUri:
-          '/%2524%257BUri.encodeQueryComponent%2528accountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/multipart-uploads/%24%7BUri.encodeQueryComponent%28uploadId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/multipart-uploads/${Uri.encodeQueryComponent(uploadId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1632,7 +1632,7 @@ class Glacier {
       payload: null,
       method: 'GET',
       requestUri:
-          '/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/tags',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/tags',
       exceptionFnMap: _exceptionFns,
     );
     return ListTagsForVaultOutput.fromJson(response);
@@ -1771,7 +1771,7 @@ class Glacier {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/tags?operation=remove',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/tags?operation=remove',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1852,7 +1852,7 @@ class Glacier {
       payload: policy,
       method: 'PUT',
       requestUri:
-          '/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/access-policy',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/access-policy',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1926,7 +1926,7 @@ class Glacier {
       payload: vaultNotificationConfig,
       method: 'PUT',
       requestUri:
-          '/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/notification-configuration',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/notification-configuration',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2014,7 +2014,7 @@ class Glacier {
       payload: body,
       method: 'POST',
       requestUri:
-          '/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/archives',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/archives',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2129,7 +2129,7 @@ class Glacier {
       payload: body,
       method: 'PUT',
       requestUri:
-          '/%2524%257BUri.encodeQueryComponent%2528accountId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/multipart-uploads/%24%7BUri.encodeQueryComponent%28uploadId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}/vaults/${Uri.encodeQueryComponent(vaultName).replaceAll('+', '%20')}/multipart-uploads/${Uri.encodeQueryComponent(uploadId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );

@@ -115,7 +115,7 @@ class ConnectCases {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/domains/%24%7BUri.encodeQueryComponent%28domainId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/fields/${Uri.encodeQueryComponent(fieldId).replaceAll('+', '%20')}/options',
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/fields/${Uri.encodeQueryComponent(fieldId).replaceAll('+', '%20')}/options',
       exceptionFnMap: _exceptionFns,
     );
     return BatchPutFieldOptionsResponse.fromJson(response);
@@ -354,7 +354,7 @@ class ConnectCases {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/cases/%24%7BUri.encodeQueryComponent%28caseId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/related-items/',
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/cases/${Uri.encodeQueryComponent(caseId).replaceAll('+', '%20')}/related-items/',
       exceptionFnMap: _exceptionFns,
     );
     return CreateRelatedItemResponse.fromJson(response);
@@ -477,7 +477,7 @@ class ConnectCases {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/cases/%24%7BUri.encodeQueryComponent%28caseId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/cases/${Uri.encodeQueryComponent(caseId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetCaseResponse.fromJson(response);
@@ -550,7 +550,7 @@ class ConnectCases {
       payload: null,
       method: 'POST',
       requestUri:
-          '/domains/%24%7BUri.encodeQueryComponent%28domainId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/layouts/${Uri.encodeQueryComponent(layoutId).replaceAll('+', '%20')}',
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/layouts/${Uri.encodeQueryComponent(layoutId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetLayoutResponse.fromJson(response);
@@ -577,7 +577,7 @@ class ConnectCases {
       payload: null,
       method: 'POST',
       requestUri:
-          '/domains/%24%7BUri.encodeQueryComponent%28domainId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}',
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetTemplateResponse.fromJson(response);
@@ -714,7 +714,7 @@ class ConnectCases {
       payload: null,
       method: 'POST',
       requestUri:
-          '/domains/%24%7BUri.encodeQueryComponent%28domainId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/fields/${Uri.encodeQueryComponent(fieldId).replaceAll('+', '%20')}/options-list',
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/fields/${Uri.encodeQueryComponent(fieldId).replaceAll('+', '%20')}/options-list',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1030,7 +1030,7 @@ class ConnectCases {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/cases/%24%7BUri.encodeQueryComponent%28caseId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/related-items-search',
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/cases/${Uri.encodeQueryComponent(caseId).replaceAll('+', '%20')}/related-items-search',
       exceptionFnMap: _exceptionFns,
     );
     return SearchRelatedItemsResponse.fromJson(response);
@@ -1131,7 +1131,7 @@ class ConnectCases {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/cases/%24%7BUri.encodeQueryComponent%28caseId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/cases/${Uri.encodeQueryComponent(caseId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1170,7 +1170,7 @@ class ConnectCases {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/domains/%24%7BUri.encodeQueryComponent%28domainId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/fields/${Uri.encodeQueryComponent(fieldId).replaceAll('+', '%20')}',
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/fields/${Uri.encodeQueryComponent(fieldId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1221,7 +1221,7 @@ class ConnectCases {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/domains/%24%7BUri.encodeQueryComponent%28domainId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/layouts/${Uri.encodeQueryComponent(layoutId).replaceAll('+', '%20')}',
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/layouts/${Uri.encodeQueryComponent(layoutId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1282,7 +1282,7 @@ class ConnectCases {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/domains/%24%7BUri.encodeQueryComponent%28domainId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}',
+          '/domains/${Uri.encodeQueryComponent(domainId).replaceAll('+', '%20')}/templates/${Uri.encodeQueryComponent(templateId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

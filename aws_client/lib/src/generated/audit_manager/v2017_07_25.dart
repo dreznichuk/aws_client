@@ -312,7 +312,7 @@ class AuditManager {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/assessments/%2524%257BUri.encodeQueryComponent%2528assessmentId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/controlSets/${Uri.encodeQueryComponent(controlSetId).replaceAll('+', '%20')}/controls/%24%7BUri.encodeQueryComponent%28controlId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/evidence',
+          '/assessments/${Uri.encodeQueryComponent(assessmentId).replaceAll('+', '%20')}/controlSets/${Uri.encodeQueryComponent(controlSetId).replaceAll('+', '%20')}/controls/${Uri.encodeQueryComponent(controlId).replaceAll('+', '%20')}/evidence',
       exceptionFnMap: _exceptionFns,
     );
     return BatchImportEvidenceToAssessmentControlResponse.fromJson(response);
@@ -653,7 +653,7 @@ class AuditManager {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/assessments/%24%7BUri.encodeQueryComponent%28assessmentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/reports/${Uri.encodeQueryComponent(assessmentReportId).replaceAll('+', '%20')}',
+          '/assessments/${Uri.encodeQueryComponent(assessmentId).replaceAll('+', '%20')}/reports/${Uri.encodeQueryComponent(assessmentReportId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -915,7 +915,7 @@ class AuditManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/assessments/%24%7BUri.encodeQueryComponent%28assessmentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/reports/${Uri.encodeQueryComponent(assessmentReportId).replaceAll('+', '%20')}/url',
+          '/assessments/${Uri.encodeQueryComponent(assessmentId).replaceAll('+', '%20')}/reports/${Uri.encodeQueryComponent(assessmentReportId).replaceAll('+', '%20')}/url',
       exceptionFnMap: _exceptionFns,
     );
     return GetAssessmentReportUrlResponse.fromJson(response);
@@ -1059,7 +1059,7 @@ class AuditManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/assessments/%252524%25257BUri.encodeQueryComponent%252528assessmentId%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/controlSets/%2524%257BUri.encodeQueryComponent%2528controlSetId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/evidenceFolders/%24%7BUri.encodeQueryComponent%28evidenceFolderId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/evidence/${Uri.encodeQueryComponent(evidenceId).replaceAll('+', '%20')}',
+          '/assessments/${Uri.encodeQueryComponent(assessmentId).replaceAll('+', '%20')}/controlSets/${Uri.encodeQueryComponent(controlSetId).replaceAll('+', '%20')}/evidenceFolders/${Uri.encodeQueryComponent(evidenceFolderId).replaceAll('+', '%20')}/evidence/${Uri.encodeQueryComponent(evidenceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetEvidenceResponse.fromJson(response);
@@ -1108,7 +1108,7 @@ class AuditManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/assessments/%2524%257BUri.encodeQueryComponent%2528assessmentId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/controlSets/%24%7BUri.encodeQueryComponent%28controlSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/evidenceFolders/${Uri.encodeQueryComponent(evidenceFolderId).replaceAll('+', '%20')}/evidence',
+          '/assessments/${Uri.encodeQueryComponent(assessmentId).replaceAll('+', '%20')}/controlSets/${Uri.encodeQueryComponent(controlSetId).replaceAll('+', '%20')}/evidenceFolders/${Uri.encodeQueryComponent(evidenceFolderId).replaceAll('+', '%20')}/evidence',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1139,7 +1139,7 @@ class AuditManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/assessments/%2524%257BUri.encodeQueryComponent%2528assessmentId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/controlSets/%24%7BUri.encodeQueryComponent%28controlSetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/evidenceFolders/${Uri.encodeQueryComponent(evidenceFolderId).replaceAll('+', '%20')}',
+          '/assessments/${Uri.encodeQueryComponent(assessmentId).replaceAll('+', '%20')}/controlSets/${Uri.encodeQueryComponent(controlSetId).replaceAll('+', '%20')}/evidenceFolders/${Uri.encodeQueryComponent(evidenceFolderId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetEvidenceFolderResponse.fromJson(response);
@@ -1233,7 +1233,7 @@ class AuditManager {
       payload: null,
       method: 'GET',
       requestUri:
-          '/assessments/%2524%257BUri.encodeQueryComponent%2528assessmentId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/evidenceFolders-by-assessment-control/${Uri.encodeQueryComponent(controlSetId).replaceAll('+', '%20')}/%24%7BUri.encodeQueryComponent%28controlId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/assessments/${Uri.encodeQueryComponent(assessmentId).replaceAll('+', '%20')}/evidenceFolders-by-assessment-control/${Uri.encodeQueryComponent(controlSetId).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(controlId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2124,7 +2124,7 @@ class AuditManager {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/assessments/%2524%257BUri.encodeQueryComponent%2528assessmentId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/controlSets/${Uri.encodeQueryComponent(controlSetId).replaceAll('+', '%20')}/controls/%24%7BUri.encodeQueryComponent%28controlId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/assessments/${Uri.encodeQueryComponent(assessmentId).replaceAll('+', '%20')}/controlSets/${Uri.encodeQueryComponent(controlSetId).replaceAll('+', '%20')}/controls/${Uri.encodeQueryComponent(controlId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAssessmentControlResponse.fromJson(response);
@@ -2163,7 +2163,7 @@ class AuditManager {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/assessments/%24%7BUri.encodeQueryComponent%28assessmentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/controlSets/${Uri.encodeQueryComponent(controlSetId).replaceAll('+', '%20')}/status',
+          '/assessments/${Uri.encodeQueryComponent(assessmentId).replaceAll('+', '%20')}/controlSets/${Uri.encodeQueryComponent(controlSetId).replaceAll('+', '%20')}/status',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAssessmentControlSetStatusResponse.fromJson(response);

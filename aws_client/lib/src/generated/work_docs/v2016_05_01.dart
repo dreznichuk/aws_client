@@ -139,7 +139,7 @@ class WorkDocs {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/api/v1/documents/%24%7BUri.encodeQueryComponent%28documentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionId).replaceAll('+', '%20')}',
+          '/api/v1/documents/${Uri.encodeQueryComponent(documentId).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(versionId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -292,7 +292,7 @@ class WorkDocs {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/api/v1/documents/%24%7BUri.encodeQueryComponent%28documentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionId).replaceAll('+', '%20')}/comment',
+          '/api/v1/documents/${Uri.encodeQueryComponent(documentId).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(versionId).replaceAll('+', '%20')}/comment',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -624,7 +624,7 @@ class WorkDocs {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/api/v1/documents/%24%7BUri.encodeQueryComponent%28documentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionId).replaceAll('+', '%20')}/comment/%2524%257BUri.encodeQueryComponent%2528commentId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
+          '/api/v1/documents/${Uri.encodeQueryComponent(documentId).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(versionId).replaceAll('+', '%20')}/comment/${Uri.encodeQueryComponent(commentId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -759,7 +759,7 @@ class WorkDocs {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/api/v1/documentVersions/%24%7BUri.encodeQueryComponent%28documentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionId).replaceAll('+', '%20')}',
+          '/api/v1/documentVersions/${Uri.encodeQueryComponent(documentId).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(versionId).replaceAll('+', '%20')}',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -902,7 +902,7 @@ class WorkDocs {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/api/v1/organizations/%24%7BUri.encodeQueryComponent%28organizationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/subscriptions/${Uri.encodeQueryComponent(subscriptionId).replaceAll('+', '%20')}',
+          '/api/v1/organizations/${Uri.encodeQueryComponent(organizationId).replaceAll('+', '%20')}/subscriptions/${Uri.encodeQueryComponent(subscriptionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1088,7 +1088,7 @@ class WorkDocs {
       payload: null,
       method: 'GET',
       requestUri:
-          '/api/v1/documents/%24%7BUri.encodeQueryComponent%28documentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionId).replaceAll('+', '%20')}/comments',
+          '/api/v1/documents/${Uri.encodeQueryComponent(documentId).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(versionId).replaceAll('+', '%20')}/comments',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -1768,7 +1768,7 @@ class WorkDocs {
       payload: null,
       method: 'GET',
       requestUri:
-          '/api/v1/documents/%24%7BUri.encodeQueryComponent%28documentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionId).replaceAll('+', '%20')}',
+          '/api/v1/documents/${Uri.encodeQueryComponent(documentId).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(versionId).replaceAll('+', '%20')}',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -2098,7 +2098,7 @@ class WorkDocs {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/api/v1/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/permissions/%24%7BUri.encodeQueryComponent%28principalId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/api/v1/resources/${Uri.encodeQueryComponent(resourceId).replaceAll('+', '%20')}/permissions/${Uri.encodeQueryComponent(principalId).replaceAll('+', '%20')}',
       queryParams: $query,
       headers: headers,
       exceptionFnMap: _exceptionFns,
@@ -2325,7 +2325,7 @@ class WorkDocs {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/api/v1/documents/%24%7BUri.encodeQueryComponent%28documentId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionId).replaceAll('+', '%20')}',
+          '/api/v1/documents/${Uri.encodeQueryComponent(documentId).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(versionId).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );

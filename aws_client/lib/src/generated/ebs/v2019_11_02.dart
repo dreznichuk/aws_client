@@ -194,7 +194,7 @@ class Ebs {
       payload: null,
       method: 'GET',
       requestUri:
-          '/snapshots/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}/blocks/%24%7BUri.encodeQueryComponent%28blockIndex.toString%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/snapshots/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}/blocks/${Uri.encodeQueryComponent(blockIndex.toString()).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -461,7 +461,7 @@ class Ebs {
       payload: blockData,
       method: 'PUT',
       requestUri:
-          '/snapshots/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}/blocks/%24%7BUri.encodeQueryComponent%28blockIndex.toString%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/snapshots/${Uri.encodeQueryComponent(snapshotId).replaceAll('+', '%20')}/blocks/${Uri.encodeQueryComponent(blockIndex.toString()).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );

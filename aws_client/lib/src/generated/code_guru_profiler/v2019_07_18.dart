@@ -1088,7 +1088,7 @@ class CodeGuruProfiler {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}/policy/%24%7BUri.encodeQueryComponent%28actionGroup.toValue%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}/policy/${Uri.encodeQueryComponent(actionGroup.toValue()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return PutPermissionResponse.fromJson(response);
@@ -1115,7 +1115,7 @@ class CodeGuruProfiler {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}/notificationConfiguration/%24%7BUri.encodeQueryComponent%28channelId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}/notificationConfiguration/${Uri.encodeQueryComponent(channelId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return RemoveNotificationChannelResponse.fromJson(response);
@@ -1164,7 +1164,7 @@ class CodeGuruProfiler {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}/policy/%24%7BUri.encodeQueryComponent%28actionGroup.toValue%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}/policy/${Uri.encodeQueryComponent(actionGroup.toValue()).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1208,7 +1208,7 @@ class CodeGuruProfiler {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/internal/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}/anomalies/%24%7BUri.encodeQueryComponent%28anomalyInstanceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/feedback',
+          '/internal/profilingGroups/${Uri.encodeQueryComponent(profilingGroupName).replaceAll('+', '%20')}/anomalies/${Uri.encodeQueryComponent(anomalyInstanceId).replaceAll('+', '%20')}/feedback',
       exceptionFnMap: _exceptionFns,
     );
   }

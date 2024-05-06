@@ -80,7 +80,7 @@ class FinSpaceData {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/permission-group/%24%7BUri.encodeQueryComponent%28permissionGroupId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}',
+          '/permission-group/${Uri.encodeQueryComponent(permissionGroupId).replaceAll('+', '%20')}/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return AssociateUserToPermissionGroupResponse.fromJson(response);
@@ -625,7 +625,7 @@ class FinSpaceData {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/permission-group/%24%7BUri.encodeQueryComponent%28permissionGroupId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}',
+          '/permission-group/${Uri.encodeQueryComponent(permissionGroupId).replaceAll('+', '%20')}/users/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -687,7 +687,7 @@ class FinSpaceData {
       payload: null,
       method: 'GET',
       requestUri:
-          '/datasets/${Uri.encodeQueryComponent(datasetId).replaceAll('+', '%20')}/changesetsv2/%24%7BUri.encodeQueryComponent%28changesetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/datasets/${Uri.encodeQueryComponent(datasetId).replaceAll('+', '%20')}/changesetsv2/${Uri.encodeQueryComponent(changesetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetChangesetResponse.fromJson(response);
@@ -714,7 +714,7 @@ class FinSpaceData {
       payload: null,
       method: 'GET',
       requestUri:
-          '/datasets/${Uri.encodeQueryComponent(datasetId).replaceAll('+', '%20')}/dataviewsv2/%24%7BUri.encodeQueryComponent%28dataViewId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/datasets/${Uri.encodeQueryComponent(datasetId).replaceAll('+', '%20')}/dataviewsv2/${Uri.encodeQueryComponent(dataViewId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDataViewResponse.fromJson(response);
@@ -777,7 +777,7 @@ class FinSpaceData {
       payload: null,
       method: 'POST',
       requestUri:
-          '/datasets/${Uri.encodeQueryComponent(datasetId).replaceAll('+', '%20')}/dataviewsv2/%24%7BUri.encodeQueryComponent%28dataViewId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/external-access-details',
+          '/datasets/${Uri.encodeQueryComponent(datasetId).replaceAll('+', '%20')}/dataviewsv2/${Uri.encodeQueryComponent(dataViewId).replaceAll('+', '%20')}/external-access-details',
       exceptionFnMap: _exceptionFns,
     );
     return GetExternalDataViewAccessDetailsResponse.fromJson(response);
@@ -1317,7 +1317,7 @@ class FinSpaceData {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/datasets/${Uri.encodeQueryComponent(datasetId).replaceAll('+', '%20')}/changesetsv2/%24%7BUri.encodeQueryComponent%28changesetId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/datasets/${Uri.encodeQueryComponent(datasetId).replaceAll('+', '%20')}/changesetsv2/${Uri.encodeQueryComponent(changesetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateChangesetResponse.fromJson(response);

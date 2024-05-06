@@ -421,7 +421,7 @@ class WellArchitected {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/lenses/%24%7BUri.encodeQueryComponent%28lensAlias%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/shares/${Uri.encodeQueryComponent(shareId).replaceAll('+', '%20')}',
+          '/lenses/${Uri.encodeQueryComponent(lensAlias).replaceAll('+', '%20')}/shares/${Uri.encodeQueryComponent(shareId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -474,7 +474,7 @@ class WellArchitected {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/shares/%24%7BUri.encodeQueryComponent%28shareId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/shares/${Uri.encodeQueryComponent(shareId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -584,7 +584,7 @@ class WellArchitected {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/%2524%257BUri.encodeQueryComponent%2528lensAlias%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/answers/%24%7BUri.encodeQueryComponent%28questionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/${Uri.encodeQueryComponent(lensAlias).replaceAll('+', '%20')}/answers/${Uri.encodeQueryComponent(questionId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -696,7 +696,7 @@ class WellArchitected {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/%24%7BUri.encodeQueryComponent%28lensAlias%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/${Uri.encodeQueryComponent(lensAlias).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -729,7 +729,7 @@ class WellArchitected {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/%24%7BUri.encodeQueryComponent%28lensAlias%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/report',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/${Uri.encodeQueryComponent(lensAlias).replaceAll('+', '%20')}/report',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -791,7 +791,7 @@ class WellArchitected {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/milestones/%24%7BUri.encodeQueryComponent%28milestoneNumber.toString%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/milestones/${Uri.encodeQueryComponent(milestoneNumber.toString()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetMilestoneOutput.fromJson(response);
@@ -919,7 +919,7 @@ class WellArchitected {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/%24%7BUri.encodeQueryComponent%28lensAlias%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/answers',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/${Uri.encodeQueryComponent(lensAlias).replaceAll('+', '%20')}/answers',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1054,7 +1054,7 @@ class WellArchitected {
       payload: null,
       method: 'GET',
       requestUri:
-          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/%24%7BUri.encodeQueryComponent%28lensAlias%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/improvements',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/${Uri.encodeQueryComponent(lensAlias).replaceAll('+', '%20')}/improvements',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1498,7 +1498,7 @@ class WellArchitected {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/%2524%257BUri.encodeQueryComponent%2528lensAlias%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/answers/%24%7BUri.encodeQueryComponent%28questionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/${Uri.encodeQueryComponent(lensAlias).replaceAll('+', '%20')}/answers/${Uri.encodeQueryComponent(questionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateAnswerOutput.fromJson(response);
@@ -1558,7 +1558,7 @@ class WellArchitected {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/%24%7BUri.encodeQueryComponent%28lensAlias%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/${Uri.encodeQueryComponent(lensAlias).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateLensReviewOutput.fromJson(response);
@@ -1689,7 +1689,7 @@ class WellArchitected {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/shares/%24%7BUri.encodeQueryComponent%28shareId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/shares/${Uri.encodeQueryComponent(shareId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateWorkloadShareOutput.fromJson(response);
@@ -1717,7 +1717,7 @@ class WellArchitected {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/%24%7BUri.encodeQueryComponent%28lensAlias%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/upgrade',
+          '/workloads/${Uri.encodeQueryComponent(workloadId).replaceAll('+', '%20')}/lensReviews/${Uri.encodeQueryComponent(lensAlias).replaceAll('+', '%20')}/upgrade',
       exceptionFnMap: _exceptionFns,
     );
   }

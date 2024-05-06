@@ -181,7 +181,7 @@ class AppMesh {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/meshes/%24%7BUri.encodeQueryComponent%28meshName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/virtualRouter/${Uri.encodeQueryComponent(virtualRouterName).replaceAll('+', '%20')}/routes',
+          '/meshes/${Uri.encodeQueryComponent(meshName).replaceAll('+', '%20')}/virtualRouter/${Uri.encodeQueryComponent(virtualRouterName).replaceAll('+', '%20')}/routes',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -390,7 +390,7 @@ class AppMesh {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/meshes/%2524%257BUri.encodeQueryComponent%2528meshName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/virtualRouter/${Uri.encodeQueryComponent(virtualRouterName).replaceAll('+', '%20')}/routes/%24%7BUri.encodeQueryComponent%28routeName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/meshes/${Uri.encodeQueryComponent(meshName).replaceAll('+', '%20')}/virtualRouter/${Uri.encodeQueryComponent(virtualRouterName).replaceAll('+', '%20')}/routes/${Uri.encodeQueryComponent(routeName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -422,7 +422,7 @@ class AppMesh {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/meshes/%24%7BUri.encodeQueryComponent%28meshName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/virtualNodes/${Uri.encodeQueryComponent(virtualNodeName).replaceAll('+', '%20')}',
+          '/meshes/${Uri.encodeQueryComponent(meshName).replaceAll('+', '%20')}/virtualNodes/${Uri.encodeQueryComponent(virtualNodeName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -459,7 +459,7 @@ class AppMesh {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/meshes/%24%7BUri.encodeQueryComponent%28meshName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/virtualRouters/${Uri.encodeQueryComponent(virtualRouterName).replaceAll('+', '%20')}',
+          '/meshes/${Uri.encodeQueryComponent(meshName).replaceAll('+', '%20')}/virtualRouters/${Uri.encodeQueryComponent(virtualRouterName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -521,7 +521,7 @@ class AppMesh {
       payload: null,
       method: 'GET',
       requestUri:
-          '/meshes/%2524%257BUri.encodeQueryComponent%2528meshName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/virtualRouter/${Uri.encodeQueryComponent(virtualRouterName).replaceAll('+', '%20')}/routes/%24%7BUri.encodeQueryComponent%28routeName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/meshes/${Uri.encodeQueryComponent(meshName).replaceAll('+', '%20')}/virtualRouter/${Uri.encodeQueryComponent(virtualRouterName).replaceAll('+', '%20')}/routes/${Uri.encodeQueryComponent(routeName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -552,7 +552,7 @@ class AppMesh {
       payload: null,
       method: 'GET',
       requestUri:
-          '/meshes/%24%7BUri.encodeQueryComponent%28meshName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/virtualNodes/${Uri.encodeQueryComponent(virtualNodeName).replaceAll('+', '%20')}',
+          '/meshes/${Uri.encodeQueryComponent(meshName).replaceAll('+', '%20')}/virtualNodes/${Uri.encodeQueryComponent(virtualNodeName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -583,7 +583,7 @@ class AppMesh {
       payload: null,
       method: 'GET',
       requestUri:
-          '/meshes/%24%7BUri.encodeQueryComponent%28meshName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/virtualRouters/${Uri.encodeQueryComponent(virtualRouterName).replaceAll('+', '%20')}',
+          '/meshes/${Uri.encodeQueryComponent(meshName).replaceAll('+', '%20')}/virtualRouters/${Uri.encodeQueryComponent(virtualRouterName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -707,7 +707,7 @@ class AppMesh {
       payload: null,
       method: 'GET',
       requestUri:
-          '/meshes/%24%7BUri.encodeQueryComponent%28meshName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/virtualRouter/${Uri.encodeQueryComponent(virtualRouterName).replaceAll('+', '%20')}/routes',
+          '/meshes/${Uri.encodeQueryComponent(meshName).replaceAll('+', '%20')}/virtualRouter/${Uri.encodeQueryComponent(virtualRouterName).replaceAll('+', '%20')}/routes',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -876,7 +876,7 @@ class AppMesh {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/meshes/%2524%257BUri.encodeQueryComponent%2528meshName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/virtualRouter/${Uri.encodeQueryComponent(virtualRouterName).replaceAll('+', '%20')}/routes/%24%7BUri.encodeQueryComponent%28routeName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/meshes/${Uri.encodeQueryComponent(meshName).replaceAll('+', '%20')}/virtualRouter/${Uri.encodeQueryComponent(virtualRouterName).replaceAll('+', '%20')}/routes/${Uri.encodeQueryComponent(routeName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -924,7 +924,7 @@ class AppMesh {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/meshes/%24%7BUri.encodeQueryComponent%28meshName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/virtualNodes/${Uri.encodeQueryComponent(virtualNodeName).replaceAll('+', '%20')}',
+          '/meshes/${Uri.encodeQueryComponent(meshName).replaceAll('+', '%20')}/virtualNodes/${Uri.encodeQueryComponent(virtualNodeName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);
@@ -972,7 +972,7 @@ class AppMesh {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/meshes/%24%7BUri.encodeQueryComponent%28meshName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/virtualRouters/${Uri.encodeQueryComponent(virtualRouterName).replaceAll('+', '%20')}',
+          '/meshes/${Uri.encodeQueryComponent(meshName).replaceAll('+', '%20')}/virtualRouters/${Uri.encodeQueryComponent(virtualRouterName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     final $json = await _s.jsonFromResponse(response);

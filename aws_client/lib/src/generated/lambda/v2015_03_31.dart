@@ -124,7 +124,7 @@ class Lambda {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/2018-10-31/layers/%24%7BUri.encodeQueryComponent%28layerName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionNumber.toString()).replaceAll('+', '%20')}/policy',
+          '/2018-10-31/layers/${Uri.encodeQueryComponent(layerName).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(versionNumber.toString()).replaceAll('+', '%20')}/policy',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1209,7 +1209,7 @@ class Lambda {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2015-03-31/functions/%24%7BUri.encodeQueryComponent%28functionName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/aliases/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
+          '/2015-03-31/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/aliases/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1519,7 +1519,7 @@ class Lambda {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2018-10-31/layers/%24%7BUri.encodeQueryComponent%28layerName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionNumber.toString()).replaceAll('+', '%20')}',
+          '/2018-10-31/layers/${Uri.encodeQueryComponent(layerName).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(versionNumber.toString()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1623,7 +1623,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2015-03-31/functions/%24%7BUri.encodeQueryComponent%28functionName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/aliases/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
+          '/2015-03-31/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/aliases/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return AliasConfiguration.fromJson(response);
@@ -1978,7 +1978,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2018-10-31/layers/%24%7BUri.encodeQueryComponent%28layerName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionNumber.toString()).replaceAll('+', '%20')}',
+          '/2018-10-31/layers/${Uri.encodeQueryComponent(layerName).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(versionNumber.toString()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetLayerVersionResponse.fromJson(response);
@@ -2034,7 +2034,7 @@ class Lambda {
       payload: null,
       method: 'GET',
       requestUri:
-          '/2018-10-31/layers/%24%7BUri.encodeQueryComponent%28layerName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionNumber.toString()).replaceAll('+', '%20')}/policy',
+          '/2018-10-31/layers/${Uri.encodeQueryComponent(layerName).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(versionNumber.toString()).replaceAll('+', '%20')}/policy',
       exceptionFnMap: _exceptionFns,
     );
     return GetLayerVersionPolicyResponse.fromJson(response);
@@ -3834,7 +3834,7 @@ class Lambda {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2018-10-31/layers/%2524%257BUri.encodeQueryComponent%2528layerName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/versions/${Uri.encodeQueryComponent(versionNumber.toString()).replaceAll('+', '%20')}/policy/%24%7BUri.encodeQueryComponent%28statementId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/2018-10-31/layers/${Uri.encodeQueryComponent(layerName).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(versionNumber.toString()).replaceAll('+', '%20')}/policy/${Uri.encodeQueryComponent(statementId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3896,7 +3896,7 @@ class Lambda {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/2015-03-31/functions/%24%7BUri.encodeQueryComponent%28functionName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/policy/${Uri.encodeQueryComponent(statementId).replaceAll('+', '%20')}',
+          '/2015-03-31/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/policy/${Uri.encodeQueryComponent(statementId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4030,7 +4030,7 @@ class Lambda {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/2015-03-31/functions/%24%7BUri.encodeQueryComponent%28functionName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/aliases/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
+          '/2015-03-31/functions/${Uri.encodeQueryComponent(functionName).replaceAll('+', '%20')}/aliases/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return AliasConfiguration.fromJson(response);

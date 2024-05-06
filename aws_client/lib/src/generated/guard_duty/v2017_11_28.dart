@@ -777,7 +777,7 @@ class GuardDuty {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/detector/%24%7BUri.encodeQueryComponent%28detectorId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/filter/${Uri.encodeQueryComponent(filterName).replaceAll('+', '%20')}',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/filter/${Uri.encodeQueryComponent(filterName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -801,7 +801,7 @@ class GuardDuty {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/detector/%24%7BUri.encodeQueryComponent%28detectorId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/ipset/${Uri.encodeQueryComponent(ipSetId).replaceAll('+', '%20')}',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/ipset/${Uri.encodeQueryComponent(ipSetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -885,7 +885,7 @@ class GuardDuty {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/publishingDestination/%24%7BUri.encodeQueryComponent%28destinationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/publishingDestination/${Uri.encodeQueryComponent(destinationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -908,7 +908,7 @@ class GuardDuty {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/detector/%24%7BUri.encodeQueryComponent%28detectorId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/threatintelset/${Uri.encodeQueryComponent(threatIntelSetId).replaceAll('+', '%20')}',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/threatintelset/${Uri.encodeQueryComponent(threatIntelSetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1051,7 +1051,7 @@ class GuardDuty {
       payload: null,
       method: 'GET',
       requestUri:
-          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/publishingDestination/%24%7BUri.encodeQueryComponent%28destinationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/publishingDestination/${Uri.encodeQueryComponent(destinationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribePublishingDestinationResponse.fromJson(response);
@@ -1286,7 +1286,7 @@ class GuardDuty {
       payload: null,
       method: 'GET',
       requestUri:
-          '/detector/%24%7BUri.encodeQueryComponent%28detectorId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/filter/${Uri.encodeQueryComponent(filterName).replaceAll('+', '%20')}',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/filter/${Uri.encodeQueryComponent(filterName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetFilterResponse.fromJson(response);
@@ -1377,7 +1377,7 @@ class GuardDuty {
       payload: null,
       method: 'GET',
       requestUri:
-          '/detector/%24%7BUri.encodeQueryComponent%28detectorId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/ipset/${Uri.encodeQueryComponent(ipSetId).replaceAll('+', '%20')}',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/ipset/${Uri.encodeQueryComponent(ipSetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetIPSetResponse.fromJson(response);
@@ -1557,7 +1557,7 @@ class GuardDuty {
       payload: null,
       method: 'GET',
       requestUri:
-          '/detector/%24%7BUri.encodeQueryComponent%28detectorId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/threatintelset/${Uri.encodeQueryComponent(threatIntelSetId).replaceAll('+', '%20')}',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/threatintelset/${Uri.encodeQueryComponent(threatIntelSetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetThreatIntelSetResponse.fromJson(response);
@@ -2592,7 +2592,7 @@ class GuardDuty {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/detector/%24%7BUri.encodeQueryComponent%28detectorId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/filter/${Uri.encodeQueryComponent(filterName).replaceAll('+', '%20')}',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/filter/${Uri.encodeQueryComponent(filterName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateFilterResponse.fromJson(response);
@@ -2672,7 +2672,7 @@ class GuardDuty {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/detector/%24%7BUri.encodeQueryComponent%28detectorId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/ipset/${Uri.encodeQueryComponent(ipSetId).replaceAll('+', '%20')}',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/ipset/${Uri.encodeQueryComponent(ipSetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2865,7 +2865,7 @@ class GuardDuty {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/publishingDestination/%24%7BUri.encodeQueryComponent%28destinationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/publishingDestination/${Uri.encodeQueryComponent(destinationId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -2907,7 +2907,7 @@ class GuardDuty {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/detector/%24%7BUri.encodeQueryComponent%28detectorId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/threatintelset/${Uri.encodeQueryComponent(threatIntelSetId).replaceAll('+', '%20')}',
+          '/detector/${Uri.encodeQueryComponent(detectorId).replaceAll('+', '%20')}/threatintelset/${Uri.encodeQueryComponent(threatIntelSetId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

@@ -560,7 +560,7 @@ class MediaPackage {
       payload: null,
       method: 'PUT',
       requestUri:
-          '/channels/%24%7BUri.encodeQueryComponent%28id%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/ingest_endpoints/${Uri.encodeQueryComponent(ingestEndpointId).replaceAll('+', '%20')}/credentials',
+          '/channels/${Uri.encodeQueryComponent(id).replaceAll('+', '%20')}/ingest_endpoints/${Uri.encodeQueryComponent(ingestEndpointId).replaceAll('+', '%20')}/credentials',
       exceptionFnMap: _exceptionFns,
     );
     return RotateIngestEndpointCredentialsResponse.fromJson(response);

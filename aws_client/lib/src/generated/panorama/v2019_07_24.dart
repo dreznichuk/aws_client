@@ -373,7 +373,7 @@ class Panorama {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/packages/%2524%257BUri.encodeQueryComponent%2528packageId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/versions/%24%7BUri.encodeQueryComponent%28packageVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/patch/${Uri.encodeQueryComponent(patchVersion).replaceAll('+', '%20')}',
+          '/packages/${Uri.encodeQueryComponent(packageId).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(packageVersion).replaceAll('+', '%20')}/patch/${Uri.encodeQueryComponent(patchVersion).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -603,7 +603,7 @@ class Panorama {
       payload: null,
       method: 'GET',
       requestUri:
-          '/packages/metadata/%24%7BUri.encodeQueryComponent%28packageId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(packageVersion).replaceAll('+', '%20')}',
+          '/packages/metadata/${Uri.encodeQueryComponent(packageId).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(packageVersion).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1121,7 +1121,7 @@ class Panorama {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/packages/%2524%257BUri.encodeQueryComponent%2528packageId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/versions/%24%7BUri.encodeQueryComponent%28packageVersion%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/patch/${Uri.encodeQueryComponent(patchVersion).replaceAll('+', '%20')}',
+          '/packages/${Uri.encodeQueryComponent(packageId).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(packageVersion).replaceAll('+', '%20')}/patch/${Uri.encodeQueryComponent(patchVersion).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

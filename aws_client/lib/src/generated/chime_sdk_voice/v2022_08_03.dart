@@ -719,7 +719,7 @@ class ChimeSdkVoice {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/proxy-sessions/%24%7BUri.encodeQueryComponent%28proxySessionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/proxy-sessions/${Uri.encodeQueryComponent(proxySessionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1232,7 +1232,7 @@ class ChimeSdkVoice {
       payload: null,
       method: 'GET',
       requestUri:
-          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/proxy-sessions/%24%7BUri.encodeQueryComponent%28proxySessionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/proxy-sessions/${Uri.encodeQueryComponent(proxySessionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetProxySessionResponse.fromJson(response);
@@ -1370,7 +1370,7 @@ class ChimeSdkVoice {
       payload: null,
       method: 'GET',
       requestUri:
-          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/speaker-search-tasks/%24%7BUri.encodeQueryComponent%28speakerSearchTaskId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/speaker-search-tasks/${Uri.encodeQueryComponent(speakerSearchTaskId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSpeakerSearchTaskResponse.fromJson(response);
@@ -1704,7 +1704,7 @@ class ChimeSdkVoice {
       payload: null,
       method: 'GET',
       requestUri:
-          '/voice-connectors/%24%7BUri.encodeQueryComponent%28voiceConnectorId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/voice-tone-analysis-tasks/${Uri.encodeQueryComponent(voiceToneAnalysisTaskId).replaceAll('+', '%20')}',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/voice-tone-analysis-tasks/${Uri.encodeQueryComponent(voiceToneAnalysisTaskId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2801,7 +2801,7 @@ class ChimeSdkVoice {
       payload: null,
       method: 'POST',
       requestUri:
-          '/voice-connectors/%24%7BUri.encodeQueryComponent%28voiceConnectorId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/voice-tone-analysis-tasks/${Uri.encodeQueryComponent(voiceToneAnalysisTaskId).replaceAll('+', '%20')}?operation=stop',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/voice-tone-analysis-tasks/${Uri.encodeQueryComponent(voiceToneAnalysisTaskId).replaceAll('+', '%20')}?operation=stop',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3011,7 +3011,7 @@ class ChimeSdkVoice {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/proxy-sessions/%24%7BUri.encodeQueryComponent%28proxySessionId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/voice-connectors/${Uri.encodeQueryComponent(voiceConnectorId).replaceAll('+', '%20')}/proxy-sessions/${Uri.encodeQueryComponent(proxySessionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateProxySessionResponse.fromJson(response);
@@ -3090,7 +3090,7 @@ class ChimeSdkVoice {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/sip-media-applications/%24%7BUri.encodeQueryComponent%28sipMediaApplicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/calls/${Uri.encodeQueryComponent(transactionId).replaceAll('+', '%20')}',
+          '/sip-media-applications/${Uri.encodeQueryComponent(sipMediaApplicationId).replaceAll('+', '%20')}/calls/${Uri.encodeQueryComponent(transactionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateSipMediaApplicationCallResponse.fromJson(response);

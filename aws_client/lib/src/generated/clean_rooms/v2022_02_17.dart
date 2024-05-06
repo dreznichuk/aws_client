@@ -428,7 +428,7 @@ class CleanRooms {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/configuredTables/${Uri.encodeQueryComponent(configuredTableIdentifier).replaceAll('+', '%20')}/analysisRule/%24%7BUri.encodeQueryComponent%28analysisRuleType.toValue%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/configuredTables/${Uri.encodeQueryComponent(configuredTableIdentifier).replaceAll('+', '%20')}/analysisRule/${Uri.encodeQueryComponent(analysisRuleType.toValue()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -457,7 +457,7 @@ class CleanRooms {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/memberships/${Uri.encodeQueryComponent(membershipIdentifier).replaceAll('+', '%20')}/configuredTableAssociations/%24%7BUri.encodeQueryComponent%28configuredTableAssociationIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/memberships/${Uri.encodeQueryComponent(membershipIdentifier).replaceAll('+', '%20')}/configuredTableAssociations/${Uri.encodeQueryComponent(configuredTableAssociationIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -487,7 +487,7 @@ class CleanRooms {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/collaborations/${Uri.encodeQueryComponent(collaborationIdentifier).replaceAll('+', '%20')}/member/%24%7BUri.encodeQueryComponent%28accountId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/collaborations/${Uri.encodeQueryComponent(collaborationIdentifier).replaceAll('+', '%20')}/member/${Uri.encodeQueryComponent(accountId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -585,7 +585,7 @@ class CleanRooms {
       payload: null,
       method: 'GET',
       requestUri:
-          '/configuredTables/${Uri.encodeQueryComponent(configuredTableIdentifier).replaceAll('+', '%20')}/analysisRule/%24%7BUri.encodeQueryComponent%28analysisRuleType.toValue%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/configuredTables/${Uri.encodeQueryComponent(configuredTableIdentifier).replaceAll('+', '%20')}/analysisRule/${Uri.encodeQueryComponent(analysisRuleType.toValue()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetConfiguredTableAnalysisRuleOutput.fromJson(response);
@@ -614,7 +614,7 @@ class CleanRooms {
       payload: null,
       method: 'GET',
       requestUri:
-          '/memberships/${Uri.encodeQueryComponent(membershipIdentifier).replaceAll('+', '%20')}/configuredTableAssociations/%24%7BUri.encodeQueryComponent%28configuredTableAssociationIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/memberships/${Uri.encodeQueryComponent(membershipIdentifier).replaceAll('+', '%20')}/configuredTableAssociations/${Uri.encodeQueryComponent(configuredTableAssociationIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetConfiguredTableAssociationOutput.fromJson(response);
@@ -664,7 +664,7 @@ class CleanRooms {
       payload: null,
       method: 'GET',
       requestUri:
-          '/memberships/%24%7BUri.encodeQueryComponent%28membershipIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/protectedQueries/${Uri.encodeQueryComponent(protectedQueryIdentifier).replaceAll('+', '%20')}',
+          '/memberships/${Uri.encodeQueryComponent(membershipIdentifier).replaceAll('+', '%20')}/protectedQueries/${Uri.encodeQueryComponent(protectedQueryIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetProtectedQueryOutput.fromJson(response);
@@ -692,7 +692,7 @@ class CleanRooms {
       payload: null,
       method: 'GET',
       requestUri:
-          '/collaborations/%24%7BUri.encodeQueryComponent%28collaborationIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/schemas/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
+          '/collaborations/${Uri.encodeQueryComponent(collaborationIdentifier).replaceAll('+', '%20')}/schemas/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSchemaOutput.fromJson(response);
@@ -726,7 +726,7 @@ class CleanRooms {
       payload: null,
       method: 'GET',
       requestUri:
-          '/collaborations/%2524%257BUri.encodeQueryComponent%2528collaborationIdentifier%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/schemas/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/analysisRule/${Uri.encodeQueryComponent(type.toValue()).replaceAll('+', '%20')}',
+          '/collaborations/${Uri.encodeQueryComponent(collaborationIdentifier).replaceAll('+', '%20')}/schemas/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/analysisRule/${Uri.encodeQueryComponent(type.toValue()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSchemaAnalysisRuleOutput.fromJson(response);
@@ -1268,7 +1268,7 @@ class CleanRooms {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/configuredTables/${Uri.encodeQueryComponent(configuredTableIdentifier).replaceAll('+', '%20')}/analysisRule/%24%7BUri.encodeQueryComponent%28analysisRuleType.toValue%28%29%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/configuredTables/${Uri.encodeQueryComponent(configuredTableIdentifier).replaceAll('+', '%20')}/analysisRule/${Uri.encodeQueryComponent(analysisRuleType.toValue()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateConfiguredTableAnalysisRuleOutput.fromJson(response);
@@ -1312,7 +1312,7 @@ class CleanRooms {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/memberships/${Uri.encodeQueryComponent(membershipIdentifier).replaceAll('+', '%20')}/configuredTableAssociations/%24%7BUri.encodeQueryComponent%28configuredTableAssociationIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/memberships/${Uri.encodeQueryComponent(membershipIdentifier).replaceAll('+', '%20')}/configuredTableAssociations/${Uri.encodeQueryComponent(configuredTableAssociationIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateConfiguredTableAssociationOutput.fromJson(response);
@@ -1380,7 +1380,7 @@ class CleanRooms {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/memberships/%24%7BUri.encodeQueryComponent%28membershipIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/protectedQueries/${Uri.encodeQueryComponent(protectedQueryIdentifier).replaceAll('+', '%20')}',
+          '/memberships/${Uri.encodeQueryComponent(membershipIdentifier).replaceAll('+', '%20')}/protectedQueries/${Uri.encodeQueryComponent(protectedQueryIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateProtectedQueryOutput.fromJson(response);

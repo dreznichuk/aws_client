@@ -125,7 +125,7 @@ class CognitoSync {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/identitypools/${Uri.encodeQueryComponent(identityPoolId).replaceAll('+', '%20')}/identities/%24%7BUri.encodeQueryComponent%28identityId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/datasets/%2524%257BUri.encodeQueryComponent%2528datasetName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
+          '/identitypools/${Uri.encodeQueryComponent(identityPoolId).replaceAll('+', '%20')}/identities/${Uri.encodeQueryComponent(identityId).replaceAll('+', '%20')}/datasets/${Uri.encodeQueryComponent(datasetName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteDatasetResponse.fromJson(response);
@@ -168,7 +168,7 @@ class CognitoSync {
       payload: null,
       method: 'GET',
       requestUri:
-          '/identitypools/${Uri.encodeQueryComponent(identityPoolId).replaceAll('+', '%20')}/identities/%24%7BUri.encodeQueryComponent%28identityId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/datasets/%2524%257BUri.encodeQueryComponent%2528datasetName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
+          '/identitypools/${Uri.encodeQueryComponent(identityPoolId).replaceAll('+', '%20')}/identities/${Uri.encodeQueryComponent(identityId).replaceAll('+', '%20')}/datasets/${Uri.encodeQueryComponent(datasetName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeDatasetResponse.fromJson(response);
@@ -232,7 +232,7 @@ class CognitoSync {
       payload: null,
       method: 'GET',
       requestUri:
-          '/identitypools/${Uri.encodeQueryComponent(identityPoolId).replaceAll('+', '%20')}/identities/%24%7BUri.encodeQueryComponent%28identityId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/identitypools/${Uri.encodeQueryComponent(identityPoolId).replaceAll('+', '%20')}/identities/${Uri.encodeQueryComponent(identityId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeIdentityUsageResponse.fromJson(response);
@@ -362,7 +362,7 @@ class CognitoSync {
       payload: null,
       method: 'GET',
       requestUri:
-          '/identitypools/${Uri.encodeQueryComponent(identityPoolId).replaceAll('+', '%20')}/identities/%24%7BUri.encodeQueryComponent%28identityId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/datasets',
+          '/identitypools/${Uri.encodeQueryComponent(identityPoolId).replaceAll('+', '%20')}/identities/${Uri.encodeQueryComponent(identityId).replaceAll('+', '%20')}/datasets',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -461,7 +461,7 @@ class CognitoSync {
       payload: null,
       method: 'GET',
       requestUri:
-          '/identitypools/${Uri.encodeQueryComponent(identityPoolId).replaceAll('+', '%20')}/identities/%24%7BUri.encodeQueryComponent%28identityId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/datasets/%2524%257BUri.encodeQueryComponent%2528datasetName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/records',
+          '/identitypools/${Uri.encodeQueryComponent(identityPoolId).replaceAll('+', '%20')}/identities/${Uri.encodeQueryComponent(identityId).replaceAll('+', '%20')}/datasets/${Uri.encodeQueryComponent(datasetName).replaceAll('+', '%20')}/records',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -507,7 +507,7 @@ class CognitoSync {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/identitypools/${Uri.encodeQueryComponent(identityPoolId).replaceAll('+', '%20')}/identity/%24%7BUri.encodeQueryComponent%28identityId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/device',
+          '/identitypools/${Uri.encodeQueryComponent(identityPoolId).replaceAll('+', '%20')}/identity/${Uri.encodeQueryComponent(identityId).replaceAll('+', '%20')}/device',
       exceptionFnMap: _exceptionFns,
     );
     return RegisterDeviceResponse.fromJson(response);
@@ -625,7 +625,7 @@ class CognitoSync {
       payload: null,
       method: 'POST',
       requestUri:
-          '/identitypools/${Uri.encodeQueryComponent(identityPoolId).replaceAll('+', '%20')}/identities/%24%7BUri.encodeQueryComponent%28identityId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/datasets/%252524%25257BUri.encodeQueryComponent%252528datasetName%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/subscriptions/%2524%257BUri.encodeQueryComponent%2528deviceId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
+          '/identitypools/${Uri.encodeQueryComponent(identityPoolId).replaceAll('+', '%20')}/identities/${Uri.encodeQueryComponent(identityId).replaceAll('+', '%20')}/datasets/${Uri.encodeQueryComponent(datasetName).replaceAll('+', '%20')}/subscriptions/${Uri.encodeQueryComponent(deviceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -666,7 +666,7 @@ class CognitoSync {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/identitypools/${Uri.encodeQueryComponent(identityPoolId).replaceAll('+', '%20')}/identities/%24%7BUri.encodeQueryComponent%28identityId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/datasets/%252524%25257BUri.encodeQueryComponent%252528datasetName%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/subscriptions/%2524%257BUri.encodeQueryComponent%2528deviceId%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
+          '/identitypools/${Uri.encodeQueryComponent(identityPoolId).replaceAll('+', '%20')}/identities/${Uri.encodeQueryComponent(identityId).replaceAll('+', '%20')}/datasets/${Uri.encodeQueryComponent(datasetName).replaceAll('+', '%20')}/subscriptions/${Uri.encodeQueryComponent(deviceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -750,7 +750,7 @@ class CognitoSync {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/identitypools/${Uri.encodeQueryComponent(identityPoolId).replaceAll('+', '%20')}/identities/%24%7BUri.encodeQueryComponent%28identityId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/datasets/%2524%257BUri.encodeQueryComponent%2528datasetName%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
+          '/identitypools/${Uri.encodeQueryComponent(identityPoolId).replaceAll('+', '%20')}/identities/${Uri.encodeQueryComponent(identityId).replaceAll('+', '%20')}/datasets/${Uri.encodeQueryComponent(datasetName).replaceAll('+', '%20')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );

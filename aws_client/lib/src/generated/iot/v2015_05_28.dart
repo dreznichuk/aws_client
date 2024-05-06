@@ -654,7 +654,7 @@ class IoT {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/jobs/%24%7BUri.encodeQueryComponent%28jobId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/cancel',
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}/cancel',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3032,7 +3032,7 @@ class IoT {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/jobs/%24%7BUri.encodeQueryComponent%28jobId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/executionNumber/%2524%257BUri.encodeQueryComponent%2528executionNumber.toString%2528%2529%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D',
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}/executionNumber/${Uri.encodeQueryComponent(executionNumber.toString()).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -3203,7 +3203,7 @@ class IoT {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/policies/%24%7BUri.encodeQueryComponent%28policyName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/version/${Uri.encodeQueryComponent(policyVersionId).replaceAll('+', '%20')}',
+          '/policies/${Uri.encodeQueryComponent(policyName).replaceAll('+', '%20')}/version/${Uri.encodeQueryComponent(policyVersionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3263,7 +3263,7 @@ class IoT {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/provisioning-templates/%24%7BUri.encodeQueryComponent%28templateName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionId.toString()).replaceAll('+', '%20')}',
+          '/provisioning-templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(versionId.toString()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -4190,7 +4190,7 @@ class IoT {
       payload: null,
       method: 'GET',
       requestUri:
-          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/jobs/%24%7BUri.encodeQueryComponent%28jobId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/things/${Uri.encodeQueryComponent(thingName).replaceAll('+', '%20')}/jobs/${Uri.encodeQueryComponent(jobId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -4329,7 +4329,7 @@ class IoT {
       payload: null,
       method: 'GET',
       requestUri:
-          '/provisioning-templates/%24%7BUri.encodeQueryComponent%28templateName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionId.toString()).replaceAll('+', '%20')}',
+          '/provisioning-templates/${Uri.encodeQueryComponent(templateName).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(versionId.toString()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeProvisioningTemplateVersionResponse.fromJson(response);
@@ -5181,7 +5181,7 @@ class IoT {
       payload: null,
       method: 'GET',
       requestUri:
-          '/policies/%24%7BUri.encodeQueryComponent%28policyName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/version/${Uri.encodeQueryComponent(policyVersionId).replaceAll('+', '%20')}',
+          '/policies/${Uri.encodeQueryComponent(policyName).replaceAll('+', '%20')}/version/${Uri.encodeQueryComponent(policyVersionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetPolicyVersionResponse.fromJson(response);
@@ -8942,7 +8942,7 @@ class IoT {
       payload: null,
       method: 'PATCH',
       requestUri:
-          '/policies/%24%7BUri.encodeQueryComponent%28policyName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/version/${Uri.encodeQueryComponent(policyVersionId).replaceAll('+', '%20')}',
+          '/policies/${Uri.encodeQueryComponent(policyName).replaceAll('+', '%20')}/version/${Uri.encodeQueryComponent(policyVersionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

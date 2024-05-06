@@ -246,7 +246,7 @@ class CloudWatchInternetMonitor {
       payload: null,
       method: 'GET',
       requestUri:
-          '/v20210603/Monitors/${Uri.encodeQueryComponent(monitorName).replaceAll('+', '%20')}/HealthEvents/%24%7BUri.encodeQueryComponent%28eventId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/v20210603/Monitors/${Uri.encodeQueryComponent(monitorName).replaceAll('+', '%20')}/HealthEvents/${Uri.encodeQueryComponent(eventId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetHealthEventOutput.fromJson(response);

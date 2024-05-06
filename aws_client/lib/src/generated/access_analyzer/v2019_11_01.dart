@@ -327,7 +327,7 @@ class AccessAnalyzer {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/analyzer/%24%7BUri.encodeQueryComponent%28analyzerName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/archive-rule/${Uri.encodeQueryComponent(ruleName).replaceAll('+', '%20')}',
+          '/analyzer/${Uri.encodeQueryComponent(analyzerName).replaceAll('+', '%20')}/archive-rule/${Uri.encodeQueryComponent(ruleName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -448,7 +448,7 @@ class AccessAnalyzer {
       payload: null,
       method: 'GET',
       requestUri:
-          '/analyzer/%24%7BUri.encodeQueryComponent%28analyzerName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/archive-rule/${Uri.encodeQueryComponent(ruleName).replaceAll('+', '%20')}',
+          '/analyzer/${Uri.encodeQueryComponent(analyzerName).replaceAll('+', '%20')}/archive-rule/${Uri.encodeQueryComponent(ruleName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetArchiveRuleResponse.fromJson(response);
@@ -1038,7 +1038,7 @@ class AccessAnalyzer {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/analyzer/%24%7BUri.encodeQueryComponent%28analyzerName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/archive-rule/${Uri.encodeQueryComponent(ruleName).replaceAll('+', '%20')}',
+          '/analyzer/${Uri.encodeQueryComponent(analyzerName).replaceAll('+', '%20')}/archive-rule/${Uri.encodeQueryComponent(ruleName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }

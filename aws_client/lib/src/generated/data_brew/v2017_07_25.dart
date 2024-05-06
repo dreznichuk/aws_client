@@ -680,7 +680,7 @@ class GlueDataBrew {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/recipes/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/recipeVersion/${Uri.encodeQueryComponent(recipeVersion).replaceAll('+', '%20')}',
+          '/recipes/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/recipeVersion/${Uri.encodeQueryComponent(recipeVersion).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DeleteRecipeVersionResponse.fromJson(response);
@@ -785,7 +785,7 @@ class GlueDataBrew {
       payload: null,
       method: 'GET',
       requestUri:
-          '/jobs/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/jobRun/${Uri.encodeQueryComponent(runId).replaceAll('+', '%20')}',
+          '/jobs/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/jobRun/${Uri.encodeQueryComponent(runId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return DescribeJobRunResponse.fromJson(response);
@@ -1371,7 +1371,7 @@ class GlueDataBrew {
       payload: null,
       method: 'POST',
       requestUri:
-          '/jobs/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/jobRun/${Uri.encodeQueryComponent(runId).replaceAll('+', '%20')}/stopJobRun',
+          '/jobs/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/jobRun/${Uri.encodeQueryComponent(runId).replaceAll('+', '%20')}/stopJobRun',
       exceptionFnMap: _exceptionFns,
     );
     return StopJobRunResponse.fromJson(response);

@@ -278,7 +278,7 @@ class LexModelBuilding {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/bots/%24%7BUri.encodeQueryComponent%28botName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/aliases/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
+          '/bots/${Uri.encodeQueryComponent(botName).replaceAll('+', '%20')}/aliases/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -313,7 +313,7 @@ class LexModelBuilding {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/bots/%24%7BUri.encodeQueryComponent%28botName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/aliases/%2524%257BUri.encodeQueryComponent%2528botAlias%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/channels/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
+          '/bots/${Uri.encodeQueryComponent(botName).replaceAll('+', '%20')}/aliases/${Uri.encodeQueryComponent(botAlias).replaceAll('+', '%20')}/channels/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -346,7 +346,7 @@ class LexModelBuilding {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/bots/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(version).replaceAll('+', '%20')}',
+          '/bots/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(version).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -418,7 +418,7 @@ class LexModelBuilding {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/intents/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(version).replaceAll('+', '%20')}',
+          '/intents/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(version).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -490,7 +490,7 @@ class LexModelBuilding {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/slottypes/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/version/${Uri.encodeQueryComponent(version).replaceAll('+', '%20')}',
+          '/slottypes/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/version/${Uri.encodeQueryComponent(version).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -535,7 +535,7 @@ class LexModelBuilding {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/bots/%24%7BUri.encodeQueryComponent%28botName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/utterances/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}',
+          '/bots/${Uri.encodeQueryComponent(botName).replaceAll('+', '%20')}/utterances/${Uri.encodeQueryComponent(userId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -564,7 +564,7 @@ class LexModelBuilding {
       payload: null,
       method: 'GET',
       requestUri:
-          '/bots/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(versionOrAlias).replaceAll('+', '%20')}',
+          '/bots/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(versionOrAlias).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetBotResponse.fromJson(response);
@@ -594,7 +594,7 @@ class LexModelBuilding {
       payload: null,
       method: 'GET',
       requestUri:
-          '/bots/%24%7BUri.encodeQueryComponent%28botName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/aliases/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
+          '/bots/${Uri.encodeQueryComponent(botName).replaceAll('+', '%20')}/aliases/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetBotAliasResponse.fromJson(response);
@@ -684,7 +684,7 @@ class LexModelBuilding {
       payload: null,
       method: 'GET',
       requestUri:
-          '/bots/%24%7BUri.encodeQueryComponent%28botName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/aliases/%2524%257BUri.encodeQueryComponent%2528botAlias%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/channels/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
+          '/bots/${Uri.encodeQueryComponent(botName).replaceAll('+', '%20')}/aliases/${Uri.encodeQueryComponent(botAlias).replaceAll('+', '%20')}/channels/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetBotChannelAssociationResponse.fromJson(response);
@@ -744,7 +744,7 @@ class LexModelBuilding {
       payload: null,
       method: 'GET',
       requestUri:
-          '/bots/${Uri.encodeQueryComponent(botName).replaceAll('+', '%20')}/aliases/%24%7BUri.encodeQueryComponent%28botAlias%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/channels/',
+          '/bots/${Uri.encodeQueryComponent(botName).replaceAll('+', '%20')}/aliases/${Uri.encodeQueryComponent(botAlias).replaceAll('+', '%20')}/channels/',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1101,7 +1101,7 @@ class LexModelBuilding {
       payload: null,
       method: 'GET',
       requestUri:
-          '/intents/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(version).replaceAll('+', '%20')}',
+          '/intents/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(version).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetIntentResponse.fromJson(response);
@@ -1338,7 +1338,7 @@ class LexModelBuilding {
       payload: null,
       method: 'GET',
       requestUri:
-          '/slottypes/%24%7BUri.encodeQueryComponent%28name%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(version).replaceAll('+', '%20')}',
+          '/slottypes/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(version).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetSlotTypeResponse.fromJson(response);
@@ -1969,7 +1969,7 @@ class LexModelBuilding {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/bots/%24%7BUri.encodeQueryComponent%28botName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/aliases/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
+          '/bots/${Uri.encodeQueryComponent(botName).replaceAll('+', '%20')}/aliases/${Uri.encodeQueryComponent(name).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return PutBotAliasResponse.fromJson(response);

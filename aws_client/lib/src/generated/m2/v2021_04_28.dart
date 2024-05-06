@@ -76,7 +76,7 @@ class MainframeModernization {
       payload: null,
       method: 'POST',
       requestUri:
-          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/batch-job-executions/${Uri.encodeQueryComponent(executionId).replaceAll('+', '%20')}/cancel',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/batch-job-executions/${Uri.encodeQueryComponent(executionId).replaceAll('+', '%20')}/cancel',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -395,7 +395,7 @@ class MainframeModernization {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/environment/${Uri.encodeQueryComponent(environmentId).replaceAll('+', '%20')}',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/environment/${Uri.encodeQueryComponent(environmentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -475,7 +475,7 @@ class MainframeModernization {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/versions/${Uri.encodeQueryComponent(applicationVersion.toString()).replaceAll('+', '%20')}',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/versions/${Uri.encodeQueryComponent(applicationVersion.toString()).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetApplicationVersionResponse.fromJson(response);
@@ -503,7 +503,7 @@ class MainframeModernization {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/batch-job-executions/${Uri.encodeQueryComponent(executionId).replaceAll('+', '%20')}',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/batch-job-executions/${Uri.encodeQueryComponent(executionId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetBatchJobExecutionResponse.fromJson(response);
@@ -531,7 +531,7 @@ class MainframeModernization {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/datasets/${Uri.encodeQueryComponent(dataSetName).replaceAll('+', '%20')}',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/datasets/${Uri.encodeQueryComponent(dataSetName).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDataSetDetailsResponse.fromJson(response);
@@ -560,7 +560,7 @@ class MainframeModernization {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/dataset-import-tasks/${Uri.encodeQueryComponent(taskId).replaceAll('+', '%20')}',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/dataset-import-tasks/${Uri.encodeQueryComponent(taskId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDataSetImportTaskResponse.fromJson(response);
@@ -587,7 +587,7 @@ class MainframeModernization {
       payload: null,
       method: 'GET',
       requestUri:
-          '/applications/%24%7BUri.encodeQueryComponent%28applicationId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/deployments/${Uri.encodeQueryComponent(deploymentId).replaceAll('+', '%20')}',
+          '/applications/${Uri.encodeQueryComponent(applicationId).replaceAll('+', '%20')}/deployments/${Uri.encodeQueryComponent(deploymentId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetDeploymentResponse.fromJson(response);

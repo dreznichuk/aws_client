@@ -1862,7 +1862,7 @@ class Location {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/tracking/v0/trackers/${Uri.encodeQueryComponent(trackerName).replaceAll('+', '%20')}/consumers/%24%7BUri.encodeQueryComponent%28consumerArn%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/tracking/v0/trackers/${Uri.encodeQueryComponent(trackerName).replaceAll('+', '%20')}/consumers/${Uri.encodeQueryComponent(consumerArn).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1891,7 +1891,7 @@ class Location {
       payload: null,
       method: 'GET',
       requestUri:
-          '/tracking/v0/trackers/${Uri.encodeQueryComponent(trackerName).replaceAll('+', '%20')}/devices/%24%7BUri.encodeQueryComponent%28deviceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/positions/latest',
+          '/tracking/v0/trackers/${Uri.encodeQueryComponent(trackerName).replaceAll('+', '%20')}/devices/${Uri.encodeQueryComponent(deviceId).replaceAll('+', '%20')}/positions/latest',
       exceptionFnMap: _exceptionFns,
     );
     return GetDevicePositionResponse.fromJson(response);
@@ -1983,7 +1983,7 @@ class Location {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/tracking/v0/trackers/${Uri.encodeQueryComponent(trackerName).replaceAll('+', '%20')}/devices/%24%7BUri.encodeQueryComponent%28deviceId%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/list-positions',
+          '/tracking/v0/trackers/${Uri.encodeQueryComponent(trackerName).replaceAll('+', '%20')}/devices/${Uri.encodeQueryComponent(deviceId).replaceAll('+', '%20')}/list-positions',
       exceptionFnMap: _exceptionFns,
     );
     return GetDevicePositionHistoryResponse.fromJson(response);
@@ -2010,7 +2010,7 @@ class Location {
       payload: null,
       method: 'GET',
       requestUri:
-          '/geofencing/v0/collections/%24%7BUri.encodeQueryComponent%28collectionName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/geofences/${Uri.encodeQueryComponent(geofenceId).replaceAll('+', '%20')}',
+          '/geofencing/v0/collections/${Uri.encodeQueryComponent(collectionName).replaceAll('+', '%20')}/geofences/${Uri.encodeQueryComponent(geofenceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetGeofenceResponse.fromJson(response);
@@ -2129,7 +2129,7 @@ class Location {
       payload: null,
       method: 'GET',
       requestUri:
-          '/maps/v0/maps/${Uri.encodeQueryComponent(mapName).replaceAll('+', '%20')}/glyphs/%2524%257BUri.encodeQueryComponent%2528fontStack%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/%24%7BUri.encodeQueryComponent%28fontUnicodeRange%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/maps/v0/maps/${Uri.encodeQueryComponent(mapName).replaceAll('+', '%20')}/glyphs/${Uri.encodeQueryComponent(fontStack).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(fontUnicodeRange).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2195,7 +2195,7 @@ class Location {
       payload: null,
       method: 'GET',
       requestUri:
-          '/maps/v0/maps/${Uri.encodeQueryComponent(mapName).replaceAll('+', '%20')}/sprites/%24%7BUri.encodeQueryComponent%28fileName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/maps/v0/maps/${Uri.encodeQueryComponent(mapName).replaceAll('+', '%20')}/sprites/${Uri.encodeQueryComponent(fileName).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2297,7 +2297,7 @@ class Location {
       payload: null,
       method: 'GET',
       requestUri:
-          '/maps/v0/maps/%252524%25257BUri.encodeQueryComponent%252528mapName%252529.replaceAll%252528%252527%25252B%252527%25252C%252520%252527%25252520%252527%252529%25257D/tiles/${Uri.encodeQueryComponent(z).replaceAll('+', '%20')}/%2524%257BUri.encodeQueryComponent%2528x%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/%24%7BUri.encodeQueryComponent%28y%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/maps/v0/maps/${Uri.encodeQueryComponent(mapName).replaceAll('+', '%20')}/tiles/${Uri.encodeQueryComponent(z).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(x).replaceAll('+', '%20')}/${Uri.encodeQueryComponent(y).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2373,7 +2373,7 @@ class Location {
       payload: null,
       method: 'GET',
       requestUri:
-          '/places/v0/indexes/%24%7BUri.encodeQueryComponent%28indexName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/places/${Uri.encodeQueryComponent(placeId).replaceAll('+', '%20')}',
+          '/places/v0/indexes/${Uri.encodeQueryComponent(indexName).replaceAll('+', '%20')}/places/${Uri.encodeQueryComponent(placeId).replaceAll('+', '%20')}',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -2843,7 +2843,7 @@ class Location {
       payload: $payload,
       method: 'PUT',
       requestUri:
-          '/geofencing/v0/collections/%24%7BUri.encodeQueryComponent%28collectionName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/geofences/${Uri.encodeQueryComponent(geofenceId).replaceAll('+', '%20')}',
+          '/geofencing/v0/collections/${Uri.encodeQueryComponent(collectionName).replaceAll('+', '%20')}/geofences/${Uri.encodeQueryComponent(geofenceId).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return PutGeofenceResponse.fromJson(response);

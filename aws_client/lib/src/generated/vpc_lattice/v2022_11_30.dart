@@ -86,7 +86,7 @@ class VpcLattice {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/%24%7BUri.encodeQueryComponent%28listenerIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/rules',
+          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/${Uri.encodeQueryComponent(listenerIdentifier).replaceAll('+', '%20')}/rules',
       exceptionFnMap: _exceptionFns,
     );
     return BatchUpdateRuleResponse.fromJson(response);
@@ -302,7 +302,7 @@ class VpcLattice {
       payload: $payload,
       method: 'POST',
       requestUri:
-          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/%24%7BUri.encodeQueryComponent%28listenerIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/rules',
+          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/${Uri.encodeQueryComponent(listenerIdentifier).replaceAll('+', '%20')}/rules',
       exceptionFnMap: _exceptionFns,
     );
     return CreateRuleResponse.fromJson(response);
@@ -715,7 +715,7 @@ class VpcLattice {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/%24%7BUri.encodeQueryComponent%28listenerIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/${Uri.encodeQueryComponent(listenerIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -776,7 +776,7 @@ class VpcLattice {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/%2524%257BUri.encodeQueryComponent%2528listenerIdentifier%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/rules/%24%7BUri.encodeQueryComponent%28ruleIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/${Uri.encodeQueryComponent(listenerIdentifier).replaceAll('+', '%20')}/rules/${Uri.encodeQueryComponent(ruleIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -1017,7 +1017,7 @@ class VpcLattice {
       payload: null,
       method: 'GET',
       requestUri:
-          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/%24%7BUri.encodeQueryComponent%28listenerIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/${Uri.encodeQueryComponent(listenerIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetListenerResponse.fromJson(response);
@@ -1076,7 +1076,7 @@ class VpcLattice {
       payload: null,
       method: 'GET',
       requestUri:
-          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/%2524%257BUri.encodeQueryComponent%2528listenerIdentifier%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/rules/%24%7BUri.encodeQueryComponent%28ruleIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/${Uri.encodeQueryComponent(listenerIdentifier).replaceAll('+', '%20')}/rules/${Uri.encodeQueryComponent(ruleIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetRuleResponse.fromJson(response);
@@ -1322,7 +1322,7 @@ class VpcLattice {
       payload: null,
       method: 'GET',
       requestUri:
-          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/%24%7BUri.encodeQueryComponent%28listenerIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/rules',
+          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/${Uri.encodeQueryComponent(listenerIdentifier).replaceAll('+', '%20')}/rules',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
@@ -1848,7 +1848,7 @@ class VpcLattice {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/%24%7BUri.encodeQueryComponent%28listenerIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/${Uri.encodeQueryComponent(listenerIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateListenerResponse.fromJson(response);
@@ -1905,7 +1905,7 @@ class VpcLattice {
       payload: $payload,
       method: 'PATCH',
       requestUri:
-          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/%2524%257BUri.encodeQueryComponent%2528listenerIdentifier%2529.replaceAll%2528%2527%252B%2527%252C%2520%2527%252520%2527%2529%257D/rules/%24%7BUri.encodeQueryComponent%28ruleIdentifier%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D',
+          '/services/${Uri.encodeQueryComponent(serviceIdentifier).replaceAll('+', '%20')}/listeners/${Uri.encodeQueryComponent(listenerIdentifier).replaceAll('+', '%20')}/rules/${Uri.encodeQueryComponent(ruleIdentifier).replaceAll('+', '%20')}',
       exceptionFnMap: _exceptionFns,
     );
     return UpdateRuleResponse.fromJson(response);

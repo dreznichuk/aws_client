@@ -523,7 +523,7 @@ class Route53RecoveryReadiness {
       payload: null,
       method: 'GET',
       requestUri:
-          '/readinesschecks/%24%7BUri.encodeQueryComponent%28readinessCheckName%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/resource/${Uri.encodeQueryComponent(resourceIdentifier).replaceAll('+', '%20')}/status',
+          '/readinesschecks/${Uri.encodeQueryComponent(readinessCheckName).replaceAll('+', '%20')}/resource/${Uri.encodeQueryComponent(resourceIdentifier).replaceAll('+', '%20')}/status',
       queryParams: $query,
       exceptionFnMap: _exceptionFns,
     );
