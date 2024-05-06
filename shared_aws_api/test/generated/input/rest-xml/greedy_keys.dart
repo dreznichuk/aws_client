@@ -55,7 +55,7 @@ class GreedyKeys {
     await _protocol.send(
       method: 'GET',
       requestUri:
-          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
+          '/%24%7BUri.encodeQueryComponent%28bucket%29.replaceAll%28%27%2B%27%2C%20%27%2520%27%29%7D/${key.split('/').map((e) => Uri.encodeQueryComponent(e).replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
   }

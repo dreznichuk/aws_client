@@ -1535,7 +1535,7 @@ class S3Control {
     final $result = await _protocol.send(
       method: 'GET',
       requestUri:
-          '/v20180820/async-requests/mrap/${requestTokenARN.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
+          '/v20180820/async-requests/mrap/${requestTokenARN.split('/').map((e) => Uri.encodeQueryComponent(e).replaceAll('+', '%20')).join('/')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2459,7 +2459,7 @@ class S3Control {
     final $result = await _protocol.send(
       method: 'GET',
       requestUri:
-          '/v20180820/mrap/instances/${name.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
+          '/v20180820/mrap/instances/${name.split('/').map((e) => Uri.encodeQueryComponent(e).replaceAll('+', '%20')).join('/')}',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2511,7 +2511,7 @@ class S3Control {
     final $result = await _protocol.send(
       method: 'GET',
       requestUri:
-          '/v20180820/mrap/instances/${name.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}/policy',
+          '/v20180820/mrap/instances/${name.split('/').map((e) => Uri.encodeQueryComponent(e).replaceAll('+', '%20')).join('/')}/policy',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2563,7 +2563,7 @@ class S3Control {
     final $result = await _protocol.send(
       method: 'GET',
       requestUri:
-          '/v20180820/mrap/instances/${name.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}/policystatus',
+          '/v20180820/mrap/instances/${name.split('/').map((e) => Uri.encodeQueryComponent(e).replaceAll('+', '%20')).join('/')}/policystatus',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -2614,7 +2614,7 @@ class S3Control {
     final $result = await _protocol.send(
       method: 'GET',
       requestUri:
-          '/v20180820/mrap/instances/${mrap.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}/routes',
+          '/v20180820/mrap/instances/${mrap.split('/').map((e) => Uri.encodeQueryComponent(e).replaceAll('+', '%20')).join('/')}/routes',
       headers: headers,
       exceptionFnMap: _exceptionFns,
     );
@@ -4288,7 +4288,7 @@ class S3Control {
     await _protocol.send(
       method: 'PATCH',
       requestUri:
-          '/v20180820/mrap/instances/${mrap.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}/routes',
+          '/v20180820/mrap/instances/${mrap.split('/').map((e) => Uri.encodeQueryComponent(e).replaceAll('+', '%20')).join('/')}/routes',
       headers: headers,
       payload: SubmitMultiRegionAccessPointRoutesRequest(
               accountId: accountId, mrap: mrap, routeUpdates: routeUpdates)

@@ -76,7 +76,7 @@ abstract class ServiceBuilder {
             .replaceAll('{${m.locationName ?? m.name}}',
                 '\${Uri.encodeQueryComponent($fieldCode).replaceAll(\'+\', \'%20\')}')
             .replaceAll('{${m.locationName ?? m.name}+}',
-                "\${$fieldCode.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}");
+                "\${$fieldCode.split('/').map((e) => Uri.encodeQueryComponent(e).replaceAll('+', '%20')).join('/')}");
       }
     }
     return uri;

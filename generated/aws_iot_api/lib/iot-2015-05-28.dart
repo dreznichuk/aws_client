@@ -707,7 +707,7 @@ class IoT {
       payload: null,
       method: 'GET',
       requestUri:
-          '/confirmdestination/${confirmationToken.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
+          '/confirmdestination/${confirmationToken.split('/').map((e) => Uri.encodeQueryComponent(e).replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -3560,7 +3560,7 @@ class IoT {
       payload: null,
       method: 'DELETE',
       requestUri:
-          '/destinations/${arn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
+          '/destinations/${arn.split('/').map((e) => Uri.encodeQueryComponent(e).replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
   }
@@ -5307,7 +5307,7 @@ class IoT {
       payload: null,
       method: 'GET',
       requestUri:
-          '/destinations/${arn.split('/').map((e) => Uri.encodeQueryComponent(e)..replaceAll('+', '%20')).join('/')}',
+          '/destinations/${arn.split('/').map((e) => Uri.encodeQueryComponent(e).replaceAll('+', '%20')).join('/')}',
       exceptionFnMap: _exceptionFns,
     );
     return GetTopicRuleDestinationResponse.fromJson(response);
