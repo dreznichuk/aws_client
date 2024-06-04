@@ -4,6 +4,7 @@ import 'package:http/http.dart';
 import 'package:xml/xml.dart';
 
 import '../credentials.dart';
+import '../utils/query_string.dart';
 import '_sign.dart';
 import 'endpoint.dart';
 import 'shared.dart';
@@ -143,6 +144,7 @@ class RestXmlProtocol {
       ...uri.queryParametersAll,
       ...?queryParams,
     });
+    uri = uri.replace(query: canonicalQueryParametersAll(uri.queryParametersAll));
 
     final rq = Request(
       method,
