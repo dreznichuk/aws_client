@@ -144,7 +144,7 @@ class RestXmlProtocol {
       ...uri.queryParametersAll,
       ...?queryParams,
     });
-    uri = uri.replace(query: canonicalQueryParametersAll(uri.queryParametersAll));
+    uri = uri.replace(query: canonicalQueryParametersAll(uri.queryParametersAll, forSignature: false));
 
     final rq = Request(
       method,
