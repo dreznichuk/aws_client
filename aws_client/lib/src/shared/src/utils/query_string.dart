@@ -10,7 +10,11 @@ String canonicalQueryParametersAll(Map<String, List<String>> query) {
   final items = <String>[];
   for (var key in query.keys) {
     for (var value in query[key]!) {
-      items.add('${encodeComponent(key)}=${encodeComponent(value)}');
+      if ( encodeComponent(value).isEmpty ) {
+        items.add('${encodeComponent(key)}=${encodeComponent(value)}');
+      } else {
+        items.add(encodeComponent(key));
+      }
     }
   }
   items.sort();
